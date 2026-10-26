@@ -1,0 +1,16 @@
+{
+  "name": "freizeit",
+  "private": true,
+  "type": "module",
+  "description": "Nur für die Tests. Die App selbst hat keine Abhängigkeiten und keinen Bauschritt.",
+  "scripts": {
+    "lint": "eslint js sw.js tests",
+    "test": "node tests/lauf.mjs",
+    "daten": "node tests/test-daten.mjs",
+    "serve": "node tests/server.mjs 8099"
+  },
+  "devDependencies": {
+    "eslint": "9.39.5",
+    "playwright": "1.56.1"
+  }
+}

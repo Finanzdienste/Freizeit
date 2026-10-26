@@ -1,0 +1,4195 @@
+{
+  "version": 1,
+  "stand": "2026-10-26T07:03",
+  "kw": 44,
+  "von": "2026-10-26",
+  "bis": "2026-11-01",
+  "infos": [
+    {
+      "titel": "Herbstferien Hamburg",
+      "text": "noch bis Fr 30.10."
+    },
+    {
+      "titel": "Herbstferien SH",
+      "text": "vorbei"
+    },
+    {
+      "titel": "Feiertag",
+      "text": "Sa 31.10. Reformationstag (HH, SH, NDS)"
+    },
+    {
+      "titel": "Halloween",
+      "text": "Sa 31.10."
+    },
+    {
+      "titel": "DOM",
+      "text": "erst ab 6.11."
+    },
+    {
+      "titel": "St. Pauli",
+      "text": "So Heimspiel · HSV: auswärts"
+    }
+  ],
+  "highlights": [
+    {
+      "titel": "Sa 31.10.: Museen gratis und Halloween",
+      "text": "Zum Reformationstag ist der Eintritt in rund 50 Hamburger Museen frei (#seeforfree), u. a. Kunsthalle, Bucerius und Altonaer Museum. Abends letzter Halloween-Tag im Heide Park (bis 21 Uhr), Maskenball in Ottensen oder die Halloween Horror Night in der LKH Arena Lüneburg."
+    },
+    {
+      "titel": "Hohwacht-Kombi: Kieler Lichtermeer am So 1.11.",
+      "text": "Lichterroute durch die Innenstadt, verkaufsoffen 13–18 Uhr, Feuershows im Bootshafen um 17:30 und 18:30, Lasershow ab 18 Uhr. Schon am Mi 28.10. spielt Holstein Kiel im DFB-Pokal gegen Hoffenheim."
+    },
+    {
+      "titel": "Elbphilharmonie: Pergolesi ab 16 € (Mo), Dresdner Kreuzchor (Do), Mahler „Auferstehen“ (So)",
+      "text": "Dazu von Do bis So das Festival Libanon im Kleinen Saal und am So um 15 Uhr Dabke-Tanzen auf der Plaza."
+    },
+    {
+      "titel": "Große Konzertwoche",
+      "text": "Placebo (Mo) und Nico Santos (Do) in der Barclays Arena, Teenage Fanclub im Knust (Do), am Sonntag Deep Purple in der Sporthalle und Tokio Hotel in der Barclays Arena."
+    },
+    {
+      "titel": "FC St. Pauli – 1. FC Nürnberg am So 1.11.",
+      "text": "Heimspiel am Millerntor, Anstoß laut Knust und anstosszeiten.de 13:30 (bundesliga.com nennt 12:30). Vorher Fischmarkt (ab jetzt 7–9:30 Uhr) und Flohmarkt an der Rindermarkthalle."
+    }
+  ],
+  "tage": [
+    {
+      "datum": "2026-10-26",
+      "wetter": "Hamburg 12°/9°, bewölkt, zeitweise leichter Regen, windig.",
+      "wetterOstsee": "Ostsee/Kiel 12°/8°, Regen, Böen um 45 km/h.",
+      "tipp": "Viele Museen (u. a. Kunsthalle, MK&G, MARKK) haben montags zu."
+    },
+    {
+      "datum": "2026-10-27",
+      "wetter": "Hamburg 16°/10°, teils sonnig, trocken – wärmster Tag der Woche.",
+      "wetterOstsee": "Ostsee/Kiel 17°/9°, bewölkt, meist trocken."
+    },
+    {
+      "datum": "2026-10-28",
+      "wetter": "Hamburg 13°/9°, teils sonnig, zeitweise leichter Regen.",
+      "wetterOstsee": "Ostsee/Kiel 14°/8°, wolkig mit Sonne, morgens Nebel."
+    },
+    {
+      "datum": "2026-10-29",
+      "wetter": "Hamburg 14°/11°, wenig Sonne, leichter Regen.",
+      "wetterOstsee": "Ostsee/Kiel 12°/6°, überwiegend bewölkt."
+    },
+    {
+      "datum": "2026-10-30",
+      "wetter": "Hamburg 11°/7°, meist bewölkt, trocken. Letzter Hamburger Ferientag.",
+      "wetterOstsee": "Ostsee/Kiel: Trend bewölkt und trocken (unsicher)."
+    },
+    {
+      "datum": "2026-10-31",
+      "wetter": "Hamburg 13°/6°, teils sonnig, trocken (Trend).",
+      "wetterOstsee": "Ostsee/Kiel: Trend trocken, um 12° (unsicher).",
+      "tipp": "Reformationstag: Feiertag in HH, SH und NDS – Läden zu. In rund 50 Hamburger Museen ist der Eintritt frei (#seeforfree). Abends Halloween.",
+      "feiertag": true
+    },
+    {
+      "datum": "2026-11-01",
+      "wetter": "Hamburg 13°/7°, teils sonnig, leichter Regen möglich (Trend).",
+      "wetterOstsee": "Ostsee/Kiel: Trend wechselhaft, leichter Regen (unsicher).",
+      "tipp": "Fischmarkt ab heute zur Winterzeit (7–9:30 Uhr). Laboe ab heute nur noch 10–16 Uhr."
+    }
+  ],
+  "termine": [
+    {
+      "id": "disneys-der-koenig-der-loewen-stage-theater-im-hafen-steinwe",
+      "daten": [
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "Di/Mi 18:30, Do/Fr 20:00, Sa 15:00 + 20:00, So 14:00 + 18:30 (Mo keine Vorstellung)",
+      "zeiten": {
+        "2026-11-01": "14:00 + 18:30",
+        "2026-10-27": "18:30",
+        "2026-10-28": "18:30",
+        "2026-10-29": "20:00",
+        "2026-10-30": "20:00",
+        "2026-10-31": "15:00 + 20:00"
+      },
+      "ganzeWoche": true,
+      "titel": "Disneys Der König der Löwen",
+      "ort": "Stage Theater im Hafen, Steinwerder",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Hamburgs Musical-Dauerbrenner, Anfahrt mit der Stage-Fähre ab Landungsbrücken.",
+      "preis": "ab ca. 66 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/musical/disneys-der-koenig-loewen-termine-tickets-b2c6bc13b559"
+    },
+    {
+      "id": "zurueck-in-die-zukunft-das-musical-stage-operettenhaus-reepe",
+      "daten": [
+        "2026-10-27",
+        "2026-10-28"
+      ],
+      "zeit": "18:30",
+      "titel": "Zurück in die Zukunft – Das Musical",
+      "ort": "Stage Operettenhaus, Reeperbahn",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Bühnenversion des Filmklassikers, läuft im Dauerbetrieb. Nur Di und Mi sind mit Uhrzeit belegt.",
+      "preis": "ab ca. 42 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/musicals-shows-hamburg.php",
+      "unsicher": "nur Aggregator; Zeiten für Do–So nicht gesehen"
+    },
+    {
+      "id": "mj-das-michael-jackson-musical-stage-theater-an-der-elbe-ste",
+      "daten": [
+        "2026-10-27",
+        "2026-10-28"
+      ],
+      "zeit": "19:00",
+      "titel": "MJ – Das Michael Jackson Musical",
+      "ort": "Stage Theater an der Elbe, Steinwerder",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Musical über Michael Jackson und seine Tourvorbereitung, läuft im Dauerbetrieb. Nur Di und Mi sind mit Uhrzeit belegt.",
+      "preis": "ab ca. 52 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/musicals-shows-hamburg.php",
+      "unsicher": "nur Aggregator; Zeiten für Do–So nicht gesehen"
+    },
+    {
+      "id": "heisse-ecke-das-st-pauli-musical-schmidts-tivoli-spielbudenp",
+      "daten": [
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "Di 19:30, Mi 19:00, Do 19:30, Fr 20:00, Sa 15:00 + 20:00, So 19:00 (Mo keine Vorstellung)",
+      "zeiten": {
+        "2026-11-01": "19:00",
+        "2026-10-27": "19:30",
+        "2026-10-28": "19:00",
+        "2026-10-29": "19:30",
+        "2026-10-30": "20:00",
+        "2026-10-31": "15:00 + 20:00"
+      },
+      "ganzeWoche": true,
+      "titel": "Heiße Ecke – Das St. Pauli Musical",
+      "ort": "Schmidts Tivoli, Spielbudenplatz",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Kiez-Musical um eine Imbissbude auf der Reeperbahn.",
+      "preis": "ab 47,59 € (Di/Mi) bis ab 69,59 € (Sa 20:00)",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/heisse-ecke-schmidts-tivoli-hamburg/"
+    },
+    {
+      "id": "pulverlesque-halloween-edition-pulverfass-cabaret-reeperbahn",
+      "daten": [
+        "2026-10-26",
+        "2026-10-30"
+      ],
+      "zeit": "19:00",
+      "titel": "Pulverlesque – Halloween Edition",
+      "ort": "Pulverfass Cabaret, Reeperbahn",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Burlesque- und Cabaret-Show in Halloween-Ausgabe, laut Aggregator bis 2.11. im Programm. Auch Fr 30.10. um 19:00.",
+      "preis": "ab ca. 47 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/musicals-shows-hamburg.php",
+      "unsicher": "nur Aggregator als Quelle"
+    },
+    {
+      "id": "philharmonisches-staatsorchester-omer-meir-wellber-stabat-ma",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "20:00",
+      "titel": "Philharmonisches Staatsorchester / Omer Meir Wellber: Stabat mater (Blaues Konzert)",
+      "ort": "Elbphilharmonie, Großer Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Pergolesis „Stabat mater“ zusammen mit Schnittke, 3. Konzert der „Blauen Woche“.",
+      "preis": "ab 16 €",
+      "draussen": "drinnen",
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+    },
+    {
+      "id": "fischer-z-50-anniversary-tour-laeiszhalle-grosser-saal",
+      "daten": [
+        "2026-10-26",
+        "2026-10-27"
+      ],
+      "zeit": "20:00",
+      "titel": "Fischer-Z – 50 Anniversary Tour",
+      "ort": "Laeiszhalle, Großer Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Die britische New-Wave-Band um John Watts zum 50-jährigen Bestehen.",
+      "preis": "ab 56,25 €",
+      "draussen": "drinnen",
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+    },
+    {
+      "id": "salut-salon-heimat-elbphilharmonie-grosser-saal",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "20:00",
+      "titel": "Salut Salon: „Heimat“",
+      "ort": "Elbphilharmonie, Großer Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Das Hamburger Quartett mit seinem neuen Programm zwischen Klassik und Pop.",
+      "preis": "ab 58,50 €",
+      "draussen": "drinnen",
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+    },
+    {
+      "id": "aida-friends-charity-geburtstagskonzert-u-a-revolverheld-lea",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "18:30",
+      "titel": "AIDA & Friends – Charity-Geburtstagskonzert (u. a. Revolverheld, LEA, Mark Forster)",
+      "ort": "Elbphilharmonie, Großer Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Benefizkonzert zum Geburtstag mit mehreren Pop-Acts.",
+      "preis": "Preis nicht genannt, nur noch wenige Tickets",
+      "draussen": "drinnen",
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+    },
+    {
+      "id": "federico-colli-klavierabend-pianomania-elbphilharmonie-klein",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "19:30",
+      "titel": "Federico Colli – Klavierabend „Pianomania“",
+      "ort": "Elbphilharmonie, Kleiner Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Klavierrecital mit Scarlatti, Janáček und Mozart.",
+      "preis": "ab 30 €",
+      "draussen": "drinnen",
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+    },
+    {
+      "id": "ferdinand-von-schirach-der-stille-freund-laeiszhalle-grosser",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "20:00",
+      "titel": "Ferdinand von Schirach: „Der stille Freund“",
+      "ort": "Laeiszhalle, Großer Saal",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Lesung des Autors.",
+      "preis": "ab 23,95 €",
+      "draussen": "drinnen",
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+    },
+    {
+      "id": "dresdner-kreuzchor-reger-bach-britten-elbphilharmonie-grosse",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "19:00",
+      "titel": "Dresdner Kreuzchor (Reger, Bach, Britten)",
+      "ort": "Elbphilharmonie, Großer Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "A-cappella-Programm des Knabenchors aus Dresden.",
+      "preis": "ab 59 €",
+      "draussen": "drinnen",
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+    },
+    {
+      "id": "sanam-festival-libanon-elbphilharmonie-kleiner-saal",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "19:30",
+      "titel": "Sanam (Festival Libanon)",
+      "ort": "Elbphilharmonie, Kleiner Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Libanesische Band im Rahmen des Festivals Libanon.",
+      "preis": "25 €",
+      "draussen": "drinnen",
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+    },
+    {
+      "id": "die-feisten-moskito-laeiszhalle-grosser-saal",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "20:00",
+      "titel": "Die Feisten: „Moskito“",
+      "ort": "Laeiszhalle, Großer Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Pop-Konzert der Hamburger Band.",
+      "preis": "ab 44,35 €",
+      "draussen": "drinnen",
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+    },
+    {
+      "id": "farah-kaddour-solo-tilt-trio-festival-libanon-elbphilharmoni",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "18:30",
+      "titel": "Farah Kaddour solo & Tilt Trio (Festival Libanon)",
+      "ort": "Elbphilharmonie, Kleiner Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Libanesische Musik zwischen Jazz und Tradition.",
+      "preis": "32 €",
+      "draussen": "drinnen",
+      "link": "https://www.elbphilharmonie.de/en/whats-on/30-10-2026/KON"
+    },
+    {
+      "id": "rayess-bek-joan-baz-festival-libanon-elbphilharmonie-kleiner",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "21:30",
+      "titel": "Rayess Bek & Joan Baz (Festival Libanon)",
+      "ort": "Elbphilharmonie, Kleiner Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Konzert im Rahmen des Festivals Libanon.",
+      "preis": "25 €",
+      "draussen": "drinnen",
+      "link": "https://www.elbphilharmonie.de/en/whats-on/30-10-2026/KON"
+    },
+    {
+      "id": "charbel-rouhana-festival-libanon-elbphilharmonie-kleiner-saa",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "18:00",
+      "titel": "Charbel Rouhana (Festival Libanon)",
+      "ort": "Elbphilharmonie, Kleiner Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Oud-Konzert im Rahmen des Festivals Libanon.",
+      "preis": "Preis nicht genannt, nur noch wenige Tickets",
+      "draussen": "drinnen",
+      "link": "https://www.elbphilharmonie.de/en/whats-on/31-10-2026/KON"
+    },
+    {
+      "id": "bellows-across-borders-laeiszhalle-grosser-saal",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "19:00",
+      "titel": "Bellows Across Borders",
+      "ort": "Laeiszhalle, Großer Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Akkordeon-Konzertabend.",
+      "preis": "28 €",
+      "draussen": "drinnen",
+      "link": "https://www.elbphilharmonie.de/en/whats-on/31-10-2026/KON"
+    },
+    {
+      "id": "neue-philharmonie-hamburg-bach-laeiszhalle-kleiner-saal",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "20:00",
+      "titel": "Neue Philharmonie Hamburg (Bach)",
+      "ort": "Laeiszhalle, Kleiner Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Bach-Programm der Neuen Philharmonie Hamburg.",
+      "preis": "ab 17,45 €",
+      "draussen": "drinnen",
+      "link": "https://www.elbphilharmonie.de/en/whats-on/31-10-2026/KON"
+    },
+    {
+      "id": "kammersinfonie-hamburg-valentin-annerbo-laeiszhalle-grosser",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "11:00",
+      "titel": "Kammersinfonie Hamburg / Valentin Annerbo",
+      "ort": "Laeiszhalle, Großer Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Sonntagvormittags-Konzert der Kammersinfonie.",
+      "preis": "30 €",
+      "draussen": "drinnen",
+      "link": "https://www.elbphilharmonie.de/en/whats-on/01-11-2026/EPHH",
+      "unsicher": "Link zeigt Elphi-Liste, Laeiszhalle-Termin dort aus Gesamtliste"
+    },
+    {
+      "id": "step-into-dabke-tanzen-auf-der-plaza-festival-libanon-elbphi",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "15:00",
+      "titel": "Step Into Dabke – Tanzen auf der Plaza (Festival Libanon)",
+      "ort": "Elbphilharmonie Plaza",
+      "region": "HH",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Gemeinsames Tanzen des Dabke auf der Plaza.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.elbphilharmonie.de/en/whats-on/01-11-2026/EPHH"
+    },
+    {
+      "id": "gustav-mahler-auferstehen-elbphilharmonie-grosser-saal",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "18:00",
+      "titel": "Gustav Mahler: Auferstehen",
+      "ort": "Elbphilharmonie, Großer Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Konzertabend mit Mahlers Auferstehungssinfonie.",
+      "preis": "ab 55 €",
+      "draussen": "drinnen",
+      "link": "https://www.elbphilharmonie.de/en/whats-on/01-11-2026/EPHH"
+    },
+    {
+      "id": "tania-saleh-festival-libanon-elbphilharmonie-kleiner-saal",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "19:30",
+      "titel": "Tania Saleh (Festival Libanon)",
+      "ort": "Elbphilharmonie, Kleiner Saal",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Libanesische Sängerin und Songwriterin.",
+      "preis": "28 €",
+      "draussen": "drinnen",
+      "link": "https://www.elbphilharmonie.de/en/whats-on/01-11-2026/EPHH"
+    },
+    {
+      "id": "die-kameliendame-ballett-john-neumeier-staatsoper-hamburg",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "19:00",
+      "titel": "Die Kameliendame (Ballett, John Neumeier)",
+      "ort": "Staatsoper Hamburg",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Neumeiers Ballett nach Dumas zur Musik von Chopin, ab 14 Jahren.",
+      "preis": "6–112 €",
+      "draussen": "drinnen",
+      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender"
+    },
+    {
+      "id": "wunderland-ballett-alexei-ratmansky-staatsoper-hamburg",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "19:30",
+      "titel": "Wunderland (Ballett, Alexei Ratmansky)",
+      "ort": "Staatsoper Hamburg",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Ballett nach „Alice im Wunderland“, Familieneinführung 18:45.",
+      "preis": "7–134 €",
+      "draussen": "drinnen",
+      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender"
+    },
+    {
+      "id": "wunderland-ballett-alexei-ratmansky-staatsoper-hamburg-2",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "18:00",
+      "titel": "Wunderland (Ballett, Alexei Ratmansky)",
+      "ort": "Staatsoper Hamburg",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Ballett nach „Alice im Wunderland“.",
+      "preis": "8–146 €, nur noch Restkarten",
+      "draussen": "drinnen",
+      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender"
+    },
+    {
+      "id": "die-walkuere-wagner-staatsoper-hamburg",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "16:00",
+      "titel": "Die Walküre (Wagner)",
+      "ort": "Staatsoper Hamburg",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Zweiter Abend von Wagners „Ring“, ab 16 Jahren.",
+      "preis": "8–146 €",
+      "draussen": "drinnen",
+      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender"
+    },
+    {
+      "id": "dalle-due-alle-tre-musikalische-reise-1-italien-staatsoper-h",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "14:00",
+      "titel": "Dalle due alle tre – Musikalische Reise #1 Italien",
+      "ort": "Staatsoper Hamburg, Eingangsfoyer",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Kurzes Opernprogramm im Foyer.",
+      "preis": "kostenlos",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender"
+    },
+    {
+      "id": "im-aufschwung-xviii-bundesjugendballett-john-neumeier-ernst",
+      "daten": [
+        "2026-10-27",
+        "2026-10-28"
+      ],
+      "zeit": "19:30",
+      "titel": "Im Aufschwung XVIII (Bundesjugendballett, John Neumeier)",
+      "ort": "Ernst Deutsch Theater, Mundsburg",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Abend des Bundesjugendballetts, ab 12 Jahren.",
+      "preis": "Preis nicht genannt (nur beim Veranstalter)",
+      "draussen": "drinnen",
+      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender"
+    },
+    {
+      "id": "zuenzle-thalia-gaussstrasse-box-ottensen",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "20:00",
+      "titel": "Zünzle",
+      "ort": "Thalia Gaußstraße Box, Ottensen",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Produktion in der Gaußstraße Box, ca. 80 Minuten.",
+      "preis": "ab 22 €, erm. ab 11 €",
+      "draussen": "drinnen",
+      "link": "https://www.thalia-theater.de/de/termine"
+    },
+    {
+      "id": "deutsches-haus-thalia-theater-alstertor",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "20:00",
+      "titel": "Deutsches Haus",
+      "ort": "Thalia Theater, Alstertor",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Schauspiel, ca. 2 Stunden.",
+      "preis": "ab 19 €, erm. ab 11 €",
+      "draussen": "drinnen",
+      "link": "https://www.thalia-theater.de/de/termine"
+    },
+    {
+      "id": "baracke-thalia-gaussstrasse-ottensen",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "20:00",
+      "titel": "Baracke",
+      "ort": "Thalia Gaußstraße, Ottensen",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Schauspiel, ca. 2:20 Std.",
+      "preis": "ab 31 €, erm. ab 11 €",
+      "draussen": "drinnen",
+      "link": "https://www.thalia-theater.de/de/termine"
+    },
+    {
+      "id": "the-boys-are-kissing-thalia-theater-alstertor",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "20:00",
+      "titel": "The Boys Are Kissing",
+      "ort": "Thalia Theater, Alstertor",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Schauspiel, ca. 1:45 Std.",
+      "preis": "ab 17 €, erm. ab 11 €",
+      "draussen": "drinnen",
+      "link": "https://www.thalia-theater.de/de/termine"
+    },
+    {
+      "id": "der-koenig-stirbt-thalia-gaussstrasse-box-ottensen",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "20:00",
+      "titel": "Der König stirbt",
+      "ort": "Thalia Gaußstraße Box, Ottensen",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Stück nach Ionesco, ca. 90 Minuten.",
+      "preis": "ab 22 €, erm. ab 11 €",
+      "draussen": "drinnen",
+      "link": "https://www.thalia-theater.de/de/termine"
+    },
+    {
+      "id": "der-menschenfeind-thalia-theater-alstertor",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "20:00",
+      "titel": "Der Menschenfeind",
+      "ort": "Thalia Theater, Alstertor",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Molière-Inszenierung, ca. 2:15 Std., Einführung 19:30.",
+      "preis": "ab 23 €, erm. ab 11 €",
+      "draussen": "drinnen",
+      "link": "https://www.thalia-theater.de/de/termine"
+    },
+    {
+      "id": "zukunft-der-demokratie-14-gespraech-mit-lukas-baerfuss-deuts",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "19:30",
+      "titel": "Zukunft der Demokratie #14: Gespräch mit Lukas Bärfuss",
+      "ort": "Deutsches Schauspielhaus, St. Georg",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Gesprächsreihe im großen Haus.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://schauspielhaus.de/spielplan"
+    },
+    {
+      "id": "olli-schulz-allein-in-deiner-stadt-gastspiel-deutsches-schau",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "20:00",
+      "titel": "Olli Schulz: „Allein in deiner Stadt“ (Gastspiel)",
+      "ort": "Deutsches Schauspielhaus, St. Georg",
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Gastspiel des Musikers und Entertainers im großen Haus.",
+      "preis": "Restkarten, Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://schauspielhaus.de/spielplan"
+    },
+    {
+      "id": "soci-t-anonyme-deutsches-schauspielhaus-malersaal",
+      "daten": [
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30"
+      ],
+      "zeit": "19:30",
+      "titel": "Société Anonyme",
+      "ort": "Deutsches Schauspielhaus, MalerSaal",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Produktion im MalerSaal. Mi ausverkauft, Do und Fr Restkarten.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://schauspielhaus.de/spielplan"
+    },
+    {
+      "id": "turbostaat-nach-fest-kommt-ab-deutsches-schauspielhaus-st-ge",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "20:00",
+      "titel": "TURBOSTAAT – Nach fest kommt ab",
+      "ort": "Deutsches Schauspielhaus, St. Georg",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Punkrock-Abend der Band im Schauspielhaus.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://schauspielhaus.de/spielplan"
+    },
+    {
+      "id": "laios-deutsches-schauspielhaus-st-georg",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "20:00",
+      "titel": "Laios",
+      "ort": "Deutsches Schauspielhaus, St. Georg",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Inszenierung im großen Haus.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://schauspielhaus.de/spielplan"
+    },
+    {
+      "id": "die-moewe-deutsches-schauspielhaus-st-georg",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "19:30",
+      "titel": "Die Möwe",
+      "ort": "Deutsches Schauspielhaus, St. Georg",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Tschechow-Inszenierung, Einführung 19:00.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://schauspielhaus.de/spielplan"
+    },
+    {
+      "id": "re-opening-halloween-special-international-zombies-united-ka",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "19:00",
+      "titel": "Re-Opening Halloween Special: International Zombies United",
+      "ort": "Kampnagel, Migrantpolitan, Winterhude",
+      "region": "HH",
+      "kategorie": "Party",
+      "beschreibung": "Halloween-Abend zur Wiedereröffnung des Migrantpolitan.",
+      "preis": "Eintritt frei",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://kampnagel.de/kalender"
+    },
+    {
+      "id": "jack-halberstam-anarchitecture-after-everything-keynote-kamp",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "20:00",
+      "titel": "Jack Halberstam: „Anarchitecture After Everything“ (Keynote)",
+      "ort": "Kampnagel, k6, Winterhude",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Keynote des Queer-Theoretikers.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://kampnagel.de/kalender"
+    },
+    {
+      "id": "horwitz-pelosi-lambertz-voyager-sound-archiv-1-kampnagel-gel",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "22:00",
+      "titel": "Horwitz / Pelosi / Lambertz: Voyager Sound Archiv #1",
+      "ort": "Kampnagel, Gelände, Winterhude",
+      "region": "HH",
+      "kategorie": "Party",
+      "beschreibung": "Elektronik-Abend auf dem Gelände.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://kampnagel.de/kalender"
+    },
+    {
+      "id": "dat-schietwedder-pack-ohnsorg-theater-heidi-kabel-platz",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "19:30",
+      "titel": "Dat Schietwedder-Pack",
+      "ort": "Ohnsorg-Theater, Heidi-Kabel-Platz",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Plattdeutsches Stück im Großen Haus.",
+      "preis": "ab 56 €",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/hamburg/veranstaltungen/theater-buehne-comedy-musicals/",
+      "unsicher": "nur Aggregator, Ohnsorg-Spielplan nicht aktuell abrufbar"
+    },
+    {
+      "id": "freche-moewe-stand-up-comedy-indra-grosse-freiheit-st-pauli",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "19:00",
+      "titel": "Freche Möwe – Stand-up Comedy",
+      "ort": "Indra, Große Freiheit, St. Pauli",
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Stand-up-Abend im Indra.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/hamburg/comedy-kabarett/",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "vince-ebert-vince-of-change-alma-hoppes-lustspielhaus-eppend",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "20:00",
+      "titel": "Vince Ebert: „Vince of Change“",
+      "ort": "Alma Hoppes Lustspielhaus, Eppendorf",
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Wissenschaftskabarett des Physikers.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.almahoppe.de/Spielplan"
+    },
+    {
+      "id": "cueneyt-akan-drama-king-markthalle-hamburg-hauptbahnhof",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "20:00",
+      "titel": "Cüneyt Akan: „Drama King“",
+      "ort": "Markthalle Hamburg, Hauptbahnhof",
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Comedy-Programm in der Markthalle.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.markthalle-hamburg.de/",
+      "unsicher": "Uhrzeit nur aus Aggregator"
+    },
+    {
+      "id": "simone-solga-sie-kennen-mich-alma-hoppes-lustspielhaus-eppen",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "20:00",
+      "titel": "Simone Solga: „Sie kennen mich“",
+      "ort": "Alma Hoppes Lustspielhaus, Eppendorf",
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Politisches Kabarett.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.almahoppe.de/Spielplan"
+    },
+    {
+      "id": "english-comedy-grand-slam-indra-grosse-freiheit-st-pauli",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "20:00",
+      "titel": "English Comedy Grand Slam",
+      "ort": "Indra, Große Freiheit, St. Pauli",
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Englischsprachiger Stand-up-Wettbewerb.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/hamburg/comedy-kabarett/",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "michael-frowin-das-vorspiel-theaterschiff-hamburg-holzhafen",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "19:30",
+      "titel": "Michael Frowin: „Das Vorspiel“",
+      "ort": "Theaterschiff Hamburg, Holzhafen",
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Kabarett auf dem Theaterschiff.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/hamburg/comedy-kabarett/",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "thomas-freitag-rueckzug-ueber-die-minen-der-ebene-alma-hoppe",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "20:00",
+      "titel": "Thomas Freitag: „Rückzug über die Minen der Ebene“",
+      "ort": "Alma Hoppes Lustspielhaus, Eppendorf",
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Kabarettprogramm.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.almahoppe.de/Spielplan"
+    },
+    {
+      "id": "werner-koczwara-am-achten-tag-schuf-gott-den-rechtsanwalt-al",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "20:00",
+      "titel": "Werner Koczwara: „Am achten Tag schuf Gott den Rechtsanwalt“",
+      "ort": "Alma Hoppes Lustspielhaus, Eppendorf",
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Comedy-Kabarett zum Thema Recht.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.almahoppe.de/Spielplan"
+    },
+    {
+      "id": "werner-koczwara-einer-flog-uebers-ordnungsamt-alma-hoppes-lu",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "20:00",
+      "titel": "Werner Koczwara: „Einer flog übers Ordnungsamt“",
+      "ort": "Alma Hoppes Lustspielhaus, Eppendorf",
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Zweites Koczwara-Programm am Wochenende.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.almahoppe.de/Spielplan"
+    },
+    {
+      "id": "frank-luedecke-traeumt-weiter-alma-hoppes-lustspielhaus-eppe",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "19:00",
+      "titel": "Frank Lüdecke: „Träumt weiter!“",
+      "ort": "Alma Hoppes Lustspielhaus, Eppendorf",
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Politisches Kabarett.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.almahoppe.de/Spielplan"
+    },
+    {
+      "id": "placebo-30th-anniversary-tour-barclays-arena-bahrenfeld",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "20:00",
+      "titel": "Placebo – 30th Anniversary Tour",
+      "ort": "Barclays Arena, Bahrenfeld",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Alternative-Rock-Band auf Jubiläumstour.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/location/hamburg/barclays-arena-8pzvCj1Gzp"
+    },
+    {
+      "id": "chris-norman-band-lifelines-tour-2026-barclays-arena-bahrenf",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "19:30",
+      "titel": "Chris Norman & Band – Lifelines Tour 2026",
+      "ort": "Barclays Arena, Bahrenfeld",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Der Smokie-Sänger mit Band.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/location/hamburg/barclays-arena-8pzvCj1Gzp"
+    },
+    {
+      "id": "nico-santos-arena-tour-2026-barclays-arena-bahrenfeld",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "19:30",
+      "titel": "Nico Santos – Arena Tour 2026",
+      "ort": "Barclays Arena, Bahrenfeld",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Pop-Arenashow.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/location/hamburg/barclays-arena-8pzvCj1Gzp"
+    },
+    {
+      "id": "wahnsinn-die-show-wolfgang-petry-party-barclays-arena-bahren",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "19:30",
+      "titel": "WAHNSINN! Die Show – Wolfgang-Petry-Party",
+      "ort": "Barclays Arena, Bahrenfeld",
+      "region": "HH",
+      "kategorie": "Party",
+      "beschreibung": "Tribute-Partyshow zu Wolfgang Petry am Halloween-Abend.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/location/hamburg/barclays-arena-8pzvCj1Gzp"
+    },
+    {
+      "id": "tokio-hotel-arena-tour-2026-barclays-arena-bahrenfeld",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "20:00",
+      "titel": "Tokio Hotel – Arena Tour 2026",
+      "ort": "Barclays Arena, Bahrenfeld",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Arena-Tour der Band, Support Nia Ashleigh.",
+      "preis": "78,90–95,40 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/hamburg/konzerte/"
+    },
+    {
+      "id": "deep-purple-sporthalle-hamburg-winterhude",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "19:00",
+      "titel": "Deep Purple",
+      "ort": "Sporthalle Hamburg, Winterhude",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Hard-Rock-Klassiker live.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/location/hamburg/sporthalle-hamburg-78xYCY1hc.html"
+    },
+    {
+      "id": "little-big-european-tour-2026-grosse-freiheit-36-st-pauli",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "20:00",
+      "titel": "Little Big – European Tour 2026",
+      "ort": "Große Freiheit 36, St. Pauli",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Rave-Pop-Band auf Europatour.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/location/hamburg/grosse-freiheit-36-JjR5dWWX0v.html"
+    },
+    {
+      "id": "angine-de-poitrine-grosse-freiheit-36-st-pauli",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "20:00",
+      "titel": "Angine de Poitrine",
+      "ort": "Große Freiheit 36, St. Pauli",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Konzert der Math-Rock-Band.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/location/hamburg/grosse-freiheit-36-JjR5dWWX0v.html"
+    },
+    {
+      "id": "dj-krush-support-sega-lee-knust-st-pauli",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "20:00",
+      "titel": "DJ Krush (Support: Sega Lee)",
+      "ort": "Knust, St. Pauli",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Japanischer Trip-Hop- und Hip-Hop-DJ.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.knusthamburg.de/"
+    },
+    {
+      "id": "codefendants-support-jakobs-castle-knust-st-pauli",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "21:00",
+      "titel": "Codefendants (Support: Jakobs Castle)",
+      "ort": "Knust, St. Pauli",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Punk-Hip-Hop-Crossover im Club.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.knusthamburg.de/"
+    },
+    {
+      "id": "saults-knust-st-pauli",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "21:00",
+      "titel": "Saults",
+      "ort": "Knust, St. Pauli",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Konzert im Knust.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.knusthamburg.de/"
+    },
+    {
+      "id": "teenage-fanclub-support-euros-childs-knust-st-pauli",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "21:00",
+      "titel": "Teenage Fanclub (Support: Euros Childs)",
+      "ort": "Knust, St. Pauli",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Schottische Indie-Pop-Band.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.knusthamburg.de/"
+    },
+    {
+      "id": "cumbia-de-los-muertos-kumbia-boruka-knust-st-pauli",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "21:00",
+      "titel": "Cumbia de los Muertos: Kumbia Boruka",
+      "ort": "Knust, St. Pauli",
+      "region": "HH",
+      "kategorie": "Party",
+      "beschreibung": "Cumbia-Konzert und Party zum Día de los Muertos.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.knusthamburg.de/"
+    },
+    {
+      "id": "heartphones-halloween-special-knust-st-pauli",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "23:00",
+      "titel": "Heartphones Halloween Special",
+      "ort": "Knust, St. Pauli",
+      "region": "HH",
+      "kategorie": "Party",
+      "beschreibung": "Halloween-Clubnacht im Knust.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.knusthamburg.de/"
+    },
+    {
+      "id": "wolves-in-the-throne-room-kings-of-tiamant-uebel-gefaehrlich",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "20:30",
+      "titel": "Wolves in the Throne Room – Kings of Tiamant",
+      "ort": "Uebel & Gefährlich, Feldstraße",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Black-Metal-Band im Bunker, Einlass 19:30.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.uebelundgefaehrlich.com/"
+    },
+    {
+      "id": "20-jahre-bonaparte-uebel-gefaehrlich-feldstrasse",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "20:00",
+      "titel": "20 Jahre Bonaparte",
+      "ort": "Uebel & Gefährlich, Feldstraße",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Jubiläumsshow der Berliner Band, Einlass 19:00.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.uebelundgefaehrlich.com/"
+    },
+    {
+      "id": "eli-preiss-uebel-gefaehrlich-feldstrasse",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "19:30",
+      "titel": "Eli Preiss",
+      "ort": "Uebel & Gefährlich, Feldstraße",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Deutschrap-Konzert, Einlass 19:00.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.uebelundgefaehrlich.com/"
+    },
+    {
+      "id": "uche-yara-uebel-gefaehrlich-turmzimmer",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "20:00",
+      "titel": "Uche Yara",
+      "ort": "Uebel & Gefährlich, Turmzimmer",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Konzert im kleinen Turmzimmer, Einlass 19:00.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.uebelundgefaehrlich.com/"
+    },
+    {
+      "id": "the-kilkennys-thank-you-for-the-days-tour-2026-fabrik-ottens",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "20:00",
+      "titel": "The Kilkennys – Thank You for the Days Tour 2026",
+      "ort": "Fabrik, Ottensen",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Irish-Folk-Rock-Band, Einlass 19:00.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.fabrik.de/"
+    },
+    {
+      "id": "tanzwut-live-tour-2026-bahnhof-pauli-st-pauli",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "20:00",
+      "titel": "Tanzwut – Live Tour 2026",
+      "ort": "Bahnhof Pauli, St. Pauli",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Mittelalter-Rock-Band.",
+      "preis": "44,80 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/hamburg/konzerte/",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "kai-strauss-electric-blues-nica-jazz-club-hamburg",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "20:00",
+      "titel": "Kai Strauss & Electric Blues",
+      "ort": "Nica Jazz Club, Hamburg",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Bluesabend im Jazzclub.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/hamburg/konzerte/",
+      "unsicher": "nur Aggregator, 0-€-Angabe evtl. fehlender Preis"
+    },
+    {
+      "id": "zs-zs-einlass-gruenspan-interimsstandort-lagerstrasse-11-hal",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "19:00",
+      "titel": "ZSÁ ZSÁ (Einlass)",
+      "ort": "Gruenspan, Interimsstandort Lagerstraße 11, Halle D",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Konzert am Interimsstandort des Gruenspan, Zeit ist die Einlasszeit.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.gruenspan.de/"
+    },
+    {
+      "id": "ndr-voicexchange-einlass-gruenspan-interimsstandort-lagerstr",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "20:00",
+      "titel": "NDR VoiceXchange (Einlass)",
+      "ort": "Gruenspan, Interimsstandort Lagerstraße 11, Halle D",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Vokalkonzert am Interimsstandort, Zeit ist die Einlasszeit.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.gruenspan.de/"
+    },
+    {
+      "id": "the-home-team-einlass-gruenspan-interimsstandort-lagerstrass",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "19:00",
+      "titel": "The Home Team (Einlass)",
+      "ort": "Gruenspan, Interimsstandort Lagerstraße 11, Halle D",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Konzert am Interimsstandort, Zeit ist die Einlasszeit.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.gruenspan.de/"
+    },
+    {
+      "id": "citizen-plus-modern-color-einlass-gruenspan-interimsstandort",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "19:00",
+      "titel": "Citizen (plus Modern Color) (Einlass)",
+      "ort": "Gruenspan, Interimsstandort Lagerstraße 11, Halle D",
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Post-Hardcore-Band mit Support, Zeit ist die Einlasszeit.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.gruenspan.de/"
+    },
+    {
+      "id": "hollywood-horror-halloween-at-pelican-pelican-hamburg",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "20:00",
+      "titel": "Hollywood Horror – Halloween at Pelican",
+      "ort": "Pelican, Hamburg",
+      "region": "HH",
+      "kategorie": "Party",
+      "beschreibung": "Halloween-Party am Freitag vor Halloween.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/hamburg/partys/",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "halloween-rave-festival-xxl-halloween-party-25-club-hamburg",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "22:00",
+      "titel": "Halloween Rave Festival / XXL Halloween Party",
+      "ort": "25 Club, Hamburg",
+      "region": "HH",
+      "kategorie": "Party",
+      "beschreibung": "Mehrere Halloween-Partys im 25 Club am Freitag.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/hamburg/partys/",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "winterdeck-auf-dem-spielbudenplatz-spielbudenplatz-21-22-st",
+      "daten": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "Mo–Fr ab 16 Uhr, Sa 31.10. ab 14 Uhr, So 1.11. ab 16 Uhr",
+      "ganztags": true,
+      "ganzeWoche": true,
+      "titel": "Winterdeck auf dem Spielbudenplatz",
+      "ort": "Spielbudenplatz 21–22, St. Pauli",
+      "region": "HH",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Überdachte Winterhütte mit Getränken auf der Bühne vor dem Operettenhaus, Laufzeit laut Kalender 23.10. bis 23.12.2026.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/winterdeck-auf-dem-spielbudenplatz/"
+    },
+    {
+      "id": "grosse-lichterfahrt-hamburg-bei-nacht-landungsbruecken-anleg",
+      "daten": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "täglich 19:00 (Mo), 18:00 (Di–So)",
+      "zeiten": {
+        "2026-10-26": "19:00"
+      },
+      "ganzeWoche": true,
+      "titel": "Große Lichterfahrt – Hamburg bei Nacht",
+      "ort": "Landungsbrücken (Anleger St. Pauli)",
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Rund einstündige Abendfahrt durch den beleuchteten Hafen, die Speicherstadt-Route hängt von der Tide ab. Startzeit laut Kalender ab 27.10. 18 Uhr.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/grosse-lichterfahrt/",
+      "unsicher": "Mo 26.10. 19 Uhr nur über regioactive gesehen"
+    },
+    {
+      "id": "the-fans-strike-back-star-wars-fanausstellung-halle-7-bahren",
+      "daten": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "täglich ab 10 Uhr",
+      "ganztags": true,
+      "ganzeWoche": true,
+      "titel": "The Fans Strike Back – Star-Wars-Fanausstellung",
+      "ort": "Halle 7, Bahrenfeld",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Ausstellung rund um Star-Wars-Fankultur, an allen Tagen der Woche mit Beginn 10 Uhr gelistet.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/ausstellung/the-fans-strike-back-exhibition-hamburg-halle-7-2026-10-30-tickets-2YrNnDMk2f",
+      "unsicher": "nur Aggregator (regioactive), Laufzeit nicht geprüft"
+    },
+    {
+      "id": "von-monet-bis-picasso-juedische-kunstsammler-innen-in-deutsc",
+      "daten": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "täglich 11–19, Do bis 21",
+      "ganztags": true,
+      "ganzeWoche": true,
+      "titel": "„Von Monet bis Picasso. Jüdische Kunstsammler:innen in Deutschland“",
+      "ort": "Bucerius Kunst Forum, Alter Wall 12",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Moderne-Ausstellung zu jüdischen Sammlungen, läuft vom 11.9.2026 bis 29.3.2027. Am Sa 31.10. freier Eintritt (#seeforfree, 11–19 Uhr).",
+      "preis": "Preis nicht genannt, Sa 31.10. frei",
+      "draussen": "drinnen",
+      "link": "https://buceriuskunstforum.de/"
+    },
+    {
+      "id": "hamburger-kunsthalle-carrie-yamaoka-david-novros-this-is-the",
+      "daten": [
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "ab 10 Uhr (Mo geschlossen), Do bis 21 Uhr",
+      "ganztags": true,
+      "ganzeWoche": true,
+      "titel": "Hamburger Kunsthalle: Carrie Yamaoka, David Novros, „This is the Modern World“",
+      "ort": "Hamburger Kunsthalle, Glockengießerwall",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Laufende Schauen u. a. Carrie Yamaoka (bis 10.1.2027), David Novros (bis 21.2.2027) und „This is the Modern World“ (bis 30.5.2027). Am Sa 31.10. #seeforfree, mit Führungen.",
+      "preis": "Preis nicht geprüft, Sa 31.10. frei",
+      "draussen": "drinnen",
+      "link": "https://www.hamburger-kunsthalle.de/ausstellungen",
+      "unsicher": "Öffnungszeiten aus Vorwoche übernommen, Mo-Schließung nicht neu geprüft"
+    },
+    {
+      "id": "markk-museum-am-rothenbaum-markk-rothenbaumchaussee-64",
+      "daten": [
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "Di–So 10–18, Do bis 21",
+      "ganztags": true,
+      "ganzeWoche": true,
+      "titel": "MARKK – Museum am Rothenbaum",
+      "ort": "MARKK, Rothenbaumchaussee 64",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Völkerkundemuseum mit Dauer- und Sonderausstellungen. Am Sa 31.10. freier Eintritt (#seeforfree) ab 10 Uhr.",
+      "preis": "Preis nicht genannt, Sa 31.10. frei",
+      "draussen": "drinnen",
+      "link": "https://www.markk-hamburg.de/",
+      "unsicher": "aktuelle Sonderausstellung nicht geprüft"
+    },
+    {
+      "id": "mk-g-hella-jongerius-whispering-things-schubladenschau-4-tan",
+      "daten": [
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "Zeiten nicht geprüft, Mo geschlossen",
+      "ganztags": true,
+      "ganzeWoche": true,
+      "titel": "MK&G: Hella Jongerius „Whispering Things“, Schubladenschau #4 Tanz",
+      "ort": "Museum für Kunst und Gewerbe, Steintorplatz",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Hella Jongerius ist neu seit 23.10.2026 (bis 13.6.2027), dazu „Schubladenschau #4: Tanz“ und Sara Sallam „Fürsorge“. „Minimöbel: Stühle für Kinder“ endet am 1.11.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.mkg-hamburg.de/ausstellungen",
+      "unsicher": "Öffnungszeiten nicht auf der Seite, Mo zu laut Seitenanzeige"
+    },
+    {
+      "id": "altonaer-museum-aiga-rasch-und-ihre-detektive-altonaer-museu",
+      "daten": [
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "Zeiten nicht geprüft",
+      "ganztags": true,
+      "ganzeWoche": true,
+      "titel": "Altonaer Museum: „Aiga Rasch und ihre Detektive“",
+      "ort": "Altonaer Museum, Museumstraße 23",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Illustrationen der Cover-Künstlerin der „Drei ???“, läuft bis 14.3.2027. Am Sa 31.10. freier Eintritt (#seeforfree).",
+      "preis": "Preis nicht geprüft, Sa 31.10. frei",
+      "draussen": "drinnen",
+      "link": "https://shmh.de/de/ausstellungen",
+      "unsicher": "Öffnungszeiten (Vorwoche: ab 10 Uhr, Di zu) nicht neu bestätigt"
+    },
+    {
+      "id": "ernst-barlach-haus-ausstellung-zu-joachim-ringelnatz-eroeffn",
+      "daten": [
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "Zeiten nicht geprüft",
+      "ganztags": true,
+      "ganzeWoche": true,
+      "titel": "Ernst Barlach Haus: Ausstellung zu Joachim Ringelnatz (Eröffnung 25.10.) und „Reichlich Barlach“",
+      "ort": "Ernst Barlach Haus, Jenischpark, Othmarschen",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Neue Ringelnatz-Schau, eröffnet am So 25.10. um 11 Uhr, dazu Werke aus der eigenen Sammlung.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.barlach-haus.de/",
+      "unsicher": "Laufzeit und Öffnungszeiten nicht auf der Startseite"
+    },
+    {
+      "id": "phoxxi-abdulhamid-kircher-rotting-from-within-akosua-viktori",
+      "daten": [
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-11-01"
+      ],
+      "zeit": "bis So 1.11. (letzte Tage), Zeiten nicht geprüft",
+      "ganztags": true,
+      "ganzeWoche": true,
+      "titel": "PHOXXI: Abdulhamid Kircher „Rotting From Within“ / Akosua Viktoria Adu-Sanyah (letzte Tage)",
+      "ort": "PHOXXI – Haus der Photographie, Deichtorstraße 1–2",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Fotografie-Doppelschau im temporären Haus der Photographie, läuft laut Deichtorhallen nur noch bis 1.11.2026.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.deichtorhallen.de/de/ausstellungen",
+      "unsicher": "Öffnungszeiten nicht geprüft"
+    },
+    {
+      "id": "speicherstadt-und-hafencity-erlebnistour-treffpunkt-u-baumwa",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "15:00",
+      "titel": "Speicherstadt- und HafenCity-Erlebnistour",
+      "ort": "Treffpunkt U Baumwall",
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Geführter Rundgang durch Speicherstadt und HafenCity. Auch Di, Mi und So um 15 Uhr gelistet.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.regioactive.de/freizeit/erlebnistour-speicherstadt-und-hafencity-hamburg-u-bahn-station-baumwall-u3-2026-11-01-tickets-2pXjN1TRCB",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "alster-rundfahrt-mit-rondeelteich-dampfschiff-st-georg-jungf",
+      "daten": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29"
+      ],
+      "zeit": "12:45",
+      "titel": "Alster-Rundfahrt mit Rondeelteich (Dampfschiff St. Georg)",
+      "ort": "Jungfernstieg",
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Rundfahrt mit dem historischen Dampfschiff über die Alster. Am So 1.11. um 14 Uhr, dazu um 11:15 Alster-Kanalfahrt.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.regioactive.de/freizeit/alster-rundfahrt-mit-rondeelteich-dampfschiff-st-georg-hamburg-apos-2026-10-28-tickets-pG43BD09X6",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "planetarium-die-drei-das-dorf-der-teufel-musik-kultur-planet",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "17:45",
+      "titel": "Planetarium: Die drei ??? – Das Dorf der Teufel (Musik & Kultur)",
+      "ort": "Planetarium Hamburg, Stadtpark",
+      "region": "HH",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Hörspiel-Show unter der Kuppel, laut Programmseite einzige Abendshow am 26.10.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.planetarium-hamburg.de/programm",
+      "unsicher": "Seite nennt Montag sonst als Ruhetag"
+    },
+    {
+      "id": "isemarkt-unter-dem-u3-viadukt-isestrasse-harvestehude",
+      "daten": [
+        "2026-10-27",
+        "2026-10-30"
+      ],
+      "zeit": "08:30",
+      "titel": "Isemarkt",
+      "ort": "unter dem U3-Viadukt, Isestraße, Harvestehude",
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Rund 200 Stände unter den Gleisen, Regeltermin Di und Fr.",
+      "preis": "kostenlos",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/isemarkt/",
+      "unsicher": "Regeltermin, für diese Woche nicht einzeln bestätigt"
+    },
+    {
+      "id": "xfood-tour-st-pauli-sternschanze-kulinarisch-u-feldstrasse-b",
+      "daten": [
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-30",
+        "2026-11-01"
+      ],
+      "zeit": "14:00",
+      "zeiten": {
+        "2026-11-01": "11:00",
+        "2026-10-30": "14:00"
+      },
+      "titel": "XFood Tour – St. Pauli / Sternschanze kulinarisch",
+      "ort": "U Feldstraße bzw. U Sternschanze",
+      "region": "HH",
+      "kategorie": "Food",
+      "beschreibung": "Kulinarische Stadtteilführung mit Verkostungen. St. Pauli Di, Mi, Fr 14 Uhr, Sternschanze Fr und So 11 Uhr (Di, Mi 15 Uhr).",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.regioactive.de/freizeit/xfood-tour-st-pauli-kulinarisch-hamburg-u-bahn-station-feldstrasse-u3-2026-10-27-tickets-kgzw6KtSRS",
+      "unsicher": "nur Aggregator, Treffpunkte/Zeiten je Tag verschieden"
+    },
+    {
+      "id": "planetarium-aurora-im-reich-des-polarlichts-planetarium-hamb",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "17:30",
+      "titel": "Planetarium: Aurora – Im Reich des Polarlichts",
+      "ort": "Planetarium Hamburg, Stadtpark",
+      "region": "HH",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Fulldome-Show über Polarlichter.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/show/aurora-im-reich-des-polarlichts-hamburg-planetarium-2026-10-27-tickets-CFw3kNSgWc",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "st-pauli-nachtwaechter-treffpunkt-u-s-landungsbruecken",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "20:30",
+      "titel": "St. Pauli Nachtwächter",
+      "ort": "Treffpunkt U/S Landungsbrücken",
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Abendlicher Rundgang über St. Pauli mit Nachtwächter.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.regioactive.de/freizeit/st-pauli-nachtwaechter-hamburg-treffpunkt-u-s-bahn-landungsbruecken-2026-10-27-tickets-MVLssxPRzl",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "flohdom-trabrennbahn-bahrenfeld-trabrennbahn-luruper-chausse",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "09:00–15:00",
+      "titel": "Flohdom Trabrennbahn Bahrenfeld",
+      "ort": "Trabrennbahn, Luruper Chaussee 30",
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Großer Flohmarkt mit Trödel und Neuware. Laut hamburg.de im Oktober kein Sa-Termin am 31.10.",
+      "preis": "Eintritt frei",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.hamburg.de/freizeit/maerkte-und-messen/flohmaerkte/flohmaerkte-oktober-952822"
+    },
+    {
+      "id": "nachtflohmarkt-rindermarkthalle-vorplatz-rindermarkthalle-ne",
+      "daten": [
+        "2026-10-28",
+        "2026-10-29"
+      ],
+      "zeit": "18:00–22:00",
+      "titel": "Nachtflohmarkt Rindermarkthalle",
+      "ort": "Vorplatz Rindermarkthalle, Neuer Kamp 31, St. Pauli",
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Second-Hand-Stände am Abend, am Mi 28.10. und Do 29.10.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/nachtflohmarkt-rindermarkthalle-st-pauli-3/"
+    },
+    {
+      "id": "st-pauli-nachtmarkt-spielbudenplatz-st-pauli",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "16:00",
+      "titel": "St. Pauli Nachtmarkt",
+      "ort": "Spielbudenplatz, St. Pauli",
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Abendmarkt auf dem Spielbudenplatz, bei regioactive für den 28.10. gelistet.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.regioactive.de/konzert/st-pauli-nachtmarkt-hamburg-spielbudenplatz-2026-10-28-7HJRlnk2t3",
+      "unsicher": "nur Aggregator, als „Konzert“ einsortiert"
+    },
+    {
+      "id": "planetarium-sternenhimmel-ueber-hamburg-live-planetarium-ham",
+      "daten": [
+        "2026-10-28",
+        "2026-11-01"
+      ],
+      "zeit": "17:45",
+      "zeiten": {
+        "2026-11-01": "12:30"
+      },
+      "titel": "Planetarium: Sternenhimmel über Hamburg live",
+      "ort": "Planetarium Hamburg, Stadtpark",
+      "region": "HH",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Live-Führung durch den aktuellen Sternenhimmel. Zweiter Termin So 1.11. um 12:30.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/sonstige/sternenhimmel-ueber-hamburg-live-planetarium-2026-10-28-tickets-1KMh9RQbg6",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "speicherstadtrundgang-mit-museumsfuehrung-restaurant-vlet-sp",
+      "daten": [
+        "2026-10-28",
+        "2026-11-01"
+      ],
+      "zeit": "15:00",
+      "zeiten": {
+        "2026-11-01": "11:00"
+      },
+      "titel": "Speicherstadtrundgang mit Museumsführung",
+      "ort": "Restaurant VLET, Speicherstadt",
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Rundgang durch die Speicherstadt mit anschließender Museumsführung.",
+      "preis": "Preis nicht genannt",
+      "draussen": "beides",
+      "link": "https://www.regioactive.de/freizeit/speicherstadtrundgang-mit-museumsfuehrung-hamburg-restaurant-vlet-in-der-speicherstadt-2026-10-28-tickets-Yb9zd48r58",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "eroeffnung-hito-steyerl-deine-mudda-macht-show-deichtorhalle",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "19:00",
+      "titel": "Eröffnung Hito Steyerl: „Deine Mudda macht Show“",
+      "ort": "Deichtorhallen, Halle für aktuelle Kunst, Deichtorstraße 1–2",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Eröffnungsabend der Schau, die laut Deichtorhallen vom 30.10.2026 bis 29.3.2027 läuft.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.deichtorhallen.de/de/ausstellungen",
+      "unsicher": "Uhrzeit nur über regioactive-Tagesliste"
+    },
+    {
+      "id": "krimisalon-im-polizeimuseum-polizeimuseum-hamburg",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "19:00",
+      "titel": "KrimiSalon im Polizeimuseum",
+      "ort": "Polizeimuseum Hamburg",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Krimi-Abend im Polizeimuseum.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/events/17838/hamburg/veranstaltungen-party-konzerte/2026-10-29",
+      "unsicher": "nur Tagesliste von regioactive"
+    },
+    {
+      "id": "weinprobe-im-weinland-waterfront-weinland-waterfront-hamburg",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "19:00",
+      "titel": "Weinprobe im Weinland Waterfront",
+      "ort": "Weinland Waterfront, Hamburg",
+      "region": "HH",
+      "kategorie": "Food",
+      "beschreibung": "Weinverkostung, in der Tagesliste für den 29.10. gelistet.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/events/17838/hamburg/veranstaltungen-party-konzerte/2026-10-29",
+      "unsicher": "nur Tagesliste von regioactive"
+    },
+    {
+      "id": "gruseldinner-dr-jekyll-mr-hyde-museumsschiff-bleichen-hafen",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "19:00",
+      "titel": "Gruseldinner – Dr. Jekyll & Mr. Hyde",
+      "ort": "Museumsschiff Bleichen, Hafen",
+      "region": "HH",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Gruselkomödie in fünf Akten mit Vier-Gänge-Menü auf dem Museumsschiff.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/show/gruseldinner-dr-jekyll-mr-hyde-gruselkomoedie-in-5-akten-mit-4-gaengen-hamburg-museumsschiff-bleichen-2026-10-30-qfhcY9L0Np",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "kimchi-workshop-cookoon-eventkueche-hamburg",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "18:00",
+      "titel": "Kimchi-Workshop",
+      "ort": "cookoon Eventküche, Hamburg",
+      "region": "HH",
+      "kategorie": "Food",
+      "beschreibung": "Kochworkshop zum Selbermachen von Kimchi.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/sonstige/kimchi-workshop-hamburg-cookoon-eventkueche-2026-10-30-YZqp6NPl4L",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "seeforfree-freier-eintritt-in-rund-50-hamburger-museen-u-a-k",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "ab 11 Uhr (Museumszeiten je Haus)",
+      "ganztags": true,
+      "titel": "#seeforfree: freier Eintritt in rund 50 Hamburger Museen",
+      "ort": "u. a. Kunsthalle, Deichtorhallen, Altonaer Museum, MARKK, Bucerius Kunst Forum",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Am Reformationstag ist der Eintritt in rund 50 Museen frei, mit Führungen und Aktionen. Neu 2026 u. a. Botschaft der Wildtiere und Historische S-Bahn Hamburg.",
+      "preis": "kostenlos",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hamburg.de/kultur/ausstellung/museum/see-for-free-305606"
+    },
+    {
+      "id": "dfb-pokal-achtelfinale-hsv-frauen-1-fc-union-berlin-volkspar",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "13:00",
+      "titel": "DFB-Pokal Achtelfinale: HSV-Frauen – 1. FC Union Berlin",
+      "ort": "Volksparkstadion",
+      "region": "HH",
+      "kategorie": "Sport",
+      "beschreibung": "Pokalspiel der HSV-Frauen im Volksparkstadion. Tickets ab 12 €.",
+      "preis": "ab 12 €",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/dfb-pokal-achtelfinale-hsv-frauen-gegen-1-fc-union/",
+      "unsicher": "Anstoß 13 Uhr (Beschreibung/regioactive) vs. 12 Uhr (Detailfeld)"
+    },
+    {
+      "id": "mama-mafia-maskenball-halloween-party-fuer-erwachsene-endorp",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "18:00",
+      "titel": "Mama Mafia Maskenball – Halloween-Party für Erwachsene",
+      "ort": "Endorphin Eventkontor, Friesenweg 5, Ottensen",
+      "region": "HH",
+      "kategorie": "Party",
+      "beschreibung": "Halloween-Abend mit Maskenball-Charakter für Erwachsene.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/mama-mafia-maskenball-2026/"
+    },
+    {
+      "id": "kiez-kapitaen-reeperbahn-kieztour-spielbudenplatz-st-pauli",
+      "daten": [
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "13:30",
+      "titel": "Kiez-Kapitän Reeperbahn-Kieztour",
+      "ort": "Spielbudenplatz, St. Pauli",
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Geführter Rundgang über die Reeperbahn. Auch Mo 15:30 und Di 11 Uhr gelistet.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.regioactive.de/freizeit/die-kiez-kapitaen-reeperbahn-kieztour-hamburg-spielbudenplatz-2026-10-31-tickets-8dQL5CG5vj",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "sex-crime-tour-auf-st-pauli-ab-18-j-treffpunkt-u-st-pauli",
+      "daten": [
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-31"
+      ],
+      "zeit": "16:30",
+      "zeiten": {
+        "2026-10-27": "19:00",
+        "2026-10-28": "19:00"
+      },
+      "titel": "Sex & Crime Tour auf St. Pauli (ab 18 J.)",
+      "ort": "Treffpunkt U St. Pauli",
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Kiez-Tour für Erwachsene ab 18 Jahren.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.regioactive.de/freizeit/sex-crime-tour-auf-st-pauli-ab-18-j-hamburg-u-bahn-station-u3-2026-10-31-tickets-LvtjWhKFYJ",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "sonntagmorgen-spezial-zum-fischmarkt-fuehrung-treffpunkt-u-s",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "05:00",
+      "titel": "Sonntagmorgen-Spezial zum Fischmarkt (Führung)",
+      "ort": "Treffpunkt U St. Pauli",
+      "region": "HH",
+      "kategorie": "Food",
+      "beschreibung": "Frühe Führung zum Altonaer Fischmarkt am Sonntagmorgen.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.regioactive.de/sport/sonntagmorgen-spezial-zum-fischmarkt-hamburg-u-bahn-station-st-pauli-u3-2026-11-01-tickets-Tv4N8JsRkq",
+      "unsicher": "nur Aggregator, Fischmarkt selbst als Regeltermin"
+    },
+    {
+      "id": "flohmarkt-an-der-rindermarkthalle-rindermarkthalle-neuer-kam",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "09:00–16:00",
+      "titel": "Flohmarkt an der Rindermarkthalle",
+      "ort": "Rindermarkthalle, Neuer Kamp, St. Pauli",
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Flohmarkt am Sonntag laut hamburg.de-Novemberseite.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.hamburg.de/freizeit/maerkte-und-messen/flohmaerkte/flohmaerkte-november-964990"
+    },
+    {
+      "id": "flohmarkt-kulturpunkt-im-barmbek-basch-barmbek-basch-barmbek",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "10:00–15:00",
+      "titel": "Flohmarkt Kulturpunkt im Barmbek°Basch",
+      "ort": "Barmbek°Basch, Barmbek",
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Flohmarkt beim Kulturpunkt in Barmbek.",
+      "preis": "Preis nicht genannt",
+      "draussen": "beides",
+      "link": "https://www.hamburg.de/freizeit/maerkte-und-messen/flohmaerkte/flohmaerkte-november-964990"
+    },
+    {
+      "id": "4-lola-herbstmarkt-lola-kulturzentrum-bergedorf",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "11:00",
+      "titel": "4. LOLA Herbstmarkt",
+      "ort": "LOLA Kulturzentrum, Bergedorf",
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Herbstmarkt im Kulturzentrum.",
+      "preis": "Eintritt frei",
+      "kostenlos": true,
+      "draussen": "beides",
+      "link": "https://www.regioactive.de/markt/4-lola-herbstmarkt-eintritt-frei-hamburg-kulturzentrum-e-v-2026-11-01-5Y12Nr8yg1",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "fc-st-pauli-1-fc-nuernberg-2-bundesliga-10-spieltag-millernt",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "13:30",
+      "titel": "FC St. Pauli – 1. FC Nürnberg (2. Bundesliga, 10. Spieltag)",
+      "ort": "Millerntor-Stadion, St. Pauli",
+      "region": "HH",
+      "kategorie": "Sport",
+      "beschreibung": "Heimspiel des FC St. Pauli gegen Nürnberg.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://anstosszeiten.de/2-bundesliga/spiel/st-pauli-nuernberg/",
+      "unsicher": "Anstoß 13:30 (anstosszeiten) vs. 12:30 (bundesliga.com)"
+    },
+    {
+      "id": "etv-hamburg-skurios-volleys-borken-volleyball-bundesliga-cu",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "15:30",
+      "titel": "ETV Hamburg – Skurios Volleys Borken (Volleyball-Bundesliga)",
+      "ort": "CU-Arena, Neugraben",
+      "region": "HH",
+      "kategorie": "Sport",
+      "beschreibung": "3. Heimspiel der ETV-Volleyballerinnen in der 1. Bundesliga.",
+      "preis": "ab 11 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/sport/3-heimspiel-vs-skurios-volleys-borken-hamburg-cu-arena-2026-11-01-krDD9DmwVm"
+    },
+    {
+      "id": "hafenrundfahrt-mit-gruenkohlbuffet-ein-ausstieg-hamburg-wins",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "11:00",
+      "titel": "Hafenrundfahrt mit Grünkohlbuffet",
+      "ort": "Ein-/Ausstieg Hamburg / Winsen (Luhe)",
+      "region": "HH",
+      "kategorie": "Food",
+      "beschreibung": "Hafenrundfahrt mit Grünkohlessen an Bord.",
+      "preis": "Preis nicht genannt",
+      "draussen": "beides",
+      "link": "https://www.regioactive.de/sport/hafenrundfahrt-mit-gruenkohlbuffet-hamburg-21423-winsen-a-d-luhe-ein-und-ausstieg-2026-11-01-tickets-q6h4lwLYcJ",
+      "unsicher": "nur Aggregator, Abfahrtsort unklar"
+    },
+    {
+      "id": "offene-fuehrung-am-mahnmal-st-nikolai-mahnmal-st-nikolai-wil",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "15:00",
+      "titel": "Offene Führung am Mahnmal St. Nikolai",
+      "ort": "Mahnmal St. Nikolai, Willy-Brandt-Straße",
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Offene Führung in deutscher Sprache.",
+      "preis": "Preis nicht genannt",
+      "draussen": "beides",
+      "link": "https://www.regioactive.de/freizeit/offene-fuehrung-in-deutscher-sprache-hamburg-mahnmal-st-nikolai-2026-11-01-XgJqlSsKLJ",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "rum-tasting-ueli-und-frau-antje-erzaehlen-rum-die-2te-heimat",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "17:15",
+      "titel": "Rum-Tasting: Ueli und Frau Antje erzählen Rum",
+      "ort": "Die 2te Heimat Theatersalon",
+      "region": "HH",
+      "kategorie": "Food",
+      "beschreibung": "Rum-Verkostung mit Geschichten.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/gastronomie/ueli-und-frau-antje-erzaehlen-rum-tasting-hamburg-die-2te-heimat-theatersalon-2026-11-01-tickets-fKMQRdGQ4V",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "planetarium-voyager-die-unendliche-reise-3d-planetarium-hamb",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "15:15",
+      "titel": "Planetarium: Voyager – Die unendliche Reise 3D",
+      "ort": "Planetarium Hamburg, Stadtpark",
+      "region": "HH",
+      "kategorie": "Erlebnis",
+      "beschreibung": "3D-Fulldome-Show über die Voyager-Sonden.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/show/voyager-die-unendliche-reise-3d-hamburg-planetarium-2026-11-01-tickets-8f6hKlYX9g",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "heide-park-halloween-letzte-woche-bis-31-10-heide-park-resor",
+      "daten": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31"
+      ],
+      "zeit": "Mo–Do 10–17, Fr/Sa 12–21 (Horror-Mazes ab ca. 16 Uhr)",
+      "ganztags": true,
+      "ganzeWoche": true,
+      "titel": "Heide Park Halloween (letzte Woche, bis 31.10.)",
+      "ort": "Heide Park Resort, Soltau",
+      "region": "LG",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Halloween-Event bis Sa 31.10. mit Scare Zone und Horror-Mazes (ab 16 Jahren, separates Zeitticket). Fr und Sa verlängerte Tage bis 21 Uhr, einige Wasserbahnen schließen schon gegen 17 Uhr.",
+      "preis": "Online ab 28–37 €, Tageskasse 64 €, Halloween-Abendticket ab 17 Uhr ab 24 €",
+      "draussen": "draußen",
+      "link": "https://www.heide-park.de/en/explore/events/halloween",
+      "anreise": "DT: ca. 1:45–2 h (bis Buchholz, RB38 bis Soltau, dann Bus) · Auto: ca. 55–60 Min. (A7)"
+    },
+    {
+      "id": "serengeti-park-halloween-halloween-nights-serengeti-park-hod",
+      "daten": [
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "Fr/Sa Halloween Nights ab 18 Uhr (Einlass 17 Uhr, bis ca. 22 Uhr), tagsüber Programm ab 14 Uhr; So 1.11. Extra-Night",
+      "ganztags": true,
+      "ganzeWoche": true,
+      "titel": "Serengeti-Park Halloween (Halloween Nights)",
+      "ort": "Serengeti-Park, Hodenhagen",
+      "region": "LG",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Halloween-Event im Safaripark mit Gruselhäusern (je nach Attraktion ab 12–16 Jahren), Market of Fears (Sa und 31.10.) und Monster Walk um 17:45. Der Park hat Sommersaison bis 1.11.2026, danach folgt das Lichterfestival ab 6.11.",
+      "preis": "Preis nicht genannt (Attraktionen im Tages- und Abendticket inklusive, Abendticket ab 17 Uhr ermäßigt)",
+      "draussen": "draußen",
+      "link": "https://www.serengeti-park.de/halloween",
+      "anreise": "DT: ca. 1:45–2 h (bis Buchholz, RB38 bis Hodenhagen, ca. 2–3 km bis zum Park) · Auto: ca. 1:15 h (A7)",
+      "unsicher": "Seite nennt 02.10.–01.11. und im Fuß 26.10.–1.11.; Tageszeiten Mo–Do nicht gesehen"
+    },
+    {
+      "id": "wildpark-schwarze-berge-rosengarten-eissendorfer-waldweg",
+      "daten": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "täglich 8–18 Uhr",
+      "ganztags": true,
+      "ganzeWoche": true,
+      "titel": "Wildpark Schwarze Berge",
+      "ort": "Rosengarten (Eißendorfer Waldweg)",
+      "region": "LG",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Wildpark mit heimischen Tieren, ganzjährig täglich geöffnet. Zufahrt Eißendorfer Waldweg bis ca. Dezember gesperrt, Bus 340 fährt nur ab Neuwiedenthal. Am So 1.11. ist Herbstbasteln angekündigt.",
+      "preis": "Erw. 16 €, Kinder 14 €",
+      "draussen": "draußen",
+      "link": "https://www.wildpark-schwarze-berge.de/",
+      "anreise": "DT: S3/S5 bis Neuwiedenthal + Bus 340, ca. 50–60 Min. · Auto: ca. 30 Min.",
+      "unsicher": "Seite teils veraltet, Zeiten telefonisch bestätigen (040 819 77 47 0)"
+    },
+    {
+      "id": "monday-shorts-kostprobe-stolz-und-vorurteil-oder-so-kammersp",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "18:30",
+      "titel": "Monday Shorts: Kostprobe „Stolz und Vorurteil* (*oder so)“",
+      "ort": "Kammerspiele, Theater Lübeck",
+      "region": "LUE",
+      "kategorie": "Bühne",
+      "beschreibung": "Kostprobe der Premiere vom Fr 30.10. im Kammerspiele-Foyerformat. Eintritt frei.",
+      "preis": "kostenlos",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.theaterluebeck.de/spielplan/kalender.html",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "2-sinfoniekonzert-tschaikowsky-violinkonzert-schostakowitsch",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "19:30",
+      "titel": "2. Sinfoniekonzert: Tschaikowsky Violinkonzert, Schostakowitsch 10. Sinfonie",
+      "ort": "MuK Konzertsaal, Lübeck",
+      "region": "LUE",
+      "kategorie": "Konzert",
+      "beschreibung": "Philharmonisches Orchester der Hansestadt Lübeck unter Hans Graf, Solistin Victoria Wong (Violine).",
+      "preis": "ab 19,70 €, erm. ab 14,20 €",
+      "draussen": "drinnen",
+      "link": "https://www.muk.de/veranstaltungen-details/philharmonisches-orchester-der-hansestadt-luebeck2-sinfoniekonzert-2",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "vollmondkonzert-mit-gitarrist-ladislav-pazdera-wasserturm-lu",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "20:00–22:00",
+      "titel": "Vollmondkonzert mit Gitarrist Ladislav Pazdera",
+      "ort": "Wasserturm, Lüneburg",
+      "region": "LG",
+      "kategorie": "Konzert",
+      "beschreibung": "Solo auf der Akustikgitarre mit eigenen Stücken zwischen Andalusien, Osteuropa und Südamerika.",
+      "preis": "18 €, erm. 15 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/konzert/vollmondkonzert-laessig-sophisticated-groovy-ladislav-pazdera-acoustic-guitar-lueneburg-wasserturm-2026-10-26-tickets-2hypbM9P9H",
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
+      "unsicher": "Quelle ist Ticket-Aggregator"
+    },
+    {
+      "id": "besser-als-nie-literaturwochen-heimaten-stadtbibliothek-buxt",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "19:00",
+      "titel": "„Besser als nie“ – Literaturwochen „Heimaten“",
+      "ort": "Stadtbibliothek, Buxtehude",
+      "region": "STD",
+      "kategorie": "Bühne",
+      "beschreibung": "Abend der Buxtehuder Literaturwochen zum Thema Heimat. Weitere Angaben nennt die Seite nicht.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/literatur/besser-als-nie-literaturwochen-heimaten-buxtehude-stadtbibliothek-2026-10-26-tickets-kcqB79LsnB",
+      "anreise": "DT: ca. 35–45 Min. (S3 bis Buxtehude, Dauer nicht geprüft) · Auto: ca. 35 Min.",
+      "unsicher": "nur Aggregator, wenig Details"
+    },
+    {
+      "id": "thomas-d-the-kbcs-neocortex-tour-2026-kolosseum-luebeck",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "20:00",
+      "titel": "Thomas D & The KBCS – Neocortex Tour 2026",
+      "ort": "Kolosseum, Lübeck",
+      "region": "LUE",
+      "kategorie": "Konzert",
+      "beschreibung": "Rap, Rock und Soul mit neuem Material und Stücken aus früheren Alben.",
+      "preis": "ab 42,75 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/konzert/thomas-d-the-kbcs-neocortex-tour-2026-luebeck-kolosseum-2026-10-27-tickets-0mkMSlg3c2",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "sixx-paxx-dreams-tour-2026-27-stadeum-stade",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "20:00",
+      "titel": "SIXX PAXX – Dreams Tour 2026/27",
+      "ort": "Stadeum, Stade",
+      "region": "STD",
+      "kategorie": "Bühne",
+      "beschreibung": "Show der Tour 2026/27, im Stadeum als „Show“ geführt. Die Quelle nennt keine weiteren Angaben.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/location/stade/stadeum-wx9NZWpcVc",
+      "anreise": "DT: ca. 55–60 Min. (S5 bis Stade) · Auto: ca. 45–50 Min. (A26)",
+      "unsicher": "nur Aggregator ohne Detailseite"
+    },
+    {
+      "id": "der-tatortreiniger-theater-halepaghen-schule-buxtehude",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "20:00",
+      "titel": "Der Tatortreiniger (Theater)",
+      "ort": "Halepaghen-Schule, Buxtehude",
+      "region": "STD",
+      "kategorie": "Bühne",
+      "beschreibung": "Theaterabend nach der Serienfigur des Tatortreinigers.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/theater/der-tatortreiniger-buxtehude-halepaghen-schule-2026-10-28-tickets-HnJBnfmfgk",
+      "anreise": "DT: ca. 35–45 Min. (S3 bis Buxtehude, Dauer nicht geprüft) · Auto: ca. 35 Min.",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "schwanensee-ballett-grosses-haus-theater-luebeck",
+      "daten": [
+        "2026-10-29",
+        "2026-10-30"
+      ],
+      "zeit": "19:30",
+      "titel": "Schwanensee (Ballett)",
+      "ort": "Großes Haus, Theater Lübeck",
+      "region": "LUE",
+      "kategorie": "Bühne",
+      "beschreibung": "Tschaikowskys Klassiker im Musiktheater-Programm des Theaters Lübeck. Vorstellungen am Do 29.10. und Fr 30.10.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.theaterluebeck.de/spielplan/kalender.html",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "atze-schroeder-lovemachine-muk-konzertsaal-luebeck",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "20:00",
+      "titel": "Atze Schröder – Lovemachine",
+      "ort": "MuK Konzertsaal, Lübeck",
+      "region": "LUE",
+      "kategorie": "Comedy",
+      "beschreibung": "Comedy-Programm „Lovemachine“ im Konzertsaal der MuK.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.muk.de/veranstaltungen-details/atze-schroederlovemachine",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "jan-uwe-rogge-warum-erziehung-garantiert-misslingt-kolosseum",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "20:00",
+      "titel": "Jan Uwe Rogge – Warum Erziehung garantiert misslingt",
+      "ort": "Kolosseum, Lübeck",
+      "region": "LUE",
+      "kategorie": "Comedy",
+      "beschreibung": "Erziehungsvortrag mit humorvollem Ton. Das Thema richtet sich vor allem an Eltern.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/comedy/jan-uwe-rogge-warum-erziehung-garantiert-misslingt-luebeck-kolosseum-2026-10-29-tickets-KS0h3sRQhp",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "tingvall-trio-pax-kulturforum-lueneburg-gut-wienebuettel",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "20:00",
+      "titel": "Tingvall Trio – Pax",
+      "ort": "Kulturforum, Lüneburg (Gut Wienebüttel)",
+      "region": "LG",
+      "kategorie": "Konzert",
+      "beschreibung": "Jazz-Klaviertrio mit Martin Tingvall, Omar Rodriguez Calvo und Jürgen Spiegel, vorgestellt wird das Album „Pax“.",
+      "preis": "ab 31,80 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/konzert/tingvall-trio-pax-lueneburg-kulturforum-2026-10-29-tickets-1nFgV34pMr",
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)"
+    },
+    {
+      "id": "best-of-poetry-slam-stadeum-stade",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "19:45",
+      "titel": "Best of Poetry Slam",
+      "ort": "Stadeum, Stade",
+      "region": "STD",
+      "kategorie": "Bühne",
+      "beschreibung": "Slam-Abend im Stadeum.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/location/stade/stadeum-wx9NZWpcVc",
+      "anreise": "DT: ca. 55–60 Min. (S5 bis Stade) · Auto: ca. 45–50 Min. (A26)",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "flamenco-meets-concierto-ib-rico-tanz-trance-kolosseum-luebe",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "19:30",
+      "titel": "Flamenco meets Concierto Ibérico: „Tanz & Trance“",
+      "ort": "Kolosseum, Lübeck",
+      "region": "LUE",
+      "kategorie": "Konzert",
+      "beschreibung": "Barockes Ensemble mit Flamenco-Tänzerin Anna Castillo spielt spanische Tanzmusik des Siglo de Oro von Sanz, Soler und Boccherini.",
+      "preis": "ab 40,31 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/konzert/flamenco-meets-concierto-iberico-luebeck-kolosseum-2026-10-30-tickets-G8d0fF219C",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "marlene-jaschke-hier-bin-ich-mensch-muk-konzertsaal-luebeck",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "20:00",
+      "titel": "Marlene Jaschke: „Hier bin ich Mensch“",
+      "ort": "MuK Konzertsaal, Lübeck",
+      "region": "LUE",
+      "kategorie": "Comedy",
+      "beschreibung": "Jubiläumsprogramm zu 40 Jahren Bühne: Die Hamburger Kunstfigur liest im Literaturkreis „Faust“, begleitet von Organist Griepenstroh.",
+      "preis": "ab 34,05 €",
+      "draussen": "drinnen",
+      "link": "https://www.muk.de/veranstaltungen-details/marlene-jaschke-hier-bin-ich-mensch",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "der-hexer-edgar-wallace-comoedie-luebeck",
+      "daten": [
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "19:30",
+      "zeiten": {
+        "2026-11-01": "17:00",
+        "2026-10-31": "19:30"
+      },
+      "titel": "Der Hexer (Edgar Wallace)",
+      "ort": "Comödie Lübeck",
+      "region": "LUE",
+      "kategorie": "Bühne",
+      "beschreibung": "Wallace-Krimi in neuer Fassung, Regie Michael Knoll, Laufzeit bis 29.11. Fr 30.10. und Sa 31.10. um 19:30, So 1.11. um 17:00.",
+      "preis": "VVK 36 € / 26 €, Abendkasse 41 € / 31 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/theater/der-hexer-luebeck-comoedie-2026-10-31-tickets-pB8NWkZdkN",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "stolz-und-vorurteil-oder-so-premiere-kammerspiele-theater-lu",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "20:00",
+      "titel": "Stolz und Vorurteil* (*oder so) – Premiere",
+      "ort": "Kammerspiele, Theater Lübeck",
+      "region": "LUE",
+      "kategorie": "Bühne",
+      "beschreibung": "Premiere des Schauspiels in den Kammerspielen.",
+      "preis": "ausverkauft",
+      "draussen": "drinnen",
+      "link": "https://www.theaterluebeck.de/spielplan/kalender.html",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "mein-kummer-und-ich-chagrin-pour-soi-theater-lueneburg",
+      "daten": [
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "20:00",
+      "zeiten": {
+        "2026-11-01": "18:00",
+        "2026-10-31": "20:00"
+      },
+      "titel": "Mein Kummer und ich (Chagrin pour soi)",
+      "ort": "Theater Lüneburg",
+      "region": "LG",
+      "kategorie": "Bühne",
+      "beschreibung": "Theaterproduktion, laut Quelle ohne weitere Beschreibung. Fr 30.10. und Sa 31.10. um 20 Uhr, So 1.11. um 18 Uhr.",
+      "preis": "29,76 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/theater/mein-kummer-und-ich-chagrin-pour-soi-lueneburg-theater-2026-10-31-tickets-LMyfWSN3m9",
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)"
+    },
+    {
+      "id": "return-of-the-roxy-halloween-spezial-shaun-of-the-dead-omdu",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "20:00",
+      "titel": "Return of the ROXY: Halloween Spezial – „Shaun of the Dead“ (OmdU) + Kurzfilmpremiere",
+      "ort": "Gasthausbrauerei Nolte, Lüneburg",
+      "region": "LG",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Kneipenkino mit der Zombie-Komödie im Original mit Untertiteln und einer Kurzfilmpremiere.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/kino/return-of-the-roxy-halloween-spezial-shaun-dead-omdu-shadow-hunt-kurzfilmpremiere-lueneburg-gasthausbrauerei-brennerei-nolte-2026-10-30-TKPrkRs2dw",
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "atze-schroeder-lovemachine-stadeum-stade",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "20:00",
+      "titel": "Atze Schröder – Lovemachine",
+      "ort": "Stadeum, Stade",
+      "region": "STD",
+      "kategorie": "Comedy",
+      "beschreibung": "Comedy-Programm „Lovemachine“ im Stadeum.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/location/stade/stadeum-wx9NZWpcVc",
+      "anreise": "DT: ca. 55–60 Min. (S5 bis Stade) · Auto: ca. 45–50 Min. (A26)",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "benni-stark-schon-lustig-wenn-s-witzig-ist-kulturschuppen-ba",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "20:00",
+      "titel": "Benni Stark: „Schon lustig wenn's witzig ist!“",
+      "ort": "Kulturschuppen, Bad Segeberg",
+      "region": "WEI",
+      "kategorie": "Comedy",
+      "beschreibung": "Stand-up-Programm im ehemaligen Antikschuppen.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/veranstaltung/3139947/benni-stark-in-bad-segeberg-am-2026-10-30-um-20-00-uhr/",
+      "anreise": "DT: ca. 1:30 h (nicht geprüft) · Auto: ca. 50 Min.",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "mojomen-handgemachte-livemusik-der-speicher-schwerin",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "20:00",
+      "titel": "MOJOMEN – handgemachte Livemusik",
+      "ort": "DER SPEICHER, Schwerin",
+      "region": "WEI",
+      "kategorie": "Konzert",
+      "beschreibung": "Live-Band mit handgemachter Rock- und Popmusik, Einlass 19 Uhr.",
+      "preis": "ab 23 €",
+      "draussen": "drinnen",
+      "link": "https://www.schwerin.m-vp.de/veranstaltungen/mojomen-die-mojo-men-liefern-handgemachte-livemusik/",
+      "anreise": "DT: ca. 1:15–1:25 h (RE1 bis Schwerin) · Auto: ca. 1:15 h (A24)"
+    },
+    {
+      "id": "chaos-comedy-club-haffkrug-haffhuus-haffkrug-scharbeutz",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "19:00",
+      "titel": "Chaos Comedy Club Haffkrug",
+      "ort": "Haffhuus, Haffkrug (Scharbeutz)",
+      "region": "LUE",
+      "kategorie": "Comedy",
+      "beschreibung": "Comedy-Abend im Haffhuus.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/veranstaltung/3358093/chaos-comedy-club-haffkrug-in-scharbeutz-am-2026-10-30-um-19-00-uhr/",
+      "anreise": "DT: ca. 1:20–1:30 h (RE bis Lübeck, weiter RE/RB bis Haffkrug/Sierksdorf) · Auto: ca. 1 h (A1) · ab Hohwacht ca. 55 Min.",
+      "hohwacht": true,
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "vfb-luebeck-sv-werder-bremen-ii-poker-stars-de-stadion-an-de",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "14:00",
+      "titel": "VfB Lübeck – SV Werder Bremen II",
+      "ort": "Poker Stars.de-Stadion an der Lohmühle, Lübeck",
+      "region": "LUE",
+      "kategorie": "Sport",
+      "beschreibung": "Heimspiel des VfB Lübeck gegen die Zweitvertretung von Werder Bremen.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.regioactive.de/sport/vfb-luebeck-sv-werder-bremen-ii-poker-stars-de-stadion-an-der-lohmuehle-2026-10-31-tickets-RvMTxrlvCz",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "kneipenterroristen-heavy-halloween-mit-noerdlust-metal-worx",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "19:00",
+      "titel": "KneipenTerroristen – Heavy Halloween mit NördLust + Metal Worx",
+      "ort": "Riders Café, Leinweberstraße 4, Lübeck",
+      "region": "LUE",
+      "kategorie": "Konzert",
+      "beschreibung": "Halloween-Rockabend mit mehreren Bands.",
+      "preis": "ab 30,40 €",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/luebeck/veranstaltungen/kneipenterroristen-heavy-halloween-gaeste-noerdlust-metal-worx/",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "biedermann-und-die-brandstifter-grosses-haus-theater-luebeck",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "19:30",
+      "titel": "Biedermann und die Brandstifter",
+      "ort": "Großes Haus, Theater Lübeck",
+      "region": "LUE",
+      "kategorie": "Bühne",
+      "beschreibung": "Max Frischs Lehrstück als Schauspiel im Großen Haus.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.theaterluebeck.de/spielplan/kalender.html",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "die-sterne-wenn-es-liebe-ist-tour-treibsand-luebeck",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "21:00",
+      "titel": "DIE STERNE – „Wenn es Liebe ist“-Tour",
+      "ort": "Treibsand, Lübeck",
+      "region": "LUE",
+      "kategorie": "Konzert",
+      "beschreibung": "Hamburger Schule trifft Indiepop und Post-Punk, Einlass 20 Uhr.",
+      "preis": "VVK 26 €, Abendkasse 30 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/konzert/die-sterne-wenn-es-liebe-ist-tour-2026-luebeck-treibsand-2026-10-31-8dtQ5D7jqp",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "rotary-benefizkonzert-des-holsteinischen-kammerorchesters-mu",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "20:00",
+      "titel": "Rotary-Benefizkonzert des Holsteinischen Kammerorchesters",
+      "ort": "MuK Konzertsaal, Lübeck",
+      "region": "LUE",
+      "kategorie": "Konzert",
+      "beschreibung": "Benefizkonzert des Rotary Clubs Lübeck Holstentor mit dem Holsteinischen Kammerorchester.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.muk.de/veranstaltungen-details/rotary-club-luebeck-holstentorbenefizkonzert",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "halloween-party-auf-dem-cargo-schiff-cargo-schiff-luebeck",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "21:00",
+      "titel": "Halloween-Party auf dem Cargo Schiff",
+      "ort": "Cargo Schiff, Lübeck",
+      "region": "LUE",
+      "kategorie": "Party",
+      "beschreibung": "Halloween-Party an Bord des Cargo Schiffs.",
+      "preis": "Preis nicht genannt",
+      "draussen": "beides",
+      "link": "https://www.regioactive.de/party/halloween-party-luebeck-cargo-schiff-2026-10-31-N3WjjgGb1L",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "werftfreaks-halloween-party-kulturwerft-gollan-luebeck",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "22:00",
+      "titel": "Werftfreaks Halloween-Party",
+      "ort": "Kulturwerft Gollan, Lübeck",
+      "region": "LUE",
+      "kategorie": "Party",
+      "beschreibung": "Halloween-Party in der Kulturwerft.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/party/werftfreaks-halloween-party-luebeck-kulturwerft-gollan-2026-10-31-HRSqjfPMTL",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "halloween-die-kultparty-18-a1-musikpark-luebeck",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "22:00",
+      "titel": "HALLOWEEN – Die Kultparty (18+)",
+      "ort": "A1 Musikpark, Lübeck",
+      "region": "LUE",
+      "kategorie": "Party",
+      "beschreibung": "Halloween-Party ab 18 Jahren im A1 Musikpark.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/party/halloween-die-kultparty-18-luebeck-a1-musikpark-2026-10-31-KFdZQf1NvW",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "goetz-widmann-50-jahre-erster-vollrausch-smoke-inn-concert-j",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "20:00",
+      "titel": "Götz Widmann – 50 Jahre erster Vollrausch (Smoke Inn Concert)",
+      "ort": "Jekyll & Hide, Lüneburg",
+      "region": "LG",
+      "kategorie": "Konzert",
+      "beschreibung": "Liedermacher-Konzert in der Reihe Smoke Inn Concert.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/konzert/goetz-widmann-50-jahre-erster-vollrausch-smoke-inn-concert-lueneburg-jekyll-hide-2026-10-31-tickets-ygd0N399tk",
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "halloween-horror-night-18-lkh-arena-lueneburg",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "22:00",
+      "titel": "Halloween Horror Night (18+)",
+      "ort": "LKH Arena, Lüneburg",
+      "region": "LG",
+      "kategorie": "Party",
+      "beschreibung": "Halloween-Party mit DJs, Kostüm erwünscht. Shuttle ab Lüneburg ZOB 21:45, Rückfahrten 3:30 und 5:00, HVV-Ticket zur Anreise ist enthalten.",
+      "preis": "Abendkasse 15 €, Garderobe 2 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/party/halloween-horror-night-31-10-2026-lkh-arena-lueneburg-2026-10-31-TFQHXhT3qs",
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)"
+    },
+    {
+      "id": "salon-hansen-club-ab-18-salon-hansen-lueneburg",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "22:00",
+      "titel": "Salon Hansen Club (ab 18)",
+      "ort": "Salon Hansen, Lüneburg",
+      "region": "LG",
+      "kategorie": "Party",
+      "beschreibung": "Clubnacht am Halloween-Abend.",
+      "preis": "5 € (nur Abendkasse)",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/party/salon-hansen-club-lueneburg-2026-10-31-Z1S1f8cnDg",
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "whisky-tasting-6-whiskys-5-gaenge-hotel-restaurant-zum-posti",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "18:30",
+      "titel": "Whisky Tasting (6 Whiskys, 5 Gänge)",
+      "ort": "Hotel-Restaurant zum Postilion, Soltau",
+      "region": "LG",
+      "kategorie": "Food",
+      "beschreibung": "Verkostung von sechs Whiskys mit Erläuterungen zu einem Fünf-Gänge-Menü.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/gastronomie/whisky-tasting-soltau-hotel-restaurant-zum-postilion-2026-10-31-cTX3nSl3bL",
+      "anreise": "DT: ca. 1:45–2 h (bis Buchholz, RB38 bis Soltau, dann Bus) · Auto: ca. 55–60 Min. (A7)",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "unter-dem-strand-theater-im-hinterhof-buxtehude",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "18:00",
+      "titel": "„Unter dem Strand“",
+      "ort": "Theater im Hinterhof, Buxtehude",
+      "region": "STD",
+      "kategorie": "Bühne",
+      "beschreibung": "Literarisch-theatraler Abend im Theater im Hinterhof, laut Quelle als Literatur geführt.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/literatur/unter-dem-strand-buxtehude-theater-im-hinterhof-2026-10-31-tickets-4rXxStltxp",
+      "anreise": "DT: ca. 35–45 Min. (S3 bis Buxtehude, Dauer nicht geprüft) · Auto: ca. 35 Min.",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "flohmarkt-citti-park-luebeck-citti-park-luebeck",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "08:30",
+      "titel": "Flohmarkt Citti-Park Lübeck",
+      "ort": "Citti-Park, Lübeck",
+      "region": "LUE",
+      "kategorie": "Markt",
+      "beschreibung": "Flohmarkt auf dem Gelände des Einkaufszentrums.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.regioactive.de/markt/flohmarkt-citti-park-luebeck-2026-11-01-T1TmXbfMZf",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "unsicher": "nur Aggregator, Endzeit unbekannt"
+    },
+    {
+      "id": "maedchen-klamotte-der-maedelsflohmarkt-muk-rotunde-luebeck",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "11:00–16:00",
+      "titel": "Mädchen Klamotte – Der Mädelsflohmarkt",
+      "ort": "MuK Rotunde, Lübeck",
+      "region": "LUE",
+      "kategorie": "Markt",
+      "beschreibung": "Second-Hand-Markt für Damenmode und Schuhe, auch eigenes Verkaufen möglich. Early Bird ab 10:30.",
+      "preis": "5 € (Kasse/E-Ticket), Early Bird 8 €",
+      "draussen": "drinnen",
+      "link": "https://www.muk.de/veranstaltungen-details/maedchen-klamotte-der-maedelsflohmarkt",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "vfl-luebeck-schwartau-vfl-eintracht-hagen-hansehalle-luebeck",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "17:00",
+      "titel": "VfL Lübeck-Schwartau – VfL Eintracht Hagen",
+      "ort": "Hansehalle, Lübeck",
+      "region": "LUE",
+      "kategorie": "Sport",
+      "beschreibung": "Heimspiel des VfL Lübeck-Schwartau gegen Eintracht Hagen.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/sport/vfl-luebeck-schwartau-eintracht-hagen-hansehalle-2026-11-01-tickets-6P778tMQpB",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "unsicher": "nur Aggregator"
+    },
+    {
+      "id": "idomeneo-mozart-grosses-haus-theater-luebeck",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "18:00",
+      "titel": "Idomeneo (Mozart)",
+      "ort": "Großes Haus, Theater Lübeck",
+      "region": "LUE",
+      "kategorie": "Bühne",
+      "beschreibung": "Oper in der Regie von Philipp Himmelmann um den König, der seinen eigenen Sohn opfern soll.",
+      "preis": "ab 22,30 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/musical/idomeneo-luebeck-theater-grosses-haus-2026-11-01-tickets-12n0nCtNqq",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+    },
+    {
+      "id": "stolz-und-vorurteil-oder-so-theatertag-kammerspiele-theater",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "18:30",
+      "titel": "Stolz und Vorurteil* (*oder so) – Theatertag",
+      "ort": "Kammerspiele, Theater Lübeck",
+      "region": "LUE",
+      "kategorie": "Bühne",
+      "beschreibung": "Schauspiel am Theatertag.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/theater/stolz-und-vorurteil-oder-so-theatertag-luebeck-kammerspiele-mit-buehne-theater-2026-11-01-nFbHkv0zRl",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "unsicher": "nur Aggregator; Theatertag-Ermäßigung nicht bestätigt"
+    },
+    {
+      "id": "anatevka-musical-theater-lueneburg",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "18:00",
+      "titel": "Anatevka (Musical)",
+      "ort": "Theater Lüneburg",
+      "region": "LG",
+      "kategorie": "Bühne",
+      "beschreibung": "Das Musical um Tevje und seine Töchter im Theater Lüneburg.",
+      "preis": "ab 38,16 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/musical/anatevka-lueneburg-theater-2026-11-01-tickets-hTkNm6GBPC",
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)"
+    },
+    {
+      "id": "tom-gaebel-his-trio-a-swinging-affair-kulturforum-lueneburg",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "19:00",
+      "titel": "Tom Gaebel & His Trio – A Swinging Affair",
+      "ort": "Kulturforum, Lüneburg (Gut Wienebüttel)",
+      "region": "LG",
+      "kategorie": "Konzert",
+      "beschreibung": "Swing-Standards des American Songbook im intimen Trio mit Piano, Bass und Schlagzeug.",
+      "preis": "52,80 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/konzert/tom-gaebel-his-trio-a-swinging-affair-the-american-songbook-and-beyond-lueneburg-kulturforum-2026-11-01-tickets-MNVnch5Rj3",
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)"
+    },
+    {
+      "id": "draisinenfahrt-luetjenburg-wehdenstrasse-14-luetjenburg",
+      "daten": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31"
+      ],
+      "zeit": "Mo–Sa 11:30",
+      "ganzeWoche": true,
+      "titel": "Draisinenfahrt Lütjenburg",
+      "ort": "Wehdenstraße 14, Lütjenburg",
+      "region": "HB",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Mit der Fahrrad-Draisine über die stillgelegte Bahnstrecke. Anmeldung unter 04381 419941 oder tourist-info@stadt-luetjenburg.de.",
+      "preis": "Preis im Flyer nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
+      "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
+      "hohwacht": true,
+      "unsicher": "Flyer gilt für Oktober; Sa 31.10. (Feiertag) nicht gesondert bestätigt"
+    },
+    {
+      "id": "lieder-die-im-schatten-stehen-foyer-opernhaus-kiel-rathauspl",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "19:00",
+      "titel": "Lieder, die im Schatten stehen",
+      "ort": "Foyer Opernhaus Kiel, Rathausplatz",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Liedprogramm der Oper Kiel im Opernhaus-Foyer.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://theater-kiel.de/spielplan/index.html",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true
+    },
+    {
+      "id": "richard-cwiertnia-ostblockvater-ostblock-live-max-nachttheat",
+      "daten": [
+        "2026-10-26"
+      ],
+      "zeit": "20:00",
+      "titel": "Richard Cwiertnia: „Ostblockvater – Ostblock Live“",
+      "ort": "MAX Nachttheater, Kiel",
+      "region": "HB",
+      "kategorie": "Comedy",
+      "beschreibung": "Live-Programm des Autors und Entertainers über Kindheit und Familie zwischen Ost und West.",
+      "preis": "ab 41,65 €",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/kiel/veranstaltungen/richard-cwiertnia-ostblockvater-ostblock-live-max-nachttheater/",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true
+    },
+    {
+      "id": "stadtrundgang-luetjenburg-touristinfo-markt-4-luetjenburg",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "11:00–13:00",
+      "titel": "Stadtrundgang Lütjenburg",
+      "ort": "Touristinfo, Markt 4, Lütjenburg",
+      "region": "HB",
+      "kategorie": "Führung",
+      "beschreibung": "Geführter Rundgang durch die Altstadt. Anmeldung unter 04381 419941.",
+      "preis": "Preis im Flyer nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
+      "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
+      "hohwacht": true,
+      "unsicher": "Treffpunkt im Flyer nicht eindeutig zugeordnet"
+    },
+    {
+      "id": "burgfuehrung-turmhuegelburg-turmhuegelburg-luetjenburg",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "14:40",
+      "titel": "Burgführung Turmhügelburg",
+      "ort": "Turmhügelburg, Lütjenburg",
+      "region": "HB",
+      "kategorie": "Führung",
+      "beschreibung": "Führung über die nachgebaute mittelalterliche Burg. Gruppen ab 10 Personen anmelden unter 0163 7438783.",
+      "preis": "Preis im Flyer nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
+      "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
+      "hohwacht": true
+    },
+    {
+      "id": "jan-uwe-rogge-warum-erziehung-garantiert-misslingt-max-nacht",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "20:00",
+      "titel": "Jan-Uwe Rogge: „Warum Erziehung garantiert misslingt“",
+      "ort": "MAX Nachttheater, Kiel",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Vortragsabend des Familien- und Erziehungsberaters mit Humor.",
+      "preis": "ab 39,45 €",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/kiel/veranstaltungen/jan-uwe-rogge-warum-erziehung-garantiert-misslingt-kiel/",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true
+    },
+    {
+      "id": "horror-lesung-orange-club-traum-gmbh-kiel",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "20:15",
+      "titel": "Horror-Lesung",
+      "ort": "Orange Club (Traum GmbH), Kiel",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Gruselige Lesung zur Halloween-Woche im Orange Club.",
+      "preis": "12,34 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder als Quelle"
+    },
+    {
+      "id": "holstein-kiel-tsg-hoffenheim-dfb-pokal-2-runde-holstein-stad",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "19:45",
+      "titel": "Holstein Kiel – TSG Hoffenheim (DFB-Pokal, 2. Runde)",
+      "ort": "Holstein-Stadion, Kiel",
+      "region": "HB",
+      "kategorie": "Sport",
+      "beschreibung": "Heimspiel in der 2. Runde des DFB-Pokals gegen den Bundesligisten aus Hoffenheim.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.bundesliga.com/de/dfb-pokal/spieltag/2026-2027/runde-2/holstein-kiel-vs-tsg-hoffenheim/liveticker",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "Anstoß 19:45 laut bundesliga.com, eventfinder nennt 20:45"
+    },
+    {
+      "id": "sagel-und-das-schlitzohr-dinner-mit-leiche-ratskeller-kiel",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "19:00",
+      "titel": "„Sagel und das Schlitzohr“ – Dinner mit Leiche",
+      "ort": "Ratskeller Kiel",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Krimiabend mit szenischer Lesung und Menü im Ratskeller.",
+      "preis": "ab 89,77 €",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/kiel/veranstaltungen/sagel-und-das-schlitzohr-dinner-mit-leiche-ratskeller-kiel/",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "eventfinder nennt 0,00 €, mvp.de ab 89,77 € (vermutlich inkl. Menü)"
+    },
+    {
+      "id": "wochenmarkt-luetjenburg-marktplatz-luetjenburg",
+      "daten": [
+        "2026-10-28",
+        "2026-10-31"
+      ],
+      "zeit": "08:00–13:00",
+      "titel": "Wochenmarkt Lütjenburg",
+      "ort": "Marktplatz, Lütjenburg",
+      "region": "HB",
+      "kategorie": "Markt",
+      "beschreibung": "Regionaler Wochenmarkt, jeden Mi und Sa.",
+      "preis": "kostenlos",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
+      "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
+      "hohwacht": true,
+      "unsicher": "Sa 31.10. ist Feiertag, Markt nicht gesondert bestätigt"
+    },
+    {
+      "id": "parfuem-und-handcreme-workshop-mi-erwachsenenrunde-kursaal-h",
+      "daten": [
+        "2026-10-28",
+        "2026-10-29"
+      ],
+      "zeit": "13:00",
+      "zeiten": {
+        "2026-10-29": "11:30"
+      },
+      "titel": "Parfüm- und Handcreme-Workshop (Mi Erwachsenenrunde)",
+      "ort": "Kursaal Hohwacht (Do: De Ole School, Hohwacht)",
+      "region": "HB",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Eigenes Parfüm und Handcreme herstellen. Mi 13 Uhr Kleingruppe für Erwachsene im Kursaal, Do 11:30 in der „De Ole School“.",
+      "preis": "Preis im Flyer nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
+      "anreise": "DT: ca. 2:45–3 h (RE bis Kiel, Bus über Lütjenburg) · Auto: ca. 1:30 h · vor Ort in Hohwacht",
+      "hohwacht": true,
+      "unsicher": "Ort im Flyer nicht ganz eindeutig; Anmeldung nötig"
+    },
+    {
+      "id": "tannhaeuser-und-der-saengerkrieg-auf-wartburg-opernhaus-kiel",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "18:00",
+      "titel": "Tannhäuser und der Sängerkrieg auf Wartburg",
+      "ort": "Opernhaus Kiel",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Wagners Oper am Opernhaus Kiel.",
+      "preis": "24,35–69,55 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder als Quelle"
+    },
+    {
+      "id": "dat-kole-grusen-niederdeutsche-buehne-wilhelmplatz-2-kiel",
+      "daten": [
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "19:00",
+      "zeiten": {
+        "2026-11-01": "18:00",
+        "2026-10-31": "18:00"
+      },
+      "titel": "„Dat kole Grusen“",
+      "ort": "Niederdeutsche Bühne, Wilhelmplatz 2, Kiel",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Plattdeutsches Gruselstück passend zu Halloween. Do und Fr 19:00, Sa und So 18:00.",
+      "preis": "ab 18,60 €",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/kiel/veranstaltungen/dat-kole-grusen-niederdeutsche-buehne-kiel/",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true
+    },
+    {
+      "id": "botticelli-baby-komm-rum-lass-laufen-die-pumpe-kiel",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "20:00",
+      "titel": "Botticelli Baby: „Komm rum, lass laufen“",
+      "ort": "Die Pumpe, Kiel",
+      "region": "HB",
+      "kategorie": "Konzert",
+      "beschreibung": "Konzert der Band Botticelli Baby in der Kieler Pumpe.",
+      "preis": "24,80 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder als Quelle"
+    },
+    {
+      "id": "fraeulein-smillas-gespuer-fuer-schnee-schauspielhaus-kiel",
+      "daten": [
+        "2026-10-29",
+        "2026-10-31"
+      ],
+      "zeit": "20:00",
+      "titel": "Fräulein Smillas Gespür für Schnee",
+      "ort": "Schauspielhaus Kiel",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Schauspiel nach dem Roman von Peter Høeg. Do und Sa 20 Uhr.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/kiel/veranstaltungen/oktober/",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder als Quelle"
+    },
+    {
+      "id": "idomeneo-mozart-opernhaus-kiel",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "19:00",
+      "titel": "Idomeneo (Mozart)",
+      "ort": "Opernhaus Kiel",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Mozarts Oper am Opernhaus Kiel.",
+      "preis": "28,73–73,58 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder als Quelle"
+    },
+    {
+      "id": "die-grosse-symphonische-nacht-benefizkonzert-konzerthaus-am",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "19:30",
+      "titel": "Die große symphonische Nacht (Benefizkonzert)",
+      "ort": "Konzerthaus am Schloss, Kiel",
+      "region": "HB",
+      "kategorie": "Konzert",
+      "beschreibung": "Benefizkonzert mit drei Musikkorps.",
+      "preis": "15,53–34,16 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder als Quelle"
+    },
+    {
+      "id": "alle-meine-soehne-arthur-miller-schauspielhaus-kiel",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "20:00",
+      "titel": "„Alle meine Söhne“ (Arthur Miller)",
+      "ort": "Schauspielhaus Kiel",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Schauspiel von Arthur Miller.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/kiel/veranstaltungen/oktober/",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder als Quelle"
+    },
+    {
+      "id": "de-dode-is-juemmer-de-gaarner-heikendoerper-speeldeel-schulr",
+      "daten": [
+        "2026-10-30",
+        "2026-11-01"
+      ],
+      "zeit": "20:00",
+      "zeiten": {
+        "2026-11-01": "17:00"
+      },
+      "titel": "„De Dode is jümmer de Gaarner“",
+      "ort": "Heikendörper Speeldeel, Schulredder 5, Heikendorf",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Plattdeutsche Krimikomödie. Fr 20:00, So 17:00.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/schoenberg-holstein/veranstaltungen/",
+      "anreise": "DT: ca. 1:45–2 h (bis Kiel + Bus) · Auto: ca. 1:25 h · ab Hohwacht ca. 35 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder; Preis dort mit 0,00 € angegeben (vermutlich Platzhalter), Sonntagszeit weicht vom Vorjahr ab"
+    },
+    {
+      "id": "reisebericht-georgien-im-zauber-des-wilden-kaukasus-filippos",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "17:00",
+      "titel": "Reisebericht „Georgien – Im Zauber des wilden Kaukasus“",
+      "ort": "Filippos Erlebnisgarten, Blekendorf",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Bildervortrag über Georgien mit Kultur, Küche und Bergwelt des Kaukasus.",
+      "preis": "Preis im Flyer nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
+      "anreise": "DT: umständlich, ca. 3 h · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
+      "hohwacht": true
+    },
+    {
+      "id": "don-quichotte-oper-opernhaus-kiel",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "19:00",
+      "titel": "Don Quichotte (Oper)",
+      "ort": "Opernhaus Kiel",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Oper am Opernhaus Kiel.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/kiel/veranstaltungen/oktober/",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder als Quelle"
+    },
+    {
+      "id": "benni-stark-schon-lustig-wenn-s-witzig-ist-haus-des-kurgaste",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "19:00",
+      "titel": "Benni Stark: „Schon lustig, wenn's witzig ist!“",
+      "ort": "Haus des Kurgastes, Bad Malente",
+      "region": "HB",
+      "kategorie": "Comedy",
+      "beschreibung": "Stand-up-Tour des Comedians im Kurort Malente.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/comedy/benni-stark-schon-lustig-wenn-s-witzig-ist-bad-segeberg-kulturschuppen-ehemaliger-antikschuppen-2026-10-30-tickets-h7HskLSvYB",
+      "anreise": "DT: umständlich, ca. 2:30–3 h (RE bis Kiel, weiter Bahn/Bus nach Malente) · Auto: ca. 1:15 h · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "Ticketpreis nicht gesehen (eventfinder 0,00 € vermutlich Platzhalter)"
+    },
+    {
+      "id": "conny-liser-lpha-male-club-tour-2026-die-pumpe-kiel",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "20:00",
+      "titel": "CONNY & Liser: „Ælpha Male Club Tour 2026“",
+      "ort": "Die Pumpe, Kiel",
+      "region": "HB",
+      "kategorie": "Comedy",
+      "beschreibung": "Satire und Songs auf der Club-Tour der beiden.",
+      "preis": "37,95 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder; andere Seite zeigt 0,00 €"
+    },
+    {
+      "id": "kieler-lichtermeer-mit-verkaufsoffenem-sonntag-innenstadt-ki",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "13:00",
+      "titel": "Kieler Lichtermeer mit verkaufsoffenem Sonntag",
+      "ort": "Innenstadt Kiel und Holtenauer Straße (Bootshafen, Rathausplatz, Alter Markt u. a.)",
+      "region": "HB",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Lichterroute durch Innenstadt und Holtenauer Straße mit Projektionen an St. Nikolai und Ansgarkirche, Geschäfte 13–18 Uhr geöffnet. Feuershows im Bootshafen 17:30 und 18:30, Lasershow stündlich ab 18:00.",
+      "preis": "Eintritt nicht genannt",
+      "draussen": "draußen",
+      "link": "https://kiel-sailing-city.de/veranstaltungen/sonntagsoeffnungen/kieler-lichtermeer",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true
+    },
+    {
+      "id": "la-cage-aux-folles-opernhaus-kiel",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "16:00",
+      "titel": "La Cage aux Folles",
+      "ort": "Opernhaus Kiel",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Musical von Jerry Herman.",
+      "preis": "15,50–88,18 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder als Quelle"
+    },
+    {
+      "id": "peer-gynt-schauspielhaus-kiel",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "16:00",
+      "titel": "Peer*Gynt",
+      "ort": "Schauspielhaus Kiel",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Schauspiel nach Ibsen.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/kiel/veranstaltungen/november/",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder als Quelle"
+    },
+    {
+      "id": "kalter-weisser-mann-kabarett-st-michaelis-kirche-luetjenburg",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "18:00",
+      "titel": "Kalter weißer Mann (Kabarett)",
+      "ort": "St.-Michaelis-Kirche, Lütjenburg",
+      "region": "HB",
+      "kategorie": "Comedy",
+      "beschreibung": "Kabarettprogramm in der Lütjenburger Kirche.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/comedy-kabarett-wittmoldt.php",
+      "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder als Quelle"
+    },
+    {
+      "id": "das-recht-des-staerkeren-studio-im-schauspielhaus-kiel",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "19:30",
+      "titel": "Das Recht des Stärkeren",
+      "ort": "Studio im Schauspielhaus, Kiel",
+      "region": "HB",
+      "kategorie": "Bühne",
+      "beschreibung": "Schauspiel im Studio des Schauspielhauses.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.eventfinder.de/kiel/veranstaltungen/november/",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "unsicher": "nur eventfinder als Quelle"
+    },
+    {
+      "id": "burgfuehrung-turmhuegelburg-turmhuegelburg-luetjenburg-2",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "11:30",
+      "titel": "Burgführung Turmhügelburg",
+      "ort": "Turmhügelburg, Lütjenburg",
+      "region": "HB",
+      "kategorie": "Führung",
+      "beschreibung": "Führung über die nachgebaute mittelalterliche Burg.",
+      "preis": "Preis im Flyer nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
+      "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
+      "hohwacht": true,
+      "unsicher": "Flyer nur für Oktober; So 1.11. nicht bestätigt"
+    },
+    {
+      "id": "hamburger-fischmarkt-fischmarkt-grosse-elbstrasse-altona",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "07:00–09:30",
+      "titel": "Hamburger Fischmarkt",
+      "ort": "Fischmarkt / Große Elbstraße, Altona",
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Traditionsmarkt mit Marktschreiern und Fischauktionshalle. Ab November gilt die Winterzeit, der Markt öffnet also erst um 7 Uhr.",
+      "preis": "Eintritt frei",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/hamburg-maritim/fischmarkt/"
+    },
+    {
+      "id": "pans-labyrinth-omu-abaton-rotherbaum",
+      "daten": [
+        "2026-10-26",
+        "2026-10-28"
+      ],
+      "zeit": "21:30",
+      "zeiten": {
+        "2026-10-28": "22:10"
+      },
+      "dauer": 128,
+      "titel": "Pans Labyrinth (OmU)",
+      "ort": "Abaton, Rotherbaum",
+      "region": "HH",
+      "kategorie": "Kino",
+      "beschreibung": "Guillermo del Toros dunkles Märchen von 2006 als Wiederaufführung, Mo im Kleinen, Mi im Großen Kino.",
+      "preis": "Mo 11 €, Mi ab 8 €",
+      "draussen": "drinnen",
+      "link": "https://www.abaton.de/page.pl?page=553690",
+      "imdb": "155"
+    },
+    {
+      "id": "der-pate-teil-ii-omu-4k-zeise-kinos-ottensen",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "20:00",
+      "dauer": 215,
+      "titel": "Der Pate – Teil II (OmU, 4K)",
+      "ort": "Zeise Kinos, Ottensen",
+      "region": "HH",
+      "kategorie": "Kino",
+      "beschreibung": "Coppolas Fortsetzung von 1974 als 4K-Remaster in der Reihe „Grosses Kino“.",
+      "preis": "11 € (erm. 9,50 €) plus 2,50 € Überlängenzuschlag",
+      "draussen": "drinnen",
+      "link": "https://www.zeise.de/film/2676",
+      "imdb": "4"
+    },
+    {
+      "id": "der-herr-der-ringe-die-gefaehrten-extended-omu-zeise-kinos-o",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "19:00",
+      "dauer": 233,
+      "titel": "Der Herr der Ringe – Die Gefährten, Extended (OmU)",
+      "ort": "Zeise Kinos, Ottensen",
+      "region": "HH",
+      "kategorie": "Kino",
+      "beschreibung": "Reihe „Lieblingsfilm“. Teil 2 folgt am 26.11., Teil 3 am 17.12.",
+      "preis": "11 € (erm. 9,50 €) plus 2,50 € Überlängenzuschlag",
+      "draussen": "drinnen",
+      "link": "https://www.zeise.de/film/3995",
+      "imdb": "8"
+    },
+    {
+      "id": "taxi-driver-ov-mit-engl-untertiteln-kommunales-kino-in-der-p",
+      "daten": [
+        "2026-10-27"
+      ],
+      "zeit": "20:00",
+      "dauer": 124,
+      "titel": "Taxi Driver (OV mit engl. Untertiteln)",
+      "ort": "Kommunales Kino in der Pumpe, Kiel",
+      "region": "HB",
+      "kategorie": "Kino",
+      "beschreibung": "Martin Scorseses Klassiker von 1976 in der Scorsese-Reihe des Kommunalen Kinos.",
+      "preis": "7 €, erm. 6 €",
+      "draussen": "drinnen",
+      "link": "https://www.diepumpe.de/veranstaltungen/marrtin-scorsese-taxi-driver/",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "hohwacht": true,
+      "imdb": "143"
+    },
+    {
+      "id": "die-odyssee-kinopolis-hafencity-kino-5",
+      "daten": [
+        "2026-10-26",
+        "2026-10-28"
+      ],
+      "zeit": "19:00",
+      "dauer": 190,
+      "titel": "Die Odyssee",
+      "ort": "Kinopolis HafenCity, Kino 5",
+      "region": "HH",
+      "kategorie": "Kino",
+      "beschreibung": "Christopher Nolans Odyssee-Verfilmung von 2026, deutsche Fassung in 4K.",
+      "preis": "ab 13,99 €",
+      "draussen": "drinnen",
+      "link": "https://www.kinopolis.de/hh/filmdetail/die-odyssee/00874000012PLXMQDD",
+      "imdb": "64"
+    },
+    {
+      "id": "das-ding-aus-einer-anderen-welt-the-thing-ov-savoy-filmtheat",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "19:00",
+      "dauer": 118,
+      "titel": "Das Ding aus einer anderen Welt – The Thing (OV)",
+      "ort": "Savoy Filmtheater, St. Georg",
+      "region": "HH",
+      "kategorie": "Kino",
+      "beschreibung": "John Carpenters Horror-Klassiker von 1982 im „Film Club“ zur Halloween-Woche. Am 26.10. war die Vorstellung schon zu rund drei Vierteln gebucht.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://savoy.premiumkino.de/vorstellung/das-ding-aus-einer-anderen-welt-1982/20261030/1900/RyKWiQR3WR5gk5KHPRg7FA9Qk_pU4Eku_axw3c8fUIg~",
+      "imdb": "149"
+    },
+    {
+      "id": "die-odyssee-astor-film-lounge-hafencity",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "19:30",
+      "dauer": 185,
+      "titel": "Die Odyssee",
+      "ort": "Astor Film Lounge HafenCity",
+      "region": "HH",
+      "kategorie": "Kino",
+      "beschreibung": "Christopher Nolans Odyssee-Verfilmung von 2026, deutsche Fassung.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://hamburg.premiumkino.de/vorstellung/die-odyssee/20261030/1930/rWJekSomvCCC4Xv1ZJ9o1VUgH5R9NfZjcdvsq3Gq93w~",
+      "imdb": "64"
+    },
+    {
+      "id": "die-odyssee-in-70-mm-ov-savoy-filmtheater-st-georg",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "12:15",
+      "ende": "15:25",
+      "titel": "Die Odyssee in 70 mm (OV)",
+      "ort": "Savoy Filmtheater, St. Georg",
+      "region": "HH",
+      "kategorie": "Kino",
+      "beschreibung": "Nolans Odyssee-Verfilmung im Original auf 70-mm-Film. Am 26.10. war erst etwa ein Zehntel der Plätze gebucht.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://savoy.premiumkino.de/vorstellung/die-odyssee/20261031/1215/SDoBGtV7a8DgjEuQYZqSuF_LZi1jIX6dQpDICGxxSWU~",
+      "imdb": "64"
+    },
+    {
+      "id": "die-odyssee-astor-film-lounge-hafencity-2",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "16:00",
+      "ende": "19:00",
+      "titel": "Die Odyssee",
+      "ort": "Astor Film Lounge HafenCity",
+      "region": "HH",
+      "kategorie": "Kino",
+      "beschreibung": "Christopher Nolans Odyssee-Verfilmung von 2026, deutsche Fassung. Nur Kauf, keine Reservierung.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://hamburg.premiumkino.de/vorstellung/die-odyssee/20261031/1600/E8SOLhxcoqjotBbf7vOgKiitIIwDFJmfa02MjMV3muY~",
+      "imdb": "64"
+    },
+    {
+      "id": "der-herr-der-ringe-die-gefaehrten-extended-25-jahre-d-box-ki",
+      "daten": [
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "10:15",
+      "dauer": 243,
+      "titel": "Der Herr der Ringe – Die Gefährten, Extended (25 Jahre, D-BOX)",
+      "ort": "Kinopolis HafenCity, Kino 1",
+      "region": "HH",
+      "kategorie": "Kino",
+      "beschreibung": "Jubiläumsvorstellung mit Bewegungssitzen. Sa auf Deutsch, So im englischen Original.",
+      "preis": "Sa ab 8,99 €, So ab 9,99 €",
+      "draussen": "drinnen",
+      "link": "https://www.kinopolis.de/hh/filmdetail/der-herr-der-ringe-1-extended-version-25th-anniversary/58264000012PLXMQDD",
+      "imdb": "8"
+    },
+    {
+      "id": "herr-der-ringe-marathon-teil-1-3-extended-ov-savoy-filmtheat",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "11:00",
+      "ende": "23:30",
+      "titel": "Herr-der-Ringe-Marathon, Teil 1–3 Extended (OV)",
+      "ort": "Savoy Filmtheater, St. Georg",
+      "region": "HH",
+      "kategorie": "Kino",
+      "beschreibung": "Alle drei Teile in der Extended-Fassung am Stück im „Film Club“. Am 26.10. laut Savoy fast voll.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://savoy.premiumkino.de/vorstellung/trilogie-herr-der-ringe-teil-1-3-extended-version/20261101/1100/fLXlBTrjEC4aVNv5Vo9QVsMqjpoxcKMCjlSnUwUjHrg~",
+      "imdb": "5, 8 und 10"
+    }
+  ],
+  "immer": [
+    {
+      "id": "miniatur-wunderland-speicherstadt",
+      "titel": "Miniatur Wunderland",
+      "ort": "Speicherstadt",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Größte Modelleisenbahn der Welt. Zeitfenster online buchen, am Wochenende längere Wartezeiten.",
+      "zeiten": "täglich ab 9:30, mind. bis 18 Uhr, oft länger",
+      "preis": "Erw. 22 €, Kinder unter 16 J. 13 € (Vorwoche, nicht neu geprüft)",
+      "draussen": "drinnen",
+      "anreise": "U3 Baumwall + 5 Min. zu Fuß",
+      "link": "https://www.miniatur-wunderland.com/visiting/plan-your-visit/opening-hours",
+      "unsicher": "Zeiten der Woche 26.10.–1.11. auf der Seite nicht eindeutig"
+    },
+    {
+      "id": "internationales-maritimes-museum-kaispeicher-b-hafencity",
+      "titel": "Internationales Maritimes Museum",
+      "ort": "Kaispeicher B, HafenCity",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Schifffahrtsgeschichte auf zehn Decks. Ab 16:30 gibt es das „Störtebeker-Ticket“.",
+      "zeiten": "Ausstellung täglich 10–18",
+      "preis": "Erw. 18 €, ermäßigt 13 €, ab 16:30 9 €",
+      "draussen": "drinnen",
+      "anreise": "U4 Überseequartier",
+      "link": "https://www.imm-hamburg.de/"
+    },
+    {
+      "id": "hadag-faehre-62-hafenrundfahrt-zum-nahverkehrspreis-landungs",
+      "titel": "HADAG-Fähre 62: Hafenrundfahrt zum Nahverkehrspreis",
+      "ort": "Landungsbrücken – Övelgönne – Finkenwerder",
+      "region": "HH",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Vorbei an Fischmarkt, Dockland und Övelgönne über die Elbe. Gut kombinierbar mit Elbstrand und Altonaer Balkon.",
+      "zeiten": "tagsüber ca. alle 15 Min.",
+      "preis": "mit Deutschlandticket kostenlos",
+      "kostenlos": true,
+      "draussen": "beides",
+      "anreise": "S1/S3/U3 Landungsbrücken",
+      "link": "https://www.hamburg.de/verkehr/hadag-linie-62-314160",
+      "wetterabhaengig": true,
+      "unsicher": "Winterfahrplan ab November nicht geprüft"
+    },
+    {
+      "id": "elbstrand-oevelgoenne-und-museumshafen-oevelgoenne",
+      "titel": "Elbstrand Övelgönne und Museumshafen",
+      "ort": "Övelgönne",
+      "region": "HH",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Sandstrand mit Blick auf die Containerschiffe. Spaziergang bis zum Altonaer Balkon.",
+      "zeiten": "jederzeit",
+      "preis": "kostenlos",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "anreise": "Fähre 62 bis Museumshafen Övelgönne oder Bus 111",
+      "link": "https://www.hamburg.de/tourismus/hamburg-erkunden/hafenrundfahrt/hafenrundfahrten-hamburg-309396",
+      "wetterabhaengig": true
+    },
+    {
+      "id": "hafenrundfahrt-mit-der-barkasse-landungsbruecken",
+      "titel": "Hafenrundfahrt mit der Barkasse",
+      "ort": "Landungsbrücken",
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Klassische einstündige Rundfahrt, die Speicherstadt-Durchfahrt hängt von der Tide ab. Ab November kann der Winterfahrplan gelten.",
+      "zeiten": "tagsüber, Takt je nach Saison",
+      "preis": "1 h ca. 20–26 €",
+      "draussen": "beides",
+      "anreise": "S1/S3/U3 Landungsbrücken",
+      "link": "https://www.hamburg.de/tourismus/hamburg-erkunden/hafenrundfahrt/hafenrundfahrten-hamburg-309396",
+      "wetterabhaengig": true,
+      "unsicher": "Winterfahrplan nicht geprüft"
+    },
+    {
+      "id": "alster-rundfahrt-mit-dem-dampfschiff-st-georg-jungfernstieg",
+      "titel": "Alster-Rundfahrt mit dem Dampfschiff St. Georg",
+      "ort": "Jungfernstieg",
+      "region": "HH",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Rundfahrt über die Alster mit dem historischen Dampfschiff, dazu Rondeelteich-Route und Kanalfahrt.",
+      "zeiten": "Mo–Do 12:45, So 11:15 (Kanalfahrt) und 14:00",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "anreise": "U1/U4 Jungfernstieg",
+      "link": "https://www.regioactive.de/freizeit/alster-rundfahrt-mit-rondeelteich-dampfschiff-st-georg-hamburg-apos-2026-10-28-tickets-pG43BD09X6",
+      "wetterabhaengig": true,
+      "unsicher": "nur Aggregator, Fr/Sa nicht gesehen"
+    },
+    {
+      "id": "planten-un-blomen-innenstadt",
+      "titel": "Planten un Blomen",
+      "ort": "Innenstadt",
+      "region": "HH",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Großer Park mit Japanischem Garten. Tropengewächshäuser 2026 wegen Sanierung zu, Wasserlichtkonzerte vorbei.",
+      "zeiten": "täglich 7–20 (Vorwoche, Winterzeiten nicht geprüft)",
+      "preis": "kostenlos",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "anreise": "U1 Stephansplatz / S Dammtor",
+      "link": "https://plantenunblomen.hamburg.de/",
+      "wetterabhaengig": true,
+      "unsicher": "Parkzeiten für die Woche nicht neu geprüft"
+    },
+    {
+      "id": "tierpark-hagenbeck-und-tropen-aquarium-stellingen",
+      "titel": "Tierpark Hagenbeck und Tropen-Aquarium",
+      "ort": "Stellingen",
+      "region": "HH",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Historischer Tierpark, das Aquarium ist die Regenalternative. Die Öffnungszeiten wechseln laut Seite Ende Oktober/ab 1.11. auf Winterzeiten.",
+      "zeiten": "Winterzeiten ab ca. 1.11., Uhrzeiten nicht genannt",
+      "preis": "Tierpark Erw. 29 €, Kind 19 €; Aquarium Erw. 25 €, Kind 17 € (Vorwoche)",
+      "draussen": "beides",
+      "anreise": "U2 Hagenbecks Tierpark",
+      "link": "https://www.hagenbeck.de/",
+      "unsicher": "Winterzeiten nicht auf der Seite, Preise nicht neu geprüft"
+    },
+    {
+      "id": "chocoversum-messberg",
+      "titel": "Chocoversum",
+      "ort": "Meßberg",
+      "region": "HH",
+      "kategorie": "Food",
+      "beschreibung": "90-minütige Schokotour mit sechs Verkostungen und eigener Tafel, Buchung über ticket.chocoversum.de.",
+      "zeiten": "Tourzeiten nur im Ticketshop",
+      "preis": "ab 23 €",
+      "draussen": "drinnen",
+      "anreise": "U1 Meßberg",
+      "link": "https://www.chocoversum.de/",
+      "unsicher": "Tourtermine und Montagsöffnung nicht gesehen"
+    },
+    {
+      "id": "hamburg-dungeon-speicherstadt",
+      "titel": "Hamburg Dungeon",
+      "ort": "Speicherstadt",
+      "region": "HH",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Grusel-Show zur Hamburger Geschichte, passend zu Halloween, nichts für kleine Kinder.",
+      "zeiten": "wechselnd, vorher prüfen",
+      "preis": "online ab 22 €",
+      "draussen": "drinnen",
+      "anreise": "U3 Baumwall",
+      "link": "https://www.thedungeons.com/hamburg/de/",
+      "unsicher": "Öffnungszeiten wechseln täglich, nicht neu geprüft"
+    },
+    {
+      "id": "wittenbergener-heide-und-falkensteiner-ufer-rissen",
+      "titel": "Wittenbergener Heide und Falkensteiner Ufer",
+      "ort": "Rissen",
+      "region": "HH",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Heide, Dünen und Elbhang mit Leuchttürmen. Wanderroute 9,1 km von S Sülldorf nach S Rissen.",
+      "zeiten": "jederzeit",
+      "preis": "kostenlos",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "anreise": "S1 Sülldorf, ca. 30 Min.",
+      "link": "https://www.hamburg.de/resource/blob/51716/5ccf6fb7ca248b5423ad5a70bff1c118/route3-wittenbergener-heide-data.pdf",
+      "wetterabhaengig": true
+    },
+    {
+      "id": "duvenstedter-brook-wohldorf-ohlstedt",
+      "titel": "Duvenstedter Brook",
+      "ort": "Wohldorf-Ohlstedt",
+      "region": "HH",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Moor und Wald mit Rot- und Damwild, die Brunft klingt Ende Oktober aus. Am besten morgens oder abends.",
+      "zeiten": "jederzeit",
+      "preis": "kostenlos",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "anreise": "U1 Ohlstedt + ca. 30 Min. zu Fuß",
+      "link": "https://www.nabu.de/natur-und-landschaft/natur-erleben/nabu-zentren/hamburg/24058.html",
+      "wetterabhaengig": true,
+      "unsicher": "BrookHus-Zeiten der Vorwoche nicht neu geprüft"
+    },
+    {
+      "id": "baederland-festland-altona",
+      "titel": "Bäderland Festland",
+      "ort": "Altona",
+      "region": "HH",
+      "kategorie": "Therme & Bad",
+      "beschreibung": "Bad und Sauna als Ersatz für das geschlossene Holthusenbad. Dienstag Ruhetag, Montag Frauensaunatag.",
+      "zeiten": "Bad Mo, Mi–Fr 9–22, Sa/So 10–22; Sauna Mi–So 10–22, Mo 10–22 (Frauen); Di zu",
+      "preis": "Preis nicht geprüft",
+      "draussen": "drinnen",
+      "anreise": "S Holstenstraße",
+      "link": "https://www.baederland.de/oeffnungszeiten"
+    },
+    {
+      "id": "planetarium-hamburg-stadtpark-winterhude",
+      "titel": "Planetarium Hamburg",
+      "ort": "Stadtpark, Winterhude",
+      "region": "HH",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Fulldome-Shows von Sternenhimmel bis Voyager 3D, abends z. B. „Sternenhimmel über Hamburg live“. Auch Kinderprogramm, Auswahl nach Uhrzeit.",
+      "zeiten": "Di 9–19, Mi 9–18, Do/Fr 9–21, Sa 11–22:30, So 10–19, Mo laut Seite zu",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "anreise": "U3 Borgweg / Bus 179",
+      "link": "https://www.planetarium-hamburg.de/programm",
+      "unsicher": "Seite zeigt Mo 26.10. dennoch Shows, nur 26./27.10. geprüft"
+    },
+    {
+      "id": "wildpark-schwarze-berge-rosengarten",
+      "titel": "Wildpark Schwarze Berge",
+      "ort": "Rosengarten",
+      "region": "LG",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Wildpark mit heimischen Tieren und Wald, ganzjährig geöffnet. Zufahrt Eißendorfer Waldweg bis ca. Dezember gesperrt, Bus 340 fährt nur ab Neuwiedenthal.",
+      "zeiten": "täglich 8–18 (Seite nennt im Sommer bis 20 Uhr)",
+      "preis": "Erw. 16 €, Kinder 14 €",
+      "draussen": "draußen",
+      "anreise": "DT: S3/S5 bis Neuwiedenthal + Bus 340, ca. 50–60 Min. · Auto: ca. 30 Min.",
+      "link": "https://www.wildpark-schwarze-berge.de/",
+      "wetterabhaengig": true,
+      "unsicher": "Seite teils veraltet (alte Corona-Hinweise), Zeiten telefonisch prüfen"
+    },
+    {
+      "id": "lueneburg-altstadt-und-salztherme-salue-lueneburg",
+      "titel": "Lüneburg Altstadt und Salztherme SaLü",
+      "ort": "Lüneburg",
+      "region": "LG",
+      "kategorie": "Therme & Bad",
+      "beschreibung": "Backstein-Altstadt mit Stintmarkt und Wasserviertel, dazu Sole-Therme mit Saunawelt. Für diese Woche ist keine Schließung angekündigt.",
+      "zeiten": "Wasserviertel Mo–Sa 10–22, So 10–20; Siederei Mo–Do 10–22, Fr/Sa bis 22:30, So 10–20",
+      "preis": "Preise auf der Seite nicht gesehen (Vorjahr: 2 h 13,50 €)",
+      "draussen": "beides",
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
+      "link": "https://www.salue.info/",
+      "unsicher": "Sonn-/Feiertagszeiten laut Website; Sa 31.10. ist in Niedersachsen Feiertag, Zeiten ggf. abweichend"
+    },
+    {
+      "id": "lueneburger-heide-undeloh-wilsede-totengrund-undeloh",
+      "titel": "Lüneburger Heide: Undeloh – Wilsede – Totengrund",
+      "ort": "Undeloh",
+      "region": "LG",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Klassische Heidewanderung von 10–12 km, die Blüte ist vorbei, dafür gibt es Herbstfarben. Mit dem Deutschlandticket schwer erreichbar.",
+      "zeiten": "jederzeit",
+      "preis": "kostenlos (Parkgebühr)",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "anreise": "Auto: ca. 45–60 Min.",
+      "link": "https://www.lueneburger-heide.de/",
+      "wetterabhaengig": true,
+      "unsicher": "Heide-Shuttle vermutlich nicht mehr im Betrieb"
+    },
+    {
+      "id": "luebeck-altstadt-und-europaeisches-hansemuseum-luebeck",
+      "titel": "Lübeck Altstadt und Europäisches Hansemuseum",
+      "ort": "Lübeck",
+      "region": "LUE",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Holstentor, Altstadtinsel (UNESCO) und Marzipan. Im Hansemuseum lief zuletzt die Sonderausstellung „Let's Play Mittelalter“.",
+      "zeiten": "Hansemuseum zuletzt täglich 10–18",
+      "preis": "Hansemuseum Erw. 14 €, unter 18 frei",
+      "draussen": "beides",
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "link": "https://www.hansemuseum.eu/",
+      "unsicher": "Museumsseite war nicht abrufbar, Zeiten und Ausstellung aus der Vorwoche übernommen"
+    },
+    {
+      "id": "travemuende-strand-und-promenade-luebeck-travemuende",
+      "titel": "Travemünde: Strand und Promenade",
+      "ort": "Lübeck-Travemünde",
+      "region": "LUE",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Herbstspaziergang an Strand und Nordermole mit Blick auf die Fähren.",
+      "zeiten": "jederzeit",
+      "preis": "kostenlos",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "anreise": "DT: ca. 1:10 h (RE bis Lübeck + RB bis Travemünde Strand) · Auto: ca. 1 h",
+      "link": "https://www.travemuende-tourismus.de/",
+      "wetterabhaengig": true
+    },
+    {
+      "id": "ostsee-therme-scharbeutz-scharbeutz",
+      "titel": "Ostsee-Therme Scharbeutz",
+      "ort": "Scharbeutz",
+      "region": "LUE",
+      "kategorie": "Therme & Bad",
+      "beschreibung": "Erlebnisbad mit Rutschen und Sauna direkt an der Ostsee.",
+      "zeiten": "Zeiten dieser Woche nicht geprüft (Vorwoche: täglich ab 9 Uhr)",
+      "preis": "Preis nicht geprüft (Drittquelle: 3 h Erw. ca. 18 €)",
+      "draussen": "drinnen",
+      "anreise": "DT: ca. 1:20–1:40 h · Auto: ca. 1 h",
+      "link": "https://www.ostsee-therme.de/",
+      "unsicher": "Seite lieferte keine Zeiten, Unterseite nicht abrufbar; vor Besuch anrufen"
+    },
+    {
+      "id": "holstentherme-kaltenkirchen-kaltenkirchen",
+      "titel": "HolstenTherme Kaltenkirchen",
+      "ort": "Kaltenkirchen",
+      "region": "WEI",
+      "kategorie": "Therme & Bad",
+      "beschreibung": "Erlebnisbad mit Sole und großer Saunawelt. Die Seite weist für 26.10.–1.11.2026 auf Sonderzeiten hin.",
+      "zeiten": "Sonderzeiten 26.10.–1.11. laut Seite, Uhrzeiten nicht gesehen (Regelzeiten Vorwoche: Mo–Do 10–22, Fr/Sa bis 22:30, So bis 22)",
+      "preis": "Preis nicht geprüft (Vorwoche: Tag Bad ca. 26 €, mit Sauna ca. 37 €)",
+      "draussen": "drinnen",
+      "anreise": "DT: AKN A1 ab Eidelstedt, ca. 1 h · Auto: ca. 35–45 Min.",
+      "link": "https://www.holstentherme.de/informationen/oeffnungszeiten-preise",
+      "unsicher": "Sonderzeiten vorher auf der Seite „Zeiten & Preise“ nachsehen"
+    },
+    {
+      "id": "altes-land-hoflaeden-und-hofcaf-s-jork",
+      "titel": "Altes Land: Hofläden und Hofcafés",
+      "ort": "Jork",
+      "region": "STD",
+      "kategorie": "Food",
+      "beschreibung": "Hofläden mit frischen Äpfeln, z. B. Obsthof Matthies (Am Elbdeich 31, Tel. 04162 9158-0) und Herzapfelhof Lühs (Osterjork 102). Selbstpflücken ist Ende Oktober fraglich, vorher anrufen.",
+      "zeiten": "Vorwoche: Matthies täglich 8–18, Lühs Mo–Sa 8–18, So 10–18",
+      "preis": "Hofladenpreise",
+      "draussen": "beides",
+      "anreise": "DT: S5 bis Neugraben/Buxtehude + Bus, ca. 1 h · Auto: ca. 40 Min.",
+      "link": "https://www.hamburg-magazin.de/artikel/aepfel-selber-pfluecken-in-hamburg",
+      "unsicher": "Zeiten für diese Woche nicht neu geprüft; Veranstaltungsseiten des Altes Land waren nicht abrufbar"
+    },
+    {
+      "id": "stade-altstadt-und-hansehafen-stade",
+      "titel": "Stade Altstadt und Hansehafen",
+      "ort": "Stade",
+      "region": "STD",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Fachwerk-Altstadt am alten Hansehafen, gut mit dem Alten Land kombinierbar. Abends Programm im Stadeum (Mi–Fr).",
+      "zeiten": "jederzeit",
+      "preis": "kostenlos",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "anreise": "DT: ca. 55–60 Min. (S5 bis Stade) · Auto: ca. 45–50 Min. (A26)",
+      "link": "https://www.stade-tourismus.de/",
+      "wetterabhaengig": true
+    },
+    {
+      "id": "lueneburger-wasserturm-am-wasserturm-lueneburg",
+      "titel": "Lüneburger Wasserturm",
+      "ort": "Am Wasserturm, Lüneburg",
+      "region": "LG",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Wahrzeichen der Stadt, das auch als Veranstaltungsort dient: Mo 26.10. Vollmondkonzert, Fr 30.10. Lesung. Aussichtsplattform und Führungen siehe Webseite.",
+      "zeiten": "Zeiten der Aussichtsplattform nicht geprüft",
+      "preis": "Preis nicht genannt",
+      "draussen": "beides",
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
+      "link": "https://wasserturm.net/",
+      "unsicher": "Betreiberseite war nicht abrufbar, nur Veranstaltungen über Aggregator gesehen"
+    },
+    {
+      "id": "marine-ehrenmal-und-u-995-laboe",
+      "titel": "Marine-Ehrenmal und U 995",
+      "ort": "Laboe",
+      "region": "HB",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Aussichtsturm über der Förde und begehbares U-Boot am Strand. Sommerzeit endet am 31.10., ab 1.11. gilt die kürzere Winterzeit.",
+      "zeiten": "bis Sa 31.10. täglich 10–17:30, ab So 1.11. täglich 10–16",
+      "preis": "Kombiticket 14 €, Marine-Ehrenmal 9 €, U 995 8 €",
+      "draussen": "beides",
+      "anreise": "DT: ca. 2 h (Kiel + Fähre F1 oder Bus) · Auto: ca. 1:35 h · ab Hohwacht ca. 35 Min.",
+      "link": "https://deutscher-marinebund.de/?p=16931",
+      "hohwacht": true
+    },
+    {
+      "id": "eiszeitmuseum-luetjenburg-nienthal-7-luetjenburg",
+      "titel": "Eiszeitmuseum Lütjenburg",
+      "ort": "Nienthal 7, Lütjenburg",
+      "region": "HB",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Kleines Museum zur Eiszeit in der Region, gut für einen Regentag. Laut Flyer Eiszeitwerkstatt Mi 11:00 (Tel. 04381 415210) und Museumsrallye Fr 10–17 (eher für Kinder).",
+      "zeiten": "Di–So 10–17, Mo zu (Vorwoche, nicht neu bestätigt)",
+      "preis": "Erw. 4 €, Kind 2 € (Vorwoche)",
+      "draussen": "drinnen",
+      "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
+      "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
+      "hohwacht": true,
+      "unsicher": "Museumsseite war nicht abrufbar; Öffnungszeiten und Feiertag 31.10. nicht bestätigt"
+    },
+    {
+      "id": "steilkueste-und-strand-hohwacht-behrensdorf-hohwacht-seebrue",
+      "titel": "Steilküste und Strand Hohwacht – Behrensdorf",
+      "ort": "Hohwacht, Seebrücke",
+      "region": "HB",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Strand- und Steilküstenwanderung, z. B. auf der Hohwachter Flunderroute. Die Bucht ist militärisches Schießgebiet, Sperrungen vor Ort beachten.",
+      "zeiten": "jederzeit",
+      "preis": "kostenlos",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "anreise": "vor Ort in Hohwacht",
+      "link": "https://www.ich-geh-wandern.de/hohwachter-flunderroute",
+      "hohwacht": true,
+      "wetterabhaengig": true
+    },
+    {
+      "id": "wanderung-gut-panker-hessenstein-panker",
+      "titel": "Wanderung Gut Panker – Hessenstein",
+      "ort": "Panker",
+      "region": "HB",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Rundweg von ca. 13 km über das Gut mit Trakehner-Gestüt zum Aussichtsturm Hessenstein. Führungen über Gut Panker nur auf Anfrage.",
+      "zeiten": "jederzeit",
+      "preis": "kostenlos, Turm ca. 1 €",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "anreise": "Auto: ab Hohwacht ca. 15 Min. (mit DT kaum erreichbar)",
+      "link": "https://bergsteiger.de/touren/wandern/wandern-schleswig-holstein-vom-gut-panker-auf-den-hessenstein/",
+      "hohwacht": true,
+      "wetterabhaengig": true,
+      "unsicher": "Turmöffnung im Herbst nicht bestätigt"
+    },
+    {
+      "id": "aquarium-geomar-duesternbrooker-weg-20-kiel",
+      "titel": "Aquarium GEOMAR",
+      "ort": "Düsternbrooker Weg 20, Kiel",
+      "region": "HB",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Kleines Meeresaquarium an der Förde mit Seehundbecken. Kiel-Tourismus verweist für Ende Oktober auf Winterzeiten.",
+      "zeiten": "Winterzeiten, Uhrzeiten nicht bestätigt",
+      "preis": "Erw. 3 €, Kinder 2 € (alte Angabe)",
+      "draussen": "beides",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "link": "https://kiel-sailing-city.de/en/explore-the-kiel-fjord/sightseeing/in-winter",
+      "hohwacht": true,
+      "unsicher": "Winterzeiten und Preis nicht bestätigt, Tel. 0431 6001637"
+    },
+    {
+      "id": "kunsthalle-zu-kiel-zu-gast-im-landeshaus-landeshaus-duestern",
+      "titel": "Kunsthalle zu Kiel zu Gast im Landeshaus",
+      "ort": "Landeshaus, Düsternbrooker Weg 70, Kiel",
+      "region": "HB",
+      "kategorie": "Ausstellung",
+      "beschreibung": "„Zwischen Sammlung und Sanierung“ zeigt Teile der Sammlung, bis 29.11. Amtlicher Lichtbildausweis nötig.",
+      "zeiten": "täglich 10–18 (laut regioactive, Sa 31.10./So 1.11. eingeschlossen)",
+      "preis": "Eintritt unklar",
+      "draussen": "drinnen",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "link": "https://www.regioactive.de/ausstellung/zwischen-sammlung-und-sanierung-die-kunsthalle-zu-kiel-gast-im-landeshaus-termine-tickets-120a9ad270be",
+      "hohwacht": true,
+      "unsicher": "Eintritt und Feiertagsregel nicht gesehen"
+    },
+    {
+      "id": "kieler-hoernbad-anni-wadle-weg-1-kiel",
+      "titel": "Kieler Hörnbad",
+      "ort": "Anni-Wadle-Weg 1, Kiel",
+      "region": "HB",
+      "kategorie": "Therme & Bad",
+      "beschreibung": "Freizeitbad mit Rutsche, Außenbecken und Saunen direkt an der Hörn.",
+      "zeiten": "Mo–Sa 10–21, So 10–20 (Vorwoche)",
+      "preis": "Preise auf kiel.de",
+      "draussen": "drinnen",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "link": "https://www.schwimmbadcheck.de/kiel/hoernbad.html",
+      "hohwacht": true,
+      "unsicher": "Stadtseite nicht abrufbar, Zeiten und Feiertag 31.10. nicht bestätigt"
+    },
+    {
+      "id": "schleuse-kiel-holtenau-aussichtsplattform-kiel-wik-holtenau",
+      "titel": "Schleuse Kiel-Holtenau, Aussichtsplattform",
+      "ort": "Kiel-Wik / Holtenau",
+      "region": "HB",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Rundumblick auf Förde, Nord-Ostsee-Kanal und Schleusenanlage, bei Schiffsbetrieb ein ruhiger Regen-Pausen-Spaziergang.",
+      "zeiten": "von Sonnenaufgang bis Sonnenuntergang (ca. 7–16:45)",
+      "preis": "kostenlos",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
+      "link": "https://kiel-sailing-city.de/en/explore-the-kiel-fjord/sightseeing/in-winter",
+      "hohwacht": true,
+      "wetterabhaengig": true,
+      "unsicher": "nur Kiel-Tourismus als Quelle"
+    }
+  ],
+  "hinweise": [
+    {
+      "titel": "Abgesagt",
+      "text": "Neunundneunzig (So 1.11., Knust), Carl Carlton & Melanie Wiegmann (Fabrik, 26.10., verlegt auf 10.3.2027), Archie Clapp im Schmidtchen (27.10., laut eventfinder)."
+    },
+    {
+      "titel": "Ausverkauft",
+      "text": "Thalia „Die Vegetarierin“ (26.10.) und „Dschinns“ (27.10.), evtl. Restkarten an der Abendkasse; Abeer Nehme (31.10., Elphi); Kinky Galore (30.10.) und La Casa del Perreo (31.10.) im Uebel & Gefährlich; „Société Anonyme“ (28.10., Schauspielhaus); Theater Lübeck „Name: Sophie Scholl“ (29.10.), „Stolz und Vorurteil“-Premiere (30.10.), „Hand in Hand“ (31.10.); „Elisabeth“ im Schauspielhaus Kiel (26.10.). Fast ausverkauft: AIDA & Friends (28.10.), Charbel Rouhana (31.10.), „Wunderland“ an der Staatsoper (31.10.)."
+    },
+    {
+      "titel": "Sport",
+      "text": "FC St. Pauli spielt So 1.11. zu Hause gegen Nürnberg. Der HSV spielt So 1.11. um 17:30 in Frankfurt. Holstein Kiel hat am Mi 28.10. ein Pokal-Heimspiel gegen Hoffenheim und spielt So 1.11. in Fürth. Die HSV-Frauen spielen Sa 31.10. im DFB-Pokal-Achtelfinale zu Hause gegen Union Berlin. Die Hamburg Towers haben kein Heimspiel, zum THW Kiel war kein Spiel zu finden. Die Crocodiles spielen Fr 30.10. gegen FASS Berlin, eine Uhrzeit war nicht zu finden."
+    },
+    {
+      "titel": "Saisonenden",
+      "text": "Heide Park Halloween endet am Sa 31.10. Im Serengeti-Park endet die Saison am So 1.11., das Lichterfestival beginnt am 6.11. Für den Hansa-Park waren keine Öffnungszeiten für diese Woche zu finden, die Saison ist vermutlich vorbei, also vorher prüfen. In Laboe gilt ab 1.11. die Winterzeit 10–16 Uhr, ebenso am Fischmarkt (7–9:30 Uhr). PHOXXI zeigt seine Ausstellungen nur noch bis 1.11. Der Winterdom beginnt am 6.11., Weihnachtsmärkte ab Mitte November. Geschlossen bleiben das Holthusenbad und die Tropengewächshäuser in Planten un Blomen."
+    },
+    {
+      "titel": "Ohne bestätigte Uhrzeit, nicht aufgenommen",
+      "text": "Docks (Badmómzjay 28.10., Gentleman 30.10.), Markthalle (Heisskalt 31.10., Red Hot Chilli Pipers 1.11.), Mojo Club (Myles Sanko 28.10.), Theater Wismar und Club Zenit Schwerin. Bitte auf den Seiten der Häuser nachsehen."
+    },
+    {
+      "titel": "Abends vor Arbeitstagen",
+      "text": "(So–Do) steht nur, was spätestens um 21:30 endet. Wo kein Ende angegeben ist, ist es geschätzt: Konzert gut 2 Stunden, Theater 2,5 Stunden, Film Laufzeit plus Werbung. Märkte, Feste und Ausstellungen zählen, wenn sie bis 20:30 beginnen."
+    },
+    {
+      "titel": "Kino",
+      "text": "Vorführungen von Filmen aus der IMDb Top 250 (Stand 25.10.). CinemaxX, UCI, Passage und Holi hatten ihr Programm ab Do 29.10. noch nicht veröffentlicht, dort kann noch etwas dazukommen."
+    },
+    {
+      "titel": "Nicht aufgeführt",
+      "text": "reine Kinderangebote wie Ferienworkshops, Kindertheater, Kinderführungen und Kinderflohmärkte."
+    },
+    {
+      "titel": "Anreisezeiten",
+      "text": "sind Richtwerte ab Hamburg Hbf bzw. Innenstadt und nicht für jede Verbindung im Fahrplan geprüft. Deutschlandticket-Angaben nennen nur Nahverkehr (RE/RB/S/U/Bus/HADAG)."
+    },
+    {
+      "titel": "Rot markiert",
+      "text": "sind Angaben, die nur von einem Aggregator (z. B. regioactive, eventfinder) stammen oder sich widersprechen. Die übrigen Termine sind auf der verlinkten Seite für diese Woche bestätigt."
+    },
+    {
+      "text": "Quellen u. a.: elbphilharmonie.de, die-hamburgische-staatsoper.de, thalia-theater.de, schauspielhaus.de, kampnagel.de, almahoppe.de, knusthamburg.de, uebelundgefaehrlich.com, hamburg.de, hamburg-tourism.de, theaterluebeck.de, muk.de, heide-park.de, serengeti-park.de, theater-kiel.de, kiel-sailing-city.de, hohwachterbucht.de (Oktober-Flyer), deutscher-marinebund.de, regioactive.de, eventfinder.de, mvp.de, anstosszeiten.de, bundesliga.com, wetter.com. Stand: Mo 26.10.2026 früh. Eine Stichprobe von über 30 Terminen wurde direkt auf den Seiten der Veranstalter nachgeprüft, u. a. Staatsoper, Thalia, Alma Hoppe, Theater Lübeck, Knust, MuK, Heide Park, Elbphilharmonie, hamburg.de-Flohmärkte und Kieler Lichtermeer."
+    }
+  ]
+}

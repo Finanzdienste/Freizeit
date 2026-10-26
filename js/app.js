@@ -3,7 +3,7 @@
  * Künstler und deine Merkliste.
  *
  * Einstieg: Daten laden, Reiter zeichnen, Knöpfe verdrahten. Die Daten
- * schreiben geplante Läufe montags (Woche) und samstags (Konzerte) nach
+ * schreibt ein geplanter Lauf montags früh (Woche und Konzerte) nach
  * daten/; die App selbst ändert sie nie.
  */
 import { laden, speichern, aktuell, merken, entfernen } from './speicher.js';

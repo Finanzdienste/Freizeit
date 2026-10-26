@@ -1,6 +1,6 @@
 # Bei jedem Push: Linter, die Datendateien und alle Browsertests.
 #
-# Läuft auch nach jedem Datenlauf (montags die Woche, samstags die Konzerte).
+# Läuft auch nach jedem Datenlauf (montags: die Woche und die Konzerte).
 # Die Läufe prüfen ihre Datei vorher selbst mit tests/test-daten.mjs; das
 # hier ist die zweite Meinung, mit der App im Browser.
 name: Prüfung

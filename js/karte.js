@@ -74,7 +74,7 @@ export const eintragImmer = (e) => ({
   wetterabhaengig: Boolean(e.wetterabhaengig),
 });
 
-/** Ein Konzert aus dem Musikcheck. */
+/** Ein Konzert aus daten/konzerte.json. */
 export const eintragKonzert = (k) => ({
   titel: k.kuenstler,
   untertitel: k.titel || '',

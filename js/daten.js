@@ -1,7 +1,7 @@
 /*
- * Die Daten der App: daten/woche.json (montags) und daten/konzerte.json (samstags).
+ * Die Daten der App: daten/woche.json und daten/konzerte.json, beide montags früh.
  *
- * Beide schreiben geplante Läufe ins Repository; das Format steht in
+ * Beide schreibt ein geplanter Lauf ins Repository; das Format steht in
  * README.md. Hier wird nur geladen und so weit geprüft, dass ein
  * kaputter Lauf die App nicht leer zurücklässt: Was nicht passt, fällt weg,
  * und die Fehler werden angezeigt statt verschluckt.

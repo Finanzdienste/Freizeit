@@ -2,7 +2,7 @@
  * Freizeit: Sind die beiden Datendateien so, wie die App sie braucht?
  *
  * Ohne Browser und ohne Server. Die geplanten Läufe schreiben
- * daten/woche.json (montags) und daten/konzerte.json (samstags) und prüfen
+ * daten/woche.json und daten/konzerte.json (montags früh) und prüfen
  * sie hiermit, bevor sie committen:
  *
  *     node tests/test-daten.mjs

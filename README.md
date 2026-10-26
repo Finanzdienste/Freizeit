@@ -40,19 +40,22 @@ Gerechnet wird in `js/zeit.js`, geprüft in `tests/test-woche.mjs`.
 
 ## Woher die Daten kommen
 
-Die App ändert ihre Daten nie selbst. Zwei geplante Läufe schreiben sie:
+Die App ändert ihre Daten nie selbst. Ein geplanter Lauf schreibt sie,
+„Freizeit-Wochenplan Hamburg“, montags gegen 7 Uhr:
 
-| Datei | Wer | Wann |
-| --- | --- | --- |
-| `daten/woche.json` | „Freizeit-Wochenplan Hamburg“ | montags gegen 7 Uhr |
-| `daten/konzerte.json` | „Samstags-Musikcheck“ | samstags gegen 9 Uhr |
+| Datei | Inhalt |
+| --- | --- |
+| `daten/woche.json` | die Woche von Montag bis Sonntag |
+| `daten/konzerte.json` | Konzerte der eigenen Künstler in den nächsten zwölf Monaten |
 
-Ein Lauf schreibt **nur seine eine Datei**, prüft sie mit
+Neue Releases und Song-Tipps schickt derselbe Lauf nur als Nachricht, sie
+stehen nicht in der App.
+
+Der Lauf schreibt **nur diese beiden Dateien**, prüft sie mit
 `node tests/test-daten.mjs` (ohne `npm ci`, nur Node) und committet sie
-direkt auf `main`
-(„Freizeit: Woche KW 45“ bzw. „Freizeit: Konzerte vom 31.10.“). Die Daten
-stehen bewusst nicht im Offline-Vorrat von `sw.js` – darum braucht ein
-Datenlauf weder eine neue VERSION noch sonst eine Änderung am Code.
+direkt auf `main` („Freizeit: Woche KW 45 und Konzerte“). Die Daten stehen
+bewusst nicht im Offline-Vorrat von `sw.js` – darum braucht ein Datenlauf
+weder eine neue VERSION noch sonst eine Änderung am Code.
 
 GitHub Pages baut von `main`; nach einem Push steht die neue Datei nach ein
 bis zwei Minuten unter `https://finanzdienste.github.io/Freizeit/daten/…`.

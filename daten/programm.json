@@ -1,7 +1,6 @@
 {
-  "version": 1,
+  "version": 2,
   "stand": "2026-10-26T07:03",
-  "kw": 44,
   "von": "2026-10-26",
   "bis": "2026-11-01",
   "infos": [
@@ -95,35 +94,6 @@
   ],
   "termine": [
     {
-      "id": "disneys-der-koenig-der-loewen-stage-theater-im-hafen-steinwe",
-      "daten": [
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "zeit": "Di/Mi 18:30, Do/Fr 20:00, Sa 15:00 + 20:00, So 14:00 + 18:30 (Mo keine Vorstellung)",
-      "zeiten": {
-        "2026-11-01": "14:00 + 18:30",
-        "2026-10-27": "18:30",
-        "2026-10-28": "18:30",
-        "2026-10-29": "20:00",
-        "2026-10-30": "20:00",
-        "2026-10-31": "15:00 + 20:00"
-      },
-      "ganzeWoche": true,
-      "titel": "Disneys Der König der Löwen",
-      "ort": "Stage Theater im Hafen, Steinwerder",
-      "region": "HH",
-      "kategorie": "Bühne",
-      "beschreibung": "Hamburgs Musical-Dauerbrenner, Anfahrt mit der Stage-Fähre ab Landungsbrücken.",
-      "preis": "ab ca. 66 €",
-      "draussen": "drinnen",
-      "link": "https://www.regioactive.de/musical/disneys-der-koenig-loewen-termine-tickets-b2c6bc13b559"
-    },
-    {
       "id": "zurueck-in-die-zukunft-das-musical-stage-operettenhaus-reepe",
       "daten": [
         "2026-10-27",
@@ -138,7 +108,11 @@
       "preis": "ab ca. 42 €",
       "draussen": "drinnen",
       "link": "https://www.eventfinder.de/musicals-shows-hamburg.php",
-      "unsicher": "nur Aggregator; Zeiten für Do–So nicht gesehen"
+      "unsicher": "nur Aggregator; Zeiten für Do–So nicht gesehen",
+      "geo": [
+        53.5495,
+        9.96707
+      ]
     },
     {
       "id": "mj-das-michael-jackson-musical-stage-theater-an-der-elbe-ste",
@@ -155,36 +129,11 @@
       "preis": "ab ca. 52 €",
       "draussen": "drinnen",
       "link": "https://www.eventfinder.de/musicals-shows-hamburg.php",
-      "unsicher": "nur Aggregator; Zeiten für Do–So nicht gesehen"
-    },
-    {
-      "id": "heisse-ecke-das-st-pauli-musical-schmidts-tivoli-spielbudenp",
-      "daten": [
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "zeit": "Di 19:30, Mi 19:00, Do 19:30, Fr 20:00, Sa 15:00 + 20:00, So 19:00 (Mo keine Vorstellung)",
-      "zeiten": {
-        "2026-11-01": "19:00",
-        "2026-10-27": "19:30",
-        "2026-10-28": "19:00",
-        "2026-10-29": "19:30",
-        "2026-10-30": "20:00",
-        "2026-10-31": "15:00 + 20:00"
-      },
-      "ganzeWoche": true,
-      "titel": "Heiße Ecke – Das St. Pauli Musical",
-      "ort": "Schmidts Tivoli, Spielbudenplatz",
-      "region": "HH",
-      "kategorie": "Bühne",
-      "beschreibung": "Kiez-Musical um eine Imbissbude auf der Reeperbahn.",
-      "preis": "ab 47,59 € (Di/Mi) bis ab 69,59 € (Sa 20:00)",
-      "draussen": "drinnen",
-      "link": "https://www.mvp.de/heisse-ecke-schmidts-tivoli-hamburg/"
+      "unsicher": "nur Aggregator; Zeiten für Do–So nicht gesehen",
+      "geo": [
+        53.53989,
+        9.97325
+      ]
     },
     {
       "id": "pulverlesque-halloween-edition-pulverfass-cabaret-reeperbahn",
@@ -201,7 +150,11 @@
       "preis": "ab ca. 47 €",
       "draussen": "drinnen",
       "link": "https://www.eventfinder.de/musicals-shows-hamburg.php",
-      "unsicher": "nur Aggregator als Quelle"
+      "unsicher": "nur Aggregator als Quelle",
+      "geo": [
+        53.54935,
+        9.95859
+      ]
     },
     {
       "id": "philharmonisches-staatsorchester-omer-meir-wellber-stabat-ma",
@@ -216,7 +169,11 @@
       "beschreibung": "Pergolesis „Stabat mater“ zusammen mit Schnittke, 3. Konzert der „Blauen Woche“.",
       "preis": "ab 16 €",
       "draussen": "drinnen",
-      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS",
+      "geo": [
+        53.54129,
+        9.98421
+      ]
     },
     {
       "id": "fischer-z-50-anniversary-tour-laeiszhalle-grosser-saal",
@@ -232,7 +189,11 @@
       "beschreibung": "Die britische New-Wave-Band um John Watts zum 50-jährigen Bestehen.",
       "preis": "ab 56,25 €",
       "draussen": "drinnen",
-      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS",
+      "geo": [
+        53.5561,
+        9.98108
+      ]
     },
     {
       "id": "salut-salon-heimat-elbphilharmonie-grosser-saal",
@@ -247,7 +208,11 @@
       "beschreibung": "Das Hamburger Quartett mit seinem neuen Programm zwischen Klassik und Pop.",
       "preis": "ab 58,50 €",
       "draussen": "drinnen",
-      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS",
+      "geo": [
+        53.54129,
+        9.98421
+      ]
     },
     {
       "id": "aida-friends-charity-geburtstagskonzert-u-a-revolverheld-lea",
@@ -262,7 +227,11 @@
       "beschreibung": "Benefizkonzert zum Geburtstag mit mehreren Pop-Acts.",
       "preis": "Preis nicht genannt, nur noch wenige Tickets",
       "draussen": "drinnen",
-      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS",
+      "geo": [
+        53.54129,
+        9.98421
+      ]
     },
     {
       "id": "federico-colli-klavierabend-pianomania-elbphilharmonie-klein",
@@ -277,7 +246,11 @@
       "beschreibung": "Klavierrecital mit Scarlatti, Janáček und Mozart.",
       "preis": "ab 30 €",
       "draussen": "drinnen",
-      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS",
+      "geo": [
+        53.54129,
+        9.98421
+      ]
     },
     {
       "id": "ferdinand-von-schirach-der-stille-freund-laeiszhalle-grosser",
@@ -292,7 +265,11 @@
       "beschreibung": "Lesung des Autors.",
       "preis": "ab 23,95 €",
       "draussen": "drinnen",
-      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS",
+      "geo": [
+        53.5561,
+        9.98108
+      ]
     },
     {
       "id": "dresdner-kreuzchor-reger-bach-britten-elbphilharmonie-grosse",
@@ -307,7 +284,11 @@
       "beschreibung": "A-cappella-Programm des Knabenchors aus Dresden.",
       "preis": "ab 59 €",
       "draussen": "drinnen",
-      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS",
+      "geo": [
+        53.54129,
+        9.98421
+      ]
     },
     {
       "id": "sanam-festival-libanon-elbphilharmonie-kleiner-saal",
@@ -322,7 +303,11 @@
       "beschreibung": "Libanesische Band im Rahmen des Festivals Libanon.",
       "preis": "25 €",
       "draussen": "drinnen",
-      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS",
+      "geo": [
+        53.54129,
+        9.98421
+      ]
     },
     {
       "id": "die-feisten-moskito-laeiszhalle-grosser-saal",
@@ -337,7 +322,11 @@
       "beschreibung": "Pop-Konzert der Hamburger Band.",
       "preis": "ab 44,35 €",
       "draussen": "drinnen",
-      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS"
+      "link": "https://elbphilharmonie.de/de/programm/EPHH/LHGS",
+      "geo": [
+        53.5561,
+        9.98108
+      ]
     },
     {
       "id": "farah-kaddour-solo-tilt-trio-festival-libanon-elbphilharmoni",
@@ -352,7 +341,11 @@
       "beschreibung": "Libanesische Musik zwischen Jazz und Tradition.",
       "preis": "32 €",
       "draussen": "drinnen",
-      "link": "https://www.elbphilharmonie.de/en/whats-on/30-10-2026/KON"
+      "link": "https://www.elbphilharmonie.de/en/whats-on/30-10-2026/KON",
+      "geo": [
+        53.54129,
+        9.98421
+      ]
     },
     {
       "id": "rayess-bek-joan-baz-festival-libanon-elbphilharmonie-kleiner",
@@ -367,7 +360,11 @@
       "beschreibung": "Konzert im Rahmen des Festivals Libanon.",
       "preis": "25 €",
       "draussen": "drinnen",
-      "link": "https://www.elbphilharmonie.de/en/whats-on/30-10-2026/KON"
+      "link": "https://www.elbphilharmonie.de/en/whats-on/30-10-2026/KON",
+      "geo": [
+        53.54129,
+        9.98421
+      ]
     },
     {
       "id": "charbel-rouhana-festival-libanon-elbphilharmonie-kleiner-saa",
@@ -382,7 +379,11 @@
       "beschreibung": "Oud-Konzert im Rahmen des Festivals Libanon.",
       "preis": "Preis nicht genannt, nur noch wenige Tickets",
       "draussen": "drinnen",
-      "link": "https://www.elbphilharmonie.de/en/whats-on/31-10-2026/KON"
+      "link": "https://www.elbphilharmonie.de/en/whats-on/31-10-2026/KON",
+      "geo": [
+        53.54129,
+        9.98421
+      ]
     },
     {
       "id": "bellows-across-borders-laeiszhalle-grosser-saal",
@@ -397,7 +398,11 @@
       "beschreibung": "Akkordeon-Konzertabend.",
       "preis": "28 €",
       "draussen": "drinnen",
-      "link": "https://www.elbphilharmonie.de/en/whats-on/31-10-2026/KON"
+      "link": "https://www.elbphilharmonie.de/en/whats-on/31-10-2026/KON",
+      "geo": [
+        53.5561,
+        9.98108
+      ]
     },
     {
       "id": "neue-philharmonie-hamburg-bach-laeiszhalle-kleiner-saal",
@@ -412,7 +417,11 @@
       "beschreibung": "Bach-Programm der Neuen Philharmonie Hamburg.",
       "preis": "ab 17,45 €",
       "draussen": "drinnen",
-      "link": "https://www.elbphilharmonie.de/en/whats-on/31-10-2026/KON"
+      "link": "https://www.elbphilharmonie.de/en/whats-on/31-10-2026/KON",
+      "geo": [
+        53.5561,
+        9.98108
+      ]
     },
     {
       "id": "kammersinfonie-hamburg-valentin-annerbo-laeiszhalle-grosser",
@@ -428,7 +437,11 @@
       "preis": "30 €",
       "draussen": "drinnen",
       "link": "https://www.elbphilharmonie.de/en/whats-on/01-11-2026/EPHH",
-      "unsicher": "Link zeigt Elphi-Liste, Laeiszhalle-Termin dort aus Gesamtliste"
+      "unsicher": "Link zeigt Elphi-Liste, Laeiszhalle-Termin dort aus Gesamtliste",
+      "geo": [
+        53.5561,
+        9.98108
+      ]
     },
     {
       "id": "step-into-dabke-tanzen-auf-der-plaza-festival-libanon-elbphi",
@@ -443,7 +456,11 @@
       "beschreibung": "Gemeinsames Tanzen des Dabke auf der Plaza.",
       "preis": "Preis nicht genannt",
       "draussen": "draußen",
-      "link": "https://www.elbphilharmonie.de/en/whats-on/01-11-2026/EPHH"
+      "link": "https://www.elbphilharmonie.de/en/whats-on/01-11-2026/EPHH",
+      "geo": [
+        53.54129,
+        9.98421
+      ]
     },
     {
       "id": "gustav-mahler-auferstehen-elbphilharmonie-grosser-saal",
@@ -458,7 +475,11 @@
       "beschreibung": "Konzertabend mit Mahlers Auferstehungssinfonie.",
       "preis": "ab 55 €",
       "draussen": "drinnen",
-      "link": "https://www.elbphilharmonie.de/en/whats-on/01-11-2026/EPHH"
+      "link": "https://www.elbphilharmonie.de/en/whats-on/01-11-2026/EPHH",
+      "geo": [
+        53.54129,
+        9.98421
+      ]
     },
     {
       "id": "tania-saleh-festival-libanon-elbphilharmonie-kleiner-saal",
@@ -473,7 +494,11 @@
       "beschreibung": "Libanesische Sängerin und Songwriterin.",
       "preis": "28 €",
       "draussen": "drinnen",
-      "link": "https://www.elbphilharmonie.de/en/whats-on/01-11-2026/EPHH"
+      "link": "https://www.elbphilharmonie.de/en/whats-on/01-11-2026/EPHH",
+      "geo": [
+        53.54129,
+        9.98421
+      ]
     },
     {
       "id": "die-kameliendame-ballett-john-neumeier-staatsoper-hamburg",
@@ -488,7 +513,11 @@
       "beschreibung": "Neumeiers Ballett nach Dumas zur Musik von Chopin, ab 14 Jahren.",
       "preis": "6–112 €",
       "draussen": "drinnen",
-      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender"
+      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender",
+      "geo": [
+        53.55667,
+        9.98893
+      ]
     },
     {
       "id": "wunderland-ballett-alexei-ratmansky-staatsoper-hamburg",
@@ -503,7 +532,11 @@
       "beschreibung": "Ballett nach „Alice im Wunderland“, Familieneinführung 18:45.",
       "preis": "7–134 €",
       "draussen": "drinnen",
-      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender"
+      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender",
+      "geo": [
+        53.55667,
+        9.98893
+      ]
     },
     {
       "id": "wunderland-ballett-alexei-ratmansky-staatsoper-hamburg-2",
@@ -518,7 +551,11 @@
       "beschreibung": "Ballett nach „Alice im Wunderland“.",
       "preis": "8–146 €, nur noch Restkarten",
       "draussen": "drinnen",
-      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender"
+      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender",
+      "geo": [
+        53.55667,
+        9.98893
+      ]
     },
     {
       "id": "die-walkuere-wagner-staatsoper-hamburg",
@@ -533,7 +570,11 @@
       "beschreibung": "Zweiter Abend von Wagners „Ring“, ab 16 Jahren.",
       "preis": "8–146 €",
       "draussen": "drinnen",
-      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender"
+      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender",
+      "geo": [
+        53.55667,
+        9.98893
+      ]
     },
     {
       "id": "dalle-due-alle-tre-musikalische-reise-1-italien-staatsoper-h",
@@ -549,7 +590,11 @@
       "preis": "kostenlos",
       "kostenlos": true,
       "draussen": "drinnen",
-      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender"
+      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender",
+      "geo": [
+        53.55667,
+        9.98893
+      ]
     },
     {
       "id": "im-aufschwung-xviii-bundesjugendballett-john-neumeier-ernst",
@@ -565,7 +610,11 @@
       "beschreibung": "Abend des Bundesjugendballetts, ab 12 Jahren.",
       "preis": "Preis nicht genannt (nur beim Veranstalter)",
       "draussen": "drinnen",
-      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender"
+      "link": "https://www.die-hamburgische-staatsoper.de/de/kalender",
+      "geo": [
+        53.56924,
+        10.0262
+      ]
     },
     {
       "id": "zuenzle-thalia-gaussstrasse-box-ottensen",
@@ -580,7 +629,11 @@
       "beschreibung": "Produktion in der Gaußstraße Box, ca. 80 Minuten.",
       "preis": "ab 22 €, erm. ab 11 €",
       "draussen": "drinnen",
-      "link": "https://www.thalia-theater.de/de/termine"
+      "link": "https://www.thalia-theater.de/de/termine",
+      "geo": [
+        53.55932,
+        9.92546
+      ]
     },
     {
       "id": "deutsches-haus-thalia-theater-alstertor",
@@ -595,7 +648,11 @@
       "beschreibung": "Schauspiel, ca. 2 Stunden.",
       "preis": "ab 19 €, erm. ab 11 €",
       "draussen": "drinnen",
-      "link": "https://www.thalia-theater.de/de/termine"
+      "link": "https://www.thalia-theater.de/de/termine",
+      "geo": [
+        53.55214,
+        9.99867
+      ]
     },
     {
       "id": "baracke-thalia-gaussstrasse-ottensen",
@@ -610,7 +667,11 @@
       "beschreibung": "Schauspiel, ca. 2:20 Std.",
       "preis": "ab 31 €, erm. ab 11 €",
       "draussen": "drinnen",
-      "link": "https://www.thalia-theater.de/de/termine"
+      "link": "https://www.thalia-theater.de/de/termine",
+      "geo": [
+        53.55932,
+        9.92546
+      ]
     },
     {
       "id": "the-boys-are-kissing-thalia-theater-alstertor",
@@ -625,7 +686,11 @@
       "beschreibung": "Schauspiel, ca. 1:45 Std.",
       "preis": "ab 17 €, erm. ab 11 €",
       "draussen": "drinnen",
-      "link": "https://www.thalia-theater.de/de/termine"
+      "link": "https://www.thalia-theater.de/de/termine",
+      "geo": [
+        53.55214,
+        9.99867
+      ]
     },
     {
       "id": "der-koenig-stirbt-thalia-gaussstrasse-box-ottensen",
@@ -640,7 +705,11 @@
       "beschreibung": "Stück nach Ionesco, ca. 90 Minuten.",
       "preis": "ab 22 €, erm. ab 11 €",
       "draussen": "drinnen",
-      "link": "https://www.thalia-theater.de/de/termine"
+      "link": "https://www.thalia-theater.de/de/termine",
+      "geo": [
+        53.55932,
+        9.92546
+      ]
     },
     {
       "id": "der-menschenfeind-thalia-theater-alstertor",
@@ -655,7 +724,11 @@
       "beschreibung": "Molière-Inszenierung, ca. 2:15 Std., Einführung 19:30.",
       "preis": "ab 23 €, erm. ab 11 €",
       "draussen": "drinnen",
-      "link": "https://www.thalia-theater.de/de/termine"
+      "link": "https://www.thalia-theater.de/de/termine",
+      "geo": [
+        53.55214,
+        9.99867
+      ]
     },
     {
       "id": "zukunft-der-demokratie-14-gespraech-mit-lukas-baerfuss-deuts",
@@ -670,7 +743,11 @@
       "beschreibung": "Gesprächsreihe im großen Haus.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://schauspielhaus.de/spielplan"
+      "link": "https://schauspielhaus.de/spielplan",
+      "geo": [
+        53.5545,
+        10.00894
+      ]
     },
     {
       "id": "olli-schulz-allein-in-deiner-stadt-gastspiel-deutsches-schau",
@@ -685,7 +762,11 @@
       "beschreibung": "Gastspiel des Musikers und Entertainers im großen Haus.",
       "preis": "Restkarten, Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://schauspielhaus.de/spielplan"
+      "link": "https://schauspielhaus.de/spielplan",
+      "geo": [
+        53.5545,
+        10.00894
+      ]
     },
     {
       "id": "soci-t-anonyme-deutsches-schauspielhaus-malersaal",
@@ -702,7 +783,11 @@
       "beschreibung": "Produktion im MalerSaal. Mi ausverkauft, Do und Fr Restkarten.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://schauspielhaus.de/spielplan"
+      "link": "https://schauspielhaus.de/spielplan",
+      "geo": [
+        53.5545,
+        10.00894
+      ]
     },
     {
       "id": "turbostaat-nach-fest-kommt-ab-deutsches-schauspielhaus-st-ge",
@@ -717,7 +802,11 @@
       "beschreibung": "Punkrock-Abend der Band im Schauspielhaus.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://schauspielhaus.de/spielplan"
+      "link": "https://schauspielhaus.de/spielplan",
+      "geo": [
+        53.5545,
+        10.00894
+      ]
     },
     {
       "id": "laios-deutsches-schauspielhaus-st-georg",
@@ -732,7 +821,11 @@
       "beschreibung": "Inszenierung im großen Haus.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://schauspielhaus.de/spielplan"
+      "link": "https://schauspielhaus.de/spielplan",
+      "geo": [
+        53.5545,
+        10.00894
+      ]
     },
     {
       "id": "die-moewe-deutsches-schauspielhaus-st-georg",
@@ -747,7 +840,11 @@
       "beschreibung": "Tschechow-Inszenierung, Einführung 19:00.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://schauspielhaus.de/spielplan"
+      "link": "https://schauspielhaus.de/spielplan",
+      "geo": [
+        53.5545,
+        10.00894
+      ]
     },
     {
       "id": "re-opening-halloween-special-international-zombies-united-ka",
@@ -763,7 +860,11 @@
       "preis": "Eintritt frei",
       "kostenlos": true,
       "draussen": "drinnen",
-      "link": "https://kampnagel.de/kalender"
+      "link": "https://kampnagel.de/kalender",
+      "geo": [
+        53.5833,
+        10.02217
+      ]
     },
     {
       "id": "jack-halberstam-anarchitecture-after-everything-keynote-kamp",
@@ -778,7 +879,11 @@
       "beschreibung": "Keynote des Queer-Theoretikers.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://kampnagel.de/kalender"
+      "link": "https://kampnagel.de/kalender",
+      "geo": [
+        53.5833,
+        10.02217
+      ]
     },
     {
       "id": "horwitz-pelosi-lambertz-voyager-sound-archiv-1-kampnagel-gel",
@@ -793,7 +898,11 @@
       "beschreibung": "Elektronik-Abend auf dem Gelände.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://kampnagel.de/kalender"
+      "link": "https://kampnagel.de/kalender",
+      "geo": [
+        53.5833,
+        10.02217
+      ]
     },
     {
       "id": "dat-schietwedder-pack-ohnsorg-theater-heidi-kabel-platz",
@@ -809,7 +918,11 @@
       "preis": "ab 56 €",
       "draussen": "drinnen",
       "link": "https://www.mvp.de/hamburg/veranstaltungen/theater-buehne-comedy-musicals/",
-      "unsicher": "nur Aggregator, Ohnsorg-Spielplan nicht aktuell abrufbar"
+      "unsicher": "nur Aggregator, Ohnsorg-Spielplan nicht aktuell abrufbar",
+      "geo": [
+        53.5545,
+        10.00708
+      ]
     },
     {
       "id": "freche-moewe-stand-up-comedy-indra-grosse-freiheit-st-pauli",
@@ -825,7 +938,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.eventfinder.de/hamburg/comedy-kabarett/",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.55199,
+        9.95816
+      ]
     },
     {
       "id": "vince-ebert-vince-of-change-alma-hoppes-lustspielhaus-eppend",
@@ -840,7 +957,11 @@
       "beschreibung": "Wissenschaftskabarett des Physikers.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.almahoppe.de/Spielplan"
+      "link": "https://www.almahoppe.de/Spielplan",
+      "geo": [
+        53.5931,
+        9.99263
+      ]
     },
     {
       "id": "cueneyt-akan-drama-king-markthalle-hamburg-hauptbahnhof",
@@ -856,7 +977,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.markthalle-hamburg.de/",
-      "unsicher": "Uhrzeit nur aus Aggregator"
+      "unsicher": "Uhrzeit nur aus Aggregator",
+      "geo": [
+        53.54901,
+        10.00681
+      ]
     },
     {
       "id": "simone-solga-sie-kennen-mich-alma-hoppes-lustspielhaus-eppen",
@@ -871,7 +996,11 @@
       "beschreibung": "Politisches Kabarett.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.almahoppe.de/Spielplan"
+      "link": "https://www.almahoppe.de/Spielplan",
+      "geo": [
+        53.5931,
+        9.99263
+      ]
     },
     {
       "id": "english-comedy-grand-slam-indra-grosse-freiheit-st-pauli",
@@ -887,7 +1016,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.eventfinder.de/hamburg/comedy-kabarett/",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.55199,
+        9.95816
+      ]
     },
     {
       "id": "michael-frowin-das-vorspiel-theaterschiff-hamburg-holzhafen",
@@ -903,7 +1036,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.eventfinder.de/hamburg/comedy-kabarett/",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.54667,
+        9.98995
+      ]
     },
     {
       "id": "thomas-freitag-rueckzug-ueber-die-minen-der-ebene-alma-hoppe",
@@ -918,7 +1055,11 @@
       "beschreibung": "Kabarettprogramm.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.almahoppe.de/Spielplan"
+      "link": "https://www.almahoppe.de/Spielplan",
+      "geo": [
+        53.5931,
+        9.99263
+      ]
     },
     {
       "id": "werner-koczwara-am-achten-tag-schuf-gott-den-rechtsanwalt-al",
@@ -933,7 +1074,11 @@
       "beschreibung": "Comedy-Kabarett zum Thema Recht.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.almahoppe.de/Spielplan"
+      "link": "https://www.almahoppe.de/Spielplan",
+      "geo": [
+        53.5931,
+        9.99263
+      ]
     },
     {
       "id": "werner-koczwara-einer-flog-uebers-ordnungsamt-alma-hoppes-lu",
@@ -948,7 +1093,11 @@
       "beschreibung": "Zweites Koczwara-Programm am Wochenende.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.almahoppe.de/Spielplan"
+      "link": "https://www.almahoppe.de/Spielplan",
+      "geo": [
+        53.5931,
+        9.99263
+      ]
     },
     {
       "id": "frank-luedecke-traeumt-weiter-alma-hoppes-lustspielhaus-eppe",
@@ -963,7 +1112,11 @@
       "beschreibung": "Politisches Kabarett.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.almahoppe.de/Spielplan"
+      "link": "https://www.almahoppe.de/Spielplan",
+      "geo": [
+        53.5931,
+        9.99263
+      ]
     },
     {
       "id": "placebo-30th-anniversary-tour-barclays-arena-bahrenfeld",
@@ -978,7 +1131,11 @@
       "beschreibung": "Alternative-Rock-Band auf Jubiläumstour.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.regioactive.de/location/hamburg/barclays-arena-8pzvCj1Gzp"
+      "link": "https://www.regioactive.de/location/hamburg/barclays-arena-8pzvCj1Gzp",
+      "geo": [
+        53.5894,
+        9.89911
+      ]
     },
     {
       "id": "chris-norman-band-lifelines-tour-2026-barclays-arena-bahrenf",
@@ -993,7 +1150,11 @@
       "beschreibung": "Der Smokie-Sänger mit Band.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.regioactive.de/location/hamburg/barclays-arena-8pzvCj1Gzp"
+      "link": "https://www.regioactive.de/location/hamburg/barclays-arena-8pzvCj1Gzp",
+      "geo": [
+        53.5894,
+        9.89911
+      ]
     },
     {
       "id": "nico-santos-arena-tour-2026-barclays-arena-bahrenfeld",
@@ -1008,7 +1169,11 @@
       "beschreibung": "Pop-Arenashow.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.regioactive.de/location/hamburg/barclays-arena-8pzvCj1Gzp"
+      "link": "https://www.regioactive.de/location/hamburg/barclays-arena-8pzvCj1Gzp",
+      "geo": [
+        53.5894,
+        9.89911
+      ]
     },
     {
       "id": "wahnsinn-die-show-wolfgang-petry-party-barclays-arena-bahren",
@@ -1023,7 +1188,11 @@
       "beschreibung": "Tribute-Partyshow zu Wolfgang Petry am Halloween-Abend.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.regioactive.de/location/hamburg/barclays-arena-8pzvCj1Gzp"
+      "link": "https://www.regioactive.de/location/hamburg/barclays-arena-8pzvCj1Gzp",
+      "geo": [
+        53.5894,
+        9.89911
+      ]
     },
     {
       "id": "tokio-hotel-arena-tour-2026-barclays-arena-bahrenfeld",
@@ -1038,7 +1207,11 @@
       "beschreibung": "Arena-Tour der Band, Support Nia Ashleigh.",
       "preis": "78,90–95,40 €",
       "draussen": "drinnen",
-      "link": "https://www.eventfinder.de/hamburg/konzerte/"
+      "link": "https://www.eventfinder.de/hamburg/konzerte/",
+      "geo": [
+        53.5894,
+        9.89911
+      ]
     },
     {
       "id": "deep-purple-sporthalle-hamburg-winterhude",
@@ -1053,7 +1226,11 @@
       "beschreibung": "Hard-Rock-Klassiker live.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.regioactive.de/location/hamburg/sporthalle-hamburg-78xYCY1hc.html"
+      "link": "https://www.regioactive.de/location/hamburg/sporthalle-hamburg-78xYCY1hc.html",
+      "geo": [
+        53.60272,
+        10.00206
+      ]
     },
     {
       "id": "little-big-european-tour-2026-grosse-freiheit-36-st-pauli",
@@ -1068,7 +1245,11 @@
       "beschreibung": "Rave-Pop-Band auf Europatour.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.regioactive.de/location/hamburg/grosse-freiheit-36-JjR5dWWX0v.html"
+      "link": "https://www.regioactive.de/location/hamburg/grosse-freiheit-36-JjR5dWWX0v.html",
+      "geo": [
+        53.55111,
+        9.95808
+      ]
     },
     {
       "id": "angine-de-poitrine-grosse-freiheit-36-st-pauli",
@@ -1083,7 +1264,11 @@
       "beschreibung": "Konzert der Math-Rock-Band.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.regioactive.de/location/hamburg/grosse-freiheit-36-JjR5dWWX0v.html"
+      "link": "https://www.regioactive.de/location/hamburg/grosse-freiheit-36-JjR5dWWX0v.html",
+      "geo": [
+        53.55111,
+        9.95808
+      ]
     },
     {
       "id": "dj-krush-support-sega-lee-knust-st-pauli",
@@ -1098,7 +1283,11 @@
       "beschreibung": "Japanischer Trip-Hop- und Hip-Hop-DJ.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.knusthamburg.de/"
+      "link": "https://www.knusthamburg.de/",
+      "geo": [
+        53.55814,
+        9.96793
+      ]
     },
     {
       "id": "codefendants-support-jakobs-castle-knust-st-pauli",
@@ -1113,7 +1302,11 @@
       "beschreibung": "Punk-Hip-Hop-Crossover im Club.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.knusthamburg.de/"
+      "link": "https://www.knusthamburg.de/",
+      "geo": [
+        53.55814,
+        9.96793
+      ]
     },
     {
       "id": "saults-knust-st-pauli",
@@ -1128,7 +1321,11 @@
       "beschreibung": "Konzert im Knust.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.knusthamburg.de/"
+      "link": "https://www.knusthamburg.de/",
+      "geo": [
+        53.55814,
+        9.96793
+      ]
     },
     {
       "id": "teenage-fanclub-support-euros-childs-knust-st-pauli",
@@ -1143,7 +1340,11 @@
       "beschreibung": "Schottische Indie-Pop-Band.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.knusthamburg.de/"
+      "link": "https://www.knusthamburg.de/",
+      "geo": [
+        53.55814,
+        9.96793
+      ]
     },
     {
       "id": "cumbia-de-los-muertos-kumbia-boruka-knust-st-pauli",
@@ -1158,7 +1359,11 @@
       "beschreibung": "Cumbia-Konzert und Party zum Día de los Muertos.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.knusthamburg.de/"
+      "link": "https://www.knusthamburg.de/",
+      "geo": [
+        53.55814,
+        9.96793
+      ]
     },
     {
       "id": "heartphones-halloween-special-knust-st-pauli",
@@ -1173,7 +1378,11 @@
       "beschreibung": "Halloween-Clubnacht im Knust.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.knusthamburg.de/"
+      "link": "https://www.knusthamburg.de/",
+      "geo": [
+        53.55814,
+        9.96793
+      ]
     },
     {
       "id": "wolves-in-the-throne-room-kings-of-tiamant-uebel-gefaehrlich",
@@ -1188,7 +1397,11 @@
       "beschreibung": "Black-Metal-Band im Bunker, Einlass 19:30.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.uebelundgefaehrlich.com/"
+      "link": "https://www.uebelundgefaehrlich.com/",
+      "geo": [
+        53.55655,
+        9.97042
+      ]
     },
     {
       "id": "20-jahre-bonaparte-uebel-gefaehrlich-feldstrasse",
@@ -1203,7 +1416,11 @@
       "beschreibung": "Jubiläumsshow der Berliner Band, Einlass 19:00.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.uebelundgefaehrlich.com/"
+      "link": "https://www.uebelundgefaehrlich.com/",
+      "geo": [
+        53.55655,
+        9.97042
+      ]
     },
     {
       "id": "eli-preiss-uebel-gefaehrlich-feldstrasse",
@@ -1218,7 +1435,11 @@
       "beschreibung": "Deutschrap-Konzert, Einlass 19:00.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.uebelundgefaehrlich.com/"
+      "link": "https://www.uebelundgefaehrlich.com/",
+      "geo": [
+        53.55655,
+        9.97042
+      ]
     },
     {
       "id": "uche-yara-uebel-gefaehrlich-turmzimmer",
@@ -1233,7 +1454,11 @@
       "beschreibung": "Konzert im kleinen Turmzimmer, Einlass 19:00.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.uebelundgefaehrlich.com/"
+      "link": "https://www.uebelundgefaehrlich.com/",
+      "geo": [
+        53.55655,
+        9.97042
+      ]
     },
     {
       "id": "the-kilkennys-thank-you-for-the-days-tour-2026-fabrik-ottens",
@@ -1248,7 +1473,11 @@
       "beschreibung": "Irish-Folk-Rock-Band, Einlass 19:00.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.fabrik.de/"
+      "link": "https://www.fabrik.de/",
+      "geo": [
+        53.55674,
+        9.92919
+      ]
     },
     {
       "id": "tanzwut-live-tour-2026-bahnhof-pauli-st-pauli",
@@ -1264,7 +1493,11 @@
       "preis": "44,80 €",
       "draussen": "drinnen",
       "link": "https://www.eventfinder.de/hamburg/konzerte/",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.54907,
+        9.96416
+      ]
     },
     {
       "id": "kai-strauss-electric-blues-nica-jazz-club-hamburg",
@@ -1280,7 +1513,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.eventfinder.de/hamburg/konzerte/",
-      "unsicher": "nur Aggregator, 0-€-Angabe evtl. fehlender Preis"
+      "unsicher": "nur Aggregator, 0-€-Angabe evtl. fehlender Preis",
+      "geo": [
+        53.55074,
+        9.99058
+      ]
     },
     {
       "id": "zs-zs-einlass-gruenspan-interimsstandort-lagerstrasse-11-hal",
@@ -1295,7 +1532,11 @@
       "beschreibung": "Konzert am Interimsstandort des Gruenspan, Zeit ist die Einlasszeit.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.gruenspan.de/"
+      "link": "https://www.gruenspan.de/",
+      "geo": [
+        53.55181,
+        9.95839
+      ]
     },
     {
       "id": "ndr-voicexchange-einlass-gruenspan-interimsstandort-lagerstr",
@@ -1310,7 +1551,11 @@
       "beschreibung": "Vokalkonzert am Interimsstandort, Zeit ist die Einlasszeit.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.gruenspan.de/"
+      "link": "https://www.gruenspan.de/",
+      "geo": [
+        53.55181,
+        9.95839
+      ]
     },
     {
       "id": "the-home-team-einlass-gruenspan-interimsstandort-lagerstrass",
@@ -1325,7 +1570,11 @@
       "beschreibung": "Konzert am Interimsstandort, Zeit ist die Einlasszeit.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.gruenspan.de/"
+      "link": "https://www.gruenspan.de/",
+      "geo": [
+        53.55181,
+        9.95839
+      ]
     },
     {
       "id": "citizen-plus-modern-color-einlass-gruenspan-interimsstandort",
@@ -1340,7 +1589,11 @@
       "beschreibung": "Post-Hardcore-Band mit Support, Zeit ist die Einlasszeit.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.gruenspan.de/"
+      "link": "https://www.gruenspan.de/",
+      "geo": [
+        53.55181,
+        9.95839
+      ]
     },
     {
       "id": "hollywood-horror-halloween-at-pelican-pelican-hamburg",
@@ -1356,7 +1609,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.eventfinder.de/hamburg/partys/",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.55342,
+        9.95805
+      ]
     },
     {
       "id": "halloween-rave-festival-xxl-halloween-party-25-club-hamburg",
@@ -1375,239 +1632,6 @@
       "unsicher": "nur Aggregator"
     },
     {
-      "id": "winterdeck-auf-dem-spielbudenplatz-spielbudenplatz-21-22-st",
-      "daten": [
-        "2026-10-26",
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "zeit": "Mo–Fr ab 16 Uhr, Sa 31.10. ab 14 Uhr, So 1.11. ab 16 Uhr",
-      "ganztags": true,
-      "ganzeWoche": true,
-      "titel": "Winterdeck auf dem Spielbudenplatz",
-      "ort": "Spielbudenplatz 21–22, St. Pauli",
-      "region": "HH",
-      "kategorie": "Fest & Saisonal",
-      "beschreibung": "Überdachte Winterhütte mit Getränken auf der Bühne vor dem Operettenhaus, Laufzeit laut Kalender 23.10. bis 23.12.2026.",
-      "preis": "Preis nicht genannt",
-      "draussen": "draußen",
-      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/winterdeck-auf-dem-spielbudenplatz/"
-    },
-    {
-      "id": "grosse-lichterfahrt-hamburg-bei-nacht-landungsbruecken-anleg",
-      "daten": [
-        "2026-10-26",
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "zeit": "täglich 19:00 (Mo), 18:00 (Di–So)",
-      "zeiten": {
-        "2026-10-26": "19:00"
-      },
-      "ganzeWoche": true,
-      "titel": "Große Lichterfahrt – Hamburg bei Nacht",
-      "ort": "Landungsbrücken (Anleger St. Pauli)",
-      "region": "HH",
-      "kategorie": "Führung",
-      "beschreibung": "Rund einstündige Abendfahrt durch den beleuchteten Hafen, die Speicherstadt-Route hängt von der Tide ab. Startzeit laut Kalender ab 27.10. 18 Uhr.",
-      "preis": "Preis nicht genannt",
-      "draussen": "draußen",
-      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/grosse-lichterfahrt/",
-      "unsicher": "Mo 26.10. 19 Uhr nur über regioactive gesehen"
-    },
-    {
-      "id": "the-fans-strike-back-star-wars-fanausstellung-halle-7-bahren",
-      "daten": [
-        "2026-10-26",
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "zeit": "täglich ab 10 Uhr",
-      "ganztags": true,
-      "ganzeWoche": true,
-      "titel": "The Fans Strike Back – Star-Wars-Fanausstellung",
-      "ort": "Halle 7, Bahrenfeld",
-      "region": "HH",
-      "kategorie": "Ausstellung",
-      "beschreibung": "Ausstellung rund um Star-Wars-Fankultur, an allen Tagen der Woche mit Beginn 10 Uhr gelistet.",
-      "preis": "Preis nicht genannt",
-      "draussen": "drinnen",
-      "link": "https://www.regioactive.de/ausstellung/the-fans-strike-back-exhibition-hamburg-halle-7-2026-10-30-tickets-2YrNnDMk2f",
-      "unsicher": "nur Aggregator (regioactive), Laufzeit nicht geprüft"
-    },
-    {
-      "id": "von-monet-bis-picasso-juedische-kunstsammler-innen-in-deutsc",
-      "daten": [
-        "2026-10-26",
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "zeit": "täglich 11–19, Do bis 21",
-      "ganztags": true,
-      "ganzeWoche": true,
-      "titel": "„Von Monet bis Picasso. Jüdische Kunstsammler:innen in Deutschland“",
-      "ort": "Bucerius Kunst Forum, Alter Wall 12",
-      "region": "HH",
-      "kategorie": "Ausstellung",
-      "beschreibung": "Moderne-Ausstellung zu jüdischen Sammlungen, läuft vom 11.9.2026 bis 29.3.2027. Am Sa 31.10. freier Eintritt (#seeforfree, 11–19 Uhr).",
-      "preis": "Preis nicht genannt, Sa 31.10. frei",
-      "draussen": "drinnen",
-      "link": "https://buceriuskunstforum.de/"
-    },
-    {
-      "id": "hamburger-kunsthalle-carrie-yamaoka-david-novros-this-is-the",
-      "daten": [
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "zeit": "ab 10 Uhr (Mo geschlossen), Do bis 21 Uhr",
-      "ganztags": true,
-      "ganzeWoche": true,
-      "titel": "Hamburger Kunsthalle: Carrie Yamaoka, David Novros, „This is the Modern World“",
-      "ort": "Hamburger Kunsthalle, Glockengießerwall",
-      "region": "HH",
-      "kategorie": "Ausstellung",
-      "beschreibung": "Laufende Schauen u. a. Carrie Yamaoka (bis 10.1.2027), David Novros (bis 21.2.2027) und „This is the Modern World“ (bis 30.5.2027). Am Sa 31.10. #seeforfree, mit Führungen.",
-      "preis": "Preis nicht geprüft, Sa 31.10. frei",
-      "draussen": "drinnen",
-      "link": "https://www.hamburger-kunsthalle.de/ausstellungen",
-      "unsicher": "Öffnungszeiten aus Vorwoche übernommen, Mo-Schließung nicht neu geprüft"
-    },
-    {
-      "id": "markk-museum-am-rothenbaum-markk-rothenbaumchaussee-64",
-      "daten": [
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "zeit": "Di–So 10–18, Do bis 21",
-      "ganztags": true,
-      "ganzeWoche": true,
-      "titel": "MARKK – Museum am Rothenbaum",
-      "ort": "MARKK, Rothenbaumchaussee 64",
-      "region": "HH",
-      "kategorie": "Ausstellung",
-      "beschreibung": "Völkerkundemuseum mit Dauer- und Sonderausstellungen. Am Sa 31.10. freier Eintritt (#seeforfree) ab 10 Uhr.",
-      "preis": "Preis nicht genannt, Sa 31.10. frei",
-      "draussen": "drinnen",
-      "link": "https://www.markk-hamburg.de/",
-      "unsicher": "aktuelle Sonderausstellung nicht geprüft"
-    },
-    {
-      "id": "mk-g-hella-jongerius-whispering-things-schubladenschau-4-tan",
-      "daten": [
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "zeit": "Zeiten nicht geprüft, Mo geschlossen",
-      "ganztags": true,
-      "ganzeWoche": true,
-      "titel": "MK&G: Hella Jongerius „Whispering Things“, Schubladenschau #4 Tanz",
-      "ort": "Museum für Kunst und Gewerbe, Steintorplatz",
-      "region": "HH",
-      "kategorie": "Ausstellung",
-      "beschreibung": "Hella Jongerius ist neu seit 23.10.2026 (bis 13.6.2027), dazu „Schubladenschau #4: Tanz“ und Sara Sallam „Fürsorge“. „Minimöbel: Stühle für Kinder“ endet am 1.11.",
-      "preis": "Preis nicht genannt",
-      "draussen": "drinnen",
-      "link": "https://www.mkg-hamburg.de/ausstellungen",
-      "unsicher": "Öffnungszeiten nicht auf der Seite, Mo zu laut Seitenanzeige"
-    },
-    {
-      "id": "altonaer-museum-aiga-rasch-und-ihre-detektive-altonaer-museu",
-      "daten": [
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "zeit": "Zeiten nicht geprüft",
-      "ganztags": true,
-      "ganzeWoche": true,
-      "titel": "Altonaer Museum: „Aiga Rasch und ihre Detektive“",
-      "ort": "Altonaer Museum, Museumstraße 23",
-      "region": "HH",
-      "kategorie": "Ausstellung",
-      "beschreibung": "Illustrationen der Cover-Künstlerin der „Drei ???“, läuft bis 14.3.2027. Am Sa 31.10. freier Eintritt (#seeforfree).",
-      "preis": "Preis nicht geprüft, Sa 31.10. frei",
-      "draussen": "drinnen",
-      "link": "https://shmh.de/de/ausstellungen",
-      "unsicher": "Öffnungszeiten (Vorwoche: ab 10 Uhr, Di zu) nicht neu bestätigt"
-    },
-    {
-      "id": "ernst-barlach-haus-ausstellung-zu-joachim-ringelnatz-eroeffn",
-      "daten": [
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "zeit": "Zeiten nicht geprüft",
-      "ganztags": true,
-      "ganzeWoche": true,
-      "titel": "Ernst Barlach Haus: Ausstellung zu Joachim Ringelnatz (Eröffnung 25.10.) und „Reichlich Barlach“",
-      "ort": "Ernst Barlach Haus, Jenischpark, Othmarschen",
-      "region": "HH",
-      "kategorie": "Ausstellung",
-      "beschreibung": "Neue Ringelnatz-Schau, eröffnet am So 25.10. um 11 Uhr, dazu Werke aus der eigenen Sammlung.",
-      "preis": "Preis nicht genannt",
-      "draussen": "drinnen",
-      "link": "https://www.barlach-haus.de/",
-      "unsicher": "Laufzeit und Öffnungszeiten nicht auf der Startseite"
-    },
-    {
-      "id": "phoxxi-abdulhamid-kircher-rotting-from-within-akosua-viktori",
-      "daten": [
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-11-01"
-      ],
-      "zeit": "bis So 1.11. (letzte Tage), Zeiten nicht geprüft",
-      "ganztags": true,
-      "ganzeWoche": true,
-      "titel": "PHOXXI: Abdulhamid Kircher „Rotting From Within“ / Akosua Viktoria Adu-Sanyah (letzte Tage)",
-      "ort": "PHOXXI – Haus der Photographie, Deichtorstraße 1–2",
-      "region": "HH",
-      "kategorie": "Ausstellung",
-      "beschreibung": "Fotografie-Doppelschau im temporären Haus der Photographie, läuft laut Deichtorhallen nur noch bis 1.11.2026.",
-      "preis": "Preis nicht genannt",
-      "draussen": "drinnen",
-      "link": "https://www.deichtorhallen.de/de/ausstellungen",
-      "unsicher": "Öffnungszeiten nicht geprüft"
-    },
-    {
       "id": "speicherstadt-und-hafencity-erlebnistour-treffpunkt-u-baumwa",
       "daten": [
         "2026-10-26"
@@ -1621,7 +1645,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "draußen",
       "link": "https://www.regioactive.de/freizeit/erlebnistour-speicherstadt-und-hafencity-hamburg-u-bahn-station-baumwall-u3-2026-11-01-tickets-2pXjN1TRCB",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.54444,
+        9.98172
+      ]
     },
     {
       "id": "alster-rundfahrt-mit-rondeelteich-dampfschiff-st-georg-jungf",
@@ -1640,7 +1668,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "draußen",
       "link": "https://www.regioactive.de/freizeit/alster-rundfahrt-mit-rondeelteich-dampfschiff-st-georg-hamburg-apos-2026-10-28-tickets-pG43BD09X6",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.5521,
+        9.9934
+      ]
     },
     {
       "id": "planetarium-die-drei-das-dorf-der-teufel-musik-kultur-planet",
@@ -1656,7 +1688,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.planetarium-hamburg.de/programm",
-      "unsicher": "Seite nennt Montag sonst als Ruhetag"
+      "unsicher": "Seite nennt Montag sonst als Ruhetag",
+      "geo": [
+        53.59731,
+        10.00891
+      ]
     },
     {
       "id": "isemarkt-unter-dem-u3-viadukt-isestrasse-harvestehude",
@@ -1674,7 +1710,11 @@
       "kostenlos": true,
       "draussen": "draußen",
       "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/isemarkt/",
-      "unsicher": "Regeltermin, für diese Woche nicht einzeln bestätigt"
+      "unsicher": "Regeltermin, für diese Woche nicht einzeln bestätigt",
+      "geo": [
+        53.58234,
+        9.98319
+      ]
     },
     {
       "id": "xfood-tour-st-pauli-sternschanze-kulinarisch-u-feldstrasse-b",
@@ -1697,7 +1737,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "draußen",
       "link": "https://www.regioactive.de/freizeit/xfood-tour-st-pauli-kulinarisch-hamburg-u-bahn-station-feldstrasse-u3-2026-10-27-tickets-kgzw6KtSRS",
-      "unsicher": "nur Aggregator, Treffpunkte/Zeiten je Tag verschieden"
+      "unsicher": "nur Aggregator, Treffpunkte/Zeiten je Tag verschieden",
+      "geo": [
+        53.55744,
+        9.96774
+      ]
     },
     {
       "id": "planetarium-aurora-im-reich-des-polarlichts-planetarium-hamb",
@@ -1713,7 +1757,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/show/aurora-im-reich-des-polarlichts-hamburg-planetarium-2026-10-27-tickets-CFw3kNSgWc",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.59731,
+        10.00891
+      ]
     },
     {
       "id": "st-pauli-nachtwaechter-treffpunkt-u-s-landungsbruecken",
@@ -1729,7 +1777,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "draußen",
       "link": "https://www.regioactive.de/freizeit/st-pauli-nachtwaechter-hamburg-treffpunkt-u-s-bahn-landungsbruecken-2026-10-27-tickets-MVLssxPRzl",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.54575,
+        9.9707
+      ]
     },
     {
       "id": "flohdom-trabrennbahn-bahrenfeld-trabrennbahn-luruper-chausse",
@@ -1745,7 +1797,11 @@
       "preis": "Eintritt frei",
       "kostenlos": true,
       "draussen": "draußen",
-      "link": "https://www.hamburg.de/freizeit/maerkte-und-messen/flohmaerkte/flohmaerkte-oktober-952822"
+      "link": "https://www.hamburg.de/freizeit/maerkte-und-messen/flohmaerkte/flohmaerkte-oktober-952822",
+      "geo": [
+        53.57738,
+        9.88945
+      ]
     },
     {
       "id": "nachtflohmarkt-rindermarkthalle-vorplatz-rindermarkthalle-ne",
@@ -1761,7 +1817,11 @@
       "beschreibung": "Second-Hand-Stände am Abend, am Mi 28.10. und Do 29.10.",
       "preis": "Preis nicht genannt",
       "draussen": "draußen",
-      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/nachtflohmarkt-rindermarkthalle-st-pauli-3/"
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/nachtflohmarkt-rindermarkthalle-st-pauli-3/",
+      "geo": [
+        53.55636,
+        9.96618
+      ]
     },
     {
       "id": "st-pauli-nachtmarkt-spielbudenplatz-st-pauli",
@@ -1777,7 +1837,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "draußen",
       "link": "https://www.regioactive.de/konzert/st-pauli-nachtmarkt-hamburg-spielbudenplatz-2026-10-28-7HJRlnk2t3",
-      "unsicher": "nur Aggregator, als „Konzert“ einsortiert"
+      "unsicher": "nur Aggregator, als „Konzert“ einsortiert",
+      "geo": [
+        53.54934,
+        9.96381
+      ]
     },
     {
       "id": "planetarium-sternenhimmel-ueber-hamburg-live-planetarium-ham",
@@ -1797,7 +1861,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/sonstige/sternenhimmel-ueber-hamburg-live-planetarium-2026-10-28-tickets-1KMh9RQbg6",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.59731,
+        10.00891
+      ]
     },
     {
       "id": "speicherstadtrundgang-mit-museumsfuehrung-restaurant-vlet-sp",
@@ -1817,7 +1885,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "beides",
       "link": "https://www.regioactive.de/freizeit/speicherstadtrundgang-mit-museumsfuehrung-hamburg-restaurant-vlet-in-der-speicherstadt-2026-10-28-tickets-Yb9zd48r58",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.54354,
+        9.99306
+      ]
     },
     {
       "id": "eroeffnung-hito-steyerl-deine-mudda-macht-show-deichtorhalle",
@@ -1833,7 +1905,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.deichtorhallen.de/de/ausstellungen",
-      "unsicher": "Uhrzeit nur über regioactive-Tagesliste"
+      "unsicher": "Uhrzeit nur über regioactive-Tagesliste",
+      "geo": [
+        53.54718,
+        10.00639
+      ]
     },
     {
       "id": "krimisalon-im-polizeimuseum-polizeimuseum-hamburg",
@@ -1849,7 +1925,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/events/17838/hamburg/veranstaltungen-party-konzerte/2026-10-29",
-      "unsicher": "nur Tagesliste von regioactive"
+      "unsicher": "nur Tagesliste von regioactive",
+      "geo": [
+        53.6031,
+        10.00606
+      ]
     },
     {
       "id": "weinprobe-im-weinland-waterfront-weinland-waterfront-hamburg",
@@ -1865,7 +1945,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/events/17838/hamburg/veranstaltungen-party-konzerte/2026-10-29",
-      "unsicher": "nur Tagesliste von regioactive"
+      "unsicher": "nur Tagesliste von regioactive",
+      "geo": [
+        53.54456,
+        9.94428
+      ]
     },
     {
       "id": "gruseldinner-dr-jekyll-mr-hyde-museumsschiff-bleichen-hafen",
@@ -1914,7 +1998,11 @@
       "preis": "kostenlos",
       "kostenlos": true,
       "draussen": "drinnen",
-      "link": "https://www.hamburg.de/kultur/ausstellung/museum/see-for-free-305606"
+      "link": "https://www.hamburg.de/kultur/ausstellung/museum/see-for-free-305606",
+      "geo": [
+        53.55477,
+        10.00313
+      ]
     },
     {
       "id": "dfb-pokal-achtelfinale-hsv-frauen-1-fc-union-berlin-volkspar",
@@ -1930,7 +2018,11 @@
       "preis": "ab 12 €",
       "draussen": "draußen",
       "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/dfb-pokal-achtelfinale-hsv-frauen-gegen-1-fc-union/",
-      "unsicher": "Anstoß 13 Uhr (Beschreibung/regioactive) vs. 12 Uhr (Detailfeld)"
+      "unsicher": "Anstoß 13 Uhr (Beschreibung/regioactive) vs. 12 Uhr (Detailfeld)",
+      "geo": [
+        53.58715,
+        9.89871
+      ]
     },
     {
       "id": "mama-mafia-maskenball-halloween-party-fuer-erwachsene-endorp",
@@ -1945,7 +2037,11 @@
       "beschreibung": "Halloween-Abend mit Maskenball-Charakter für Erwachsene.",
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
-      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/mama-mafia-maskenball-2026/"
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/mama-mafia-maskenball-2026/",
+      "geo": [
+        53.55827,
+        9.91059
+      ]
     },
     {
       "id": "kiez-kapitaen-reeperbahn-kieztour-spielbudenplatz-st-pauli",
@@ -1962,7 +2058,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "draußen",
       "link": "https://www.regioactive.de/freizeit/die-kiez-kapitaen-reeperbahn-kieztour-hamburg-spielbudenplatz-2026-10-31-tickets-8dQL5CG5vj",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.54934,
+        9.96381
+      ]
     },
     {
       "id": "sex-crime-tour-auf-st-pauli-ab-18-j-treffpunkt-u-st-pauli",
@@ -1984,7 +2084,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "draußen",
       "link": "https://www.regioactive.de/freizeit/sex-crime-tour-auf-st-pauli-ab-18-j-hamburg-u-bahn-station-u3-2026-10-31-tickets-LvtjWhKFYJ",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.55039,
+        9.97045
+      ]
     },
     {
       "id": "sonntagmorgen-spezial-zum-fischmarkt-fuehrung-treffpunkt-u-s",
@@ -2000,7 +2104,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "draußen",
       "link": "https://www.regioactive.de/sport/sonntagmorgen-spezial-zum-fischmarkt-hamburg-u-bahn-station-st-pauli-u3-2026-11-01-tickets-Tv4N8JsRkq",
-      "unsicher": "nur Aggregator, Fischmarkt selbst als Regeltermin"
+      "unsicher": "nur Aggregator, Fischmarkt selbst als Regeltermin",
+      "geo": [
+        53.55039,
+        9.97045
+      ]
     },
     {
       "id": "flohmarkt-an-der-rindermarkthalle-rindermarkthalle-neuer-kam",
@@ -2015,7 +2123,11 @@
       "beschreibung": "Flohmarkt am Sonntag laut hamburg.de-Novemberseite.",
       "preis": "Preis nicht genannt",
       "draussen": "draußen",
-      "link": "https://www.hamburg.de/freizeit/maerkte-und-messen/flohmaerkte/flohmaerkte-november-964990"
+      "link": "https://www.hamburg.de/freizeit/maerkte-und-messen/flohmaerkte/flohmaerkte-november-964990",
+      "geo": [
+        53.55636,
+        9.96618
+      ]
     },
     {
       "id": "flohmarkt-kulturpunkt-im-barmbek-basch-barmbek-basch-barmbek",
@@ -2030,7 +2142,11 @@
       "beschreibung": "Flohmarkt beim Kulturpunkt in Barmbek.",
       "preis": "Preis nicht genannt",
       "draussen": "beides",
-      "link": "https://www.hamburg.de/freizeit/maerkte-und-messen/flohmaerkte/flohmaerkte-november-964990"
+      "link": "https://www.hamburg.de/freizeit/maerkte-und-messen/flohmaerkte/flohmaerkte-november-964990",
+      "geo": [
+        53.57688,
+        10.04298
+      ]
     },
     {
       "id": "4-lola-herbstmarkt-lola-kulturzentrum-bergedorf",
@@ -2047,7 +2163,11 @@
       "kostenlos": true,
       "draussen": "beides",
       "link": "https://www.regioactive.de/markt/4-lola-herbstmarkt-eintritt-frei-hamburg-kulturzentrum-e-v-2026-11-01-5Y12Nr8yg1",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.49548,
+        10.20593
+      ]
     },
     {
       "id": "fc-st-pauli-1-fc-nuernberg-2-bundesliga-10-spieltag-millernt",
@@ -2063,7 +2183,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "draußen",
       "link": "https://anstosszeiten.de/2-bundesliga/spiel/st-pauli-nuernberg/",
-      "unsicher": "Anstoß 13:30 (anstosszeiten) vs. 12:30 (bundesliga.com)"
+      "unsicher": "Anstoß 13:30 (anstosszeiten) vs. 12:30 (bundesliga.com)",
+      "geo": [
+        53.55456,
+        9.96778
+      ]
     },
     {
       "id": "etv-hamburg-skurios-volleys-borken-volleyball-bundesliga-cu",
@@ -2078,7 +2202,11 @@
       "beschreibung": "3. Heimspiel der ETV-Volleyballerinnen in der 1. Bundesliga.",
       "preis": "ab 11 €",
       "draussen": "drinnen",
-      "link": "https://www.regioactive.de/sport/3-heimspiel-vs-skurios-volleys-borken-hamburg-cu-arena-2026-11-01-krDD9DmwVm"
+      "link": "https://www.regioactive.de/sport/3-heimspiel-vs-skurios-volleys-borken-hamburg-cu-arena-2026-11-01-krDD9DmwVm",
+      "geo": [
+        53.4752,
+        9.8551
+      ]
     },
     {
       "id": "hafenrundfahrt-mit-gruenkohlbuffet-ein-ausstieg-hamburg-wins",
@@ -2094,7 +2222,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "beides",
       "link": "https://www.regioactive.de/sport/hafenrundfahrt-mit-gruenkohlbuffet-hamburg-21423-winsen-a-d-luhe-ein-und-ausstieg-2026-11-01-tickets-q6h4lwLYcJ",
-      "unsicher": "nur Aggregator, Abfahrtsort unklar"
+      "unsicher": "nur Aggregator, Abfahrtsort unklar",
+      "geo": [
+        53.36365,
+        10.20592
+      ]
     },
     {
       "id": "offene-fuehrung-am-mahnmal-st-nikolai-mahnmal-st-nikolai-wil",
@@ -2110,7 +2242,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "beides",
       "link": "https://www.regioactive.de/freizeit/offene-fuehrung-in-deutscher-sprache-hamburg-mahnmal-st-nikolai-2026-11-01-XgJqlSsKLJ",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.54748,
+        9.99068
+      ]
     },
     {
       "id": "rum-tasting-ueli-und-frau-antje-erzaehlen-rum-die-2te-heimat",
@@ -2126,7 +2262,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/gastronomie/ueli-und-frau-antje-erzaehlen-rum-tasting-hamburg-die-2te-heimat-theatersalon-2026-11-01-tickets-fKMQRdGQ4V",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.5612,
+        9.92806
+      ]
     },
     {
       "id": "planetarium-voyager-die-unendliche-reise-3d-planetarium-hamb",
@@ -2142,76 +2282,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/show/voyager-die-unendliche-reise-3d-hamburg-planetarium-2026-11-01-tickets-8f6hKlYX9g",
-      "unsicher": "nur Aggregator"
-    },
-    {
-      "id": "heide-park-halloween-letzte-woche-bis-31-10-heide-park-resor",
-      "daten": [
-        "2026-10-26",
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31"
-      ],
-      "zeit": "Mo–Do 10–17, Fr/Sa 12–21 (Horror-Mazes ab ca. 16 Uhr)",
-      "ganztags": true,
-      "ganzeWoche": true,
-      "titel": "Heide Park Halloween (letzte Woche, bis 31.10.)",
-      "ort": "Heide Park Resort, Soltau",
-      "region": "LG",
-      "kategorie": "Fest & Saisonal",
-      "beschreibung": "Halloween-Event bis Sa 31.10. mit Scare Zone und Horror-Mazes (ab 16 Jahren, separates Zeitticket). Fr und Sa verlängerte Tage bis 21 Uhr, einige Wasserbahnen schließen schon gegen 17 Uhr.",
-      "preis": "Online ab 28–37 €, Tageskasse 64 €, Halloween-Abendticket ab 17 Uhr ab 24 €",
-      "draussen": "draußen",
-      "link": "https://www.heide-park.de/en/explore/events/halloween",
-      "anreise": "DT: ca. 1:45–2 h (bis Buchholz, RB38 bis Soltau, dann Bus) · Auto: ca. 55–60 Min. (A7)"
-    },
-    {
-      "id": "serengeti-park-halloween-halloween-nights-serengeti-park-hod",
-      "daten": [
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "zeit": "Fr/Sa Halloween Nights ab 18 Uhr (Einlass 17 Uhr, bis ca. 22 Uhr), tagsüber Programm ab 14 Uhr; So 1.11. Extra-Night",
-      "ganztags": true,
-      "ganzeWoche": true,
-      "titel": "Serengeti-Park Halloween (Halloween Nights)",
-      "ort": "Serengeti-Park, Hodenhagen",
-      "region": "LG",
-      "kategorie": "Fest & Saisonal",
-      "beschreibung": "Halloween-Event im Safaripark mit Gruselhäusern (je nach Attraktion ab 12–16 Jahren), Market of Fears (Sa und 31.10.) und Monster Walk um 17:45. Der Park hat Sommersaison bis 1.11.2026, danach folgt das Lichterfestival ab 6.11.",
-      "preis": "Preis nicht genannt (Attraktionen im Tages- und Abendticket inklusive, Abendticket ab 17 Uhr ermäßigt)",
-      "draussen": "draußen",
-      "link": "https://www.serengeti-park.de/halloween",
-      "anreise": "DT: ca. 1:45–2 h (bis Buchholz, RB38 bis Hodenhagen, ca. 2–3 km bis zum Park) · Auto: ca. 1:15 h (A7)",
-      "unsicher": "Seite nennt 02.10.–01.11. und im Fuß 26.10.–1.11.; Tageszeiten Mo–Do nicht gesehen"
-    },
-    {
-      "id": "wildpark-schwarze-berge-rosengarten-eissendorfer-waldweg",
-      "daten": [
-        "2026-10-26",
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31",
-        "2026-11-01"
-      ],
-      "zeit": "täglich 8–18 Uhr",
-      "ganztags": true,
-      "ganzeWoche": true,
-      "titel": "Wildpark Schwarze Berge",
-      "ort": "Rosengarten (Eißendorfer Waldweg)",
-      "region": "LG",
-      "kategorie": "Outdoor & Natur",
-      "beschreibung": "Wildpark mit heimischen Tieren, ganzjährig täglich geöffnet. Zufahrt Eißendorfer Waldweg bis ca. Dezember gesperrt, Bus 340 fährt nur ab Neuwiedenthal. Am So 1.11. ist Herbstbasteln angekündigt.",
-      "preis": "Erw. 16 €, Kinder 14 €",
-      "draussen": "draußen",
-      "link": "https://www.wildpark-schwarze-berge.de/",
-      "anreise": "DT: S3/S5 bis Neuwiedenthal + Bus 340, ca. 50–60 Min. · Auto: ca. 30 Min.",
-      "unsicher": "Seite teils veraltet, Zeiten telefonisch bestätigen (040 819 77 47 0)"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.59731,
+        10.00891
+      ]
     },
     {
       "id": "monday-shorts-kostprobe-stolz-und-vorurteil-oder-so-kammersp",
@@ -2228,7 +2303,11 @@
       "kostenlos": true,
       "draussen": "drinnen",
       "link": "https://www.theaterluebeck.de/spielplan/kalender.html",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.86975,
+        10.68617
+      ]
     },
     {
       "id": "2-sinfoniekonzert-tschaikowsky-violinkonzert-schostakowitsch",
@@ -2244,7 +2323,11 @@
       "preis": "ab 19,70 €, erm. ab 14,20 €",
       "draussen": "drinnen",
       "link": "https://www.muk.de/veranstaltungen-details/philharmonisches-orchester-der-hansestadt-luebeck2-sinfoniekonzert-2",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.86938,
+        10.67805
+      ]
     },
     {
       "id": "vollmondkonzert-mit-gitarrist-ladislav-pazdera-wasserturm-lu",
@@ -2261,7 +2344,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/konzert/vollmondkonzert-laessig-sophisticated-groovy-ladislav-pazdera-acoustic-guitar-lueneburg-wasserturm-2026-10-26-tickets-2hypbM9P9H",
       "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
-      "unsicher": "Quelle ist Ticket-Aggregator"
+      "unsicher": "Quelle ist Ticket-Aggregator",
+      "geo": [
+        53.24677,
+        10.41296
+      ]
     },
     {
       "id": "besser-als-nie-literaturwochen-heimaten-stadtbibliothek-buxt",
@@ -2278,7 +2365,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/literatur/besser-als-nie-literaturwochen-heimaten-buxtehude-stadtbibliothek-2026-10-26-tickets-kcqB79LsnB",
       "anreise": "DT: ca. 35–45 Min. (S3 bis Buxtehude, Dauer nicht geprüft) · Auto: ca. 35 Min.",
-      "unsicher": "nur Aggregator, wenig Details"
+      "unsicher": "nur Aggregator, wenig Details",
+      "geo": [
+        53.47776,
+        9.70052
+      ]
     },
     {
       "id": "thomas-d-the-kbcs-neocortex-tour-2026-kolosseum-luebeck",
@@ -2294,7 +2385,11 @@
       "preis": "ab 42,75 €",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/konzert/thomas-d-the-kbcs-neocortex-tour-2026-luebeck-kolosseum-2026-10-27-tickets-0mkMSlg3c2",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.85494,
+        10.68908
+      ]
     },
     {
       "id": "sixx-paxx-dreams-tour-2026-27-stadeum-stade",
@@ -2311,7 +2406,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/location/stade/stadeum-wx9NZWpcVc",
       "anreise": "DT: ca. 55–60 Min. (S5 bis Stade) · Auto: ca. 45–50 Min. (A26)",
-      "unsicher": "nur Aggregator ohne Detailseite"
+      "unsicher": "nur Aggregator ohne Detailseite",
+      "geo": [
+        53.60389,
+        9.46876
+      ]
     },
     {
       "id": "der-tatortreiniger-theater-halepaghen-schule-buxtehude",
@@ -2328,7 +2427,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/theater/der-tatortreiniger-buxtehude-halepaghen-schule-2026-10-28-tickets-HnJBnfmfgk",
       "anreise": "DT: ca. 35–45 Min. (S3 bis Buxtehude, Dauer nicht geprüft) · Auto: ca. 35 Min.",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.47659,
+        9.69284
+      ]
     },
     {
       "id": "schwanensee-ballett-grosses-haus-theater-luebeck",
@@ -2345,7 +2448,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.theaterluebeck.de/spielplan/kalender.html",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.87016,
+        10.68646
+      ]
     },
     {
       "id": "atze-schroeder-lovemachine-muk-konzertsaal-luebeck",
@@ -2361,7 +2468,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.muk.de/veranstaltungen-details/atze-schroederlovemachine",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.86938,
+        10.67805
+      ]
     },
     {
       "id": "jan-uwe-rogge-warum-erziehung-garantiert-misslingt-kolosseum",
@@ -2378,7 +2489,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/comedy/jan-uwe-rogge-warum-erziehung-garantiert-misslingt-luebeck-kolosseum-2026-10-29-tickets-KS0h3sRQhp",
       "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.85494,
+        10.68908
+      ]
     },
     {
       "id": "tingvall-trio-pax-kulturforum-lueneburg-gut-wienebuettel",
@@ -2394,7 +2509,11 @@
       "preis": "ab 31,80 €",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/konzert/tingvall-trio-pax-lueneburg-kulturforum-2026-10-29-tickets-1nFgV34pMr",
-      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)"
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
+      "geo": [
+        53.26231,
+        10.37459
+      ]
     },
     {
       "id": "best-of-poetry-slam-stadeum-stade",
@@ -2411,7 +2530,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/location/stade/stadeum-wx9NZWpcVc",
       "anreise": "DT: ca. 55–60 Min. (S5 bis Stade) · Auto: ca. 45–50 Min. (A26)",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.60389,
+        9.46876
+      ]
     },
     {
       "id": "flamenco-meets-concierto-ib-rico-tanz-trance-kolosseum-luebe",
@@ -2427,7 +2550,11 @@
       "preis": "ab 40,31 €",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/konzert/flamenco-meets-concierto-iberico-luebeck-kolosseum-2026-10-30-tickets-G8d0fF219C",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.85494,
+        10.68908
+      ]
     },
     {
       "id": "marlene-jaschke-hier-bin-ich-mensch-muk-konzertsaal-luebeck",
@@ -2443,7 +2570,11 @@
       "preis": "ab 34,05 €",
       "draussen": "drinnen",
       "link": "https://www.muk.de/veranstaltungen-details/marlene-jaschke-hier-bin-ich-mensch",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.86938,
+        10.67805
+      ]
     },
     {
       "id": "der-hexer-edgar-wallace-comoedie-luebeck",
@@ -2465,7 +2596,11 @@
       "preis": "VVK 36 € / 26 €, Abendkasse 41 € / 31 €",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/theater/der-hexer-luebeck-comoedie-2026-10-31-tickets-pB8NWkZdkN",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.86775,
+        10.68943
+      ]
     },
     {
       "id": "stolz-und-vorurteil-oder-so-premiere-kammerspiele-theater-lu",
@@ -2481,7 +2616,11 @@
       "preis": "ausverkauft",
       "draussen": "drinnen",
       "link": "https://www.theaterluebeck.de/spielplan/kalender.html",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.86975,
+        10.68617
+      ]
     },
     {
       "id": "mein-kummer-und-ich-chagrin-pour-soi-theater-lueneburg",
@@ -2503,7 +2642,11 @@
       "preis": "29,76 €",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/theater/mein-kummer-und-ich-chagrin-pour-soi-lueneburg-theater-2026-10-31-tickets-LMyfWSN3m9",
-      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)"
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
+      "geo": [
+        53.24431,
+        10.40645
+      ]
     },
     {
       "id": "return-of-the-roxy-halloween-spezial-shaun-of-the-dead-omdu",
@@ -2520,7 +2663,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/kino/return-of-the-roxy-halloween-spezial-shaun-dead-omdu-shadow-hunt-kurzfilmpremiere-lueneburg-gasthausbrauerei-brennerei-nolte-2026-10-30-TKPrkRs2dw",
       "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.24618,
+        10.43891
+      ]
     },
     {
       "id": "atze-schroeder-lovemachine-stadeum-stade",
@@ -2537,7 +2684,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/location/stade/stadeum-wx9NZWpcVc",
       "anreise": "DT: ca. 55–60 Min. (S5 bis Stade) · Auto: ca. 45–50 Min. (A26)",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.60389,
+        9.46876
+      ]
     },
     {
       "id": "benni-stark-schon-lustig-wenn-s-witzig-ist-kulturschuppen-ba",
@@ -2554,7 +2705,11 @@
       "draussen": "drinnen",
       "link": "https://www.eventfinder.de/veranstaltung/3139947/benni-stark-in-bad-segeberg-am-2026-10-30-um-20-00-uhr/",
       "anreise": "DT: ca. 1:30 h (nicht geprüft) · Auto: ca. 50 Min.",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.93693,
+        10.30448
+      ]
     },
     {
       "id": "mojomen-handgemachte-livemusik-der-speicher-schwerin",
@@ -2570,7 +2725,11 @@
       "preis": "ab 23 €",
       "draussen": "drinnen",
       "link": "https://www.schwerin.m-vp.de/veranstaltungen/mojomen-die-mojo-men-liefern-handgemachte-livemusik/",
-      "anreise": "DT: ca. 1:15–1:25 h (RE1 bis Schwerin) · Auto: ca. 1:15 h (A24)"
+      "anreise": "DT: ca. 1:15–1:25 h (RE1 bis Schwerin) · Auto: ca. 1:15 h (A24)",
+      "geo": [
+        53.63394,
+        11.41759
+      ]
     },
     {
       "id": "chaos-comedy-club-haffkrug-haffhuus-haffkrug-scharbeutz",
@@ -2588,7 +2747,11 @@
       "link": "https://www.eventfinder.de/veranstaltung/3358093/chaos-comedy-club-haffkrug-in-scharbeutz-am-2026-10-30-um-19-00-uhr/",
       "anreise": "DT: ca. 1:20–1:30 h (RE bis Lübeck, weiter RE/RB bis Haffkrug/Sierksdorf) · Auto: ca. 1 h (A1) · ab Hohwacht ca. 55 Min.",
       "hohwacht": true,
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        54.05193,
+        10.74971
+      ]
     },
     {
       "id": "vfb-luebeck-sv-werder-bremen-ii-poker-stars-de-stadion-an-de",
@@ -2605,7 +2768,11 @@
       "draussen": "draußen",
       "link": "https://www.regioactive.de/sport/vfb-luebeck-sv-werder-bremen-ii-poker-stars-de-stadion-an-der-lohmuehle-2026-10-31-tickets-RvMTxrlvCz",
       "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.86644,
+        10.68474
+      ]
     },
     {
       "id": "kneipenterroristen-heavy-halloween-mit-noerdlust-metal-worx",
@@ -2621,7 +2788,11 @@
       "preis": "ab 30,40 €",
       "draussen": "drinnen",
       "link": "https://www.mvp.de/luebeck/veranstaltungen/kneipenterroristen-heavy-halloween-gaeste-noerdlust-metal-worx/",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.86122,
+        10.63194
+      ]
     },
     {
       "id": "biedermann-und-die-brandstifter-grosses-haus-theater-luebeck",
@@ -2637,7 +2808,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.theaterluebeck.de/spielplan/kalender.html",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.87016,
+        10.68646
+      ]
     },
     {
       "id": "die-sterne-wenn-es-liebe-ist-tour-treibsand-luebeck",
@@ -2653,7 +2828,11 @@
       "preis": "VVK 26 €, Abendkasse 30 €",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/konzert/die-sterne-wenn-es-liebe-ist-tour-2026-luebeck-treibsand-2026-10-31-8dtQ5D7jqp",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.86988,
+        10.67649
+      ]
     },
     {
       "id": "rotary-benefizkonzert-des-holsteinischen-kammerorchesters-mu",
@@ -2669,7 +2848,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://www.muk.de/veranstaltungen-details/rotary-club-luebeck-holstentorbenefizkonzert",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.86938,
+        10.67805
+      ]
     },
     {
       "id": "halloween-party-auf-dem-cargo-schiff-cargo-schiff-luebeck",
@@ -2686,7 +2869,11 @@
       "draussen": "beides",
       "link": "https://www.regioactive.de/party/halloween-party-luebeck-cargo-schiff-2026-10-31-N3WjjgGb1L",
       "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.87242,
+        10.67882
+      ]
     },
     {
       "id": "werftfreaks-halloween-party-kulturwerft-gollan-luebeck",
@@ -2703,7 +2890,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/party/werftfreaks-halloween-party-luebeck-kulturwerft-gollan-2026-10-31-HRSqjfPMTL",
       "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.87719,
+        10.68461
+      ]
     },
     {
       "id": "halloween-die-kultparty-18-a1-musikpark-luebeck",
@@ -2720,7 +2911,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/party/halloween-die-kultparty-18-luebeck-a1-musikpark-2026-10-31-KFdZQf1NvW",
       "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.8782,
+        10.66826
+      ]
     },
     {
       "id": "goetz-widmann-50-jahre-erster-vollrausch-smoke-inn-concert-j",
@@ -2737,7 +2932,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/konzert/goetz-widmann-50-jahre-erster-vollrausch-smoke-inn-concert-lueneburg-jekyll-hide-2026-10-31-tickets-ygd0N399tk",
       "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.24733,
+        10.41373
+      ]
     },
     {
       "id": "halloween-horror-night-18-lkh-arena-lueneburg",
@@ -2753,7 +2952,11 @@
       "preis": "Abendkasse 15 €, Garderobe 2 €",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/party/halloween-horror-night-31-10-2026-lkh-arena-lueneburg-2026-10-31-TFQHXhT3qs",
-      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)"
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
+      "geo": [
+        53.2727,
+        10.423
+      ]
     },
     {
       "id": "salon-hansen-club-ab-18-salon-hansen-lueneburg",
@@ -2770,7 +2973,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/party/salon-hansen-club-lueneburg-2026-10-31-Z1S1f8cnDg",
       "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.24741,
+        10.40357
+      ]
     },
     {
       "id": "whisky-tasting-6-whiskys-5-gaenge-hotel-restaurant-zum-posti",
@@ -2787,7 +2994,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/gastronomie/whisky-tasting-soltau-hotel-restaurant-zum-postilion-2026-10-31-cTX3nSl3bL",
       "anreise": "DT: ca. 1:45–2 h (bis Buchholz, RB38 bis Soltau, dann Bus) · Auto: ca. 55–60 Min. (A7)",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        52.98813,
+        9.83371
+      ]
     },
     {
       "id": "unter-dem-strand-theater-im-hinterhof-buxtehude",
@@ -2804,7 +3015,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/literatur/unter-dem-strand-buxtehude-theater-im-hinterhof-2026-10-31-tickets-4rXxStltxp",
       "anreise": "DT: ca. 35–45 Min. (S3 bis Buxtehude, Dauer nicht geprüft) · Auto: ca. 35 Min.",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.46037,
+        9.68689
+      ]
     },
     {
       "id": "flohmarkt-citti-park-luebeck-citti-park-luebeck",
@@ -2821,7 +3036,11 @@
       "draussen": "draußen",
       "link": "https://www.regioactive.de/markt/flohmarkt-citti-park-luebeck-2026-11-01-T1TmXbfMZf",
       "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
-      "unsicher": "nur Aggregator, Endzeit unbekannt"
+      "unsicher": "nur Aggregator, Endzeit unbekannt",
+      "geo": [
+        53.85771,
+        10.63035
+      ]
     },
     {
       "id": "maedchen-klamotte-der-maedelsflohmarkt-muk-rotunde-luebeck",
@@ -2837,7 +3056,11 @@
       "preis": "5 € (Kasse/E-Ticket), Early Bird 8 €",
       "draussen": "drinnen",
       "link": "https://www.muk.de/veranstaltungen-details/maedchen-klamotte-der-maedelsflohmarkt",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.86938,
+        10.67805
+      ]
     },
     {
       "id": "vfl-luebeck-schwartau-vfl-eintracht-hagen-hansehalle-luebeck",
@@ -2854,7 +3077,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/sport/vfl-luebeck-schwartau-eintracht-hagen-hansehalle-2026-11-01-tickets-6P778tMQpB",
       "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
-      "unsicher": "nur Aggregator"
+      "unsicher": "nur Aggregator",
+      "geo": [
+        53.8802,
+        10.67092
+      ]
     },
     {
       "id": "idomeneo-mozart-grosses-haus-theater-luebeck",
@@ -2870,7 +3097,11 @@
       "preis": "ab 22,30 €",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/musical/idomeneo-luebeck-theater-grosses-haus-2026-11-01-tickets-12n0nCtNqq",
-      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)"
+      "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
+      "geo": [
+        53.87016,
+        10.68646
+      ]
     },
     {
       "id": "stolz-und-vorurteil-oder-so-theatertag-kammerspiele-theater",
@@ -2887,7 +3118,11 @@
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/theater/stolz-und-vorurteil-oder-so-theatertag-luebeck-kammerspiele-mit-buehne-theater-2026-11-01-nFbHkv0zRl",
       "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
-      "unsicher": "nur Aggregator; Theatertag-Ermäßigung nicht bestätigt"
+      "unsicher": "nur Aggregator; Theatertag-Ermäßigung nicht bestätigt",
+      "geo": [
+        53.86975,
+        10.68617
+      ]
     },
     {
       "id": "anatevka-musical-theater-lueneburg",
@@ -2903,7 +3138,11 @@
       "preis": "ab 38,16 €",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/musical/anatevka-lueneburg-theater-2026-11-01-tickets-hTkNm6GBPC",
-      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)"
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
+      "geo": [
+        53.24431,
+        10.40645
+      ]
     },
     {
       "id": "tom-gaebel-his-trio-a-swinging-affair-kulturforum-lueneburg",
@@ -2919,31 +3158,11 @@
       "preis": "52,80 €",
       "draussen": "drinnen",
       "link": "https://www.regioactive.de/konzert/tom-gaebel-his-trio-a-swinging-affair-the-american-songbook-and-beyond-lueneburg-kulturforum-2026-11-01-tickets-MNVnch5Rj3",
-      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)"
-    },
-    {
-      "id": "draisinenfahrt-luetjenburg-wehdenstrasse-14-luetjenburg",
-      "daten": [
-        "2026-10-26",
-        "2026-10-27",
-        "2026-10-28",
-        "2026-10-29",
-        "2026-10-30",
-        "2026-10-31"
-      ],
-      "zeit": "Mo–Sa 11:30",
-      "ganzeWoche": true,
-      "titel": "Draisinenfahrt Lütjenburg",
-      "ort": "Wehdenstraße 14, Lütjenburg",
-      "region": "HB",
-      "kategorie": "Erlebnis",
-      "beschreibung": "Mit der Fahrrad-Draisine über die stillgelegte Bahnstrecke. Anmeldung unter 04381 419941 oder tourist-info@stadt-luetjenburg.de.",
-      "preis": "Preis im Flyer nicht genannt",
-      "draussen": "draußen",
-      "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
-      "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
-      "hohwacht": true,
-      "unsicher": "Flyer gilt für Oktober; Sa 31.10. (Feiertag) nicht gesondert bestätigt"
+      "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
+      "geo": [
+        53.26231,
+        10.37459
+      ]
     },
     {
       "id": "lieder-die-im-schatten-stehen-foyer-opernhaus-kiel-rathauspl",
@@ -2960,7 +3179,11 @@
       "draussen": "drinnen",
       "link": "https://theater-kiel.de/spielplan/index.html",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
-      "hohwacht": true
+      "hohwacht": true,
+      "geo": [
+        54.3231,
+        10.13314
+      ]
     },
     {
       "id": "richard-cwiertnia-ostblockvater-ostblock-live-max-nachttheat",
@@ -2977,7 +3200,11 @@
       "draussen": "drinnen",
       "link": "https://www.mvp.de/kiel/veranstaltungen/richard-cwiertnia-ostblockvater-ostblock-live-max-nachttheater/",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
-      "hohwacht": true
+      "hohwacht": true,
+      "geo": [
+        54.33245,
+        10.11181
+      ]
     },
     {
       "id": "stadtrundgang-luetjenburg-touristinfo-markt-4-luetjenburg",
@@ -2995,7 +3222,11 @@
       "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
       "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
       "hohwacht": true,
-      "unsicher": "Treffpunkt im Flyer nicht eindeutig zugeordnet"
+      "unsicher": "Treffpunkt im Flyer nicht eindeutig zugeordnet",
+      "geo": [
+        54.47678,
+        9.05114
+      ]
     },
     {
       "id": "burgfuehrung-turmhuegelburg-turmhuegelburg-luetjenburg",
@@ -3012,7 +3243,11 @@
       "draussen": "draußen",
       "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
       "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
-      "hohwacht": true
+      "hohwacht": true,
+      "geo": [
+        54.30146,
+        10.57175
+      ]
     },
     {
       "id": "jan-uwe-rogge-warum-erziehung-garantiert-misslingt-max-nacht",
@@ -3029,7 +3264,11 @@
       "draussen": "drinnen",
       "link": "https://www.mvp.de/kiel/veranstaltungen/jan-uwe-rogge-warum-erziehung-garantiert-misslingt-kiel/",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
-      "hohwacht": true
+      "hohwacht": true,
+      "geo": [
+        54.33245,
+        10.11181
+      ]
     },
     {
       "id": "horror-lesung-orange-club-traum-gmbh-kiel",
@@ -3047,7 +3286,11 @@
       "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder als Quelle"
+      "unsicher": "nur eventfinder als Quelle",
+      "geo": [
+        54.33498,
+        10.1168
+      ]
     },
     {
       "id": "holstein-kiel-tsg-hoffenheim-dfb-pokal-2-runde-holstein-stad",
@@ -3065,7 +3308,11 @@
       "link": "https://www.bundesliga.com/de/dfb-pokal/spieltag/2026-2027/runde-2/holstein-kiel-vs-tsg-hoffenheim/liveticker",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "Anstoß 19:45 laut bundesliga.com, eventfinder nennt 20:45"
+      "unsicher": "Anstoß 19:45 laut bundesliga.com, eventfinder nennt 20:45",
+      "geo": [
+        54.34921,
+        10.12376
+      ]
     },
     {
       "id": "sagel-und-das-schlitzohr-dinner-mit-leiche-ratskeller-kiel",
@@ -3083,7 +3330,11 @@
       "link": "https://www.mvp.de/kiel/veranstaltungen/sagel-und-das-schlitzohr-dinner-mit-leiche-ratskeller-kiel/",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "eventfinder nennt 0,00 €, mvp.de ab 89,77 € (vermutlich inkl. Menü)"
+      "unsicher": "eventfinder nennt 0,00 €, mvp.de ab 89,77 € (vermutlich inkl. Menü)",
+      "geo": [
+        54.32215,
+        10.1333
+      ]
     },
     {
       "id": "wochenmarkt-luetjenburg-marktplatz-luetjenburg",
@@ -3103,7 +3354,11 @@
       "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
       "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
       "hohwacht": true,
-      "unsicher": "Sa 31.10. ist Feiertag, Markt nicht gesondert bestätigt"
+      "unsicher": "Sa 31.10. ist Feiertag, Markt nicht gesondert bestätigt",
+      "geo": [
+        54.29291,
+        10.58953
+      ]
     },
     {
       "id": "parfuem-und-handcreme-workshop-mi-erwachsenenrunde-kursaal-h",
@@ -3125,7 +3380,11 @@
       "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
       "anreise": "DT: ca. 2:45–3 h (RE bis Kiel, Bus über Lütjenburg) · Auto: ca. 1:30 h · vor Ort in Hohwacht",
       "hohwacht": true,
-      "unsicher": "Ort im Flyer nicht ganz eindeutig; Anmeldung nötig"
+      "unsicher": "Ort im Flyer nicht ganz eindeutig; Anmeldung nötig",
+      "geo": [
+        54.32158,
+        10.66647
+      ]
     },
     {
       "id": "tannhaeuser-und-der-saengerkrieg-auf-wartburg-opernhaus-kiel",
@@ -3143,7 +3402,11 @@
       "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder als Quelle"
+      "unsicher": "nur eventfinder als Quelle",
+      "geo": [
+        54.3231,
+        10.13314
+      ]
     },
     {
       "id": "dat-kole-grusen-niederdeutsche-buehne-wilhelmplatz-2-kiel",
@@ -3167,7 +3430,11 @@
       "draussen": "drinnen",
       "link": "https://www.mvp.de/kiel/veranstaltungen/dat-kole-grusen-niederdeutsche-buehne-kiel/",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
-      "hohwacht": true
+      "hohwacht": true,
+      "geo": [
+        54.32499,
+        10.12058
+      ]
     },
     {
       "id": "botticelli-baby-komm-rum-lass-laufen-die-pumpe-kiel",
@@ -3185,7 +3452,11 @@
       "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder als Quelle"
+      "unsicher": "nur eventfinder als Quelle",
+      "geo": [
+        54.32449,
+        10.1383
+      ]
     },
     {
       "id": "fraeulein-smillas-gespuer-fuer-schnee-schauspielhaus-kiel",
@@ -3204,7 +3475,11 @@
       "link": "https://www.eventfinder.de/kiel/veranstaltungen/oktober/",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder als Quelle"
+      "unsicher": "nur eventfinder als Quelle",
+      "geo": [
+        54.33886,
+        10.1339
+      ]
     },
     {
       "id": "idomeneo-mozart-opernhaus-kiel",
@@ -3222,7 +3497,11 @@
       "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder als Quelle"
+      "unsicher": "nur eventfinder als Quelle",
+      "geo": [
+        54.3231,
+        10.13314
+      ]
     },
     {
       "id": "die-grosse-symphonische-nacht-benefizkonzert-konzerthaus-am",
@@ -3240,7 +3519,11 @@
       "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder als Quelle"
+      "unsicher": "nur eventfinder als Quelle",
+      "geo": [
+        54.32366,
+        10.14065
+      ]
     },
     {
       "id": "alle-meine-soehne-arthur-miller-schauspielhaus-kiel",
@@ -3258,7 +3541,11 @@
       "link": "https://www.eventfinder.de/kiel/veranstaltungen/oktober/",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder als Quelle"
+      "unsicher": "nur eventfinder als Quelle",
+      "geo": [
+        54.33886,
+        10.1339
+      ]
     },
     {
       "id": "de-dode-is-juemmer-de-gaarner-heikendoerper-speeldeel-schulr",
@@ -3280,7 +3567,11 @@
       "link": "https://www.eventfinder.de/schoenberg-holstein/veranstaltungen/",
       "anreise": "DT: ca. 1:45–2 h (bis Kiel + Bus) · Auto: ca. 1:25 h · ab Hohwacht ca. 35 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder; Preis dort mit 0,00 € angegeben (vermutlich Platzhalter), Sonntagszeit weicht vom Vorjahr ab"
+      "unsicher": "nur eventfinder; Preis dort mit 0,00 € angegeben (vermutlich Platzhalter), Sonntagszeit weicht vom Vorjahr ab",
+      "geo": [
+        54.39014,
+        9.99819
+      ]
     },
     {
       "id": "reisebericht-georgien-im-zauber-des-wilden-kaukasus-filippos",
@@ -3297,7 +3588,11 @@
       "draussen": "drinnen",
       "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
       "anreise": "DT: umständlich, ca. 3 h · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
-      "hohwacht": true
+      "hohwacht": true,
+      "geo": [
+        54.27679,
+        10.65149
+      ]
     },
     {
       "id": "don-quichotte-oper-opernhaus-kiel",
@@ -3315,7 +3610,11 @@
       "link": "https://www.eventfinder.de/kiel/veranstaltungen/oktober/",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder als Quelle"
+      "unsicher": "nur eventfinder als Quelle",
+      "geo": [
+        54.3231,
+        10.13314
+      ]
     },
     {
       "id": "benni-stark-schon-lustig-wenn-s-witzig-ist-haus-des-kurgaste",
@@ -3333,7 +3632,11 @@
       "link": "https://www.regioactive.de/comedy/benni-stark-schon-lustig-wenn-s-witzig-ist-bad-segeberg-kulturschuppen-ehemaliger-antikschuppen-2026-10-30-tickets-h7HskLSvYB",
       "anreise": "DT: umständlich, ca. 2:30–3 h (RE bis Kiel, weiter Bahn/Bus nach Malente) · Auto: ca. 1:15 h · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "Ticketpreis nicht gesehen (eventfinder 0,00 € vermutlich Platzhalter)"
+      "unsicher": "Ticketpreis nicht gesehen (eventfinder 0,00 € vermutlich Platzhalter)",
+      "geo": [
+        54.16885,
+        10.55294
+      ]
     },
     {
       "id": "conny-liser-lpha-male-club-tour-2026-die-pumpe-kiel",
@@ -3351,7 +3654,11 @@
       "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder; andere Seite zeigt 0,00 €"
+      "unsicher": "nur eventfinder; andere Seite zeigt 0,00 €",
+      "geo": [
+        54.32449,
+        10.1383
+      ]
     },
     {
       "id": "kieler-lichtermeer-mit-verkaufsoffenem-sonntag-innenstadt-ki",
@@ -3368,7 +3675,11 @@
       "draussen": "draußen",
       "link": "https://kiel-sailing-city.de/veranstaltungen/sonntagsoeffnungen/kieler-lichtermeer",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
-      "hohwacht": true
+      "hohwacht": true,
+      "geo": [
+        54.32101,
+        10.13862
+      ]
     },
     {
       "id": "la-cage-aux-folles-opernhaus-kiel",
@@ -3386,7 +3697,11 @@
       "link": "https://www.eventfinder.de/veranstaltungen-mielkendorf.php",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder als Quelle"
+      "unsicher": "nur eventfinder als Quelle",
+      "geo": [
+        54.3231,
+        10.13314
+      ]
     },
     {
       "id": "peer-gynt-schauspielhaus-kiel",
@@ -3404,7 +3719,11 @@
       "link": "https://www.eventfinder.de/kiel/veranstaltungen/november/",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder als Quelle"
+      "unsicher": "nur eventfinder als Quelle",
+      "geo": [
+        54.33886,
+        10.1339
+      ]
     },
     {
       "id": "kalter-weisser-mann-kabarett-st-michaelis-kirche-luetjenburg",
@@ -3422,7 +3741,11 @@
       "link": "https://www.eventfinder.de/comedy-kabarett-wittmoldt.php",
       "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder als Quelle"
+      "unsicher": "nur eventfinder als Quelle",
+      "geo": [
+        54.29291,
+        10.58953
+      ]
     },
     {
       "id": "das-recht-des-staerkeren-studio-im-schauspielhaus-kiel",
@@ -3440,7 +3763,11 @@
       "link": "https://www.eventfinder.de/kiel/veranstaltungen/november/",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "unsicher": "nur eventfinder als Quelle"
+      "unsicher": "nur eventfinder als Quelle",
+      "geo": [
+        54.3356,
+        10.12787
+      ]
     },
     {
       "id": "burgfuehrung-turmhuegelburg-turmhuegelburg-luetjenburg-2",
@@ -3458,7 +3785,11 @@
       "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
       "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
       "hohwacht": true,
-      "unsicher": "Flyer nur für Oktober; So 1.11. nicht bestätigt"
+      "unsicher": "Flyer nur für Oktober; So 1.11. nicht bestätigt",
+      "geo": [
+        54.30146,
+        10.57175
+      ]
     },
     {
       "id": "hamburger-fischmarkt-fischmarkt-grosse-elbstrasse-altona",
@@ -3474,7 +3805,11 @@
       "preis": "Eintritt frei",
       "kostenlos": true,
       "draussen": "draußen",
-      "link": "https://www.hamburg-tourism.de/sehen-erleben/hamburg-maritim/fischmarkt/"
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/hamburg-maritim/fischmarkt/",
+      "geo": [
+        53.54538,
+        9.95545
+      ]
     },
     {
       "id": "pans-labyrinth-omu-abaton-rotherbaum",
@@ -3495,7 +3830,11 @@
       "preis": "Mo 11 €, Mi ab 8 €",
       "draussen": "drinnen",
       "link": "https://www.abaton.de/page.pl?page=553690",
-      "imdb": "155"
+      "imdb": "155",
+      "geo": [
+        53.56767,
+        9.98204
+      ]
     },
     {
       "id": "der-pate-teil-ii-omu-4k-zeise-kinos-ottensen",
@@ -3512,7 +3851,11 @@
       "preis": "11 € (erm. 9,50 €) plus 2,50 € Überlängenzuschlag",
       "draussen": "drinnen",
       "link": "https://www.zeise.de/film/2676",
-      "imdb": "4"
+      "imdb": "4",
+      "geo": [
+        53.55404,
+        9.9274
+      ]
     },
     {
       "id": "der-herr-der-ringe-die-gefaehrten-extended-omu-zeise-kinos-o",
@@ -3529,7 +3872,11 @@
       "preis": "11 € (erm. 9,50 €) plus 2,50 € Überlängenzuschlag",
       "draussen": "drinnen",
       "link": "https://www.zeise.de/film/3995",
-      "imdb": "8"
+      "imdb": "8",
+      "geo": [
+        53.55404,
+        9.9274
+      ]
     },
     {
       "id": "taxi-driver-ov-mit-engl-untertiteln-kommunales-kino-in-der-p",
@@ -3548,7 +3895,11 @@
       "link": "https://www.diepumpe.de/veranstaltungen/marrtin-scorsese-taxi-driver/",
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "hohwacht": true,
-      "imdb": "143"
+      "imdb": "143",
+      "geo": [
+        54.32449,
+        10.1383
+      ]
     },
     {
       "id": "die-odyssee-kinopolis-hafencity-kino-5",
@@ -3566,7 +3917,11 @@
       "preis": "ab 13,99 €",
       "draussen": "drinnen",
       "link": "https://www.kinopolis.de/hh/filmdetail/die-odyssee/00874000012PLXMQDD",
-      "imdb": "64"
+      "imdb": "64",
+      "geo": [
+        53.55024,
+        9.9611
+      ]
     },
     {
       "id": "das-ding-aus-einer-anderen-welt-the-thing-ov-savoy-filmtheat",
@@ -3583,7 +3938,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://savoy.premiumkino.de/vorstellung/das-ding-aus-einer-anderen-welt-1982/20261030/1900/RyKWiQR3WR5gk5KHPRg7FA9Qk_pU4Eku_axw3c8fUIg~",
-      "imdb": "149"
+      "imdb": "149",
+      "geo": [
+        53.55412,
+        10.01419
+      ]
     },
     {
       "id": "die-odyssee-astor-film-lounge-hafencity",
@@ -3600,7 +3959,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://hamburg.premiumkino.de/vorstellung/die-odyssee/20261030/1930/rWJekSomvCCC4Xv1ZJ9o1VUgH5R9NfZjcdvsq3Gq93w~",
-      "imdb": "64"
+      "imdb": "64",
+      "geo": [
+        53.54334,
+        9.99548
+      ]
     },
     {
       "id": "die-odyssee-in-70-mm-ov-savoy-filmtheater-st-georg",
@@ -3617,7 +3980,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://savoy.premiumkino.de/vorstellung/die-odyssee/20261031/1215/SDoBGtV7a8DgjEuQYZqSuF_LZi1jIX6dQpDICGxxSWU~",
-      "imdb": "64"
+      "imdb": "64",
+      "geo": [
+        53.55412,
+        10.01419
+      ]
     },
     {
       "id": "die-odyssee-astor-film-lounge-hafencity-2",
@@ -3634,7 +4001,11 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://hamburg.premiumkino.de/vorstellung/die-odyssee/20261031/1600/E8SOLhxcoqjotBbf7vOgKiitIIwDFJmfa02MjMV3muY~",
-      "imdb": "64"
+      "imdb": "64",
+      "geo": [
+        53.54334,
+        9.99548
+      ]
     },
     {
       "id": "der-herr-der-ringe-die-gefaehrten-extended-25-jahre-d-box-ki",
@@ -3652,7 +4023,11 @@
       "preis": "Sa ab 8,99 €, So ab 9,99 €",
       "draussen": "drinnen",
       "link": "https://www.kinopolis.de/hh/filmdetail/der-herr-der-ringe-1-extended-version-25th-anniversary/58264000012PLXMQDD",
-      "imdb": "8"
+      "imdb": "8",
+      "geo": [
+        53.5397,
+        9.99895
+      ]
     },
     {
       "id": "herr-der-ringe-marathon-teil-1-3-extended-ov-savoy-filmtheat",
@@ -3669,7 +4044,329 @@
       "preis": "Preis nicht genannt",
       "draussen": "drinnen",
       "link": "https://savoy.premiumkino.de/vorstellung/trilogie-herr-der-ringe-teil-1-3-extended-version/20261101/1100/fLXlBTrjEC4aVNv5Vo9QVsMqjpoxcKMCjlSnUwUjHrg~",
-      "imdb": "5, 8 und 10"
+      "imdb": "5, 8 und 10",
+      "geo": [
+        53.55412,
+        10.01419
+      ]
+    }
+  ],
+  "laufend": [
+    {
+      "id": "disneys-der-koenig-der-loewen-stage-theater-im-hafen-steinwe",
+      "von": "2026-10-27",
+      "bis": "2026-11-01",
+      "zeit": "Di/Mi 18:30, Do/Fr 20:00, Sa 15:00 + 20:00, So 14:00 + 18:30 (Mo keine Vorstellung)",
+      "titel": "Disneys Der König der Löwen",
+      "ort": "Stage Theater im Hafen, Steinwerder",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Hamburgs Musical-Dauerbrenner, Anfahrt mit der Stage-Fähre ab Landungsbrücken.",
+      "preis": "ab ca. 66 €",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/musical/disneys-der-koenig-loewen-termine-tickets-b2c6bc13b559",
+      "geo": [
+        53.53989,
+        9.97325
+      ]
+    },
+    {
+      "id": "heisse-ecke-das-st-pauli-musical-schmidts-tivoli-spielbudenp",
+      "von": "2026-10-27",
+      "bis": "2026-11-01",
+      "zeit": "Di 19:30, Mi 19:00, Do 19:30, Fr 20:00, Sa 15:00 + 20:00, So 19:00 (Mo keine Vorstellung)",
+      "titel": "Heiße Ecke – Das St. Pauli Musical",
+      "ort": "Schmidts Tivoli, Spielbudenplatz",
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Kiez-Musical um eine Imbissbude auf der Reeperbahn.",
+      "preis": "ab 47,59 € (Di/Mi) bis ab 69,59 € (Sa 20:00)",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/heisse-ecke-schmidts-tivoli-hamburg/",
+      "geo": [
+        53.54913,
+        9.96334
+      ]
+    },
+    {
+      "id": "winterdeck-auf-dem-spielbudenplatz-spielbudenplatz-21-22-st",
+      "von": "2026-10-26",
+      "bis": "2026-11-01",
+      "zeit": "Mo–Fr ab 16 Uhr, Sa 31.10. ab 14 Uhr, So 1.11. ab 16 Uhr",
+      "ganztags": true,
+      "titel": "Winterdeck auf dem Spielbudenplatz",
+      "ort": "Spielbudenplatz 21–22, St. Pauli",
+      "region": "HH",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Überdachte Winterhütte mit Getränken auf der Bühne vor dem Operettenhaus, Laufzeit laut Kalender 23.10. bis 23.12.2026.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/winterdeck-auf-dem-spielbudenplatz/",
+      "geo": [
+        53.54907,
+        9.96428
+      ]
+    },
+    {
+      "id": "grosse-lichterfahrt-hamburg-bei-nacht-landungsbruecken-anleg",
+      "von": "2026-10-26",
+      "bis": "2026-11-01",
+      "zeit": "täglich 19:00 (Mo), 18:00 (Di–So)",
+      "titel": "Große Lichterfahrt – Hamburg bei Nacht",
+      "ort": "Landungsbrücken (Anleger St. Pauli)",
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Rund einstündige Abendfahrt durch den beleuchteten Hafen, die Speicherstadt-Route hängt von der Tide ab. Startzeit laut Kalender ab 27.10. 18 Uhr.",
+      "preis": "Preis nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/grosse-lichterfahrt/",
+      "unsicher": "Mo 26.10. 19 Uhr nur über regioactive gesehen",
+      "geo": [
+        53.54555,
+        9.97037
+      ]
+    },
+    {
+      "id": "the-fans-strike-back-star-wars-fanausstellung-halle-7-bahren",
+      "von": "2026-10-26",
+      "bis": "2026-11-01",
+      "zeit": "täglich ab 10 Uhr",
+      "ganztags": true,
+      "titel": "The Fans Strike Back – Star-Wars-Fanausstellung",
+      "ort": "Halle 7, Bahrenfeld",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Ausstellung rund um Star-Wars-Fankultur, an allen Tagen der Woche mit Beginn 10 Uhr gelistet.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/ausstellung/the-fans-strike-back-exhibition-hamburg-halle-7-2026-10-30-tickets-2YrNnDMk2f",
+      "unsicher": "nur Aggregator (regioactive), Laufzeit nicht geprüft",
+      "geo": [
+        53.5693,
+        9.93877
+      ]
+    },
+    {
+      "id": "von-monet-bis-picasso-juedische-kunstsammler-innen-in-deutsc",
+      "von": "2026-10-26",
+      "bis": "2026-11-01",
+      "zeit": "täglich 11–19, Do bis 21",
+      "ganztags": true,
+      "titel": "„Von Monet bis Picasso. Jüdische Kunstsammler:innen in Deutschland“",
+      "ort": "Bucerius Kunst Forum, Alter Wall 12",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Moderne-Ausstellung zu jüdischen Sammlungen, läuft vom 11.9.2026 bis 29.3.2027. Am Sa 31.10. freier Eintritt (#seeforfree, 11–19 Uhr).",
+      "preis": "Preis nicht genannt, Sa 31.10. frei",
+      "draussen": "drinnen",
+      "link": "https://buceriuskunstforum.de/",
+      "geo": [
+        53.5507,
+        9.99094
+      ]
+    },
+    {
+      "id": "hamburger-kunsthalle-carrie-yamaoka-david-novros-this-is-the",
+      "von": "2026-10-27",
+      "bis": "2026-11-01",
+      "zeit": "ab 10 Uhr (Mo geschlossen), Do bis 21 Uhr",
+      "ganztags": true,
+      "titel": "Hamburger Kunsthalle: Carrie Yamaoka, David Novros, „This is the Modern World“",
+      "ort": "Hamburger Kunsthalle, Glockengießerwall",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Laufende Schauen u. a. Carrie Yamaoka (bis 10.1.2027), David Novros (bis 21.2.2027) und „This is the Modern World“ (bis 30.5.2027). Am Sa 31.10. #seeforfree, mit Führungen.",
+      "preis": "Preis nicht geprüft, Sa 31.10. frei",
+      "draussen": "drinnen",
+      "link": "https://www.hamburger-kunsthalle.de/ausstellungen",
+      "unsicher": "Öffnungszeiten aus Vorwoche übernommen, Mo-Schließung nicht neu geprüft",
+      "geo": [
+        53.55529,
+        10.003
+      ]
+    },
+    {
+      "id": "markk-museum-am-rothenbaum-markk-rothenbaumchaussee-64",
+      "von": "2026-10-27",
+      "bis": "2026-11-01",
+      "zeit": "Di–So 10–18, Do bis 21",
+      "ganztags": true,
+      "titel": "MARKK – Museum am Rothenbaum",
+      "ort": "MARKK, Rothenbaumchaussee 64",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Völkerkundemuseum mit Dauer- und Sonderausstellungen. Am Sa 31.10. freier Eintritt (#seeforfree) ab 10 Uhr.",
+      "preis": "Preis nicht genannt, Sa 31.10. frei",
+      "draussen": "drinnen",
+      "link": "https://www.markk-hamburg.de/",
+      "unsicher": "aktuelle Sonderausstellung nicht geprüft",
+      "geo": [
+        53.56862,
+        9.98917
+      ]
+    },
+    {
+      "id": "mk-g-hella-jongerius-whispering-things-schubladenschau-4-tan",
+      "von": "2026-10-27",
+      "bis": "2026-11-01",
+      "zeit": "Zeiten nicht geprüft, Mo geschlossen",
+      "ganztags": true,
+      "titel": "MK&G: Hella Jongerius „Whispering Things“, Schubladenschau #4 Tanz",
+      "ort": "Museum für Kunst und Gewerbe, Steintorplatz",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Hella Jongerius ist neu seit 23.10.2026 (bis 13.6.2027), dazu „Schubladenschau #4: Tanz“ und Sara Sallam „Fürsorge“. „Minimöbel: Stühle für Kinder“ endet am 1.11.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.mkg-hamburg.de/ausstellungen",
+      "unsicher": "Öffnungszeiten nicht auf der Seite, Mo zu laut Seitenanzeige",
+      "geo": [
+        53.55129,
+        10.00933
+      ]
+    },
+    {
+      "id": "altonaer-museum-aiga-rasch-und-ihre-detektive-altonaer-museu",
+      "von": "2026-10-27",
+      "bis": "2026-11-01",
+      "zeit": "Zeiten nicht geprüft",
+      "ganztags": true,
+      "titel": "Altonaer Museum: „Aiga Rasch und ihre Detektive“",
+      "ort": "Altonaer Museum, Museumstraße 23",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Illustrationen der Cover-Künstlerin der „Drei ???“, läuft bis 14.3.2027. Am Sa 31.10. freier Eintritt (#seeforfree).",
+      "preis": "Preis nicht geprüft, Sa 31.10. frei",
+      "draussen": "drinnen",
+      "link": "https://shmh.de/de/ausstellungen",
+      "unsicher": "Öffnungszeiten (Vorwoche: ab 10 Uhr, Di zu) nicht neu bestätigt",
+      "geo": [
+        53.54914,
+        9.93431
+      ]
+    },
+    {
+      "id": "ernst-barlach-haus-ausstellung-zu-joachim-ringelnatz-eroeffn",
+      "von": "2026-10-27",
+      "bis": "2026-11-01",
+      "zeit": "Zeiten nicht geprüft",
+      "ganztags": true,
+      "titel": "Ernst Barlach Haus: Ausstellung zu Joachim Ringelnatz (Eröffnung 25.10.) und „Reichlich Barlach“",
+      "ort": "Ernst Barlach Haus, Jenischpark, Othmarschen",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Neue Ringelnatz-Schau, eröffnet am So 25.10. um 11 Uhr, dazu Werke aus der eigenen Sammlung.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.barlach-haus.de/",
+      "unsicher": "Laufzeit und Öffnungszeiten nicht auf der Startseite",
+      "geo": [
+        53.55364,
+        9.86766
+      ]
+    },
+    {
+      "id": "phoxxi-abdulhamid-kircher-rotting-from-within-akosua-viktori",
+      "von": "2026-10-27",
+      "bis": "2026-11-01",
+      "zeit": "bis So 1.11. (letzte Tage), Zeiten nicht geprüft",
+      "ganztags": true,
+      "titel": "PHOXXI: Abdulhamid Kircher „Rotting From Within“ / Akosua Viktoria Adu-Sanyah (letzte Tage)",
+      "ort": "PHOXXI – Haus der Photographie, Deichtorstraße 1–2",
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Fotografie-Doppelschau im temporären Haus der Photographie, läuft laut Deichtorhallen nur noch bis 1.11.2026.",
+      "preis": "Preis nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://www.deichtorhallen.de/de/ausstellungen",
+      "unsicher": "Öffnungszeiten nicht geprüft",
+      "geo": [
+        53.54718,
+        10.00639
+      ]
+    },
+    {
+      "id": "heide-park-halloween-letzte-woche-bis-31-10-heide-park-resor",
+      "von": "2026-10-26",
+      "bis": "2026-10-31",
+      "zeit": "Mo–Do 10–17, Fr/Sa 12–21 (Horror-Mazes ab ca. 16 Uhr)",
+      "ganztags": true,
+      "titel": "Heide Park Halloween (letzte Woche, bis 31.10.)",
+      "ort": "Heide Park Resort, Soltau",
+      "region": "LG",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Halloween-Event bis Sa 31.10. mit Scare Zone und Horror-Mazes (ab 16 Jahren, separates Zeitticket). Fr und Sa verlängerte Tage bis 21 Uhr, einige Wasserbahnen schließen schon gegen 17 Uhr.",
+      "preis": "Online ab 28–37 €, Tageskasse 64 €, Halloween-Abendticket ab 17 Uhr ab 24 €",
+      "draussen": "draußen",
+      "link": "https://www.heide-park.de/en/explore/events/halloween",
+      "anreise": "DT: ca. 1:45–2 h (bis Buchholz, RB38 bis Soltau, dann Bus) · Auto: ca. 55–60 Min. (A7)",
+      "geo": [
+        53.02222,
+        9.87233
+      ]
+    },
+    {
+      "id": "serengeti-park-halloween-halloween-nights-serengeti-park-hod",
+      "von": "2026-10-30",
+      "bis": "2026-11-01",
+      "zeit": "Fr/Sa Halloween Nights ab 18 Uhr (Einlass 17 Uhr, bis ca. 22 Uhr), tagsüber Programm ab 14 Uhr; So 1.11. Extra-Night",
+      "ganztags": true,
+      "titel": "Serengeti-Park Halloween (Halloween Nights)",
+      "ort": "Serengeti-Park, Hodenhagen",
+      "region": "LG",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Halloween-Event im Safaripark mit Gruselhäusern (je nach Attraktion ab 12–16 Jahren), Market of Fears (Sa und 31.10.) und Monster Walk um 17:45. Der Park hat Sommersaison bis 1.11.2026, danach folgt das Lichterfestival ab 6.11.",
+      "preis": "Preis nicht genannt (Attraktionen im Tages- und Abendticket inklusive, Abendticket ab 17 Uhr ermäßigt)",
+      "draussen": "draußen",
+      "link": "https://www.serengeti-park.de/halloween",
+      "anreise": "DT: ca. 1:45–2 h (bis Buchholz, RB38 bis Hodenhagen, ca. 2–3 km bis zum Park) · Auto: ca. 1:15 h (A7)",
+      "unsicher": "Seite nennt 02.10.–01.11. und im Fuß 26.10.–1.11.; Tageszeiten Mo–Do nicht gesehen",
+      "geo": [
+        52.75422,
+        9.66618
+      ]
+    },
+    {
+      "id": "wildpark-schwarze-berge-rosengarten-eissendorfer-waldweg",
+      "von": "2026-10-26",
+      "bis": "2026-11-01",
+      "zeit": "täglich 8–18 Uhr",
+      "ganztags": true,
+      "titel": "Wildpark Schwarze Berge",
+      "ort": "Rosengarten (Eißendorfer Waldweg)",
+      "region": "LG",
+      "kategorie": "Outdoor & Natur",
+      "beschreibung": "Wildpark mit heimischen Tieren, ganzjährig täglich geöffnet. Zufahrt Eißendorfer Waldweg bis ca. Dezember gesperrt, Bus 340 fährt nur ab Neuwiedenthal. Am So 1.11. ist Herbstbasteln angekündigt.",
+      "preis": "Erw. 16 €, Kinder 14 €",
+      "draussen": "draußen",
+      "link": "https://www.wildpark-schwarze-berge.de/",
+      "anreise": "DT: S3/S5 bis Neuwiedenthal + Bus 340, ca. 50–60 Min. · Auto: ca. 30 Min.",
+      "unsicher": "Seite teils veraltet, Zeiten telefonisch bestätigen (040 819 77 47 0)",
+      "geo": [
+        53.43131,
+        9.92896
+      ]
+    },
+    {
+      "id": "draisinenfahrt-luetjenburg-wehdenstrasse-14-luetjenburg",
+      "von": "2026-10-26",
+      "bis": "2026-10-31",
+      "zeit": "Mo–Sa 11:30",
+      "titel": "Draisinenfahrt Lütjenburg",
+      "ort": "Wehdenstraße 14, Lütjenburg",
+      "region": "HB",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Mit der Fahrrad-Draisine über die stillgelegte Bahnstrecke. Anmeldung unter 04381 419941 oder tourist-info@stadt-luetjenburg.de.",
+      "preis": "Preis im Flyer nicht genannt",
+      "draussen": "draußen",
+      "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
+      "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
+      "hohwacht": true,
+      "unsicher": "Flyer gilt für Oktober; Sa 31.10. (Feiertag) nicht gesondert bestätigt",
+      "geo": [
+        54.29264,
+        10.59211
+      ]
     }
   ],
   "immer": [
@@ -3685,7 +4382,11 @@
       "draussen": "drinnen",
       "anreise": "U3 Baumwall + 5 Min. zu Fuß",
       "link": "https://www.miniatur-wunderland.com/visiting/plan-your-visit/opening-hours",
-      "unsicher": "Zeiten der Woche 26.10.–1.11. auf der Seite nicht eindeutig"
+      "unsicher": "Zeiten der Woche 26.10.–1.11. auf der Seite nicht eindeutig",
+      "geo": [
+        53.54401,
+        9.98698
+      ]
     },
     {
       "id": "internationales-maritimes-museum-kaispeicher-b-hafencity",
@@ -3698,7 +4399,11 @@
       "preis": "Erw. 18 €, ermäßigt 13 €, ab 16:30 9 €",
       "draussen": "drinnen",
       "anreise": "U4 Überseequartier",
-      "link": "https://www.imm-hamburg.de/"
+      "link": "https://www.imm-hamburg.de/",
+      "geo": [
+        53.54335,
+        9.99982
+      ]
     },
     {
       "id": "hadag-faehre-62-hafenrundfahrt-zum-nahverkehrspreis-landungs",
@@ -3714,7 +4419,11 @@
       "anreise": "S1/S3/U3 Landungsbrücken",
       "link": "https://www.hamburg.de/verkehr/hadag-linie-62-314160",
       "wetterabhaengig": true,
-      "unsicher": "Winterfahrplan ab November nicht geprüft"
+      "unsicher": "Winterfahrplan ab November nicht geprüft",
+      "geo": [
+        53.54555,
+        9.97037
+      ]
     },
     {
       "id": "elbstrand-oevelgoenne-und-museumshafen-oevelgoenne",
@@ -3729,7 +4438,11 @@
       "draussen": "draußen",
       "anreise": "Fähre 62 bis Museumshafen Övelgönne oder Bus 111",
       "link": "https://www.hamburg.de/tourismus/hamburg-erkunden/hafenrundfahrt/hafenrundfahrten-hamburg-309396",
-      "wetterabhaengig": true
+      "wetterabhaengig": true,
+      "geo": [
+        53.54427,
+        9.91021
+      ]
     },
     {
       "id": "hafenrundfahrt-mit-der-barkasse-landungsbruecken",
@@ -3744,7 +4457,11 @@
       "anreise": "S1/S3/U3 Landungsbrücken",
       "link": "https://www.hamburg.de/tourismus/hamburg-erkunden/hafenrundfahrt/hafenrundfahrten-hamburg-309396",
       "wetterabhaengig": true,
-      "unsicher": "Winterfahrplan nicht geprüft"
+      "unsicher": "Winterfahrplan nicht geprüft",
+      "geo": [
+        53.54623,
+        9.97114
+      ]
     },
     {
       "id": "alster-rundfahrt-mit-dem-dampfschiff-st-georg-jungfernstieg",
@@ -3759,7 +4476,11 @@
       "anreise": "U1/U4 Jungfernstieg",
       "link": "https://www.regioactive.de/freizeit/alster-rundfahrt-mit-rondeelteich-dampfschiff-st-georg-hamburg-apos-2026-10-28-tickets-pG43BD09X6",
       "wetterabhaengig": true,
-      "unsicher": "nur Aggregator, Fr/Sa nicht gesehen"
+      "unsicher": "nur Aggregator, Fr/Sa nicht gesehen",
+      "geo": [
+        53.5521,
+        9.9934
+      ]
     },
     {
       "id": "planten-un-blomen-innenstadt",
@@ -3775,7 +4496,11 @@
       "anreise": "U1 Stephansplatz / S Dammtor",
       "link": "https://plantenunblomen.hamburg.de/",
       "wetterabhaengig": true,
-      "unsicher": "Parkzeiten für die Woche nicht neu geprüft"
+      "unsicher": "Parkzeiten für die Woche nicht neu geprüft",
+      "geo": [
+        53.54616,
+        9.98251
+      ]
     },
     {
       "id": "tierpark-hagenbeck-und-tropen-aquarium-stellingen",
@@ -3789,7 +4514,11 @@
       "draussen": "beides",
       "anreise": "U2 Hagenbecks Tierpark",
       "link": "https://www.hagenbeck.de/",
-      "unsicher": "Winterzeiten nicht auf der Seite, Preise nicht neu geprüft"
+      "unsicher": "Winterzeiten nicht auf der Seite, Preise nicht neu geprüft",
+      "geo": [
+        53.59678,
+        9.92841
+      ]
     },
     {
       "id": "chocoversum-messberg",
@@ -3803,7 +4532,11 @@
       "draussen": "drinnen",
       "anreise": "U1 Meßberg",
       "link": "https://www.chocoversum.de/",
-      "unsicher": "Tourtermine und Montagsöffnung nicht gesehen"
+      "unsicher": "Tourtermine und Montagsöffnung nicht gesehen",
+      "geo": [
+        53.54788,
+        10.00178
+      ]
     },
     {
       "id": "hamburg-dungeon-speicherstadt",
@@ -3817,7 +4550,11 @@
       "draussen": "drinnen",
       "anreise": "U3 Baumwall",
       "link": "https://www.thedungeons.com/hamburg/de/",
-      "unsicher": "Öffnungszeiten wechseln täglich, nicht neu geprüft"
+      "unsicher": "Öffnungszeiten wechseln täglich, nicht neu geprüft",
+      "geo": [
+        53.54401,
+        9.98698
+      ]
     },
     {
       "id": "wittenbergener-heide-und-falkensteiner-ufer-rissen",
@@ -3832,7 +4569,11 @@
       "draussen": "draußen",
       "anreise": "S1 Sülldorf, ca. 30 Min.",
       "link": "https://www.hamburg.de/resource/blob/51716/5ccf6fb7ca248b5423ad5a70bff1c118/route3-wittenbergener-heide-data.pdf",
-      "wetterabhaengig": true
+      "wetterabhaengig": true,
+      "geo": [
+        53.5847,
+        9.75639
+      ]
     },
     {
       "id": "duvenstedter-brook-wohldorf-ohlstedt",
@@ -3848,7 +4589,11 @@
       "anreise": "U1 Ohlstedt + ca. 30 Min. zu Fuß",
       "link": "https://www.nabu.de/natur-und-landschaft/natur-erleben/nabu-zentren/hamburg/24058.html",
       "wetterabhaengig": true,
-      "unsicher": "BrookHus-Zeiten der Vorwoche nicht neu geprüft"
+      "unsicher": "BrookHus-Zeiten der Vorwoche nicht neu geprüft",
+      "geo": [
+        53.7019,
+        10.1306
+      ]
     },
     {
       "id": "baederland-festland-altona",
@@ -3861,7 +4606,11 @@
       "preis": "Preis nicht geprüft",
       "draussen": "drinnen",
       "anreise": "S Holstenstraße",
-      "link": "https://www.baederland.de/oeffnungszeiten"
+      "link": "https://www.baederland.de/oeffnungszeiten",
+      "geo": [
+        53.58647,
+        9.77767
+      ]
     },
     {
       "id": "planetarium-hamburg-stadtpark-winterhude",
@@ -3875,7 +4624,11 @@
       "draussen": "drinnen",
       "anreise": "U3 Borgweg / Bus 179",
       "link": "https://www.planetarium-hamburg.de/programm",
-      "unsicher": "Seite zeigt Mo 26.10. dennoch Shows, nur 26./27.10. geprüft"
+      "unsicher": "Seite zeigt Mo 26.10. dennoch Shows, nur 26./27.10. geprüft",
+      "geo": [
+        53.59577,
+        10.01355
+      ]
     },
     {
       "id": "wildpark-schwarze-berge-rosengarten",
@@ -3890,7 +4643,11 @@
       "anreise": "DT: S3/S5 bis Neuwiedenthal + Bus 340, ca. 50–60 Min. · Auto: ca. 30 Min.",
       "link": "https://www.wildpark-schwarze-berge.de/",
       "wetterabhaengig": true,
-      "unsicher": "Seite teils veraltet (alte Corona-Hinweise), Zeiten telefonisch prüfen"
+      "unsicher": "Seite teils veraltet (alte Corona-Hinweise), Zeiten telefonisch prüfen",
+      "geo": [
+        53.43533,
+        9.90585
+      ]
     },
     {
       "id": "lueneburg-altstadt-und-salztherme-salue-lueneburg",
@@ -3904,7 +4661,11 @@
       "draussen": "beides",
       "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
       "link": "https://www.salue.info/",
-      "unsicher": "Sonn-/Feiertagszeiten laut Website; Sa 31.10. ist in Niedersachsen Feiertag, Zeiten ggf. abweichend"
+      "unsicher": "Sonn-/Feiertagszeiten laut Website; Sa 31.10. ist in Niedersachsen Feiertag, Zeiten ggf. abweichend",
+      "geo": [
+        53.24871,
+        10.40785
+      ]
     },
     {
       "id": "lueneburger-heide-undeloh-wilsede-totengrund-undeloh",
@@ -3920,7 +4681,11 @@
       "anreise": "Auto: ca. 45–60 Min.",
       "link": "https://www.lueneburger-heide.de/",
       "wetterabhaengig": true,
-      "unsicher": "Heide-Shuttle vermutlich nicht mehr im Betrieb"
+      "unsicher": "Heide-Shuttle vermutlich nicht mehr im Betrieb",
+      "geo": [
+        53.19703,
+        9.9765
+      ]
     },
     {
       "id": "luebeck-altstadt-und-europaeisches-hansemuseum-luebeck",
@@ -3934,7 +4699,11 @@
       "draussen": "beides",
       "anreise": "DT: ca. 45 Min. (RE8/RE80 bis Lübeck Hbf) · Auto: ca. 50–60 Min. (A1)",
       "link": "https://www.hansemuseum.eu/",
-      "unsicher": "Museumsseite war nicht abrufbar, Zeiten und Ausstellung aus der Vorwoche übernommen"
+      "unsicher": "Museumsseite war nicht abrufbar, Zeiten und Ausstellung aus der Vorwoche übernommen",
+      "geo": [
+        53.86644,
+        10.68474
+      ]
     },
     {
       "id": "travemuende-strand-und-promenade-luebeck-travemuende",
@@ -3949,7 +4718,11 @@
       "draussen": "draußen",
       "anreise": "DT: ca. 1:10 h (RE bis Lübeck + RB bis Travemünde Strand) · Auto: ca. 1 h",
       "link": "https://www.travemuende-tourismus.de/",
-      "wetterabhaengig": true
+      "wetterabhaengig": true,
+      "geo": [
+        53.96445,
+        10.84333
+      ]
     },
     {
       "id": "ostsee-therme-scharbeutz-scharbeutz",
@@ -3963,7 +4736,11 @@
       "draussen": "drinnen",
       "anreise": "DT: ca. 1:20–1:40 h · Auto: ca. 1 h",
       "link": "https://www.ostsee-therme.de/",
-      "unsicher": "Seite lieferte keine Zeiten, Unterseite nicht abrufbar; vor Besuch anrufen"
+      "unsicher": "Seite lieferte keine Zeiten, Unterseite nicht abrufbar; vor Besuch anrufen",
+      "geo": [
+        54.02663,
+        10.75595
+      ]
     },
     {
       "id": "holstentherme-kaltenkirchen-kaltenkirchen",
@@ -3977,7 +4754,11 @@
       "draussen": "drinnen",
       "anreise": "DT: AKN A1 ab Eidelstedt, ca. 1 h · Auto: ca. 35–45 Min.",
       "link": "https://www.holstentherme.de/informationen/oeffnungszeiten-preise",
-      "unsicher": "Sonderzeiten vorher auf der Seite „Zeiten & Preise“ nachsehen"
+      "unsicher": "Sonderzeiten vorher auf der Seite „Zeiten & Preise“ nachsehen",
+      "geo": [
+        53.83717,
+        9.96149
+      ]
     },
     {
       "id": "altes-land-hoflaeden-und-hofcaf-s-jork",
@@ -3991,7 +4772,11 @@
       "draussen": "beides",
       "anreise": "DT: S5 bis Neugraben/Buxtehude + Bus, ca. 1 h · Auto: ca. 40 Min.",
       "link": "https://www.hamburg-magazin.de/artikel/aepfel-selber-pfluecken-in-hamburg",
-      "unsicher": "Zeiten für diese Woche nicht neu geprüft; Veranstaltungsseiten des Altes Land waren nicht abrufbar"
+      "unsicher": "Zeiten für diese Woche nicht neu geprüft; Veranstaltungsseiten des Altes Land waren nicht abrufbar",
+      "geo": [
+        53.53284,
+        9.68143
+      ]
     },
     {
       "id": "stade-altstadt-und-hansehafen-stade",
@@ -4006,7 +4791,11 @@
       "draussen": "draußen",
       "anreise": "DT: ca. 55–60 Min. (S5 bis Stade) · Auto: ca. 45–50 Min. (A26)",
       "link": "https://www.stade-tourismus.de/",
-      "wetterabhaengig": true
+      "wetterabhaengig": true,
+      "geo": [
+        53.59979,
+        9.47544
+      ]
     },
     {
       "id": "lueneburger-wasserturm-am-wasserturm-lueneburg",
@@ -4020,7 +4809,11 @@
       "draussen": "beides",
       "anreise": "DT: ca. 30 Min. (RE3/metronom bis Lüneburg) · Auto: ca. 45 Min. (A39)",
       "link": "https://wasserturm.net/",
-      "unsicher": "Betreiberseite war nicht abrufbar, nur Veranstaltungen über Aggregator gesehen"
+      "unsicher": "Betreiberseite war nicht abrufbar, nur Veranstaltungen über Aggregator gesehen",
+      "geo": [
+        53.24681,
+        10.41349
+      ]
     },
     {
       "id": "marine-ehrenmal-und-u-995-laboe",
@@ -4034,7 +4827,11 @@
       "draussen": "beides",
       "anreise": "DT: ca. 2 h (Kiel + Fähre F1 oder Bus) · Auto: ca. 1:35 h · ab Hohwacht ca. 35 Min.",
       "link": "https://deutscher-marinebund.de/?p=16931",
-      "hohwacht": true
+      "hohwacht": true,
+      "geo": [
+        54.40225,
+        10.22566
+      ]
     },
     {
       "id": "eiszeitmuseum-luetjenburg-nienthal-7-luetjenburg",
@@ -4049,7 +4846,11 @@
       "anreise": "DT: ca. 2:20–2:40 h (RE bis Kiel, dann Bus bis Lütjenburg) · Auto: ca. 1:30 h · ab Hohwacht ca. 10 Min.",
       "link": "https://www.hohwachterbucht.de/fileadmin/bilder/oktober_veranstaltungen_faltblatt.pdf",
       "hohwacht": true,
-      "unsicher": "Museumsseite war nicht abrufbar; Öffnungszeiten und Feiertag 31.10. nicht bestätigt"
+      "unsicher": "Museumsseite war nicht abrufbar; Öffnungszeiten und Feiertag 31.10. nicht bestätigt",
+      "geo": [
+        54.3031,
+        10.56263
+      ]
     },
     {
       "id": "steilkueste-und-strand-hohwacht-behrensdorf-hohwacht-seebrue",
@@ -4065,7 +4866,11 @@
       "anreise": "vor Ort in Hohwacht",
       "link": "https://www.ich-geh-wandern.de/hohwachter-flunderroute",
       "hohwacht": true,
-      "wetterabhaengig": true
+      "wetterabhaengig": true,
+      "geo": [
+        54.32158,
+        10.66647
+      ]
     },
     {
       "id": "wanderung-gut-panker-hessenstein-panker",
@@ -4082,7 +4887,11 @@
       "link": "https://bergsteiger.de/touren/wandern/wandern-schleswig-holstein-vom-gut-panker-auf-den-hessenstein/",
       "hohwacht": true,
       "wetterabhaengig": true,
-      "unsicher": "Turmöffnung im Herbst nicht bestätigt"
+      "unsicher": "Turmöffnung im Herbst nicht bestätigt",
+      "geo": [
+        54.34241,
+        10.55578
+      ]
     },
     {
       "id": "aquarium-geomar-duesternbrooker-weg-20-kiel",
@@ -4097,7 +4906,11 @@
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "link": "https://kiel-sailing-city.de/en/explore-the-kiel-fjord/sightseeing/in-winter",
       "hohwacht": true,
-      "unsicher": "Winterzeiten und Preis nicht bestätigt, Tel. 0431 6001637"
+      "unsicher": "Winterzeiten und Preis nicht bestätigt, Tel. 0431 6001637",
+      "geo": [
+        54.33033,
+        10.14855
+      ]
     },
     {
       "id": "kunsthalle-zu-kiel-zu-gast-im-landeshaus-landeshaus-duestern",
@@ -4112,7 +4925,11 @@
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "link": "https://www.regioactive.de/ausstellung/zwischen-sammlung-und-sanierung-die-kunsthalle-zu-kiel-gast-im-landeshaus-termine-tickets-120a9ad270be",
       "hohwacht": true,
-      "unsicher": "Eintritt und Feiertagsregel nicht gesehen"
+      "unsicher": "Eintritt und Feiertagsregel nicht gesehen",
+      "geo": [
+        54.33531,
+        10.15252
+      ]
     },
     {
       "id": "kieler-hoernbad-anni-wadle-weg-1-kiel",
@@ -4127,7 +4944,11 @@
       "anreise": "DT: ca. 1:15–1:25 h (RE7/RE70 bis Kiel Hbf) · Auto: ca. 1:15 h (A7/A215) · ab Hohwacht ca. 40 Min.",
       "link": "https://www.schwimmbadcheck.de/kiel/hoernbad.html",
       "hohwacht": true,
-      "unsicher": "Stadtseite nicht abrufbar, Zeiten und Feiertag 31.10. nicht bestätigt"
+      "unsicher": "Stadtseite nicht abrufbar, Zeiten und Feiertag 31.10. nicht bestätigt",
+      "geo": [
+        54.30871,
+        10.13628
+      ]
     },
     {
       "id": "schleuse-kiel-holtenau-aussichtsplattform-kiel-wik-holtenau",
@@ -4144,7 +4965,11 @@
       "link": "https://kiel-sailing-city.de/en/explore-the-kiel-fjord/sightseeing/in-winter",
       "hohwacht": true,
       "wetterabhaengig": true,
-      "unsicher": "nur Kiel-Tourismus als Quelle"
+      "unsicher": "nur Kiel-Tourismus als Quelle",
+      "geo": [
+        54.3725,
+        10.13617
+      ]
     }
   ],
   "hinweise": [

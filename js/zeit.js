@@ -61,6 +61,37 @@ export const datumMitTag = (iso) => `${wochentag(iso)}, ${datumLang(iso)}`;
 /** „Oktober 2026“ */
 export const monatJahr = (iso) => `${MONATE[Number(iso.slice(5, 7)) - 1]} ${iso.slice(0, 4)}`;
 
+/** Der Montag der Woche, in der der Tag liegt. */
+export function montag(iso) {
+  const d = mittag(iso);
+  return plusTage(iso, -((d.getDay() + 6) % 7));
+}
+
+/** Kalenderwoche nach ISO 8601. */
+export function kalenderwoche(iso) {
+  const d = new Date(`${iso}T12:00:00Z`);
+  d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 6) % 7) + 3);
+  const kw1 = new Date(Date.UTC(d.getUTCFullYear(), 0, 4, 12));
+  kw1.setUTCDate(kw1.getUTCDate() - ((kw1.getUTCDay() + 6) % 7) + 3);
+  return 1 + Math.round((d - kw1) / (7 * 86400000));
+}
+
+/** „2026-10“ aus einem Tag. */
+export const monatVon = (iso) => iso.slice(0, 7);
+
+/** Ein Monat „2026-10“ plus n Monate. */
+export function monatPlus(monat, n) {
+  const [j, m] = monat.split('-').map(Number);
+  const d = new Date(j, m - 1 + n, 1, 12);
+  return `${d.getFullYear()}-${zwei(d.getMonth() + 1)}`;
+}
+
+/** Die 42 Tage des Monatsblatts: sechs Wochen ab dem Montag vor dem Ersten. */
+export function monatsRaster(monat) {
+  const start = montag(`${monat}-01`);
+  return Array.from({ length: 42 }, (_, i) => plusTage(start, i));
+}
+
 /** „2026-10-26T07:03“ → „Mo 26.10., 07:03 Uhr“; nur ein Datum → „Mo 26.10.“ */
 export function standText(stand) {
   const m = String(stand || '').match(/^(\d{4}-\d{2}-\d{2})(?:[T ](\d{2}:\d{2}))?/);

@@ -22,7 +22,7 @@ const sw = readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
 const shell = [...sw.match(/const SHELL = \[(.*?)\];/s)[1].matchAll(/'\.\/([^']*)'/g)].map((m) => m[1]);
 const version = sw.match(/const VERSION = '([^']+)'/)[1];
 // Der Tag kommt aus den echten Daten, damit der Test jede Woche passt.
-const { von: TAG } = JSON.parse(readFileSync(path.join(ROOT, 'daten', 'woche.json'), 'utf8'));
+const { von: TAG } = JSON.parse(readFileSync(path.join(ROOT, 'daten', 'programm.json'), 'utf8'));
 
 const PORT = 8113;
 const BASIS = `http://127.0.0.1:${PORT}`;
@@ -40,6 +40,8 @@ check(!fehlt.length, `jedes Modul unter js/ steht in SHELL${fehlt.length ? ` –
 const tot = shell.filter((f) => f && !existsSync(path.join(ROOT, f)));
 check(!tot.length, `jeden Eintrag in SHELL gibt es als Datei${tot.length ? ` – nicht da: ${tot.join(', ')}` : ''}`);
 check(!shell.some((f) => f.startsWith('daten/')), 'die Daten stehen nicht in SHELL – ein Datenlauf muss sw.js nicht anfassen');
+check(['vendor/leaflet/leaflet.js', 'vendor/leaflet/leaflet.css', 'vendor/leaflet/leaflet.markercluster.js', 'vendor/leaflet/MarkerCluster.css'].every((f) => shell.includes(f)),
+  'Leaflet samt Haufen steht im Vorrat – die Karte geht ohne Netz auf (nur die Kacheln fehlen)');
 const kaputt = [];
 module.forEach((f) => {
   const src = readFileSync(path.join(ROOT, 'js', f), 'utf8');
@@ -88,20 +90,20 @@ await page.waitForFunction(() => document.querySelectorAll('#ansicht .karte').le
 const karten = await page.locator('#ansicht .karte').count();
 const tage = await page.locator('#ansicht .tag').count();
 check(karten > 0 && tage > 0, `mit Netz: die Woche ist da (${tage} Tage, ${karten} Karten)`);
-// Merken, solange das Netz noch da ist.
-await page.locator('#ansicht .karte [data-merken]').first().click();
+// Einen Bock-Haken setzen, solange das Netz noch da ist.
+await page.locator('#ansicht .karte [data-bock]').first().click();
 
 const vorrat = await page.evaluate(async (v) => {
   const namen = async () => (await (await caches.open(`freizeit-${v}`)).keys()).map((r) => new URL(r.url).pathname);
   for (let i = 0; i < 50; i++) {
     const keys = await namen();
-    if (keys.includes('/daten/woche.json') && keys.includes('/daten/konzerte.json')) return keys;
+    if (keys.includes('/daten/programm.json')) return keys;
     await new Promise((f) => { setTimeout(f, 100); });
   }
   return namen();
 }, version);
 check(vorrat.filter((k) => !k.startsWith('/daten/')).length >= shell.length - 1, `im Vorrat liegt die App (${vorrat.length} Dateien, SHELL hat ${shell.length})`);
-check(vorrat.includes('/daten/woche.json') && vorrat.includes('/daten/konzerte.json'), 'die zuletzt geladenen Daten liegen ebenfalls im Vorrat');
+check(vorrat.includes('/daten/programm.json'), 'die zuletzt geladenen Daten liegen ebenfalls im Vorrat');
 
 // Server aus – jetzt kommt alles aus dem Vorrat oder gar nicht.
 await aus();
@@ -110,10 +112,13 @@ await page.waitForFunction(() => !document.querySelector('#ansicht').textContent
 check(await page.title() === 'Freizeit', 'ohne Server öffnet die App');
 check(await page.locator('#ansicht .karte').count() === karten, 'ohne Server: dieselbe Woche wie eben');
 check(!(await page.locator('#ansicht').innerText()).includes('Keine Wochendaten') && await page.locator('.datenfehler').count() === 0, 'ohne Server: keine Fehlermeldung zu den Daten');
-await page.click('[data-reiter="merkliste"]');
-check(await page.locator('#ansicht .karte').count() === 1, 'ohne Server: die Merkliste mit dem gemerkten Eintrag');
-await page.click('[data-reiter="konzerte"]');
-check(await page.locator('#ansicht h2, #ansicht .leer').count() > 0, 'ohne Server: auch der Reiter Konzerte zeichnet');
+await page.click('[data-reiter="wir"]');
+check(await page.locator('#ansicht .karte').count() === 1, 'ohne Server: die Bock-Liste mit dem gemerkten Eintrag');
+await page.click('[data-reiter="kalender"]');
+check(await page.locator('.kalender .feld').count() === 42, 'ohne Server: der Kalender zeichnet');
+await page.click('[data-reiter="karte"]');
+await page.waitForSelector('.leaflet-container', { timeout: 5000 }).catch(() => {});
+check(await page.locator('.leaflet-container').count() === 1, 'ohne Server: die Karte geht auf (Leaflet aus dem Vorrat)');
 
 check(fehler.length === 0, `keine Fehler in der Seite${fehler.length ? `: ${fehler.slice(0, 2).join(' | ')}` : ''}`);
 await browser.close();

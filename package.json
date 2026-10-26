@@ -10,6 +10,7 @@
     "serve": "node tests/server.mjs 8099"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.5.10",
     "eslint": "9.39.5",
     "playwright": "1.56.1"
   }

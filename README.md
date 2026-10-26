@@ -1,24 +1,29 @@
 # Freizeit
 
-Was in Hamburg und Umgebung diese Woche los ist, die Konzerte von Tobis
-Lieblingskünstlern und eine Merkliste – als App fürs Handy.
+Was in Hamburg und Umgebung los ist – die nächsten gut fünf Wochen, mit den
+Konzerten von Tobis Lieblingskünstlern mittendrin, im Kalender und auf der
+Karte, und gemeinsam geplant: Wer Bock auf etwas hat, hakt es an, die
+anderen sehen es.
 
 **Adresse:** <https://finanzdienste.github.io/Freizeit/>
-(in Chrome öffnen, dann Menü ⋮ → „App installieren“; auf dem iPhone in
-Safari: Teilen → „Zum Home-Bildschirm“).
+(Android: in Chrome öffnen, Menü ⋮ → „App installieren“; iPhone: in Safari
+öffnen, Teilen → „Zum Home-Bildschirm“).
 
-Drei Reiter:
+Vier Reiter:
 
 | Reiter | Inhalt |
 | --- | --- |
-| **Diese Woche** | Highlights, Filter, Tag für Tag nach Uhrzeit, was die ganze Woche läuft, Ausflugsziele, Hinweise |
-| **Konzerte** | Konzerte der eigenen Künstler in Hamburg und bis ca. 100 km drumherum, neu Angekündigtes zuerst |
-| **Merkliste** | Gemerkte Termine, Konzerte und Ziele, nach Datum; Vergangenes lässt sich wegräumen |
+| **Programm** | Woche für Woche zum Blättern: Highlights, Filter, Tag für Tag nach Uhrzeit, was gerade läuft, Ausflugsziele, Hinweise. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler |
+| **Kalender** | Monatsblatt mit der Zahl der Termine je Tag und farbigen Punkten, wer Bock hat; darunter der gewählte Tag |
+| **Karte** | OpenStreetMap, ein Marker je Ort (nahe zu Haufen zusammengefasst), Zeiträume von „Heute“ bis „Alles“ und „Mit Bock“ |
+| **Wir** | Der gemeinsame Plan: Treffer (ihr beide habt Bock), alle Haken mit Namen, Einladen, Name ändern, Verlassen. Ohne Plan die eigene Bock-Liste |
 
-Jeder Eintrag hat **Merken**, **WhatsApp** (öffnet WhatsApp mit fertiger
-Nachricht: Titel, Datum und Uhrzeit, Ort, Beschreibung, Preis, Anreise,
-Link), **Kalender** (ausgefüllter Termin in Google Kalender) und die
-**Quelle**.
+Jeder Eintrag hat **Bock** (Haken), **WhatsApp** (fertige Nachricht: Titel,
+Datum und Uhrzeit, Ort, Beschreibung, Preis, Anreise, Link), **Kalender**
+(auf dem iPhone eine .ics-Datei für den Kalender des Geräts, sonst ein
+ausgefüllter Termin in Google Kalender) und die **Quelle**. Konzerte der
+eigenen Künstler tragen „♫ Dein Künstler“, der Filter „♫ Meine Künstler“
+zeigt nur sie.
 
 ## Die beiden Zeitregeln
 
@@ -34,87 +39,135 @@ Beschreibung („ca. 2:15 Std.“, „ca. 90 Minuten“) oder einem Richtwert je
 Kategorie (Konzert 2:15, Bühne 2:30, Comedy 2:15, Film 2:10 …). Märkte, Feste
 und Ausstellungen sind zum Kommen und Gehen – dort reicht ein Beginn bis
 20:30. Wie viele Termine die Regel an einem Abend ausblendet, steht beim Tag.
-Für die Konzerte der eigenen Künstler gilt sie nicht.
+**Für Konzerte der eigenen Künstler (`kuenstler: true`) gilt sie nicht.**
 
-Gerechnet wird in `js/zeit.js`, geprüft in `tests/test-woche.mjs`.
+Gerechnet wird in `js/zeit.js` und `js/filter.js`, geprüft in
+`tests/test-programm.mjs`.
+
+## Gemeinsam planen
+
+Ein Plan ist ein Raum mit einem zufälligen Code (`abcd-efgh-jkmn`, 12 Zeichen
+ohne Verwechsler). Wer „Plan starten“ tippt, bekommt einen Link
+`…/Freizeit/#einladung=<code>` zum Verschicken; der Code steht hinter `#` und
+geht deshalb an keinen Server. Wer den Link öffnet, gibt einen Namen ein und
+ist drin.
+
+**iPhone:** Die App auf dem Home-Bildschirm hat einen eigenen Speicher,
+getrennt von Safari – sie kennt den Link nicht. Deshalb zeigt die Einladung
+in Safari den Weg zum Home-Bildschirm und den Code; in der App fügt man ihn
+unter „Wir“ ein. Wer mit einem Namen beitritt, den es im Raum schon gibt, ist
+diese Person auf einem weiteren Gerät (dieselbe Kennung, dieselben Haken).
+
+**Server:** das Supabase-Projekt der Workout-App (`js/config.js`). Die
+Tabellen sind für den öffentlichen Schlüssel gesperrt; erreichbar sind nur
+vier Funktionen, und jede will den Code. Einrichten: einmal den Block aus
+[`supabase/gemeinsam.sql`](supabase/gemeinsam.sql) in *Supabase → SQL
+Editor* einfügen und ausführen (der Block ist wiederholbar). Geprüft wird er
+ohne Supabase in `tests/test-sql.mjs` (PGlite). Grenzen: 6 Personen und 3000
+Haken je Raum, 100 Räume, 30000 Haken insgesamt, 2000 Byte je Schnappschuss.
+
+**In der App:** Eigene Haken gelten sofort und stehen im localStorage; im Plan
+gehen sie über eine Warteschlange zum Server – ohne Netz warten sie dort. Der
+Abgleich läuft nach jedem Haken, beim Öffnen, beim Zurückkommen in die App
+und jede Minute. Für die eigenen Haken gilt danach der Server. Ein Haken
+trägt einen Schnappschuss des Eintrags mit sich (Titel, Tag, Ort, Link …),
+damit er auch dann vollständig dasteht, wenn er aus den Daten gefallen ist.
+Was von anderen kommt, ist fremder Text: Namen und Schnappschüsse gehen beim
+Anzeigen durch `esc()`, Links nur mit http(s).
 
 ## Woher die Daten kommen
 
-Die App ändert ihre Daten nie selbst. Ein geplanter Lauf schreibt sie,
-„Freizeit-Wochenplan Hamburg“, montags gegen 7 Uhr:
+Die App ändert ihre Daten nie selbst. Der geplante Lauf
+„Freizeit-Wochenplan Hamburg“ schreibt sie montags gegen 7 Uhr:
 
 | Datei | Inhalt |
 | --- | --- |
-| `daten/woche.json` | die Woche von Montag bis Sonntag |
-| `daten/konzerte.json` | Konzerte der eigenen Künstler in den nächsten zwölf Monaten |
+| `daten/programm.json` | Montag dieser Woche bis Sonntag in fünf Wochen, dazu die Konzerte der eigenen Künstler der nächsten zwölf Monate |
+| `daten/orte.json` | Hilfe für den Lauf: Koordinaten je Ortsangabe, damit er bekannte Orte nicht jede Woche neu sucht. Die App liest sie nicht |
 
-Neue Releases und Song-Tipps schickt derselbe Lauf nur als Nachricht, sie
-stehen nicht in der App.
+Neue Releases und Song-Tipps schickt derselbe Lauf nur als Nachricht.
 
 Der Lauf schreibt **nur diese beiden Dateien**, prüft sie mit
 `node tests/test-daten.mjs` (ohne `npm ci`, nur Node) und committet sie
-direkt auf `main` („Freizeit: Woche KW 45 und Konzerte“). Die Daten stehen
-bewusst nicht im Offline-Vorrat von `sw.js` – darum braucht ein Datenlauf
-weder eine neue VERSION noch sonst eine Änderung am Code.
+direkt auf `main` („Freizeit: Programm ab KW 45“). Die Daten stehen bewusst
+nicht im Offline-Vorrat von `sw.js` – darum braucht ein Datenlauf weder eine
+neue VERSION noch sonst eine Änderung am Code. GitHub Pages baut von `main`;
+nach ein bis zwei Minuten steht die neue Datei unter
+`https://finanzdienste.github.io/Freizeit/daten/programm.json`.
 
-GitHub Pages baut von `main`; nach einem Push steht die neue Datei nach ein
-bis zwei Minuten unter `https://finanzdienste.github.io/Freizeit/daten/…`.
-
-### `daten/woche.json`
+### `daten/programm.json`
 
 ```json
 {
-  "version": 1,
-  "stand": "2026-10-26T07:03",
-  "kw": 44,
-  "von": "2026-10-26",
-  "bis": "2026-11-01",
-  "infos": [{ "titel": "Herbstferien Hamburg", "text": "noch bis Fr 30.10." }],
-  "highlights": [{ "titel": "Sa 31.10.: Museen gratis", "text": "Zum Reformationstag …" }],
+  "version": 2,
+  "stand": "2026-11-02T07:40",
+  "von": "2026-11-02",
+  "bis": "2026-12-06",
+  "infos": [{ "titel": "Feiertag", "text": "…" }],
+  "highlights": [{ "titel": "Sa 7.11.: …", "text": "…" }],
   "tage": [
-    { "datum": "2026-10-26", "wetter": "Hamburg 12°/9°, bewölkt", "wetterOstsee": "Ostsee/Kiel 12°/8°, Regen", "tipp": "Viele Museen haben montags zu." },
-    { "datum": "2026-10-31", "feiertag": true }
+    { "datum": "2026-11-02", "wetter": "Hamburg 12°/9°, bewölkt", "wetterOstsee": "Kiel 11°/8°, Regen", "tipp": "Viele Museen haben montags zu." },
+    { "datum": "2026-11-03" }
   ],
   "termine": [
     {
       "id": "die-odyssee-kinopolis-hafencity",
-      "daten": ["2026-10-26", "2026-10-28"],
+      "daten": ["2026-11-02", "2026-11-04"],
       "zeit": "19:00",
-      "zeiten": { "2026-10-28": "20:15" },
+      "zeiten": { "2026-11-04": "20:15" },
       "ende": "22:10",
-      "dauer": 190,
       "titel": "Die Odyssee",
-      "ort": "Kinopolis HafenCity, Kino 5",
+      "ort": "Kinopolis HafenCity",
+      "geo": [53.54123, 9.99872],
       "region": "HH",
       "kategorie": "Kino",
-      "beschreibung": "Christopher Nolans Odyssee-Verfilmung, deutsche Fassung.",
+      "beschreibung": "…",
       "preis": "ab 13,99 €",
       "draussen": "drinnen",
       "link": "https://…",
       "imdb": "64"
+    },
+    {
+      "id": "the-war-on-drugs-barclays-arena-2027-01-15",
+      "daten": ["2027-01-15"],
+      "zeit": "19:30",
+      "titel": "The War On Drugs",
+      "ort": "Barclays Arena",
+      "geo": [53.58931, 9.89911],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "kuenstler": true,
+      "neu": true,
+      "vorverkauf": "ab Fr 6.11., 10 Uhr",
+      "link": "https://…"
     }
   ],
+  "laufend": [
+    { "id": "weihnachtsmarkt-rathausmarkt", "von": "2026-11-23", "bis": "2026-12-23", "zeit": "So–Do 11–21, Fr/Sa 11–22", "titel": "…", "ort": "Rathausmarkt", "geo": [53.5503, 9.9930], "region": "HH", "kategorie": "Fest & Saisonal", "kostenlos": true, "draussen": "draußen", "link": "https://…" }
+  ],
   "immer": [
-    { "id": "miniatur-wunderland", "titel": "Miniatur Wunderland", "ort": "Speicherstadt", "region": "HH", "kategorie": "Ausstellung", "beschreibung": "…", "zeiten": "täglich ab 9:30", "preis": "Erw. 22 €", "draussen": "drinnen", "anreise": "U3 Baumwall", "link": "https://…" }
+    { "id": "miniatur-wunderland", "titel": "Miniatur Wunderland", "ort": "Speicherstadt", "geo": [53.54386, 9.98858], "region": "HH", "kategorie": "Ausstellung", "zeiten": "täglich ab 9:30", "preis": "Erw. 22 €", "draussen": "drinnen", "anreise": "U3 Baumwall", "link": "https://…" }
   ],
   "hinweise": [{ "titel": "Abgesagt", "text": "…" }, { "text": "Quellen u. a.: …" }]
 }
 ```
 
-**Termine** – Pflicht sind `id`, `titel`, `daten` (ISO-Tage aus der Woche),
-`zeit`, `region`, `kategorie` und `link`; `tests/test-daten.mjs` prüft
-das und alles Weitere aus dieser Tabelle:
+`von` ist ein Montag, `bis` ein Sonntag, dazwischen eine bis acht Wochen;
+`tage` hat jeden Tag davon genau einmal.
+
+**Termine** – Pflicht sind `id`, `titel`, `daten`, `zeit`, `region`,
+`kategorie` und `link`; `tests/test-daten.mjs` prüft das und alles Weitere:
 
 | Feld | Bedeutung |
 | --- | --- |
-| `id` | stabile Kennung, klein mit Bindestrichen; gleiche Veranstaltung → gleiche `id` |
-| `daten` | Tage, an denen der Termin stattfindet. Wiederholungen stehen an **jedem** ihrer Tage |
+| `id` | stabile Kennung, klein mit Bindestrichen; **gleiche Veranstaltung → gleiche `id`, auch im nächsten Lauf** – die Bock-Haken hängen an `id` und Tag |
+| `daten` | Tage im Zeitraum `von`–`bis`, an denen der Termin stattfindet; Wiederholungen stehen an **jedem** ihrer Tage. Konzerte mit `kuenstler` oder `tipp` dürfen bis 400 Tage voraus liegen |
 | `zeit` | Beginn `HH:MM` oder Zeitraum `HH:MM–HH:MM`; immer mit Doppelpunkt, sonst greifen die Zeitregeln nicht. Bei `ganztags` freier Text („Fr 14–22, Sa 10–22“) |
-| `zeiten` | abweichende Uhrzeit je Tag, `{ "2026-10-28": "20:15" }`; zwei Vorstellungen an einem Tag: `"15:00 + 20:00"`. Nur für Tage aus `daten` |
+| `zeiten` | abweichende Uhrzeit je Tag, `{ "2026-11-04": "20:15" }`; zwei Vorstellungen: `"15:00 + 20:00"`. Nur für Tage aus `daten` |
 | `ende` | Ende `HH:MM`, bekannt oder geschätzt (Film: Laufzeit + ca. 15 Min. Werbung) |
 | `dauer` | Dauer in Minuten, wenn kein `ende` |
 | `ganztags` | ganztägig (Messe, Markt über den Tag); steht oben im Tag |
-| `ganzeWoche` | läuft an (fast) jedem Tag → Abschnitt „Läuft die ganze Woche“; `zeit` beschreibt dann die Zeiten („Di–So ab 10 Uhr“) |
+| `geo` | `[Breite, Länge]` für die Karte – bei mindestens 80 % der Termine |
 | `region` | `HH` Hamburg · `LUE` Lübeck & Ostsee · `LG` Lüneburg & Heide · `STD` Stade & Altes Land · `HB` Hohwachter Bucht & Kiel · `WEI` Weitere Ziele |
 | `kategorie` | z. B. Konzert, Bühne, Comedy, Kino, Party, Sport, Führung, Erlebnis, Food, Markt, Fest & Saisonal, Ausstellung |
 | `draussen` | `drinnen`, `draußen` oder `beides` |
@@ -122,52 +175,29 @@ das und alles Weitere aus dieser Tabelle:
 | `hohwacht` | `true`, wenn er sich mit einem Besuch in Hohwacht verbinden lässt (Region `HB` zählt automatisch) |
 | `anreise` | bei Zielen außerhalb Hamburgs: Deutschlandticket und Auto |
 | `unsicher` | warum eine Angabe nicht sicher ist; wird rot markiert |
-| `imdb` | Platz in der IMDb Top 250 (Text, z. B. `"64"` oder `"5, 8 und 10"`) |
+| `imdb` | Platz in der IMDb Top 250 (Text, z. B. `"64"`) |
+| `kuenstler` | `true` bei Konzerten der eigenen Künstler (Kategorie Konzert); für sie gilt die 21:30-Regel nicht |
+| `neu` | in den letzten 7 Tagen angekündigt |
+| `ausverkauft` | `true`, wenn ausverkauft |
+| `vorverkauf` | Vorverkaufsstart als Text, „ab Fr 6.11., 10 Uhr“ |
+| `tipp` | kein eigener Künstler, passt aber zum Geschmack |
+
+**Laufend** – was über Tage oder Wochen läuft (Ausstellungen, Musicals im
+Dauerbetrieb, Weihnachtsmärkte, Saison im Freizeitpark): `von`, `bis`, `zeit`
+als Text mit den Öffnungs- bzw. Vorstellungszeiten, sonst wie Termine. Steht
+im Programm unter „Läuft gerade“, nicht an jedem Tag einzeln.
 
 **Tage:** `feiertag: true` an gesetzlichen Feiertagen (dann gelten weder der
 15:30-Filter noch die 21:30-Regel für den Vorabend). `vorFeiertag: true` am
 Sonntag, wenn der Montag danach ein Feiertag ist.
 
-### `daten/konzerte.json`
-
-```json
-{
-  "version": 1,
-  "stand": "2026-10-31T08:55",
-  "konzerte": [
-    {
-      "id": "the-war-on-drugs-2027-03-14-hamburg",
-      "datum": "2027-03-14",
-      "zeit": "20:00",
-      "kuenstler": "The War On Drugs",
-      "titel": "Europe Tour 2027",
-      "ort": "Sporthalle Hamburg",
-      "stadt": "Hamburg",
-      "link": "https://…",
-      "neu": true,
-      "ausverkauft": false,
-      "vorverkauf": "ab Fr 6.11., 10 Uhr",
-      "tipp": false,
-      "anreise": "",
-      "hinweis": ""
-    }
-  ]
-}
-```
-
-Pflicht sind `id`, `kuenstler`, `datum`, `ort`, `stadt` und `link`. `neu` = in den letzten 7 Tagen
-angekündigt, `tipp` = kein eigener Künstler, passt aber zum Geschmack.
-Der Lauf führt die Liste fort: Er übernimmt die bestehenden Einträge,
-ergänzt neu Angekündigtes, streicht Vergangenes und Abgesagtes und setzt
-`neu` nur für Ankündigungen der letzten sieben Tage. Was dabei vergessen
-wird, blendet die App trotzdem richtig aus – vergangene Konzerte zeigt sie
-nie.
-
 ## Aufbau
 
 Wie die Workout-App: kein Bauschritt, ES-Module, eigener Service Worker
 (`sw.js`, Vorrat `freizeit-v…`), eigener Speicher (`freizeit.stand.v1` im
-localStorage).
+localStorage). Leaflet 1.9.4 und Leaflet.markercluster 1.5.3 liegen unter
+`vendor/leaflet/` (BSD-2 bzw. MIT, Lizenzen daneben) und im Offline-Vorrat;
+nur die Kacheln von tile.openstreetmap.org brauchen Netz.
 
 **Eigenes Repository, mit Absicht.** Bis zur ersten Fassung lag die App als
 Ordner in der Workout-App (`/Workout/freizeit/`). Android rechnet aber alles
@@ -180,21 +210,37 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 
 | Datei | Aufgabe |
 | --- | --- |
-| `js/app.js` | Einstieg, Reiter, Knöpfe, Service Worker |
-| `js/zeit.js` | Datum, Uhrzeit, beide Zeitregeln |
-| `js/daten.js` | Laden und Prüfen der beiden Datendateien |
-| `js/karte.js` | Einträge bauen und als Karte zeichnen |
-| `js/teilen.js` | WhatsApp-Nachricht, Google-Kalender-Link |
-| `js/speicher.js` | Filter, Merkliste, zuletzt gesehener Stand |
-| `js/ansicht-*.js` | die drei Reiter |
+| `js/app.js` | Einstieg, Reiter, Knöpfe, Abgleich, Service Worker |
+| `js/zeit.js` | Datum, Uhrzeit, Wochen und Monate, beide Zeitregeln |
+| `js/filter.js` | Filter, was an einem Tag steht, was gerade läuft |
+| `js/daten.js` | Laden und Prüfen von `daten/programm.json` |
+| `js/karte.js` | Einträge bauen und als Karte zeichnen (Bock, wer hat Bock) |
+| `js/teilen.js` | WhatsApp-Nachricht, Google-Kalender-Link, .ics |
+| `js/speicher.js` | Filter, eigene Haken mit Schnappschuss, Warteschlange |
+| `js/gemeinsam.js` | der gemeinsame Plan: Code, Beitreten, Abgleich mit Supabase |
+| `js/config.js` | Adresse und öffentlicher Schlüssel des Servers |
+| `js/ansicht-*.js` | die vier Reiter |
+| `supabase/gemeinsam.sql` | Tabellen und Funktionen für den gemeinsamen Plan |
 
 ## Tests
 
-    npm ci                      # einmal: Playwright und ESLint
+    npm ci                      # einmal: Playwright, ESLint, PGlite
     npm run lint
-    node tests/lauf.mjs         # alle: Woche, Teilen, Merkliste, Konzerte, offline, Daten
-    node tests/test-daten.mjs   # nur die Datendateien – braucht kein npm ci
+    node tests/lauf.mjs         # alle
+    node tests/test-daten.mjs   # nur die Datendatei – braucht kein npm ci
 
-Die Browsertests laufen gegen feste Testdaten (`tests/hilfe.mjs`), nicht
-gegen `daten/`. Auf GitHub laufen Linter und Tests bei jedem Push
+| Test | prüft |
+| --- | --- |
+| `test-programm.mjs` | Wochen, beide Zeitregeln, Filter, Laufendes, Konzerte der eigenen Künstler |
+| `test-kalender.mjs` | Monatsblatt, Zahlen, Bock-Punkte, Monate nach dem Programm |
+| `test-landkarte.mjs` | Marker, Zeiträume, Liste am Marker, Haken aus der Karte |
+| `test-wir.mjs` | der gemeinsame Plan zu zweit (iPhone), offline, zweites Gerät, Verlassen, fremder Text |
+| `test-teilen.mjs` | WhatsApp, Google Kalender, .ics |
+| `test-offline.mjs` | Offline-Vorrat, App ohne Netz |
+| `test-daten.mjs` | `daten/programm.json` und `daten/orte.json` |
+| `test-sql.mjs` | `supabase/gemeinsam.sql` in PGlite: Funktionen, Rechte, Grenzen |
+
+Die Browsertests laufen gegen feste Testdaten und einen nachgebauten Server
+(`tests/hilfe.mjs`), nicht gegen `daten/` und nicht gegen Supabase. Auf
+GitHub laufen Linter und Tests bei jedem Push
 (`.github/workflows/pruefung.yml`), also auch nach jedem Datenlauf.

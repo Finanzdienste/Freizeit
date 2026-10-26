@@ -5,8 +5,8 @@
  * dann die Knöpfe auf den Karten: Was darin steht, ist genau das, was der
  * Empfänger liest.
  */
-import { whatsappText, kalenderLink, wannText } from '../js/teilen.js';
-import { oeffne, DI, SA } from './hilfe.mjs';
+import { whatsappText, kalenderLink, wannText, icsText } from '../js/teilen.js';
+import { oeffne, IPHONE, DI, SA } from './hilfe.mjs';
 
 const { page, check, ende } = await oeffne({ tag: '2026-11-02' });
 
@@ -49,5 +49,22 @@ check(waStrand.includes('🕒 jederzeit'), 'Ausflugsziel: Nachricht nennt die Ze
 
 const film = whatsappText({ ...termin, titel: 'Der Pate', imdb: '2', unsicher: 'Uhrzeit laut Kino vorläufig', preis: '' });
 check(film.includes('⭐ IMDb Top 250, Platz 2') && film.includes('⚠️ Noch nicht sicher: Uhrzeit laut Kino vorläufig'), 'Kino: IMDb-Platz und Unsicheres stehen in der Nachricht');
+
+// Kein http(s) – kein Link in der Nachricht.
+check(!whatsappText({ ...termin, link: 'javascript:alert(1)' }).includes('javascript'), 'ein javascript:-Link kommt nicht in die Nachricht');
+
+// .ics für das iPhone
+const ics = icsText({ ...termin, schluessel: 't:theater-frueh:2026-11-03' });
+check(ics.includes('DTSTART;TZID=Europe/Berlin:20261103T190000') && ics.includes('DTEND;TZID=Europe/Berlin:20261103T210000'), '.ics: Beginn und Ende in Ortszeit');
+check(ics.includes('SUMMARY:Theater früh') && ics.includes('LOCATION:Thalia') && ics.includes('URL:https://example.org/theater'), '.ics: Titel, Ort, Link');
+check(icsText({ ...termin, titel: 'A; B, C' }).includes('SUMMARY:A\\; B\\, C'), '.ics: Semikolon und Komma maskiert');
+check(icsText({ ...termin, ganztags: true, datum: SA }).includes('DTSTART;VALUE=DATE:20261107'), '.ics: Ganztägiges als ganzer Tag');
+
+const iphone = await oeffne({ tag: '2026-11-02', ua: IPHONE, browser: page.context().browser() });
+const kalIphone = iphone.page.locator(`#tag-${DI} .karte`, { hasText: 'Theater früh' }).locator('a', { hasText: 'Kalender' });
+const href = await kalIphone.getAttribute('href');
+check(href.startsWith('data:text/calendar') && await kalIphone.getAttribute('download') === 'termin.ics', 'auf dem iPhone: der Kalender-Knopf liefert eine .ics-Datei');
+check(decodeURIComponent(href.split(',')[1]).includes('DTSTART;TZID=Europe/Berlin:20261103T190000'), '… mit dem richtigen Termin');
+check(iphone.fehler.length === 0, 'iPhone: keine Fehler in der Konsole');
 
 await ende();

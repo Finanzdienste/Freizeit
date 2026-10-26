@@ -26,3 +26,10 @@ export const kostenlos = (e) => Boolean(e.kostenlos) || /^(kostenlos|Eintritt fr
 
 /** Preisangaben ohne Aussage lohnen keine Zeile in einer Nachricht. */
 export const preisSagtWas = (p) => Boolean(p) && !/^Preis (nicht|im Flyer nicht)/.test(p);
+
+/**
+ * Nur Links mit http(s) – javascript:, data: und alles andere wird leer.
+ * Was von außen kommt (Datendatei, Häkchen der anderen), geht hier durch,
+ * bevor es in ein href wandert.
+ */
+export const sichererLink = (u) => (/^https?:\/\/\S+$/i.test(String(u || '')) ? String(u) : '');

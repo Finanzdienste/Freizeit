@@ -1,21 +1,20 @@
 /*
- * Freizeit: Sind die beiden Datendateien so, wie die App sie braucht?
+ * Ist daten/programm.json so, wie die App sie braucht?
  *
- * Ohne Browser und ohne Server. Die geplanten Läufe schreiben
- * daten/woche.json und daten/konzerte.json (montags früh) und prüfen
- * sie hiermit, bevor sie committen:
+ * Ohne Browser und ohne Server, ohne npm ci. Der Montagslauf schreibt
+ * daten/programm.json (und pflegt daten/orte.json) und prüft vor dem Commit:
  *
  *     node tests/test-daten.mjs
  *
- * Das Format steht in README.md. Geprüft wird vor allem, was die App
- * sonst still falsch zeigen würde: Tage außerhalb der Woche, Uhrzeiten, mit
- * denen die Zeitregeln nicht rechnen können, doppelte Kennungen (Merkliste),
- * fehlende Links.
+ * Das Format steht in README.md. Geprüft wird vor allem, was die App sonst
+ * still falsch zeigen würde: Tage außerhalb des Zeitraums, Uhrzeiten, mit
+ * denen die Zeitregeln nicht rechnen können, doppelte Kennungen (Bock-Haken
+ * hängen daran), fehlende Links und Orte für die Karte.
  */
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { wocheBereinigen, konzerteBereinigen } from '../js/daten.js';
+import { programmBereinigen } from '../js/daten.js';
 import { beginn, plusTage, wochentag } from '../js/zeit.js';
 import { REGIONEN, DRAUSSEN } from '../js/text.js';
 
@@ -27,7 +26,7 @@ const check = (c, m) => {
   console.log(`${c ? 'OK  ' : 'FAIL'} ${m}`);
   if (c) oks++; else fails++;
 };
-const name = (x) => (x && (x.id || x.titel || x.kuenstler)) || JSON.stringify(x).slice(0, 50);
+const name = (x) => (x && (x.id || x.titel)) || JSON.stringify(x).slice(0, 50);
 /** Eine Regel für viele Einträge – nennt die ersten, die sie nicht erfüllen. */
 const alle = (liste, ok, m) => {
   const schlecht = liste.filter((x) => !ok(x));
@@ -57,89 +56,91 @@ const text = (s) => typeof s === 'string' && s.trim() !== '';
 const jaNein = (x) => x === undefined || typeof x === 'boolean';
 const mitUhrzeit = (s) => typeof s === 'string' && beginn(s) !== null;
 const istListe = (x) => Array.isArray(x);
+/** Koordinaten [Breite, Länge] irgendwo in Deutschland – ein Dreher (Länge, Breite) fällt auf. */
+const geoOk = (g) => istListe(g) && g.length === 2 && g.every((x) => typeof x === 'number' && Number.isFinite(x))
+  && g[0] >= 47 && g[0] <= 55.2 && g[1] >= 5.8 && g[1] <= 15.1;
+const tageZwischen = (a, b) => Math.round((new Date(`${b}T12:00:00Z`) - new Date(`${a}T12:00:00Z`)) / 86400000);
 
-/** Kalenderwoche nach ISO 8601 (die Woche mit dem 4. Januar ist KW 1). */
-function isoWoche(iso) {
-  const d = new Date(`${iso}T12:00:00Z`);
-  d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 6) % 7) + 3);
-  const kw1 = new Date(Date.UTC(d.getUTCFullYear(), 0, 4, 12));
-  kw1.setUTCDate(kw1.getUTCDate() - ((kw1.getUTCDay() + 6) % 7) + 3);
-  return 1 + Math.round((d - kw1) / (7 * 86400000));
-}
+const p = lies('programm.json');
+if (p) {
+  check(p.version === 2, 'programm.json: version 2');
+  check(STAND.test(p.stand || ''), `programm.json: stand als „JJJJ-MM-TTTHH:MM“ (${p.stand})`);
+  const montag = echtesDatum(p.von || '') && wochentag(p.von) === 'Montag';
+  check(montag, `programm.json: von ist ein Montag (${p.von})`);
+  const sonntag = echtesDatum(p.bis || '') && wochentag(p.bis) === 'Sonntag';
+  check(sonntag, `programm.json: bis ist ein Sonntag (${p.bis})`);
+  const spanne = montag && sonntag ? tageZwischen(p.von, p.bis) + 1 : 0;
+  check(spanne >= 7 && spanne <= 56, `programm.json: eine bis acht Wochen (${spanne} Tage)`);
+  const imZeitraum = (d) => d >= p.von && d <= p.bis;
+  const zeitraum = spanne ? Array.from({ length: spanne }, (_, i) => plusTage(p.von, i)) : [];
 
-// ---------------------------------------------------------------- woche.json
-const w = lies('woche.json');
-if (w) {
-  check(w.version === 1, 'woche.json: version 1');
-  check(STAND.test(w.stand || ''), `woche.json: stand als „JJJJ-MM-TTTHH:MM“ (${w.stand})`);
-  const montag = echtesDatum(w.von || '') && wochentag(w.von) === 'Montag';
-  check(montag, `woche.json: von ist ein Montag (${w.von})`);
-  if (montag) {
-    check(w.bis === plusTage(w.von, 6), `woche.json: bis ist der Sonntag danach (${w.bis})`);
-    check(w.kw === isoWoche(w.von), `woche.json: kw passt zum Montag (${w.kw}, richtig wäre ${isoWoche(w.von)})`);
-  }
-  const woche = montag ? [0, 1, 2, 3, 4, 5, 6].map((n) => plusTage(w.von, n)) : [];
-  const inWoche = (d) => woche.includes(d);
-
-  check(istListe(w.tage) && JSON.stringify(w.tage.map((t) => t.datum)) === JSON.stringify(woche), 'tage: jeder der sieben Tage genau einmal, der Reihe nach');
-  const tage = istListe(w.tage) ? w.tage : [];
+  check(istListe(p.tage) && JSON.stringify(p.tage.map((t) => t.datum)) === JSON.stringify(zeitraum), 'tage: jeder Tag von–bis genau einmal, der Reihe nach');
+  const tage = istListe(p.tage) ? p.tage : [];
   alle(tage, (t) => jaNein(t.feiertag) && jaNein(t.vorFeiertag), 'tage: feiertag und vorFeiertag sind true/false');
   alle(tage.filter((t) => t.vorFeiertag), (t) => wochentag(t.datum) === 'Sonntag', 'tage: vorFeiertag steht nur am Sonntag');
 
-  const termine = istListe(w.termine) ? w.termine : [];
+  const termine = istListe(p.termine) ? p.termine : [];
   check(termine.length >= 10, `termine: mindestens zehn – weniger heißt, das Absuchen ist schiefgegangen (${termine.length})`);
   alle(termine, (e) => KENNUNG.test(e.id || ''), 'termine: id klein, mit Bindestrichen');
   eindeutig(termine.map((e) => e.id), 'termine: jede id nur einmal');
   alle(termine, (e) => text(e.titel), 'termine: Titel');
-  alle(termine, (e) => istListe(e.daten) && e.daten.length > 0 && e.daten.every(inWoche), 'termine: daten nicht leer und alle in dieser Woche');
+  alle(termine, (e) => e.ganzeWoche === undefined, 'termine: kein ganzeWoche mehr – was über Tage läuft, gehört nach laufend');
+  const weit = (e) => e.kuenstler || e.tipp;
+  alle(termine, (e) => istListe(e.daten) && e.daten.length > 0 && e.daten.every((d) => echtesDatum(d)
+    && (imZeitraum(d) || (weit(e) && d >= p.von && tageZwischen(p.von, d) <= 400))),
+  'termine: daten nicht leer und alle im Zeitraum (Konzerte der eigenen Künstler und Tipps bis zu 400 Tage voraus)');
   alle(termine, (e) => !istListe(e.daten) || new Set(e.daten).size === e.daten.length, 'termine: kein Tag doppelt in daten');
-  alle(termine, (e) => (e.ganztags || e.ganzeWoche ? text(e.zeit) : mitUhrzeit(e.zeit)),
-    'termine: zeit mit Uhrzeit „HH:MM“ (frei formuliert nur bei ganztags/ganzeWoche)');
+  alle(termine, (e) => (e.ganztags ? text(e.zeit) : mitUhrzeit(e.zeit)), 'termine: zeit mit Uhrzeit „HH:MM“ (frei formuliert nur bei ganztags)');
   alle(termine, (e) => e.zeiten === undefined || (typeof e.zeiten === 'object' && Object.entries(e.zeiten).every(([d, z]) => (e.daten || []).includes(d) && mitUhrzeit(z))),
     'termine: zeiten nur für eigene Tage, jeweils mit Uhrzeit');
   alle(termine, (e) => e.ende === undefined || UHR.test(e.ende), 'termine: ende als „HH:MM“');
   alle(termine, (e) => e.dauer === undefined || (Number.isInteger(e.dauer) && e.dauer > 0 && e.dauer <= 720), 'termine: dauer in Minuten (1–720)');
   alle(termine, (e) => Object.hasOwn(REGIONEN, e.region), `termine: region eine von ${Object.keys(REGIONEN).join(', ')}`);
   alle(termine, (e) => text(e.kategorie), 'termine: Kategorie');
+  alle(termine.filter((e) => e.kuenstler), (e) => e.kategorie === 'Konzert', 'termine: Konzerte der eigenen Künstler haben die Kategorie Konzert');
   alle(termine, (e) => e.draussen === undefined || Object.hasOwn(DRAUSSEN, e.draussen), 'termine: draussen ist drinnen, draußen oder beides');
   alle(termine, (e) => LINK.test(e.link || ''), 'termine: Link mit http(s)');
-  alle(termine, (e) => ['ganztags', 'ganzeWoche', 'kostenlos', 'hohwacht'].every((f) => jaNein(e[f])), 'termine: ganztags, ganzeWoche, kostenlos, hohwacht sind true/false');
+  alle(termine, (e) => ['ganztags', 'kostenlos', 'hohwacht', 'kuenstler', 'neu', 'ausverkauft', 'tipp'].every((f) => jaNein(e[f])),
+    'termine: ganztags, kostenlos, hohwacht, kuenstler, neu, ausverkauft, tipp sind true/false');
   alle(termine, (e) => e.imdb === undefined || text(String(e.imdb)), 'termine: imdb ist ein Platz');
+  alle(termine, (e) => e.geo === undefined || geoOk(e.geo), 'termine: geo ist [Breite, Länge] in Deutschland');
+  const mitGeo = termine.filter((e) => e.geo).length;
+  check(!termine.length || mitGeo >= termine.length * 0.8, `termine: mindestens 80 % mit Ort für die Karte (${mitGeo} von ${termine.length})`);
 
-  const immer = istListe(w.immer) ? w.immer : [];
+  const laufend = istListe(p.laufend) ? p.laufend : [];
+  alle(laufend, (e) => KENNUNG.test(e.id || ''), 'laufend: id klein, mit Bindestrichen');
+  eindeutig(laufend.map((e) => e.id), 'laufend: jede id nur einmal');
+  alle(laufend, (e) => text(e.titel) && text(e.zeit), 'laufend: Titel und Zeiten (Text)');
+  alle(laufend, (e) => echtesDatum(e.von || '') && echtesDatum(e.bis || '') && e.von <= e.bis, 'laufend: von und bis als Tage, von ≤ bis');
+  alle(laufend, (e) => e.bis >= p.von && e.von <= p.bis, 'laufend: überschneidet sich mit dem Zeitraum');
+  alle(laufend, (e) => Object.hasOwn(REGIONEN, e.region) && text(e.kategorie) && LINK.test(e.link || ''), 'laufend: Region, Kategorie und Link');
+  alle(laufend, (e) => e.geo === undefined || geoOk(e.geo), 'laufend: geo ist [Breite, Länge] in Deutschland');
+
+  const immer = istListe(p.immer) ? p.immer : [];
   check(immer.length > 0, `immer: Ausflugsziele vorhanden (${immer.length})`);
   alle(immer, (e) => KENNUNG.test(e.id || ''), 'immer: id klein, mit Bindestrichen');
   eindeutig(immer.map((e) => e.id), 'immer: jede id nur einmal');
   alle(immer, (e) => text(e.titel) && Object.hasOwn(REGIONEN, e.region) && LINK.test(e.link || ''), 'immer: Titel, Region und Link');
   alle(immer, (e) => e.draussen === undefined || Object.hasOwn(DRAUSSEN, e.draussen), 'immer: draussen ist drinnen, draußen oder beides');
+  alle(immer, (e) => e.geo === undefined || geoOk(e.geo), 'immer: geo ist [Breite, Länge] in Deutschland');
 
   for (const feld of ['infos', 'highlights', 'hinweise']) {
-    const liste = w[feld] === undefined ? [] : w[feld];
+    const liste = p[feld] === undefined ? [] : p[feld];
     check(istListe(liste) && liste.every((x) => x && text(x.text)), `${feld}: Liste von Einträgen mit text`);
   }
   const fehler = [];
-  wocheBereinigen(w, fehler);
-  check(!fehler.length, `die App übernimmt die Woche ohne Beanstandung${fehler.length ? `: ${fehler.slice(0, 3).join(' | ')}` : ''}`);
+  programmBereinigen(p, fehler);
+  check(!fehler.length, `die App übernimmt das Programm ohne Beanstandung${fehler.length ? `: ${fehler.slice(0, 3).join(' | ')}` : ''}`);
 }
 
-// ------------------------------------------------------------- konzerte.json
-const k = lies('konzerte.json');
-if (k) {
-  check(k.version === 1, 'konzerte.json: version 1');
-  check(k.stand === '' || STAND.test(k.stand || ''), `konzerte.json: stand leer oder „JJJJ-MM-TTTHH:MM“ (${k.stand})`);
-  check(istListe(k.konzerte), 'konzerte.json: konzerte ist eine Liste');
-  const konzerte = istListe(k.konzerte) ? k.konzerte : [];
-  alle(konzerte, (x) => KENNUNG.test(x.id || ''), 'konzerte: id klein, mit Bindestrichen');
-  eindeutig(konzerte.map((x) => x.id), 'konzerte: jede id nur einmal');
-  alle(konzerte, (x) => text(x.kuenstler), 'konzerte: Künstler');
-  alle(konzerte, (x) => echtesDatum(x.datum || ''), 'konzerte: datum ist ein Tag „JJJJ-MM-TT“');
-  alle(konzerte, (x) => !x.zeit || mitUhrzeit(x.zeit), 'konzerte: zeit leer oder mit Uhrzeit „HH:MM“');
-  alle(konzerte, (x) => text(x.ort) && text(x.stadt), 'konzerte: Ort und Stadt');
-  alle(konzerte, (x) => LINK.test(x.link || ''), 'konzerte: Link mit http(s)');
-  alle(konzerte, (x) => ['neu', 'ausverkauft', 'tipp'].every((f) => jaNein(x[f])), 'konzerte: neu, ausverkauft, tipp sind true/false');
-  const fehler = [];
-  konzerteBereinigen(k, fehler);
-  check(!fehler.length, `die App übernimmt die Konzerte ohne Beanstandung${fehler.length ? `: ${fehler.slice(0, 3).join(' | ')}` : ''}`);
+// Die Ortsliste des Laufs (nur seine Hilfe – die App liest sie nicht).
+if (existsSync(path.join(ORDNER, 'orte.json'))) {
+  const o = lies('orte.json');
+  if (o) {
+    check(o.version === 1 && o.orte && typeof o.orte === 'object', 'orte.json: version 1 mit orte');
+    const schlecht = Object.entries(o.orte || {}).filter(([, g]) => !geoOk(g)).map(([k]) => k);
+    check(!schlecht.length, `orte.json: jede Angabe ist [Breite, Länge] in Deutschland${schlecht.length ? ` – nicht bei: ${schlecht.slice(0, 5).join(', ')}` : ''}`);
+  }
 }
 
 console.log(`${fails ? 'FEHLER' : 'Alles gut'}: ${oks} von ${oks + fails} Prüfungen bestanden.`);

@@ -4,11 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0e6f69">
-<meta name="description" content="Was in Hamburg und Umgebung diese Woche los ist, die Konzerte deiner Künstler und deine Merkliste.">
+<meta name="description" content="Was in Hamburg und Umgebung los ist – im Kalender, auf der Karte und gemeinsam geplant.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Freizeit">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>Freizeit</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
-<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -22,20 +26,23 @@
 <main id="ansicht" class="ansicht" tabindex="-1"></main>
 
 <!-- Die Reiter stehen fest im HTML, damit die App auch mit einem Skript aus
-     einem älteren Zwischenspeicher eine Navigation hat – dieselbe Vorsicht wie
-     in der Workout-App. -->
+     einem älteren Zwischenspeicher eine Navigation hat. -->
 <nav class="reiterleiste" aria-label="Bereiche">
-  <button type="button" class="reiter" data-reiter="woche" aria-current="page">
+  <button type="button" class="reiter" data-reiter="programm" aria-current="page">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>
+    <span>Programm</span>
+  </button>
+  <button type="button" class="reiter" data-reiter="kalender">
     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
-    <span>Diese Woche</span>
+    <span>Kalender</span>
   </button>
-  <button type="button" class="reiter" data-reiter="konzerte">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>
-    <span>Konzerte</span><span class="punkt" id="konzerte-neu" hidden title="neue Konzerte"></span>
+  <button type="button" class="reiter" data-reiter="karte">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+    <span>Karte</span>
   </button>
-  <button type="button" class="reiter" data-reiter="merkliste">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h10a1 1 0 0 1 1 1V21l-6-4-6 4V4.5a1 1 0 0 1 1-1z"/></svg>
-    <span>Merkliste</span><span class="zahl" id="merkzahl"></span>
+  <button type="button" class="reiter" data-reiter="wir">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>
+    <span>Wir</span><span class="punkt" id="wir-neu" hidden title="neue Haken"></span>
   </button>
 </nav>
 

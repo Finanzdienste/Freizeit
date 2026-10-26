@@ -1,0 +1,657 @@
+{
+  "version": 1,
+  "orte": {
+    "A1 Musikpark, Lübeck": [
+      53.8782,
+      10.66826
+    ],
+    "Abaton, Rotherbaum": [
+      53.56767,
+      9.98204
+    ],
+    "Alma Hoppes Lustspielhaus, Eppendorf": [
+      53.5931,
+      9.99263
+    ],
+    "Altona": [
+      53.58647,
+      9.77767
+    ],
+    "Altonaer Museum, Museumstraße 23": [
+      53.54914,
+      9.93431
+    ],
+    "Am Wasserturm, Lüneburg": [
+      53.24681,
+      10.41349
+    ],
+    "Anni-Wadle-Weg 1, Kiel": [
+      54.30871,
+      10.13628
+    ],
+    "Astor Film Lounge HafenCity": [
+      53.54334,
+      9.99548
+    ],
+    "Bahnhof Pauli, St. Pauli": [
+      53.54907,
+      9.96416
+    ],
+    "Barclays Arena, Bahrenfeld": [
+      53.5894,
+      9.89911
+    ],
+    "Barmbek°Basch, Barmbek": [
+      53.57688,
+      10.04298
+    ],
+    "Bucerius Kunst Forum, Alter Wall 12": [
+      53.5507,
+      9.99094
+    ],
+    "Cargo Schiff, Lübeck": [
+      53.87242,
+      10.67882
+    ],
+    "Citti-Park, Lübeck": [
+      53.85771,
+      10.63035
+    ],
+    "Comödie Lübeck": [
+      53.86775,
+      10.68943
+    ],
+    "CU-Arena, Neugraben": [
+      53.4752,
+      9.8551
+    ],
+    "Deichtorhallen, Halle für aktuelle Kunst, Deichtorstraße 1–2": [
+      53.54718,
+      10.00639
+    ],
+    "DER SPEICHER, Schwerin": [
+      53.63394,
+      11.41759
+    ],
+    "Deutsches Schauspielhaus, MalerSaal": [
+      53.5545,
+      10.00894
+    ],
+    "Deutsches Schauspielhaus, St. Georg": [
+      53.5545,
+      10.00894
+    ],
+    "Die 2te Heimat Theatersalon": [
+      53.5612,
+      9.92806
+    ],
+    "Die Pumpe, Kiel": [
+      54.32449,
+      10.1383
+    ],
+    "Düsternbrooker Weg 20, Kiel": [
+      54.33033,
+      10.14855
+    ],
+    "Ein-/Ausstieg Hamburg / Winsen (Luhe)": [
+      53.36365,
+      10.20592
+    ],
+    "Elbphilharmonie Plaza": [
+      53.54129,
+      9.98421
+    ],
+    "Elbphilharmonie, Großer Saal": [
+      53.54129,
+      9.98421
+    ],
+    "Elbphilharmonie, Kleiner Saal": [
+      53.54129,
+      9.98421
+    ],
+    "Endorphin Eventkontor, Friesenweg 5, Ottensen": [
+      53.55827,
+      9.91059
+    ],
+    "Ernst Barlach Haus, Jenischpark, Othmarschen": [
+      53.55364,
+      9.86766
+    ],
+    "Ernst Deutsch Theater, Mundsburg": [
+      53.56924,
+      10.0262
+    ],
+    "Fabrik, Ottensen": [
+      53.55674,
+      9.92919
+    ],
+    "Filippos Erlebnisgarten, Blekendorf": [
+      54.27679,
+      10.65149
+    ],
+    "Fischmarkt / Große Elbstraße, Altona": [
+      53.54538,
+      9.95545
+    ],
+    "Foyer Opernhaus Kiel, Rathausplatz": [
+      54.3231,
+      10.13314
+    ],
+    "Gasthausbrauerei Nolte, Lüneburg": [
+      53.24618,
+      10.43891
+    ],
+    "Große Freiheit 36, St. Pauli": [
+      53.55111,
+      9.95808
+    ],
+    "Großes Haus, Theater Lübeck": [
+      53.87016,
+      10.68646
+    ],
+    "Gruenspan, Interimsstandort Lagerstraße 11, Halle D": [
+      53.55181,
+      9.95839
+    ],
+    "Haffhuus, Haffkrug (Scharbeutz)": [
+      54.05193,
+      10.74971
+    ],
+    "Halepaghen-Schule, Buxtehude": [
+      53.47659,
+      9.69284
+    ],
+    "Halle 7, Bahrenfeld": [
+      53.5693,
+      9.93877
+    ],
+    "Hamburger Kunsthalle, Glockengießerwall": [
+      53.55529,
+      10.003
+    ],
+    "Hansehalle, Lübeck": [
+      53.8802,
+      10.67092
+    ],
+    "Haus des Kurgastes, Bad Malente": [
+      54.16885,
+      10.55294
+    ],
+    "Heide Park Resort, Soltau": [
+      53.02222,
+      9.87233
+    ],
+    "Heikendörper Speeldeel, Schulredder 5, Heikendorf": [
+      54.39014,
+      9.99819
+    ],
+    "Hohwacht, Seebrücke": [
+      54.32158,
+      10.66647
+    ],
+    "Holstein-Stadion, Kiel": [
+      54.34921,
+      10.12376
+    ],
+    "Hotel-Restaurant zum Postilion, Soltau": [
+      52.98813,
+      9.83371
+    ],
+    "Indra, Große Freiheit, St. Pauli": [
+      53.55199,
+      9.95816
+    ],
+    "Innenstadt": [
+      53.54616,
+      9.98251
+    ],
+    "Innenstadt Kiel und Holtenauer Straße (Bootshafen, Rathausplatz, Alter Markt u. a.)": [
+      54.32101,
+      10.13862
+    ],
+    "Jekyll & Hide, Lüneburg": [
+      53.24733,
+      10.41373
+    ],
+    "Jork": [
+      53.53284,
+      9.68143
+    ],
+    "Jungfernstieg": [
+      53.5521,
+      9.9934
+    ],
+    "Kaispeicher B, HafenCity": [
+      53.54335,
+      9.99982
+    ],
+    "Kaltenkirchen": [
+      53.83717,
+      9.96149
+    ],
+    "Kammerspiele, Theater Lübeck": [
+      53.86975,
+      10.68617
+    ],
+    "Kampnagel, Gelände, Winterhude": [
+      53.5833,
+      10.02217
+    ],
+    "Kampnagel, k6, Winterhude": [
+      53.5833,
+      10.02217
+    ],
+    "Kampnagel, Migrantpolitan, Winterhude": [
+      53.5833,
+      10.02217
+    ],
+    "Kiel-Wik / Holtenau": [
+      54.3725,
+      10.13617
+    ],
+    "Kinopolis HafenCity, Kino 1": [
+      53.5397,
+      9.99895
+    ],
+    "Kinopolis HafenCity, Kino 5": [
+      53.55024,
+      9.9611
+    ],
+    "Knust, St. Pauli": [
+      53.55814,
+      9.96793
+    ],
+    "Kolosseum, Lübeck": [
+      53.85494,
+      10.68908
+    ],
+    "Kommunales Kino in der Pumpe, Kiel": [
+      54.32449,
+      10.1383
+    ],
+    "Konzerthaus am Schloss, Kiel": [
+      54.32366,
+      10.14065
+    ],
+    "Kulturforum, Lüneburg (Gut Wienebüttel)": [
+      53.26231,
+      10.37459
+    ],
+    "Kulturschuppen, Bad Segeberg": [
+      53.93693,
+      10.30448
+    ],
+    "Kulturwerft Gollan, Lübeck": [
+      53.87719,
+      10.68461
+    ],
+    "Kursaal Hohwacht (Do: De Ole School, Hohwacht)": [
+      54.32158,
+      10.66647
+    ],
+    "Laboe": [
+      54.40225,
+      10.22566
+    ],
+    "Laeiszhalle, Großer Saal": [
+      53.5561,
+      9.98108
+    ],
+    "Laeiszhalle, Kleiner Saal": [
+      53.5561,
+      9.98108
+    ],
+    "Landeshaus, Düsternbrooker Weg 70, Kiel": [
+      54.33531,
+      10.15252
+    ],
+    "Landungsbrücken": [
+      53.54623,
+      9.97114
+    ],
+    "Landungsbrücken – Övelgönne – Finkenwerder": [
+      53.54555,
+      9.97037
+    ],
+    "Landungsbrücken (Anleger St. Pauli)": [
+      53.54555,
+      9.97037
+    ],
+    "LKH Arena, Lüneburg": [
+      53.2727,
+      10.423
+    ],
+    "LOLA Kulturzentrum, Bergedorf": [
+      53.49548,
+      10.20593
+    ],
+    "Lübeck": [
+      53.86644,
+      10.68474
+    ],
+    "Lübeck-Travemünde": [
+      53.96445,
+      10.84333
+    ],
+    "Lüneburg": [
+      53.24871,
+      10.40785
+    ],
+    "Mahnmal St. Nikolai, Willy-Brandt-Straße": [
+      53.54748,
+      9.99068
+    ],
+    "MARKK, Rothenbaumchaussee 64": [
+      53.56862,
+      9.98917
+    ],
+    "Markthalle Hamburg, Hauptbahnhof": [
+      53.54901,
+      10.00681
+    ],
+    "Marktplatz, Lütjenburg": [
+      54.29291,
+      10.58953
+    ],
+    "MAX Nachttheater, Kiel": [
+      54.33245,
+      10.11181
+    ],
+    "Meßberg": [
+      53.54788,
+      10.00178
+    ],
+    "Millerntor-Stadion, St. Pauli": [
+      53.55456,
+      9.96778
+    ],
+    "MuK Konzertsaal, Lübeck": [
+      53.86938,
+      10.67805
+    ],
+    "MuK Rotunde, Lübeck": [
+      53.86938,
+      10.67805
+    ],
+    "Museum für Kunst und Gewerbe, Steintorplatz": [
+      53.55129,
+      10.00933
+    ],
+    "Nica Jazz Club, Hamburg": [
+      53.55074,
+      9.99058
+    ],
+    "Niederdeutsche Bühne, Wilhelmplatz 2, Kiel": [
+      54.32499,
+      10.12058
+    ],
+    "Nienthal 7, Lütjenburg": [
+      54.3031,
+      10.56263
+    ],
+    "Ohnsorg-Theater, Heidi-Kabel-Platz": [
+      53.5545,
+      10.00708
+    ],
+    "Opernhaus Kiel": [
+      54.3231,
+      10.13314
+    ],
+    "Orange Club (Traum GmbH), Kiel": [
+      54.33498,
+      10.1168
+    ],
+    "Övelgönne": [
+      53.54427,
+      9.91021
+    ],
+    "Panker": [
+      54.34241,
+      10.55578
+    ],
+    "Pelican, Hamburg": [
+      53.55342,
+      9.95805
+    ],
+    "PHOXXI – Haus der Photographie, Deichtorstraße 1–2": [
+      53.54718,
+      10.00639
+    ],
+    "Planetarium Hamburg, Stadtpark": [
+      53.59731,
+      10.00891
+    ],
+    "Poker Stars.de-Stadion an der Lohmühle, Lübeck": [
+      53.86644,
+      10.68474
+    ],
+    "Polizeimuseum Hamburg": [
+      53.6031,
+      10.00606
+    ],
+    "Pulverfass Cabaret, Reeperbahn": [
+      53.54935,
+      9.95859
+    ],
+    "Ratskeller Kiel": [
+      54.32215,
+      10.1333
+    ],
+    "Restaurant VLET, Speicherstadt": [
+      53.54354,
+      9.99306
+    ],
+    "Riders Café, Leinweberstraße 4, Lübeck": [
+      53.86122,
+      10.63194
+    ],
+    "Rindermarkthalle, Neuer Kamp, St. Pauli": [
+      53.55636,
+      9.96618
+    ],
+    "Rissen": [
+      53.5847,
+      9.75639
+    ],
+    "Rosengarten": [
+      53.43533,
+      9.90585
+    ],
+    "Rosengarten (Eißendorfer Waldweg)": [
+      53.43131,
+      9.92896
+    ],
+    "Salon Hansen, Lüneburg": [
+      53.24741,
+      10.40357
+    ],
+    "Savoy Filmtheater, St. Georg": [
+      53.55412,
+      10.01419
+    ],
+    "Scharbeutz": [
+      54.02663,
+      10.75595
+    ],
+    "Schauspielhaus Kiel": [
+      54.33886,
+      10.1339
+    ],
+    "Schmidts Tivoli, Spielbudenplatz": [
+      53.54913,
+      9.96334
+    ],
+    "Serengeti-Park, Hodenhagen": [
+      52.75422,
+      9.66618
+    ],
+    "Speicherstadt": [
+      53.54401,
+      9.98698
+    ],
+    "Spielbudenplatz 21–22, St. Pauli": [
+      53.54907,
+      9.96428
+    ],
+    "Spielbudenplatz, St. Pauli": [
+      53.54934,
+      9.96381
+    ],
+    "Sporthalle Hamburg, Winterhude": [
+      53.60272,
+      10.00206
+    ],
+    "St.-Michaelis-Kirche, Lütjenburg": [
+      54.29291,
+      10.58953
+    ],
+    "Staatsoper Hamburg": [
+      53.55667,
+      9.98893
+    ],
+    "Staatsoper Hamburg, Eingangsfoyer": [
+      53.55667,
+      9.98893
+    ],
+    "Stade": [
+      53.59979,
+      9.47544
+    ],
+    "Stadeum, Stade": [
+      53.60389,
+      9.46876
+    ],
+    "Stadtbibliothek, Buxtehude": [
+      53.47776,
+      9.70052
+    ],
+    "Stadtpark, Winterhude": [
+      53.59577,
+      10.01355
+    ],
+    "Stage Operettenhaus, Reeperbahn": [
+      53.5495,
+      9.96707
+    ],
+    "Stage Theater an der Elbe, Steinwerder": [
+      53.53989,
+      9.97325
+    ],
+    "Stage Theater im Hafen, Steinwerder": [
+      53.53989,
+      9.97325
+    ],
+    "Stellingen": [
+      53.59678,
+      9.92841
+    ],
+    "Studio im Schauspielhaus, Kiel": [
+      54.3356,
+      10.12787
+    ],
+    "Thalia Gaußstraße Box, Ottensen": [
+      53.55932,
+      9.92546
+    ],
+    "Thalia Gaußstraße, Ottensen": [
+      53.55932,
+      9.92546
+    ],
+    "Thalia Theater, Alstertor": [
+      53.55214,
+      9.99867
+    ],
+    "Theater im Hinterhof, Buxtehude": [
+      53.46037,
+      9.68689
+    ],
+    "Theater Lüneburg": [
+      53.24431,
+      10.40645
+    ],
+    "Theaterschiff Hamburg, Holzhafen": [
+      53.54667,
+      9.98995
+    ],
+    "Touristinfo, Markt 4, Lütjenburg": [
+      54.47678,
+      9.05114
+    ],
+    "Trabrennbahn, Luruper Chaussee 30": [
+      53.57738,
+      9.88945
+    ],
+    "Treffpunkt U Baumwall": [
+      53.54444,
+      9.98172
+    ],
+    "Treffpunkt U St. Pauli": [
+      53.55039,
+      9.97045
+    ],
+    "Treffpunkt U/S Landungsbrücken": [
+      53.54575,
+      9.9707
+    ],
+    "Treibsand, Lübeck": [
+      53.86988,
+      10.67649
+    ],
+    "Turmhügelburg, Lütjenburg": [
+      54.30146,
+      10.57175
+    ],
+    "U Feldstraße bzw. U Sternschanze": [
+      53.55744,
+      9.96774
+    ],
+    "u. a. Kunsthalle, Deichtorhallen, Altonaer Museum, MARKK, Bucerius Kunst Forum": [
+      53.55477,
+      10.00313
+    ],
+    "Uebel & Gefährlich, Feldstraße": [
+      53.55655,
+      9.97042
+    ],
+    "Uebel & Gefährlich, Turmzimmer": [
+      53.55655,
+      9.97042
+    ],
+    "Undeloh": [
+      53.19703,
+      9.9765
+    ],
+    "unter dem U3-Viadukt, Isestraße, Harvestehude": [
+      53.58234,
+      9.98319
+    ],
+    "Volksparkstadion": [
+      53.58715,
+      9.89871
+    ],
+    "Vorplatz Rindermarkthalle, Neuer Kamp 31, St. Pauli": [
+      53.55636,
+      9.96618
+    ],
+    "Wasserturm, Lüneburg": [
+      53.24677,
+      10.41296
+    ],
+    "Wehdenstraße 14, Lütjenburg": [
+      54.29264,
+      10.59211
+    ],
+    "Weinland Waterfront, Hamburg": [
+      53.54456,
+      9.94428
+    ],
+    "Wohldorf-Ohlstedt": [
+      53.7019,
+      10.1306
+    ],
+    "Zeise Kinos, Ottensen": [
+      53.55404,
+      9.9274
+    ]
+  }
+}

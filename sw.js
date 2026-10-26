@@ -21,7 +21,7 @@
  * Datei zu müssen.
  */
 
-const VERSION = 'v3';
+const VERSION = 'v4';
 const CACHE = `freizeit-${VERSION}`;
 
 const SHELL = [
@@ -29,16 +29,25 @@ const SHELL = [
   './index.html',
   './css/styles.css',
   './js/app.js',
+  './js/config.js',
   './js/zeit.js',
   './js/text.js',
-  './js/speicher.js',
   './js/daten.js',
+  './js/filter.js',
+  './js/speicher.js',
+  './js/gemeinsam.js',
   './js/teilen.js',
   './js/karte.js',
-  './js/ansicht-woche.js',
-  './js/ansicht-konzerte.js',
-  './js/ansicht-merkliste.js',
+  './js/ansicht-programm.js',
+  './js/ansicht-kalender.js',
+  './js/ansicht-landkarte.js',
+  './js/ansicht-wir.js',
+  './vendor/leaflet/leaflet.js',
+  './vendor/leaflet/leaflet.css',
+  './vendor/leaflet/leaflet.markercluster.js',
+  './vendor/leaflet/MarkerCluster.css',
   './icon.svg',
+  './icon-180.png',
   './icon-192.png',
   './icon-512.png',
   './icon-maskable-512.png',

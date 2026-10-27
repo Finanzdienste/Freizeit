@@ -7,6 +7,12 @@
  *
  *   node werkzeug/zeiten-senden.mjs --zugang "<Link „Weiteres Gerät“>" --termine termine.json
  *        [--wochen 5] [--trocken] [--server https://…]
+ *   node werkzeug/zeiten-senden.mjs --sql --termine termine.json
+ *
+ * Mit --sql schickt es nichts, sondern schreibt die SQL-Anweisung, mit der
+ * der Betreiber die Zeiten direkt in die Datenbank setzt (für die Zeile des
+ * Gastgebers in freizeit_gastgeber) – so braucht eine geplante Aufgabe mit
+ * Supabase-Zugang keinen Schlüssel. Mit --trocken rechnet es nur.
  *
  * termine.json ist eine Liste von Terminen, an denen Tobi wirklich belegt ist
  * (nicht abgesagt, nicht als „frei“ markiert) – nur Zeiten, keine Titel:
@@ -29,6 +35,7 @@ const wert = (name) => {
   return i >= 0 ? args[i + 1] : undefined;
 };
 const TROCKEN = args.includes('--trocken');
+const SQL = args.includes('--sql');
 const fehler = (text) => {
   console.error(`Fehler: ${text}`);
   process.exit(1);
@@ -36,7 +43,7 @@ const fehler = (text) => {
 
 const zugang = String(wert('zugang') || process.env.FREIZEIT_ZUGANG || '').trim();
 const m = zugang.match(/(?:^|geraet=)([a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4})\.([a-z0-9-]{8,40})\.([a-z0-9]{20,64})$/i);
-if (!m && !TROCKEN) fehler('--zugang braucht den Link „Weiteres Gerät“ des Gastgebers (mit Schlüssel).');
+if (!m && !TROCKEN && !SQL) fehler('--zugang braucht den Link „Weiteres Gerät“ des Gastgebers (mit Schlüssel).');
 const [code, person, schluessel] = m ? [m[1].toLowerCase(), m[2].toLowerCase(), m[3].toLowerCase()] : [];
 
 let termine;
@@ -68,6 +75,20 @@ function passend(liste) {
 
 if (TROCKEN) {
   console.log(JSON.stringify({ von, stand, wochen: Object.fromEntries(Object.entries(bloecke).map(([mo, l]) => [mo, passend(l)])) }, null, 1));
+  process.exit(0);
+}
+
+if (SQL) {
+  // Dollar-Quoting: In JSON kommt $z$ nicht vor, also braucht nichts maskiert zu werden.
+  const werte = Object.entries(bloecke).map(([mo, l]) => `('z:${mo}', $z$${JSON.stringify({ z: passend(l), stand })}$z$)`).join(',\n       ');
+  console.log(`insert into freizeit_bock (raum, person, eintrag, daten)
+select g.raum, g.person, v.eintrag, v.daten::jsonb
+  from freizeit_gastgeber g
+  cross join (values
+       ${werte}) as v(eintrag, daten)
+on conflict (raum, person, eintrag) do update set daten = excluded.daten, geaendert = now();
+delete from freizeit_bock b using freizeit_gastgeber g
+ where b.raum = g.raum and b.person = g.person and b.eintrag ~ '^z:[0-9]{4}-[0-9]{2}-[0-9]{2}$' and b.eintrag < 'z:${von}';`);
   process.exit(0);
 }
 

@@ -75,6 +75,10 @@ const t = await lauf('--trocken', '--termine', datei);
 const j = JSON.parse(t.aus);
 check(t.code === 0 && j.von === von && Object.keys(j.wochen).length === 5 && aufrufe.length === 0, '--trocken: rechnet fünf Wochen ab diesem Montag, ohne den Server zu fragen');
 
+const q = await lauf('--sql', '--termine', datei);
+check(q.code === 0 && q.aus.startsWith('insert into freizeit_bock') && q.aus.split("('z:").length === 6 && q.aus.includes(`b.eintrag < 'z:${von}'`)
+  && q.aus.includes('from freizeit_gastgeber g') && aufrufe.length === 0, '--sql: eine Anweisung für die Zeile des Gastgebers, fünf Wochen, Altes weg – ohne Server');
+
 const r = await lauf('--zugang', ZUGANG, '--termine', datei, '--server', URL_);
 check(r.code === 0 && /Zeiten gesendet: 5 Wochen/.test(r.aus), `senden: läuft durch (${r.aus.trim()})`);
 const gesetzt = aufrufe.filter((a) => a.name === 'freizeit_bock' && a.p.p_bock).map((a) => a.p.p_eintrag);

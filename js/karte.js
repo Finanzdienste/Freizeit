@@ -5,7 +5,8 @@
  * Erst wird aus den Daten ein „Eintrag“ gebaut: ein flaches Objekt mit allem,
  * was Karte, WhatsApp-Nachricht, Kalender und Bock-Haken brauchen. Sein
  * Schlüssel bleibt über die Montagsläufe hinweg gleich, solange der Lauf die
- * Kennung behält: t:<id>:<tag>, l:<id>, i:<id>.
+ * Kennung behält: t:<id>:<tag>, l:<id>. Ideen und Eingeplantes (i:, e:, p:)
+ * baut ideen.js; gezeichnet werden Eingeplantes hier, Ideen in ansicht-ideen.js.
  */
 import { esc, kostenlos, REGIONEN, DRAUSSEN, sichererLink } from './text.js';
 import { zeitAm, ende, uhrzeit, offen, abendVorArbeitstag, wochentagKurz, tagMonat } from './zeit.js';
@@ -72,20 +73,10 @@ export const eintragLaufend = (e) => ({
   zeit: e.zeit || '',
 });
 
-/** Ein Ausflugsziel aus „Geht immer“. */
-export const eintragImmer = (e) => ({
-  ...basis(e),
-  quelle: 'immer',
-  schluessel: `i:${kennung(e)}`,
-  datum: null,
-  zeit: e.zeiten || '',
-  wetterabhaengig: Boolean(e.wetterabhaengig),
-});
-
 const marke = (text, art = '') => `<span class="marke${art ? ` ${art}` : ''}">${esc(text)}</span>`;
 
 /** Wer hat Bock: die anderen als farbige Chips; wenn alle beide, ein Treffer. */
-function werZeile(eintrag) {
+export function werZeile(eintrag) {
   const leute = andere(eintrag.schluessel);
   if (!leute.length) return { html: '', treffer: false };
   const ich = meinBock(eintrag.schluessel);
@@ -129,6 +120,7 @@ export function karte(eintrag, o = {}) {
     : '';
   const unterzeile = [eintrag.ort, uhr].filter(Boolean).join(' · ');
   const marken = [
+    eintrag.quelle === 'plan' ? marke('Eingeplant', 'plan') : '',
     eintrag.kuenstler ? marke('♫ Dein Künstler', 'kuenstler') : '',
     eintrag.neu ? marke('NEU', 'neu') : '',
     eintrag.ausverkauft ? marke('ausverkauft', 'warn') : '',
@@ -138,7 +130,7 @@ export function karte(eintrag, o = {}) {
     eintrag.kategorie ? marke(eintrag.kategorie) : '',
     eintrag.imdb ? marke(`IMDb Top 250 · Platz ${eintrag.imdb}`) : '',
     eintrag.region ? marke(REGIONEN[eintrag.region] || eintrag.region, 'rand') : '',
-    eintrag.draussen ? marke(`${DRAUSSEN[eintrag.draussen] || eintrag.draussen}${eintrag.quelle === 'immer' ? (eintrag.wetterabhaengig ? ' · wetterabhängig' : ' · bei jedem Wetter') : ''}`, 'rand') : '',
+    eintrag.draussen ? marke(DRAUSSEN[eintrag.draussen] || eintrag.draussen, 'rand') : '',
     eintrag.hohwacht ? marke('Hohwacht-Kombi', 'hohwacht') : '',
     eintrag.unsicher ? marke('unsicher', 'warn') : '',
   ].filter(Boolean).join('');
@@ -163,13 +155,13 @@ export function karte(eintrag, o = {}) {
   </div></article>`;
 }
 
-/** Alle Einträge der Daten, nach Schlüssel – damit die Wir-Liste den frischen Stand zeigt. */
-export function alleEintraege(p) {
+/** Alle Einträge der Daten und alle Ideen, nach Schlüssel – damit die Wir-Liste den frischen Stand zeigt. */
+export function alleEintraege(p, ideen = []) {
   const m = new Map();
+  for (const x of ideen) m.set(x.schluessel, x);
   if (!p) return m;
   const tagVon = (iso) => p.tage.find((t) => t.datum === iso) || { datum: iso };
   for (const e of p.termine) for (const d of e.daten) { const x = eintragTermin(e, tagVon(d), p.tage); m.set(x.schluessel, x); }
   for (const e of p.laufend) { const x = eintragLaufend(e); m.set(x.schluessel, x); }
-  for (const e of p.immer) { const x = eintragImmer(e); m.set(x.schluessel, x); }
   return m;
 }

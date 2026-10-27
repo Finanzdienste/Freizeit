@@ -44,11 +44,12 @@ check(sa.includes('Party') && sa[0] === 'Messe', 'Sa: Party steht drin, Ganztäg
 check(await page.locator(`#tag-${SA} .karte.hohwacht`, { hasText: 'Strandwanderung' }).count() === 1, 'Sa: Hohwacht-Termin ist markiert');
 check(!(await titelAm(SO)).includes('Sonntagskonzert'), 'So: Konzert 19:30 (Ende ca. 21:45) ist ausgeblendet');
 
-// --- Laufendes und Geht immer
+// --- Laufendes, und was ohne Termin geht
 check(await page.locator('#abschnitt-laufend .karte', { hasText: 'Ausstellung X' }).count() === 1, 'Ausstellung steht unter „Läuft gerade“');
 check(!(await titelAm(MO)).includes('Ausstellung X'), '… und nicht noch einmal an jedem Tag');
 check((await page.locator(`#tag-${MO} .tag-info`).innerText()).includes('Außerdem 1 Angebot'), 'der Tag verweist auf das Laufende');
-check(await page.locator('#abschnitt-immer .karte', { hasText: 'Elbstrand' }).count() === 1, 'Elbstrand steht unter „Geht immer“');
+check(await page.locator('#abschnitt-immer').count() === 0 && await page.locator('.verweis [data-reiter="ideen"]').count() === 1,
+  '„Geht immer“ ist in den Reiter Ideen umgezogen – das Programm verweist dorthin');
 
 // --- Filter
 await page.click('[data-filter="kostenlos"]');

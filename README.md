@@ -2,20 +2,22 @@
 
 Was in Hamburg und Umgebung los ist – die nächsten gut fünf Wochen, mit den
 Konzerten von Tobis Lieblingskünstlern mittendrin, im Kalender und auf der
-Karte, und gemeinsam geplant: Wer Bock auf etwas hat, hakt es an, die
-anderen sehen es.
+Karte –, dazu ein Katalog mit Ideen für alles ohne Termin, sortiert danach,
+was eine Aktivität bringt (Flow, Bewegung, Erholung, Produktiv). Und
+gemeinsam geplant: Wer Bock auf etwas hat, hakt es an, die anderen sehen es.
 
 **Adresse:** <https://finanzdienste.github.io/Freizeit/>
 (Android: in Chrome öffnen, Menü ⋮ → „App installieren“; iPhone: in Safari
 öffnen, Teilen → „Zum Home-Bildschirm“).
 
-Vier Reiter:
+Fünf Reiter:
 
 | Reiter | Inhalt |
 | --- | --- |
-| **Programm** | Woche für Woche zum Blättern: Highlights, Filter, Tag für Tag nach Uhrzeit, was gerade läuft, Ausflugsziele, Hinweise. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler |
+| **Programm** | Woche für Woche zum Blättern: Highlights, Filter, Tag für Tag nach Uhrzeit (Eingeplantes oben am Tag), was gerade läuft, Hinweise. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler und Eingeplantes |
 | **Kalender** | Monatsblatt mit der Zahl der Termine je Tag und farbigen Punkten, wer Bock hat; darunter der gewählte Tag |
-| **Karte** | OpenStreetMap, ein Marker je Ort (nahe zu Haufen zusammengefasst), Zeiträume von „Heute“ bis „Alles“ und „Mit Bock“ |
+| **Karte** | OpenStreetMap, ein Marker je Ort (nahe zu Haufen zusammengefasst), Zeiträume von „Heute“ bis „Alles“ und „Mit Bock“, mit „💡 Ideen“ auch die Orte aus dem Ideen-Katalog |
+| **Ideen** | Alles ohne Termin: Eingeplantes, „Wollen wir mal“ (Ideen mit Bock), „Tut dir gut“, Filter nach Wirkung und Rahmen, der Katalog nach Kategorien, eigene Ideen |
 | **Wir** | Der gemeinsame Plan: Treffer (ihr beide habt Bock), alle Haken mit Namen, Einladen, Name ändern, Verlassen. Ohne Plan die eigene Bock-Liste |
 
 Jeder Eintrag hat **Bock** (Haken), **WhatsApp** (fertige Nachricht: Titel,
@@ -43,6 +45,42 @@ und Ausstellungen sind zum Kommen und Gehen – dort reicht ein Beginn bis
 
 Gerechnet wird in `js/zeit.js` und `js/filter.js`, geprüft in
 `tests/test-programm.mjs`.
+
+## Ideen
+
+Der Katalog `daten/ideen.json` ist von Hand gepflegt (rund 150 Ideen, Stand
+Oktober 2026) und ändert sich nicht mit dem Montagslauf. Jede Idee hat eine
+Kategorie, eine **Wirkung** und einen Rahmen:
+
+- **⚡ Flow** – fordert Können, hat ein klares Ziel und gibt sofort
+  Rückmeldung; die Zeit verfliegt. Flow-Ideen bringen meist ein konkretes
+  **Ziel** mit („Zählt eure längste Ballwechsel-Serie …“) – ein klares Ziel
+  senkt die Hürde, anzufangen.
+- **Bewegung**, **Erholung**, **Produktiv** (man lernt oder schafft etwas).
+- Rahmen: Zuhause / Hamburg / Ausflug, drinnen / draußen, Dauer, mit wem,
+  kostenlos, Saison (außerhalb der Saison erst auf Wunsch sichtbar).
+
+Gefiltert wird mit Schaltern; mehrere Wirkungen müssen alle zutreffen. Bei
+Ideen mit Ort stehen die Orte mit Link, Preis und Zeiten dabei, auf der
+Karte als gestrichelte Marker.
+
+**Einplanen** macht aus einer Idee einen Termin an einem Tag (bei mehreren
+Orten mit Wahl des Orts): Er steht im Programm, im Kalender und auf der
+Karte, mit WhatsApp- und Kalender-Knopf, und im gemeinsamen Plan bei allen.
+**Gemacht** fragt „Wie war's?“ (😐 naja, 🙂 gut, 😄 super) und ob die Zeit
+verflogen ist; nach einem eingeplanten Tag fragt die App von selbst. Daraus
+wird **„Tut dir gut“** – vorn, was im Schnitt am besten war und öfter Flow
+brachte. Dieser Verlauf bleibt nur auf dem Gerät (`verlauf` im
+localStorage), er geht an keinen Server.
+
+**Eigene Ideen** legt man mit „+ Eigene Idee“ an. Wie Eingeplantes sind sie
+Bock-Haken mit Schnappschuss – im gemeinsamen Plan sehen alle sie, ohne dass
+der Server etwas Neues können muss. Eine eigene Idee gibt es, solange jemand
+Bock darauf hat.
+
+Schlüssel der Bock-Haken: `i:<id>` Idee aus dem Katalog (dieselben
+Kennungen wie früher „Geht immer“), `e:<zufall>` eigene Idee,
+`p:<tag>:<Schlüssel der Idee>` eingeplant.
 
 ## Gemeinsam planen
 
@@ -78,12 +116,15 @@ Anzeigen durch `esc()`, Links nur mit http(s).
 ## Woher die Daten kommen
 
 Die App ändert ihre Daten nie selbst. Der geplante Lauf
-„Freizeit-Wochenplan Hamburg“ schreibt sie montags gegen 7 Uhr:
+„Freizeit-Wochenplan Hamburg“ schreibt montags gegen 7 Uhr:
 
 | Datei | Inhalt |
 | --- | --- |
 | `daten/programm.json` | Montag dieser Woche bis Sonntag in fünf Wochen, dazu die Konzerte der eigenen Künstler der nächsten zwölf Monate |
 | `daten/orte.json` | Hilfe für den Lauf: Koordinaten je Ortsangabe, damit er bekannte Orte nicht jede Woche neu sucht. Die App liest sie nicht |
+
+`daten/ideen.json` schreibt der Lauf nicht – der Katalog wird von Hand
+gepflegt (Format unten).
 
 Neue Releases und Song-Tipps schickt derselbe Lauf nur als Nachricht.
 
@@ -145,9 +186,6 @@ nach ein bis zwei Minuten steht die neue Datei unter
   "laufend": [
     { "id": "weihnachtsmarkt-rathausmarkt", "von": "2026-11-23", "bis": "2026-12-23", "zeit": "So–Do 11–21, Fr/Sa 11–22", "titel": "…", "ort": "Rathausmarkt", "geo": [53.5503, 9.9930], "region": "HH", "kategorie": "Fest & Saisonal", "kostenlos": true, "draussen": "draußen", "link": "https://…" }
   ],
-  "immer": [
-    { "id": "miniatur-wunderland", "titel": "Miniatur Wunderland", "ort": "Speicherstadt", "geo": [53.54386, 9.98858], "region": "HH", "kategorie": "Ausstellung", "zeiten": "täglich ab 9:30", "preis": "Erw. 22 €", "draussen": "drinnen", "anreise": "U3 Baumwall", "link": "https://…" }
-  ],
   "hinweise": [{ "titel": "Abgesagt", "text": "…" }, { "text": "Quellen u. a.: …" }]
 }
 ```
@@ -191,6 +229,56 @@ im Programm unter „Läuft gerade“, nicht an jedem Tag einzeln.
 15:30-Filter noch die 21:30-Regel für den Vorabend). `vorFeiertag: true` am
 Sonntag, wenn der Montag danach ein Feiertag ist.
 
+**Immer** – Ausflugsziele unabhängig von Terminen schrieben die Läufe bis
+Oktober 2026 als `immer` mit; sie stehen jetzt im Ideen-Katalog (dieselben
+Kennungen). Steht in einer älteren Datei noch ein `immer`, das der Katalog
+nicht kennt, zeigt der Reiter Ideen es trotzdem.
+
+### `daten/ideen.json`
+
+```json
+{
+  "version": 1,
+  "stand": "2026-10-27",
+  "ideen": [
+    {
+      "id": "tischtennis",
+      "titel": "Tischtennis im Park",
+      "kategorie": "sport",
+      "text": "Schläger und Bälle einpacken und an eine öffentliche Platte …",
+      "wirkung": ["flow", "bewegung"],
+      "mit": ["zu zweit", "gruppe"],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "saison": [3, 4, 5, 6, 7, 8, 9, 10],
+      "braucht": "Schläger und Bälle …",
+      "ziel": "Zählt eure längste Ballwechsel-Serie und schlagt sie beim nächsten Mal.",
+      "link": "https://pingpongmap.net/Hamburg",
+      "orte": [
+        { "name": "Hammer Park", "teil": "Hamm", "geo": [53.55871, 10.05939], "link": "https://…", "info": "zwei Plattenpaare …" }
+      ]
+    }
+  ]
+}
+```
+
+| Feld | Bedeutung |
+| --- | --- |
+| `id` | stabile Kennung, klein mit Bindestrichen – Bock-Haken und „Wie war's?“ hängen daran; **nie umbenennen** |
+| `kategorie` | `sport`, `spiele`, `kreativ`, `genuss`, `natur`, `kultur`, `entspannen`, `lernen`, `ausflug` |
+| `wirkung` | Liste aus `flow`, `bewegung`, `erholung`, `produktiv` (darf leer sein) |
+| `mit` | Liste aus `allein`, `zu zweit`, `gruppe` |
+| `wo` | `zuhause`, `hamburg` (auch Umland mit dem HVV) oder `ausflug` |
+| `draussen` · `dauer` | `drinnen`/`draußen`/`beides` · `kurz` (bis 2 Std.)/`halbtags`/`ganztags` |
+| `kostenlos` · `preis` | `true` · Text, z. B. „Tageskarte ca. 16–18 €“ |
+| `saison` | Monate 1–12, in denen die Idee passt; ohne Feld das ganze Jahr |
+| `ziel` | eine konkrete Herausforderung – bei Flow-Ideen als „⚡ Flow-Ziel“ |
+| `braucht` · `zeiten` · `anreise` | Text; `anreise` ist Pflicht bei `wo: ausflug` |
+| `hohwacht` | `true`, wenn sie zu einem Besuch in Hohwacht passt |
+| `link` · `orte` | Info-Link; Orte mit `name`, `teil` (Stadtteil), `geo`, `link`, `info` |
+
 ## Aufbau
 
 Wie die Workout-App: kein Bauschritt, ES-Module, eigener Service Worker
@@ -213,13 +301,14 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `js/app.js` | Einstieg, Reiter, Knöpfe, Abgleich, Service Worker |
 | `js/zeit.js` | Datum, Uhrzeit, Wochen und Monate, beide Zeitregeln |
 | `js/filter.js` | Filter, was an einem Tag steht, was gerade läuft |
-| `js/daten.js` | Laden und Prüfen von `daten/programm.json` |
+| `js/daten.js` | Laden und Prüfen von `daten/programm.json`, Laden des Ideen-Katalogs |
+| `js/ideen.js` | Ideen: Katalog prüfen, eigene und eingeplante Ideen, Filter, Saison, „Tut dir gut“ |
 | `js/karte.js` | Einträge bauen und als Karte zeichnen (Bock, wer hat Bock) |
 | `js/teilen.js` | WhatsApp-Nachricht, Google-Kalender-Link, .ics |
-| `js/speicher.js` | Filter, eigene Haken mit Schnappschuss, Warteschlange |
+| `js/speicher.js` | Filter, eigene Haken mit Schnappschuss, Warteschlange, Verlauf „Wie war's?“ |
 | `js/gemeinsam.js` | der gemeinsame Plan: Code, Beitreten, Abgleich mit Supabase |
 | `js/config.js` | Adresse und öffentlicher Schlüssel des Servers |
-| `js/ansicht-*.js` | die vier Reiter |
+| `js/ansicht-*.js` | die fünf Reiter |
 | `supabase/gemeinsam.sql` | Tabellen und Funktionen für den gemeinsamen Plan |
 
 ## Tests
@@ -227,7 +316,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
     npm ci                      # einmal: Playwright, ESLint, PGlite
     npm run lint
     node tests/lauf.mjs         # alle
-    node tests/test-daten.mjs   # nur die Datendatei – braucht kein npm ci
+    node tests/test-daten.mjs   # nur die Datendateien – braucht kein npm ci
 
 | Test | prüft |
 | --- | --- |
@@ -235,9 +324,10 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `test-kalender.mjs` | Monatsblatt, Zahlen, Bock-Punkte, Monate nach dem Programm |
 | `test-landkarte.mjs` | Marker, Zeiträume, Liste am Marker, Haken aus der Karte |
 | `test-wir.mjs` | der gemeinsame Plan zu zweit (iPhone), offline, zweites Gerät, Verlassen, fremder Text |
-| `test-teilen.mjs` | WhatsApp, Google Kalender, .ics |
+| `test-ideen.mjs` | Katalog, Filter nach Wirkung, Saison, Bock, Einplanen (Programm, Kalender), Wie war's? und „Tut dir gut“, eigene Ideen zu zweit, fremder Text, Ideen auf der Karte |
+| `test-teilen.mjs` | WhatsApp, Google Kalender, .ics – auch für Eingeplantes |
 | `test-offline.mjs` | Offline-Vorrat, App ohne Netz |
-| `test-daten.mjs` | `daten/programm.json` und `daten/orte.json` |
+| `test-daten.mjs` | `daten/programm.json`, `daten/ideen.json` und `daten/orte.json` |
 | `test-sql.mjs` | `supabase/gemeinsam.sql` in PGlite: Funktionen, Rechte, Grenzen |
 
 Die Browsertests laufen gegen feste Testdaten und einen nachgebauten Server

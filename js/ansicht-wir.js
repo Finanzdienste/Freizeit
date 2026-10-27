@@ -17,6 +17,7 @@ import { karte, alleEintraege, wannKurz } from './karte.js';
 import { meinBock } from './speicher.js';
 import { andere, hakenDerAnderen, syncStatus, einladungsLink, person } from './gemeinsam.js';
 import { istApple } from './teilen.js';
+import { planAusSchnappschuss, ideeAusSchnappschuss } from './ideen.js';
 
 /** Läuft die App vom Home-Bildschirm (und nicht im Browser)? */
 export const alsApp = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
@@ -30,16 +31,18 @@ const sortiert = (liste) => [...liste].sort((a, b) => {
 });
 
 /** Alle Einträge mit Haken: frisch aus den Daten, sonst aus dem Schnappschuss. */
-function eintraegeMitHaken(p, st) {
-  const frisch = alleEintraege(p);
+function eintraegeMitHaken(p, ideen, st) {
+  const frisch = alleEintraege(p, ideen);
   const schnapp = new Map();
   for (const [k, v] of Object.entries(st.bock)) schnapp.set(k, v);
   for (const b of hakenDerAnderen()) if (!schnapp.has(b.eintrag) && b.daten) schnapp.set(b.eintrag, b.daten);
   return [...schnapp.keys()].map((k) => {
     if (frisch.has(k)) return frisch.get(k);
     const s = schnapp.get(k) || {};
+    if (k.startsWith('p:')) return planAusSchnappschuss(k, s);
+    if (k.startsWith('e:') || k.startsWith('i:')) return ideeAusSchnappschuss(k, s);
     return { ...s, schluessel: k, titel: String(s.titel || 'Eintrag'), link: sichererLink(s.link), quelle: s.quelle || 'termin' };
-  });
+  }).filter(Boolean);
 }
 
 function iPhoneSchritte(code) {
@@ -136,11 +139,16 @@ function kopf(st, ui) {
   ${g.stand.personen.length <= 1 ? '<div class="banner">Noch bist du allein in diesem Plan. Tipp auf „Einladen“ und schick den Link.</div>' : ''}`;
 }
 
-export function wirAnsicht(p, st, heute, ui = {}) {
-  const alle = eintraegeMitHaken(p, st);
-  const kommend = sortiert(alle.filter((e) => !vorbei(e, heute)));
-  const alt = sortiert(alle.filter((e) => vorbei(e, heute)));
+export function wirAnsicht(p, ideen, st, heute, ui = {}) {
+  const alle = eintraegeMitHaken(p, ideen, st);
+  // Ideen haben kein Datum – sie stehen im Reiter Ideen unter „Wollen wir mal“.
+  const ideenMitHaken = alle.filter((e) => e.quelle === 'idee');
+  const datiert = alle.filter((e) => e.quelle !== 'idee');
+  const kommend = sortiert(datiert.filter((e) => !vorbei(e, heute)));
+  const alt = sortiert(datiert.filter((e) => vorbei(e, heute)));
   const karten = (es) => es.map((e) => karte(e, { zeitSpalte: true, zeitText: wannKurz(e) })).join('');
+  const ideenZeile = ideenMitHaken.length
+    ? `<p class="fein">Außerdem ${anzahl(ideenMitHaken.length, 'Idee', 'Ideen')} mit Bock – im Reiter <button type="button" class="textknopf" data-reiter="ideen">Ideen</button> unter „Wollen wir mal“.</p>` : '';
 
   if (!st.gemeinsam) {
     return `<header class="woche-kopf"><h2 class="abschnitt-titel">Wir</h2>
@@ -148,11 +156,12 @@ export function wirAnsicht(p, st, heute, ui = {}) {
       ${einrichten(st, ui)}
       <section class="abschnitt"><h2 class="abschnitt-titel">Deine Bock-Liste</h2>
         ${kommend.length ? karten(kommend) : '<div class="leer-klein">Noch keine Haken. Tippe bei einem Termin auf „Bock“.</div>'}
+        ${ideenZeile}
       </section>
       ${alt.length ? `<section class="abschnitt vorbei-liste"><div class="zeile"><h2 class="monat">Vorbei</h2><button type="button" class="knopf" data-aktion="vorbei-weg">Vorbei entfernen</button></div>${karten(alt)}</section>` : ''}`;
   }
 
-  const treffer = kommend.filter((e) => meinBock(e.schluessel) && andere(e.schluessel).length);
+  const treffer = [...kommend, ...ideenMitHaken].filter((e) => meinBock(e.schluessel) && andere(e.schluessel).length);
   const g = st.gemeinsam;
   const andereNamen = g.stand.personen.filter((x) => x.id !== g.ich.id).map((x) => x.name);
   return `${kopf(st, ui)}
@@ -161,6 +170,7 @@ export function wirAnsicht(p, st, heute, ui = {}) {
       <h2 class="abschnitt-titel">Alle Haken</h2>
       ${kommend.length ? `<p class="fein">${anzahl(kommend.length, 'Eintrag', 'Einträge')} vor euch. Farbig: wer außer dir Bock hat.</p>${karten(kommend)}`
     : `<div class="leer-klein">Noch keine Haken. Tippe bei einem Termin auf „Bock“${andereNamen.length ? ` – ${esc(andereNamen.join(' und '))} ${andereNamen.length === 1 ? 'sieht' : 'sehen'} es dann` : ''}.</div>`}
+      ${ideenZeile}
     </section>
     ${alt.length ? `<details class="abschnitt vorbei-liste"><summary class="monat">Vorbei (${alt.length})</summary>
       <div class="zeile"><span class="fein">Deine eigenen vergangenen Haken lassen sich wegräumen.</span><button type="button" class="knopf" data-aktion="vorbei-weg">Vorbei entfernen</button></div>

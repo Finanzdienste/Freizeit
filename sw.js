@@ -10,9 +10,9 @@
  * Drei Strategien:
  *
  *   Seitenaufrufe   erst Netz, bei Fehlschlag der Zwischenspeicher.
- *   daten/*.json    erst Netz, bei Fehlschlag der Zwischenspeicher – die
- *                   Daten ändern sich jede Woche, eine alte Fassung darf nur
- *                   ohne Netz kommen.
+ *   daten/*.json    erst Netz, bei Fehlschlag der Zwischenspeicher – das
+ *                   Programm ändert sich jede Woche, der Ideen-Katalog ab und
+ *                   zu; eine alte Fassung darf nur ohne Netz kommen.
  *   Alles andere    sofort aus dem Zwischenspeicher, parallel erneuern.
  *
  * VERSION bei jeder Änderung an einer der unten gelisteten Dateien
@@ -21,7 +21,7 @@
  * Datei zu müssen.
  */
 
-const VERSION = 'v4';
+const VERSION = 'v5';
 const CACHE = `freizeit-${VERSION}`;
 
 const SHELL = [
@@ -41,7 +41,9 @@ const SHELL = [
   './js/ansicht-programm.js',
   './js/ansicht-kalender.js',
   './js/ansicht-landkarte.js',
+  './js/ansicht-ideen.js',
   './js/ansicht-wir.js',
+  './js/ideen.js',
   './vendor/leaflet/leaflet.js',
   './vendor/leaflet/leaflet.css',
   './vendor/leaflet/leaflet.markercluster.js',

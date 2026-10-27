@@ -1,0 +1,4293 @@
+{
+  "version": 1,
+  "stand": "2026-10-27",
+  "ideen": [
+    {
+      "id": "tischtennis",
+      "titel": "Tischtennis im Park",
+      "kategorie": "sport",
+      "text": "Schläger und Bälle einpacken und an eine öffentliche Platte – die stehen in vielen Hamburger Parks, kostenlos und ohne Anmeldung.",
+      "wirkung": [
+        "flow",
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "saison": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "braucht": "Schläger und Bälle – Einsteiger-Sets gibt's im Sportgeschäft",
+      "ziel": "Zählt eure längste Ballwechsel-Serie und schlagt sie beim nächsten Mal.",
+      "link": "https://pingpongmap.net/Hamburg",
+      "orte": [
+        {
+          "name": "Eichtalpark",
+          "teil": "Wandsbek",
+          "geo": [
+            53.57972,
+            10.09106
+          ],
+          "link": "https://pingpongmap.net/8871",
+          "info": "Platte im Park an der Wandse"
+        },
+        {
+          "name": "Hammer Park",
+          "teil": "Hamm",
+          "geo": [
+            53.55871,
+            10.05939
+          ],
+          "link": "https://pingpongmap.net/817",
+          "info": "zwei Plattenpaare, das Minigolf liegt gleich nebenan"
+        },
+        {
+          "name": "Stadtpark",
+          "teil": "Winterhude",
+          "geo": [
+            53.59691,
+            10.02112
+          ],
+          "link": "https://pingpongmap.net/1815",
+          "info": "zwei Platten am Planschbecken"
+        },
+        {
+          "name": "Sternschanzenpark",
+          "teil": "Sternschanze",
+          "geo": [
+            53.56608,
+            9.97001
+          ],
+          "link": "https://pingpongmap.net/3190",
+          "info": "mehrere Platten am Westrand des Parks"
+        }
+      ]
+    },
+    {
+      "id": "bouldern",
+      "titel": "Bouldern",
+      "kategorie": "sport",
+      "text": "Klettern ohne Seil in Absprunghöhe – jede Route ist ein kleines Rätsel. Schuhe kann man leihen, Vorkenntnisse braucht es nicht.",
+      "wirkung": [
+        "flow",
+        "bewegung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "Tageskarte ca. 16–18 €, Schuhe ca. 4–5 €",
+      "ziel": "Jedes Mal einen Boulder eine Stufe schwerer probieren – und den vom letzten Mal sauber durchsteigen.",
+      "orte": [
+        {
+          "name": "urban apes Hamburg Ost",
+          "teil": "Wandsbek",
+          "geo": [
+            53.57637,
+            10.08046
+          ],
+          "link": "https://www.urbanapes.de/hamburg-ost/preise-zeiten/",
+          "info": "Tageskarte 16,90 €, Mo–Fr bis 16 Uhr 14,90 € · Mo–Do 10–23, Fr 10–22, Sa/So 9–21 Uhr"
+        },
+        {
+          "name": "Boulderwelt Hamburg",
+          "teil": "St. Georg (Berliner Tor)",
+          "geo": [
+            53.55369,
+            10.02109
+          ],
+          "link": "https://www.boulderwelt-hamburg.de/preise/",
+          "info": "größte Boulderhalle Hamburgs · 17,90 €, vor 9 und nach 21 Uhr 14,90 € · Mo–Fr 7–23, Sa/So 8–23 Uhr"
+        },
+        {
+          "name": "FLASHH",
+          "teil": "Bahrenfeld",
+          "geo": [
+            53.56307,
+            9.91325
+          ],
+          "link": "https://www.flashh.de/preise",
+          "info": "über 200 Boulder · 15,90 €, vor 16 Uhr und montags ganztags 11,90 €"
+        }
+      ]
+    },
+    {
+      "id": "klettern",
+      "titel": "Klettern mit Seil",
+      "kategorie": "sport",
+      "text": "Hohe Wände, Seil und Partner: Wer noch nie gesichert hat, startet mit einem Schnupperklettern mit Trainer.",
+      "wirkung": [
+        "flow",
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "preis": "Tageskarte ca. 19–20 € plus Leihausrüstung",
+      "ziel": "Nach der Einführung eine Route im nächsthöheren Grad bis oben schaffen.",
+      "orte": [
+        {
+          "name": "DAV Kletterzentrum Hamburg",
+          "teil": "Lokstedt",
+          "geo": [
+            53.59717,
+            9.9528
+          ],
+          "link": "https://www.dav-hamburg.de/kletterzentrum/Preise",
+          "info": "größte Kletteranlage Norddeutschlands · Tageskarte 19 € · Schnupperklettern mit Trainer"
+        },
+        {
+          "name": "Nordwandhalle",
+          "teil": "Wilhelmsburg",
+          "geo": [
+            53.49428,
+            10.00297
+          ],
+          "link": "https://nordwandhalle.de/preise",
+          "info": "320 Routen, ein Teil davon draußen · Klettern und Bouldern 19,90 €"
+        }
+      ]
+    },
+    {
+      "id": "kletterwald",
+      "titel": "Kletterwald",
+      "kategorie": "sport",
+      "text": "Parcours in 2 bis 10 Metern Höhe zwischen den Bäumen – fast alle enden mit einer Seilbahn.",
+      "wirkung": [
+        "flow",
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "saison": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "preis": "36 € für 2,5 Std.",
+      "ziel": "Den schwierigsten Parcours schaffen, ohne einmal abzubrechen.",
+      "orte": [
+        {
+          "name": "Kletterwald Hamburg",
+          "teil": "Volksdorf",
+          "geo": [
+            53.63877,
+            10.16018
+          ],
+          "link": "https://www.kletterwald-hamburg.com/preise",
+          "info": "8 Parcours · Saison Frühjahr bis Mitte Oktober · U1 Meiendorfer Weg"
+        }
+      ]
+    },
+    {
+      "id": "trampolin",
+      "titel": "Trampolinhalle",
+      "kategorie": "sport",
+      "text": "Eine Stunde springen, Saltos üben, Ninja-Parcours – anstrengender, als es aussieht. Bei JUMP House freitagabends mit Clubatmosphäre.",
+      "wirkung": [
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "ca. 14–17 € pro Stunde",
+      "orte": [
+        {
+          "name": "SPRUNG.RAUM",
+          "teil": "Wandsbek",
+          "geo": [
+            53.57455,
+            10.09132
+          ],
+          "link": "https://www.sprungraum.de/hamburg",
+          "info": "über 7.000 m² mit Indoor-Seilbahn · 60 Min. 16,90 €, mittwochs 90 Min. 16,90 €"
+        },
+        {
+          "name": "JUMP House Poppenbüttel",
+          "teil": "Poppenbüttel",
+          "geo": [
+            53.672,
+            10.07269
+          ],
+          "link": "https://www.jumphouse.de/hamburg/poppenbuettel/",
+          "info": "freitags 19–22 Uhr Night JUMP · ab 13,99 €"
+        }
+      ]
+    },
+    {
+      "id": "minigolf",
+      "titel": "Minigolf",
+      "kategorie": "sport",
+      "text": "18 Bahnen, ein Schläger, ein bisschen Ehrgeiz – draußen im Park oder drinnen im Schwarzlicht.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "beides",
+      "dauer": "kurz",
+      "preis": "4–17 € pro Person",
+      "orte": [
+        {
+          "name": "Minigolf im Stadtpark",
+          "teil": "Winterhude",
+          "geo": [
+            53.59275,
+            10.02052
+          ],
+          "link": "https://www.minigolf-stadtpark-hamburg.com/minigolf",
+          "info": "4 € pro Runde, nur bar · fast ganzjährig Mi–So"
+        },
+        {
+          "name": "CRAZY miniGOLF im Hammer Park",
+          "teil": "Hamm",
+          "geo": [
+            53.55915,
+            10.05978
+          ],
+          "link": "https://www.crazy-minigolf.de/minigolf-eintrittspreise-hamburg.html",
+          "info": "bunt bemalte Anlage von 1959 · 5 € · April–Oktober"
+        },
+        {
+          "name": "Schwarzlichtviertel",
+          "teil": "Stellingen",
+          "geo": [
+            53.59957,
+            9.91612
+          ],
+          "link": "https://www.schwarzlichtviertel.de/de/preiseinfo/",
+          "info": "Schwarzlicht-Minigolf drinnen · 17 € pro Person"
+        },
+        {
+          "name": "CHiPPER SOCIAL St. Pauli",
+          "teil": "St. Pauli",
+          "geo": [
+            53.54914,
+            9.96439
+          ],
+          "link": "https://www.chippersocialstpauli.de/minigolf-2",
+          "info": "Indoor-Minigolf in einer Bar, ab 18 · 18 Loch 14 €"
+        }
+      ]
+    },
+    {
+      "id": "bowling",
+      "titel": "Bowling",
+      "kategorie": "sport",
+      "text": "Eine Bahn für eine Stunde, Schuhe leihen, losrollen – freitags und samstags spätabends oft mit Musik und Discolicht.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "Bahn ca. 25–42 € pro Stunde",
+      "ziel": "Euren Schnitt notieren und beim nächsten Mal schlagen.",
+      "orte": [
+        {
+          "name": "Gilde Bowling Wandsbek",
+          "teil": "Wandsbek",
+          "geo": [
+            53.57544,
+            10.07452
+          ],
+          "link": "https://gildebowling.com/bowling/",
+          "info": "24 Bahnen · Fr/Sa ab 21 Uhr mit Musik"
+        },
+        {
+          "name": "U.S. FUN Bowling",
+          "teil": "Barmbek-Süd",
+          "geo": [
+            53.57438,
+            10.03571
+          ],
+          "link": "https://www.usfun-bowling.de/bowling-2/open-bowling/",
+          "info": "Lounge-Bahnen, Essen an der Bahn · ab 25 €/Std."
+        },
+        {
+          "name": "Gilde-Bowling 44",
+          "teil": "Othmarschen",
+          "geo": [
+            53.55774,
+            9.90065
+          ],
+          "link": "https://www.gilde-bowling.de/preise/",
+          "info": "44 Bahnen, dazu Billard und Darts"
+        }
+      ]
+    },
+    {
+      "id": "kartfahren",
+      "titel": "Kartfahren",
+      "kategorie": "sport",
+      "text": "Rundenzeiten jagen auf der Indoor-Bahn – bei BattleKart mit Spielmodi, die auf die Strecke projiziert werden.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "ca. 15–38 € pro Lauf",
+      "ziel": "Eure beste Rundenzeit notieren und unterbieten.",
+      "orte": [
+        {
+          "name": "BattleKart Hamburg-Bergedorf",
+          "teil": "Curslack",
+          "geo": [
+            53.47411,
+            10.23871
+          ],
+          "link": "https://www.battlekart.com/de/hamburg-bergedorf",
+          "info": "E-Kart mit Augmented Reality · 15 Min. ab 22 €"
+        },
+        {
+          "name": "Mega Kart Norderstedt",
+          "teil": "Norderstedt",
+          "geo": [
+            53.66608,
+            9.98766
+          ],
+          "link": "https://www.mega-kart.de/preise.php",
+          "info": "klassische E-Kartbahn · 30 Min. mit Quali und Rennen 38 €"
+        }
+      ]
+    },
+    {
+      "id": "lasertag",
+      "titel": "Lasertag",
+      "kategorie": "sport",
+      "text": "Teams, Westen, eine verwinkelte Arena auf mehreren Ebenen – am besten mit ein paar Freunden.",
+      "wirkung": [
+        "bewegung"
+      ],
+      "mit": [
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "ab 17,90 € (online, Mo–Fr)",
+      "orte": [
+        {
+          "name": "LaserZone Hamburg",
+          "teil": "Othmarschen",
+          "geo": [
+            53.55774,
+            9.90065
+          ],
+          "link": "https://laserzone.de/lasertag-hamburg/preise/",
+          "info": "1.400 m² Arena · Fr/Sa abends ab 16"
+        }
+      ]
+    },
+    {
+      "id": "eislaufen",
+      "titel": "Eislaufen",
+      "kategorie": "sport",
+      "text": "Unter freiem Himmel mitten in Planten un Blomen oder in der Halle – freitags und samstags abends legt in der EisArena ein DJ auf.",
+      "wirkung": [
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "beides",
+      "dauer": "kurz",
+      "saison": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "preis": "ab 8 € plus Schlittschuhverleih",
+      "orte": [
+        {
+          "name": "EisArena Planten un Blomen",
+          "teil": "Neustadt",
+          "geo": [
+            53.55348,
+            9.97545
+          ],
+          "link": "https://www.eisarena-hamburg.de/preise",
+          "info": "4.300 m² unter freiem Himmel · 15 € für 2,5 Std., dienstags ab 14 Uhr 10 € · bis Ende März"
+        },
+        {
+          "name": "Eisland Farmsen",
+          "teil": "Farmsen-Berne",
+          "geo": [
+            53.60442,
+            10.12043
+          ],
+          "link": "https://www.eisland-hamburg.de/",
+          "info": "Eishalle mit Musik und Lichteffekten · 8 € · Laufzeiten vorher prüfen"
+        }
+      ]
+    },
+    {
+      "id": "alster-boot",
+      "titel": "Boot fahren auf der Alster",
+      "kategorie": "sport",
+      "text": "Tretboot, Kanu oder SUP leihen und über die Außenalster oder durch die Kanäle zwischen den Villengärten paddeln.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "saison": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "preis": "ca. 15–18 € pro Stunde für zwei",
+      "orte": [
+        {
+          "name": "Hansa-Steg",
+          "teil": "Uhlenhorst",
+          "geo": [
+            53.56991,
+            10.00953
+          ],
+          "link": "https://www.hansa-steg.de/bootsvermietung/",
+          "info": "Tret-, Ruderboot oder Kanu 18 €/Std. für 2, SUP 14 € · April–September"
+        },
+        {
+          "name": "Bootsvermietung Dornheim",
+          "teil": "Winterhude",
+          "geo": [
+            53.58491,
+            10.03051
+          ],
+          "link": "https://www.bootsvermietung-dornheim.de/bootsvermietung/preisliste",
+          "info": "über 100 Boote für die Kanäle · ab 15 €/Std. für 2 · ohne Reservierung"
+        }
+      ]
+    },
+    {
+      "id": "schwimmen",
+      "titel": "Schwimmen",
+      "kategorie": "sport",
+      "text": "Bahnen ziehen im 50-Meter-Becken – oder im Winter draußen im warmen Wasser, wenn es dampft.",
+      "wirkung": [
+        "bewegung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "beides",
+      "dauer": "kurz",
+      "preis": "ab 7,90 €",
+      "ziel": "Einmal 1.000 Meter am Stück – danach die Zeit drücken.",
+      "orte": [
+        {
+          "name": "Alsterschwimmhalle",
+          "teil": "Hohenfelde",
+          "geo": [
+            53.56032,
+            10.02154
+          ],
+          "link": "https://www.baederland.de/baeder/alle-baeder/alsterschwimmhalle/",
+          "info": "50-m-Becken und Sprungturm · Tageskarte 11,30 €, 1,5 Std. 7,90 €"
+        },
+        {
+          "name": "Familienbad Rahlstedt",
+          "teil": "Rahlstedt",
+          "geo": [
+            53.59869,
+            10.15131
+          ],
+          "link": "https://www.baederland.de/baeder/alle-baeder/familienbad-rahlstedt/",
+          "info": "Freibad auch im Winter · 7,90 € · Zeiten wechseln wochenweise"
+        }
+      ]
+    },
+    {
+      "id": "parkrun",
+      "titel": "parkrun",
+      "kategorie": "sport",
+      "text": "Jeden Samstag um 9 Uhr fünf Kilometer mit Zeitmessung – kostenlos, für Läufer wie Spaziergänger. Einmal online registrieren und den Barcode mitbringen.",
+      "wirkung": [
+        "flow",
+        "bewegung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "ziel": "Die eigene Bestzeit über 5 km jagen – parkrun schickt sie nach jedem Lauf.",
+      "orte": [
+        {
+          "name": "Alstervorland parkrun",
+          "teil": "Harvestehude",
+          "geo": [
+            53.57404,
+            10.00215
+          ],
+          "link": "https://www.parkrun.com.de/alstervorland/",
+          "info": "Start am Café AlsterCliff, zwei Runden"
+        },
+        {
+          "name": "Moorbek parkrun",
+          "teil": "Norderstedt",
+          "geo": [
+            53.70881,
+            9.99508
+          ],
+          "link": "https://www.parkrun.com.de/moorbek/",
+          "info": "im Moorbek Park, nah an der U1 Norderstedt Mitte"
+        }
+      ]
+    },
+    {
+      "id": "alsterrunde",
+      "titel": "Alsterrunde",
+      "kategorie": "sport",
+      "text": "7,4 Kilometer flach um die Außenalster, Wegsteine alle 500 Meter – zum Laufen oder als langer Spaziergang mit Kaffee unterwegs.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "ziel": "Laufen: unter 40 Minuten – oder jedes Mal ein bisschen schneller.",
+      "link": "https://www.hamburg-tourism.de/das-ist-hamburg/hamburg-ahoi/urlaub-ist-auch-bewegung-joggen-in-hamburg/",
+      "orte": [
+        {
+          "name": "Kilometer 0 am Café Cliff",
+          "teil": "Harvestehude",
+          "geo": [
+            53.57404,
+            10.00215
+          ]
+        }
+      ]
+    },
+    {
+      "id": "elberadweg",
+      "titel": "Radtour bis Zollenspieker",
+      "kategorie": "sport",
+      "text": "Ab den Landungsbrücken auf dem Elberadweg über HafenCity, Entenwerder und Ochsenwerder rund 25 Kilometer bis Zollenspieker – mit der Fähre über die Elbe und am anderen Ufer zurück, insgesamt gut 50 Kilometer.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "kostenlos": true,
+      "saison": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "braucht": "Fahrräder; die Fähre Zollenspieker–Hoopte fährt von März bis November",
+      "link": "https://www.elberadweg.de/planen-buchen/interaktive-karte-gps/",
+      "orte": [
+        {
+          "name": "Start Landungsbrücken",
+          "teil": "St. Pauli",
+          "geo": [
+            53.54623,
+            9.97114
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alsterwanderweg",
+      "titel": "Alsterwanderweg ab Poppenbüttel",
+      "kategorie": "sport",
+      "text": "Flussaufwärts durchs Alstertal: Hennebergpark, Mellingburger Schleuse und Rodenbeker Quellental bis zur Wohldorfer Schleuse – rund 7 Kilometer.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "ziel": "Den ganzen Südteil (22 km) in Etappen bis zur Binnenalster laufen.",
+      "anreise": "S1 bis Poppenbüttel (ca. 30 Min. ab Hbf); zurück ab „Duvenstedter Triftweg“ mit dem Bus 276",
+      "link": "https://www.hamburg.de/freizeit/ausfluege/wandern/wandern-alstertal-306526",
+      "orte": [
+        {
+          "name": "Start S Poppenbüttel",
+          "teil": "Poppenbüttel",
+          "geo": [
+            53.65218,
+            10.09402
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beachvolleyball",
+      "titel": "Beachvolleyball in der Halle",
+      "kategorie": "sport",
+      "text": "Sand unter den Füßen auch im Winter: einen Court für eine Stunde buchen, vier Leute reichen.",
+      "wirkung": [
+        "flow",
+        "bewegung"
+      ],
+      "mit": [
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "Court 52 €/Std. für 4 Personen",
+      "orte": [
+        {
+          "name": "Beach Hamburg",
+          "teil": "Dulsberg",
+          "geo": [
+            53.58834,
+            10.07437
+          ],
+          "link": "https://www.beachhamburg.de/preise_oeffnungszeiten.html",
+          "info": "drinnen und draußen, mit Bar · online buchbar"
+        }
+      ]
+    },
+    {
+      "id": "badminton",
+      "titel": "Badminton oder Squash",
+      "kategorie": "sport",
+      "text": "Ein Feld für eine Stunde, zu zweit gegeneinander – nach zehn Minuten seid ihr warm, nach einer Stunde platt.",
+      "wirkung": [
+        "flow",
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "Feld ab 19 €/Std.",
+      "ziel": "Ein Satz bis 21 – wer verliert, gibt das Getränk danach aus.",
+      "orte": [
+        {
+          "name": "Sportpark Öjendorf",
+          "teil": "Billstedt",
+          "geo": [
+            53.54736,
+            10.14152
+          ],
+          "link": "https://sportpark-oejendorf.de/badminton/",
+          "info": "9 Badmintonfelder, 6 Squashcourts · online buchbar"
+        }
+      ]
+    },
+    {
+      "id": "tanzkurs",
+      "titel": "Tanzkurs zu zweit",
+      "kategorie": "sport",
+      "text": "Ein Paarkurs über ein paar Wochen – Discofox und Walzer für die nächste Feier oder kubanische Salsa.",
+      "wirkung": [
+        "flow",
+        "bewegung",
+        "produktiv"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "ziel": "Einen Tanz so lernen, dass ihr ihn auf der nächsten Party ohne Mitzählen könnt.",
+      "orte": [
+        {
+          "name": "Tanzschule Walter Bartel",
+          "teil": "Uhlenhorst",
+          "geo": [
+            53.56902,
+            10.02633
+          ],
+          "link": "https://tanzschule-bartel.de/project/basic-1-welttanzprogramm/",
+          "info": "Grundkurs für Paare ab November · 59 € p. P./Monat für alle Paarkurse"
+        },
+        {
+          "name": "A Bailar Hamburg",
+          "teil": "Hamm",
+          "geo": [
+            53.54976,
+            10.06638
+          ],
+          "link": "https://www.abailar-hamburg.de/angebote",
+          "info": "Salsa Cubana, Anfängerkurs donnerstags · zwei Probestunden möglich"
+        }
+      ]
+    },
+    {
+      "id": "home-workout",
+      "titel": "Workout zu Hause",
+      "kategorie": "sport",
+      "text": "30 Minuten Kraft oder Mobility im Wohnzimmer – mit Plan statt nach Gefühl.",
+      "wirkung": [
+        "bewegung",
+        "produktiv"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "ziel": "Ein Programm vier Wochen durchziehen und am Ende den Test vom ersten Tag wiederholen."
+    },
+    {
+      "id": "yoga",
+      "titel": "Yoga am Abend",
+      "kategorie": "sport",
+      "text": "Eine ruhige Session mit einem Video – zum Runterkommen nach einem langen Tag.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true
+    },
+    {
+      "id": "park-spiele",
+      "titel": "Spikeball, Frisbee & Co.",
+      "kategorie": "sport",
+      "text": "Ein Ball- oder Wurfspiel mit in den Park nehmen – Spikeball, Frisbee oder Wikingerschach. Geht zu zweit, macht zu viert mehr Spaß.",
+      "wirkung": [
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "saison": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "braucht": "Spikeball-Set, Frisbee oder Kubb"
+    },
+    {
+      "id": "story-game",
+      "titel": "Story-Game weiterspielen",
+      "kategorie": "spiele",
+      "text": "Ein großes Open-World- oder Story-Spiel wie Assassin's Creed – bewusst als Abend eingeplant statt nebenbei.",
+      "wirkung": [
+        "flow",
+        "erholung"
+      ],
+      "mit": [
+        "allein"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "ziel": "Einen Abschnitt der Hauptgeschichte abschließen oder eine Region komplett erkunden."
+    },
+    {
+      "id": "koop-spiel",
+      "titel": "Koop-Spiel zu zweit",
+      "kategorie": "spiele",
+      "text": "Spiele, die nur zu zweit funktionieren, wie It Takes Two oder Split Fiction – jedes Kapitel bringt eine neue Spielidee.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "ziel": "Ein Kapitel pro Abend – wie eine Serie, nur gemeinsam gespielt."
+    },
+    {
+      "id": "retro-spiele",
+      "titel": "Retro-Spiele Club",
+      "kategorie": "spiele",
+      "text": "Ein bespielbares Museum mit Computern und Konsolen aus 50 Jahren – ohne Anmeldung hingehen und durchprobieren.",
+      "wirkung": [
+        "flow",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "3 Std. ab 10 €",
+      "orte": [
+        {
+          "name": "Retro Spiele Club",
+          "teil": "Barmbek-Nord",
+          "geo": [
+            53.60798,
+            10.03945
+          ],
+          "link": "https://www.retrospieleclub.de/sample-page/preise/",
+          "info": "Mo, Do, Fr 15–21, Sa 13–18 Uhr · 3 Std. 10–15 €, Tagesticket zu zweit 25–35 €"
+        }
+      ]
+    },
+    {
+      "id": "vr",
+      "titel": "VR-Erlebnis",
+      "kategorie": "spiele",
+      "text": "Free-Roam-VR mit Ganzkörper-Tracking: Ihr lauft frei durch die Spielwelt und spielt als Team.",
+      "wirkung": [
+        "flow",
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "ab 34,90 € pro Person und Spiel",
+      "orte": [
+        {
+          "name": "Sandbox VR Hamburg",
+          "teil": "HafenCity",
+          "geo": [
+            53.54233,
+            9.99736
+          ],
+          "link": "https://sandboxvr.com/de/hamburg/hafencity/booking/experiences",
+          "info": "1–6 Spieler · Mo–Do 10–20, Fr 11–22, Sa 10–23, So 10–20 Uhr"
+        }
+      ]
+    },
+    {
+      "id": "escape-room",
+      "titel": "Escape Room",
+      "kategorie": "spiele",
+      "text": "60 Minuten, ein verschlossener Raum, Rätsel über Rätsel – zu zweit gut machbar, zu viert entspannter.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "zu zweit ca. 47–55 € pro Person, in größeren Gruppen günstiger",
+      "ziel": "Ohne einen einzigen Hinweis rauskommen.",
+      "orte": [
+        {
+          "name": "Fluchtweg Hamburg – Wandsbek",
+          "teil": "Wandsbek",
+          "geo": [
+            53.57637,
+            10.08046
+          ],
+          "link": "https://www.fluchtweg-hamburg.de/escape-room-hamburg-wandsbek/",
+          "info": "Räume zur Hamburger Geschichte · zu zweit 100–110 € pro Gruppe"
+        },
+        {
+          "name": "EscapeDiem",
+          "teil": "St. Georg",
+          "geo": [
+            53.55453,
+            10.01071
+          ],
+          "link": "https://escapediem.de/preise/",
+          "info": "sechs aufwendig gebaute Räume nahe Hbf · zu zweit 47 € p. P."
+        },
+        {
+          "name": "pause & play",
+          "teil": "Altstadt",
+          "geo": [
+            53.55465,
+            10.00137
+          ],
+          "link": "https://pause-play.de/hamburg/escape-rooms/",
+          "info": "größter Anbieter Hamburgs · dienstags 120 € pro Raum, egal wie viele"
+        }
+      ]
+    },
+    {
+      "id": "escape-zuhause",
+      "titel": "Escape-Spiel für zu Hause",
+      "kategorie": "spiele",
+      "text": "Rätselspiele aus der Schachtel, etwa aus der EXIT-Reihe – ein Abend, ein Fall, danach ist das Spiel verbraucht.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "ziel": "Unter der angegebenen Zeit bleiben, ohne Hilfekarten."
+    },
+    {
+      "id": "brettspielcafe",
+      "titel": "Brettspielcafé",
+      "kategorie": "spiele",
+      "text": "Rund 3.000 Spiele im Regal, das Team erklärt die Regeln, dazu Pizza und Craft-Beer.",
+      "wirkung": [
+        "flow",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "8 € pro Person",
+      "orte": [
+        {
+          "name": "Würfel & Zucker",
+          "teil": "Eilbek",
+          "geo": [
+            53.5689,
+            10.04388
+          ],
+          "link": "https://www.wuerfelundzucker.de/willkommen/so-geht-s/",
+          "info": "Di–Fr 17–23, Sa/So 11–23 Uhr, montags zu · Reservierung nötig"
+        }
+      ]
+    },
+    {
+      "id": "spieleabend",
+      "titel": "Spieleabend zu Hause",
+      "kategorie": "spiele",
+      "text": "Catan & Co. – oder ein Spiel, das ihr noch nicht kennt. Mit Freunden oder zu zweit.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "ziel": "Ein Strategiespiel so oft spielen, bis jeder eine eigene Taktik hat."
+    },
+    {
+      "id": "kartenspiel",
+      "titel": "Kartenspiel zu zweit",
+      "kategorie": "spiele",
+      "text": "Kleine Spiele für zwei wie Lost Cities oder The Mind – passen in jede Jackentasche und auf jeden Cafétisch.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz"
+    },
+    {
+      "id": "puzzle",
+      "titel": "Puzzle",
+      "kategorie": "spiele",
+      "text": "1.000 Teile auf dem Tisch, die über ein paar Abende wachsen – mit Musik oder Hörbuch.",
+      "wirkung": [
+        "flow",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "ziel": "Ein 1.000er, ohne aufs Bild zu schauen."
+    },
+    {
+      "id": "schach",
+      "titel": "Schach",
+      "kategorie": "spiele",
+      "text": "Gegeneinander am Brett oder online auf lichess.org – kostenlos und werbefrei, mit Taktik-Aufgaben zum Trainieren.",
+      "wirkung": [
+        "flow",
+        "produktiv"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "link": "https://lichess.org/",
+      "ziel": "Jeden Tag zehn Taktik-Aufgaben – nach einem Monat die Wertung vergleichen."
+    },
+    {
+      "id": "karaoke",
+      "titel": "Karaoke",
+      "kategorie": "spiele",
+      "text": "Ein eigener Raum nur für euch, Songs per Tablet auswählen und los – auch schon zu zweit.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "orte": [
+        {
+          "name": "KOYA",
+          "teil": "St. Pauli",
+          "geo": [
+            53.55031,
+            9.96091
+          ],
+          "link": "https://koya.hamburg/",
+          "info": "Themenräume im Japan-Stil ab 2 Personen · 6,50–9 € p. P. je 90 Min. · Di–So"
+        },
+        {
+          "name": "Songs Karaoke Bar",
+          "teil": "Othmarschen",
+          "geo": [
+            53.55774,
+            9.90065
+          ],
+          "link": "https://www.songskaraokebar.com/reservations",
+          "info": "sechs private Räume · Preise auf Anfrage"
+        }
+      ]
+    },
+    {
+      "id": "pubquiz",
+      "titel": "Pubquiz",
+      "kategorie": "spiele",
+      "text": "Ein Abend, ein Team, ein Stapel Fragen – angemeldet wird meist direkt vor Ort.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "ziel": "Mit festem Teamnamen jede Woche einen Platz besser werden.",
+      "orte": [
+        {
+          "name": "Freundlich + Kompetent",
+          "teil": "Uhlenhorst",
+          "geo": [
+            53.57116,
+            10.02821
+          ],
+          "link": "https://www.freundlichundkompetent.de/",
+          "info": "jeden Mittwoch 19 Uhr, keine Reservierung"
+        },
+        {
+          "name": "Down Under",
+          "teil": "Rotherbaum",
+          "geo": [
+            53.56428,
+            9.98389
+          ],
+          "link": "https://down-under-hamburg.de/",
+          "info": "jeden Montag 18:30 Uhr, kostenlos, Tisch reservieren"
+        }
+      ]
+    },
+    {
+      "id": "billard-darts",
+      "titel": "Billard & Darts",
+      "kategorie": "spiele",
+      "text": "Ein Tisch oder eine Scheibe für eine Stunde – beim Darts zählt an den Automaten die Kamera mit.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "ca. 11–17 € pro Stunde und Tisch",
+      "ziel": "Beim Darts 301 runterspielen und die Pfeile zählen – jedes Mal weniger.",
+      "orte": [
+        {
+          "name": "Billardcafé Trio",
+          "teil": "Wandsbek",
+          "geo": [
+            53.58272,
+            10.07943
+          ],
+          "link": "https://www.trio-hamburg.de/",
+          "info": "30 Pool-Tische, Snooker, 29 Dartscheiben, Dachterrasse · täglich ab 16 Uhr"
+        },
+        {
+          "name": "Café Kö",
+          "teil": "Uhlenhorst",
+          "geo": [
+            53.57464,
+            10.0212
+          ],
+          "link": "https://www.cafe-koe-hamburg.de/billard.html",
+          "info": "Billard und 14 Dart-Automaten · ab 18, nur Barzahlung"
+        },
+        {
+          "name": "CHiPPER SOCIAL St. Pauli",
+          "teil": "St. Pauli",
+          "geo": [
+            53.54914,
+            9.96439
+          ],
+          "link": "https://www.chippersocialstpauli.de/minigolf-2",
+          "info": "Shuffleboard und Darts, 10 € p. P./Std. · ab 18"
+        }
+      ]
+    },
+    {
+      "id": "krimidinner",
+      "titel": "Krimidinner zu Hause",
+      "kategorie": "spiele",
+      "text": "Ein Krimidinner-Spiel mit Freunden: Rollen verteilen, verkleiden, zusammen kochen und beim Essen den Täter finden.",
+      "wirkung": [],
+      "mit": [
+        "gruppe"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "halbtags"
+    },
+    {
+      "id": "buegelperlen",
+      "titel": "Bügelperlen",
+      "kategorie": "kreativ",
+      "text": "Pixel-Motive Perle für Perle auf Steckplatten setzen und zusammenbügeln – ruhig, konzentriert, und am Ende hält man etwas in der Hand.",
+      "wirkung": [
+        "flow",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "braucht": "Perlen, Steckplatten und Bügelpapier – gibt's im Bastel- oder Spielwarenladen",
+      "ziel": "Ein großes Motiv über mehrere Platten, etwa eine Figur aus einem Lieblingsspiel als Pixel-Art."
+    },
+    {
+      "id": "keramik-bemalen",
+      "titel": "Keramik bemalen",
+      "kategorie": "kreativ",
+      "text": "Einen Becher oder Teller aussuchen, bemalen, glasieren lassen – nach einer Woche ist er fertig gebrannt.",
+      "wirkung": [
+        "flow",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "Becher ca. 20–26 € inkl. Farben und Brand",
+      "orte": [
+        {
+          "name": "Porzellanfräulein",
+          "teil": "Winterhude",
+          "geo": [
+            53.58217,
+            10.01267
+          ],
+          "link": "https://www.porzellanfraeulein.de/so-geht-s/preise/",
+          "info": "2,5-Std.-Slots, Mi–So · Reservierung erbeten"
+        }
+      ]
+    },
+    {
+      "id": "toepfern",
+      "titel": "Töpfern an der Drehscheibe",
+      "kategorie": "kreativ",
+      "text": "Ein Anfängerkurs in einer echten Keramik-Werkstatt: Ton zentrieren, hochziehen, formen – die besten Stücke werden gebrannt. Töpferkurse gibt es auch an der Volkshochschule.",
+      "wirkung": [
+        "flow",
+        "produktiv"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "preis": "ca. 90–120 € pro Person",
+      "ziel": "Einen Becher drehen, aus dem ihr danach wirklich trinkt.",
+      "link": "https://www.vhs-hamburg.de/kultur/keramik-59",
+      "orte": [
+        {
+          "name": "Studio Amun",
+          "teil": "Hammerbrook",
+          "geo": [
+            53.54916,
+            10.03939
+          ],
+          "link": "https://studioamun.com/products/toepferkurs-anfaenger-hamburg",
+          "info": "Anfängerkurs Drehscheibe, 2:45 Std. · mehrmals pro Woche"
+        }
+      ]
+    },
+    {
+      "id": "malen",
+      "titel": "Malen mit Acryl",
+      "kategorie": "kreativ",
+      "text": "Leinwand, ein paar Farben und ein Motiv – wer nicht weiß, wo anfangen: ein Foto von einem eurer Ausflüge.",
+      "wirkung": [
+        "flow",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "braucht": "Leinwand, Acrylfarben, Pinsel – Einsteiger-Sets gibt's im Bastelladen",
+      "ziel": "Dasselbe Motiv zweimal malen, im Abstand von einem Monat."
+    },
+    {
+      "id": "lego",
+      "titel": "Lego-Set bauen",
+      "kategorie": "kreativ",
+      "text": "Ein großes Set für Erwachsene, Beutel für Beutel – klare Schritte, sichtbarer Fortschritt.",
+      "wirkung": [
+        "flow",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "halbtags"
+    },
+    {
+      "id": "fotowalk",
+      "titel": "Fotospaziergang mit Thema",
+      "kategorie": "kreativ",
+      "text": "Mit Handy oder Kamera los, aber mit einer Aufgabe: nur Spiegelungen, nur Rot, der Hafen zur blauen Stunde.",
+      "wirkung": [
+        "flow",
+        "bewegung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "ziel": "Zehn Fotos zu einem Thema – und am Ende gemeinsam das beste auswählen."
+    },
+    {
+      "id": "fotobuch",
+      "titel": "Fotobuch gestalten",
+      "kategorie": "kreativ",
+      "text": "Die besten Bilder des Jahres in ein Buch – das gemeinsame Aussuchen ist schon der halbe Abend.",
+      "wirkung": [
+        "produktiv",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "halbtags"
+    },
+    {
+      "id": "origami",
+      "titel": "Origami",
+      "kategorie": "kreativ",
+      "text": "Ein Blatt Papier und eine Anleitung im Netz – vom Kranich bis zur Kugel aus vielen Einzelteilen.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "ziel": "Einen Kranich ohne Anleitung falten können."
+    },
+    {
+      "id": "haekeln",
+      "titel": "Häkeln oder Stricken lernen",
+      "kategorie": "kreativ",
+      "text": "Wolle, Nadel und ein Einsteiger-Video – nach ein paar Abenden sitzt die Masche.",
+      "wirkung": [
+        "flow",
+        "produktiv"
+      ],
+      "mit": [
+        "allein"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "braucht": "Wolle und Häkelnadel oder Stricknadeln",
+      "ziel": "Erst ein Schal, dann eine Mütze."
+    },
+    {
+      "id": "linoldruck",
+      "titel": "Linoldruck",
+      "kategorie": "kreativ",
+      "text": "Ein Motiv in eine Linolplatte schnitzen, einfärben, drucken – perfekt für eigene Karten.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "braucht": "Linolplatte, Schnitzwerkzeug, Druckfarbe und Walze",
+      "ziel": "Die Weihnachts- oder Geburtstagskarten dieses Jahr selbst drucken."
+    },
+    {
+      "id": "upcycling",
+      "titel": "Möbel aufarbeiten",
+      "kategorie": "kreativ",
+      "text": "Ein altes Möbelstück abschleifen, streichen, neue Griffe dran – Werkzeug kann man bei den Bücherhallen leihen.",
+      "wirkung": [
+        "flow",
+        "produktiv"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "braucht": "Schleifpapier und Farbe – Werkzeug aus der Bibliothek der Dinge",
+      "link": "https://www.buecherhallen.de/bibliothek-der-dinge.html"
+    },
+    {
+      "id": "repair-cafe",
+      "titel": "Repair Café",
+      "kategorie": "kreativ",
+      "text": "Ein kaputtes Gerät mitnehmen und es mit Ehrenamtlichen gemeinsam reparieren – Termine gibt's in der ganzen Stadt.",
+      "wirkung": [
+        "produktiv"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "preis": "meist gegen Spende",
+      "link": "https://www.hamburg.de/freizeit/aktivitaeten/repair-cafes-hamburg-44248"
+    },
+    {
+      "id": "beats",
+      "titel": "Beats bauen",
+      "kategorie": "kreativ",
+      "text": "Mit einer kostenlosen Musik-App wie GarageBand (iPhone) oder BandLab einen eigenen elektronischen Track bauen.",
+      "wirkung": [
+        "flow",
+        "produktiv"
+      ],
+      "mit": [
+        "allein"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "ziel": "Einen Track mit Intro, Drop und Outro fertig machen."
+    },
+    {
+      "id": "handlettering",
+      "titel": "Handlettering",
+      "kategorie": "kreativ",
+      "text": "Schöne Schrift mit dem Pinselstift: erst Grundstriche üben, dann Wörter, dann Karten und Poster.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "allein"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "braucht": "ein Brush-Pen und Papier"
+    },
+    {
+      "id": "neue-kueche",
+      "titel": "Eine neue Küche kochen",
+      "kategorie": "genuss",
+      "text": "Ein Land aussuchen, dessen Küche ihr noch nie gekocht habt, Rezept raussuchen, zusammen einkaufen und kochen.",
+      "wirkung": [
+        "flow",
+        "produktiv"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "ziel": "Einmal im Monat ein neues Land."
+    },
+    {
+      "id": "pizza",
+      "titel": "Pizza von Grund auf",
+      "kategorie": "genuss",
+      "text": "Teig am Vortag ansetzen, am Abend so heiß wie möglich backen – mit einem Pizzastein wird der Boden noch knuspriger.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "ziel": "Einen Rand hinbekommen, der richtig aufgeht."
+    },
+    {
+      "id": "sushi",
+      "titel": "Sushi selber rollen",
+      "kategorie": "genuss",
+      "text": "Reis richtig würzen, Nori, Bambusmatte – die ersten Rollen werden schief, die zehnte sieht aus wie im Restaurant.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "braucht": "Sushi-Reis, Nori-Blätter, Reisessig, Bambusmatte"
+    },
+    {
+      "id": "brot",
+      "titel": "Brot backen",
+      "kategorie": "genuss",
+      "text": "Erst ein einfaches Hefebrot, dann einen Sauerteig ansetzen – der begleitet euch danach jede Woche.",
+      "wirkung": [
+        "flow",
+        "produktiv"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "ziel": "Ein Sauerteigbrot mit offener Krume."
+    },
+    {
+      "id": "pasta",
+      "titel": "Pasta selber machen",
+      "kategorie": "genuss",
+      "text": "Mehl, Eier, Nudelholz: frische Tagliatelle oder gefüllte Ravioli sind leichter, als sie aussehen.",
+      "wirkung": [
+        "flow"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz"
+    },
+    {
+      "id": "plaetzchen",
+      "titel": "Plätzchen backen",
+      "kategorie": "genuss",
+      "text": "Klassiker wie Vanillekipferl oder etwas ganz Neues – mit Musik und Tee ein ganzer Nachmittag.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "saison": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "tasting",
+      "titel": "Tasting-Abend",
+      "kategorie": "genuss",
+      "text": "Fünf Schokoladen, Käse oder Kaffees blind probieren, notieren, raten – überraschend schwer und lustig.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz"
+    },
+    {
+      "id": "cocktails",
+      "titel": "Cocktails mixen",
+      "kategorie": "genuss",
+      "text": "Drei Klassiker lernen – oder alkoholfreie Varianten mit frischen Zutaten.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz"
+    },
+    {
+      "id": "kochkurs",
+      "titel": "Kochkurs",
+      "kategorie": "genuss",
+      "text": "Einen Abend lang mit Profis kochen – Themen von Sushi über Vietnam bis Tapas, ausdrücklich auch für Einsteiger.",
+      "wirkung": [
+        "produktiv",
+        "flow"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "preis": "ca. 92–99 € pro Person",
+      "orte": [
+        {
+          "name": "Schlemmerschule",
+          "teil": "St. Georg",
+          "geo": [
+            53.55736,
+            10.0216
+          ],
+          "link": "https://www.schlemmerschule.de/kochkurse/",
+          "info": "Abendkurse meist ab 18:30 Uhr · 99 € inkl. Getränk"
+        },
+        {
+          "name": "Kochschule Hamburg",
+          "teil": "Bahrenfeld",
+          "geo": [
+            53.56316,
+            9.91961
+          ],
+          "link": "https://kochschule-hamburg.de/kurse",
+          "info": "abends 18 oder 19 Uhr, samstags auch 11 Uhr · 92–99 €"
+        }
+      ]
+    },
+    {
+      "id": "restaurant-neu",
+      "titel": "Essen gehen: ein neues Land",
+      "kategorie": "genuss",
+      "text": "Ein Restaurant aus einer Küche, die ihr noch nie probiert habt – georgisch, eritreisch, koreanisch: In Hamburg gibt es fast alles.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz"
+    },
+    {
+      "id": "picknick",
+      "titel": "Picknick",
+      "kategorie": "genuss",
+      "text": "Decke, belegte Brote, Thermoskanne – an der Alster, im Stadtpark oder an der Elbe.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "saison": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "grillen",
+      "titel": "Grillen im Park",
+      "kategorie": "genuss",
+      "text": "Erlaubt ist es nur in den ausgewiesenen Grillzonen, etwa im Stadtpark, an den Alsterwiesen, im Hammer Park oder im Öjendorfer Park – Einweggrills sind tabu.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "saison": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "link": "https://www.hamburg.de/freizeit/jahreszeiten/sommer/grillplaetze-hamburg-305996"
+    },
+    {
+      "id": "gewuerzmuseum",
+      "titel": "Spicy's Gewürzmuseum",
+      "kategorie": "genuss",
+      "text": "Ein kleines Museum auf einem alten Speicherboden: über 80 Gewürze zum Riechen und Probieren, Pfeffer als Eintrittskarte.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "7 €",
+      "zeiten": "täglich 10–17 Uhr",
+      "link": "https://www.spicys.de/museum/oeffnungszeiten-eintrittspreise/",
+      "orte": [
+        {
+          "name": "Spicy's Gewürzmuseum",
+          "teil": "Speicherstadt",
+          "geo": [
+            53.54315,
+            9.98839
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brunch",
+      "titel": "Brunch-Café testen",
+      "kategorie": "genuss",
+      "text": "Jedes Wochenende ein anderes Café – und eine gemeinsame Bestenliste führen.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "ziel": "Eine Top 5 eurer Brunch-Cafés."
+    },
+    {
+      "id": "chocoversum-messberg",
+      "titel": "Chocoversum",
+      "kategorie": "genuss",
+      "text": "90-minütige Schokoladentour mit Verkostungen – am Ende gießt man seine eigene Tafel.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "ab ca. 23 €",
+      "anreise": "U1 Meßberg",
+      "link": "https://www.chocoversum.de/",
+      "teil": "Altstadt",
+      "orte": [
+        {
+          "name": "Meßberg",
+          "teil": "Altstadt",
+          "geo": [
+            53.54788,
+            10.00178
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoeltigbaum",
+      "titel": "Höltigbaum: Wilde Weiden",
+      "kategorie": "natur",
+      "text": "Halboffene Weidelandschaft mit Galloway-Rindern und Schafen auf eiszeitlichen Hügeln am Stadtrand; der große Rundweg ist rund 9 Kilometer lang. Das Haus der Wilden Weiden erklärt Tiere und Landschaft, Eintritt frei.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "zeiten": "Haus der Wilden Weiden: Nov–März Sa/So/Feiertag 11–16 Uhr, Apr–Okt Do/Fr 14–18, Sa/So 11–18 Uhr",
+      "anreise": "RB81 bis Rahlstedt, Bus 29 bis „Naturschutzgebiet Höltigbaum“ (ca. 40 Min. ab Hbf); Auto: Parken an der Straße Eichberg",
+      "link": "https://www.hoeltigbaum.de/",
+      "orte": [
+        {
+          "name": "Höltigbaum, Eichberg",
+          "teil": "Rahlstedt",
+          "geo": [
+            53.61577,
+            10.18509
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boberger-duenen",
+      "titel": "Boberger Dünen",
+      "kategorie": "natur",
+      "text": "Hamburgs letzte Wanderdüne zwischen Heide, Moor und Marschwiesen – vier markierte Wege starten am Dünenhaus, im Sommer lockt der Badesee.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "anreise": "Bus X32 ab Wandsbek Markt bis „Boberg“, dann ca. 15 Min. zu Fuß zum Dünenhaus",
+      "link": "https://www.hamburg.de/freizeit/ausfluege/wandern/wandern-boberger-duenen-306504",
+      "orte": [
+        {
+          "name": "Boberger Dünenhaus",
+          "teil": "Boberg",
+          "geo": [
+            53.50771,
+            10.16171
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wohldorfer-wald",
+      "titel": "Wohldorfer Wald",
+      "kategorie": "natur",
+      "text": "Hamburgs größter zusammenhängender Laubwald in hügeliger Endmoräne an Ammersbek und Alster – Rundweg rund 7 Kilometer, mit dem Duvenstedter Brook eine große Acht.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "anreise": "U1 bis Ohlstedt (Endhaltestelle), dann wenige Minuten zu Fuß",
+      "link": "https://www.hamburg.de/freizeit/ausfluege/wandern/wandern-wohldorfer-wald-306624",
+      "orte": [
+        {
+          "name": "Wohldorfer Wald",
+          "teil": "Wohldorf-Ohlstedt",
+          "geo": [
+            53.70353,
+            10.13889
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fischbeker-heide",
+      "titel": "Fischbeker Heide",
+      "kategorie": "natur",
+      "text": "Weite Heideflächen mit Heidschnucken im Hamburger Südwesten; im August und September blüht alles lila.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "anreise": "S3 oder S5 bis Neugraben, Bus 250 bis „Fischbeker Heideweg“ (ca. 45–60 Min. ab Hbf)",
+      "link": "https://www.hamburg.de/freizeit/ausfluege/wandern/wandern-fischbeker-heide-306580",
+      "orte": [
+        {
+          "name": "Fischbeker Heidehaus",
+          "teil": "Neugraben-Fischbek",
+          "geo": [
+            53.45373,
+            9.85018
+          ]
+        }
+      ]
+    },
+    {
+      "id": "harburger-berge",
+      "titel": "Harburger Berge",
+      "kategorie": "natur",
+      "text": "Hügeliger Mischwald mit Tälern, Ausblicken und kräftigen Steigungen – für Hamburg fast schon Mittelgebirge.",
+      "wirkung": [
+        "bewegung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "anreise": "S3/S5 bis Neuwiedenthal (Start der Wanderroute W1) oder bis Harburg Rathaus und Bus 141 bis „Haake“",
+      "link": "https://www.hamburg.de/freizeit/ausfluege/in-hamburg/harburger-berge-282388",
+      "orte": [
+        {
+          "name": "Haake",
+          "teil": "Hausbruch",
+          "geo": [
+            53.47084,
+            9.90203
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sachsenwald",
+      "titel": "Sachsenwald und Friedrichsruh",
+      "kategorie": "natur",
+      "text": "Von Aumühle durch den Wald nach Friedrichsruh mit Bismarck-Museum und Mausoleum; im Sommerhalbjahr fliegen im Garten der Schmetterlinge über 1.000 tropische Falter.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "anreise": "S-Bahn bis Aumühle (ca. 35 Min. ab Hbf), dann 1,8 km ausgeschilderter Fußweg durch den Wald",
+      "link": "https://www.gartenderschmetterlinge.de/",
+      "orte": [
+        {
+          "name": "Friedrichsruh",
+          "teil": "Aumühle",
+          "geo": [
+            53.53089,
+            10.33482
+          ]
+        }
+      ]
+    },
+    {
+      "id": "elbspaziergang",
+      "titel": "Elbspaziergang: Jenischpark bis Övelgönne",
+      "kategorie": "natur",
+      "text": "Durch den Jenischpark mit Blick auf die Containerschiffe hinunter an den Elbstrand und am Wasser entlang bis zum Museumshafen Övelgönne – zurück mit der Hafenfähre.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "anreise": "S1 bis Klein Flottbek, dann ca. 15 Min. zu Fuß; zurück ab Övelgönne mit der Fähre 62",
+      "link": "https://www.hamburg.de/tourismus/sehenswuerdigkeiten/parks/jenischpark-306386",
+      "orte": [
+        {
+          "name": "Jenischpark",
+          "teil": "Klein Flottbek",
+          "geo": [
+            53.55093,
+            9.86864
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hirschpark",
+      "titel": "Hirschpark und Treppenviertel",
+      "kategorie": "natur",
+      "text": "Lindenallee, Wildgehege und Elbblick im Hirschpark – danach durch das Treppenviertel von Blankenese hinunter ans Wasser.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "anreise": "S1 bis Blankenese, Bus bis „Mühlenberg“ (ca. 40–50 Min. ab Hbf)",
+      "link": "https://www.hamburg.de/politik-und-verwaltung/behoerden/bukea/themen/hamburgs-gruen/parkanlagen/hirschpark-275748",
+      "orte": [
+        {
+          "name": "Hirschpark",
+          "teil": "Nienstedten",
+          "geo": [
+            53.55667,
+            9.82597
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ohlsdorf",
+      "titel": "Ohlsdorfer Parkfriedhof",
+      "kategorie": "natur",
+      "text": "Knapp 400 Hektar Park mit alten Bäumen, Teichen, Mausoleen und Gräbern bekannter Hamburger – im Frühjahr blühen die Rhododendren.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "zeiten": "für Fußgänger täglich 7–21 Uhr",
+      "anreise": "S1 oder U1 bis Ohlsdorf",
+      "link": "https://www.friedhof-hamburg.de/besucher/service/oeffnungszeiten/",
+      "orte": [
+        {
+          "name": "Haupteingang Ohlsdorf",
+          "teil": "Ohlsdorf",
+          "geo": [
+            53.61975,
+            10.03472
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stadtpark",
+      "titel": "Stadtpark",
+      "kategorie": "natur",
+      "text": "Festwiese, Stadtparksee, Planetarium mit Aussichtsterrasse – im Sommer Konzerte auf der Freilichtbühne.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "anreise": "U3 bis Borgweg",
+      "link": "https://www.hamburg.de/tourismus/sehenswuerdigkeiten/parks/stadtpark-306002",
+      "orte": [
+        {
+          "name": "Stadtpark",
+          "teil": "Winterhude",
+          "geo": [
+            53.59562,
+            10.01767
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wandsbeker-gehoelz",
+      "titel": "Wandsbeker Gehölz",
+      "kategorie": "natur",
+      "text": "Ein rund zwei Kilometer langer Waldstreifen mit alten Eichen und Buchen und kleinen Teichen – gut für eine Runde nach Feierabend.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "anreise": "ab Wandsbek Markt 5–10 Min. zu Fuß",
+      "link": "https://www.hamburg.de/politik-und-verwaltung/behoerden/bukea/themen/hamburgs-gruen/parkanlagen/wandsbeker-gehoelz-276926",
+      "orte": [
+        {
+          "name": "Wandsbeker Gehölz",
+          "teil": "Wandsbek",
+          "geo": [
+            53.57108,
+            10.07503
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vierlande",
+      "titel": "Radtour durch die Vier- und Marschlande",
+      "kategorie": "natur",
+      "text": "Deiche, Fachwerkhöfe, Gewächshäuser – auf einer alten Bahntrasse durch die Kirchwerder Wiesen und unterwegs direkt beim Erzeuger einkaufen.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "saison": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "anreise": "S-Bahn bis Mittlerer Landweg oder Nettelnburg, Rad mitnehmen (Mo–Fr 6–9 und 16–18 Uhr nicht erlaubt)",
+      "link": "https://www.hamburg.de/freizeit/ausfluege/wandern/wandern-vierlande-306544",
+      "orte": [
+        {
+          "name": "Kirchwerder",
+          "teil": "Kirchwerder",
+          "geo": [
+            53.42068,
+            10.19991
+          ]
+        }
+      ]
+    },
+    {
+      "id": "elbinsel-rad",
+      "titel": "Radrunde über die Elbinsel",
+      "kategorie": "natur",
+      "text": "Vom Inselpark in Wilhelmsburg über die Elbdeiche ins Naturschutzgebiet Heuckenlock und bis zur Bunthäuser Spitze – rund 30 Kilometer.",
+      "wirkung": [
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "saison": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "anreise": "S3 oder S5 bis Wilhelmsburg (ca. 10 Min. ab Hbf)",
+      "link": "https://www.hamburg.de/politik-und-verwaltung/behoerden/bukea/themen/hamburgs-gruen/parkanlagen/inselpark-154342",
+      "orte": [
+        {
+          "name": "Inselpark",
+          "teil": "Wilhelmsburg",
+          "geo": [
+            53.49086,
+            10.00245
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geocaching",
+      "titel": "Geocaching",
+      "kategorie": "natur",
+      "text": "Mit der App versteckte Dosen suchen – in Hamburg liegen sie in fast jedem Park, manche findet man nur über ein Rätsel.",
+      "wirkung": [
+        "flow",
+        "bewegung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "link": "https://www.geocaching.com/",
+      "ziel": "Einen Multi-Cache mit mehreren Stationen lösen."
+    },
+    {
+      "id": "elbstrand-oevelgoenne-und-museumshafen-oevelgoenne",
+      "titel": "Elbstrand Övelgönne",
+      "kategorie": "natur",
+      "text": "Sandstrand mit Blick auf die Containerschiffe, dazu der Museumshafen und ein Spaziergang bis zum Altonaer Balkon.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "anreise": "Fähre 62 bis Museumshafen Övelgönne oder Bus 111",
+      "link": "https://www.hamburg.de/tourismus/hamburg-erkunden/hafenrundfahrt/hafenrundfahrten-hamburg-309396",
+      "orte": [
+        {
+          "name": "Övelgönne",
+          "geo": [
+            53.54427,
+            9.91021
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planten-un-blomen-innenstadt",
+      "titel": "Planten un Blomen",
+      "kategorie": "natur",
+      "text": "Großer Park mitten in der Stadt mit Japanischem Garten und Rosengarten; im Winter die Eisbahn.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "anreise": "U1 Stephansplatz oder S Dammtor",
+      "link": "https://plantenunblomen.hamburg.de/",
+      "teil": "Neustadt",
+      "orte": [
+        {
+          "name": "Planten un Blomen",
+          "teil": "Neustadt",
+          "geo": [
+            53.54616,
+            9.98251
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tierpark-hagenbeck-und-tropen-aquarium-stellingen",
+      "titel": "Tierpark Hagenbeck und Tropen-Aquarium",
+      "kategorie": "natur",
+      "text": "Historischer Tierpark mit weitläufigen Freianlagen – das Tropen-Aquarium ist die Alternative bei Regen.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "beides",
+      "dauer": "halbtags",
+      "preis": "Tierpark Erw. ca. 29 €, Aquarium ca. 25 €",
+      "anreise": "U2 Hagenbecks Tierpark",
+      "link": "https://www.hagenbeck.de/",
+      "teil": "Stellingen",
+      "orte": [
+        {
+          "name": "Tierpark Hagenbeck",
+          "teil": "Stellingen",
+          "geo": [
+            53.59678,
+            9.92841
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wittenbergener-heide-und-falkensteiner-ufer-rissen",
+      "titel": "Wittenbergener Heide und Falkensteiner Ufer",
+      "kategorie": "natur",
+      "text": "Heide, Dünen und Elbhang mit Leuchttürmen – die Wanderroute von S Sülldorf nach S Rissen ist gut 9 Kilometer lang.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "anreise": "S1 bis Sülldorf (ca. 30 Min.)",
+      "link": "https://www.hamburg.de/resource/blob/51716/5ccf6fb7ca248b5423ad5a70bff1c118/route3-wittenbergener-heide-data.pdf",
+      "teil": "Rissen",
+      "orte": [
+        {
+          "name": "Rissen",
+          "teil": "Rissen",
+          "geo": [
+            53.5847,
+            9.75639
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duvenstedter-brook-wohldorf-ohlstedt",
+      "titel": "Duvenstedter Brook",
+      "kategorie": "natur",
+      "text": "Moor und Wald mit Rot- und Damwild – am besten früh morgens oder in der Abenddämmerung, im Herbst röhren die Hirsche.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "anreise": "U1 bis Ohlstedt, dann ca. 30 Min. zu Fuß",
+      "link": "https://www.nabu.de/natur-und-landschaft/natur-erleben/nabu-zentren/hamburg/24058.html",
+      "teil": "Wohldorf-Ohlstedt",
+      "orte": [
+        {
+          "name": "Duvenstedter Brook",
+          "teil": "Wohldorf-Ohlstedt",
+          "geo": [
+            53.7019,
+            10.1306
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wildpark-schwarze-berge-rosengarten",
+      "titel": "Wildpark Schwarze Berge",
+      "kategorie": "natur",
+      "text": "Wildpark mit heimischen Tieren im Wald der Harburger Berge, ganzjährig geöffnet.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "preis": "Erw. ca. 16 €",
+      "anreise": "S3/S5 bis Neuwiedenthal und Bus 340 (ca. 50–60 Min.); Auto ca. 30 Min.",
+      "link": "https://www.wildpark-schwarze-berge.de/",
+      "teil": "Rosengarten",
+      "orte": [
+        {
+          "name": "Wildpark Schwarze Berge",
+          "teil": "Rosengarten",
+          "geo": [
+            53.43533,
+            9.90585
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hamburg-von-oben",
+      "titel": "Hamburg von oben",
+      "kategorie": "kultur",
+      "text": "Vier Aussichten über der Stadt: der Michel, St. Petri (nur zu Fuß, 544 Stufen), der Glaslift im Mahnmal St. Nikolai und die Plaza der Elbphilharmonie.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "beides",
+      "dauer": "kurz",
+      "preis": "5–8 € je Aussicht",
+      "ziel": "Alle vier sammeln – und entscheiden, welcher Blick der beste ist.",
+      "orte": [
+        {
+          "name": "Michel (St. Michaelis)",
+          "teil": "Neustadt",
+          "geo": [
+            53.54887,
+            9.97825
+          ],
+          "link": "https://st-michaelis.de/besuch/oeffnungszeiten-preise/",
+          "info": "Plattform in 106 m, Treppe oder Fahrstuhl · 8 €"
+        },
+        {
+          "name": "St. Petri",
+          "teil": "Altstadt",
+          "geo": [
+            53.55034,
+            9.99673
+          ],
+          "link": "https://www.sankt-petri.de/turm-kirche-kunst/petriturm",
+          "info": "123 m, nur zu Fuß · 5 € · Mo–Fr 10–17:30, Sa/So 11:30–16:30 Uhr"
+        },
+        {
+          "name": "Mahnmal St. Nikolai",
+          "teil": "Altstadt",
+          "geo": [
+            53.54752,
+            9.99114
+          ],
+          "link": "https://www.mahnmal-st-nikolai.de/ausstellung-und-aussichtsturm/",
+          "info": "Glaslift auf 76 m, mit Museum · 7 € · täglich 10–18 Uhr"
+        },
+        {
+          "name": "Elbphilharmonie Plaza",
+          "teil": "HafenCity",
+          "geo": [
+            53.54129,
+            9.98421
+          ],
+          "link": "https://www.elbphilharmonie.de/de/plaza",
+          "info": "Rundgang in 37 m Höhe · 5 € · täglich 10–24 Uhr"
+        }
+      ]
+    },
+    {
+      "id": "elbtunnel",
+      "titel": "Zu Fuß durch den Alten Elbtunnel",
+      "kategorie": "kultur",
+      "text": "426 Meter unter der Elbe nach Steinwerder – drüben wartet der beste Blick auf die Landungsbrücken und die Stadt.",
+      "wirkung": [
+        "bewegung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "beides",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "zeiten": "für Fußgänger rund um die Uhr",
+      "link": "https://www.hamburg-port-authority.de/de/strasse/informationen-st-pauli-elbtunnel",
+      "orte": [
+        {
+          "name": "Eingang Landungsbrücken",
+          "teil": "St. Pauli",
+          "geo": [
+            53.54587,
+            9.9666
+          ]
+        }
+      ]
+    },
+    {
+      "id": "museen-gratis",
+      "titel": "Museen am Donnerstagabend gratis",
+      "kategorie": "kultur",
+      "text": "Am ersten Donnerstag im Monat sind Kunsthalle, MK&G und Deichtorhallen abends kostenlos, das MARKK sogar jeden Donnerstag ab 16 Uhr.",
+      "wirkung": [],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "orte": [
+        {
+          "name": "Hamburger Kunsthalle",
+          "teil": "Altstadt",
+          "geo": [
+            53.55529,
+            10.003
+          ],
+          "link": "https://www.hamburger-kunsthalle.de/de/preise-tickets-gutscheine",
+          "info": "1. Do im Monat 18–21 Uhr frei"
+        },
+        {
+          "name": "Museum für Kunst und Gewerbe",
+          "teil": "St. Georg",
+          "geo": [
+            53.55129,
+            10.00933
+          ],
+          "link": "https://www.mkg-hamburg.de/besuch",
+          "info": "1. Do im Monat ab 18 Uhr frei"
+        },
+        {
+          "name": "Deichtorhallen",
+          "teil": "Altstadt",
+          "geo": [
+            53.54724,
+            10.00676
+          ],
+          "link": "https://www.deichtorhallen.de/de/besuch/besuch-halle-fuer-aktuelle-kunst",
+          "info": "1. Do im Monat 18–21 Uhr frei"
+        },
+        {
+          "name": "MARKK",
+          "teil": "Rotherbaum",
+          "geo": [
+            53.56862,
+            9.98917
+          ],
+          "link": "https://markk-hamburg.de/informationen-service/eintrittspreise/",
+          "info": "jeden Donnerstag ab 16 Uhr frei"
+        }
+      ]
+    },
+    {
+      "id": "kunst",
+      "titel": "Kunst gucken",
+      "kategorie": "kultur",
+      "text": "Von Alten Meistern bis Gegenwart: Kunsthalle, Bucerius Kunst Forum, Deichtorhallen und das Museum für Kunst und Gewerbe liegen alle zwischen Hauptbahnhof und Rathaus.",
+      "wirkung": [],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "ca. 10–18 €",
+      "ziel": "Jeden Monat ein Museum – und aus jedem ein Lieblingswerk merken.",
+      "orte": [
+        {
+          "name": "Hamburger Kunsthalle",
+          "teil": "Altstadt",
+          "geo": [
+            53.55529,
+            10.003
+          ],
+          "link": "https://www.hamburger-kunsthalle.de/de/preise-tickets-gutscheine",
+          "info": "acht Jahrhunderte Kunst · 18 € · Di–So 10–18, Do bis 21 Uhr"
+        },
+        {
+          "name": "Bucerius Kunst Forum",
+          "teil": "Altstadt",
+          "geo": [
+            53.5507,
+            9.99094
+          ],
+          "link": "https://www.buceriuskunstforum.de/ticketuebersicht",
+          "info": "Wechselausstellungen am Rathausmarkt · 12 €, dienstags 6 € · täglich 11–19 Uhr"
+        },
+        {
+          "name": "Deichtorhallen",
+          "teil": "Altstadt",
+          "geo": [
+            53.54724,
+            10.00676
+          ],
+          "link": "https://www.deichtorhallen.de/de/besuch/besuch-halle-fuer-aktuelle-kunst",
+          "info": "Gegenwartskunst und Fotografie · 13 € · Di–So 11–18 Uhr"
+        },
+        {
+          "name": "Museum für Kunst und Gewerbe",
+          "teil": "St. Georg",
+          "geo": [
+            53.55129,
+            10.00933
+          ],
+          "link": "https://www.mkg-hamburg.de/besuch",
+          "info": "Design und Gestaltung · 14 €, letzte Stunde 5 € · Di–So 10–18, Do bis 21 Uhr"
+        },
+        {
+          "name": "MARKK",
+          "teil": "Rotherbaum",
+          "geo": [
+            53.56862,
+            9.98917
+          ],
+          "link": "https://markk-hamburg.de/informationen-service/eintrittspreise/",
+          "info": "Kulturen und Künste der Welt · 10 €, donnerstags ab 16 Uhr frei"
+        }
+      ]
+    },
+    {
+      "id": "stadtgeschichte",
+      "titel": "Hamburger Geschichte zum Anfassen",
+      "kategorie": "kultur",
+      "text": "Druckerei und Tunnelbohrer im Museum der Arbeit, Norddeutschland im Altonaer Museum, Kaffeesäcke im Speicherstadtmuseum.",
+      "wirkung": [],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "6–9,50 €",
+      "orte": [
+        {
+          "name": "Museum der Arbeit",
+          "teil": "Barmbek-Nord",
+          "geo": [
+            53.5859,
+            10.04563
+          ],
+          "link": "https://www.shmh.de/museum-der-arbeit/museum-der-arbeit-besuchen/",
+          "info": "9,50 € · montags bis 21 Uhr, dienstags zu"
+        },
+        {
+          "name": "Altonaer Museum",
+          "teil": "Altona",
+          "geo": [
+            53.54914,
+            9.93431
+          ],
+          "link": "https://www.shmh.de/altonaer-museum/altonaer-museum-besuchen/",
+          "info": "9,50 € · dienstags zu"
+        },
+        {
+          "name": "Speicherstadtmuseum",
+          "teil": "Speicherstadt",
+          "geo": [
+            53.54308,
+            9.98753
+          ],
+          "link": "https://www.speicherstadtmuseum.de/besucherinfos/oeffnungszeiten-preise.html",
+          "info": "im Speicher von 1888, mit Kaffeeverkostungen · ca. 6 € · täglich"
+        }
+      ]
+    },
+    {
+      "id": "dialog-im-dunkeln",
+      "titel": "Dialog im Dunkeln",
+      "kategorie": "kultur",
+      "text": "Eine Stunde in völliger Dunkelheit, geführt von blinden Guides – am Ende ein Getränk in der Dunkelbar.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "ab 18,50 €",
+      "zeiten": "Di–So, montags geschlossen",
+      "link": "https://dialog-in-hamburg.de/dialog-im-dunkeln/",
+      "orte": [
+        {
+          "name": "Dialoghaus",
+          "teil": "Speicherstadt",
+          "geo": [
+            53.54621,
+            10.00168
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stadtteil",
+      "titel": "Einen Stadtteil erkunden",
+      "kategorie": "kultur",
+      "text": "Einen Stadtteil wählen, den ihr kaum kennt – Ottensen, Karoviertel, Wilhelmsburg, Bergedorf – und ohne Plan durchlaufen, mit Café-Stopp.",
+      "wirkung": [
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "ziel": "Nach und nach alle sieben Bezirke."
+    },
+    {
+      "id": "speicherstadt-abends",
+      "titel": "Speicherstadt am Abend",
+      "kategorie": "kultur",
+      "text": "Nach Sonnenuntergang von den Landungsbrücken durch die beleuchtete Speicherstadt in die HafenCity spazieren.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true
+    },
+    {
+      "id": "sternwarte",
+      "titel": "Sterne gucken in Bergedorf",
+      "kategorie": "kultur",
+      "text": "Die historische Hamburger Sternwarte: im Winterhalbjahr am ersten Mittwoch im Monat Beobachtungsabend an den Teleskopen, sonntags um 14 Uhr Führungen.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "beides",
+      "dauer": "kurz",
+      "preis": "10 €",
+      "link": "https://www.fhsev.de/fhs-v26.php#Beobachtung",
+      "orte": [
+        {
+          "name": "Hamburger Sternwarte",
+          "teil": "Bergedorf",
+          "geo": [
+            53.48062,
+            10.24079
+          ]
+        }
+      ]
+    },
+    {
+      "id": "miniatur-wunderland-speicherstadt",
+      "titel": "Miniatur Wunderland",
+      "kategorie": "kultur",
+      "text": "Die größte Modelleisenbahn der Welt in der Speicherstadt – Zeitfenster online buchen, am Wochenende ist es voll.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "preis": "Erw. ca. 22 €",
+      "zeiten": "täglich ab 9:30 Uhr",
+      "anreise": "U3 Baumwall + 5 Min. zu Fuß",
+      "link": "https://www.miniatur-wunderland.com/visiting/plan-your-visit/opening-hours",
+      "teil": "Speicherstadt",
+      "orte": [
+        {
+          "name": "Miniatur Wunderland",
+          "teil": "Speicherstadt",
+          "geo": [
+            53.54401,
+            9.98698
+          ]
+        }
+      ]
+    },
+    {
+      "id": "internationales-maritimes-museum-kaispeicher-b-hafencity",
+      "titel": "Internationales Maritimes Museum",
+      "kategorie": "kultur",
+      "text": "Schifffahrtsgeschichte auf zehn Decks im Kaispeicher B – ab 16:30 Uhr gibt es ein günstigeres Spät-Ticket.",
+      "wirkung": [],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "preis": "Erw. 18 €, ab 16:30 Uhr 9 €",
+      "zeiten": "täglich 10–18 Uhr",
+      "anreise": "U4 Überseequartier",
+      "link": "https://www.imm-hamburg.de/",
+      "teil": "HafenCity",
+      "orte": [
+        {
+          "name": "Kaispeicher B",
+          "teil": "HafenCity",
+          "geo": [
+            53.54335,
+            9.99982
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hadag-faehre-62-hafenrundfahrt-zum-nahverkehrspreis-landungs",
+      "titel": "Hafenfähre 62",
+      "kategorie": "kultur",
+      "text": "Mit der Linienfähre von den Landungsbrücken vorbei an Fischmarkt und Dockland bis Övelgönne und Finkenwerder – die Hafenrundfahrt zum Nahverkehrspreis.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "beides",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "preis": "mit Deutschlandticket inklusive",
+      "anreise": "S1/S3/U3 Landungsbrücken",
+      "link": "https://www.hamburg.de/verkehr/hadag-linie-62-314160",
+      "teil": "St. Pauli",
+      "orte": [
+        {
+          "name": "Landungsbrücken",
+          "teil": "St. Pauli",
+          "geo": [
+            53.54555,
+            9.97037
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hafenrundfahrt-mit-der-barkasse-landungsbruecken",
+      "titel": "Hafenrundfahrt mit der Barkasse",
+      "kategorie": "kultur",
+      "text": "Die klassische einstündige Rundfahrt ab den Landungsbrücken – ob es durch die Speicherstadt geht, hängt von der Tide ab.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "beides",
+      "dauer": "kurz",
+      "preis": "1 Std. ca. 20–26 €",
+      "anreise": "S1/S3/U3 Landungsbrücken",
+      "link": "https://www.hamburg.de/tourismus/hamburg-erkunden/hafenrundfahrt/hafenrundfahrten-hamburg-309396",
+      "teil": "St. Pauli",
+      "orte": [
+        {
+          "name": "Landungsbrücken",
+          "teil": "St. Pauli",
+          "geo": [
+            53.54623,
+            9.97114
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hamburg-dungeon-speicherstadt",
+      "titel": "Hamburg Dungeon",
+      "kategorie": "kultur",
+      "text": "Grusel-Show mit Schauspielern durch dunkle Kapitel der Hamburger Geschichte – nichts für schwache Nerven.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "preis": "online ab ca. 22 €",
+      "anreise": "U3 Baumwall",
+      "link": "https://www.thedungeons.com/hamburg/de/",
+      "teil": "Speicherstadt",
+      "orte": [
+        {
+          "name": "Hamburg Dungeon",
+          "teil": "Speicherstadt",
+          "geo": [
+            53.54401,
+            9.98698
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planetarium-hamburg-stadtpark-winterhude",
+      "titel": "Planetarium Hamburg",
+      "kategorie": "kultur",
+      "text": "Shows unter der Kuppel im alten Wasserturm im Stadtpark – vom Sternenhimmel über Hamburg bis zu Musik-Shows.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "anreise": "U3 Borgweg",
+      "link": "https://www.planetarium-hamburg.de/programm",
+      "teil": "Winterhude",
+      "orte": [
+        {
+          "name": "Planetarium im Stadtpark",
+          "teil": "Winterhude",
+          "geo": [
+            53.59577,
+            10.01355
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sauna",
+      "titel": "Sauna-Abend",
+      "kategorie": "entspannen",
+      "text": "Ein paar Gänge, Aufgüsse, dazwischen Ruhe – in der Bartholomäustherme ab 17 Uhr mit gedämpftem Licht.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "preis": "Sauna-Tageskarte ca. 24–25 €",
+      "orte": [
+        {
+          "name": "Bartholomäustherme",
+          "teil": "Barmbek-Süd",
+          "geo": [
+            53.57693,
+            10.02717
+          ],
+          "link": "https://www.baederland.de/wellness/alle-saunen/bartholomaeustherme/",
+          "info": "Jugendstil-Therme nur für Erwachsene · 24,80 € · täglich 10–22 Uhr, donnerstags Frauensauna"
+        },
+        {
+          "name": "Alsterschwimmhalle",
+          "teil": "Hohenfelde",
+          "geo": [
+            53.56032,
+            10.02154
+          ],
+          "link": "https://www.baederland.de/baeder/alle-baeder/alsterschwimmhalle/",
+          "info": "fünf Saunen auf über 800 m² · 23,60 €"
+        }
+      ]
+    },
+    {
+      "id": "lesen-cafe",
+      "titel": "Lesen im Café",
+      "kategorie": "entspannen",
+      "text": "Ein Buch, ein großer Kaffee, zwei Stunden ohne Handy.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz"
+    },
+    {
+      "id": "hoerbuch",
+      "titel": "Hörbuch-Spaziergang",
+      "kategorie": "entspannen",
+      "text": "Kopfhörer rein, ein gutes Hörbuch oder ein Podcast – und eine Stunde einfach gehen.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "allein"
+      ],
+      "wo": "hamburg",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "kostenlos": true
+    },
+    {
+      "id": "filmreihe",
+      "titel": "Filmabend mit Reihe",
+      "kategorie": "entspannen",
+      "text": "Statt Zufall eine Reihe: alle Filme einer Regisseurin oder Klassiker aus der IMDb Top 250, die ihr noch nicht kennt.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "ziel": "Jede Woche einen Film aus der Liste abhaken."
+    },
+    {
+      "id": "serienabend",
+      "titel": "Serienabend",
+      "kategorie": "entspannen",
+      "text": "Eine Serie gemeinsam anfangen – und nur zusammen weiterschauen.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true
+    },
+    {
+      "id": "wellness",
+      "titel": "Wellness zu Hause",
+      "kategorie": "entspannen",
+      "text": "Heißes Bad oder lange Dusche, Gesichtsmaske, Tee, Kerzen – und das Handy in einem anderen Raum.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true
+    },
+    {
+      "id": "meditation",
+      "titel": "Meditation",
+      "kategorie": "entspannen",
+      "text": "Zehn Minuten mit einer App oder einfach Atemzüge zählen – klein anfangen.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "allein"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "ziel": "Zwei Wochen jeden Tag – dann vergleichen, wie sich der Kopf anfühlt."
+    },
+    {
+      "id": "handyfrei",
+      "titel": "Ein Abend ohne Handy",
+      "kategorie": "entspannen",
+      "text": "Beide Handys in eine Schublade, dann kochen, reden, spielen – solche Abende fühlen sich deutlich länger an.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true
+    },
+    {
+      "id": "baederland-festland-altona",
+      "titel": "Bäderland Festland",
+      "kategorie": "entspannen",
+      "text": "Bad und Saunalandschaft in Altona – dienstags Ruhetag, montags ist die Sauna für Frauen reserviert.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "anreise": "S Holstenstraße",
+      "link": "https://www.baederland.de/oeffnungszeiten",
+      "teil": "Altona",
+      "orte": [
+        {
+          "name": "Festland",
+          "teil": "Altona",
+          "geo": [
+            53.58647,
+            9.77767
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ostsee-therme-scharbeutz-scharbeutz",
+      "titel": "Ostsee-Therme Scharbeutz",
+      "kategorie": "entspannen",
+      "text": "Erlebnisbad mit Rutschen und Sauna direkt an der Ostsee – gut mit einem Strandspaziergang zu verbinden.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "anreise": "Deutschlandticket: ca. 1 Std. 20 Min. bis 1 Std. 40 Min. · Auto: ca. 1 Std.",
+      "link": "https://www.ostsee-therme.de/",
+      "teil": "Scharbeutz",
+      "orte": [
+        {
+          "name": "Ostsee-Therme",
+          "teil": "Scharbeutz",
+          "geo": [
+            54.02663,
+            10.75595
+          ]
+        }
+      ]
+    },
+    {
+      "id": "holstentherme-kaltenkirchen-kaltenkirchen",
+      "titel": "HolstenTherme Kaltenkirchen",
+      "kategorie": "entspannen",
+      "text": "Erlebnisbad mit Sole-Becken und großer Saunawelt nördlich von Hamburg.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "anreise": "Deutschlandticket: AKN A1 ab Eidelstedt (ca. 1 Std.) · Auto: ca. 35–45 Min.",
+      "link": "https://www.holstentherme.de/informationen/oeffnungszeiten-preise",
+      "teil": "Kaltenkirchen",
+      "orte": [
+        {
+          "name": "HolstenTherme",
+          "teil": "Kaltenkirchen",
+          "geo": [
+            53.83717,
+            9.96149
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kieler-hoernbad-anni-wadle-weg-1-kiel",
+      "titel": "Kieler Hörnbad",
+      "kategorie": "entspannen",
+      "text": "Freizeitbad mit Rutsche, Außenbecken und Saunen direkt an der Hörn.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "hohwacht": true,
+      "anreise": "Deutschlandticket: RE7/RE70 bis Kiel Hbf (ca. 1 Std. 15 Min.) · Auto: ca. 1 Std. 15 Min. · ab Hohwacht ca. 40 Min.",
+      "link": "https://www.schwimmbadcheck.de/kiel/hoernbad.html",
+      "teil": "Kiel",
+      "orte": [
+        {
+          "name": "Hörnbad",
+          "teil": "Kiel",
+          "geo": [
+            54.30871,
+            10.13628
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sprache",
+      "titel": "Eine Sprache lernen",
+      "kategorie": "lernen",
+      "text": "15 Minuten am Tag mit einer App, dazu einmal die Woche ein Kurs – zum Beispiel für das nächste Urlaubsland.",
+      "wirkung": [
+        "produktiv",
+        "flow"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "ziel": "Nach drei Monaten im Restaurant bestellen, ohne auf Englisch zu wechseln."
+    },
+    {
+      "id": "vhs",
+      "titel": "Ein VHS-Kurs",
+      "kategorie": "lernen",
+      "text": "Die Hamburger Volkshochschule hat über 1.000 Kreativkurse, dazu Sprachen, Kochen und Fotografie – oft an einem Abend pro Woche.",
+      "wirkung": [
+        "produktiv"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "link": "https://www.vhs-hamburg.de/kultur-kreativitaet-22"
+    },
+    {
+      "id": "instrument",
+      "titel": "Ein Instrument lernen",
+      "kategorie": "lernen",
+      "text": "Gitarre, Klavier oder Ukulele: 20 Minuten am Tag mit Lern-App oder Videokurs.",
+      "wirkung": [
+        "flow",
+        "produktiv"
+      ],
+      "mit": [
+        "allein"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "ziel": "Ein Lied komplett spielen können – in vier Wochen."
+    },
+    {
+      "id": "erste-hilfe",
+      "titel": "Erste Hilfe auffrischen",
+      "kategorie": "lernen",
+      "text": "Ein Kurstag, der im Ernstfall zählt – Kurse bieten etwa DRK, Johanniter und Malteser an.",
+      "wirkung": [
+        "produktiv"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "ganztags"
+    },
+    {
+      "id": "programmieren",
+      "titel": "Eigenes Programmier-Projekt",
+      "kategorie": "lernen",
+      "text": "Eine kleine App oder ein Skript, das im Alltag hilft – mit einer klaren Aufgabe kommt der Flow fast von allein.",
+      "wirkung": [
+        "flow",
+        "produktiv"
+      ],
+      "mit": [
+        "allein"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "halbtags",
+      "kostenlos": true,
+      "ziel": "Eine erste Version an zwei Wochenenden fertig."
+    },
+    {
+      "id": "fotografie",
+      "titel": "Fotografieren lernen",
+      "kategorie": "lernen",
+      "text": "Weg von der Automatik: Blende, Belichtungszeit und ISO an einem Nachmittag verstehen – dann draußen ausprobieren.",
+      "wirkung": [
+        "flow",
+        "produktiv"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "beides",
+      "dauer": "kurz",
+      "ziel": "Eine Woche lang jeden Tag ein Foto im manuellen Modus."
+    },
+    {
+      "id": "sachbuch",
+      "titel": "Ein Sachbuch lesen",
+      "kategorie": "lernen",
+      "text": "Ein Thema, das euch schon lange interessiert – und danach einander erzählen, was hängen geblieben ist.",
+      "wirkung": [
+        "produktiv",
+        "erholung"
+      ],
+      "mit": [
+        "allein"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz"
+    },
+    {
+      "id": "onlinekurs",
+      "titel": "Online-Kurs",
+      "kategorie": "lernen",
+      "text": "Kurse von Universitäten, etwa bei edX oder Coursera, lassen sich oft kostenlos belegen – ein Thema, ein paar Wochen, ein Ergebnis.",
+      "wirkung": [
+        "produktiv"
+      ],
+      "mit": [
+        "allein"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true
+    },
+    {
+      "id": "zeichnen",
+      "titel": "Zeichnen lernen",
+      "kategorie": "lernen",
+      "text": "Ein Skizzenbuch und jeden Tag ein paar Übungen – der Fortschritt ist nach ein paar Wochen deutlich zu sehen.",
+      "wirkung": [
+        "flow",
+        "produktiv"
+      ],
+      "mit": [
+        "allein"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "ziel": "30 Tage lang jeden Tag eine Skizze."
+    },
+    {
+      "id": "bibliothek",
+      "titel": "Bücherhalle und Bibliothek der Dinge",
+      "kategorie": "lernen",
+      "text": "Stöbern, lesen, Spiele oder Werkzeug leihen: Mit der Bücherhallen-Karte gibt es über 200 Gegenstände zum Ausleihen statt Kaufen.",
+      "wirkung": [
+        "produktiv",
+        "erholung"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "hamburg",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true,
+      "link": "https://www.buecherhallen.de/bibliothek-der-dinge.html",
+      "orte": [
+        {
+          "name": "Zentralbibliothek",
+          "teil": "Hammerbrook",
+          "geo": [
+            53.54971,
+            10.00832
+          ],
+          "link": "https://www.buecherhallen.de/zentralbibliothek.html",
+          "info": "am Hauptbahnhof · Mo–Sa 10–19, So 13–18 Uhr"
+        }
+      ]
+    },
+    {
+      "id": "schreiben",
+      "titel": "Schreiben",
+      "kategorie": "lernen",
+      "text": "Abends zehn Minuten Tagebuch – was war gut, was hat Energie gegeben? Oder ein Blog über eure Ausflüge.",
+      "wirkung": [
+        "produktiv",
+        "erholung"
+      ],
+      "mit": [
+        "allein"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "kostenlos": true
+    },
+    {
+      "id": "kraeuter",
+      "titel": "Kräuter auf der Fensterbank",
+      "kategorie": "lernen",
+      "text": "Basilikum, Petersilie und Schnittlauch aus Samen ziehen – und dann damit kochen.",
+      "wirkung": [
+        "produktiv"
+      ],
+      "mit": [
+        "allein",
+        "zu zweit"
+      ],
+      "wo": "zuhause",
+      "draussen": "drinnen",
+      "dauer": "kurz"
+    },
+    {
+      "id": "timmendorfer-strand",
+      "titel": "Timmendorfer Strand",
+      "kategorie": "ausflug",
+      "text": "Ostseebad mit langer Promenade und neuer Seebrücke, die 250 Meter ins Meer führt; nebenan in Niendorf ein kleiner Fischereihafen mit Fischbuden und ein Vogelpark.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "anreise": "Deutschlandticket: RE8 bis Lübeck, weiter RB85 bis Timmendorfer Strand (ca. 1 Std. 20 Min.), Bus 40 zum Strand · Auto: ca. 1 Std.",
+      "link": "https://timmendorfer-strand.de/die-orte/timmendorfer-strand",
+      "orte": [
+        {
+          "name": "Timmendorfer Strand",
+          "teil": "Ostsee",
+          "geo": [
+            54.00104,
+            10.78525
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scharbeutz",
+      "titel": "Scharbeutz und Haffkrug",
+      "kategorie": "ausflug",
+      "text": "Lebendige Promenade in Scharbeutz, nebenan das ruhigere Haffkrug mit naturbelassenem Sandstrand und Seebrücke.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "anreise": "Deutschlandticket: RE8 bis Lübeck, RB85 bis Scharbeutz (ca. 1 Std. 25 Min.), der Bahnhof liegt 1–1,5 km vom Strand · Auto: ca. 1 Std.",
+      "link": "https://www.ostsee-schleswig-holstein.de/urlaubsorte/luebecker-bucht/scharbeutz/",
+      "orte": [
+        {
+          "name": "Scharbeutz",
+          "teil": "Ostsee",
+          "geo": [
+            54.02804,
+            10.75983
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ratzeburg",
+      "titel": "Ratzeburg: Inselstadt",
+      "kategorie": "ausflug",
+      "text": "Eine Altstadt auf einer Insel, ringsum vier Seen, dazu der Dom – Uferwege, Schiffsrundfahrten, im Sommer Tret- und Elektroboote.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "anreise": "Bus X87 ab Wandsbek Markt direkt (ca. 1 Std.) · Auto: ca. 55 Min.",
+      "link": "https://www.herzogtum-lauenburg.de/ratzeburg-inselstadt",
+      "orte": [
+        {
+          "name": "Ratzeburg",
+          "teil": "Herzogtum Lauenburg",
+          "geo": [
+            53.69931,
+            10.77404
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moelln",
+      "titel": "Mölln: Eulenspiegelstadt",
+      "kategorie": "ausflug",
+      "text": "Historische Altstadt mit Rathaus von 1373 und Eulenspiegel-Museum, Kurpark, Seen und Bootsfahrten.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "anreise": "Bus X87 ab Wandsbek Markt direkt bis Mölln ZOB (ca. 45 Min.) · Auto: ca. 50 Min.",
+      "link": "https://www.moelln-tourismus.de/",
+      "orte": [
+        {
+          "name": "Mölln",
+          "teil": "Herzogtum Lauenburg",
+          "geo": [
+            53.63017,
+            10.69165
+          ]
+        }
+      ]
+    },
+    {
+      "id": "schwerin",
+      "titel": "Schwerin und sein Schloss",
+      "kategorie": "ausflug",
+      "text": "Ein Märchenschloss auf einer Insel im Schweriner See, mit Schlossmuseum und Burggarten – Teil des UNESCO-Welterbes.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "beides",
+      "dauer": "ganztags",
+      "zeiten": "Schlossmuseum Di–So, im Winterhalbjahr 10–17 Uhr",
+      "anreise": "Deutschlandticket: RE1 direkt bis Schwerin (ca. 1 Std. 25 Min.) · Auto: ca. 1 Std. 25 Min.",
+      "link": "https://www.schwerin.de/kultur-tourismus/sehenswuerdigkeiten/schloss-schwerin/",
+      "orte": [
+        {
+          "name": "Schloss Schwerin",
+          "teil": "Schwerin",
+          "geo": [
+            53.62447,
+            11.41817
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bremen",
+      "titel": "Bremen",
+      "kategorie": "ausflug",
+      "text": "Marktplatz mit Rathaus und Roland, Stadtmusikanten, Böttcherstraße – und das verwinkelte Schnoorviertel gleich um die Ecke.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "beides",
+      "dauer": "ganztags",
+      "anreise": "Deutschlandticket: RE4 direkt bis Bremen Hbf (ca. 1 Std. 10 Min.) · Auto: ca. 1 Std. 25 Min.",
+      "link": "https://www.bremen.de/tourismus/sehenswuerdigkeiten/der-marktplatz",
+      "orte": [
+        {
+          "name": "Bremer Marktplatz",
+          "teil": "Bremen",
+          "geo": [
+            53.07591,
+            8.80733
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lauenburg",
+      "titel": "Lauenburg an der Elbe",
+      "kategorie": "ausflug",
+      "text": "Schifferstadt mit Fachwerkhäusern in der Elbstraße, Elbschifffahrtsmuseum und Radwegen am hohen Elbufer.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "anreise": "Deutschlandticket: RE3 bis Lüneburg, weiter RE83 bis Lauenburg (ca. 1–1,5 Std.) · Auto: ca. 1 Std.",
+      "link": "https://www.herzogtum-lauenburg.de/poi/historische-altstadt-lauenburg",
+      "orte": [
+        {
+          "name": "Altstadt Lauenburg",
+          "teil": "Lauenburg/Elbe",
+          "geo": [
+            53.37068,
+            10.5574
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glueckstadt",
+      "titel": "Glückstadt und Elbfähre",
+      "kategorie": "ausflug",
+      "text": "Eine Planstadt von 1617 mit sternförmigen Straßen und historischem Hafen – mit der Elbfähre in gut 20 Minuten hinüber nach Wischhafen.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "anreise": "Deutschlandticket: S-Bahn bis Altona, RB61 bis Glückstadt (ca. 1 Std.); die Fähre kostet extra (3,40 € p. P.) · Auto: ca. 1 Std.",
+      "link": "https://glueckstadt-tourismus.de/glueckstadt-koenigstraum-und-stadtdenkmal-an-der-elbe/",
+      "orte": [
+        {
+          "name": "Glückstadt",
+          "teil": "Elbe",
+          "geo": [
+            53.78832,
+            9.42376
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cuxhaven",
+      "titel": "Cuxhaven und das Watt",
+      "kategorie": "ausflug",
+      "text": "Nordsee an der Elbmündung: Strand und Watt in Duhnen, Schiffe gucken an der Alten Liebe, von März bis Oktober geführte Wattwanderungen zur Insel Neuwerk.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "anreise": "Deutschlandticket: RE5 direkt bis Cuxhaven (ca. 1 Std. 45 Min.), weiter mit dem Bus nach Duhnen · Auto: ca. 2 Std.",
+      "link": "https://tourismus.cuxhaven.de/",
+      "orte": [
+        {
+          "name": "Duhnen",
+          "teil": "Cuxhaven",
+          "geo": [
+            53.88388,
+            8.64212
+          ]
+        }
+      ]
+    },
+    {
+      "id": "st-peter-ording",
+      "titel": "St. Peter-Ording",
+      "kategorie": "ausflug",
+      "text": "Zwölf Kilometer Sandstrand, bis zu zwei Kilometer breit, eine über einen Kilometer lange Seebrücke und Pfahlbau-Restaurants am Strand.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "anreise": "Auto: ca. 1 Std. 50 Min. · Deutschlandticket: über Husum ca. 3–3,5 Std. – besser mit dem Auto",
+      "link": "https://www.st-peter-ording.de/",
+      "orte": [
+        {
+          "name": "St. Peter-Ording",
+          "teil": "Nordsee",
+          "geo": [
+            54.31344,
+            8.59843
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bad-segeberg",
+      "titel": "Kalkberghöhle Bad Segeberg",
+      "kategorie": "ausflug",
+      "text": "Norddeutschlands einzige Schauhöhle unter dem Kalkberg der Karl-May-Spiele – Winterquartier für über 30.000 Fledermäuse, daneben die Ausstellung Noctalis.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "beides",
+      "dauer": "halbtags",
+      "saison": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "anreise": "Deutschlandticket: RE8 bis Bad Oldesloe, RB82 bis Bad Segeberg (ca. 50 Min.) · Auto: ca. 55 Min.",
+      "link": "https://noctalis.de/besuch/",
+      "orte": [
+        {
+          "name": "Kalkberg",
+          "teil": "Bad Segeberg",
+          "geo": [
+            53.93548,
+            10.31681
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ploen",
+      "titel": "Plön und die Fünf-Seen-Fahrt",
+      "kategorie": "ausflug",
+      "text": "Schloss mit Blick über den Großen Plöner See, Altstadtgassen, Prinzeninsel – und von Mai bis Anfang Oktober mit dem Schiff über fünf Seen bis Malente.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "hohwacht": true,
+      "anreise": "Deutschlandticket: RE8 bis Lübeck, RE83 bis Plön (ca. 1 Std. 40 Min.) · Auto: ca. 1 Std. 20 Min.",
+      "link": "https://www.holsteinischeschweiz.de/ploen",
+      "orte": [
+        {
+          "name": "Plön",
+          "teil": "Holsteinische Schweiz",
+          "geo": [
+            54.15681,
+            10.41343
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eckernfoerde",
+      "titel": "Eckernförde",
+      "kategorie": "ausflug",
+      "text": "Ostseebad mit Hafen, Promenade, kleiner Altstadt und vier Kilometern feinem Sandstrand – alles nah beieinander.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "anreise": "Deutschlandticket: über Kiel ca. 2 Std. · Auto: ca. 1 Std. 30 Min.",
+      "link": "https://www.ostseebad-eckernfoerde.de/eckernfoerde",
+      "orte": [
+        {
+          "name": "Eckernförde",
+          "teil": "Ostsee",
+          "geo": [
+            54.47131,
+            9.83609
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wismar",
+      "titel": "Wismar",
+      "kategorie": "ausflug",
+      "text": "Hansestadt mit Welterbe-Altstadt, einem der größten Marktplätze Norddeutschlands und viel Backsteingotik.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "beides",
+      "dauer": "ganztags",
+      "anreise": "Deutschlandticket: RE1 bis Schwerin, RE8 bis Wismar (ca. 2 Std. 15 Min.) · Auto: ca. 1 Std. 30 Min.",
+      "link": "https://www.wismar.de/Tourismus/Wismar-Sehenswertes/",
+      "orte": [
+        {
+          "name": "Marktplatz Wismar",
+          "teil": "Wismar",
+          "geo": [
+            53.89166,
+            11.46541
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heide-park",
+      "titel": "Heide Park",
+      "kategorie": "ausflug",
+      "text": "Freizeitpark mit sieben großen Achterbahnen – am besten an einem Wochentag außerhalb der Ferien.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "saison": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "anreise": "Auto: ca. 1 Std. (A7) · Deutschlandticket: RB38 ab Harburg bis Wolterdingen, dann 20 Min. zu Fuß (ca. 1,5 Std.)",
+      "link": "https://www.heide-park.de/",
+      "orte": [
+        {
+          "name": "Heide Park",
+          "teil": "Soltau",
+          "geo": [
+            53.02493,
+            9.87924
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hansa-park",
+      "titel": "Hansa-Park",
+      "kategorie": "ausflug",
+      "text": "Der Freizeitpark direkt an der Ostsee, mit Achterbahnen wie „Der Schwur des Kärnan“ und Wasserbahnen.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit",
+        "gruppe"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "saison": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "anreise": "Deutschlandticket: RE8 bis Lübeck, RB85 bis Sierksdorf, 10 Min. zu Fuß (ca. 1,5 Std.) · Auto: ca. 1 Std.",
+      "link": "https://www.hansapark.de/oeffnungszeiten?language=de",
+      "orte": [
+        {
+          "name": "Hansa-Park",
+          "teil": "Sierksdorf",
+          "geo": [
+            54.07474,
+            10.77961
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lueneburg-altstadt-und-salztherme-salue-lueneburg",
+      "titel": "Lüneburg mit Salztherme",
+      "kategorie": "ausflug",
+      "text": "Backstein-Altstadt mit Stintmarkt und Wasserviertel – danach in die Sole-Therme SaLü mit Saunawelt.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "beides",
+      "dauer": "ganztags",
+      "anreise": "Deutschlandticket: RE3 bis Lüneburg (ca. 30 Min.) · Auto: ca. 45 Min.",
+      "link": "https://www.salue.info/",
+      "teil": "Lüneburg",
+      "orte": [
+        {
+          "name": "Lüneburg",
+          "teil": "Lüneburg",
+          "geo": [
+            53.24871,
+            10.40785
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lueneburger-wasserturm-am-wasserturm-lueneburg",
+      "titel": "Lüneburger Wasserturm",
+      "kategorie": "ausflug",
+      "text": "Das Wahrzeichen der Stadt mit Aussichtsplattform über den Dächern der Altstadt – passt zu jedem Lüneburg-Tag.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "beides",
+      "dauer": "kurz",
+      "anreise": "Deutschlandticket: RE3 bis Lüneburg (ca. 30 Min.) · Auto: ca. 45 Min.",
+      "link": "https://wasserturm.net/",
+      "teil": "Lüneburg",
+      "orte": [
+        {
+          "name": "Wasserturm",
+          "teil": "Lüneburg",
+          "geo": [
+            53.24681,
+            10.41349
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lueneburger-heide-undeloh-wilsede-totengrund-undeloh",
+      "titel": "Heidewanderung Undeloh – Wilsede – Totengrund",
+      "kategorie": "ausflug",
+      "text": "Die klassische Heidewanderung über 10 bis 12 Kilometer; im August und September blüht alles lila, im Herbst leuchten die Farben.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "kostenlos": true,
+      "preis": "Parkgebühr",
+      "anreise": "Auto: ca. 45–60 Min.; mit dem Deutschlandticket schwer erreichbar",
+      "link": "https://www.lueneburger-heide.de/",
+      "teil": "Lüneburger Heide",
+      "orte": [
+        {
+          "name": "Undeloh",
+          "teil": "Lüneburger Heide",
+          "geo": [
+            53.19703,
+            9.9765
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luebeck-altstadt-und-europaeisches-hansemuseum-luebeck",
+      "titel": "Lübeck",
+      "kategorie": "ausflug",
+      "text": "Holstentor, Altstadtinsel (UNESCO-Welterbe), Marzipan – und das Europäische Hansemuseum für einen Regenvormittag.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "beides",
+      "dauer": "ganztags",
+      "preis": "Hansemuseum Erw. ca. 14 €",
+      "anreise": "Deutschlandticket: RE8/RE80 bis Lübeck Hbf (ca. 45 Min.) · Auto: ca. 50–60 Min.",
+      "link": "https://www.hansemuseum.eu/",
+      "teil": "Lübeck",
+      "orte": [
+        {
+          "name": "Lübeck",
+          "teil": "Lübeck",
+          "geo": [
+            53.86644,
+            10.68474
+          ]
+        }
+      ]
+    },
+    {
+      "id": "travemuende-strand-und-promenade-luebeck-travemuende",
+      "titel": "Travemünde",
+      "kategorie": "ausflug",
+      "text": "Strand, Promenade und Nordermole mit Blick auf die großen Fähren nach Skandinavien.",
+      "wirkung": [
+        "erholung",
+        "bewegung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "ganztags",
+      "kostenlos": true,
+      "anreise": "Deutschlandticket: RE bis Lübeck, RB bis Travemünde Strand (ca. 1 Std. 10 Min.) · Auto: ca. 1 Std.",
+      "link": "https://www.travemuende-tourismus.de/",
+      "teil": "Lübeck",
+      "orte": [
+        {
+          "name": "Travemünde",
+          "teil": "Lübeck",
+          "geo": [
+            53.96445,
+            10.84333
+          ]
+        }
+      ]
+    },
+    {
+      "id": "altes-land-hoflaeden-und-hofcaf-s-jork",
+      "titel": "Altes Land: Hofläden und Hofcafés",
+      "kategorie": "ausflug",
+      "text": "Obsthöfe entlang der Deiche mit Hofläden und Kuchen in den Hofcafés – im Frühjahr die Blüte, im Spätsommer Äpfel zum Selbstpflücken.",
+      "wirkung": [
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "beides",
+      "dauer": "ganztags",
+      "anreise": "Deutschlandticket: S5 bis Neugraben oder Buxtehude und weiter mit dem Bus (ca. 1 Std.), oder mit der Fähre 62 bis Finkenwerder und dann Bus · Auto: ca. 40 Min.",
+      "link": "https://www.tourismus-altesland.de/portal/seiten/anreise-904000482-20380.html",
+      "teil": "Altes Land",
+      "orte": [
+        {
+          "name": "Jork",
+          "teil": "Altes Land",
+          "geo": [
+            53.53284,
+            9.68143
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stade-altstadt-und-hansehafen-stade",
+      "titel": "Stade",
+      "kategorie": "ausflug",
+      "text": "Fachwerk-Altstadt am alten Hansehafen – gut mit dem Alten Land zu verbinden.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "beides",
+      "dauer": "ganztags",
+      "kostenlos": true,
+      "anreise": "Deutschlandticket: S5 bis Stade (ca. 1 Std.) · Auto: ca. 45–50 Min.",
+      "link": "https://www.stade-tourismus.de/",
+      "teil": "Stade",
+      "orte": [
+        {
+          "name": "Stade",
+          "teil": "Stade",
+          "geo": [
+            53.59979,
+            9.47544
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marine-ehrenmal-und-u-995-laboe",
+      "titel": "Marine-Ehrenmal und U 995 in Laboe",
+      "kategorie": "ausflug",
+      "text": "Ein Aussichtsturm hoch über der Kieler Förde und ein begehbares U-Boot am Strand.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "beides",
+      "dauer": "halbtags",
+      "hohwacht": true,
+      "preis": "Kombiticket ca. 14 €",
+      "zeiten": "im Winter täglich 10–16 Uhr",
+      "anreise": "Deutschlandticket: über Kiel mit Fähre oder Bus (ca. 2 Std.) · Auto: ca. 1 Std. 35 Min. · ab Hohwacht ca. 35 Min.",
+      "link": "https://deutscher-marinebund.de/?p=16931",
+      "teil": "Laboe",
+      "orte": [
+        {
+          "name": "Marine-Ehrenmal",
+          "teil": "Laboe",
+          "geo": [
+            54.40225,
+            10.22566
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eiszeitmuseum-luetjenburg-nienthal-7-luetjenburg",
+      "titel": "Eiszeitmuseum Lütjenburg",
+      "kategorie": "ausflug",
+      "text": "Kleines Museum zur eiszeitlichen Landschaft der Region – gut für einen Regentag bei einem Besuch in Hohwacht.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "drinnen",
+      "dauer": "kurz",
+      "hohwacht": true,
+      "preis": "Erw. ca. 4 €",
+      "anreise": "Auto: ca. 1 Std. 30 Min. · ab Hohwacht ca. 10 Min.",
+      "teil": "Lütjenburg",
+      "orte": [
+        {
+          "name": "Eiszeitmuseum",
+          "teil": "Lütjenburg",
+          "geo": [
+            54.3031,
+            10.56263
+          ]
+        }
+      ]
+    },
+    {
+      "id": "steilkueste-und-strand-hohwacht-behrensdorf-hohwacht-seebrue",
+      "titel": "Steilküste Hohwacht – Behrensdorf",
+      "kategorie": "ausflug",
+      "text": "Strand- und Steilküstenwanderung, etwa auf der Hohwachter Flunderroute. Die Bucht ist zeitweise Schießgebiet der Bundeswehr – Sperrungen vor Ort beachten.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "hohwacht": true,
+      "kostenlos": true,
+      "anreise": "vor Ort in Hohwacht",
+      "link": "https://www.ich-geh-wandern.de/hohwachter-flunderroute",
+      "teil": "Hohwacht",
+      "orte": [
+        {
+          "name": "Seebrücke Hohwacht",
+          "teil": "Hohwacht",
+          "geo": [
+            54.32158,
+            10.66647
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wanderung-gut-panker-hessenstein-panker",
+      "titel": "Wanderung Gut Panker – Hessenstein",
+      "kategorie": "ausflug",
+      "text": "Ein Rundweg von etwa 13 Kilometern über das Gut mit Trakehner-Gestüt hinauf zum Aussichtsturm Hessenstein.",
+      "wirkung": [
+        "bewegung",
+        "erholung"
+      ],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "halbtags",
+      "hohwacht": true,
+      "kostenlos": true,
+      "anreise": "Auto: ab Hohwacht ca. 15 Min.",
+      "link": "https://bergsteiger.de/touren/wandern/wandern-schleswig-holstein-vom-gut-panker-auf-den-hessenstein/",
+      "teil": "Panker",
+      "orte": [
+        {
+          "name": "Gut Panker",
+          "teil": "Panker",
+          "geo": [
+            54.34241,
+            10.55578
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aquarium-geomar-duesternbrooker-weg-20-kiel",
+      "titel": "Aquarium GEOMAR in Kiel",
+      "kategorie": "ausflug",
+      "text": "Kleines Meeresaquarium direkt an der Förde mit Seehundbecken – im Winter die Öffnungszeiten vorher prüfen.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "beides",
+      "dauer": "kurz",
+      "hohwacht": true,
+      "anreise": "Deutschlandticket: RE7/RE70 bis Kiel Hbf (ca. 1 Std. 15 Min.) · Auto: ca. 1 Std. 15 Min. · ab Hohwacht ca. 40 Min.",
+      "link": "https://kiel-sailing-city.de/en/explore-the-kiel-fjord/sightseeing/in-winter",
+      "teil": "Kiel",
+      "orte": [
+        {
+          "name": "Aquarium GEOMAR",
+          "teil": "Kiel",
+          "geo": [
+            54.33033,
+            10.14855
+          ]
+        }
+      ]
+    },
+    {
+      "id": "schleuse-kiel-holtenau-aussichtsplattform-kiel-wik-holtenau",
+      "titel": "Schleuse Kiel-Holtenau",
+      "kategorie": "ausflug",
+      "text": "Aussichtsplattform über den Schleusen des Nord-Ostsee-Kanals – große Schiffe aus nächster Nähe.",
+      "wirkung": [],
+      "mit": [
+        "zu zweit"
+      ],
+      "wo": "ausflug",
+      "draussen": "draußen",
+      "dauer": "kurz",
+      "hohwacht": true,
+      "kostenlos": true,
+      "zeiten": "von Sonnenaufgang bis Sonnenuntergang",
+      "anreise": "Deutschlandticket: RE7/RE70 bis Kiel Hbf (ca. 1 Std. 15 Min.) · Auto: ca. 1 Std. 15 Min. · ab Hohwacht ca. 40 Min.",
+      "link": "https://kiel-sailing-city.de/en/explore-the-kiel-fjord/sightseeing/in-winter",
+      "teil": "Kiel",
+      "orte": [
+        {
+          "name": "Schleuse Holtenau",
+          "teil": "Kiel",
+          "geo": [
+            54.3725,
+            10.13617
+          ]
+        }
+      ]
+    }
+  ]
+}

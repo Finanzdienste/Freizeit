@@ -5,8 +5,9 @@
  * Stellt bereit:
  *
  *   - die Adresse der App auf dem Testserver (tests/server.mjs),
- *   - feste Testdaten: daten/programm.json ändert sich jede Woche, die Tests
- *     dürfen davon nicht abhängen. oeffne() leitet die Datei um,
+ *   - feste Testdaten: daten/programm.json ändert sich jede Woche, der
+ *     Ideen-Katalog ab und zu – die Tests dürfen von beiden nicht abhängen.
+ *     oeffne() leitet die Dateien um,
  *   - einen nachgebauten Server für den gemeinsamen Plan (fakeServer()), der
  *     sich verhält wie supabase/gemeinsam.sql – zwei Browser können ihn
  *     teilen. Echte Anfragen an Supabase gehen aus Tests nie hinaus,
@@ -113,6 +114,28 @@ export function testProgramm(mehr = {}) {
 }
 
 /**
+ * Ein kleiner Ideen-Katalog: je Kategorie eine Idee mit dem, was die Tests
+ * brauchen – Flow, Zuhause, zu zweit, Orte für die Karte, eine Idee
+ * außerhalb der Saison (Tretboot im November).
+ */
+export function testIdeen(mehr = {}) {
+  return {
+    version: 1,
+    stand: '2026-10-27',
+    ideen: [
+      { id: 'tischtennis', titel: 'Tischtennis im Park', kategorie: 'sport', text: 'An öffentlichen Platten.', wirkung: ['flow', 'bewegung'], mit: ['zu zweit', 'gruppe'], wo: 'hamburg', draussen: 'draußen', dauer: 'kurz', kostenlos: true, braucht: 'Schläger und Bälle', ziel: 'Die längste Serie schlagen.', link: 'https://example.org/tt', orte: [{ name: 'Hammer Park', teil: 'Hamm', geo: geo(0.0084, 0.0664), link: 'https://example.org/tt-hamm', info: 'zwei Platten' }, { name: 'Stadtpark Platten', teil: 'Winterhude', geo: geo(0.0466, 0.0281), link: 'https://example.org/tt-stadtpark' }] },
+      { id: 'buegelperlen', titel: 'Bügelperlen', kategorie: 'kreativ', text: 'Pixel für Pixel.', wirkung: ['flow', 'erholung'], mit: ['allein', 'zu zweit'], wo: 'zuhause', draussen: 'drinnen', dauer: 'kurz', braucht: 'Perlen und Platten' },
+      { id: 'story-game', titel: 'Story-Game', kategorie: 'spiele', text: "Assassin's Creed & Co.", wirkung: ['flow', 'erholung'], mit: ['allein'], wo: 'zuhause', draussen: 'drinnen', dauer: 'kurz', kostenlos: true },
+      { id: 'sauna', titel: 'Sauna-Abend', kategorie: 'entspannen', text: 'Aufgüsse und Ruhe.', wirkung: ['erholung'], mit: ['allein', 'zu zweit'], wo: 'hamburg', draussen: 'drinnen', dauer: 'halbtags', preis: 'ca. 25 €', orte: [{ name: 'Therme', teil: 'Barmbek', geo: geo(0.0266, 0.0342) }] },
+      { id: 'timmendorf', titel: 'Timmendorfer Strand', kategorie: 'ausflug', text: 'Ostsee mit Seebrücke.', wirkung: ['erholung', 'bewegung'], mit: ['zu zweit'], wo: 'ausflug', draussen: 'draußen', dauer: 'ganztags', anreise: 'RE8 und RB85', link: 'https://example.org/timmendorf', orte: [{ name: 'Timmendorfer Strand', geo: [54.001, 10.7853] }] },
+      { id: 'tretboot', titel: 'Tretboot', kategorie: 'sport', text: 'Auf der Alster.', wirkung: ['bewegung'], mit: ['zu zweit'], wo: 'hamburg', draussen: 'draußen', dauer: 'kurz', saison: [4, 5, 6, 7, 8, 9] },
+      { id: 'sprache', titel: 'Sprache lernen', kategorie: 'lernen', text: 'Jeden Tag ein bisschen.', wirkung: ['produktiv', 'flow'], mit: ['allein'], wo: 'zuhause', draussen: 'drinnen', dauer: 'kurz', kostenlos: true },
+    ],
+    ...mehr,
+  };
+}
+
+/**
  * Der Server für den gemeinsamen Plan, nachgebaut nach supabase/gemeinsam.sql:
  * dieselben vier Funktionen, dieselben Fehlermeldungen, Räume nach Code.
  * Zwei Browser, die denselben bekommen, sehen dieselben Räume.
@@ -174,6 +197,7 @@ export function fakeServer() {
  * @param {string} [o.tag]            fester Tag „2026-11-02“
  * @param {string} [o.zeit]           feste Uhrzeit „10:00“
  * @param {object|null} [o.programm]  Testdaten, null = Datei fehlt (404)
+ * @param {object|null} [o.ideen]     Ideen-Katalog, null = Datei fehlt (404)
  * @param {object} [o.stand]          gespeicherter Stand vor dem Öffnen
  * @param {object} [o.server]         gemeinsamer Plan (fakeServer()), sonst ein eigener
  * @param {string} [o.ua]             anderer User-Agent (z. B. IPHONE)
@@ -181,7 +205,7 @@ export function fakeServer() {
  * @param {object} [o.browser]        vorhandenen Browser mitbenutzen (zweite Person)
  */
 export async function oeffne({
-  tag = MO, zeit = '10:00', programm = testProgramm(), stand = null, server = fakeServer(), ua = '', hash = '',
+  tag = MO, zeit = '10:00', programm = testProgramm(), ideen = testIdeen(), stand = null, server = fakeServer(), ua = '', hash = '',
   viewport = { width: 390, height: 844 }, browser: geteilt = null,
 } = {}) {
   const browser = geteilt || await chromium.launch();
@@ -191,10 +215,14 @@ export async function oeffne({
     viewport, locale: 'de-DE', serviceWorkers: 'block', ...(ua ? { userAgent: ua } : {}),
   });
   await ctx.addInitScript(uhrStellen);
-  const daten = { programm };
+  const daten = { programm, ideen };
   await ctx.route('**/daten/programm.json', (route) => {
     if (daten.programm === null || daten.programm === undefined) return route.fulfill({ status: 404, body: 'fehlt' });
     return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(daten.programm) });
+  });
+  await ctx.route('**/daten/ideen.json', (route) => {
+    if (daten.ideen === null || daten.ideen === undefined) return route.fulfill({ status: 404, body: 'fehlt' });
+    return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(daten.ideen) });
   });
   await ctx.route(SUPABASE, (route) => server.route(route));
   await ctx.route('https://tile.openstreetmap.org/**', (route) => route.fulfill({ status: 200, contentType: 'image/png', body: LEERES_PNG }));

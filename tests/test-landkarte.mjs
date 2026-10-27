@@ -31,7 +31,8 @@ await raum('bock');
 check(await modul('markerZahl') === 0, 'mit Bock: noch nichts');
 await raum('alles');
 const alles = await modul('markerZahl');
-check(alles >= woche + 2, `alles: mehr Orte als diese Woche (${alles}), mit Konzert im Januar und Strand`);
+check(alles >= woche + 1, `alles: mehr Orte als diese Woche (${alles}), mit dem Konzert im Januar`);
+check(await page.locator('[data-aktion="karte-ideen"]').getAttribute('aria-pressed') === 'false', 'die Ideen sind auf der Karte erst einmal aus');
 
 // Die Liste am Marker und der Bock-Knopf darin.
 await raum('woche');

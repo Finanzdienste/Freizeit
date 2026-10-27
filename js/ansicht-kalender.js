@@ -3,7 +3,8 @@
  *
  * Jedes Feld zeigt, wie viele Termine an dem Tag stehen (nach Filtern und
  * 21:30-Regel – dieselbe Auswahl wie im Programm) und als Punkte, wer Bock
- * hat. Monate nach dem Programm zeigen nur noch Konzerte der eigenen Künstler.
+ * hat – auch auf eingeplante Ideen. Monate nach dem Programm zeigen nur noch
+ * Konzerte der eigenen Künstler und Eingeplantes.
  */
 import { esc, anzahl } from './text.js';
 import { monatsRaster, monatVon, monatPlus, monatJahr, datumMitTag, montag } from './zeit.js';
@@ -11,22 +12,23 @@ import { termineAm, laufendZwischen, letzterTag, filterAn } from './filter.js';
 import { karte, eintragTermin } from './karte.js';
 import { meinBock } from './speicher.js';
 import { andere } from './gemeinsam.js';
+import { geplante } from './ideen.js';
 
 const WOCHENTAGE = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'];
 
-/** Von diesem Monat bis zum Monat des letzten Termins. */
+/** Von diesem Monat bis zum Monat des letzten Termins oder Plans. */
 export function monatsBereich(p, heute) {
   const erster = monatVon(heute);
-  const letzter = p ? monatVon(letzterTag(p) > heute ? letzterTag(p) : heute) : erster;
+  const bis = p ? letzterTag(p, geplante().map((e) => e.datum)) : heute;
+  const letzter = monatVon(bis > heute ? bis : heute);
   return { erster, letzter };
 }
 
 /** Wer an einem Tag Bock hat: ich (0) und die anderen nach ihrer Nummer. */
-function punkte(liste, tag, tage) {
+function punkte(liste, tag, tage, geplant) {
   const wer = new Set();
   let treffer = false;
-  for (const e of liste) {
-    const x = eintragTermin(e, tag, tage);
+  for (const x of [...liste.map((e) => eintragTermin(e, tag, tage)), ...geplant]) {
     const ich = meinBock(x.schluessel);
     const sie = andere(x.schluessel);
     if (ich) wer.add('ich');
@@ -44,10 +46,12 @@ export function kalenderAnsicht(p, st, heute, monatWunsch, gewaehlt) {
   const raster = monatsRaster(monat);
   const tag = gewaehlt && monatVon(gewaehlt) === monat ? gewaehlt : (monat === monatVon(heute) ? heute : `${monat}-01`);
 
+  const plaene = geplante(st);
+  const geplantAm = (d) => plaene.filter((e) => e.datum === d);
   const felder = raster.map((d) => {
     const imMonat = monatVon(d) === monat;
     const { tag: t, liste } = termineAm(p, d, f);
-    const { wer, treffer } = punkte(liste, t, p.tage);
+    const { wer, treffer } = punkte(liste, t, p.tage, geplantAm(d));
     const klassen = ['feld', imMonat ? '' : 'fremd', d < heute ? 'vorbei' : '', d === heute ? 'heute' : '', d === tag ? 'gewaehlt' : '',
       d > p.bis ? 'ohne' : '', treffer ? 'treffer' : ''].filter(Boolean).join(' ');
     const zahl = liste.length ? `<span class="zahl">${liste.length}</span>` : '';
@@ -58,6 +62,7 @@ export function kalenderAnsicht(p, st, heute, monatWunsch, gewaehlt) {
 
   const { tag: t, liste, spaet } = termineAm(p, tag, f);
   const laufend = laufendZwischen(p, tag, tag, f);
+  const geplant = geplantAm(tag);
   const tagHtml = `<section class="kal-tag" id="kal-tag">
     <div class="tag-kopf"><h2>${esc(datumMitTag(tag))}</h2>${tag === heute ? '<span class="heute">heute</span>' : ''}</div>
     <div class="tag-info">
@@ -65,6 +70,7 @@ export function kalenderAnsicht(p, st, heute, monatWunsch, gewaehlt) {
       ${spaet ? `<div>Ausgeblendet: ${anzahl(spaet, 'Termin', 'Termine')}, die erst nach 21:30 enden</div>` : ''}
       ${laufend.length ? `<div>Außerdem laufen ${anzahl(laufend.length, 'Angebot', 'Angebote')} – <button type="button" class="textknopf" data-zu-woche="${montag(tag)}">im Programm ansehen</button></div>` : ''}
     </div>
+    ${geplant.map((e) => karte(e, { zeitSpalte: true })).join('')}
     ${liste.length ? liste.map((e) => karte(eintragTermin(e, t, p.tage), { zeitSpalte: true })).join('')
     : `<div class="leer-klein">${tag > p.bis ? 'Für diesen Tag gibt es noch kein Programm – nur Konzerte deiner Künstler stehen schon fest.' : 'Keine Termine für diese Filter.'}</div>`}
   </section>`;

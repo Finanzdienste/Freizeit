@@ -18,9 +18,20 @@ export const LEERER_FILTER = () => ({
   region: '', kategorie: '', kostenlos: false, feierabend: false, drinnen: false, draussen: false, hohwacht: false, kuenstler: false,
 });
 
+/** Filter im Reiter Ideen: Wirkungen (alle müssen passen), wo, und Schalter. */
+export const LEERER_IDEENFILTER = () => ({
+  wirkung: [], wo: '', drinnen: false, draussen: false, kostenlos: false, kurz: false, zuZweit: false,
+});
+
 const LEER = () => ({
   version: 2,
   filter: LEERER_FILTER(),
+  ideenFilter: LEERER_IDEENFILTER(),
+  // Was man gemacht hat und wie es war – nur auf diesem Gerät:
+  // [{ schluessel, titel, datum, bewertung (0–3), flow, plan? }]
+  verlauf: [],
+  // Ideen mit Ort auch auf der Karte zeigen
+  karteIdeen: false,
   // schluessel → Schnappschuss des Eintrags (siehe schnappschuss()) + gesetzt
   bock: {},
   // { code, ich: { id, name }, stand: { personen: [], bock: [] }, abgeholt } oder null
@@ -59,6 +70,8 @@ export function laden() {
         ...leer,
         ...roh,
         filter: { ...leer.filter, ...(roh.filter || {}) },
+        ideenFilter: { ...leer.ideenFilter, ...(roh.ideenFilter || {}) },
+        verlauf: Array.isArray(roh.verlauf) ? roh.verlauf.filter((v) => v && typeof v.schluessel === 'string') : [],
         gesehen: { ...leer.gesehen, ...(roh.gesehen || {}) },
         bock: roh.bock && typeof roh.bock === 'object' ? roh.bock : {},
         warteschlange: Array.isArray(roh.warteschlange) ? roh.warteschlange : [],
@@ -83,7 +96,9 @@ export const aktuell = () => stand;
 export const meinBock = (schluessel) => Object.hasOwn(stand.bock, schluessel);
 
 const FELDER = ['quelle', 'titel', 'ort', 'datum', 'zeit', 'von', 'bis', 'ganztags', 'endeMin', 'link', 'kategorie',
-  'region', 'kuenstler', 'preis', 'kostenlos', 'anreise', 'beschreibung', 'geo'];
+  'region', 'kuenstler', 'preis', 'kostenlos', 'anreise', 'beschreibung', 'geo',
+  // Ideen (ideen.js): Kategorie, Wirkung, wo, wer sie angelegt hat; beim Eingeplanten die Idee dahinter
+  'kat', 'wirkung', 'wo', 'draussen', 'dauer', 'mit', 'urheber', 'idee'];
 const bytes = (o) => new TextEncoder().encode(JSON.stringify(o)).length;
 
 /**
@@ -96,7 +111,7 @@ export function schnappschuss(e) {
   const s = {};
   for (const k of FELDER) {
     const v = e[k];
-    if (v !== undefined && v !== null && v !== '' && v !== false) s[k] = v;
+    if (v !== undefined && v !== null && v !== '' && v !== false && !(Array.isArray(v) && !v.length)) s[k] = v;
   }
   if (s.beschreibung) s.beschreibung = String(s.beschreibung).slice(0, 200);
   for (const weg of ['beschreibung', 'anreise', 'preis', 'geo', 'region']) {
@@ -133,4 +148,23 @@ export function bockWeg(schluessel) {
   if (!meinBock(schluessel)) return;
   const roh = { schluessel };
   bockUmschalten(roh);
+}
+
+/**
+ * „Gemacht“ mit „Wie war's?“ festhalten. Bleibt auf dem Gerät – daraus wird
+ * im Reiter Ideen „Tut dir gut“. Zurück: die Stelle im Verlauf (für Rückgängig).
+ */
+export function gemachtSpeichern({ schluessel, titel, datum, bewertung = 0, flow = false, plan = '' }) {
+  stand.verlauf.push({
+    schluessel, titel: String(titel || '').slice(0, 100), datum, bewertung: [1, 2, 3].includes(bewertung) ? bewertung : 0, flow: Boolean(flow),
+    ...(plan ? { plan } : {}),
+  });
+  if (stand.verlauf.length > 1000) stand.verlauf.splice(0, stand.verlauf.length - 1000);
+  speichern();
+  return stand.verlauf.length - 1;
+}
+
+export function gemachtWeg(stelle) {
+  if (stelle >= 0 && stelle < stand.verlauf.length) stand.verlauf.splice(stelle, 1);
+  speichern();
 }

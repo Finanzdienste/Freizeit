@@ -54,8 +54,8 @@ export const laufendZwischen = (p, von, bis, f) => p.laufend
   .sort((a, b) => a.bis.localeCompare(b.bis) || a.titel.localeCompare(b.titel, 'de'));
 
 /** Alle Kategorien, die vorkommen – für die Auswahl im Filter. */
-export const kategorien = (p) => [...new Set([...p.termine, ...p.laufend, ...p.immer]
+export const kategorien = (p) => [...new Set([...p.termine, ...p.laufend]
   .map((e) => e.kategorie).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'de'));
 
-/** Der letzte Tag mit irgendeinem Termin – Konzerte reichen Monate voraus. */
-export const letzterTag = (p) => [p.bis, ...p.termine.flatMap((e) => e.daten)].sort().pop();
+/** Der letzte Tag mit irgendeinem Termin – Konzerte und Eingeplantes reichen Monate voraus. */
+export const letzterTag = (p, extra = []) => [p.bis, ...p.termine.flatMap((e) => e.daten), ...extra].sort().pop();

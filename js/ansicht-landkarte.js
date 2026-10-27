@@ -3,7 +3,9 @@
  *
  * Ein Marker je Ort, darauf die Zahl der Termine dort im gewählten Zeitraum;
  * ein Tipp öffnet die Liste mit Bock-Knopf. Orange heißt: Du hast irgendwo
- * dort Bock, violett: die anderen, mit Stern: ihr beide.
+ * dort Bock, violett: die anderen, mit Stern: ihr beide. Mit „Ideen“ kommen
+ * die Orte aus dem Ideen-Katalog dazu (eckige, gestrichelte Marker);
+ * Eingeplantes steht wie ein Termin an seinem Tag.
  *
  * Leaflet (vendor/leaflet, im Offline-Vorrat) lädt erst, wenn der Reiter das
  * erste Mal aufgeht. Die Kacheln kommen von tile.openstreetmap.org und
@@ -15,10 +17,11 @@
  */
 import { esc, anzahl } from './text.js';
 import { plusTage, montag } from './zeit.js';
-import { termineAm, laufendZwischen, passt, filterAn, letzterTag } from './filter.js';
-import { eintragTermin, eintragLaufend, eintragImmer, merkeEintrag, bockKnopf, wannKurz } from './karte.js';
+import { termineAm, laufendZwischen, filterAn, letzterTag } from './filter.js';
+import { eintragTermin, eintragLaufend, merkeEintrag, bockKnopf, wannKurz } from './karte.js';
 import { meinBock } from './speicher.js';
 import { andere } from './gemeinsam.js';
+import { geplante } from './ideen.js';
 
 export const ZEITRAEUME = [
   ['heute', 'Heute'],
@@ -62,8 +65,8 @@ export function leafletLaden() {
   return laden;
 }
 
-function zeitraum(raum, heute, p) {
-  const weit = letzterTag(p);
+function zeitraum(raum, heute, p, plaene) {
+  const weit = letzterTag(p, plaene.map((e) => e.datum));
   if (raum === 'heute') return [heute, heute];
   if (raum === 'morgen') return [plusTage(heute, 1), plusTage(heute, 1)];
   if (raum === 'naechste') {
@@ -74,17 +77,25 @@ function zeitraum(raum, heute, p) {
   return [heute, plusTage(montag(heute), 6)];
 }
 
-/** Was im Zeitraum auf die Karte gehört – Termine je Tag, Laufendes, bei „Alles“ auch die Ausflugsziele. */
-export function eintraegeFuerKarte(p, st, heute, raum) {
+/**
+ * Was im Zeitraum auf die Karte gehört – Termine je Tag, Laufendes und
+ * Eingeplantes; mit dem Schalter „Ideen“ (und bei „Mit Bock“) auch die Orte
+ * der Ideen, je Ort ein Eintrag.
+ */
+export function eintraegeFuerKarte(p, st, heute, raum, ideen = []) {
   const f = st.filter;
-  const [von, bis] = zeitraum(raum, heute, p);
+  const plaene = geplante(st);
+  const [von, bis] = zeitraum(raum, heute, p, plaene);
   const liste = [];
   for (let d = von; d <= bis; d = plusTage(d, 1)) {
     const { tag, liste: termine } = termineAm(p, d, f);
     for (const e of termine) liste.push(eintragTermin(e, tag, p.tage));
   }
   for (const e of laufendZwischen(p, von, bis, f)) liste.push(eintragLaufend(e));
-  if (raum === 'alles' || raum === 'bock') for (const e of p.immer.filter((x) => passt(x, f))) liste.push(eintragImmer(e));
+  for (const e of plaene) if (e.datum >= von && e.datum <= bis) liste.push(e);
+  if (st.karteIdeen || raum === 'bock') {
+    for (const x of ideen) for (const o of x.orte) if (o.geo) liste.push({ ...x, ort: o.name, geo: o.geo, link: o.link || x.link });
+  }
   return raum === 'bock' ? liste.filter((x) => meinBock(x.schluessel) || andere(x.schluessel).length) : liste;
 }
 
@@ -106,6 +117,7 @@ function markerKlasse(gruppen, haufen = false) {
   let sie = false;
   let beide = false;
   let kuenstler = false;
+  let nurIdeen = true;
   for (const g of gruppen) {
     for (const x of g.eintraege) {
       const a = meinBock(x.schluessel);
@@ -114,9 +126,10 @@ function markerKlasse(gruppen, haufen = false) {
       sie ||= b;
       beide ||= a && b;
       kuenstler ||= x.kuenstler;
+      nurIdeen &&= x.quelle === 'idee';
     }
   }
-  return ['pin', haufen ? 'haufen' : '', beide ? 'treffer' : (ich ? 'ich' : (sie ? 'andere' : '')), kuenstler ? 'kuenstler' : '']
+  return ['pin', haufen ? 'haufen' : '', beide ? 'treffer' : (ich ? 'ich' : (sie ? 'andere' : '')), kuenstler ? 'kuenstler' : '', nurIdeen ? 'idee' : '']
     .filter(Boolean).join(' ');
 }
 
@@ -131,12 +144,13 @@ function popup(gruppe) {
     <div class="pop-ort">${esc(orte[0] || 'Ort')}</div>
     <ul class="pop-liste">${eintraege.map((x) => {
     merkeEintrag(x);
-    const wann = [wannKurz(x), x.datum ? x.zeit : ''].filter(Boolean).join(' · ');
+    const idee = x.quelle === 'idee';
+    const wann = idee ? `Idee · ${x.kategorie}` : [wannKurz(x), x.datum ? x.zeit : '', x.quelle === 'plan' ? 'eingeplant' : ''].filter(Boolean).join(' · ');
     return `<li>
         <div class="pop-wann">${esc(wann)}${x.kuenstler ? ' · <b>♫ Dein Künstler</b>' : ''}</div>
         <div class="pop-titel">${esc(x.titel)}</div>
         ${x.ort && x.ort !== orte[0] ? `<div class="pop-unter">${esc(x.ort)}</div>` : ''}
-        <div class="pop-aktionen">${bockKnopf(x)}${x.link ? `<a href="${esc(x.link)}" target="_blank" rel="noopener">Quelle</a>` : ''}${x.datum ? `<button type="button" class="textknopf" data-zu-tag="${x.datum}">im Programm</button>` : ''}</div>
+        <div class="pop-aktionen">${bockKnopf(x)}${x.link ? `<a href="${esc(x.link)}" target="_blank" rel="noopener">${idee ? 'Info' : 'Quelle'}</a>` : ''}${x.datum ? `<button type="button" class="textknopf" data-zu-tag="${x.datum}">im Programm</button>` : ''}${idee ? `<button type="button" class="textknopf" data-zu-idee="${esc(x.schluessel)}">bei den Ideen</button>` : ''}</div>
       </li>`;
   }).join('')}</ul>
   </div>`;
@@ -146,6 +160,7 @@ export function landkarteGeruest(st, raum) {
   return `<header class="woche-kopf">
     <div class="filterzeile karte-zeitraum">
       ${ZEITRAEUME.map(([k, text]) => `<button type="button" class="schalter" data-raum="${k}" aria-pressed="${raum === k}">${text}</button>`).join('')}
+      <button type="button" class="schalter ideen-schalter" data-aktion="karte-ideen" aria-pressed="${Boolean(st.karteIdeen)}">💡 Ideen</button>
     </div>
     ${filterAn(st.filter) ? '<p class="fein">Filter aus dem Programm sind aktiv. <button type="button" class="textknopf" data-aktion="filter-weg">Alle zeigen</button></p>' : ''}
   </header>
@@ -167,7 +182,7 @@ const pinIcon = (L, gruppe) => L.divIcon({
 });
 
 /** Marker setzen (und die Karte anlegen, falls ihr Element neu ist). */
-export async function landkarteZeichnen(p, st, heute, raum) {
+export async function landkarteZeichnen(p, st, heute, raum, ideen = []) {
   const el = document.getElementById('landkarte');
   if (!el || !p) return;
   let L;
@@ -207,7 +222,7 @@ export async function landkarteZeichnen(p, st, heute, raum) {
   }
   ebene.clearLayers();
   marker.length = 0;
-  const eintraege = eintraegeFuerKarte(p, st, heute, raum);
+  const eintraege = eintraegeFuerKarte(p, st, heute, raum, ideen);
   const gruppen = gruppieren(eintraege);
   const neue = gruppen.map((g) => {
     const m = L.marker(g.geo, { icon: pinIcon(L, g), title: g.eintraege[0].ort || '', gruppe: g })
@@ -226,9 +241,10 @@ export async function landkarteZeichnen(p, st, heute, raum) {
     letzterRaum = raum;
   }
   const ohne = eintraege.filter((x) => !x.geo).length;
+  const ideenOrte = eintraege.filter((x) => x.quelle === 'idee').length;
   const fuss = document.getElementById('karte-fuss');
   if (fuss) {
-    fuss.textContent = `${anzahl(eintraege.length - ohne, 'Eintrag', 'Einträge')} an ${anzahl(gruppen.length, 'Ort', 'Orten')}${ohne ? ` · ${ohne} ohne Ortsangabe nicht auf der Karte` : ''}`;
+    fuss.textContent = `${anzahl(eintraege.length - ohne, 'Eintrag', 'Einträge')} an ${anzahl(gruppen.length, 'Ort', 'Orten')}${ideenOrte ? `, davon ${ideenOrte} aus den Ideen` : ''}${ohne ? ` · ${ohne} ohne Ortsangabe nicht auf der Karte` : ''}`;
   }
   setTimeout(() => karteL && karteL.invalidateSize(), 0);
 }

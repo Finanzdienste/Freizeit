@@ -1,5 +1,6 @@
 /*
- * Freizeit: WhatsApp-Nachricht und Google-Kalender.
+ * Freizeit: WhatsApp-Nachricht und Google-Kalender – für Termine und für
+ * eingeplante Ideen.
  *
  * Erst die Bausteine direkt (teilen.js hat keine Abhängigkeit zum Browser),
  * dann die Knöpfe auf den Karten: Was darin steht, ist genau das, was der
@@ -42,10 +43,22 @@ const kalKarte = new URL(await karte.locator('a', { hasText: 'Kalender' }).getAt
 check(kalKarte.searchParams.get('dates') === '20261103T190000/20261103T210000', 'Kalender-Knopf der Karte mit geschätztem Ende');
 check(await karte.locator('a', { hasText: 'WhatsApp' }).getAttribute('target') === '_blank', 'Links öffnen außerhalb der App');
 
-const strand = page.locator('#abschnitt-immer .karte', { hasText: 'Elbstrand' });
-check(await strand.locator('a', { hasText: 'Kalender' }).count() === 0, 'Ausflugsziel ohne Datum: kein Kalender-Knopf');
-const waStrand = decodeURIComponent((await strand.locator('a', { hasText: 'WhatsApp' }).getAttribute('href')).split('text=')[1]);
-check(waStrand.includes('🕒 jederzeit'), 'Ausflugsziel: Nachricht nennt die Zeiten');
+// Ideen haben kein Datum: statt Kalender und WhatsApp gibt es „Einplanen“.
+await page.click('[data-reiter="ideen"]');
+await page.locator('details[data-kat="natur"] > summary').click();
+const strand = page.locator('details[data-kat="natur"] .karte', { hasText: 'Elbstrand' });
+check(await strand.locator('a', { hasText: 'Kalender' }).count() === 0 && await strand.locator('[data-aktion="planen"]').count() === 1,
+  'Idee ohne Datum: kein Kalender-Knopf, dafür „Einplanen“');
+await strand.locator('[data-aktion="planen"]').click();
+await page.locator('details[data-kat="natur"] .plan-datum').fill(SA);
+await page.locator('details[data-kat="natur"] .plan-zeit').fill('14:00');
+await page.locator('details[data-kat="natur"] [data-aktion="plan-speichern"]').click();
+const plan = page.locator('#abschnitt-geplant .karte', { hasText: 'Elbstrand' });
+const waPlan = decodeURIComponent((await plan.locator('a', { hasText: 'WhatsApp' }).getAttribute('href')).split('text=')[1]);
+check(waPlan.includes('*Elbstrand*') && waPlan.includes('📅 Samstag, 7.11.2026, 14:00 Uhr') && waPlan.includes('📍 Övelgönne'),
+  'eingeplant: die Nachricht nennt Tag, Uhrzeit und Ort');
+const kalPlan = new URL(await plan.locator('a', { hasText: 'Kalender' }).getAttribute('href'));
+check(kalPlan.searchParams.get('dates') === '20261107T140000/20261107T160000', 'eingeplant: der Kalender-Knopf mit zwei Stunden ab Beginn');
 
 const film = whatsappText({ ...termin, titel: 'Der Pate', imdb: '2', unsicher: 'Uhrzeit laut Kino vorläufig', preis: '' });
 check(film.includes('⭐ IMDb Top 250, Platz 2') && film.includes('⚠️ Noch nicht sicher: Uhrzeit laut Kino vorläufig'), 'Kino: IMDb-Platz und Unsicheres stehen in der Nachricht');

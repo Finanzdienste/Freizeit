@@ -1,31 +1,38 @@
 /*
  * Freizeit – was in Hamburg und Umgebung los ist, mit den Konzerten deiner
- * Künstler, auf Kalender und Karte, und gemeinsam mit deiner Begleitung.
+ * Künstler, auf Kalender und Karte, Ideen für alles ohne Termin, und
+ * gemeinsam mit deiner Begleitung.
  *
  * Einstieg: Daten laden, Reiter zeichnen, Knöpfe verdrahten, den gemeinsamen
- * Plan abgleichen. Die Daten schreibt ein geplanter Lauf montags früh nach
- * daten/; die App selbst ändert sie nie.
+ * Plan abgleichen. Das Programm schreibt ein geplanter Lauf montags früh nach
+ * daten/, den Ideen-Katalog pflegt man von Hand; die App selbst ändert
+ * beides nie.
  */
-import { laden, speichern, aktuell, bockUmschalten, bockWeg, LEERER_FILTER } from './speicher.js';
+import {
+  laden, speichern, aktuell, bockUmschalten, bockWeg, meinBock, gemachtSpeichern, gemachtWeg, LEERER_FILTER, LEERER_IDEENFILTER,
+} from './speicher.js';
 import { ladeAlles } from './daten.js';
-import { heute, standText, montag, monatVon, monatPlus, plusTage } from './zeit.js';
+import { heute, standText, montag, monatVon, monatPlus, plusTage, wochentagKurz, tagMonat } from './zeit.js';
 import { esc } from './text.js';
 import { programmAnsicht, wochenBereich } from './ansicht-programm.js';
 import { kalenderAnsicht, monatsBereich } from './ansicht-kalender.js';
 import { landkarteGeruest, landkarteZeichnen, landkarteAuffrischen } from './ansicht-landkarte.js';
+import { ideenAnsicht, ideeAnker } from './ansicht-ideen.js';
 import { wirAnsicht, vorbei, alsApp } from './ansicht-wir.js';
+import { alleIdeen, planEintrag, neueIdee, BEWERTUNG } from './ideen.js';
 import { eintragZu, vergessen } from './karte.js';
 import { istApple } from './teilen.js';
 import {
   planStarten, beitreten, codeLesen, abgleichen, umbenennen, verlassen, neuesterAndererHaken,
 } from './gemeinsam.js';
 
-const REITER = ['programm', 'kalender', 'karte', 'wir'];
+const REITER = ['programm', 'kalender', 'karte', 'ideen', 'wir'];
 // Adressen aus der ersten Fassung (Lesezeichen) landen sinnvoll.
 const ALTE_REITER = { woche: 'programm', konzerte: 'programm', merkliste: 'wir' };
 const $ = (s) => document.querySelector(s);
 
-let daten = { programm: null, fehler: [] };
+let daten = { programm: null, ideen: null, fehler: [] };
+let ideenListe = []; // Katalog und Ausflugsziele aus dem Programm (ideen.js, alleIdeen)
 let geladen = false;
 let reiter = 'programm';
 let woche = null; // Montag der gezeigten Woche im Programm
@@ -33,6 +40,8 @@ let monat = null; // „2026-11“ im Kalender
 let gewaehlt = null; // gewählter Tag im Kalender
 let raum = 'woche'; // Zeitraum auf der Karte
 const ui = { einladen: false, umbenennen: false, verlassen: false, fehler: '', laeuft: false };
+// Reiter Ideen: offene Formulare („bereich|schlüssel“), aufgeklappte Kategorien, letzte Meldung
+const uiIdeen = { neu: false, planen: '', bewerten: '', offen: new Set(), saisonAlle: false, meldung: null, fehler: '' };
 let installEreignis = null;
 
 /** Einladung aus dem Link übernehmen, Reiter aus der Adresse lesen. */
@@ -86,13 +95,14 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
   if (!geladen) html = '<div class="leer"><p>Lädt …</p></div>';
   else if (reiter === 'kalender') html = kalenderAnsicht(daten.programm, st, h, monat || monatVon(h), gewaehlt);
   else if (reiter === 'karte') html = landkarteGeruest(st, raum);
-  else if (reiter === 'wir') html = wirAnsicht(daten.programm, st, h, ui);
+  else if (reiter === 'ideen') html = ideenAnsicht(ideenListe, Boolean(daten.ideen), st, h, uiIdeen);
+  else if (reiter === 'wir') html = wirAnsicht(daten.programm, ideenListe, st, h, ui);
   else html = installHinweis(st) + programmAnsicht(daten.programm, st, h, woche || montag(h));
   if (geladen && daten.fehler.length && reiter !== 'wir') {
     html += `<details class="datenfehler"><summary>Hinweise zu den Daten (${daten.fehler.length})</summary><ul>${daten.fehler.map((f) => `<li>${esc(f)}</li>`).join('')}</ul></details>`;
   }
   $('#ansicht').innerHTML = html;
-  if (geladen && reiter === 'karte') landkarteZeichnen(daten.programm, st, h, raum);
+  if (geladen && reiter === 'karte') landkarteZeichnen(daten.programm, st, h, raum, ideenListe);
   if (reiter === 'wir' && st.gemeinsam) {
     const neu = neuesterAndererHaken();
     if (neu && neu !== st.gesehen.andere) {
@@ -109,6 +119,7 @@ function wechseln(neu) {
   if (!REITER.includes(neu)) return;
   reiter = neu;
   ui.fehler = '';
+  Object.assign(uiIdeen, { neu: false, planen: '', bewerten: '', meldung: null, fehler: '' });
   // Der Reiter steht in der Adresse, damit Neuladen ihn behält – ohne neuen
   // Eintrag im Verlauf.
   history.replaceState(null, '', neu === 'programm' ? location.pathname + location.search : `#${neu}`);
@@ -124,11 +135,15 @@ const fingerabdruck = () => {
   return JSON.stringify([st.gemeinsam && st.gemeinsam.stand, Object.keys(st.bock).sort(), st.warteschlange.length]);
 };
 
+/** Steht gerade ein Formular im Reiter Ideen offen? Dann nicht dazwischen neu zeichnen. */
+const ideenFormularOffen = () => reiter === 'ideen' && Boolean(uiIdeen.neu || uiIdeen.planen || uiIdeen.bewerten);
+
 async function abgleichJetzt() {
   if (!aktuell().gemeinsam) return;
   const vorher = fingerabdruck();
   await abgleichen();
   if (!geladen) return;
+  if (ideenFormularOffen()) { leisteAktualisieren(); return; }
   if (reiter === 'karte') landkarteAuffrischen();
   else if (vorher !== fingerabdruck() || reiter === 'wir') zeichnen({ behalteScroll: true });
   leisteAktualisieren();
@@ -282,7 +297,151 @@ function aktion(name, z) {
       zeichnen({ behalteScroll: true });
       break;
     default:
+      ideenAktion(name, z);
   }
+}
+
+/** Ein Feld im selben Formular wie der Knopf. */
+const imFormular = (z, sel) => {
+  const f = z.closest('.formular');
+  return f ? f.querySelector(sel) : null;
+};
+
+function melden(text, rueckgaengig = null) {
+  uiIdeen.meldung = { text, rueckgaengig };
+}
+
+function ideenAktion(name, z) {
+  const st = aktuell();
+  const h = heute();
+  const neuZeichnen = () => zeichnen({ behalteScroll: true });
+  switch (name) {
+    case 'idee-neu':
+      uiIdeen.neu = !uiIdeen.neu;
+      uiIdeen.fehler = '';
+      neuZeichnen();
+      break;
+    case 'idee-speichern': {
+      const titel = (imFormular(z, '.idee-titel')?.value || '').trim();
+      if (!titel) { uiIdeen.fehler = 'Was ist die Idee? Ein paar Worte reichen.'; neuZeichnen(); break; }
+      const x = neueIdee({
+        titel: titel.slice(0, 80),
+        text: (imFormular(z, '.idee-text')?.value || '').trim().slice(0, 300),
+        wo: imFormular(z, '.idee-wo')?.value || 'hamburg',
+        wirkung: [...(z.closest('.formular')?.querySelectorAll('.idee-wirkung:checked') || [])].map((c) => c.value),
+        urheber: st.gemeinsam ? st.gemeinsam.ich.name : '',
+      });
+      bockUmschalten(x);
+      uiIdeen.neu = false;
+      uiIdeen.fehler = '';
+      melden(`Gespeichert: ${x.titel}`, { bock: x.schluessel });
+      neuZeichnen();
+      if (st.gemeinsam) abgleichSpaeter();
+      break;
+    }
+    case 'planen': {
+      const hier = `${z.dataset.bereich}|${z.dataset.idee}`;
+      uiIdeen.planen = uiIdeen.planen === hier ? '' : hier;
+      uiIdeen.bewerten = '';
+      neuZeichnen();
+      break;
+    }
+    case 'plan-speichern': {
+      const idee = eintragZu(z.dataset.idee);
+      const datum = imFormular(z, '.plan-datum')?.value || '';
+      if (!idee || !/^\d{4}-\d{2}-\d{2}$/.test(datum) || datum < h) break;
+      const ort = imFormular(z, '.plan-ort')?.value;
+      const plan = planEintrag(idee, datum, imFormular(z, '.plan-zeit')?.value || '', ort ? Number(ort) : null);
+      if (!meinBock(plan.schluessel)) bockUmschalten(plan);
+      uiIdeen.planen = '';
+      melden(`Eingeplant: ${idee.titel}, ${wochentagKurz(datum)} ${tagMonat(datum)} – steht im Kalender.`, { bock: plan.schluessel });
+      neuZeichnen();
+      if (st.gemeinsam) abgleichSpaeter();
+      break;
+    }
+    case 'plan-weg':
+      bockWeg(z.dataset.plan);
+      neuZeichnen();
+      if (st.gemeinsam) abgleichSpaeter();
+      break;
+    case 'gemacht': {
+      const hier = `${z.dataset.bereich}|${z.dataset.plan || z.dataset.idee}`;
+      uiIdeen.bewerten = uiIdeen.bewerten === hier ? '' : hier;
+      uiIdeen.planen = '';
+      neuZeichnen();
+      break;
+    }
+    case 'gemacht-abbrechen':
+      uiIdeen.bewerten = '';
+      neuZeichnen();
+      break;
+    case 'gemacht-speichern': {
+      const plan = z.dataset.plan || '';
+      const gewaehlt = z.closest('.formular')?.querySelector('input[type="radio"]:checked');
+      const bewertung = gewaehlt ? Number(gewaehlt.value) : 0;
+      const flow = Boolean(imFormular(z, '.gemacht-flow')?.checked);
+      const datum = plan ? plan.slice(2, 12) : (imFormular(z, '.gemacht-datum')?.value || h);
+      const titel = (eintragZu(plan) || eintragZu(z.dataset.idee) || {}).titel || '';
+      const stelle = gemachtSpeichern({
+        schluessel: z.dataset.idee, titel, datum: datum > h ? h : datum, bewertung, flow, plan,
+      });
+      uiIdeen.bewerten = '';
+      melden(`Gemacht: ${titel}${bewertung ? ` ${BEWERTUNG[bewertung][0]}` : ''}${flow ? ' ⚡' : ''}`, { verlauf: stelle });
+      neuZeichnen();
+      break;
+    }
+    case 'rueckgaengig': {
+      const r = uiIdeen.meldung && uiIdeen.meldung.rueckgaengig;
+      if (r && r.verlauf !== undefined) gemachtWeg(r.verlauf);
+      if (r && r.bock) {
+        bockWeg(r.bock);
+        if (st.gemeinsam) abgleichSpaeter();
+      }
+      uiIdeen.meldung = null;
+      neuZeichnen();
+      break;
+    }
+    case 'meldung-weg':
+      uiIdeen.meldung = null;
+      neuZeichnen();
+      break;
+    case 'saison-alle':
+      uiIdeen.saisonAlle = !uiIdeen.saisonAlle;
+      neuZeichnen();
+      break;
+    case 'ideen-filter-weg':
+      st.ideenFilter = LEERER_IDEENFILTER();
+      speichern();
+      neuZeichnen();
+      break;
+    case 'karte-ideen':
+      st.karteIdeen = !st.karteIdeen;
+      speichern();
+      z.setAttribute('aria-pressed', String(st.karteIdeen));
+      landkarteZeichnen(daten.programm, st, h, raum, ideenListe);
+      break;
+    default:
+  }
+}
+
+/** Filter im Reiter Ideen: „w:flow“ (Wirkung), „wo:hamburg“, „x:kostenlos“. */
+function ideenFilterUmschalten(wert) {
+  const f = aktuell().ideenFilter;
+  const [art, k] = wert.split(':');
+  if (art === 'w') f.wirkung = f.wirkung.includes(k) ? f.wirkung.filter((w) => w !== k) : [...f.wirkung, k];
+  else if (art === 'wo') f.wo = f.wo === k ? '' : k;
+  else if (art === 'x' && Object.hasOwn(f, k)) f[k] = !f[k];
+  speichern();
+  zeichnen({ behalteScroll: true });
+}
+
+/** Aus der Karte zu einer Idee: Reiter Ideen, Kategorie auf, hinscrollen. */
+function zuIdee(schluessel) {
+  const x = ideenListe.find((i) => i.schluessel === schluessel);
+  if (x) uiIdeen.offen.add(x.kat);
+  wechseln('ideen');
+  const ziel = document.getElementById(ideeAnker(schluessel));
+  if (ziel) ziel.scrollIntoView({ block: 'start' });
 }
 
 function zuTag(tag) {
@@ -295,7 +454,7 @@ function zuTag(tag) {
 }
 
 document.addEventListener('click', (ev) => {
-  const z = ev.target.closest('[data-reiter], [data-bock], [data-filter], [data-aktion], [data-tag], [data-raum], [data-zu-woche], [data-zu-tag]');
+  const z = ev.target.closest('[data-reiter], [data-bock], [data-filter], [data-ifilter], [data-aktion], [data-tag], [data-raum], [data-zu-woche], [data-zu-tag], [data-zu-idee]');
   if (!z || z.disabled) return;
   const st = aktuell();
   if (z.dataset.reiter) {
@@ -310,9 +469,13 @@ document.addEventListener('click', (ev) => {
       b.textContent = an ? 'Bock ✓' : 'Bock';
     });
     if (reiter === 'karte') landkarteAuffrischen();
-    else if (reiter === 'kalender' || reiter === 'wir') zeichnen({ behalteScroll: true });
+    else if (reiter === 'kalender' || reiter === 'wir' || reiter === 'ideen') zeichnen({ behalteScroll: true });
     leisteAktualisieren();
     if (st.gemeinsam) abgleichSpaeter();
+  } else if (z.dataset.ifilter !== undefined) {
+    ideenFilterUmschalten(z.dataset.ifilter);
+  } else if (z.dataset.zuIdee) {
+    zuIdee(z.dataset.zuIdee);
   } else if (z.dataset.filter) {
     st.filter[z.dataset.filter] = !st.filter[z.dataset.filter];
     speichern();
@@ -325,7 +488,7 @@ document.addEventListener('click', (ev) => {
   } else if (z.dataset.raum) {
     raum = z.dataset.raum;
     document.querySelectorAll('[data-raum]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.raum === raum)));
-    landkarteZeichnen(daten.programm, st, heute(), raum);
+    landkarteZeichnen(daten.programm, st, heute(), raum, ideenListe);
   } else if (z.dataset.zuWoche) {
     reiter = 'programm';
     history.replaceState(null, '', location.pathname + location.search);
@@ -347,14 +510,27 @@ document.addEventListener('change', (ev) => {
   zeichnen({ behalteScroll: true });
 });
 
-// Enter im Namensfeld drückt den Hauptknopf daneben.
+// Enter in einem Eingabefeld drückt den Hauptknopf daneben.
 document.addEventListener('keydown', (ev) => {
-  if (ev.key !== 'Enter' || !ev.target.matches || !ev.target.matches('.einrichten input, .einladung input')) return;
-  const knopf = ev.target.closest('.einrichten, .einladung').querySelector('.knopf.haupt');
-  if (knopf) knopf.click();
+  if (ev.key !== 'Enter' || !ev.target.matches || !ev.target.matches('.einrichten input, .einladung input, .formular input')) return;
+  const knopf = ev.target.closest('.einrichten, .einladung, .formular').querySelector('.knopf.haupt');
+  if (knopf) {
+    ev.preventDefault();
+    knopf.click();
+  }
 });
 
-// #programm, #kalender, #karte und #wir öffnen den Reiter direkt; #tag-… sind Anker.
+// Aufgeklappte Kategorien im Reiter Ideen merken, damit Neuzeichnen sie offen
+// lässt. Nur, was man selbst antippt – nicht, was ein Filter aufklappt.
+document.addEventListener('click', (ev) => {
+  const summary = ev.target.closest && ev.target.closest('details.kategorie > summary');
+  if (!summary) return;
+  const d = summary.parentElement;
+  if (d.open) uiIdeen.offen.delete(d.dataset.kat); // klappt gleich zu
+  else uiIdeen.offen.add(d.dataset.kat);
+}, true);
+
+// #programm, #kalender, #karte, #ideen und #wir öffnen den Reiter direkt; #tag-… sind Anker.
 window.addEventListener('hashchange', () => {
   const r = adresseLesen();
   if (r && r !== reiter) wechseln(r);
@@ -399,6 +575,7 @@ reiter = adresseLesen() || 'programm';
 zeichnen();
 ladeAlles().then((d) => {
   daten = d;
+  ideenListe = alleIdeen(d.ideen || [], d.programm);
   geladen = true;
   zeichnen();
   abgleichJetzt();

@@ -1,5 +1,6 @@
 /*
- * Die Daten der App: daten/programm.json, geschrieben vom Montagslauf.
+ * Die Daten der App: daten/programm.json, geschrieben vom Montagslauf, und
+ * der Ideen-Katalog daten/ideen.json (von Hand gepflegt, geprüft in ideen.js).
  *
  * Das Format steht in README.md. Hier wird nur geladen und so weit geprüft,
  * dass ein kaputter Lauf die App nicht leer zurücklässt: Was nicht passt,
@@ -7,6 +8,7 @@
  * http(s) werden leer, Koordinaten außerhalb des Möglichen fallen weg.
  */
 import { sichererLink } from './text.js';
+import { ideenBereinigen } from './ideen.js';
 
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -56,13 +58,14 @@ export function programmBereinigen(roh, fehler = []) {
   };
 }
 
+/** Programm und Ideen, unabhängig voneinander: Fehlt eins, geht das andere trotzdem. */
 export async function ladeAlles() {
   const fehler = [];
-  try {
-    const programm = programmBereinigen(await holen('daten/programm.json'), fehler);
-    return { programm, fehler };
-  } catch (e) {
-    fehler.push(`Programm nicht geladen (${e.message})`);
-    return { programm: null, fehler };
-  }
+  const [programm, ideen] = await Promise.all([
+    holen('daten/programm.json').then((roh) => programmBereinigen(roh, fehler))
+      .catch((e) => { fehler.push(`Programm nicht geladen (${e.message})`); return null; }),
+    holen('daten/ideen.json').then((roh) => ideenBereinigen(roh, fehler))
+      .catch((e) => { fehler.push(`Ideen nicht geladen (${e.message})`); return null; }),
+  ]);
+  return { programm, ideen, fehler };
 }

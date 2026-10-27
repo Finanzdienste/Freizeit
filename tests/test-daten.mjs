@@ -2,7 +2,8 @@
  * Ist daten/programm.json so, wie die App sie braucht?
  *
  * Ohne Browser und ohne Server, ohne npm ci. Der Montagslauf schreibt
- * daten/programm.json (und pflegt daten/orte.json) und prüft vor dem Commit:
+ * daten/programm.json (und pflegt daten/orte.json) und prüft vor dem Commit
+ * – geprüft wird dabei auch der Ideen-Katalog daten/ideen.json:
  *
  *     node tests/test-daten.mjs
  *
@@ -15,6 +16,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { programmBereinigen } from '../js/daten.js';
+import { ideenBereinigen, KATEGORIEN, WIRKUNG, WO, DAUER } from '../js/ideen.js';
 import { beginn, plusTage, wochentag } from '../js/zeit.js';
 import { REGIONEN, DRAUSSEN } from '../js/text.js';
 
@@ -116,9 +118,9 @@ if (p) {
   alle(laufend, (e) => Object.hasOwn(REGIONEN, e.region) && text(e.kategorie) && LINK.test(e.link || ''), 'laufend: Region, Kategorie und Link');
   alle(laufend, (e) => e.geo === undefined || geoOk(e.geo), 'laufend: geo ist [Breite, Länge] in Deutschland');
 
+  // „immer“ gibt es nur noch aus älteren Läufen – die Ausflugsziele stehen im Ideen-Katalog.
   const immer = istListe(p.immer) ? p.immer : [];
-  check(immer.length > 0, `immer: Ausflugsziele vorhanden (${immer.length})`);
-  alle(immer, (e) => KENNUNG.test(e.id || ''), 'immer: id klein, mit Bindestrichen');
+  alle(immer, (e) => KENNUNG.test(e.id || ''), 'immer (falls vorhanden): id klein, mit Bindestrichen');
   eindeutig(immer.map((e) => e.id), 'immer: jede id nur einmal');
   alle(immer, (e) => text(e.titel) && Object.hasOwn(REGIONEN, e.region) && LINK.test(e.link || ''), 'immer: Titel, Region und Link');
   alle(immer, (e) => e.draussen === undefined || Object.hasOwn(DRAUSSEN, e.draussen), 'immer: draussen ist drinnen, draußen oder beides');
@@ -131,6 +133,34 @@ if (p) {
   const fehler = [];
   programmBereinigen(p, fehler);
   check(!fehler.length, `die App übernimmt das Programm ohne Beanstandung${fehler.length ? `: ${fehler.slice(0, 3).join(' | ')}` : ''}`);
+}
+
+// Der Ideen-Katalog (von Hand gepflegt, Format in README.md).
+const id = lies('ideen.json');
+if (id) {
+  const ideen = istListe(id.ideen) ? id.ideen : [];
+  check(id.version === 1 && istListe(id.ideen), 'ideen.json: version 1 mit ideen');
+  check(ideen.length >= 50, `ideen.json: genug Ideen (${ideen.length})`);
+  alle(ideen, (x) => KENNUNG.test(x.id || ''), 'ideen: id klein, mit Bindestrichen');
+  eindeutig(ideen.map((x) => x.id), 'ideen: jede id nur einmal – Bock-Haken und Verlauf hängen daran');
+  alle(ideen, (x) => text(x.titel) && text(x.text), 'ideen: Titel und Text');
+  alle(ideen, (x) => KATEGORIEN.some(([k]) => k === x.kategorie), `ideen: kategorie eine von ${KATEGORIEN.map(([k]) => k).join(', ')}`);
+  alle(ideen, (x) => istListe(x.wirkung) && x.wirkung.every((w) => Object.hasOwn(WIRKUNG, w)), `ideen: wirkung aus ${Object.keys(WIRKUNG).join(', ')}`);
+  alle(ideen, (x) => istListe(x.mit) && x.mit.length > 0 && x.mit.every((m) => ['allein', 'zu zweit', 'gruppe'].includes(m)), 'ideen: mit aus allein, zu zweit, gruppe');
+  alle(ideen, (x) => Object.hasOwn(WO, x.wo), `ideen: wo eins von ${Object.keys(WO).join(', ')}`);
+  alle(ideen, (x) => Object.hasOwn(DRAUSSEN, x.draussen), 'ideen: draussen ist drinnen, draußen oder beides');
+  alle(ideen, (x) => Object.hasOwn(DAUER, x.dauer), `ideen: dauer eins von ${Object.keys(DAUER).join(', ')}`);
+  alle(ideen, (x) => x.saison === undefined || (istListe(x.saison) && x.saison.length > 0 && x.saison.every((m) => Number.isInteger(m) && m >= 1 && m <= 12)),
+    'ideen: saison sind Monate 1–12');
+  alle(ideen, (x) => jaNein(x.kostenlos) && jaNein(x.hohwacht), 'ideen: kostenlos und hohwacht sind true/false');
+  alle(ideen, (x) => x.link === undefined || LINK.test(x.link), 'ideen: Link mit http(s)');
+  alle(ideen, (x) => ['preis', 'ziel', 'braucht', 'zeiten', 'anreise'].every((k) => x[k] === undefined || text(x[k])), 'ideen: preis, ziel, braucht, zeiten, anreise sind Text');
+  alle(ideen, (x) => x.orte === undefined || (istListe(x.orte) && x.orte.every((o) => o && text(o.name)
+    && (o.geo === undefined || geoOk(o.geo)) && (o.link === undefined || LINK.test(o.link)))), 'ideen: Orte mit Name, geo in Deutschland, Link mit http(s)');
+  alle(ideen.filter((x) => x.wo === 'ausflug'), (x) => text(x.anreise), 'ideen: Ausflüge mit Anreise');
+  const fehler = [];
+  const sauber = ideenBereinigen(id, fehler);
+  check(!fehler.length && sauber && sauber.length === ideen.length, `die App übernimmt alle Ideen${fehler.length ? `: ${fehler.slice(0, 3).join(' | ')}` : ''}`);
 }
 
 // Die Ortsliste des Laufs (nur seine Hilfe – die App liest sie nicht).

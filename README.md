@@ -282,7 +282,7 @@ nach ein bis zwei Minuten steht die neue Datei unter
 | `dauer` | Dauer in Minuten, wenn kein `ende` |
 | `ganztags` | ganztägig (Messe, Markt über den Tag); steht oben im Tag |
 | `geo` | `[Breite, Länge]` für die Karte – bei mindestens 80 % der Termine |
-| `region` | `HH` Hamburg · `LUE` Lübeck & Ostsee · `LG` Lüneburg & Heide · `STD` Stade & Altes Land · `HB` Hohwachter Bucht & Kiel · `WEI` Weitere Ziele |
+| `region` | `HH` Hamburg · `LUE` Lübeck & Ostsee · `LG` Lüneburg & Heide · `STD` Stade & Altes Land · `HB` Hohwachter Bucht & Kiel · `WIS` Wismar · `WEI` Weitere Ziele |
 | `kategorie` | z. B. Konzert, Bühne, Comedy, Kino, Party, Sport, Führung, Erlebnis, Food, Markt, Fest & Saisonal, Ausstellung |
 | `draussen` | `drinnen`, `draußen` oder `beides` |
 | `kostenlos` | `true`, wenn der Eintritt frei ist |

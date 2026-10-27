@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "stand": "2026-10-27T18:37",
+  "stand": "2026-10-28T00:29",
   "von": "2026-10-26",
   "bis": "2026-11-29",
   "infos": [
@@ -7966,6 +7966,837 @@
       "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/milch-schuld-1/",
       "anreise": "Deutschlandticket: ca. 45 Min. ab Hbf (Regionalexpress), Altstadt ca. 15 Min. zu Fuß / Auto: ca. 50 Min. (A1)",
       "unsicher": "Dauer nicht angegeben (geschätzt)"
+    },
+    {
+      "id": "true-crime-mit-rechtsmediziner-philipp-moeller-theater",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "19:30",
+      "dauer": 120,
+      "titel": "True Crime mit Rechtsmediziner Philipp Möller",
+      "ort": "Theater Wismar, Großes Haus",
+      "geo": [
+        53.88367,
+        11.45423
+      ],
+      "region": "WIS",
+      "kategorie": "Bühne",
+      "beschreibung": "Der Rechtsmediziner Philipp Möller erzählt live von echten Fällen aus dem Obduktionssaal – True Crime zwischen Spannung und Wissenschaft im Großen Haus.",
+      "preis": "ab 35 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/True-Crime-mit-Rechtsmediziner-Philipp-M%C3%B6ller.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1252.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt (Mittwochabend, Ende evtl. nach 21:30)"
+    },
+    {
+      "id": "nachtwaechter-fuehrung-durch-die-abendliche-altstadt",
+      "daten": [
+        "2026-10-28",
+        "2026-10-30",
+        "2026-11-06",
+        "2026-11-13",
+        "2026-11-20",
+        "2026-11-27"
+      ],
+      "zeit": "18:00",
+      "dauer": 90,
+      "titel": "Nachtwächter-Führung durch die abendliche Altstadt",
+      "ort": "Treffpunkt Rathaus, Wismar",
+      "geo": [
+        53.89193,
+        11.4661
+      ],
+      "region": "WIS",
+      "kategorie": "Führung",
+      "beschreibung": "Nachtwächter Konrad führt mit Hellebarde und Laterne durch die dunkle Welterbe-Altstadt – mit Stadtgeschichte und der einen oder anderen Gruselgeschichte. Im November nur freitags; Voranmeldung bei der Tourist-Information (03841 19433) empfohlen.",
+      "preis": "13 €, ermäßigt 10 €",
+      "draussen": "draußen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Nachtw%C3%A4chter-F%C3%BChrung-durch-die-abendliche-Altstadt-von-Wismar.php?object=tx%2C4176.4.1&ModID=11&FID=4176.546.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß zum Markt · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer nicht angegeben (geschätzt ca. 1,5 Std.)"
+    },
+    {
+      "id": "kittchen-kino-historische-filme-aus-dem-stadtarchiv-das",
+      "daten": [
+        "2026-10-28",
+        "2026-11-24"
+      ],
+      "zeit": "19:00",
+      "dauer": 90,
+      "titel": "Kittchen Kino: Historische Filme aus dem Stadtarchiv",
+      "ort": "Das Kittchen, Wismar",
+      "geo": [
+        53.89074,
+        11.46242
+      ],
+      "region": "WIS",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Filmabend im Café des ehemaligen Gefängnisses: Das Stadtarchiv zeigt sonst kaum zugängliche historische Filme über Wismar – von Stadtfesten bis Kirchenbau, von den 1960ern bis heute. Nils Jörn vom Stadtarchiv steht anschließend für Fragen bereit. Der Oktober-Termin wurde vom 27. auf den 28.10. verschoben.",
+      "preis": "Eintritt nicht angegeben",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Kittchen-Kino.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1587.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Eintritt und Dauer nicht angegeben (Dauer geschätzt)"
+    },
+    {
+      "id": "themenfuehrung-nosferatu-auf-den-spuren-des-stummfilms",
+      "daten": [
+        "2026-10-28"
+      ],
+      "zeit": "14:00",
+      "dauer": 120,
+      "titel": "Themenführung „Nosferatu“ – auf den Spuren des Stummfilms",
+      "ort": "Tourist-Information Wismar",
+      "geo": [
+        53.8923,
+        11.4622
+      ],
+      "region": "WIS",
+      "kategorie": "Führung",
+      "beschreibung": "Letzte Themenführung der Saison zu den Drehorten von Murnaus „Nosferatu“ (1921) – Wassertor, Heiligen-Geist-Kirche, Marktplatz – mit Anekdoten zum Film und zur Stadtgeschichte. Anmeldung unter 03841 19433 empfohlen.",
+      "preis": "13 €, ermäßigt 10 €",
+      "draussen": "draußen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Themenf%C3%BChrung-Nosferatu.php?object=tx%2C4176.4.1&ModID=11&FID=4176.759.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)"
+    },
+    {
+      "id": "jutta-speidel-liest-elf-frauen-zeughaus-wismar",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "19:30",
+      "dauer": 90,
+      "titel": "Jutta Speidel liest „Elf Frauen“",
+      "ort": "Zeughaus Wismar",
+      "geo": [
+        53.89331,
+        11.45789
+      ],
+      "region": "WIS",
+      "kategorie": "Lesung",
+      "beschreibung": "Die Schauspielerin Jutta Speidel liest aus ihrem Buch „Elf Frauen“ – elf Geschichten über Frauen voller Sehnsucht, Humor, Mut und Eigensinn. Einlass 19:00 Uhr.",
+      "preis": "ab 22 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.m-vp.de/veranstaltungen/lesung-elf-frauen-wismar/",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "ausverkauft": true,
+      "unsicher": "laut Ticketportal ausverkauft; Dauer geschätzt"
+    },
+    {
+      "id": "soko-wismar-oeffentliche-stadtfuehrung-zu-den-drehorten",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "16:00",
+      "dauer": 120,
+      "titel": "SOKO Wismar – öffentliche Stadtführung zu den Drehorten",
+      "ort": "Tourist-Information Wismar",
+      "geo": [
+        53.8923,
+        11.4622
+      ],
+      "region": "WIS",
+      "kategorie": "Führung",
+      "beschreibung": "Letzter Saisontermin der Stadtführung zu den Drehorten der ZDF-Serie „SOKO Wismar“ durch die Altstadt. Anmeldung unter 03841 19433 empfohlen, Tickets 30 Minuten vorher abholen.",
+      "preis": "13 €, ermäßigt 10 €",
+      "draussen": "draußen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/SOKO-Wismar-%C3%B6ffentliche-Stadtf%C3%BChrung.php?object=tx%2C4176.4.1&ModID=11&FID=4176.593.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)"
+    },
+    {
+      "id": "flohmarkt-in-der-markthalle-wismar-markthalle-wismar-alter",
+      "daten": [
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "Sa/So 10–17 Uhr",
+      "ende": "17:00",
+      "ganztags": true,
+      "titel": "Flohmarkt in der Markthalle Wismar",
+      "ort": "Markthalle Wismar, Alter Hafen",
+      "geo": [
+        53.89802,
+        11.46089
+      ],
+      "region": "WIS",
+      "kategorie": "Markt",
+      "beschreibung": "Letzter Floh- und Krammarkt des Jahres in der überdachten Markt- und Eventhalle direkt am Alten Hafen (ca. 1.200 m² Hallenfläche, wetterunabhängig).",
+      "preis": "Eintritt nicht angegeben",
+      "draussen": "drinnen",
+      "link": "https://www.hansekontor-wismar.de/markt-und-eventhalle/maerkte/flohmarkt-in-wismar",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 15 Min. zu Fuß zum Alten Hafen · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Datum vom Veranstalter (Hansekontor) bestätigt, Uhrzeit 10–17 Uhr nur aus der Nordkurier-Flohmarktliste; Eintritt nicht angegeben"
+    },
+    {
+      "id": "kantatengottesdienst-zum-reformationstag-bach-ein-feste",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "11:00",
+      "dauer": 75,
+      "titel": "Kantatengottesdienst zum Reformationstag: Bach „Ein feste Burg“ BWV 80",
+      "ort": "Heiligen-Geist-Kirche, Wismar",
+      "geo": [
+        53.89177,
+        11.46132
+      ],
+      "region": "WIS",
+      "kategorie": "Konzert",
+      "beschreibung": "Gottesdienst mit Bachs Reformationskantate „Ein feste Burg ist unser Gott“: Kantorei Wismar, Collegium für Alte Musik Vorpommern und vier Solisten unter Kantor Christian Thadewald-Friedrich.",
+      "preis": "Eintritt frei, Spende für die Kirchenmusik erbeten",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Kantatengottesdienst-zum-Reformationstag.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1618.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 12 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "klaus-stoertebeker-oeffentliche-stadtfuehrung-tourist",
+      "daten": [
+        "2026-10-31",
+        "2026-11-28"
+      ],
+      "zeit": "15:00",
+      "dauer": 120,
+      "titel": "Klaus Störtebeker – öffentliche Stadtführung",
+      "ort": "Tourist-Information Wismar",
+      "geo": [
+        53.8923,
+        11.4622
+      ],
+      "region": "WIS",
+      "kategorie": "Führung",
+      "beschreibung": "Der Seeräuber persönlich führt durch die Hansestadt, in der er laut Verfestungsbuch von 1381 nachweislich gelebt hat – Hansezeit, Kaufleute und Freibeuter inklusive. Anmeldung unter 03841 19433 empfohlen.",
+      "preis": "13 €, ermäßigt 10 €",
+      "draussen": "draußen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Klaus-St%C3%B6rtebeker-%C3%B6ffentliche-Stadtf%C3%BChrung-.php?object=tx%2C4176.4.1&ModID=11&FID=4176.487.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "28.11. steht im Veranstaltungskalender, die Saisonbeschreibung nennt aber nur März–Oktober und Dezember"
+    },
+    {
+      "id": "magie-und-poesie-zaubertheater-mit-iris-und-frank",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "16:00 + 19:00",
+      "dauer": 80,
+      "titel": "Magie und Poesie – Zaubertheater mit Iris und Frank Musilinski",
+      "ort": "Theater Wismar, Kammerbühne",
+      "geo": [
+        53.88367,
+        11.45423
+      ],
+      "region": "WIS",
+      "kategorie": "Bühne",
+      "beschreibung": "Intime Salonzauberei des gebürtigen Wismarers Frank Musilinski und seiner Partnerin Iris: Zaubertricks, verwoben mit Texten von Ringelnatz, Busch, Goethe & Co. und Musik. 80 Minuten ohne Pause.",
+      "preis": "30 €, ermäßigt 20 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Magie-und-Poesie-musikalisch-literarisches-Zaubertheater.php?object=tx%2C4176.4.1&ModID=11&FID=2634.20241.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)"
+    },
+    {
+      "id": "fc-anker-wismar-fuechse-berlin-reinickendorf-oberliga-nofv",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "13:30",
+      "dauer": 110,
+      "titel": "FC Anker Wismar – Füchse Berlin Reinickendorf (Oberliga NOFV-Nord)",
+      "ort": "Kurt-Bürger-Stadion, Wismar",
+      "geo": [
+        53.8833,
+        11.45634
+      ],
+      "region": "WIS",
+      "kategorie": "Sport",
+      "beschreibung": "Fünftliga-Fußball im 6.500 Plätze fassenden Kurt-Bürger-Stadion: Der FC Anker, aktuell im oberen Tabellendrittel, empfängt die Füchse aus Berlin-Reinickendorf.",
+      "preis": "Tageskasse, Preis nicht veröffentlicht",
+      "draussen": "draußen",
+      "link": "https://www.fussball.de/mannschaft/fc-anker-wismar-fc-anker-wismar-1997-mecklenburg-vorpommern/-/saison/2627/team-id/011MIA6TAC000000VTVG0001VTR8C1K7",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 15 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Anstoß laut fussball.de (Spielplan als vorläufig gekennzeichnet); Eintrittspreis nicht gefunden"
+    },
+    {
+      "id": "wismarer-dialog-oeffentliche-vortragsreihe-der-fakultaet",
+      "daten": [
+        "2026-11-04",
+        "2026-11-11",
+        "2026-11-18",
+        "2026-11-25"
+      ],
+      "zeit": "18:00",
+      "ende": "20:00",
+      "titel": "Wismarer DIAlog – öffentliche Vortragsreihe der Fakultät Gestaltung",
+      "ort": "Hochschule Wismar, Haus 7a (Hörsaal)",
+      "geo": [
+        53.88997,
+        11.44583
+      ],
+      "region": "WIS",
+      "kategorie": "Lesung",
+      "beschreibung": "Mittwochs-Vorträge zu Architektur und Design, offen für alle: 4.11. Martin Schmitz (Berlin) „Weltsekunden des Dilettantismus und Spaziergangswissenschaft“, 11.11. Büro Pankrath (Berlin) „Design mit Bestand“, 18.11. Prof. Axel Müller-Schöll (Burg Giebichenstein) „Die geschenkte Form“, 25.11. Mario Farina (Iuav Venedig) „Ariadne and the Minotaur, or the End of the Anthropocene“ (auf Englisch).",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hs-wismar.de/hochschule/information/veranstaltungen/kalender/",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 15–20 Min. zu Fuß zum Campus · Auto: ca. 1:45 Std. (A1/A20)"
+    },
+    {
+      "id": "eroeffnung-rota-fortunae-das-gluecksrad-bulgarische-und",
+      "daten": [
+        "2026-11-04"
+      ],
+      "zeit": "19:30",
+      "dauer": 90,
+      "titel": "Eröffnung „Rota Fortunae – Das Glücksrad“: bulgarische und deutsche Gegenwartskunst",
+      "ort": "Galerie Hinter dem Rathaus, Wismar",
+      "geo": [
+        53.89227,
+        11.46616
+      ],
+      "region": "WIS",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Der Kunstverein Wismar eröffnet die erste bulgarisch-deutsche Ausstellung der Stadt: Bronzen von Dimitar Chonov, Malerei von Nikolay Tomov und Holzschnitte von Olaf Hoppe. Danach bis 5.12. Mi–Sa 11–17 Uhr zu sehen.",
+      "preis": "Eintritt nicht angegeben",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Rota-Fortunae-Das-Gl%C3%BCcksrad.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1613.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Eröffnungszeit aus dem Kalender („Beginn 04.11.2026, 19:30 Uhr“), Eintritt und Dauer nicht angegeben"
+    },
+    {
+      "id": "let-s-party-travestie-de-luxe-taeuschungsmanoever-theater",
+      "daten": [
+        "2026-11-05",
+        "2026-11-06",
+        "2026-11-07"
+      ],
+      "zeit": "19:30",
+      "dauer": 150,
+      "titel": "Let’s Party – Travestie De Luxe (Täuschungsmanöver)",
+      "ort": "Theater Wismar, Großes Haus",
+      "geo": [
+        53.88367,
+        11.45423
+      ],
+      "region": "WIS",
+      "kategorie": "Bühne",
+      "beschreibung": "Die Travestie-Truppe Täuschungsmanöver mit ihrer bislang aufwendigsten Show: Verwandlungskunst, Akrobatik, Comedy und große Kostüme an drei Abenden im Theater.",
+      "preis": "27 €, ermäßigt 18 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Let-s-Party-Travestie-De-Luxe-T%C3%A4uschungsman%C3%B6ver-die-Travestieshow-.php?object=tx%2C4176.4.1&ModID=11&FID=4176.932.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt (Donnerstag endet damit nach 21:30)"
+    },
+    {
+      "id": "chansonabend-nuits-blanches-mit-veronique-elling-und-henrik",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "19:30",
+      "dauer": 90,
+      "titel": "Chansonabend „Nuits blanches“ mit Véronique Elling und Henrik Giese",
+      "ort": "Zeughaussaal, Wismar",
+      "geo": [
+        53.89331,
+        11.45789
+      ],
+      "region": "WIS",
+      "kategorie": "Konzert",
+      "beschreibung": "Französischer Chansonabend „Nuits blanches“ mit Véronique Elling und Henrik Giese, veranstaltet von der Deutsch-Französischen Gesellschaft Wismar. Karten in der Tourist-Information und an der Abendkasse.",
+      "preis": "15 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Chansonabend-Nuits-blanches-mit-V%C3%A9ronique-Elling-und-Henrik-Giese.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1622.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "stolpersteine-rundgang-leben-und-verfolgung-der-juedischen",
+      "daten": [
+        "2026-11-09"
+      ],
+      "zeit": "14:00",
+      "dauer": 90,
+      "titel": "Stolpersteine-Rundgang: Leben und Verfolgung der jüdischen Einwohner Wismars 1933–1945",
+      "ort": "Treffpunkt Rathaus, Wismar",
+      "geo": [
+        53.89193,
+        11.4661
+      ],
+      "region": "WIS",
+      "kategorie": "Führung",
+      "beschreibung": "Am Jahrestag der Novemberpogrome führt die Projektgruppe Stolpersteine zu den Gedenksteinen in der Altstadt und erzählt von den jüdischen Familien Wismars.",
+      "preis": "kostenlos, Spenden für die Projektgruppe willkommen",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Projektgruppe-Stolpersteine-l%C3%A4dt-zum-Rundgang-ein.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1553.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß zum Markt · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer nicht angegeben (geschätzt)"
+    },
+    {
+      "id": "stadt-land-schluss-live-quiz-mit-tom-und-darren",
+      "daten": [
+        "2026-11-11"
+      ],
+      "zeit": "19:00",
+      "dauer": 120,
+      "titel": "„Stadt, Land, Schluss?“ – Live-Quiz mit Tom und Darren",
+      "ort": "Zeughaussaal, Wismar",
+      "geo": [
+        53.89331,
+        11.45789
+      ],
+      "region": "WIS",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Pub-Quiz-Abend der Stadtbibliothek mit Tom Zimmermann und Darren Grundorf (bekannt vom internationalen Kneipenquiz im Hamburger Aalhaus) – diesmal rund ums Landleben. In kleinen Teams, der Bibliotheksverein sorgt für Verpflegung. Anmeldung per E-Mail an bib-dabei@wismar.de dringend erbeten.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Stadt-Land-Schluss-Tom-und-Darren-Das-Quiz-.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1628.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "wismarer-novemberlichter-lichterspaziergang-und-lasershow",
+      "daten": [
+        "2026-11-13",
+        "2026-11-14"
+      ],
+      "zeit": "18:00–21:30",
+      "ende": "21:30",
+      "titel": "Wismarer Novemberlichter: Lichterspaziergang und Lasershow in St. Georgen",
+      "ort": "Altstadt Wismar (Start Thormannspeicher, Alter Hafen)",
+      "geo": [
+        53.89788,
+        11.45938
+      ],
+      "region": "WIS",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "20. Novemberlichter der Stadtwerke: um 18:00 Uhr Lichterstadtführung vom Thormannspeicher durch die illuminierte Krämerstraße über den Markt zum St.-Marien-Forum, dazu halbstündlich von 19:00 bis 21:30 Uhr die Lasershow „Feuerwerk aus Licht und Musik“ in der St.-Georgen-Kirche mit Livemusik; warmer Apfelpunsch am Hafen und im Marien-Forum zugunsten der Wismarer Tafel. Am 13.11. außerdem 15–17 Uhr Laternenbasteln im Zeughaus und 17:00 Uhr Laternenumzug zur Marienkirche.",
+      "preis": "keine Preisangabe in der Ankündigung",
+      "draussen": "beides",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Wismarer-Novemberlichter-mit-dem-Motto-35-Jahre-voller-Energie-voller-Leben-.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1633.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 15 Min. zu Fuß zum Alten Hafen · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Eintritt nicht genannt; Laternenumzug laut Pressemitteilung „Sonnabend, 13. November“ – der 13.11. ist aber ein Freitag"
+    },
+    {
+      "id": "museumswinter-marienfroemmigkeit-am-vorabend-der",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "19:00",
+      "dauer": 90,
+      "titel": "Museumswinter: „Marienfrömmigkeit am Vorabend der Reformation“ (Prof. Marc von der Höh)",
+      "ort": "SCHABBELL – Stadtgeschichtliches Museum, Wismar",
+      "geo": [
+        53.89487,
+        11.46677
+      ],
+      "region": "WIS",
+      "kategorie": "Lesung",
+      "beschreibung": "Vortrag der Reihe Museumswinter: Der Rostocker Historiker zeigt, wie Bruderschaften, Marienaltäre und Rosenkranzandachten das Leben der Hansestädte vor der Reformation prägten – und warum das mehr war als „Aberglaube“.",
+      "preis": "7 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Museumswinter-Marienfr%C3%B6mmigkeit-am-Vorabend-der-Reformation-.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1625.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 12 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "28-kunstauktion-des-kunstvereins-wismar-in-der",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "19:30",
+      "dauer": 150,
+      "titel": "28. Kunstauktion des Kunstvereins Wismar in der Gerichtslaube",
+      "ort": "Gerichtslaube im Rathaus, Wismar",
+      "geo": [
+        53.89193,
+        11.4661
+      ],
+      "region": "WIS",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Rund 40 Arbeiten von Künstlern des Kunstvereins und Gästen kommen unter den Hammer (Auktionatorin Sophia Maeno), Höhepunkt ist eine amerikanische Versteigerung für einen sozialen Zweck. Einlass 18:00, Buffet ab 18:45 Uhr; Vorbesichtigung 9.–13.11. jeweils 11–17 Uhr in der Gerichtslaube. Karten in der Galerie Hinter dem Rathaus (03841 226062).",
+      "preis": "20 € inkl. Buffet",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/28-Kunstauktion.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1639.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß zum Markt · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "57-jahre-block17-jubilaeumsparty-mit-flip-flopper-live",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "19:30",
+      "dauer": 300,
+      "titel": "57 Jahre Block17 – Jubiläumsparty mit Flip Flopper live",
+      "ort": "Studentenclub Block 17, Wismar",
+      "geo": [
+        53.89006,
+        11.44345
+      ],
+      "region": "WIS",
+      "kategorie": "Party",
+      "beschreibung": "Der Studentenclub am Campus feiert Geburtstag: Einlass 19:30 Uhr, ab ca. 20:15 Uhr spielen die Flip Flopper live, danach legt Carsten Opitz auf.",
+      "preis": "ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.m-vp.de/veranstaltungen/57-jahre-block17/",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 20 Min. zu Fuß zum Campus · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Ende nicht angegeben (Dauer geschätzt)"
+    },
+    {
+      "id": "rave-nation-mit-dr-motte-markthalle-wismar-alter-hafen",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "20:00",
+      "dauer": 360,
+      "titel": "Rave Nation mit Dr. Motte",
+      "ort": "Markthalle Wismar, Alter Hafen",
+      "geo": [
+        53.89802,
+        11.46089
+      ],
+      "region": "WIS",
+      "kategorie": "Party",
+      "beschreibung": "Techno-Nacht in der Markt- und Eventhalle am Alten Hafen mit Loveparade-Gründer Dr. Motte als Headliner (Reihe „Rave Nation“).",
+      "preis": "ab 19,04 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.m-vp.de/veranstaltungen/rave-nation-mit-dr-motte-markthalle-wismar/",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 15 Min. zu Fuß zum Alten Hafen · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Weiteres Line-up und Ende nicht angegeben (Dauer geschätzt)"
+    },
+    {
+      "id": "konzert-drunk-at-your-wedding-und-dina-maccabee-das",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "20:00",
+      "ende": "21:30",
+      "titel": "Konzert: Drunk at Your Wedding und Dina Maccabee",
+      "ort": "Das Kittchen, Wismar",
+      "geo": [
+        53.89074,
+        11.46242
+      ],
+      "region": "WIS",
+      "kategorie": "Konzert",
+      "beschreibung": "Doppelkonzert im Café des alten Gefängnisses: Nina Töllner alias Drunk at Your Wedding (Folk trifft Indierock und Shoegaze, Album „Ghost Gear“) und die Berliner US-Songwriterin Dina Maccabee mit Streichern und Elektronik.",
+      "preis": "Eintritt frei, Spenden erbeten",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Konzert-Drunk-at-Your-Wedding-und-Dina-Maccabee.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1641.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)"
+    },
+    {
+      "id": "vernissage-unsichtbar-sichtbar-fotokunst-von-claudia",
+      "daten": [
+        "2026-11-16"
+      ],
+      "zeit": "18:00",
+      "dauer": 90,
+      "titel": "Vernissage „UNSICHTBAR SICHTBAR“ – Fotokunst von Claudia Drossert",
+      "ort": "Gerichtslaube im Rathaus, Wismar",
+      "geo": [
+        53.89193,
+        11.4661
+      ],
+      "region": "WIS",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Eröffnung mit Einführung: Fotokunst zu weiblicher Identität und Rollenbildern im Rahmen der Internationalen Tage „Nein zu Gewalt an Frauen“; Wein und Snacks verkauft der Zonta Club Wismar für seine Projekte. Ausstellung bis 15.12.",
+      "preis": "Eintritt nicht angegeben",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/UNSICHTBAR-SICHTBAR-.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1548.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß zum Markt · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Eintritt und Dauer nicht angegeben"
+    },
+    {
+      "id": "museumswinter-die-ostseesturmflut-1625-in-der-wismarbucht",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "19:00",
+      "dauer": 90,
+      "titel": "Museumswinter: „Die Ostseesturmflut 1625 in der Wismarbucht“ (Laura Tack)",
+      "ort": "SCHABBELL – Stadtgeschichtliches Museum, Wismar",
+      "geo": [
+        53.89487,
+        11.46677
+      ],
+      "region": "WIS",
+      "kategorie": "Lesung",
+      "beschreibung": "Vortrag der Reihe Museumswinter: Wie die Sturmflut vom Februar 1625 Fischer wie Landesherren traf und wie Wismar, Poel und die Nachbarorte damit umgingen (Universität Rostock).",
+      "preis": "7 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Museumswinter-Die-Ostseesturmflut-1625-in-der-Wismarbucht.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1626.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 12 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "moonlight-concert-vom-rhythmus-des-lebens-theater-wismar",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "19:30",
+      "dauer": 120,
+      "titel": "Moonlight Concert – Vom Rhythmus des Lebens",
+      "ort": "Theater Wismar, Großes Haus",
+      "geo": [
+        53.88367,
+        11.45423
+      ],
+      "region": "WIS",
+      "kategorie": "Konzert",
+      "beschreibung": "Fünf Musiker um den Kölner Singer-Songwriter „Der Schweiger“ verbinden bei Kerzenschein Bach und Händel mit Liedern von Heinz Rudolf Kunze und Unheilig sowie vertonten Texten von Claudius und Rilke – Gesang, Saxophon, Piano, Gitarre und Percussion.",
+      "preis": "45,40–50,40 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/MOONLIGHT-CONCERT-Vom-Rhythmus-des-Lebens.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1254.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "comedyflash-die-stand-up-comedy-show-studentenclub-block-17",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "19:00",
+      "dauer": 120,
+      "titel": "Comedyflash – Die Stand-up-Comedy-Show",
+      "ort": "Studentenclub Block 17, Wismar",
+      "geo": [
+        53.89006,
+        11.44345
+      ],
+      "region": "WIS",
+      "kategorie": "Comedy",
+      "beschreibung": "Die von TikTok und Instagram bekannte Mixed-Show mit erfahrenen Profis und Newcomern der deutschen Stand-up-Szene zu Gast im Studentenclub am Campus (Line-up kann vom Plakat abweichen).",
+      "preis": "ab 26,90 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.m-vp.de/veranstaltungen/comedyflash-die-stand-up-comedy-show-studentenclub-block-17-07/",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 20 Min. zu Fuß zum Campus · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "adventsmarkt-im-kursaal-kirchdorf-insel-poel-haus-des",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "11–17 Uhr",
+      "ende": "17:00",
+      "ganztags": true,
+      "titel": "Adventsmarkt im Kursaal Kirchdorf (Insel Poel)",
+      "ort": "Haus des Gastes / Kursaal, Kirchdorf (Insel Poel)",
+      "geo": [
+        54.00127,
+        11.44176
+      ],
+      "region": "WIS",
+      "kategorie": "Markt",
+      "beschreibung": "Kleiner traditioneller Adventsmarkt des Kulturvereins Poeler Insellüd im Haus des Gastes: regionales Kunsthandwerk, Geschenk- und Dekoideen, Glühwein, Bratwurst und Kuchen; gegen 16 Uhr kommt der Nikolaus mit anschließendem Laternenumzug.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://krencky24.de/troedelmarkt-flohmarkt_21-11-2026_kirchdorf_23773692.html",
+      "anreise": "DT: ca. 2 Std. bis Wismar (RE1 bis Bad Kleinen, dort RE8/RB), ab Wismar ZOB Bus nach Kirchdorf/Poel ca. 35–40 Min. · Auto: ca. 2 Std. (A1/A20, dann über die Poeler Straße)",
+      "unsicher": "Nur über Veranstaltungsportale (krencky24, freizeitmonster) bestätigt, die die Kurverwaltung Insel Poel als Veranstalter nennen – insel-poel.de war nicht abrufbar"
+    },
+    {
+      "id": "fc-anker-wismar-berliner-ak-07-oberliga-nofv-nord-kurt",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "14:00",
+      "dauer": 110,
+      "titel": "FC Anker Wismar – Berliner AK 07 (Oberliga NOFV-Nord)",
+      "ort": "Kurt-Bürger-Stadion, Wismar",
+      "geo": [
+        53.8833,
+        11.45634
+      ],
+      "region": "WIS",
+      "kategorie": "Sport",
+      "beschreibung": "Oberliga-Heimspiel des FC Anker gegen den Berliner AK 07 im Kurt-Bürger-Stadion, wenige Gehminuten von der Altstadt.",
+      "preis": "Tageskasse, Preis nicht veröffentlicht",
+      "draussen": "draußen",
+      "link": "https://www.fussball.de/mannschaft/fc-anker-wismar-fc-anker-wismar-1997-mecklenburg-vorpommern/-/saison/2627/team-id/011MIA6TAC000000VTVG0001VTR8C1K7",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 15 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Anstoß laut fussball.de (Spielplan als vorläufig gekennzeichnet); Eintrittspreis nicht gefunden"
+    },
+    {
+      "id": "vernissage-tapetenwechsel-6-in-der-kreismusikschule",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "18:00",
+      "dauer": 60,
+      "titel": "Vernissage „Tapetenwechsel #6“ in der Kreismusikschule",
+      "ort": "Kreismusikschule „Carl Orff“, Wismar (Aula)",
+      "geo": [
+        53.88716,
+        11.4722
+      ],
+      "region": "WIS",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Eröffnung der sechsten „Tapetenwechsel“-Ausstellung: Kunstwerke von Teilnehmern zwischen 3 und 76 Jahren auf drei Etagen der Musikschule – direkt vor dem Benefizkonzert um 19 Uhr im selben Haus.",
+      "preis": "Eintritt nicht angegeben",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Vernissage-Tapetenwechsel-6-.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1636.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Eintritt nicht angegeben, Dauer geschätzt"
+    },
+    {
+      "id": "shine-on-debuetkonzert-des-popchors-tw-ng-heiligen-geist",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "18:00",
+      "dauer": 90,
+      "titel": "Shine On – Debütkonzert des Popchors TWÆNG",
+      "ort": "Heiligen-Geist-Kirche, Wismar",
+      "geo": [
+        53.89177,
+        11.46132
+      ],
+      "region": "WIS",
+      "kategorie": "Konzert",
+      "beschreibung": "Der neue Wismarer Popchor TWÆNG unter Leitung von Eva Weidner gibt sein erstes Konzert: Popklassiker und Balladen in der gotischen Heiligen-Geist-Kirche.",
+      "preis": "Eintritt frei, Spenden erbeten",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Shine-On-Deb%C3%BCtkonzert-des-Wismarer-Popchors-TW%C3%86NG.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1640.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 12 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "benefizkonzert-the-rolling-boots-gaeste-kreismusikschule",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "19:00",
+      "dauer": 90,
+      "titel": "Benefizkonzert „The Rolling Boots & Gäste“",
+      "ort": "Kreismusikschule „Carl Orff“, Wismar (Aula)",
+      "geo": [
+        53.88716,
+        11.4722
+      ],
+      "region": "WIS",
+      "kategorie": "Konzert",
+      "beschreibung": "Die generationenübergreifende Band der Kreismusikschule spielt mit Gastmusikern Coversongs und Eigenes (E-Bass, Schlagzeug, Klavier, E-Gitarre); die Spenden gehen an die Wismarer Felicitas gGmbH für junge Menschen in schwierigen Lebenslagen.",
+      "preis": "Eintritt frei, Spenden erwünscht",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Benefizkonzert-The-Rolling-Boots-G%C3%A4ste-.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1637.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "oeffentliche-werkstattfuehrung-in-der-goertz",
+      "daten": [
+        "2026-11-26"
+      ],
+      "zeit": "11:00",
+      "dauer": 45,
+      "titel": "Öffentliche Werkstattführung in der Goertz Möbelmanufaktur",
+      "ort": "Goertz Möbelmanufaktur, Wismar",
+      "geo": [
+        53.89537,
+        11.45845
+      ],
+      "region": "WIS",
+      "kategorie": "Führung",
+      "beschreibung": "Torsten Goertz führt vom Ladengeschäft über die Designabteilung in die Tischlerwerkstatt am Alten Holzhafen, wo die Gesellen an aktuellen Möbelprojekten arbeiten. Keine Voranmeldung nötig, ca. 30–45 Minuten.",
+      "preis": "5 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/%C3%96ffentliche-Werkstattf%C3%BChrungen-.php?object=tx%2C4176.4.1&ModID=11&FID=4176.958.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 20 Min. zu Fuß zum Alten Holzhafen · Auto: ca. 1:45 Std. (A1/A20)"
+    },
+    {
+      "id": "museumswinter-warum-sammelt-das-museum-eigentlich-noch",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "19:00",
+      "dauer": 90,
+      "titel": "Museumswinter: „Warum sammelt das Museum eigentlich noch?“",
+      "ort": "SCHABBELL – Stadtgeschichtliches Museum, Wismar",
+      "geo": [
+        53.89487,
+        11.46677
+      ],
+      "region": "WIS",
+      "kategorie": "Lesung",
+      "beschreibung": "Museumsleiterin Corinna Schubert und Dr. Maximilian Marotz nehmen mit hinter die Kulissen der seit 1863 wachsenden Sammlung – von leidenschaftlichen Sammlern, überraschenden Objekten und ihren Geschichten.",
+      "preis": "7 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Museumswinter-Warum-sammelt-das-Museum-eigentlich-noch-Von-Sammlern-Sch%C3%A4tzen-und-Geschichten-.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1627.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 12 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "adventskaffee-der-niederdeutschen-buehne-wismar-zeughaus",
+      "daten": [
+        "2026-11-28",
+        "2026-11-29"
+      ],
+      "zeit": "15:00",
+      "dauer": 120,
+      "titel": "Adventskaffee der Niederdeutschen Bühne Wismar",
+      "ort": "Zeughaus Wismar",
+      "geo": [
+        53.89331,
+        11.45789
+      ],
+      "region": "WIS",
+      "kategorie": "Bühne",
+      "beschreibung": "Plattdeutscher Nachmittag zum 1. Advent: Die Niederdeutsche Bühne Wismar lädt zu Kaffee, Kuchen und weihnachtlichem Programm in den Zeughaussaal (Teil des Programms „Weihnachtliches Welterbe Wismar“).",
+      "preis": "15 €, ermäßigt 10 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Adventskaffee-.php?object=tx%2C4176.4.1&ModID=11&FID=4176.979.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Programmdetails und Dauer nicht angegeben (geschätzt)"
+    },
+    {
+      "id": "zwing-gloeckchen-die-goldenen-20er-casanova-society",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "16:00",
+      "dauer": 120,
+      "titel": "Zwing Glöckchen – die goldenen 20er (Casanova Society Orchestra)",
+      "ort": "Theater Wismar, Großes Haus",
+      "geo": [
+        53.88367,
+        11.45423
+      ],
+      "region": "WIS",
+      "kategorie": "Konzert",
+      "beschreibung": "Weihnachtliches Konzert im Stil der Goldenen Zwanziger mit dem Casanova Society Orchestra am Nachmittag des 1. Advents – Teil des Programms „Weihnachtliches Welterbe Wismar“.",
+      "preis": "30 €, ermäßigt 20 €",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Zwing-Gl%C3%B6ckchen-die-goldener-20er.php?object=tx%2C4176.4.1&ModID=11&FID=4176.967.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "swinging-christmas-mit-andreas-pasternack-heiligen-geist",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "17:00",
+      "dauer": 90,
+      "titel": "„Swinging Christmas“ mit Andreas Pasternack",
+      "ort": "Heiligen-Geist-Kirche, Wismar",
+      "geo": [
+        53.89177,
+        11.46132
+      ],
+      "region": "WIS",
+      "kategorie": "Konzert",
+      "beschreibung": "Der Schweriner Jazzmusiker Andreas Pasternack swingt mit Saxophon, Gesang und Humor durch Weihnachtslieder von „Jingle Bells“ bis zu über 100 Jahre alten deutschen Klassikern – am Abend des 1. Advents. Karten in der Tourist-Information Wismar oder unter 0176 25718825.",
+      "preis": "Karten in der Tourist-Information, Preis nicht angegeben",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/-Swinging-Christmas-mit-Andreas-Pasternack.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1642.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 12 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Preis und Dauer nicht angegeben"
     }
   ],
   "laufend": [
@@ -9077,6 +9908,240 @@
       "draussen": "draußen",
       "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/weihnachtsmarkt-moelln/",
       "anreise": "Deutschlandticket: ca. 1–1:15 h mit Umstieg / Auto: ca. 45 Min. (A24)"
+    },
+    {
+      "id": "phantechnikum-technisches-landesmuseum-mit",
+      "von": "2026-10-28",
+      "bis": "2026-11-29",
+      "zeit": "Di–So 10–17 Uhr (Einlass bis 16:30), Mo geschlossen",
+      "titel": "phanTECHNIKUM – Technisches Landesmuseum, mit Sonderausstellung „All.Täglich – INNOspaceEXPO“ (bis 22.11.)",
+      "ort": "phanTECHNIKUM, Wismar",
+      "geo": [
+        53.89363,
+        11.43126
+      ],
+      "region": "WIS",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Technisches Landesmuseum zur Technik- und Industriegeschichte Mecklenburg-Vorpommerns auf rund 3.500 m² mit öffentlichen Laborvorführungen; bis 22.11. zeigt die Sonderausstellung „All.Täglich – INNOspaceEXPO“, welche Alltagstechnik aus der Raumfahrt stammt.",
+      "preis": "12 €, ermäßigt 8 € (laut Veranstaltungskalender)",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/All-T%C3%A4glich-INNOspaceEXPO.php?object=tx%2C4176.4.1&ModID=11&FID=4176.811.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 15 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Öffnungszeiten laut hamburg-tourism.de (Sept.–Mai Di–So 10–17), phantechnikum.de war nicht abrufbar"
+    },
+    {
+      "id": "schabbell-stadtgeschichtliches-museum-eingeschraenkt-wegen",
+      "von": "2026-10-28",
+      "bis": "2026-11-29",
+      "zeit": "Di–So 11–17 Uhr, Mo geschlossen",
+      "titel": "SCHABBELL – Stadtgeschichtliches Museum (eingeschränkt wegen Wasserschaden)",
+      "ort": "SCHABBELL – Stadtgeschichtliches Museum, Wismar",
+      "geo": [
+        53.89487,
+        11.46677
+      ],
+      "region": "WIS",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Stadtgeschichte im Renaissance-Bürgerhaus an der Schweinsbrücke: Hanse- und Schwedenzeit sowie 19./20. Jahrhundert bleiben zugänglich, Kemladen und Dachgeschoss sind nach einem Wasserschaden bis auf Weiteres gesperrt – dafür gilt der ermäßigte Eintritt.",
+      "preis": "7 € (ermäßigter Eintritt während der Sanierung)",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Leben-in-Wismar/Kultur-Geschichte/SCHABBELL/%C3%96ffnungszeiten-Preise/",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 12 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)"
+    },
+    {
+      "id": "welt-erbe-haus-wismar-welt-erbe-haus-wismar",
+      "von": "2026-10-28",
+      "bis": "2026-11-29",
+      "zeit": "bis 31.10. täglich 9–17 Uhr, ab 1.11. täglich 10–16 Uhr",
+      "titel": "Welt-Erbe-Haus Wismar",
+      "ort": "Welt-Erbe-Haus, Wismar",
+      "geo": [
+        53.8923,
+        11.46228
+      ],
+      "region": "WIS",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Kostenloses Besucherzentrum zum UNESCO-Welterbe in einem Dielenhaus: interaktive Themenräume zu Bürgern, Häusern, Handel und Stadtgeschichte sowie der Tapetensaal mit einer französischen Panoramatapete aus dem frühen 19. Jahrhundert (Reise des Telemach).",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/UNESCO-Welterbe/Welt-Erbe-Haus/",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)"
+    },
+    {
+      "id": "kunstraum-st-georgen-rauminspektion-skulpturen-von-simon",
+      "von": "2026-10-28",
+      "bis": "2026-11-08",
+      "zeit": "bis 31.10. täglich 10–18 Uhr, ab 1.11. täglich 10–16 Uhr",
+      "titel": "Kunstraum St. Georgen: „Rauminspektion“ – Skulpturen von Simon Mehling",
+      "ort": "St.-Georgen-Kirche, Wismar",
+      "geo": [
+        53.89069,
+        11.46055
+      ],
+      "region": "WIS",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Großformatige Skulpturen aus gebrauchtem Baumaterial – Holzpaneele, Planen, Armierungseisen, Betonplatten – im monumentalen Backsteinraum der wiederaufgebauten Georgenkirche.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Ausstellung-Rauminspektion-von-Simon-Mehling-im-Kunstraum-St-Georgen.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1649.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)"
+    },
+    {
+      "id": "galerie-hinter-dem-rathaus-rota-fortunae-das-gluecksrad",
+      "von": "2026-11-05",
+      "bis": "2026-12-05",
+      "zeit": "Mi–Sa 11–17 Uhr",
+      "titel": "Galerie Hinter dem Rathaus: „Rota Fortunae – Das Glücksrad“",
+      "ort": "Galerie Hinter dem Rathaus, Wismar",
+      "geo": [
+        53.89227,
+        11.46616
+      ],
+      "region": "WIS",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Erste bulgarisch-deutsche Ausstellung in Wismar (Kunstverein Wismar): Bronzen von Dimitar Chonov, Malerei von Nikolay Tomov und Holzschnitte von Olaf Hoppe zu einem gemeinsamen Thema – Eröffnung am 4.11. um 19:30 Uhr.",
+      "preis": "Eintritt nicht angegeben",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Rota-Fortunae-Das-Gl%C3%BCcksrad.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1613.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Eintritt nicht angegeben"
+    },
+    {
+      "id": "gerichtslaube-im-rathaus-unsichtbar-sichtbar-fotokunst-von",
+      "von": "2026-11-16",
+      "bis": "2026-12-15",
+      "zeit": "Öffnungszeiten nicht angegeben (Gerichtslaube im Rathaus; Vernissage Mo 16.11. 18 Uhr)",
+      "titel": "Gerichtslaube im Rathaus: „UNSICHTBAR SICHTBAR“ – Fotokunst von Claudia Drossert",
+      "ort": "Gerichtslaube im Rathaus, Wismar",
+      "geo": [
+        53.89193,
+        11.4661
+      ],
+      "region": "WIS",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Fotokunst zu weiblicher Identität, Rollenbildern und Selbstbestimmung im Rahmen der Internationalen Tage „Nein zu Gewalt an Frauen“, in Zusammenarbeit mit dem Büro für Chancengleichheit der Stadt.",
+      "preis": "Eintritt nicht angegeben",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/UNSICHTBAR-SICHTBAR-.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1548.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Öffnungszeiten und Eintritt nicht angegeben"
+    },
+    {
+      "id": "gunda-und-udo-scheel-stiftung-stiftungsraeume-geoeffnet",
+      "von": "2026-10-28",
+      "bis": "2026-11-25",
+      "zeit": "Mi 11–14 Uhr (28.10., 4., 11., 18., 25.11.)",
+      "titel": "Gunda- und Udo-Scheel-Stiftung: Stiftungsräume geöffnet",
+      "ort": "Gunda- und Udo-Scheel-Stiftung, Wismar",
+      "geo": [
+        53.89155,
+        11.4581
+      ],
+      "region": "WIS",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Großformatige Gemälde, Grisaillen und Radierungen des Wismarer Malers Udo Scheel sowie Fotografien von Gunda Scheel und Teile der Sammlung (u. a. Timm Ulrichs, K. O. Götz) in den Stiftungsräumen an der Lübschen Straße.",
+      "preis": "Eintritt nicht angegeben",
+      "draussen": "drinnen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Gunda-und-Udo-Scheel-Stiftung-.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1212.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 15 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Eintritt nicht angegeben"
+    },
+    {
+      "id": "wismars-welterbe-entdecken-oeffentliche-stadtfuehrung",
+      "von": "2026-10-28",
+      "bis": "2026-11-28",
+      "zeit": "bis 31.10. täglich 11:00 Uhr; ab 2.11. Mo–Sa 14:00 Uhr (Anmeldung mind. 24 Std. vorher, ab 6 Personen), Dauer 2 Std.",
+      "titel": "Wismars Welterbe entdecken – öffentliche Stadtführung",
+      "ort": "Tourist-Information Wismar",
+      "geo": [
+        53.8923,
+        11.4622
+      ],
+      "region": "WIS",
+      "kategorie": "Führung",
+      "beschreibung": "Klassische Altstadtführung zu Hanse, Backsteingotik und Schwedenzeit – erklärt, warum Wismar Welterbe ist. Treffpunkt und Tickets in der Tourist-Information (03841 19433).",
+      "preis": "10 €, ermäßigt 8 €",
+      "draussen": "draußen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Wismars-Welterbe-entdecken-%C3%B6ffentliche-Stadtf%C3%BChrung.php?object=tx%2C4176.4.1&ModID=11&FID=4176.398.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)"
+    },
+    {
+      "id": "turmfuehrungen-mit-guide-auf-den-st-marien-kirchturm-st",
+      "von": "2026-10-28",
+      "bis": "2026-11-29",
+      "zeit": "bis 31.10. täglich stündlich 11–17 Uhr; ab 1.11. täglich 14:00 Uhr (max. 15 Personen)",
+      "titel": "Turmführungen mit Guide auf den St.-Marien-Kirchturm",
+      "ort": "St.-Marien-Kirchturm, Wismar",
+      "geo": [
+        53.8912,
+        11.46416
+      ],
+      "region": "WIS",
+      "kategorie": "Führung",
+      "beschreibung": "Geführter Aufstieg auf 63 Meter Höhe des 80 Meter hohen Turms, der von der Ratspfarrkirche St. Marien geblieben ist – mit Turm- und Stadtgeschichte und Blick über Altstadt und Bucht.",
+      "preis": "5 €, ermäßigt 4 €",
+      "draussen": "beides",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/Turmf%C3%BChrungen-mit-Guide.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1657.1",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)"
+    },
+    {
+      "id": "eisbahn-wismar-am-alten-hafen-eisbahn-wismar-alter-hafen",
+      "von": "2026-10-30",
+      "bis": "2027-02-21",
+      "zeit": "Mo–Fr 14–19 Uhr, Sa/So und Ferien 10–19 Uhr",
+      "titel": "Eisbahn Wismar am Alten Hafen",
+      "ort": "Eisbahn Wismar, Alter Hafen",
+      "geo": [
+        53.89802,
+        11.46089
+      ],
+      "region": "WIS",
+      "kategorie": "Sport",
+      "beschreibung": "Überdachte Eisbahn direkt neben der Markthalle am Alten Hafen: Eislaufen, Eisstockschießen (10 € p. P., Anfrage) und Schlittschuhverleih vor Ort.",
+      "preis": "7 € (Kinder/Studenten 5 €), Schlittschuhverleih 5 €",
+      "draussen": "beides",
+      "link": "https://eisbahn-wismar.de/",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 15 Min. zu Fuß zum Alten Hafen · Auto: ca. 1:45 Std. (A1/A20)"
+    },
+    {
+      "id": "sternenwald-wismar-am-alten-hafen-sternenwald-alter-hafen",
+      "von": "2026-11-23",
+      "bis": "2027-01-10",
+      "zeit": "laut ostsee.de So–Do 12–21, Fr/Sa 12–22 Uhr (Betreiberseite nennt noch keine Zeiten)",
+      "titel": "Sternenwald Wismar am Alten Hafen",
+      "ort": "Sternenwald, Alter Hafen Wismar",
+      "geo": [
+        53.89788,
+        11.45938
+      ],
+      "region": "WIS",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Winterlicher Treffpunkt zwischen rund 180 beleuchteten Tannen am Kai des Alten Hafens: Glühwein, heißer Aperol, Bratwurst, Fish & Chips, Suppen, gebrannte Mandeln und Waffeln mit Blick auf die Schiffe. Tische reservierbar.",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://sternenwald-wismar.de/",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 15 Min. zu Fuß zum Alten Hafen · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Zeitraum laut Betreiberseite, Öffnungszeiten nur laut ostsee.de"
+    },
+    {
+      "id": "wismarer-weihnachtsmarkt-auf-dem-marktplatz-marktplatz",
+      "von": "2026-11-23",
+      "bis": "2026-12-20",
+      "zeit": "So–Do 11–20 Uhr, Fr/Sa 11–21 Uhr (wie in den Vorjahren)",
+      "titel": "Wismarer Weihnachtsmarkt auf dem Marktplatz",
+      "ort": "Marktplatz Wismar",
+      "geo": [
+        53.89105,
+        11.46668
+      ],
+      "region": "WIS",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Weihnachtsmarkt in Schweden-Chalets rund um die Wasserkunst mit Märchenwald, Kinderkarussells, Bühnenprogramm Fr–So und regionalen wie skandinavischen Leckereien – die beleuchtete Welterbe-Altstadt mit dem „Wismarer Weihnachtsstern“ gibt es gratis dazu.",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.wismar.de/Tourismus/Veranstaltungen/H%C3%B6hepunkte-des-Jahres/Weihnachten-in-Wismar/",
+      "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß zum Markt · Auto: ca. 1:45 Std. (A1/A20)",
+      "unsicher": "Termin 2026 von der Stadt noch nicht veröffentlicht (Stand 28.10.): 23.11.–20.12. laut ostsee.de (Stand Aug. 2026), der Start deckt sich mit dem Sternenwald (23.11. laut Betreiber); Öffnungszeiten aus dem Vorjahr. Offizielle Eröffnung mit dem Weihnachtsmann traditionell am ersten Samstag (= 28.11., ca. 13:30 Alter Hafen / 14:00 Rathausbalkon) – unbestätigt"
     }
   ],
   "immer": [

@@ -4,7 +4,7 @@
   "type": "module",
   "description": "Nur für die Tests. Die App selbst hat keine Abhängigkeiten und keinen Bauschritt.",
   "scripts": {
-    "lint": "eslint js sw.js tests",
+    "lint": "eslint js sw.js tests werkzeug",
     "test": "node tests/lauf.mjs",
     "daten": "node tests/test-daten.mjs",
     "serve": "node tests/server.mjs 8099"

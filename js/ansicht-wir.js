@@ -28,6 +28,7 @@ import {
   andere, hakenDerAnderen, syncStatus, einladungsLink, zugangsLink, zugangLesen, person, rolle, gastgeberName, mitWem,
 } from './gemeinsam.js';
 import { istApple } from './teilen.js';
+import { zeitenAbschnitt } from './zeiten.js';
 import { planAusSchnappschuss, ideeAusSchnappschuss } from './ideen.js';
 
 /** Läuft die App vom Home-Bildschirm (und nicht im Browser)? */
@@ -380,10 +381,11 @@ export function wirAnsicht(p, ideen, st, heute, ui = {}) {
   }
 
   const hilfe = ui.hilfe || (rolle() === 'mitglied' && !st.hilfeWeg) ? hilfeKarte(st) : '';
+  const zeiten = zeitenAbschnitt(heute, ui.zeitenWoche);
   return `${kopf(st, ui)}
     ${zugang}
     ${hilfe}
-    ${rolle() === 'gastgeber' ? gastgeberUeberblick(alle, st, heute, ui) : mitgliedAnsicht(alle, st, heute)}
+    ${rolle() === 'gastgeber' ? `${gastgeberUeberblick(alle, st, heute, ui)}${zeiten}` : `${zeiten}${mitgliedAnsicht(alle, st, heute)}`}
     ${vorbeiListe(alt, ui)}`;
 }
 

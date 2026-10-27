@@ -294,7 +294,7 @@ async function einmalAbgleichen() {
       if (!st.warteschlange.length) {
         // Die Warteschlange ist leer: Für die eigenen Haken gilt jetzt der Server.
         const meine = {};
-        for (const b of s.bock.filter((x) => x.person === g.ich.id)) {
+        for (const b of s.bock.filter((x) => x.person === g.ich.id && !istSystemHaken(x.eintrag))) {
           const hier = st.bock[b.eintrag];
           const dort = b.daten || {};
           meine[b.eintrag] = hier ? { ...hier, ...(dort.mitwem ? { mitwem: dort.mitwem } : {}) } : { ...dort, gesetzt: b.geaendert };
@@ -417,11 +417,26 @@ export function treffer(schluessel) {
   return sie.length > 0 && mitWem(st.bock[schluessel]) === 'gastgeber';
 }
 
+/**
+ * Haken, die keine Einträge sind: z:<Montag> trägt die belegten Zeiten des
+ * Gastgebers (zeiten.js). Sie stehen nirgends als Eintrag und zählen nicht als
+ * neuer Haken.
+ */
+export const istSystemHaken = (eintrag) => String(eintrag).startsWith('z:');
+
 /** Alle Haken der anderen: [{ eintrag, person, daten, geaendert }]. */
 export function hakenDerAnderen() {
   const g = aktuell().gemeinsam;
   if (!g) return [];
-  return g.stand.bock.filter((b) => b.person !== g.ich.id && person(b.person));
+  return g.stand.bock.filter((b) => b.person !== g.ich.id && !istSystemHaken(b.eintrag) && person(b.person));
+}
+
+/** Die Zeiten-Haken des Gastgebers – { quelle (zum Zwischenspeichern), liste }. */
+export function zeitenMarken() {
+  const g = aktuell().gemeinsam;
+  if (!g || g.raus) return { quelle: null, liste: [] };
+  const vomGastgeber = (b) => b.person === 'gastgeber' || (rolle() === 'gastgeber' && b.person === g.ich.id);
+  return { quelle: g.stand, liste: g.stand.bock.filter((b) => istSystemHaken(b.eintrag) && vomGastgeber(b)) };
 }
 
 /** Wann zuletzt jemand anderes einen Haken gesetzt hat – für den Punkt an der Leiste. */

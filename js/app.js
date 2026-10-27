@@ -44,6 +44,7 @@ let raum = 'woche'; // Zeitraum auf der Karte
 // einem Einladungslink einlädt, aufgeklappte Abschnitte (data-offen)
 const ui = {
   einladen: false, umbenennen: false, verlassen: false, geraet: false, hilfe: false, entfernen: '', fehler: '', laeuft: false, einladungVon: null, offen: new Set(),
+  zeitenWoche: '', // Montag der Woche in „Wann hat … Zeit?“
 };
 // Reiter Ideen: offene Formulare („bereich|schlüssel“), aufgeklappte Kategorien, letzte Meldung
 const uiIdeen = { neu: false, planen: '', bewerten: '', offen: new Set(), saisonAlle: false, meldung: null, fehler: '' };
@@ -299,6 +300,11 @@ function aktion(name, z) {
     case 'geraet':
     case 'hilfe':
       wirFeld(name);
+      break;
+    case 'zeiten-zurueck':
+    case 'zeiten-vor':
+      ui.zeitenWoche = z.dataset.woche || '';
+      zeichnen({ behalteScroll: true });
       break;
     case 'hilfe-weg':
       st.hilfeWeg = true;

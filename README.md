@@ -130,6 +130,25 @@ Schlüssel. Der Link ist nur für einen selbst. Ohne ihn tritt ein zweites
 Gerät als neue Person bei – ein Name allein macht niemanden zu jemand
 anderem.
 
+**Wann hat Tobi Zeit?** Die belegten Zeiten des Gastgebers – nur Zeiten,
+keine Titel – reisen als seine Haken `z:<Montag der Woche>` mit
+`{ "z": [[von, bis], …], "stand": "…" }` (Minuten ab Montag 0:00, Berliner
+Zeit). Eingeladene sehen dann an jeder Karte „✓ Tobi hat da Zeit“ oder
+„Tobi ist da schon verplant“ und unter „Wir“ ein Wochenraster 8–24 Uhr wie im
+Terminplanungs-Assistenten; der Gastgeber sieht nur, was sich mit seinem
+Kalender beißt. Für Wochen ohne Zeiten sagt die App nichts. Rechnen
+(Zeitzone, Mitternacht, Wochenwechsel, Zeitumstellung) tut
+`js/zeiten-rechnen.js`, schicken `werkzeug/zeiten-senden.mjs` – gedacht für
+eine geplante Aufgabe, die den Google Kalender liest:
+
+```
+node werkzeug/zeiten-senden.mjs --zugang "<Link „Weiteres Gerät“ des Gastgebers>" --termine termine.json
+```
+
+`termine.json` ist eine Liste `[{ "start": "2026-11-03T18:00:00+01:00", "ende": "…" }, { "start": "2026-11-05", "ende": "2026-11-06", "ganztags": true }]`
+nur mit Terminen, an denen er wirklich belegt ist. Geschrieben werden fünf
+Wochen ab Montag dieser Woche, auch leere (dann heißt es: frei).
+
 **iPhone:** Die App auf dem Home-Bildschirm hat einen eigenen Speicher,
 getrennt von Safari – sie kennt den Link nicht. Deshalb zeigt die Einladung
 in Safari den Weg zum Home-Bildschirm und den Code; in der App fügt man ihn
@@ -355,6 +374,9 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `js/teilen.js` | WhatsApp-Nachricht, Google-Kalender-Link, .ics |
 | `js/speicher.js` | Filter, eigene Haken mit Schnappschuss, Warteschlange, Verlauf „Wie war's?“ |
 | `js/gemeinsam.js` | der gemeinsame Plan: Code, Schlüssel, Beitreten, weiteres Gerät, Abgleich mit Supabase, Rollen und Treffer |
+| `js/zeiten.js` | die belegten Zeiten des Gastgebers: an den Karten und als Wochenraster |
+| `js/zeiten-rechnen.js` | aus Kalenderterminen belegte Blöcke je Woche (Browser und Node) |
+| `werkzeug/zeiten-senden.mjs` | schickt die Zeiten an den Plan – für eine geplante Aufgabe |
 | `js/config.js` | Adresse und öffentlicher Schlüssel des Servers |
 | `js/ansicht-*.js` | die fünf Reiter |
 | `supabase/gemeinsam.sql` | Tabellen und Funktionen für den gemeinsamen Plan |
@@ -376,6 +398,9 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `test-teilen.mjs` | WhatsApp, Google Kalender, .ics – auch für Eingeplantes |
 | `test-offline.mjs` | Offline-Vorrat, App ohne Netz |
 | `test-daten.mjs` | `daten/programm.json`, `daten/ideen.json` und `daten/orte.json` |
+| `test-zeiten.mjs` | Zeiten des Gastgebers: an den Karten (frei/verplant), das Wochenraster, nirgends als Eintrag |
+| `test-zeiten-rechnen.mjs` | Blöcke je Woche: Zeitzone, Mitternacht, Wochenwechsel, Zeitumstellung |
+| `test-zeiten-senden.mjs` | das Werkzeug gegen einen nachgebauten Server |
 | `test-sql.mjs` | `supabase/gemeinsam.sql` in PGlite: über der ersten Fassung, Rollen und was wer sieht, Schlüssel, Funktionen, Rechte, Grenzen |
 
 Die Browsertests laufen gegen feste Testdaten und einen nachgebauten Server

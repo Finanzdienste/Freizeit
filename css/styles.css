@@ -366,3 +366,20 @@ textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
 .hilfe-liste b { font-weight: 700; }
 .einladung-text summary { cursor: pointer; }
 .einladung-text textarea { margin-top: 6px; font-size: 14px; }
+
+/* Zeiten des Gastgebers: an der Karte und als Wochenraster */
+.zeit-hinweis { margin-top: 6px; font-size: 13px; font-weight: 600; }
+.zeit-hinweis.frei { color: var(--akzent); }
+.zeit-hinweis.belegt { color: var(--bernstein); }
+.zeiten-blaettern { margin: 4px 0 8px; }
+.zeiten-raster { display: grid; gap: 4px; }
+.zr-kopf, .zr-zeile { display: grid; grid-template-columns: 4.6rem 1fr; gap: 8px; align-items: center; }
+.zr-skala { position: relative; height: 14px; font-size: 11px; color: var(--leise); font-family: var(--mono); }
+.zr-skala i { position: absolute; transform: translateX(-50%); font-style: normal; }
+.zr-skala i:first-child { transform: none; }
+.zr-skala i:last-child { transform: translateX(-100%); }
+.zr-tag { font-family: var(--mono); font-size: 12.5px; color: var(--leise); white-space: nowrap; }
+.zr-zeile.heute .zr-tag { color: var(--tinte); font-weight: 700; }
+.zr-zeile.vorbei { opacity: .45; }
+.zr-balken { position: relative; height: 22px; border-radius: 6px; background: var(--akzent-weich); border: 1px solid var(--linie); overflow: hidden; }
+.zr-balken b { position: absolute; top: 0; bottom: 0; background: var(--tinte); opacity: .72; }

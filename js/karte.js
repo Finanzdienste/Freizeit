@@ -12,6 +12,7 @@ import { esc, kostenlos, REGIONEN, DRAUSSEN, sichererLink } from './text.js';
 import { zeitAm, ende, uhrzeit, offen, abendVorArbeitstag, wochentagKurz, tagMonat } from './zeit.js';
 import { whatsappLink, kalenderZiel } from './teilen.js';
 import { WO } from './ideen.js';
+import { zeitZeile } from './zeiten.js';
 import { aktuell, meinBock } from './speicher.js';
 import {
   andere, rolle, gastgeberName, mitWem, treffer,
@@ -175,6 +176,7 @@ export function karte(eintrag, o = {}) {
     ${eintrag.unsicher ? `<div class="unsicher">${esc(eintrag.unsicher)}</div>` : ''}
     ${eintrag.anreise ? `<div class="anreise">Anreise: ${esc(eintrag.anreise)}</div>` : ''}
     ${wer.html}
+    ${zeitZeile(eintrag)}
     <div class="aktionen">
       ${bockKnopf(eintrag)}
       <a class="knopf" href="${esc(whatsappLink(eintrag))}" target="_blank" rel="noopener">WhatsApp</a>

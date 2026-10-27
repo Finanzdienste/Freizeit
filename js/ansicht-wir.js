@@ -164,13 +164,13 @@ function zugangKarte(st, ui) {
 
 // --- Mit Plan
 
-/** Die belegten Zeiten des Gastgebers stehen im Kalender (Wochenansicht) – hier nur der Verweis. */
+/** Die belegten Zeiten des Gastgebers stehen im Programm (Ansicht Woche) – hier nur der Verweis. */
 function zeitenHinweis(heute) {
   if (!zeitenWochen().some((w) => w >= montag(heute))) return '';
   const { stand } = belegung();
   const standText = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(stand) ? ` (Stand ${wochentagKurz(stand.slice(0, 10))} ${tagMonat(stand.slice(0, 10))}, ${stand.slice(11)} Uhr)` : '';
   const n = esc(gastgeberName() || 'der Gastgeber');
-  return `<p class="fein zeiten-hinweis">${rolle() === 'gastgeber' ? 'Deine belegten Zeiten aus dem Kalender' : `Wann ${n} Zeit hat`}${standText}: im Reiter <button type="button" class="textknopf" data-reiter="kalender" data-kal-wechsel="woche">Kalender</button>, Wochenansicht – und an jeder Karte.</p>`;
+  return `<p class="fein zeiten-hinweis">${rolle() === 'gastgeber' ? 'Deine belegten Zeiten aus dem Kalender' : `Wann ${n} Zeit hat`}${standText}: im <button type="button" class="textknopf" data-reiter="programm" data-kal-wechsel="woche">Programm, Ansicht Woche</button> – und an jeder Karte.</p>`;
 }
 
 /**
@@ -186,11 +186,11 @@ function hilfeKarte(st) {
     '<b>Hier unter „Wir“</b> siehst du, was wer will: Zusammen, Wollen mit dir, Ohne dich und pro Person.',
     '<b>Wer sieht was:</b> Alle Haken siehst nur du. Die anderen sehen deine und ihre eigenen, voneinander nichts.',
   ] : [
-    '<b>Programm, Kalender, Karte:</b> was in Hamburg und Umgebung los ist – Woche für Woche, gut einen Monat im Voraus. Der Kalender kann Monat, Woche und Tag.',
+    '<b>Programm:</b> was in Hamburg und Umgebung los ist, gut einen Monat im Voraus – als Liste, Monat, Woche oder Tag. <b>Karte:</b> dasselbe nach Ort.',
     `<b>Mit ${n}</b> an einem Termin heißt: Das würd ich gern mit dir machen. <b>Allein/mit anderen</b> heißt: Hab ich vor, aber ohne dich. Dieselbe Wahl noch einmal nimmt den Haken weg.`,
     '<b>Ideen:</b> alles ohne festen Termin, von Tischtennis bis Bügelperlen. Auch da kannst du Bock sagen oder dir einen Tag einplanen.',
     `<b>Wir:</b> Hier siehst du, wo ihr beide Bock habt und worauf ${n} Bock hat.`,
-    `<b>Wann hat ${n} Zeit?</b> An jedem Termin steht es dabei, und im Kalender (Woche oder Tag) sind belegte Zeiten grau – ohne zu verraten, was ${n} da macht.`,
+    `<b>Wann hat ${n} Zeit?</b> An jedem Termin steht es dabei, und in den Ansichten Woche und Tag sind belegte Zeiten grau – ohne zu verraten, was ${n} da macht.`,
     `<b>Wer sieht was:</b> Deine Haken sieht nur ${n}. Die anderen Eingeladenen sehen nichts von dir – und du nichts von ihnen.`,
     ...(alsApp() ? [] : [istApple()
       ? '<b>Als App aufs iPhone:</b> Teilen → „Zum Home-Bildschirm“. Die App dort kennt diesen Plan nicht – tipp vorher unter „Wir“ auf „Weiteres Gerät“, kopier den Link und füg ihn in der App unter „Ich habe einen Code“ ein.'

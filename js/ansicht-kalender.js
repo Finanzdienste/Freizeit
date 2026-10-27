@@ -1,6 +1,7 @@
 /*
- * Reiter „Kalender“: ein Kalender mit Monats-, Wochen- und Tagesansicht –
- * wie bei Google, mit dem, was die App weiß.
+ * Reiter „Programm“, die Kalenderansichten: Monat, Woche und Tag – wie bei
+ * Google, mit dem, was die App weiß. Die vierte Ansicht, die Liste, zeichnet
+ * ansicht-programm.js; den Schalter zwischen allen vieren gibt es hier.
  *
  *   Monat   Blatt mit der Zahl der Termine je Tag (nach Filtern und
  *           21:30-Regel – dieselbe Auswahl wie im Programm) und Punkten,
@@ -28,7 +29,15 @@ import { geplante } from './ideen.js';
 import { belegtAm, bekannt } from './zeiten.js';
 
 const WOCHENTAGE = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'];
-export const ANSICHTEN = [['monat', 'Monat'], ['woche', 'Woche'], ['tag', 'Tag']];
+export const ANSICHTEN = [['liste', 'Liste'], ['monat', 'Monat'], ['woche', 'Woche'], ['tag', 'Tag']];
+
+/** Die Schalter Liste · Monat · Woche · Tag und der Knopf „Heute“. */
+export function ansichtSchalter(ansicht, heuteSchon) {
+  return `<div class="kal-schalter" role="tablist" aria-label="Ansicht">
+    ${ANSICHTEN.map(([k, t]) => `<button type="button" role="tab" class="schalter" data-kal-ansicht="${k}" aria-selected="${k === ansicht}" aria-pressed="${k === ansicht}">${t}</button>`).join('')}
+    <button type="button" class="knopf klein" data-aktion="kal-heute"${heuteSchon ? ' disabled' : ''}>Heute</button>
+  </div>`;
+}
 const VON = 7 * 60;
 const BIS = 24 * 60;
 const TAG = 24 * 60;
@@ -206,7 +215,7 @@ function tagesAnsicht(p, st, tag, plaene) {
 export function kalenderAnsicht(p, st, heute, ui) {
   if (!p) return '<div class="leer"><h2>Keine Daten</h2><p>Das Programm ließ sich nicht laden.</p></div>';
   const { erster, letzter } = tagesBereich(p, heute);
-  const ansicht = ANSICHTEN.some(([k]) => k === ui.ansicht) ? ui.ansicht : 'monat';
+  const ansicht = ['monat', 'woche', 'tag'].includes(ui.ansicht) ? ui.ansicht : 'monat';
   const datum = ui.datum && ui.datum >= erster && ui.datum <= letzter ? ui.datum : heute;
   const plaene = geplante(st);
   const monat = monatVon(datum);
@@ -229,12 +238,7 @@ export function kalenderAnsicht(p, st, heute, ui) {
     zurueck = plusTage(datum, -1) >= erster ? plusTage(datum, -1) : '';
     vor = plusTage(datum, 1) <= letzter ? plusTage(datum, 1) : '';
   }
-  const heuteSchon = datum === heute && (ansicht !== 'monat' || monat === monatVon(heute));
   const kopf = `<header class="woche-kopf kal-kopf">
-    <div class="kal-schalter" role="tablist" aria-label="Ansicht">
-      ${ANSICHTEN.map(([k, t]) => `<button type="button" role="tab" class="schalter" data-kal-ansicht="${k}" aria-selected="${k === ansicht}" aria-pressed="${k === ansicht}">${t}</button>`).join('')}
-      <button type="button" class="knopf klein" data-aktion="kal-heute"${heuteSchon ? ' disabled' : ''}>Heute</button>
-    </div>
     <div class="blaettern">
       <button type="button" class="pfeil" data-aktion="kal-zurueck" data-datum="${esc(zurueck)}" aria-label="Zurück"${zurueck ? '' : ' disabled'}>‹</button>
       <h2 class="monatstitel${ansicht === 'monat' ? '' : ' klein'}">${esc(titel)}</h2>

@@ -64,8 +64,10 @@ await B.reiter('wir');
 const hinweis2 = B.page.locator('.zeiten-hinweis');
 check(await hinweis2.count() === 1 && (await hinweis2.innerText()).includes('Wann Tobi Zeit hat (Stand Mo 2.11., 07:10 Uhr)'), 'unter „Wir“ ein Hinweis mit dem Stand – die Zeiten selbst stehen im Kalender');
 await hinweis2.locator('[data-kal-wechsel="woche"]').click();
-check(await B.page.locator('[data-reiter="kalender"]').getAttribute('aria-current') === 'page' && await B.page.locator('[data-kal-ansicht="woche"]').getAttribute('aria-pressed') === 'true',
-  'der Hinweis führt in die Wochenansicht des Kalenders');
+check(await B.page.locator('[data-reiter="programm"]').getAttribute('aria-current') === 'page' && await B.page.locator('[data-kal-ansicht="woche"]').getAttribute('aria-pressed') === 'true',
+  'der Hinweis führt ins Programm, Ansicht Woche');
+await B.page.click('[data-aktion="kal-heute"]');
+check((await B.page.locator('.monatstitel').innerText()).startsWith('KW 45'), '„Heute“ holt die laufende Woche – der Tag ist in allen Ansichten derselbe');
 const block = (tag) => B.page.locator(`.wo-spalte[data-wo-tag="${tag}"] .wo-zeit .belegt`);
 check(await block(DI).count() === 1 && (await block(DI).getAttribute('title')) === 'belegt 18:00–20:30', 'Di: ein dunkler Block 18:00–20:30');
 check((await block(FR).getAttribute('title')) === 'belegt 08:00–17:00' && await block(MO).count() === 0, 'Fr 08:00–17:00, Mo frei');
@@ -93,8 +95,7 @@ check((await hinweis(A, DI, 'Theater früh')) === 'Bei dir steht da schon was im
 check((await hinweis(A, DI, 'Workshop mittags')) === '', 'wo es passt, sagt die App Tobi nichts');
 await A.reiter('wir');
 check((await A.page.locator('.zeiten-hinweis').innerText()).startsWith('Deine belegten Zeiten aus dem Kalender'), 'Tobi: unter „Wir“ der Hinweis auf seine Zeiten');
-await A.reiter('kalender');
-await A.page.click('[data-kal-ansicht="woche"]');
+await A.ansicht('woche');
 check(await A.page.locator(`.wo-spalte[data-wo-tag="${DI}"] .wo-zeit .belegt`).count() === 1 && (await A.page.locator('.legende').innerText()).includes('du bist belegt'),
   'Tobi sieht im Kalender seine Zeiten, wie die anderen sie sehen');
 const st = await A.gespeichert();

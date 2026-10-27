@@ -78,8 +78,8 @@ check((await gespeichert()).bock[`p:${SA}:i:tischtennis`].titel === 'Tischtennis
 
 await reiter('programm');
 check(await page.locator(`#tag-${SA} .karte`, { hasText: 'Tischtennis' }).locator('.marke.plan').count() === 1, 'im Programm steht es am Samstag');
-await reiter('kalender');
-check(await page.locator(`.feld[data-tag="${SA}"] .pkt.ich`).count() === 1, 'im Kalender ein Punkt am Samstag');
+await A.ansicht('monat');
+check(await page.locator(`.feld[data-tag="${SA}"] .pkt.ich`).count() === 1, 'im Monat ein Punkt am Samstag');
 await page.locator(`.feld[data-tag="${SA}"]`).click();
 check(await page.locator('#kal-tag .karte', { hasText: 'Tischtennis' }).count() === 1, '… und darunter der Plan');
 
@@ -169,8 +169,8 @@ check(await sauna.count() === 1 && werSauna.includes('Tobi') && werSauna.include
 await sauna.locator('[data-mitwem="gastgeber"]').click();
 check(await karteIn(B.page, '#abschnitt-geplant', 'Sauna-Abend').locator('[data-mitwem="gastgeber"]').getAttribute('aria-pressed') === 'true', 'Kim sagt „Mit Tobi“ dazu');
 await B.page.waitForFunction(() => !JSON.parse(localStorage.getItem('freizeit.stand.v1')).warteschlange.length);
-await B.reiter('kalender');
-check(await B.page.locator(`.feld[data-tag="${SO2}"].treffer`).count() === 1, 'im Kalender: ihr habt beide Bock');
+await B.ansicht('monat');
+check(await B.page.locator(`.feld[data-tag="${SO2}"].treffer`).count() === 1, 'im Monat: ihr habt beide Bock');
 
 // Kim plant zweimal: Tischtennis mit Tobi, Bügelperlen allein/mit anderen.
 await B.reiter('ideen');

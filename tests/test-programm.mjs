@@ -81,11 +81,11 @@ await page.click('[data-aktion="woche-vor"]');
 check((await page.locator('.blaettern .kicker').innerText()).includes('KW 46'), 'eine Woche weiter: KW 46');
 check((await titelAm(DI2)).includes('Lesung zweite Woche'), 'KW 46: der Termin der zweiten Woche');
 check(await page.locator('.highlights').count() === 0 && await page.locator('#abschnitt-immer').count() === 0, 'KW 46: ohne Highlights und „Geht immer“');
-check(await page.locator('[data-aktion="woche-heute"]').count() === 1, 'KW 46: ein Knopf zurück zu heute');
+check(!(await page.locator('[data-aktion="kal-heute"]').isDisabled()), 'KW 46: der Knopf „Heute“ ist aktiv');
 await page.click('[data-aktion="woche-vor"]');
 check((await page.locator('.banner').innerText()).includes('noch kein Programm'), 'KW 47: nach dem Programm ein Hinweis, dass es noch keins gibt');
 check(await page.locator('.tag').count() === 0, 'KW 47: keine Tage ohne Konzert');
-await page.click('[data-aktion="woche-heute"]');
+await page.click('[data-aktion="kal-heute"]');
 check((await page.locator('.blaettern .kicker').innerText()).includes('KW 45'), '„Heute“ bringt zurück in KW 45');
 
 // --- vergangene Tage

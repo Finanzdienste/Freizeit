@@ -373,8 +373,7 @@ textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
 .zeit-hinweis.belegt { color: var(--bernstein); }
 
 /* Kalender: Ansicht wählen */
-.kal-kopf .blaettern { margin-top: 10px; }
-.kal-schalter { display: flex; align-items: center; gap: 6px; }
+.kal-schalter { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
 .kal-schalter .knopf { margin-left: auto; }
 .monatstitel.klein { font-size: 17px; min-width: 0; flex: 1; }
 

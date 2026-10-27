@@ -324,8 +324,15 @@ export async function oeffne({
     await page.reload({ waitUntil: 'networkidle' });
     await bereit();
   };
+  /** Einen Reiter in der Leiste unten antippen (im Inhalt gibt es auch Knöpfe mit data-reiter). */
   const reiter = async (name) => {
-    await page.click(`[data-reiter="${name}"]`);
+    await page.click(`.reiterleiste [data-reiter="${name}"]`);
+    await bereit();
+  };
+  /** Ins Programm, in eine seiner Ansichten: liste, monat, woche, tag. */
+  const ansicht = async (name) => {
+    await reiter('programm');
+    await page.click(`[data-kal-ansicht="${name}"]`);
     await bereit();
   };
   /** Titel der sichtbaren Karten eines Tages im Programm. */
@@ -345,7 +352,7 @@ export async function oeffne({
   };
 
   return {
-    browser, ctx, page, check, fehler, uhr, datenTauschen, reiter, titelAm, gespeichert, abgeglichen, ende, daten, server,
+    browser, ctx, page, check, fehler, uhr, datenTauschen, reiter, ansicht, titelAm, gespeichert, abgeglichen, ende, daten, server,
     stats: () => ({ oks, fails }),
   };
 }

@@ -1,6 +1,6 @@
 /*
  * Freizeit – was in Hamburg und Umgebung los ist, mit den Konzerten deiner
- * Künstler, auf Kalender und Karte, Ideen für alles ohne Termin, und
+ * Künstler, als Liste, Monat, Woche und Tag, auf der Karte, Ideen für alles ohne Termin, und
  * gemeinsam mit deinen Leuten.
  *
  * Einstieg: Daten laden, Reiter zeichnen, Knöpfe verdrahten, den gemeinsamen
@@ -15,7 +15,7 @@ import { ladeAlles } from './daten.js';
 import { heute, standText, montag, plusTage, wochentagKurz, tagMonat } from './zeit.js';
 import { esc } from './text.js';
 import { programmAnsicht, wochenBereich } from './ansicht-programm.js';
-import { kalenderAnsicht, ANSICHTEN } from './ansicht-kalender.js';
+import { kalenderAnsicht, ansichtSchalter, ANSICHTEN } from './ansicht-kalender.js';
 import { landkarteGeruest, landkarteZeichnen, landkarteAuffrischen } from './ansicht-landkarte.js';
 import { ideenAnsicht, ideeAnker } from './ansicht-ideen.js';
 import { wirAnsicht, vorbei, alsApp } from './ansicht-wir.js';
@@ -27,17 +27,18 @@ import {
   vergessen as planVergessen, wiederBeitreten, entfernen, neuesterAndererHaken, rolle,
 } from './gemeinsam.js';
 
-const REITER = ['programm', 'kalender', 'karte', 'ideen', 'wir'];
-// Adressen aus der ersten Fassung (Lesezeichen) landen sinnvoll.
-const ALTE_REITER = { woche: 'programm', konzerte: 'programm', merkliste: 'wir' };
+const REITER = ['programm', 'karte', 'ideen', 'wir'];
+// Adressen aus früheren Fassungen (Lesezeichen) landen sinnvoll.
+const ALTE_REITER = { woche: 'programm', konzerte: 'programm', kalender: 'programm', merkliste: 'wir' };
 const $ = (s) => document.querySelector(s);
 
 let daten = { programm: null, ideen: null, fehler: [] };
 let ideenListe = []; // Katalog und Ausflugsziele aus dem Programm (ideen.js, alleIdeen)
 let geladen = false;
 let reiter = 'programm';
-let woche = null; // Montag der gezeigten Woche im Programm
-const kal = { ansicht: 'monat', datum: '' }; // Kalender: Monat/Woche/Tag und der gewählte Tag
+// Programm: die Ansicht (liste, monat, woche, tag) und der gewählte Tag – die
+// Liste zeigt seine Woche, der Monat seinen Monat.
+const prog = { ansicht: 'liste', datum: '' };
 let raum = 'woche'; // Zeitraum auf der Karte
 // Reiter Wir: offene Felder, die Person, die gleich herausgenommen wird, wer zu
 // einem Einladungslink einlädt, aufgeklappte Abschnitte (data-offen)
@@ -111,11 +112,15 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
   if (reiter !== 'karte') karteVergessen();
   let html;
   if (!geladen) html = '<div class="leer"><p>Lädt …</p></div>';
-  else if (reiter === 'kalender') html = kalenderAnsicht(daten.programm, st, h, kal);
   else if (reiter === 'karte') html = landkarteGeruest(st, raum);
   else if (reiter === 'ideen') html = ideenAnsicht(ideenListe, Boolean(daten.ideen), st, h, uiIdeen);
   else if (reiter === 'wir') html = wirAnsicht(daten.programm, ideenListe, st, h, ui);
-  else html = installHinweis(st) + programmAnsicht(daten.programm, st, h, woche || montag(h));
+  else {
+    const datum = prog.datum || h;
+    const heuteSchon = prog.ansicht === 'liste' ? montag(datum) === montag(h) : (datum === h && (prog.ansicht !== 'monat' || datum.slice(0, 7) === h.slice(0, 7)));
+    html = installHinweis(st) + (daten.programm ? ansichtSchalter(prog.ansicht, heuteSchon) : '')
+      + (prog.ansicht === 'liste' ? programmAnsicht(daten.programm, st, h, montag(datum)) : kalenderAnsicht(daten.programm, st, h, prog));
+  }
   if (geladen && daten.fehler.length && reiter !== 'wir') {
     html += `<details class="datenfehler"><summary>Hinweise zu den Daten (${daten.fehler.length})</summary><ul>${daten.fehler.map((f) => `<li>${esc(f)}</li>`).join('')}</ul></details>`;
   }
@@ -229,23 +234,19 @@ function aktion(name, z) {
     case 'woche-zurueck':
     case 'woche-vor': {
       const { erste, letzte } = wochenBereich(daten.programm, h);
-      const jetzt = woche || erste;
+      const jetzt = montag(prog.datum || h);
       const neu = plusTage(jetzt < erste ? erste : (jetzt > letzte ? letzte : jetzt), name === 'woche-vor' ? 7 : -7);
-      woche = neu < erste ? erste : (neu > letzte ? letzte : neu);
+      prog.datum = neu < erste ? erste : (neu > letzte ? letzte : neu);
       zeichnen({ nachOben: true });
       break;
     }
-    case 'woche-heute':
-      woche = null;
-      zeichnen({ nachOben: true });
-      break;
     case 'kal-zurueck':
     case 'kal-vor':
-      if (z.dataset.datum) { kal.datum = z.dataset.datum; zeichnen(); }
+      if (z.dataset.datum) { prog.datum = z.dataset.datum; zeichnen(); }
       break;
     case 'kal-heute':
-      kal.datum = h;
-      zeichnen();
+      prog.datum = h;
+      zeichnen({ nachOben: true });
       break;
     case 'filter-weg':
       st.filter = LEERER_FILTER();
@@ -426,7 +427,7 @@ function ideenAktion(name, z) {
       const plan = planEintrag(idee, datum, imFormular(z, '.plan-zeit')?.value || '', ort ? Number(ort) : null);
       if (!meinBock(plan.schluessel)) bockUmschalten(plan, mitWemIm(z, '.plan-mitwem'));
       uiIdeen.planen = '';
-      melden(`Eingeplant: ${idee.titel}, ${wochentagKurz(datum)} ${tagMonat(datum)} – steht im Kalender.`, { bock: plan.schluessel });
+      melden(`Eingeplant: ${idee.titel}, ${wochentagKurz(datum)} ${tagMonat(datum)} – steht im Programm.`, { bock: plan.schluessel });
       neuZeichnen();
       if (st.gemeinsam) abgleichSpaeter();
       break;
@@ -516,19 +517,31 @@ function zuIdee(schluessel) {
   if (ziel) ziel.scrollIntoView({ block: 'start' });
 }
 
-/** Im Kalender einen Tag öffnen (Tagesansicht). */
+/** Im Programm die Ansicht wechseln – und merken. */
+function ansichtWechseln(ansicht) {
+  prog.ansicht = ansicht;
+  aktuell().programmAnsicht = ansicht;
+  speichern();
+}
+
+/** Einen Tag in der Tagesansicht öffnen. */
 function zuKalenderTag(tag) {
-  kal.datum = tag;
-  kal.ansicht = 'tag';
+  prog.datum = tag;
+  ansichtWechseln('tag');
   zeichnen({ nachOben: true });
 }
 
-function zuTag(tag) {
+/**
+ * In die Liste springen – zu einer Woche (der Montag; ein gewählter Tag in
+ * dieser Woche bleibt gewählt) oder zu einem Tag (aus der Karte).
+ */
+function zuListe(datum, anker = '') {
   reiter = 'programm';
   history.replaceState(null, '', location.pathname + location.search);
-  woche = montag(tag);
+  if (!prog.datum || montag(prog.datum) !== montag(datum) || datum !== montag(datum)) prog.datum = datum;
+  ansichtWechseln('liste');
   zeichnen({ nachOben: true });
-  const ziel = document.getElementById(`tag-${tag}`);
+  const ziel = anker ? document.getElementById(anker) : null;
   if (ziel) ziel.scrollIntoView();
 }
 
@@ -537,7 +550,7 @@ document.addEventListener('click', (ev) => {
   if (!z || z.disabled) return;
   const st = aktuell();
   if (z.dataset.reiter) {
-    if (z.dataset.kalWechsel) { kal.ansicht = z.dataset.kalWechsel; st.kalenderAnsicht = kal.ansicht; speichern(); }
+    if (z.dataset.kalWechsel) ansichtWechseln(z.dataset.kalWechsel);
     wechseln(z.dataset.reiter);
   } else if (z.dataset.bock) {
     const eintrag = eintragZu(z.dataset.bock);
@@ -548,7 +561,7 @@ document.addEventListener('click', (ev) => {
       if (feld.dataset.bockFeld === z.dataset.bock) feld.outerHTML = bockKnopf(eintrag);
     });
     if (reiter === 'karte') landkarteAuffrischen();
-    else if (reiter === 'kalender' || reiter === 'wir' || reiter === 'ideen') zeichnen({ behalteScroll: true });
+    else if ((reiter === 'programm' && prog.ansicht !== 'liste') || reiter === 'wir' || reiter === 'ideen') zeichnen({ behalteScroll: true });
     leisteAktualisieren();
     if (st.gemeinsam) abgleichSpaeter();
   } else if (z.dataset.ifilter !== undefined) {
@@ -565,9 +578,7 @@ document.addEventListener('click', (ev) => {
     const ziel = document.getElementById(z.dataset.zuEintrag);
     if (ziel) ziel.scrollIntoView({ block: 'center' });
   } else if (z.dataset.kalAnsicht) {
-    kal.ansicht = z.dataset.kalAnsicht;
-    st.kalenderAnsicht = kal.ansicht;
-    speichern();
+    ansichtWechseln(z.dataset.kalAnsicht);
     zeichnen({ nachOben: true });
   } else if (z.dataset.tag) {
     zuKalenderTag(z.dataset.tag);
@@ -576,12 +587,9 @@ document.addEventListener('click', (ev) => {
     document.querySelectorAll('[data-raum]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.raum === raum)));
     landkarteZeichnen(daten.programm, st, heute(), raum, ideenListe);
   } else if (z.dataset.zuWoche) {
-    reiter = 'programm';
-    history.replaceState(null, '', location.pathname + location.search);
-    woche = z.dataset.zuWoche;
-    zeichnen({ nachOben: true });
+    zuListe(z.dataset.zuWoche);
   } else if (z.dataset.zuTag) {
-    zuTag(z.dataset.zuTag);
+    zuListe(z.dataset.zuTag, `tag-${z.dataset.zuTag}`);
   } else if (z.dataset.aktion) {
     aktion(z.dataset.aktion, z);
   }
@@ -618,7 +626,7 @@ document.addEventListener('click', (ev) => {
   else menge.add(k);
 }, true);
 
-// #programm, #kalender, #karte, #ideen und #wir öffnen den Reiter direkt; #tag-… sind Anker.
+// #programm, #karte, #ideen und #wir öffnen den Reiter direkt; #tag-… sind Anker.
 window.addEventListener('hashchange', () => {
   const r = adresseLesen();
   if (r && r !== reiter) wechseln(r);
@@ -660,7 +668,7 @@ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
 }
 
 laden();
-kal.ansicht = ANSICHTEN.some(([k]) => k === aktuell().kalenderAnsicht) ? aktuell().kalenderAnsicht : 'monat';
+prog.ansicht = ANSICHTEN.some(([k]) => k === aktuell().programmAnsicht) ? aktuell().programmAnsicht : 'liste';
 reiter = adresseLesen() || 'programm';
 zeichnen();
 ladeAlles().then((d) => {

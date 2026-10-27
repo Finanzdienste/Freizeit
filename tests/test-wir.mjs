@@ -174,7 +174,7 @@ check(await A.page.locator('#wir-zusammen .karte.treffer', { hasText: 'Party' })
 check(await kimZeile.getAttribute('open') !== null, 'was man aufgeklappt hat, bleibt nach dem Neuzeichnen offen');
 await A.reiter('programm');
 check((await karteAm(A, MI, 'Nachtmarkt').locator('.wer').innerText()).includes('ohne dich'), 'auch im Programm steht an der Karte, wer es ohne Tobi macht');
-await A.reiter('kalender');
+await A.ansicht('monat');
 check(await A.page.locator(`.feld[data-tag="${DI}"].treffer`).count() === 1 && await A.page.locator(`.feld[data-tag="${FR}"].treffer`).count() === 1
   && await A.page.locator(`.feld[data-tag="${MI}"].treffer`).count() === 0, 'im Kalender: die Tage mit Treffern – der Nachtmarkt ohne Tobi ist keiner');
 

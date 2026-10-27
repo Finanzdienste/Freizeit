@@ -12,7 +12,8 @@
  * Server sind es Haken wie alle anderen: Eingeladene sehen sie, weil sie die
  * Haken des Gastgebers sehen; mit Terminen haben sie nichts zu tun und tauchen
  * deshalb nirgends als Eintrag auf (gemeinsam.js lässt sie dort weg). Gezeigt
- * werden sie an den Karten (zeitZeile) und im Kalender (ansicht-kalender.js).
+ * werden sie an den Karten (zeitZeile) und in den Ansichten Woche und Tag
+ * (ansicht-kalender.js).
  *
  * Ist eine Woche da, gilt jeder Tag darin ohne Block als frei. Für Wochen ohne
  * Zeiten weiß die App nichts und sagt nichts.

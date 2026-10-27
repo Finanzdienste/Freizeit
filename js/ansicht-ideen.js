@@ -54,9 +54,9 @@ function mitWemWahl(name, klasse) {
 /** Was nach dem Einplanen wer sieht – je nach Rolle im Plan. */
 function wohinPlan() {
   const r = rolle();
-  if (r === 'gastgeber') return 'Steht dann in deinem Kalender und im Programm – deine Leute sehen es und können Bock dazu sagen.';
-  if (r === 'mitglied') return `Steht dann in deinem Kalender und im Programm. ${esc(gastgeberName() || 'Der Gastgeber')} sieht es – mit dir oder als Info, je nachdem, was du wählst.`;
-  return 'Steht dann im Kalender und im Programm.';
+  if (r === 'gastgeber') return 'Steht dann im Programm – deine Leute sehen es und können Bock dazu sagen.';
+  if (r === 'mitglied') return `Steht dann in deinem Programm. ${esc(gastgeberName() || 'Der Gastgeber')} sieht es – mit dir oder als Info, je nachdem, was du wählst.`;
+  return 'Steht dann im Programm – in Liste, Monat, Woche und Tag.';
 }
 
 function planenForm(x, bereich, heute) {
@@ -205,7 +205,7 @@ export function ideenAnsicht(alle, geladen, st, heute, ui) {
   const kopf = `<header class="woche-kopf">
     <div class="zeile-kopf"><h2 class="abschnitt-titel">Ideen</h2>
       <button type="button" class="knopf" data-aktion="idee-neu" aria-expanded="${Boolean(ui.neu)}">+ Eigene Idee</button></div>
-    <p class="fein">Alles ohne festen Termin – für freie Abende und Wochenenden. Was ihr einplant, steht im Kalender.</p>
+    <p class="fein">Alles ohne festen Termin – für freie Abende und Wochenenden. Was ihr einplant, steht im Programm.</p>
     ${ui.neu ? neuForm(st, ui) : ''}
     ${meldung}
     ${geladen ? '' : '<div class="banner">Der Ideen-Katalog ließ sich nicht laden – eigene und eingeplante Ideen stehen trotzdem hier.</div>'}

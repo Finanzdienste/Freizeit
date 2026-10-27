@@ -1,5 +1,6 @@
 /*
- * Reiter „Programm“: Woche für Woche, Tag für Tag nach Uhrzeit.
+ * Reiter „Programm“, Ansicht „Liste“: Woche für Woche, Tag für Tag nach
+ * Uhrzeit. (Monat, Woche und Tag zeichnet ansicht-kalender.js.)
  *
  * Die Daten reichen gut fünf Wochen (Montagslauf), Konzerte der eigenen
  * Künstler Monate weiter. Geblättert wird wochenweise; Wochen nach dem Ende
@@ -96,7 +97,6 @@ export function programmAnsicht(p, st, heute, wocheWunsch) {
     <button type="button" class="pfeil" data-aktion="woche-zurueck" aria-label="Woche davor"${woche <= erste ? ' disabled' : ''}>‹</button>
     <div class="kicker">KW ${kalenderwoche(woche)} · ${wochentagKurz(woche)} ${tagMonat(woche)} – ${wochentagKurz(sonntag)} ${datumLang(sonntag)}</div>
     <button type="button" class="pfeil" data-aktion="woche-vor" aria-label="Woche danach"${woche >= letzte ? ' disabled' : ''}>›</button>
-    ${dieseWoche ? '' : '<button type="button" class="knopf klein" data-aktion="woche-heute">Heute</button>'}
   </div>`;
 
   return `${veraltet}

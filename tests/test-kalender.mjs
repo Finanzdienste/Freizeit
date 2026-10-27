@@ -1,5 +1,6 @@
 /*
- * Reiter „Kalender“: Monat, Woche und Tag – wie bei Google. Monatsblatt mit
+ * Reiter „Programm“, die Ansichten Monat, Woche und Tag – wie bei Google (die
+ * Liste prüft test-programm.mjs). Monatsblatt mit
  * Zahlen und Bock-Punkten, Wochenansicht mit Chips für Haken und Eingeplantes,
  * Tagesansicht mit allen Terminen – dieselbe Auswahl wie im Programm (Filter,
  * 21:30-Regel). Monate nach dem Programm zeigen nur noch Konzerte der eigenen
@@ -8,14 +9,16 @@
 import { oeffne, MO, DI, SA, FERN } from './hilfe.mjs';
 
 const { page, check, reiter, gespeichert, ende } = await oeffne({ tag: MO, zeit: '10:00' });
-await reiter('kalender');
 
 const feld = (d) => page.locator(`.feld[data-tag="${d}"]`);
 const titel = () => page.locator('.monatstitel').innerText();
 const ansicht = (k) => page.click(`[data-kal-ansicht="${k}"]`);
 
 // --- Monat
-check(await page.locator('[data-kal-ansicht="monat"]').getAttribute('aria-pressed') === 'true', 'der Kalender öffnet als Monat');
+check(await page.locator('[data-kal-ansicht="liste"]').getAttribute('aria-pressed') === 'true' && await page.locator('[data-reiter="kalender"]').count() === 0,
+  'das Programm öffnet als Liste – einen eigenen Reiter Kalender gibt es nicht mehr');
+await ansicht('monat');
+check(await page.locator('[data-kal-ansicht="monat"]').getAttribute('aria-pressed') === 'true', '„Monat“ schaltet um');
 check((await titel()) === 'November 2026', 'der Kalender beginnt im laufenden Monat');
 check(await page.locator('.kalender .feld').count() === 42, 'sechs Wochen à sieben Tage');
 check(await page.locator('.kalender .wt').first().innerText() === 'MO', 'die Woche beginnt am Montag');
@@ -45,7 +48,7 @@ check(await page.locator('#kal-tag .karte', { hasText: 'Theater früh' }).locato
 check(await page.locator('.tag-streifen .marker.ich').count() === 1, 'im Zeitstreifen des Tages ein Marker in deiner Farbe');
 await ansicht('monat');
 check(await feld(DI).locator('.pkt.ich').count() === 1 && await feld(MO).locator('.pkt').count() === 0, 'im Monat: ein Punkt in deiner Farbe am Dienstag');
-check((await gespeichert()).kalenderAnsicht === 'monat', 'die Ansicht bleibt gespeichert');
+check((await gespeichert()).programmAnsicht === 'monat', 'die Ansicht bleibt gespeichert');
 
 // --- Woche
 await ansicht('woche');
@@ -68,18 +71,20 @@ check((await titel()).startsWith('Samstag, 7.11.2026'), 'ein Tipp auf den Tagesk
 const titelSa = await page.$$eval('#kal-tag .karte h3', (hs) => hs.map((h) => h.textContent));
 check(titelSa[0] === 'Messe' && titelSa.includes('Party'), 'Sa: Ganztägiges oben, die Party dabei');
 
-// Laufendes führt ins Programm.
+// Laufendes führt in die Liste – und zurück in den Tag.
 await page.click('[data-zu-woche]');
-check(await page.locator('[data-reiter="programm"]').getAttribute('aria-current') === 'page' && (await page.locator('.blaettern .kicker').innerText()).includes('KW 45'),
-  '„im Programm ansehen“ springt in die Woche');
-await reiter('kalender');
-check(await page.locator('[data-kal-ansicht="tag"]').getAttribute('aria-pressed') === 'true', 'zurück im Kalender: die Tagesansicht ist noch gewählt');
-
-// Filter aus dem Programm gelten hier auch.
-await ansicht('monat');
+check(await page.locator('[data-kal-ansicht="liste"]').getAttribute('aria-pressed') === 'true' && (await page.locator('.blaettern .kicker').innerText()).includes('KW 45'),
+  '„im Programm ansehen“ springt in die Liste derselben Woche');
+await ansicht('tag');
+check((await titel()).startsWith('Samstag, 7.11.2026'), 'zurück im Tag: der Samstag ist noch gewählt');
+await reiter('karte');
 await reiter('programm');
+check(await page.locator('[data-kal-ansicht="tag"]').getAttribute('aria-pressed') === 'true', 'nach einem Ausflug auf die Karte ist die Tagesansicht noch gewählt');
+
+// Filter aus der Liste gelten in allen Ansichten.
+await ansicht('liste');
 await page.click('[data-filter="kostenlos"]');
-await reiter('kalender');
+await ansicht('monat');
 check((await page.locator('.kal-kopf').innerText()).includes('Filter aus dem Programm sind aktiv'), 'ein aktiver Filter wird genannt');
 check(await feld(DI).locator('.zahl').count() === 0, 'mit „kostenlos“ hat der Dienstag nichts');
 await page.click('[data-aktion="filter-weg"]');

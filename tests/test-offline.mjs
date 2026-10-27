@@ -112,11 +112,12 @@ await page.waitForFunction(() => !document.querySelector('#ansicht').textContent
 check(await page.title() === 'Freizeit', 'ohne Server öffnet die App');
 check(await page.locator('#ansicht .karte').count() === karten, 'ohne Server: dieselbe Woche wie eben');
 check(!(await page.locator('#ansicht').innerText()).includes('Keine Wochendaten') && await page.locator('.datenfehler').count() === 0, 'ohne Server: keine Fehlermeldung zu den Daten');
-await page.click('[data-reiter="wir"]');
+await page.click('.reiterleiste [data-reiter="wir"]');
 check(await page.locator('#ansicht .karte').count() === 1, 'ohne Server: die Bock-Liste mit dem gemerkten Eintrag');
-await page.click('[data-reiter="kalender"]');
-check(await page.locator('.kalender .feld').count() === 42, 'ohne Server: der Kalender zeichnet');
-await page.click('[data-reiter="karte"]');
+await page.click('.reiterleiste [data-reiter="programm"]');
+await page.click('[data-kal-ansicht="monat"]');
+check(await page.locator('.kalender .feld').count() === 42, 'ohne Server: der Monat zeichnet');
+await page.click('.reiterleiste [data-reiter="karte"]');
 await page.waitForSelector('.leaflet-container', { timeout: 5000 }).catch(() => {});
 check(await page.locator('.leaflet-container').count() === 1, 'ohne Server: die Karte geht auf (Leaflet aus dem Vorrat)');
 

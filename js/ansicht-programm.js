@@ -15,19 +15,26 @@ import {
   wochentag, wochentagKurz, tagMonat, datumLang, werktag, plusTage, montag, kalenderwoche,
 } from './zeit.js';
 import { SCHALTER, termineAm, laufendZwischen, kategorien, letzterTag } from './filter.js';
-import { karte, eintragTermin, eintragLaufend } from './karte.js';
+import { karte, eintragTermin, eintragLaufend, aufklappbar } from './karte.js';
 import { geplante } from './ideen.js';
 
-export function filterLeiste(p, f, zahlen = '') {
+/** Wie viele Filter gerade an sind – für die Marke am Filter-Knopf. */
+export const filterZahl = (f) => (f.region ? 1 : 0) + (f.kategorie ? 1 : 0) + SCHALTER.filter(([k]) => f[k]).length;
+
+/** Die Filter, eingeklappt hinter „Filter“ – daneben die Zahl der Treffer; `vorn` kommt in dieselbe Zeile (die Highlights). */
+export function filterLeiste(p, f, zahlen = '', vorn = '') {
   const option = (wert, text, gewaehlt) => `<option value="${esc(wert)}"${gewaehlt ? ' selected' : ''}>${esc(text)}</option>`;
-  return `<div class="filter" id="filter">
-    <div class="filterzeile">
+  const inhalt = `<div class="filterzeile">
       <select id="f-region" aria-label="Region">${option('', 'Alle Regionen', !f.region)}${Object.entries(REGIONEN).map(([k, v]) => option(k, v, f.region === k)).join('')}</select>
       <select id="f-kategorie" aria-label="Kategorie">${option('', 'Alle Kategorien', !f.kategorie)}${kategorien(p).map((k) => option(k, k, f.kategorie === k)).join('')}</select>
     </div>
     <div class="filterzeile">
       ${SCHALTER.map(([k, text]) => `<button type="button" class="schalter${k === 'hohwacht' ? ' hb' : ''}" data-filter="${k}" aria-pressed="${Boolean(f[k])}">${text}</button>`).join('')}
     </div>
+    ${filterZahl(f) ? '<button type="button" class="textknopf" data-aktion="filter-weg">Alle Filter zurücksetzen</button>' : ''}`;
+  return `<div class="filter" id="filter">
+    ${vorn}
+    ${aufklappbar('filter', 'Filter', inhalt, { zahl: filterZahl(f), klasse: 'filter-klapp' })}
     ${zahlen ? `<div class="zaehler" id="zaehler">${zahlen}</div>` : ''}
   </div>`;
 }
@@ -95,7 +102,7 @@ export function programmAnsicht(p, st, heute, wocheWunsch) {
 
   const navi = `<div class="blaettern">
     <button type="button" class="pfeil" data-aktion="woche-zurueck" aria-label="Woche davor"${woche <= erste ? ' disabled' : ''}>‹</button>
-    <div class="kicker">KW ${kalenderwoche(woche)} · ${wochentagKurz(woche)} ${tagMonat(woche)} – ${wochentagKurz(sonntag)} ${datumLang(sonntag)}</div>
+    <div class="kicker"><b>KW ${kalenderwoche(woche)}</b> ${wochentagKurz(woche)} ${tagMonat(woche)} – ${wochentagKurz(sonntag)} ${datumLang(sonntag)}</div>
     <button type="button" class="pfeil" data-aktion="woche-vor" aria-label="Woche danach"${woche >= letzte ? ' disabled' : ''}>›</button>
   </div>`;
 
@@ -105,8 +112,8 @@ export function programmAnsicht(p, st, heute, wocheWunsch) {
     ${dieseWoche && p.infos.length ? `<div class="infos">${p.infos.map((i) => `<span class="info">${i.titel ? `<b>${esc(i.titel)}:</b> ` : ''}${esc(i.text)}</span>`).join('')}</div>` : ''}
   </header>
   ${hinweisOhne}
-  ${dieseWoche && p.highlights.length ? `<section class="abschnitt"><h2 class="abschnitt-titel">Highlights</h2><ol class="highlights">${p.highlights.map((h, i) => `<li><span class="nr">${i + 1}</span><div><strong>${esc(h.titel)}</strong><span>${esc(h.text)}</span></div></li>`).join('')}</ol></section>` : ''}
-  ${filterLeiste(p, f, zahlen)}
+  ${filterLeiste(p, f, zahlen, dieseWoche && p.highlights.length ? aufklappbar('highlights', `${anzahl(p.highlights.length, 'Highlight', 'Highlights')} der Woche`,
+    `<ol class="highlights">${p.highlights.map((h) => `<li><strong>${esc(h.titel)}</strong><span>${esc(h.text)}</span></li>`).join('')}</ol>`, { klasse: 'highlights-klapp' }) : '')}
   <nav class="tagleiste" aria-label="Tage">${tagNav}</nav>
   ${vorbei.length ? `<button type="button" class="vergangene" data-aktion="vergangene" aria-pressed="${Boolean(st.vergangeneTage)}">${st.vergangeneTage ? 'Vergangene Tage ausblenden' : `Vergangene Tage zeigen (${vorbei.length})`}</button>` : ''}
   ${tageHtml || (ohneProgramm ? '<div class="leer-klein">In dieser Woche keine Konzerte deiner Künstler und nichts eingeplant.</div>' : '')}

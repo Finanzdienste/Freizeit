@@ -8,7 +8,9 @@
  * Kennung behält: t:<id>:<tag>, l:<id>. Ideen und Eingeplantes (i:, e:, p:)
  * baut ideen.js; gezeichnet werden Eingeplantes hier, Ideen in ansicht-ideen.js.
  */
-import { esc, kostenlos, REGIONEN, DRAUSSEN, sichererLink } from './text.js';
+import {
+  esc, kostenlos, preisSagtWas, REGIONEN, DRAUSSEN, sichererLink,
+} from './text.js';
 import { zeitAm, ende, uhrzeit, offen, abendVorArbeitstag, wochentagKurz, tagMonat } from './zeit.js';
 import { whatsappLink, kalenderZiel } from './teilen.js';
 import { WO } from './ideen.js';
@@ -23,6 +25,41 @@ const angezeigt = new Map();
 export const eintragZu = (schluessel) => angezeigt.get(schluessel);
 export const vergessen = () => angezeigt.clear();
 export const merkeEintrag = (e) => { angezeigt.set(e.schluessel, e); return e; };
+
+/**
+ * Eine Karte zeigt erst das Nötige – Zeit, Titel, Ort, wer Bock hat, der
+ * Bock-Knopf. Ein Tipp auf den Titel klappt den Rest auf: Beschreibung,
+ * alle Marken, Anreise, WhatsApp, Kalender, Quelle. Was aufgeklappt ist,
+ * bleibt es beim Neuzeichnen.
+ */
+const aufgeklappt = new Set();
+export const istAuf = (schluessel) => aufgeklappt.has(schluessel);
+export function aufklappen(schluessel) {
+  if (aufgeklappt.has(schluessel)) aufgeklappt.delete(schluessel);
+  else aufgeklappt.add(schluessel);
+  return aufgeklappt.has(schluessel);
+}
+/**
+ * Aufklappbare Abschnitte (Filter, Highlights …) als <details data-offen>:
+ * Was man aufklappt, bleibt beim Neuzeichnen offen. Nur, was man selbst
+ * antippt – app.js hört auf den Tipp auf die Zusammenfassung.
+ */
+const offeneAbschnitte = new Set();
+export const abschnittAuf = (name) => offeneAbschnitte.has(name);
+export function abschnittUmschalten(name, auf) {
+  if (auf) offeneAbschnitte.add(name); else offeneAbschnitte.delete(name);
+}
+/** Ein aufklappbarer Abschnitt; `zahl` steht als Marke an der Zusammenfassung (etwa aktive Filter). */
+export function aufklappbar(name, titel, inhalt, { zahl = 0, klasse = '' } = {}) {
+  return `<details class="aufklappbar${klasse ? ` ${klasse}` : ''}" data-offen="${esc(name)}"${abschnittAuf(name) ? ' open' : ''}>
+    <summary><span>${titel}</span>${zahl ? `<span class="zahl-marke">${zahl}</span>` : ''}</summary>
+    <div class="aufklappbar-inhalt">${inhalt}</div>
+  </details>`;
+}
+
+/** Die Kopfzeile einer Karte: Titel als Schalter fürs Aufklappen. */
+export const kopfzeile = (eintrag, titel = eintrag.titel) => `<div class="kopfzeile" role="button" tabindex="0" data-auf="${esc(eintrag.schluessel)}" aria-expanded="${istAuf(eintrag.schluessel)}">
+      <h3>${esc(titel)}</h3><span class="chevron" aria-hidden="true"></span></div>`;
 
 const kennung = (e) => e.id || `${e.titel}|${e.ort || ''}`.toLowerCase().replace(/\s+/g, '-');
 
@@ -146,42 +183,49 @@ export function karte(eintrag, o = {}) {
   const uhr = zeitUnten
     ? [eintrag.zeit + (o.zeitText && /\d$/.test(eintrag.zeit || '') ? ' Uhr' : ''), o.zeitText ? eintrag.endeText : ''].filter(Boolean).join(', ')
     : '';
-  const unterzeile = [eintrag.ort, uhr].filter(Boolean).join(' · ');
-  const marken = [
+  const unterzeile = [eintrag.ort, uhr, eintrag.kategorie].filter(Boolean).join(' · ');
+  // Zugeklappt nur, was beim Entscheiden hilft; der Rest nach dem Aufklappen.
+  const wichtig = [
     eintrag.quelle === 'plan' ? marke('Eingeplant', 'plan') : '',
     eintrag.kuenstler ? marke('♫ Dein Künstler', 'kuenstler') : '',
     eintrag.neu ? marke('NEU', 'neu') : '',
     eintrag.ausverkauft ? marke('ausverkauft', 'warn') : '',
     eintrag.vorverkauf ? marke(`Vorverkauf ${eintrag.vorverkauf}`) : '',
     eintrag.tipp ? marke('passt zu dir') : '',
-    eintrag.kostenlos ? marke('kostenlos', 'frei') : (eintrag.preis ? `<span class="preis">${esc(eintrag.preis)}</span>` : ''),
-    eintrag.kategorie ? marke(eintrag.kategorie) : '',
+    eintrag.kostenlos ? marke('kostenlos', 'frei') : (preisSagtWas(eintrag.preis) ? `<span class="preis">${esc(eintrag.preis)}</span>` : ''),
+    eintrag.unsicher ? marke('unsicher', 'warn') : '',
+  ].filter(Boolean).join('');
+  const mehr = [
     eintrag.imdb ? marke(`IMDb Top 250 · Platz ${eintrag.imdb}`) : '',
     // Eine Idee sagt, wo sie spielt (Zuhause, Hamburg, Ausflug) – nicht ihre Region.
     eintrag.quelle === 'idee' ? (WO[eintrag.wo] ? marke(WO[eintrag.wo], 'rand') : '')
       : (eintrag.region ? marke(REGIONEN[eintrag.region] || eintrag.region, 'rand') : ''),
     eintrag.draussen ? marke(DRAUSSEN[eintrag.draussen] || eintrag.draussen, 'rand') : '',
     eintrag.hohwacht ? marke('Hohwacht-Kombi', 'hohwacht') : '',
-    eintrag.unsicher ? marke('unsicher', 'warn') : '',
   ].filter(Boolean).join('');
   const kal = kalenderZiel(eintrag);
   const wer = werZeile(eintrag);
-  const klassen = ['karte', eintrag.hohwacht ? 'hohwacht' : '', eintrag.kuenstler ? 'kuenstler' : '', wer.treffer ? 'treffer' : '', o.zeitSpalte ? '' : 'ohne-zeit']
+  const klassen = ['karte', istAuf(eintrag.schluessel) ? 'auf' : '', eintrag.hohwacht ? 'hohwacht' : '', eintrag.kuenstler ? 'kuenstler' : '', wer.treffer ? 'treffer' : '', o.zeitSpalte ? '' : 'ohne-zeit']
     .filter(Boolean).join(' ');
   return `<article class="${klassen}" id="k-${esc(eintrag.schluessel.replace(/[^a-z0-9-]/gi, '-'))}">${zeit}<div class="inhalt">
-    <h3>${esc(eintrag.titel)}</h3>
+    ${kopfzeile(eintrag)}
     ${unterzeile ? `<div class="unter">${esc(unterzeile)}</div>` : ''}
-    ${eintrag.beschreibung ? `<p>${esc(eintrag.beschreibung)}</p>` : ''}
-    ${marken ? `<div class="marken">${marken}</div>` : ''}
-    ${eintrag.unsicher ? `<div class="unsicher">${esc(eintrag.unsicher)}</div>` : ''}
-    ${eintrag.anreise ? `<div class="anreise">Anreise: ${esc(eintrag.anreise)}</div>` : ''}
+    ${wichtig ? `<div class="marken">${wichtig}</div>` : ''}
     ${wer.html}
     ${zeitZeile(eintrag)}
+    <div class="mehr">
+      ${eintrag.beschreibung ? `<p>${esc(eintrag.beschreibung)}</p>` : ''}
+      ${mehr ? `<div class="marken">${mehr}</div>` : ''}
+      ${eintrag.unsicher ? `<div class="unsicher">${esc(eintrag.unsicher)}</div>` : ''}
+      ${eintrag.anreise ? `<div class="anreise">Anreise: ${esc(eintrag.anreise)}</div>` : ''}
+    </div>
     <div class="aktionen">
       ${bockKnopf(eintrag)}
-      <a class="knopf" href="${esc(whatsappLink(eintrag))}" target="_blank" rel="noopener">WhatsApp</a>
-      ${kal ? `<a class="knopf" href="${esc(kal.href)}"${kal.datei ? ` download="${esc(kal.datei)}"` : ' target="_blank" rel="noopener"'}>Kalender</a>` : ''}
-      ${eintrag.link ? `<a class="quelle" href="${esc(eintrag.link)}" target="_blank" rel="noopener">Quelle</a>` : ''}
+      <span class="mehr aktionen-mehr">
+        <a class="knopf" href="${esc(whatsappLink(eintrag))}" target="_blank" rel="noopener">WhatsApp</a>
+        ${kal ? `<a class="knopf" href="${esc(kal.href)}"${kal.datei ? ` download="${esc(kal.datei)}"` : ' target="_blank" rel="noopener"'}>Kalender</a>` : ''}
+        ${eintrag.link ? `<a class="quelle" href="${esc(eintrag.link)}" target="_blank" rel="noopener">Quelle</a>` : ''}
+      </span>
     </div>
   </div></article>`;
 }

@@ -329,6 +329,20 @@ export async function oeffne({
     await page.click(`.reiterleiste [data-reiter="${name}"]`);
     await bereit();
   };
+  /**
+   * Einen Knopf antippen, der in einem zugeklappten Abschnitt stecken kann
+   * (Filter, „Mehr Filter“, das Menü „Mehr“ unter „Wir“): ist er nicht zu
+   * sehen, erst den Abschnitt aufklappen – so, wie es ein Mensch täte.
+   */
+  const tippen = async (selektor) => {
+    const knopf = page.locator(selektor).first();
+    if (!(await knopf.isVisible())) await knopf.locator('xpath=ancestor::details[1]/summary').click();
+    await knopf.click();
+  };
+  /** Ein Knopf unter „Wir“ – vorn oder im Menü „Mehr“. */
+  const aktion = (name) => tippen(`[data-aktion="${name}"]`);
+  /** Ein Filter-Schalter im Programm (data-filter) oder bei den Ideen (data-ifilter). */
+  const filter = (name) => tippen(`[data-filter="${name}"], [data-ifilter="${name}"]`);
   /** Ins Programm, in eine seiner Ansichten: liste, monat, woche, tag. */
   const ansicht = async (name) => {
     await reiter('programm');
@@ -352,7 +366,7 @@ export async function oeffne({
   };
 
   return {
-    browser, ctx, page, check, fehler, uhr, datenTauschen, reiter, ansicht, titelAm, gespeichert, abgeglichen, ende, daten, server,
+    browser, ctx, page, check, fehler, uhr, datenTauschen, reiter, ansicht, tippen, aktion, filter, titelAm, gespeichert, abgeglichen, ende, daten, server,
     stats: () => ({ oks, fails }),
   };
 }

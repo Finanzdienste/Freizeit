@@ -8,7 +8,7 @@
  */
 import { oeffne, MO, DI, SA, FERN } from './hilfe.mjs';
 
-const { page, check, reiter, gespeichert, ende } = await oeffne({ tag: MO, zeit: '10:00' });
+const { page, check, reiter, filter, gespeichert, ende } = await oeffne({ tag: MO, zeit: '10:00' });
 
 const feld = (d) => page.locator(`.feld[data-tag="${d}"]`);
 const titel = () => page.locator('.monatstitel').innerText();
@@ -83,7 +83,7 @@ check(await page.locator('[data-kal-ansicht="tag"]').getAttribute('aria-pressed'
 
 // Filter aus der Liste gelten in allen Ansichten.
 await ansicht('liste');
-await page.click('[data-filter="kostenlos"]');
+await filter('kostenlos');
 await ansicht('monat');
 check((await page.locator('.kal-kopf').innerText()).includes('Filter aus dem Programm sind aktiv'), 'ein aktiver Filter wird genannt');
 check(await feld(DI).locator('.zahl').count() === 0, 'mit „kostenlos“ hat der Dienstag nichts');

@@ -9,7 +9,7 @@
  */
 import { oeffne, testProgramm, MO, DI, MI, DO, FR, SA, SO, DI2 } from './hilfe.mjs';
 
-const { page, check, uhr, titelAm, datenTauschen, gespeichert, ende } = await oeffne({ tag: MO, zeit: '10:00' });
+const { page, check, uhr, titelAm, datenTauschen, gespeichert, filter, ende } = await oeffne({ tag: MO, zeit: '10:00' });
 
 // --- Aufbau
 check(await page.locator('.highlights li').count() === 1, 'Highlights stehen oben');
@@ -52,23 +52,23 @@ check(await page.locator('#abschnitt-immer').count() === 0 && await page.locator
   '„Geht immer“ ist in den Reiter Ideen umgezogen – das Programm verweist dorthin');
 
 // --- Filter
-await page.click('[data-filter="kostenlos"]');
+await filter('kostenlos');
 check(JSON.stringify(await titelAm(MO)) === JSON.stringify(['Gratis Lesung']), 'kostenlos: Mo nur noch die Gratis-Lesung');
 check(!(await titelAm(DI)).length, 'kostenlos: Di ohne Treffer');
 check((await page.locator('#zaehler').innerText()).startsWith('2 Termine'), 'kostenlos: Zähler stimmt (Lesung, Nachtmarkt)');
 await page.reload({ waitUntil: 'networkidle' });
 check(await page.locator('[data-filter="kostenlos"]').getAttribute('aria-pressed') === 'true', 'der Filter überlebt das Neuladen');
-await page.click('[data-filter="kostenlos"]');
+await filter('kostenlos');
 
-await page.click('[data-filter="feierabend"]');
+await filter('feierabend');
 check(!(await titelAm(DI)).includes('Workshop mittags'), 'Mo–Fr ab 15:30: Workshop um 12:30 fällt weg');
 check((await titelAm(SA)).includes('Strandwanderung'), 'Mo–Fr ab 15:30: Samstag bleibt ungefiltert');
 check((await page.locator(`#tag-${DI} .tag-info`).innerText()).includes('Filter aktiv'), 'Mo–Fr ab 15:30: der Tag sagt, dass gefiltert wird');
-await page.click('[data-filter="feierabend"]');
+await filter('feierabend');
 
-await page.click('[data-filter="kuenstler"]');
+await filter('kuenstler');
 check(JSON.stringify(await titelAm(DI)) === JSON.stringify(['Keane']) && !(await titelAm(MO)).length, 'Meine Künstler: nur das Konzert von Keane');
-await page.click('[data-filter="kuenstler"]');
+await filter('kuenstler');
 
 await page.selectOption('#f-region', 'HB');
 check(JSON.stringify(await titelAm(SA)) === JSON.stringify(['Strandwanderung']), 'Region Hohwachter Bucht: nur die Strandwanderung');

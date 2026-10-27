@@ -248,7 +248,18 @@ function kopf(st, ui) {
     : `Du planst mit ${esc(name || 'dem Gastgeber')}: Ihr seht gegenseitig eure Haken – sonst niemand.`;
   const link = einladungsLink(g.code);
   const waText = einladungsText(g.ich.name, link, g.code);
-  const knopf = (aktion, text, offen) => `<button type="button" class="knopf" data-aktion="${aktion}" aria-expanded="${Boolean(offen)}">${text}</button>`;
+  const knopf = (aktion, text, offen, klasse = 'knopf') => `<button type="button" class="${klasse}" data-aktion="${aktion}" aria-expanded="${Boolean(offen)}">${text}</button>`;
+  // Ein Knopf vorn, der Rest im Menü „Mehr“.
+  const menue = `<details class="menue">
+      <summary class="knopf" aria-label="Mehr">Mehr</summary>
+      <div class="menue-liste">
+        <button type="button" data-aktion="abgleichen">Jetzt abgleichen</button>
+        ${gastgeber ? knopf('hilfe', 'So geht\'s', ui.hilfe, '') : ''}
+        ${knopf('umbenennen', 'Name ändern', ui.umbenennen, '')}
+        ${knopf('geraet', 'Weiteres Gerät', ui.geraet, '')}
+        ${knopf('verlassen', gastgeber ? 'Plan auflösen' : 'Plan verlassen', ui.verlassen, 'warn-text')}
+      </div>
+    </details>`;
   return `<header class="woche-kopf">
     <h2 class="abschnitt-titel">Wir</h2>
     <p class="fein">${wer}</p>
@@ -256,12 +267,8 @@ function kopf(st, ui) {
     <div class="fein syncstatus">${[zeile ? esc(zeile) : '', s.fehler ? `<span class="warn-text">${esc(s.fehler)}</span>` : ''].filter(Boolean).join(' · ')}</div>
     ${ui.fehler ? `<div class="fehlerbox" role="alert">${esc(ui.fehler)}</div>` : ''}
     <div class="aktionen">
-      ${gastgeber ? knopf('einladen', 'Einladen', ui.einladen) : ''}
-      <button type="button" class="knopf" data-aktion="abgleichen">Jetzt abgleichen</button>
-      ${knopf('hilfe', 'So geht\'s', ui.hilfe)}
-      ${knopf('umbenennen', 'Name ändern', ui.umbenennen)}
-      ${knopf('geraet', 'Weiteres Gerät', ui.geraet)}
-      ${knopf('verlassen', gastgeber ? 'Auflösen' : 'Verlassen', ui.verlassen)}
+      ${gastgeber ? knopf('einladen', 'Einladen', ui.einladen, 'knopf haupt') : knopf('hilfe', 'So geht\'s', ui.hilfe)}
+      ${menue}
     </div>
     ${gastgeber && ui.einladen ? `<div class="einladung">
       <p>Schick diesen Link an deine Leute – einzeln oder in eine Gruppe. Jeder gibt seinen Namen ein und hakt an, worauf er Bock hat: mit dir oder allein/mit anderen.</p>
@@ -294,7 +301,7 @@ function kopf(st, ui) {
       <button type="button" class="knopf" data-aktion="verlassen">Abbrechen</button>
     </div>` : ''}
   </header>
-  ${gastgeber && !andereLeute.length ? '<div class="banner">Noch ist niemand dabei. Tipp auf „Einladen“ und schick den Link an deine Leute.</div>' : ''}`;
+  ${gastgeber && !andereLeute.length && !ui.einladen ? '<div class="banner">Noch ist niemand dabei. Tipp auf „Einladen“ und schick den Link an deine Leute.</div>' : ''}`;
 }
 
 /** Je Person: wie viel mit dir, wie viel ohne dich, die Liste – und herausnehmen. */

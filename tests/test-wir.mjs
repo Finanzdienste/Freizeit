@@ -25,7 +25,7 @@ const leer = (x) => x.page.waitForFunction(() => !JSON.parse(localStorage.getIte
 /** „Jetzt abgleichen“ – und warten, bis es durch ist. */
 async function synchron(x) {
   const vorher = (await x.gespeichert()).gemeinsam?.abgeholt;
-  await x.page.click('[data-aktion="abgleichen"]');
+  await x.aktion('abgleichen');
   await x.page.waitForFunction((v) => {
     const st = JSON.parse(localStorage.getItem('freizeit.stand.v1'));
     return !st.gemeinsam || st.gemeinsam.abgeholt !== v || st.gemeinsam.raus;
@@ -47,7 +47,7 @@ const tobi = (await A.gespeichert()).gemeinsam;
 check(server.raeume.size === 1 && raum().personen.length === 1 && raum().gastgeber?.person === tobi.ich.id, 'der Server hat einen Raum, Tobi ist sein Gastgeber');
 check(tobi.rolle === 'gastgeber' && /^[a-z2-9]{24}$/.test(tobi.schluessel) && raum().gastgeber.schluessel === tobi.schluessel,
   'Tobis Gerät hat den Schlüssel des Gastgebers (24 Zeichen)');
-check((await A.page.locator('.banner').innerText()).includes('Noch ist niemand dabei'), 'allein im Plan: ein Hinweis zum Einladen');
+check(await A.page.locator('#einladungslink').count() === 1 && await A.page.locator('.banner').count() === 0, 'nach dem Start geht die Einladung gleich auf – ohne den Hinweis daneben');
 const link = await A.page.locator('#einladungslink').inputValue();
 const code = link.split('#einladung=')[1];
 check(/^[a-z2-9]{4}-[a-z2-9]{4}-[a-z2-9]{4}$/.test(code) && !/[lo01]/.test(code), `der Einladungslink trägt einen Code ohne Verwechsler (${code})`);
@@ -58,6 +58,8 @@ check(wa.includes('was in Hamburg und Umgebung los ist') && wa.includes('„Mit 
   '… und sagt, worum es geht: was los ist, die zwei Knöpfe, wer die Haken sieht');
 check((await A.page.locator('#einladungstext').inputValue()) === wa, 'der Text steht auch zum Ansehen und Kopieren da');
 check(!link.includes(tobi.schluessel) && !wa.includes(tobi.schluessel), 'der Schlüssel steht weder im Link noch in der Nachricht');
+await A.page.click('[data-aktion="einladen"]');
+check(await A.page.locator('#einladungslink').count() === 0 && (await A.page.locator('.banner').innerText()).includes('Noch ist niemand dabei'), 'zugeklappt, allein im Plan: ein Hinweis zum Einladen');
 
 // Tobi hakt im Programm an.
 await A.reiter('programm');
@@ -91,9 +93,9 @@ check(await hilfe.count() === 1 && (await hilfe.locator('h3').innerText()) === "
 check((await hilfe.innerText()).includes('Weiteres Gerät'), '… im Safari-Browser auf dem iPhone auch, wie der Plan in die App vom Home-Bildschirm kommt');
 await hilfe.locator('[data-aktion="hilfe-weg"]').click();
 check(await B.page.locator('#hilfe-karte').count() === 0 && (await B.gespeichert()).hilfeWeg === true, '„Alles klar“ – die Erklärung ist weg und bleibt weg');
-await B.page.click('[data-aktion="hilfe"]');
+await B.aktion('hilfe');
 check(await B.page.locator('#hilfe-karte').count() === 1, '„So geht\'s“ holt sie zurück');
-await B.page.click('[data-aktion="hilfe"]');
+await B.aktion('hilfe');
 check(await B.page.locator('#wir-seine .karte', { hasText: 'Theater früh' }).count() === 1
   && (await B.page.locator('#wir-seine .abschnitt-titel').innerText()) === 'Tobi hat Bock auf', 'unter „Tobi hat Bock auf“: Tobis Haken');
 check(!JSON.stringify(kim.stand).includes(tobi.ich.id), 'Tobis echte Kennung kommt bei Kim nie an');
@@ -161,9 +163,9 @@ check(await party.count() === 1 && (await party.locator('.wer').innerText()).inc
   'unter „Wollen mit dir“: Jos Party – Tobi hat dort noch nicht Bock');
 const markt = A.page.locator('#wir-ohne-dich .karte', { hasText: 'Nachtmarkt' });
 check(await markt.count() === 1 && (await markt.locator('.wer').innerText()).includes("machen's ohne dich"), "unter „Ohne dich“: den Nachtmarkt machen Kim und Jo ohne ihn");
-await A.page.click('[data-aktion="hilfe"]');
+await A.aktion('hilfe');
 check((await A.page.locator('#hilfe-karte h3').innerText()) === "So funktioniert's für deine Leute", 'Tobi sieht unter „So geht\'s“, wie es für seine Leute läuft');
-await A.page.click('[data-aktion="hilfe"]');
+await A.aktion('hilfe');
 const kimZeile = personZeile(A, 'Kim');
 check((await kimZeile.locator('summary').innerText()).includes('1 mit dir · 2 ohne dich'), 'pro Person: Kim – 1 mit dir, 2 ohne dich');
 await kimZeile.locator('summary').click();
@@ -214,12 +216,12 @@ await B.reiter('wir');
 check((await B.page.locator('.syncstatus').innerText()).includes('1 Änderung wartet'), 'offline: der Haken wartet');
 check(await B.page.locator('.karte', { hasText: 'Workshop mittags' }).count() === 1, 'offline: er steht trotzdem schon in der Liste');
 server.offline = false;
-await B.page.click('[data-aktion="abgleichen"]');
+await B.aktion('abgleichen');
 await leer(B);
 check(haken().some((b) => b.person === kim.ich.id && b.eintrag.startsWith('t:workshop-mittags:')), 'wieder online: der Haken ist beim Server');
 
 // --- Tobi auf einem zweiten Gerät, mit dem Link „Weiteres Gerät“
-await A.page.click('[data-aktion="geraet"]');
+await A.aktion('geraet');
 const geraetLink = await A.page.locator('#geraetlink').inputValue();
 check(geraetLink.includes('#geraet=') && geraetLink.endsWith(tobi.schluessel), 'Tobis Link „Weiteres Gerät“ trägt seinen Schlüssel');
 const D = await oeffne({ tag: MO, server, browser: A.browser, hash: geraetLink.split('#')[1] });
@@ -235,7 +237,7 @@ check(await D.page.locator('#wir-zusammen .karte', { hasText: 'Theater früh' })
   && Object.keys((await D.gespeichert()).bock).some((k) => k.startsWith('t:theater-frueh:')), '… und kennt Tobis Überblick und seine Haken');
 
 // Jo nimmt sich in eine zweite App mit – Link ins Feld „Code oder Link“, ohne Namen.
-await C.page.click('[data-aktion="geraet"]');
+await C.aktion('geraet');
 const joLink = await C.page.locator('#geraetlink').inputValue();
 check(joLink.split('#geraet=')[1].split('.').length === 2, 'Jos Link hat keinen Schlüssel – Jo ist kein Gastgeber');
 const E = await oeffne({ tag: MO, server, browser: A.browser });
@@ -275,7 +277,7 @@ check(raum().personen.some((p) => p.id === jo.ich.id) && haken().some((b) => b.p
   '„Wieder beitreten“: Jo ist zurück, mit seinen Haken');
 
 // --- Kim verlässt den Plan
-await B.page.click('[data-aktion="verlassen"]');
+await B.aktion('verlassen');
 await B.page.click('[data-aktion="verlassen-ja"]');
 await warte(B, 'Gemeinsam planen');
 check(!raum().personen.some((p) => p.id === kim.ich.id) && !haken().some((b) => b.person === kim.ich.id), 'Kim verlässt den Plan – beim Server ist sie mit ihren Haken weg');
@@ -283,8 +285,8 @@ check(await B.page.locator('.karte', { hasText: 'Workshop mittags' }).count() ==
 
 // --- Tobi löst den Plan auf (auf dem zweiten Gerät)
 await D.reiter('wir');
-await D.page.click('[data-aktion="verlassen"]');
-check((await D.page.locator('[data-aktion="verlassen"]').first().innerText()) === 'Auflösen' && (await D.page.locator('.einladung').innerText()).includes('Wirklich auflösen?'),
+await D.aktion('verlassen');
+check((await D.page.locator('[data-aktion="verlassen"]').first().textContent()) === 'Plan auflösen' && (await D.page.locator('.einladung').innerText()).includes('Wirklich auflösen?'),
   'der Gastgeber verlässt nicht, er löst auf – mit Nachfrage');
 await D.page.click('[data-aktion="verlassen-ja"]');
 await warte(D, 'Gemeinsam planen');

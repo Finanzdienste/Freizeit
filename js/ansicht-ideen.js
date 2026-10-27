@@ -20,7 +20,9 @@ import {
   KATEGORIEN, WIRKUNG, WO, DAUER, BEWERTUNG, passtIdee, ideenFilterAn, inSaison, saisonText,
   geplante, eigeneIdeen, ideenMitBock, bilanz, tutGut, vorZeit,
 } from './ideen.js';
-import { karte, merkeEintrag, bockKnopf, werZeile, wannKurz } from './karte.js';
+import {
+  karte, merkeEintrag, bockKnopf, werZeile, wannKurz, kopfzeile, istAuf, aufklappbar,
+} from './karte.js';
 import { meinBock } from './speicher.js';
 import { treffer, rolle, gastgeberName } from './gemeinsam.js';
 
@@ -102,38 +104,50 @@ export function ideeKarte(x, ctx, bereich) {
   const wer = werZeile(x);
   const hier = `${bereich}|${x.schluessel}`;
   const unter = [WO[x.wo], DAUER[x.dauer], x.mit.length ? mitText(x.mit) : ''].filter(Boolean).join(' · ');
-  const marken = [
+  // Zugeklappt: Wirkung, Preis, eigene Idee, eine Saison, die gerade nicht ist –
+  // der Rest nach dem Aufklappen.
+  const saison = saisonText(x.saison) ? marke(`Saison ${saisonText(x.saison)}`, 'rand') : '';
+  const ausserSaison = saison && !inSaison(x, Number(heute.slice(5, 7)));
+  const wichtig = [
     ...x.wirkung.map((w) => marke(WIRKUNG[w], `wirkung ${w}`)),
     x.kostenlos ? marke('kostenlos', 'frei') : '',
     x.preis ? `<span class="preis">${esc(x.preis)}</span>` : '',
-    x.draussen ? marke(DRAUSSEN[x.draussen] || x.draussen, 'rand') : '',
-    saisonText(x.saison) ? marke(`Saison ${saisonText(x.saison)}`, 'rand') : '',
-    x.hohwacht ? marke('Hohwacht-Kombi', 'hohwacht') : '',
     x.eigene ? marke(`Eigene Idee${x.urheber ? ` von ${x.urheber}` : ''}`, 'eigen') : '',
+    ausserSaison ? saison : '',
+  ].filter(Boolean).join('');
+  const mehrMarken = [
+    x.draussen ? marke(DRAUSSEN[x.draussen] || x.draussen, 'rand') : '',
+    ausserSaison ? '' : saison,
+    x.hohwacht ? marke('Hohwacht-Kombi', 'hohwacht') : '',
   ].filter(Boolean).join('');
   const orte = x.orte.length ? `<ul class="orte">${x.orte.map((o) => `<li>
       ${o.link ? `<a href="${esc(o.link)}" target="_blank" rel="noopener">${esc(o.name)}</a>` : `<span class="ort-name">${esc(o.name)}</span>`}${o.teil ? ` <span class="teil">${esc(o.teil)}</span>` : ''}
       ${o.info ? `<div class="ort-info">${esc(o.info)}</div>` : ''}</li>`).join('')}</ul>` : '';
   const schnitt = b && b.bewertet ? BEWERTUNG[Math.round(b.summe / b.bewertet)][0] : '';
   const verlauf = b ? `<div class="verlauf">✓ ${b.n}× gemacht · zuletzt ${esc(vorZeit(b.zuletzt, heute))}${schnitt ? ` · ${schnitt}` : ''}${b.flow ? ` · ⚡ ${b.flow}× Flow` : ''}</div>` : '';
-  const klassen = ['karte', 'ohne-zeit', 'idee', wer.treffer ? 'treffer' : '', x.wirkung.includes('flow') ? 'flow' : ''].filter(Boolean).join(' ');
+  // Ein offenes Formular klappt die Karte mit auf.
+  const auf = istAuf(x.schluessel) || ui.planen === hier || ui.bewerten === hier;
+  const klassen = ['karte', 'ohne-zeit', 'idee', auf ? 'auf' : '', wer.treffer ? 'treffer' : '', x.wirkung.includes('flow') ? 'flow' : ''].filter(Boolean).join(' ');
   return `<article class="${klassen}"${bereich === 'kat' ? ` id="${ideeAnker(x.schluessel)}"` : ''}><div class="inhalt">
-    <h3>${esc(x.titel)}</h3>
+    ${kopfzeile(x)}
     ${unter ? `<div class="unter">${esc(unter)}</div>` : ''}
-    ${x.beschreibung ? `<p>${esc(x.beschreibung)}</p>` : ''}
-    ${marken ? `<div class="marken">${marken}</div>` : ''}
-    ${x.ziel ? `<div class="ziel"><b>${x.wirkung.includes('flow') ? '⚡ Flow-Ziel' : 'Ziel'}:</b> ${esc(x.ziel)}</div>` : ''}
-    ${x.braucht ? `<div class="braucht"><b>Braucht:</b> ${esc(x.braucht)}</div>` : ''}
-    ${orte}
-    ${x.zeiten ? `<div class="braucht"><b>Zeiten:</b> ${esc(x.zeiten)}</div>` : ''}
-    ${x.anreise ? `<div class="anreise">Anreise: ${esc(x.anreise)}</div>` : ''}
+    ${wichtig ? `<div class="marken">${wichtig}</div>` : ''}
     ${verlauf}
     ${wer.html}
+    <div class="mehr">
+      ${x.beschreibung ? `<p>${esc(x.beschreibung)}</p>` : ''}
+      ${mehrMarken ? `<div class="marken">${mehrMarken}</div>` : ''}
+      ${x.ziel ? `<div class="ziel"><b>${x.wirkung.includes('flow') ? '⚡ Flow-Ziel' : 'Ziel'}:</b> ${esc(x.ziel)}</div>` : ''}
+      ${x.braucht ? `<div class="braucht"><b>Braucht:</b> ${esc(x.braucht)}</div>` : ''}
+      ${orte}
+      ${x.zeiten ? `<div class="braucht"><b>Zeiten:</b> ${esc(x.zeiten)}</div>` : ''}
+      ${x.anreise ? `<div class="anreise">Anreise: ${esc(x.anreise)}</div>` : ''}
+    </div>
     <div class="aktionen">
       ${bockKnopf(x)}
       <button type="button" class="knopf" data-aktion="planen" data-idee="${esc(x.schluessel)}" data-bereich="${bereich}" aria-expanded="${ui.planen === hier}">Einplanen</button>
       <button type="button" class="knopf" data-aktion="gemacht" data-idee="${esc(x.schluessel)}" data-bereich="${bereich}" aria-expanded="${ui.bewerten === hier}">Gemacht</button>
-      ${x.link ? `<a class="quelle" href="${esc(x.link)}" target="_blank" rel="noopener">Info</a>` : ''}
+      ${x.link ? `<a class="quelle mehr" href="${esc(x.link)}" target="_blank" rel="noopener">Info</a>` : ''}
     </div>
     ${ui.planen === hier ? planenForm(x, bereich, heute) : ''}
     ${ui.bewerten === hier ? bewertenForm(x.schluessel, heute) : ''}
@@ -178,14 +192,17 @@ function neuForm(st, ui) {
   </div>`;
 }
 
+/** Die Wirkung steht immer da – sie ist der Sinn des Katalogs; Rahmen und Schalter sind eingeklappt. */
 function filterLeiste(f, zahl, saisonWeg, ui) {
   const an = ideenFilterAn(f);
+  const mehr = (f.wo ? 1 : 0) + EXTRA.filter(([k]) => f[k]).length;
+  const inhalt = `<div class="filterzeile">${[['', 'Überall'], ...Object.entries(WO)].map(([k, t]) => `<button type="button" class="schalter" data-ifilter="wo:${k}" aria-pressed="${f.wo === k}">${t}</button>`).join('')}</div>
+    <div class="filterzeile">${EXTRA.map(([k, t]) => `<button type="button" class="schalter" data-ifilter="x:${k}" aria-pressed="${Boolean(f[k])}">${t}</button>`).join('')}</div>`;
   return `<div class="filter ideen-filter" id="ideen-filter">
     <div class="filterzeile">${Object.entries(WIRKUNG).map(([k, t]) => `<button type="button" class="schalter${k === 'flow' ? ' flow' : ''}" data-ifilter="w:${k}" aria-pressed="${f.wirkung.includes(k)}">${esc(t)}</button>`).join('')}</div>
-    <div class="filterzeile">${[['', 'Überall'], ...Object.entries(WO)].map(([k, t]) => `<button type="button" class="schalter" data-ifilter="wo:${k}" aria-pressed="${f.wo === k}">${t}</button>`).join('')}</div>
-    <div class="filterzeile">${EXTRA.map(([k, t]) => `<button type="button" class="schalter" data-ifilter="x:${k}" aria-pressed="${Boolean(f[k])}">${t}</button>`).join('')}</div>
+    ${aufklappbar('ideen-filter', 'Mehr Filter', inhalt, { zahl: mehr, klasse: 'filter-klapp' })}
     <div class="zaehler" id="ideen-zaehler">${anzahl(zahl, 'Idee', 'Ideen')}${an ? ' · <button type="button" class="textknopf" data-aktion="ideen-filter-weg">Filter zurücksetzen</button>' : ''}${saisonWeg ? ` · ${saisonWeg} außerhalb der Saison <button type="button" class="textknopf" data-aktion="saison-alle">zeigen</button>` : (ui.saisonAlle ? ' · <button type="button" class="textknopf" data-aktion="saison-alle">nur, was jetzt Saison hat</button>' : '')}</div>
-    <p class="fein">⚡ Flow: fordert dich genau richtig, mit klarem Ziel – die Zeit verfliegt. Produktiv: du lernst oder schaffst etwas.</p>
+    ${f.wirkung.includes('flow') ? '<p class="fein">⚡ Flow: fordert dich genau richtig, mit klarem Ziel – die Zeit verfliegt.</p>' : ''}
   </div>`;
 }
 

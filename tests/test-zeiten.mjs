@@ -20,7 +20,7 @@ const hinweis = async (x, tag, titel) => {
 };
 async function synchron(x) {
   const vorher = (await x.gespeichert()).gemeinsam?.abgeholt;
-  await x.page.click('[data-aktion="abgleichen"]');
+  await x.aktion('abgleichen');
   await x.page.waitForFunction((v) => JSON.parse(localStorage.getItem('freizeit.stand.v1')).gemeinsam.abgeholt !== v, vorher, { timeout: 6000 }).catch(() => {});
   await x.page.waitForTimeout(150);
 }

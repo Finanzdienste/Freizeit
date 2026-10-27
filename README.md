@@ -21,13 +21,17 @@ Vier Reiter:
 | **Ideen** | Alles ohne Termin: Eingeplantes, „Wollen wir mal“ (Ideen mit Bock), „Tut dir gut“, Filter nach Wirkung und Rahmen, der Katalog nach Kategorien, eigene Ideen |
 | **Wir** | Der gemeinsame Plan. Beim Gastgeber der Überblick: Zusammen, Wollen mit dir, Ohne dich, Pro Person, Deine Haken; Einladen, Weiteres Gerät, Auflösen. Bei den Eingeladenen: Du und Tobi, Tobi hat Bock auf, Deine Haken. Ohne Plan die eigene Bock-Liste |
 
-Jeder Eintrag hat **Bock** (Haken; wer eingeladen ist, wählt zwischen **Mit
-Tobi** und **Allein/mit anderen**), **WhatsApp** (fertige Nachricht: Titel,
-Datum und Uhrzeit, Ort, Beschreibung, Preis, Anreise, Link), **Kalender**
-(auf dem iPhone eine .ics-Datei für den Kalender des Geräts, sonst ein
-ausgefüllter Termin in Google Kalender) und die **Quelle**. Konzerte der
-eigenen Künstler tragen „♫ Dein Künstler“, der Filter „♫ Meine Künstler“
-zeigt nur sie.
+Jede Karte ist zugeklappt kurz – Uhrzeit, Titel, Ort, was beim Entscheiden
+hilft (Preis, „♫ Dein Künstler“, NEU, wer Bock hat) und der Knopf **Bock**
+(wer eingeladen ist, wählt zwischen **Mit Tobi** und **Allein/mit
+anderen**). Ein Tipp auf den Titel klappt den Rest auf: Beschreibung,
+Region, drinnen/draußen, Anreise, dazu **WhatsApp** (fertige Nachricht:
+Titel, Datum und Uhrzeit, Ort, Beschreibung, Preis, Anreise, Link),
+**Kalender** (auf dem iPhone eine .ics-Datei für den Kalender des Geräts,
+sonst ein ausgefüllter Termin in Google Kalender) und die **Quelle**.
+Highlights und Filter stecken genauso hinter einem Knopf, unter „Wir“ alles
+außer Einladen hinter **Mehr**. Konzerte der eigenen Künstler tragen
+„♫ Dein Künstler“, der Filter „♫ Meine Künstler“ zeigt nur sie.
 
 ## Die beiden Zeitregeln
 

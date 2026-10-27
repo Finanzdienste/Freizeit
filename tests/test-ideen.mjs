@@ -12,7 +12,7 @@ import { oeffne, fakeServer, MO, SA, SO2 } from './hilfe.mjs';
 
 const server = fakeServer();
 const A = await oeffne({ tag: MO, zeit: '10:00', server });
-const { page, check, reiter, uhr, gespeichert } = A;
+const { page, check, reiter, uhr, gespeichert, filter } = A;
 const kat = (k) => page.locator(`details.kategorie[data-kat="${k}"]`);
 const karteIn = (p, bereich, titel) => p.locator(`${bereich} .karte`, { hasText: titel });
 const sichtbar = () => page.$$eval('details.kategorie .karte h3', (hs) => hs.map((h) => h.textContent).sort());
@@ -29,12 +29,12 @@ check((await kat('natur').locator('summary').innerText()).includes('Elbstrand'),
 check(await page.locator('#abschnitt-wollen, #abschnitt-geplant, #abschnitt-gut').count() === 0, 'ohne Haken und Verlauf keine leeren Abschnitte oben');
 
 // --- Filter nach Wirkung und Rahmen
-await page.click('[data-ifilter="w:flow"]');
+await filter('w:flow');
 check(gleich(await sichtbar(), ['Bügelperlen', 'Sprache lernen', 'Story-Game', 'Tischtennis im Park']), 'Flow: vier Ideen');
 check(await page.locator('details.kategorie:not([open])').count() === 0, 'mit Filter sind die Kategorien aufgeklappt');
-await page.click('[data-ifilter="wo:zuhause"]');
+await filter('wo:zuhause');
 check(gleich(await sichtbar(), ['Bügelperlen', 'Sprache lernen', 'Story-Game']), 'Flow und Zuhause: drei');
-await page.click('[data-ifilter="x:zuZweit"]');
+await filter('x:zuZweit');
 check(gleich(await sichtbar(), ['Bügelperlen']), 'Flow, Zuhause und zu zweit: nur die Bügelperlen');
 const f = (await gespeichert()).ideenFilter;
 check(f.wirkung.includes('flow') && f.wo === 'zuhause' && f.zuZweit === true, 'die Filter stehen im Speicher');
@@ -70,7 +70,7 @@ await planForm.locator('[data-aktion="plan-speichern"]').click();
 check((await page.locator('.meldung').innerText()).includes('Eingeplant: Tischtennis im Park, Sa 7.11.'), 'eine Meldung bestätigt es');
 const geplant = karteIn(page, '#abschnitt-geplant', 'Tischtennis');
 check(await geplant.count() === 1 && (await geplant.locator('.marke.plan').innerText()) === 'Eingeplant', 'unter „Eingeplant“ steht der Termin');
-check((await geplant.locator('.unter').innerText()) === 'Hammer Park · 15:00 Uhr' && (await geplant.locator('.zeit').innerText()).startsWith('Sa 7.11.'),
+check((await geplant.locator('.unter').innerText()).startsWith('Hammer Park · 15:00 Uhr') && (await geplant.locator('.zeit').innerText()).startsWith('Sa 7.11.'),
   'mit Tag, Uhrzeit und dem gewählten Ort');
 const kal = await geplant.locator('a', { hasText: 'Kalender' }).getAttribute('href');
 check(kal.includes('20261107T150000'), 'der Kalender-Knopf trägt Tag und Uhrzeit');
@@ -128,9 +128,9 @@ await page.locator('.idee-wirkung[value="flow"]').check();
 await page.click('[data-aktion="idee-speichern"]');
 check(await karteIn(page, '#abschnitt-eigene', 'Kanu auf der Wandse').count() === 1, 'die eigene Idee steht unter „Eigene Ideen“');
 check(await karteIn(page, '#abschnitt-wollen', 'Kanu auf der Wandse').locator('.marke.eigen').count() === 1, '… und mit Bock unter „Wollen wir mal“');
-await page.click('[data-ifilter="w:produktiv"]');
+await filter('w:produktiv');
 check(await page.locator('#abschnitt-eigene').count() === 0, 'auch eigene Ideen gehorchen dem Filter');
-await page.click('[data-ifilter="w:produktiv"]');
+await filter('w:produktiv');
 await reiter('wir');
 check((await page.locator('#ansicht').innerText()).includes('Außerdem 2 Ideen mit Bock'), '„Wir“ verweist auf die Ideen mit Bock');
 
@@ -193,7 +193,7 @@ const wie = (idee) => kimsPlaene.find((b) => b.eintrag.endsWith(idee))?.daten.mi
 check(kimsPlaene.length === 3 && wie('i:sauna') === 'gastgeber' && wie('i:tischtennis') === 'gastgeber' && wie('i:buegelperlen') === 'andere',
   'beim Server: Kims Haken auf die Pläne, jeweils mit „mit wem“');
 await reiter('wir');
-await page.click('[data-aktion="abgleichen"]');
+await A.aktion('abgleichen');
 await page.waitForFunction(() => document.querySelector('#ansicht').innerText.includes('Bügelperlen'), null, { timeout: 6000 }).catch(() => {});
 check(await karteIn(page, '#wir-mit-dir', 'Tischtennis').count() === 1 && await karteIn(page, '#wir-ohne-dich', 'Bügelperlen').count() === 1,
   'Tobi sieht beide Pläne in „Wir“: Tischtennis „Wollen mit dir“, Bügelperlen „Ohne dich“');
@@ -209,14 +209,14 @@ raum.bock.set('pzzzzzzzzzzzzzz|e:boese', {
   daten: { titel: '<img src=x onerror=alert(1)>', beschreibung: '<script>alert(2)</script>', link: 'javascript:alert(3)', wirkung: ['flow', '<b>x</b>'], urheber: '<i>M</i>' },
 });
 await reiter('wir');
-await page.click('[data-aktion="abgleichen"]');
+await A.aktion('abgleichen');
 await page.waitForFunction(() => document.querySelector('#ansicht').innerText.includes('Mallory'), null, { timeout: 6000 });
 await reiter('ideen');
 const boese = karteIn(page, '#abschnitt-eigene', '<img');
 check(await boese.count() === 1 && await page.locator('#abschnitt-eigene img, #abschnitt-eigene script').count() === 0, 'ein Titel mit HTML steht als Text da');
 check(await boese.locator('a.quelle').count() === 0 && (await boese.locator('.marke.wirkung').count()) === 1, 'ein javascript:-Link wird kein Link, eine unbekannte Wirkung fällt weg');
 await B.reiter('wir');
-await B.page.click('[data-aktion="abgleichen"]');
+await B.aktion('abgleichen');
 await B.page.waitForTimeout(500);
 await B.reiter('ideen');
 check(await karteIn(B.page, '#abschnitt-eigene', '<img').count() === 0 && !(await B.page.locator('#ansicht').innerText()).includes('Mallory'),

@@ -20,7 +20,9 @@ import { landkarteGeruest, landkarteZeichnen, landkarteAuffrischen } from './ans
 import { ideenAnsicht, ideeAnker } from './ansicht-ideen.js';
 import { wirAnsicht, vorbei, alsApp } from './ansicht-wir.js';
 import { alleIdeen, planEintrag, neueIdee, BEWERTUNG } from './ideen.js';
-import { eintragZu, vergessen as karteVergessen, bockKnopf } from './karte.js';
+import {
+  eintragZu, vergessen as karteVergessen, bockKnopf, aufklappen, abschnittUmschalten,
+} from './karte.js';
 import { istApple } from './teilen.js';
 import {
   planStarten, beitreten, codeLesen, zugangLesen, zugangUebernehmen, einladungAnsehen, abgleichen, umbenennen, verlassen,
@@ -546,9 +548,17 @@ function zuListe(datum, anker = '') {
 }
 
 document.addEventListener('click', (ev) => {
-  const z = ev.target.closest('[data-reiter], [data-bock], [data-filter], [data-ifilter], [data-aktion], [data-zu-eintrag], [data-kal-ansicht], [data-tag], [data-raum], [data-zu-woche], [data-zu-tag], [data-zu-idee]');
+  const z = ev.target.closest('[data-reiter], [data-bock], [data-auf], [data-filter], [data-ifilter], [data-aktion], [data-zu-eintrag], [data-kal-ansicht], [data-tag], [data-raum], [data-zu-woche], [data-zu-tag], [data-zu-idee]');
   if (!z || z.disabled) return;
   const st = aktuell();
+  if (z.dataset.auf !== undefined) {
+    // Eine Karte auf- oder zuklappen – ohne Neuzeichnen, der Rest steht schon da.
+    const auf = aufklappen(z.dataset.auf);
+    const karte = z.closest('.karte');
+    if (karte) karte.classList.toggle('auf', auf);
+    z.setAttribute('aria-expanded', String(auf));
+    return;
+  }
   if (z.dataset.reiter) {
     if (z.dataset.kalWechsel) ansichtWechseln(z.dataset.kalWechsel);
     wechseln(z.dataset.reiter);
@@ -604,6 +614,13 @@ document.addEventListener('change', (ev) => {
   zeichnen({ behalteScroll: true });
 });
 
+// Enter oder Leertaste auf einer Kopfzeile klappt die Karte auf.
+document.addEventListener('keydown', (ev) => {
+  if ((ev.key !== 'Enter' && ev.key !== ' ') || !ev.target.matches || !ev.target.matches('[data-auf]')) return;
+  ev.preventDefault();
+  ev.target.click();
+});
+
 // Enter in einem Eingabefeld drückt den Hauptknopf daneben.
 document.addEventListener('keydown', (ev) => {
   if (ev.key !== 'Enter' || !ev.target.matches || !ev.target.matches('.einrichten input, .einladung input, .formular input')) return;
@@ -621,10 +638,18 @@ document.addEventListener('click', (ev) => {
   const summary = ev.target.closest && ev.target.closest('details.kategorie > summary, details[data-offen] > summary');
   if (!summary) return;
   const d = summary.parentElement;
+  if (d.classList.contains('aufklappbar')) { abschnittUmschalten(d.dataset.offen, !d.open); return; }
   const [menge, k] = d.dataset.kat ? [uiIdeen.offen, d.dataset.kat] : [ui.offen, d.dataset.offen];
   if (d.open) menge.delete(k); // klappt gleich zu
   else menge.add(k);
 }, true);
+
+// Das Menü „Mehr“ unter „Wir“ schließt, sobald man daneben tippt.
+document.addEventListener('click', (ev) => {
+  document.querySelectorAll('details.menue[open]').forEach((m) => {
+    if (!m.contains(ev.target)) m.open = false;
+  });
+});
 
 // #programm, #karte, #ideen und #wir öffnen den Reiter direkt; #tag-… sind Anker.
 window.addEventListener('hashchange', () => {

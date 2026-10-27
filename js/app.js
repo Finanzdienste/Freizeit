@@ -1,7 +1,7 @@
 /*
  * Freizeit – was in Hamburg und Umgebung los ist, mit den Konzerten deiner
  * Künstler, auf Kalender und Karte, Ideen für alles ohne Termin, und
- * gemeinsam mit deiner Begleitung.
+ * gemeinsam mit deinen Leuten.
  *
  * Einstieg: Daten laden, Reiter zeichnen, Knöpfe verdrahten, den gemeinsamen
  * Plan abgleichen. Das Programm schreibt ein geplanter Lauf montags früh nach
@@ -20,10 +20,11 @@ import { landkarteGeruest, landkarteZeichnen, landkarteAuffrischen } from './ans
 import { ideenAnsicht, ideeAnker } from './ansicht-ideen.js';
 import { wirAnsicht, vorbei, alsApp } from './ansicht-wir.js';
 import { alleIdeen, planEintrag, neueIdee, BEWERTUNG } from './ideen.js';
-import { eintragZu, vergessen } from './karte.js';
+import { eintragZu, vergessen as karteVergessen, bockKnopf } from './karte.js';
 import { istApple } from './teilen.js';
 import {
-  planStarten, beitreten, codeLesen, abgleichen, umbenennen, verlassen, neuesterAndererHaken,
+  planStarten, beitreten, codeLesen, zugangLesen, zugangUebernehmen, einladungAnsehen, abgleichen, umbenennen, verlassen,
+  vergessen as planVergessen, wiederBeitreten, entfernen, neuesterAndererHaken, rolle,
 } from './gemeinsam.js';
 
 const REITER = ['programm', 'kalender', 'karte', 'ideen', 'wir'];
@@ -39,27 +40,44 @@ let woche = null; // Montag der gezeigten Woche im Programm
 let monat = null; // „2026-11“ im Kalender
 let gewaehlt = null; // gewählter Tag im Kalender
 let raum = 'woche'; // Zeitraum auf der Karte
-const ui = { einladen: false, umbenennen: false, verlassen: false, fehler: '', laeuft: false };
+// Reiter Wir: offene Felder, die Person, die gleich herausgenommen wird, wer zu
+// einem Einladungslink einlädt, aufgeklappte Abschnitte (data-offen)
+const ui = {
+  einladen: false, umbenennen: false, verlassen: false, geraet: false, entfernen: '', fehler: '', laeuft: false, einladungVon: null, offen: new Set(),
+};
 // Reiter Ideen: offene Formulare („bereich|schlüssel“), aufgeklappte Kategorien, letzte Meldung
 const uiIdeen = { neu: false, planen: '', bewerten: '', offen: new Set(), saisonAlle: false, meldung: null, fehler: '' };
 let installEreignis = null;
 
-/** Einladung aus dem Link übernehmen, Reiter aus der Adresse lesen. */
+/**
+ * Einladung oder Zugang aus dem Link übernehmen, Reiter aus der Adresse
+ * lesen. Code und Schlüssel verschwinden danach aus der Adresszeile.
+ */
 function adresseLesen() {
   const h = decodeURIComponent(location.hash.slice(1));
   const einladung = h.match(/^einladung=([a-z0-9-]+)$/i);
-  if (einladung) {
-    const code = codeLesen(einladung[1]);
+  const zugang = /^geraet=/i.test(h) ? zugangLesen(h) : null;
+  if (einladung || zugang) {
     const st = aktuell();
-    if (code && !(st.gemeinsam && st.gemeinsam.code === code)) {
-      st.einladung = code;
-      speichern();
-    }
+    const code = einladung ? codeLesen(einladung[1]) : '';
+    if (code && !(st.gemeinsam && st.gemeinsam.code === code && !st.gemeinsam.raus)) st.einladung = code;
+    if (zugang) st.zugang = `${zugang.code}.${zugang.person}${zugang.schluessel ? `.${zugang.schluessel}` : ''}`;
+    speichern();
     history.replaceState(null, '', `${location.pathname}${location.search}#wir`);
     return 'wir';
   }
   if (REITER.includes(h)) return h;
   return ALTE_REITER[h] || null;
+}
+
+/** Wer zum Einladungslink einlädt – für die Begrüßung. Ohne Netz eben ohne Namen. */
+async function einladungPruefen() {
+  const code = aktuell().einladung;
+  if (!code || (ui.einladungVon && ui.einladungVon.code === code)) return;
+  try {
+    ui.einladungVon = { code, ...(await einladungAnsehen(code)) };
+    if (reiter === 'wir' && geladen && !wirEingabeOffen()) zeichnen({ behalteScroll: true });
+  } catch { /* dann ohne */ }
 }
 
 function leisteAktualisieren() {
@@ -90,7 +108,7 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
   const st = aktuell();
   const h = heute();
   const y = window.scrollY;
-  if (reiter !== 'karte') vergessen();
+  if (reiter !== 'karte') karteVergessen();
   let html;
   if (!geladen) html = '<div class="leer"><p>Lädt …</p></div>';
   else if (reiter === 'kalender') html = kalenderAnsicht(daten.programm, st, h, monat || monatVon(h), gewaehlt);
@@ -119,6 +137,7 @@ function wechseln(neu) {
   if (!REITER.includes(neu)) return;
   reiter = neu;
   ui.fehler = '';
+  ui.entfernen = '';
   Object.assign(uiIdeen, { neu: false, planen: '', bewerten: '', meldung: null, fehler: '' });
   // Der Reiter steht in der Adresse, damit Neuladen ihn behält – ohne neuen
   // Eintrag im Verlauf.
@@ -137,13 +156,16 @@ const fingerabdruck = () => {
 
 /** Steht gerade ein Formular im Reiter Ideen offen? Dann nicht dazwischen neu zeichnen. */
 const ideenFormularOffen = () => reiter === 'ideen' && Boolean(uiIdeen.neu || uiIdeen.planen || uiIdeen.bewerten);
+/** Tippt man gerade in ein Feld? Dann auch nicht – die Eingabe ginge verloren. */
+const wirEingabeOffen = () => Boolean(document.activeElement && document.activeElement.matches('#ansicht input, #ansicht textarea, #ansicht select'));
 
 async function abgleichJetzt() {
+  einladungPruefen();
   if (!aktuell().gemeinsam) return;
   const vorher = fingerabdruck();
   await abgleichen();
   if (!geladen) return;
-  if (ideenFormularOffen()) { leisteAktualisieren(); return; }
+  if (ideenFormularOffen() || wirEingabeOffen()) { leisteAktualisieren(); return; }
   if (reiter === 'karte') landkarteAuffrischen();
   else if (vorher !== fingerabdruck() || reiter === 'wir') zeichnen({ behalteScroll: true });
   leisteAktualisieren();
@@ -177,9 +199,18 @@ async function kopieren(text, knopf) {
     knopf.textContent = 'Kopiert ✓';
     setTimeout(() => { knopf.textContent = vorher; }, 2000);
   } catch {
-    const feld = $('#einladungslink');
+    // Ohne Zwischenablage: den Link im Feld markieren, zum Kopieren von Hand.
+    const feld = $(knopf.dataset.feld || '#einladungslink');
     if (feld) feld.select();
   }
+}
+
+/** Nur eines der Felder unter „Wir“ ist offen. */
+function wirFeld(name) {
+  const offen = ui[name];
+  Object.assign(ui, { einladen: false, umbenennen: false, verlassen: false, geraet: false });
+  ui[name] = !offen;
+  zeichnen({ behalteScroll: true });
 }
 
 function aktion(name, z) {
@@ -237,9 +268,13 @@ function aktion(name, z) {
       break;
     }
     case 'beitreten-code': {
-      const code = wert('#wir-code');
+      const text = wert('#wir-code');
+      const zugang = zugangLesen(text);
       const name2 = wert('#wir-name-code');
-      if (!codeLesen(code)) { ui.fehler = 'Der Code hat 12 Zeichen, etwa abcd-efgh-jkmn.'; zeichnen(); break; }
+      if (zugang) { mitWarten(() => zugangUebernehmen(zugang)); break; }
+      const m = text.match(/einladung=([a-z0-9-]+)/i);
+      const code = codeLesen(m ? m[1] : text);
+      if (!code) { ui.fehler = 'Der Code hat 12 Zeichen, etwa abcd-efgh-jkmn.'; zeichnen(); break; }
       if (!name2) { ui.fehler = 'Bitte deinen Namen eintragen.'; zeichnen(); break; }
       mitWarten(() => beitreten(code, name2));
       break;
@@ -248,26 +283,20 @@ function aktion(name, z) {
       navigator.clipboard.readText().then((text) => {
         const feld = $('#wir-code');
         const m = String(text).match(/einladung=([a-z0-9-]+)/i);
-        if (feld) feld.value = codeLesen(m ? m[1] : text) || String(text).trim();
+        if (feld) feld.value = zugangLesen(text) ? String(text).trim() : (codeLesen(m ? m[1] : text) || String(text).trim());
       }).catch(() => { /* abgelehnt – dann von Hand */ });
       break;
     case 'code-kopieren':
       kopieren(z.dataset.code, z);
       break;
     case 'einladen':
-      ui.einladen = !ui.einladen;
-      ui.umbenennen = false;
-      ui.verlassen = false;
-      zeichnen({ behalteScroll: true });
+    case 'umbenennen':
+    case 'verlassen':
+    case 'geraet':
+      wirFeld(name);
       break;
     case 'abgleichen':
       abgleichJetzt();
-      break;
-    case 'umbenennen':
-      ui.umbenennen = !ui.umbenennen;
-      ui.einladen = false;
-      ui.verlassen = false;
-      zeichnen({ behalteScroll: true });
       break;
     case 'name-speichern': {
       const name2 = wert('#wir-neuname');
@@ -275,14 +304,35 @@ function aktion(name, z) {
       mitWarten(async () => { await umbenennen(name2); ui.umbenennen = false; });
       break;
     }
-    case 'verlassen':
-      ui.verlassen = !ui.verlassen;
-      ui.einladen = false;
-      ui.umbenennen = false;
-      zeichnen({ behalteScroll: true });
-      break;
     case 'verlassen-ja':
       mitWarten(async () => { await verlassen(); ui.verlassen = false; });
+      break;
+    case 'zugang-uebernehmen':
+      mitWarten(async () => {
+        await zugangUebernehmen(st.zugang);
+        Object.assign(ui, { einladen: false, umbenennen: false, verlassen: false, geraet: false });
+      });
+      break;
+    case 'zugang-weg':
+      st.zugang = '';
+      speichern();
+      ui.fehler = '';
+      zeichnen({ behalteScroll: true });
+      break;
+    case 'wieder-beitreten':
+      mitWarten(() => wiederBeitreten());
+      break;
+    case 'vergessen':
+      planVergessen();
+      ui.fehler = '';
+      zeichnen({ nachOben: true });
+      break;
+    case 'entfernen':
+      ui.entfernen = ui.entfernen === z.dataset.person ? '' : z.dataset.person;
+      zeichnen({ behalteScroll: true });
+      break;
+    case 'entfernen-ja':
+      mitWarten(async () => { await entfernen(z.dataset.person); ui.entfernen = ''; });
       break;
     case 'installieren':
       if (installEreignis) {
@@ -306,6 +356,14 @@ const imFormular = (z, sel) => {
   const f = z.closest('.formular');
   return f ? f.querySelector(sel) : null;
 };
+
+/** Wer eingeladen ist, wählt im Formular, mit wem – sonst bleibt es leer. */
+function mitWemIm(z, klasse) {
+  if (rolle() !== 'mitglied') return '';
+  const f = z.closest('.formular');
+  const gewaehlt = f && f.querySelector(`${klasse}:checked`);
+  return gewaehlt && gewaehlt.value === 'andere' ? 'andere' : 'gastgeber';
+}
 
 function melden(text, rueckgaengig = null) {
   uiIdeen.meldung = { text, rueckgaengig };
@@ -331,7 +389,7 @@ function ideenAktion(name, z) {
         wirkung: [...(z.closest('.formular')?.querySelectorAll('.idee-wirkung:checked') || [])].map((c) => c.value),
         urheber: st.gemeinsam ? st.gemeinsam.ich.name : '',
       });
-      bockUmschalten(x);
+      bockUmschalten(x, mitWemIm(z, '.idee-mitwem'));
       uiIdeen.neu = false;
       uiIdeen.fehler = '';
       melden(`Gespeichert: ${x.titel}`, { bock: x.schluessel });
@@ -352,7 +410,7 @@ function ideenAktion(name, z) {
       if (!idee || !/^\d{4}-\d{2}-\d{2}$/.test(datum) || datum < h) break;
       const ort = imFormular(z, '.plan-ort')?.value;
       const plan = planEintrag(idee, datum, imFormular(z, '.plan-zeit')?.value || '', ort ? Number(ort) : null);
-      if (!meinBock(plan.schluessel)) bockUmschalten(plan);
+      if (!meinBock(plan.schluessel)) bockUmschalten(plan, mitWemIm(z, '.plan-mitwem'));
       uiIdeen.planen = '';
       melden(`Eingeplant: ${idee.titel}, ${wochentagKurz(datum)} ${tagMonat(datum)} – steht im Kalender.`, { bock: plan.schluessel });
       neuZeichnen();
@@ -462,11 +520,10 @@ document.addEventListener('click', (ev) => {
   } else if (z.dataset.bock) {
     const eintrag = eintragZu(z.dataset.bock);
     if (!eintrag) return;
-    const an = bockUmschalten(eintrag);
-    document.querySelectorAll('[data-bock]').forEach((b) => {
-      if (b.dataset.bock !== z.dataset.bock) return;
-      b.setAttribute('aria-pressed', String(an));
-      b.textContent = an ? 'Bock ✓' : 'Bock';
+    bockUmschalten(eintrag, z.dataset.mitwem || '');
+    // Alle Knöpfe desselben Eintrags neu – auch in der offenen Liste der Karte.
+    document.querySelectorAll('[data-bock-feld]').forEach((feld) => {
+      if (feld.dataset.bockFeld === z.dataset.bock) feld.outerHTML = bockKnopf(eintrag);
     });
     if (reiter === 'karte') landkarteAuffrischen();
     else if (reiter === 'kalender' || reiter === 'wir' || reiter === 'ideen') zeichnen({ behalteScroll: true });
@@ -520,14 +577,16 @@ document.addEventListener('keydown', (ev) => {
   }
 });
 
-// Aufgeklappte Kategorien im Reiter Ideen merken, damit Neuzeichnen sie offen
-// lässt. Nur, was man selbst antippt – nicht, was ein Filter aufklappt.
+// Aufgeklappte Kategorien im Reiter Ideen und Abschnitte unter „Wir“ merken,
+// damit Neuzeichnen sie offen lässt. Nur, was man selbst antippt – nicht, was
+// ein Filter aufklappt.
 document.addEventListener('click', (ev) => {
-  const summary = ev.target.closest && ev.target.closest('details.kategorie > summary');
+  const summary = ev.target.closest && ev.target.closest('details.kategorie > summary, details[data-offen] > summary');
   if (!summary) return;
   const d = summary.parentElement;
-  if (d.open) uiIdeen.offen.delete(d.dataset.kat); // klappt gleich zu
-  else uiIdeen.offen.add(d.dataset.kat);
+  const [menge, k] = d.dataset.kat ? [uiIdeen.offen, d.dataset.kat] : [ui.offen, d.dataset.offen];
+  if (d.open) menge.delete(k); // klappt gleich zu
+  else menge.add(k);
 }, true);
 
 // #programm, #kalender, #karte, #ideen und #wir öffnen den Reiter direkt; #tag-… sind Anker.
@@ -535,6 +594,7 @@ window.addEventListener('hashchange', () => {
   const r = adresseLesen();
   if (r && r !== reiter) wechseln(r);
   else if (r === 'wir') zeichnen();
+  einladungPruefen();
 });
 
 window.addEventListener('beforeinstallprompt', (ev) => {

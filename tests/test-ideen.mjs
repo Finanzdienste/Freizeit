@@ -2,7 +2,8 @@
  * Reiter „Ideen“: Katalog nach Kategorien, Filter nach Wirkung, Saison,
  * Bock, Einplanen (steht dann in Programm und Kalender), „Gemacht“ mit
  * „Wie war's?“ und „Tut dir gut“, eigene Ideen – allein und im gemeinsamen
- * Plan –, fremder Text, und die Ideen auf der Karte.
+ * Plan, wo Eingeladene „mit Tobi“ oder ohne ihn einplanen –, fremder Text,
+ * und die Ideen auf der Karte.
  *
  * Testdaten: testIdeen() in hilfe.mjs (sieben Ideen, das Tretboot hat im
  * November keine Saison), dazu der Elbstrand aus programm.json „immer“.
@@ -133,7 +134,7 @@ await page.click('[data-ifilter="w:produktiv"]');
 await reiter('wir');
 check((await page.locator('#ansicht').innerText()).includes('Außerdem 2 Ideen mit Bock'), '„Wir“ verweist auf die Ideen mit Bock');
 
-// --- Zu zweit: Tobi startet den Plan, Kim tritt bei
+// --- Im Plan: Tobi startet ihn, Kim tritt bei
 await page.fill('#wir-name', 'Tobi');
 await page.click('[data-aktion="starten"]');
 await page.waitForFunction(() => document.querySelector('#ansicht').innerText.includes('Tobi (du)'));
@@ -165,26 +166,61 @@ check(await karteIn(B.page, '#abschnitt-eigene', 'Kanu auf der Wandse').count() 
 const sauna = karteIn(B.page, '#abschnitt-geplant', 'Sauna-Abend');
 const werSauna = await sauna.locator('.wer').innerText();
 check(await sauna.count() === 1 && werSauna.includes('Tobi') && werSauna.includes('hat Bock'), 'Kim sieht, was Tobi eingeplant hat');
-await sauna.locator('[data-bock]').click();
-check(await karteIn(B.page, '#abschnitt-geplant', 'Sauna-Abend').locator('[data-bock]').getAttribute('aria-pressed') === 'true', 'Kim sagt Bock dazu');
+await sauna.locator('[data-mitwem="gastgeber"]').click();
+check(await karteIn(B.page, '#abschnitt-geplant', 'Sauna-Abend').locator('[data-mitwem="gastgeber"]').getAttribute('aria-pressed') === 'true', 'Kim sagt „Mit Tobi“ dazu');
 await B.page.waitForFunction(() => !JSON.parse(localStorage.getItem('freizeit.stand.v1')).warteschlange.length);
 await B.reiter('kalender');
 check(await B.page.locator(`.feld[data-tag="${SO2}"].treffer`).count() === 1, 'im Kalender: ihr habt beide Bock');
 
-// Fremder Text aus dem Plan richtet nichts an.
+// Kim plant zweimal: Tischtennis mit Tobi, Bügelperlen allein/mit anderen.
+await B.reiter('ideen');
+const planeB = async (k, titel, mitwem) => {
+  const d = B.page.locator(`details.kategorie[data-kat="${k}"]`);
+  if (await d.getAttribute('open') === null) await d.locator('summary').click();
+  await karteIn(B.page, `details[data-kat="${k}"]`, titel).locator('[data-aktion="planen"]').click();
+  const form = d.locator('.formular');
+  check(await form.locator('.plan-mitwem').count() === 2 && await form.locator('.plan-mitwem[value="gastgeber"]').isChecked(),
+    `${titel}: Kim wählt beim Einplanen, mit wem – vorgewählt „Mit Tobi“`);
+  await form.locator('.plan-datum').fill(SO2);
+  await form.locator(`.plan-mitwem[value="${mitwem}"]`).check();
+  await form.locator('[data-aktion="plan-speichern"]').click();
+};
+await planeB('sport', 'Tischtennis', 'gastgeber');
+await planeB('kreativ', 'Bügelperlen', 'andere');
+await B.page.waitForFunction(() => !JSON.parse(localStorage.getItem('freizeit.stand.v1')).warteschlange.length);
+const kimsPlaene = [...[...server.raeume.values()][0].bock.values()].filter((b) => b.eintrag.startsWith(`p:${SO2}:`) && b.daten.mitwem);
+const wie = (idee) => kimsPlaene.find((b) => b.eintrag.endsWith(idee))?.daten.mitwem;
+check(kimsPlaene.length === 3 && wie('i:sauna') === 'gastgeber' && wie('i:tischtennis') === 'gastgeber' && wie('i:buegelperlen') === 'andere',
+  'beim Server: Kims Haken auf die Pläne, jeweils mit „mit wem“');
+await reiter('wir');
+await page.click('[data-aktion="abgleichen"]');
+await page.waitForFunction(() => document.querySelector('#ansicht').innerText.includes('Bügelperlen'), null, { timeout: 6000 }).catch(() => {});
+check(await karteIn(page, '#wir-mit-dir', 'Tischtennis').count() === 1 && await karteIn(page, '#wir-ohne-dich', 'Bügelperlen').count() === 1,
+  'Tobi sieht beide Pläne in „Wir“: Tischtennis „Wollen mit dir“, Bügelperlen „Ohne dich“');
+await reiter('ideen');
+check(await karteIn(page, '#abschnitt-geplant', 'Tischtennis').count() === 1 && await karteIn(page, '#abschnitt-geplant', 'Bügelperlen').count() === 0,
+  '… in seinem Kalender und unter „Eingeplant“ steht nur, was Kim mit ihm machen will');
+
+// Fremder Text aus dem Plan richtet nichts an – und Eingeladene sehen ihn gar nicht.
 const raum = [...server.raeume.values()][0];
 raum.personen.push({ id: 'pzzzzzzzzzzzzzz', name: 'Mallory' });
 raum.bock.set('pzzzzzzzzzzzzzz|e:boese', {
   person: 'pzzzzzzzzzzzzzz', eintrag: 'e:boese', geaendert: new Date().toISOString(),
   daten: { titel: '<img src=x onerror=alert(1)>', beschreibung: '<script>alert(2)</script>', link: 'javascript:alert(3)', wirkung: ['flow', '<b>x</b>'], urheber: '<i>M</i>' },
 });
+await reiter('wir');
+await page.click('[data-aktion="abgleichen"]');
+await page.waitForFunction(() => document.querySelector('#ansicht').innerText.includes('Mallory'), null, { timeout: 6000 });
+await reiter('ideen');
+const boese = karteIn(page, '#abschnitt-eigene', '<img');
+check(await boese.count() === 1 && await page.locator('#abschnitt-eigene img, #abschnitt-eigene script').count() === 0, 'ein Titel mit HTML steht als Text da');
+check(await boese.locator('a.quelle').count() === 0 && (await boese.locator('.marke.wirkung').count()) === 1, 'ein javascript:-Link wird kein Link, eine unbekannte Wirkung fällt weg');
 await B.reiter('wir');
 await B.page.click('[data-aktion="abgleichen"]');
-await B.page.waitForFunction(() => document.querySelector('#ansicht').innerText.includes('Mallory'), null, { timeout: 6000 });
+await B.page.waitForTimeout(500);
 await B.reiter('ideen');
-const boese = karteIn(B.page, '#abschnitt-eigene', '<img');
-check(await boese.count() === 1 && await B.page.locator('#abschnitt-eigene img, #abschnitt-eigene script').count() === 0, 'ein Titel mit HTML steht als Text da');
-check(await boese.locator('a.quelle').count() === 0 && (await boese.locator('.marke.wirkung').count()) === 1, 'ein javascript:-Link wird kein Link, eine unbekannte Wirkung fällt weg');
+check(await karteIn(B.page, '#abschnitt-eigene', '<img').count() === 0 && !(await B.page.locator('#ansicht').innerText()).includes('Mallory'),
+  'Kim sieht weder Mallory noch Mallorys Idee');
 
 // --- Auf der Karte
 const modul = (fn, arg) => page.evaluate(async ({ f: name, a }) => {

@@ -20,7 +20,7 @@
  */
 import { sichererLink } from './text.js';
 import { aktuell } from './speicher.js';
-import { hakenDerAnderen } from './gemeinsam.js';
+import { hakenDerAnderen, ohneGastgeber } from './gemeinsam.js';
 
 export const KATEGORIEN = [
   ['sport', 'Sport & Bewegung'],
@@ -192,11 +192,17 @@ export function planAusSchnappschuss(schluessel, s = {}) {
   };
 }
 
-/** Schnappschüsse aller Haken mit diesem Präfix: eigene zuerst, dann die der anderen. */
+/**
+ * Schnappschüsse aller Haken mit diesem Präfix: eigene zuerst, dann die der
+ * anderen. Was jemand ausdrücklich ohne den Gastgeber vorhat, steht nur in
+ * seinem Überblick („Wir“), nicht in seinem Kalender.
+ */
 function haken(praefix, st) {
   const m = new Map();
   for (const [k, v] of Object.entries(st.bock)) if (k.startsWith(praefix)) m.set(k, v);
-  for (const b of hakenDerAnderen()) if (b.eintrag.startsWith(praefix) && !m.has(b.eintrag)) m.set(b.eintrag, b.daten || {});
+  for (const b of hakenDerAnderen()) {
+    if (b.eintrag.startsWith(praefix) && !m.has(b.eintrag) && !ohneGastgeber(b)) m.set(b.eintrag, b.daten || {});
+  }
   return m;
 }
 

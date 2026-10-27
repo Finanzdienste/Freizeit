@@ -3,7 +3,8 @@
  *
  * Ein Marker je Ort, darauf die Zahl der Termine dort im gewählten Zeitraum;
  * ein Tipp öffnet die Liste mit Bock-Knopf. Orange heißt: Du hast irgendwo
- * dort Bock, violett: die anderen, mit Stern: ihr beide. Mit „Ideen“ kommen
+ * dort Bock, violett: die anderen, mit Rand: ein Treffer – ihr wollt
+ * zusammen hin (siehe treffer() in gemeinsam.js). Mit „Ideen“ kommen
  * die Orte aus dem Ideen-Katalog dazu (eckige, gestrichelte Marker);
  * Eingeplantes steht wie ein Termin an seinem Tag.
  *
@@ -20,7 +21,7 @@ import { plusTage, montag } from './zeit.js';
 import { termineAm, laufendZwischen, filterAn, letzterTag } from './filter.js';
 import { eintragTermin, eintragLaufend, merkeEintrag, bockKnopf, wannKurz } from './karte.js';
 import { meinBock } from './speicher.js';
-import { andere } from './gemeinsam.js';
+import { andere, treffer } from './gemeinsam.js';
 import { geplante } from './ideen.js';
 
 export const ZEITRAEUME = [
@@ -120,11 +121,9 @@ function markerKlasse(gruppen, haufen = false) {
   let nurIdeen = true;
   for (const g of gruppen) {
     for (const x of g.eintraege) {
-      const a = meinBock(x.schluessel);
-      const b = andere(x.schluessel).length > 0;
-      ich ||= a;
-      sie ||= b;
-      beide ||= a && b;
+      ich ||= meinBock(x.schluessel);
+      sie ||= andere(x.schluessel).length > 0;
+      beide ||= treffer(x.schluessel);
       kuenstler ||= x.kuenstler;
       nurIdeen &&= x.quelle === 'idee';
     }

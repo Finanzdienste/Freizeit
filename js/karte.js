@@ -11,8 +11,11 @@
 import { esc, kostenlos, REGIONEN, DRAUSSEN, sichererLink } from './text.js';
 import { zeitAm, ende, uhrzeit, offen, abendVorArbeitstag, wochentagKurz, tagMonat } from './zeit.js';
 import { whatsappLink, kalenderZiel } from './teilen.js';
-import { meinBock } from './speicher.js';
-import { andere } from './gemeinsam.js';
+import { WO } from './ideen.js';
+import { aktuell, meinBock } from './speicher.js';
+import {
+  andere, rolle, gastgeberName, mitWem, treffer,
+} from './gemeinsam.js';
 
 /** Die zuletzt gezeichneten Einträge, für Knöpfe wie „Bock“. */
 const angezeigt = new Map();
@@ -75,16 +78,29 @@ export const eintragLaufend = (e) => ({
 
 const marke = (text, art = '') => `<span class="marke${art ? ` ${art}` : ''}">${esc(text)}</span>`;
 
-/** Wer hat Bock: die anderen als farbige Chips; wenn alle beide, ein Treffer. */
+const chips = (leute) => leute.map((p) => `<span class="person p${p.nr % 4}">${esc(p.name)}</span>`).join('');
+
+/**
+ * Wer hat Bock: die anderen als farbige Chips. Der Gastgeber sieht, wer mit
+ * ihm will und wer es ohne ihn macht; die anderen sehen nur den Gastgeber.
+ * Treffer: siehe treffer() in gemeinsam.js.
+ */
 export function werZeile(eintrag) {
   const leute = andere(eintrag.schluessel);
   if (!leute.length) return { html: '', treffer: false };
   const ich = meinBock(eintrag.schluessel);
-  const namen = leute.map((p) => `<span class="person p${p.nr % 4}">${esc(p.name)}</span>`).join('');
-  return {
-    html: `<div class="wer">${namen}<span class="wer-text">${ich ? (leute.length === 1 ? 'und du habt Bock' : 'und du haben Bock') : (leute.length === 1 ? 'hat Bock' : 'haben Bock')}</span></div>`,
-    treffer: ich,
-  };
+  const teile = [];
+  if (rolle() === 'gastgeber') {
+    const mit = leute.filter((p) => p.mitwem === 'gastgeber');
+    const ohne = leute.filter((p) => p.mitwem === 'andere');
+    if (mit.length) teile.push(`${chips(mit)}<span class="wer-text">${mit.length === 1 ? 'will' : 'wollen'} mit dir${ich ? ' – du auch' : ''}</span>`);
+    if (ohne.length) teile.push(`${chips(ohne)}<span class="wer-text">${ohne.length === 1 ? "macht's" : "machen's"} ohne dich</span>`);
+  } else {
+    const zusammen = ich && mitWem(aktuell().bock[eintrag.schluessel]) === 'gastgeber';
+    const einer = leute.length === 1;
+    teile.push(`${chips(leute)}<span class="wer-text">${zusammen ? 'und du habt Bock' : `${einer ? 'hat' : 'haben'}${ich ? ' auch' : ''} Bock`}</span>`);
+  }
+  return { html: `<div class="wer">${teile.join('')}</div>`, treffer: treffer(eintrag.schluessel) };
 }
 
 /** Kurz: wann. Für die Spalte links, wenn sie ein Datum statt der Uhrzeit zeigt. */
@@ -94,11 +110,22 @@ export function wannKurz(eintrag) {
   return 'jederzeit';
 }
 
-/** Der Bock-Knopf – auf der Karte und in der Landkarte. */
-export const bockKnopf = (eintrag) => {
+/**
+ * Der Bock-Knopf – auf der Karte, bei den Ideen und in der Landkarte. Wer
+ * eingeladen ist, wählt zwischen zwei Knöpfen: mit dem Gastgeber oder
+ * allein bzw. mit anderen. Die Hülle trägt den Schlüssel, damit app.js nach
+ * einem Tipp alle Knöpfe desselben Eintrags neu zeichnen kann.
+ */
+export function bockKnopf(eintrag) {
+  const k = esc(eintrag.schluessel);
   const an = meinBock(eintrag.schluessel);
-  return `<button type="button" class="knopf bock" data-bock="${esc(eintrag.schluessel)}" aria-pressed="${an}">${an ? 'Bock ✓' : 'Bock'}</button>`;
-};
+  if (rolle() !== 'mitglied') {
+    return `<span class="bock-feld" data-bock-feld="${k}"><button type="button" class="knopf bock" data-bock="${k}" aria-pressed="${an}">${an ? 'Bock ✓' : 'Bock'}</button></span>`;
+  }
+  const wie = an ? mitWem(aktuell().bock[eintrag.schluessel]) : '';
+  const knopf = (mitwem, text) => `<button type="button" class="knopf bock" data-bock="${k}" data-mitwem="${mitwem}" aria-pressed="${wie === mitwem}">${text}${wie === mitwem ? ' ✓' : ''}</button>`;
+  return `<span class="bock-feld wahl" data-bock-feld="${k}" role="group" aria-label="Bock">${knopf('gastgeber', `Mit ${esc(gastgeberName() || 'Gastgeber')}`)}${knopf('andere', 'Allein/mit anderen')}</span>`;
+}
 
 /**
  * Die Karte als HTML.
@@ -129,7 +156,9 @@ export function karte(eintrag, o = {}) {
     eintrag.kostenlos ? marke('kostenlos', 'frei') : (eintrag.preis ? `<span class="preis">${esc(eintrag.preis)}</span>` : ''),
     eintrag.kategorie ? marke(eintrag.kategorie) : '',
     eintrag.imdb ? marke(`IMDb Top 250 · Platz ${eintrag.imdb}`) : '',
-    eintrag.region ? marke(REGIONEN[eintrag.region] || eintrag.region, 'rand') : '',
+    // Eine Idee sagt, wo sie spielt (Zuhause, Hamburg, Ausflug) – nicht ihre Region.
+    eintrag.quelle === 'idee' ? (WO[eintrag.wo] ? marke(WO[eintrag.wo], 'rand') : '')
+      : (eintrag.region ? marke(REGIONEN[eintrag.region] || eintrag.region, 'rand') : ''),
     eintrag.draussen ? marke(DRAUSSEN[eintrag.draussen] || eintrag.draussen, 'rand') : '',
     eintrag.hohwacht ? marke('Hohwacht-Kombi', 'hohwacht') : '',
     eintrag.unsicher ? marke('unsicher', 'warn') : '',

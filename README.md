@@ -4,7 +4,9 @@ Was in Hamburg und Umgebung los ist – die nächsten gut fünf Wochen, mit den
 Konzerten von Tobis Lieblingskünstlern mittendrin, im Kalender und auf der
 Karte –, dazu ein Katalog mit Ideen für alles ohne Termin, sortiert danach,
 was eine Aktivität bringt (Flow, Bewegung, Erholung, Produktiv). Und
-gemeinsam geplant: Wer Bock auf etwas hat, hakt es an, die anderen sehen es.
+gemeinsam geplant: Tobi schickt seinen Leuten einen Link, jeder hakt an,
+worauf er Bock hat – mit Tobi oder allein/mit anderen –, und Tobi sieht in
+„Wir“, worauf alle Bock haben.
 
 **Adresse:** <https://finanzdienste.github.io/Freizeit/>
 (Android: in Chrome öffnen, Menü ⋮ → „App installieren“; iPhone: in Safari
@@ -18,9 +20,10 @@ Fünf Reiter:
 | **Kalender** | Monatsblatt mit der Zahl der Termine je Tag und farbigen Punkten, wer Bock hat; darunter der gewählte Tag |
 | **Karte** | OpenStreetMap, ein Marker je Ort (nahe zu Haufen zusammengefasst), Zeiträume von „Heute“ bis „Alles“ und „Mit Bock“, mit „💡 Ideen“ auch die Orte aus dem Ideen-Katalog |
 | **Ideen** | Alles ohne Termin: Eingeplantes, „Wollen wir mal“ (Ideen mit Bock), „Tut dir gut“, Filter nach Wirkung und Rahmen, der Katalog nach Kategorien, eigene Ideen |
-| **Wir** | Der gemeinsame Plan: Treffer (ihr beide habt Bock), alle Haken mit Namen, Einladen, Name ändern, Verlassen. Ohne Plan die eigene Bock-Liste |
+| **Wir** | Der gemeinsame Plan. Beim Gastgeber der Überblick: Zusammen, Wollen mit dir, Ohne dich, Pro Person, Deine Haken; Einladen, Weiteres Gerät, Auflösen. Bei den Eingeladenen: Du und Tobi, Tobi hat Bock auf, Deine Haken. Ohne Plan die eigene Bock-Liste |
 
-Jeder Eintrag hat **Bock** (Haken), **WhatsApp** (fertige Nachricht: Titel,
+Jeder Eintrag hat **Bock** (Haken; wer eingeladen ist, wählt zwischen **Mit
+Tobi** und **Allein/mit anderen**), **WhatsApp** (fertige Nachricht: Titel,
 Datum und Uhrzeit, Ort, Beschreibung, Preis, Anreise, Link), **Kalender**
 (auf dem iPhone eine .ics-Datei für den Kalender des Geräts, sonst ein
 ausgefüllter Termin in Google Kalender) und die **Quelle**. Konzerte der
@@ -66,7 +69,10 @@ Karte als gestrichelte Marker.
 
 **Einplanen** macht aus einer Idee einen Termin an einem Tag (bei mehreren
 Orten mit Wahl des Orts): Er steht im Programm, im Kalender und auf der
-Karte, mit WhatsApp- und Kalender-Knopf, und im gemeinsamen Plan bei allen.
+Karte, mit WhatsApp- und Kalender-Knopf. Im gemeinsamen Plan sieht ihn, wer
+die Haken des anderen sieht; plant ein Eingeladener „allein/mit anderen“,
+steht es beim Gastgeber nur in „Wir“ unter „Ohne dich“, nicht in seinem
+Kalender.
 **Gemacht** fragt „Wie war's?“ (😐 naja, 🙂 gut, 😄 super) und ob die Zeit
 verflogen ist; nach einem eingeplanten Tag fragt die App von selbst. Daraus
 wird **„Tut dir gut“** – vorn, was im Schnitt am besten war und öfter Flow
@@ -74,9 +80,9 @@ brachte. Dieser Verlauf bleibt nur auf dem Gerät (`verlauf` im
 localStorage), er geht an keinen Server.
 
 **Eigene Ideen** legt man mit „+ Eigene Idee“ an. Wie Eingeplantes sind sie
-Bock-Haken mit Schnappschuss – im gemeinsamen Plan sehen alle sie, ohne dass
-der Server etwas Neues können muss. Eine eigene Idee gibt es, solange jemand
-Bock darauf hat.
+Bock-Haken mit Schnappschuss – im gemeinsamen Plan sieht sie, wer die Haken
+des anderen sieht, ohne dass der Server etwas Neues können muss. Eine eigene
+Idee gibt es, solange jemand Bock darauf hat.
 
 Schlüssel der Bock-Haken: `i:<id>` Idee aus dem Katalog (dieselben
 Kennungen wie früher „Geht immer“), `e:<zufall>` eigene Idee,
@@ -84,25 +90,67 @@ Kennungen wie früher „Geht immer“), `e:<zufall>` eigene Idee,
 
 ## Gemeinsam planen
 
-Ein Plan ist ein Raum mit einem zufälligen Code (`abcd-efgh-jkmn`, 12 Zeichen
-ohne Verwechsler). Wer „Plan starten“ tippt, bekommt einen Link
-`…/Freizeit/#einladung=<code>` zum Verschicken; der Code steht hinter `#` und
-geht deshalb an keinen Server. Wer den Link öffnet, gibt einen Namen ein und
-ist drin.
+Einer lädt ein – der **Gastgeber**, gedacht ist Tobi –, die anderen kommen
+über einen Link dazu. Wer „Plan starten“ tippt, ist Gastgeber und bekommt
+einen Link `…/Freizeit/#einladung=<code>` zum Verschicken, an jeden einzeln
+oder in eine Gruppe. Der Code (`abcd-efgh-jkmn`, 12 Zeichen ohne
+Verwechsler) steht hinter `#` und geht deshalb an keinen Server. Wer den
+Link öffnet, sieht „Tobi lädt dich ein“, gibt seinen Namen ein und ist drin.
+
+**Wer was sieht:**
+
+| | sieht |
+| --- | --- |
+| Gastgeber | alle im Plan mit allen Haken – und ob jemand etwas mit ihm machen will oder allein/mit anderen |
+| Eingeladene | den Gastgeber und sich selbst, mit den Haken der beiden; von den anderen Eingeladenen nichts |
+
+Eingeladene haben statt „Bock“ zwei Knöpfe: **Mit Tobi** und **Allein/mit
+anderen** (dieselbe Wahl noch einmal nimmt den Haken weg). Die Wahl steht als
+`mitwem` (`gastgeber` oder `andere`) im Schnappschuss des Hakens; ein Haken
+ohne `mitwem` – etwa aus der ersten Fassung – gilt als „mit Tobi“. Beim
+Einplanen und bei eigenen Ideen fragt das Formular „Mit wem?“.
+
+Ein **Treffer** (rot unterlegt, im Kalender umrandet) ist, wo man zusammen
+will: beim Gastgeber, wo er Bock hat und jemand mit ihm will; bei den
+Eingeladenen, wo sie „Mit Tobi“ gewählt haben und Tobi Bock hat.
+
+Der Überblick des Gastgebers in „Wir“ zeigt jeden kommenden Eintrag einmal,
+im ersten passenden Abschnitt: **Zusammen**, **Wollen mit dir** (jemand will
+mit ihm, er hat noch nicht Bock), **Ohne dich** (nur „allein/mit anderen“),
+**Pro Person** (je Person „3 mit dir · 2 ohne dich“ und die Liste, dort auch
+„Aus dem Plan nehmen“) und **Deine Haken**. „Auflösen“ löscht den Plan für
+alle; die eigenen Haken bleiben auf dem Gerät.
+
+**Schlüssel des Gastgebers:** Beim Starten würfelt die App einen Schlüssel
+(24 Zeichen); der Server behält nur dessen Hash und zeigt alles nur, wer ihn
+mitbringt. **Weiteres Gerät** gibt einen Link `#geraet=<code>.<kennung>[.<schlüssel>]`:
+Auf einem zweiten Gerät geöffnet (auf dem iPhone in der App unter „Ich habe
+einen Code“ eingefügt) ist man dort dieselbe Person, der Gastgeber samt
+Schlüssel. Der Link ist nur für einen selbst. Ohne ihn tritt ein zweites
+Gerät als neue Person bei – ein Name allein macht niemanden zu jemand
+anderem.
 
 **iPhone:** Die App auf dem Home-Bildschirm hat einen eigenen Speicher,
 getrennt von Safari – sie kennt den Link nicht. Deshalb zeigt die Einladung
 in Safari den Weg zum Home-Bildschirm und den Code; in der App fügt man ihn
-unter „Wir“ ein. Wer mit einem Namen beitritt, den es im Raum schon gibt, ist
-diese Person auf einem weiteren Gerät (dieselbe Kennung, dieselben Haken).
+unter „Wir“ ein.
+
+**Raus:** Nimmt der Gastgeber jemanden heraus oder löst den Plan auf, merkt
+das dessen App beim nächsten Abgleich („Du bist nicht mehr dabei“ bzw. „Der
+Plan ist aufgelöst“) und sendet nichts mehr – von selbst tritt sie nicht
+wieder ein. „Wieder beitreten“ oder „Plan vergessen“ entscheidet man selbst.
 
 **Server:** das Supabase-Projekt der Workout-App (`js/config.js`). Die
 Tabellen sind für den öffentlichen Schlüssel gesperrt; erreichbar sind nur
-vier Funktionen, und jede will den Code. Einrichten: einmal den Block aus
-[`supabase/gemeinsam.sql`](supabase/gemeinsam.sql) in *Supabase → SQL
-Editor* einfügen und ausführen (der Block ist wiederholbar). Geprüft wird er
-ohne Supabase in `tests/test-sql.mjs` (PGlite). Grenzen: 6 Personen und 3000
-Haken je Raum, 100 Räume, 30000 Haken insgesamt, 2000 Byte je Schnappschuss.
+vier Funktionen, und die entscheiden selbst, wer was zu sehen bekommt.
+Einrichten: den Block aus [`supabase/gemeinsam.sql`](supabase/gemeinsam.sql)
+in *Supabase → SQL Editor* einfügen und ausführen. Der Block ist wiederholbar
+und läuft auch über der ersten Fassung (zwei Tabellen, jeder sah alles):
+Personen und Haken bleiben, und wer einen Plan begonnen hat, wird beim
+nächsten Öffnen der App sein Gastgeber. Geprüft wird er ohne Supabase in
+`tests/test-sql.mjs` (PGlite) – samt dem Weg von der ersten Fassung, die in
+`tests/alt/gemeinsam-v2.sql` liegt. Grenzen: 30 Personen und 6000 Haken je
+Plan, 100 Pläne, 30000 Haken insgesamt, 2000 Byte je Schnappschuss.
 
 **In der App:** Eigene Haken gelten sofort und stehen im localStorage; im Plan
 gehen sie über eine Warteschlange zum Server – ohne Netz warten sie dort. Der
@@ -306,7 +354,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `js/karte.js` | Einträge bauen und als Karte zeichnen (Bock, wer hat Bock) |
 | `js/teilen.js` | WhatsApp-Nachricht, Google-Kalender-Link, .ics |
 | `js/speicher.js` | Filter, eigene Haken mit Schnappschuss, Warteschlange, Verlauf „Wie war's?“ |
-| `js/gemeinsam.js` | der gemeinsame Plan: Code, Beitreten, Abgleich mit Supabase |
+| `js/gemeinsam.js` | der gemeinsame Plan: Code, Schlüssel, Beitreten, weiteres Gerät, Abgleich mit Supabase, Rollen und Treffer |
 | `js/config.js` | Adresse und öffentlicher Schlüssel des Servers |
 | `js/ansicht-*.js` | die fünf Reiter |
 | `supabase/gemeinsam.sql` | Tabellen und Funktionen für den gemeinsamen Plan |
@@ -323,12 +371,12 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `test-programm.mjs` | Wochen, beide Zeitregeln, Filter, Laufendes, Konzerte der eigenen Künstler |
 | `test-kalender.mjs` | Monatsblatt, Zahlen, Bock-Punkte, Monate nach dem Programm |
 | `test-landkarte.mjs` | Marker, Zeiträume, Liste am Marker, Haken aus der Karte |
-| `test-wir.mjs` | der gemeinsame Plan zu zweit (iPhone), offline, zweites Gerät, Verlassen, fremder Text |
-| `test-ideen.mjs` | Katalog, Filter nach Wirkung, Saison, Bock, Einplanen (Programm, Kalender), Wie war's? und „Tut dir gut“, eigene Ideen zu zweit, fremder Text, Ideen auf der Karte |
+| `test-wir.mjs` | der gemeinsame Plan: Tobi lädt ein, Kim (iPhone) und Jo wählen mit/ohne Tobi und sehen einander nicht, Tobis Überblick, offline, weiteres Gerät, Herausnehmen, Verlassen, Auflösen, ein Plan aus der ersten Fassung, fremder Text |
+| `test-ideen.mjs` | Katalog, Filter nach Wirkung, Saison, Bock, Einplanen (Programm, Kalender), Wie war's? und „Tut dir gut“, eigene Ideen im Plan, Einplanen mit/ohne Gastgeber, fremder Text, Ideen auf der Karte |
 | `test-teilen.mjs` | WhatsApp, Google Kalender, .ics – auch für Eingeplantes |
 | `test-offline.mjs` | Offline-Vorrat, App ohne Netz |
 | `test-daten.mjs` | `daten/programm.json`, `daten/ideen.json` und `daten/orte.json` |
-| `test-sql.mjs` | `supabase/gemeinsam.sql` in PGlite: Funktionen, Rechte, Grenzen |
+| `test-sql.mjs` | `supabase/gemeinsam.sql` in PGlite: über der ersten Fassung, Rollen und was wer sieht, Schlüssel, Funktionen, Rechte, Grenzen |
 
 Die Browsertests laufen gegen feste Testdaten und einen nachgebauten Server
 (`tests/hilfe.mjs`), nicht gegen `daten/` und nicht gegen Supabase. Auf

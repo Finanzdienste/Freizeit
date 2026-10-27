@@ -9,7 +9,7 @@
  *     Ideen-Katalog ab und zu – die Tests dürfen von beiden nicht abhängen.
  *     oeffne() leitet die Dateien um,
  *   - einen nachgebauten Server für den gemeinsamen Plan (fakeServer()), der
- *     sich verhält wie supabase/gemeinsam.sql – zwei Browser können ihn
+ *     sich verhält wie supabase/gemeinsam.sql – mehrere Browser können ihn
  *     teilen. Echte Anfragen an Supabase gehen aus Tests nie hinaus,
  *   - Kacheln der Landkarte als leeres Bild (kein Netz nötig),
  *   - eine feste Uhr (über localStorage __testtag/__testzeit),
@@ -137,18 +137,49 @@ export function testIdeen(mehr = {}) {
 
 /**
  * Der Server für den gemeinsamen Plan, nachgebaut nach supabase/gemeinsam.sql:
- * dieselben vier Funktionen, dieselben Fehlermeldungen, Räume nach Code.
- * Zwei Browser, die denselben bekommen, sehen dieselben Räume.
+ * dieselben vier Funktionen, dieselben Rollen und Fehlermeldungen, Räume nach
+ * Code. Wer den Raum mit Schlüssel anlegt, ist Gastgeber und sieht alles; die
+ * anderen sehen ihn als „gastgeber“ und sich selbst. Ohne hinterlegten
+ * Schlüssel ist Gastgeber, wer am längsten drin ist (Räume der ersten
+ * Fassung). Den Schlüssel behält der nachgebaute Server im Klartext – er ist
+ * ja nur ein Test.
+ *
+ * Zwei Browser, die denselben bekommen, sehen dieselben Räume. Ein Raum ist
+ * { personen: [{ id, name }] in der Reihenfolge des Eintretens,
+ *   bock: Map 'person|eintrag' → { person, eintrag, daten, geaendert },
+ *   gastgeber: { person, schluessel } | null }.
  * `offline = true` lässt jede Anfrage scheitern wie ohne Netz.
  */
 export function fakeServer() {
   const raeume = new Map();
   const aufrufe = [];
   const s = { offline: false, aufrufe, raeume };
-  const stand = (r) => ({
-    personen: r.personen.map(({ id, name }) => ({ id, name })),
-    bock: [...r.bock.values()].sort((a, b) => a.geaendert.localeCompare(b.geaendert)),
-  });
+  const gastgeberVon = (r) => (r.gastgeber ? r.gastgeber.person : (r.personen[0] ? r.personen[0].id : null));
+  class Abbruch extends Error {}
+  const rolle = (r, person, schluessel) => {
+    if (!person || !r || !r.personen.some((x) => x.id === person)) return 'gast';
+    if (person !== gastgeberVon(r)) return 'mitglied';
+    if (r.gastgeber && r.gastgeber.schluessel !== schluessel) throw new Abbruch('falscher Schlüssel');
+    return 'gastgeber';
+  };
+  const stand = (r, person, wer) => {
+    if (!r) return { rolle: wer, personen: [], bock: [] };
+    const g = gastgeberVon(r);
+    const sichtbar = (id) => wer === 'gastgeber' || id === g || (wer === 'mitglied' && id === person);
+    const kennung = (id) => (wer !== 'gastgeber' && id === g ? 'gastgeber' : id);
+    return {
+      rolle: wer,
+      personen: r.personen.filter((x) => sichtbar(x.id)).map(({ id, name }) => ({ id: kennung(id), name })),
+      bock: wer === 'gast' ? [] : [...r.bock.values()].filter((b) => sichtbar(b.person))
+        .sort((a, b) => a.geaendert.localeCompare(b.geaendert)).map((b) => ({ ...b, person: kennung(b.person) })),
+    };
+  };
+  const personOk = (x) => /^[a-z0-9-]{8,40}$/.test(String(x || '')) && x !== 'gastgeber';
+  const ohne = (r, id) => {
+    r.personen = r.personen.filter((x) => x.id !== id);
+    for (const [k, b] of r.bock) if (b.person === id) r.bock.delete(k);
+  };
+
   s.route = async (route) => {
     if (s.offline) return route.abort('internetdisconnected');
     const name = route.request().url().split('/rpc/')[1];
@@ -158,33 +189,61 @@ export function fakeServer() {
     const fehler = (message) => antwort(400, { code: 'P0001', message });
     const code = String(p.p_code || '').toLowerCase();
     if (!/^[a-z0-9]{4}(-?[a-z0-9]{4}){2,4}$/.test(code)) return fehler('ungültiger Code');
-    let r = raeume.get(code);
-    if (name === 'freizeit_lesen') return antwort(200, r ? stand(r) : { personen: [], bock: [] });
-    if (!/^[a-z0-9-]{8,40}$/.test(String(p.p_person || ''))) return fehler('ungültige Person');
-    if (name === 'freizeit_ich') {
-      const n = String(p.p_name || '').trim();
-      if (!n || n.length > 30) return fehler('Name fehlt oder ist zu lang');
-      if (!r) { r = { personen: [], bock: new Map() }; raeume.set(code, r); }
-      const x = r.personen.find((y) => y.id === p.p_person);
-      if (x) x.name = n;
-      else if (r.personen.length >= 6) return fehler('Raum ist voll');
-      else r.personen.push({ id: p.p_person, name: n });
-      return antwort(200, stand(r));
-    }
-    if (name === 'freizeit_bock') {
-      if (!r || !r.personen.some((y) => y.id === p.p_person)) return fehler('unbekannte Person');
-      const k = `${p.p_person}|${p.p_eintrag}`;
-      if (p.p_daten && JSON.stringify(p.p_daten).length > 2000) return fehler('Eintrag zu groß');
-      if (p.p_bock) r.bock.set(k, { person: p.p_person, eintrag: p.p_eintrag, daten: p.p_daten || null, geaendert: new Date().toISOString() });
-      else r.bock.delete(k);
-      return antwort(200, stand(r));
-    }
-    if (name === 'freizeit_weg') {
-      if (r) {
-        r.personen = r.personen.filter((y) => y.id !== p.p_person);
-        for (const [k, b] of r.bock) if (b.person === p.p_person) r.bock.delete(k);
+    const r = raeume.get(code);
+    const schluessel = p.p_schluessel ?? null;
+    try {
+      if (name === 'freizeit_lesen') {
+        if (p.p_person !== undefined && p.p_person !== null && !personOk(p.p_person)) return fehler('ungültige Person');
+        if (schluessel !== null && !/^[a-z0-9]{20,64}$/.test(schluessel)) return fehler('ungültiger Schlüssel');
+        return antwort(200, stand(r, p.p_person, rolle(r, p.p_person, schluessel)));
       }
-      return antwort(200, r ? stand(r) : { personen: [], bock: [] });
+      if (!personOk(p.p_person)) return fehler('ungültige Person');
+      if (schluessel !== null && !/^[a-z0-9]{20,64}$/.test(schluessel)) return fehler('ungültiger Schlüssel');
+      if (name === 'freizeit_ich') {
+        const n = String(p.p_name || '').trim();
+        if (!n || n.length > 30) return fehler('Name fehlt oder ist zu lang');
+        if (!r) {
+          const neu = { personen: [{ id: p.p_person, name: n }], bock: new Map(), gastgeber: schluessel ? { person: p.p_person, schluessel } : null };
+          raeume.set(code, neu);
+          return antwort(200, stand(neu, p.p_person, 'gastgeber'));
+        }
+        const x = r.personen.find((y) => y.id === p.p_person);
+        if (x) {
+          const wer = rolle(r, p.p_person, schluessel);
+          x.name = n;
+          if (wer === 'gastgeber' && schluessel && !r.gastgeber) r.gastgeber = { person: p.p_person, schluessel };
+          return antwort(200, stand(r, p.p_person, wer));
+        }
+        if (r.personen.length >= 30) return fehler('Raum ist voll');
+        r.personen.push({ id: p.p_person, name: n });
+        return antwort(200, stand(r, p.p_person, 'mitglied'));
+      }
+      if (name === 'freizeit_bock') {
+        if (p.p_daten && JSON.stringify(p.p_daten).length > 2000) return fehler('Eintrag zu groß');
+        const wer = rolle(r, p.p_person, schluessel);
+        if (wer === 'gast') return fehler('unbekannte Person');
+        const k = `${p.p_person}|${p.p_eintrag}`;
+        if (p.p_bock) r.bock.set(k, { person: p.p_person, eintrag: p.p_eintrag, daten: p.p_daten || null, geaendert: new Date().toISOString() });
+        else r.bock.delete(k);
+        return antwort(200, stand(r, p.p_person, wer));
+      }
+      if (name === 'freizeit_weg') {
+        const opfer = p.p_wer ?? p.p_person;
+        if (!personOk(opfer)) return fehler('ungültige Person');
+        const wer = rolle(r, p.p_person, schluessel);
+        if (opfer === p.p_person) {
+          if (wer === 'gastgeber' && r.gastgeber) raeume.delete(code);
+          else if (r) ohne(r, p.p_person);
+          if (r && !r.personen.length) raeume.delete(code);
+          return antwort(200, stand(raeume.get(code), null, 'gast'));
+        }
+        if (wer !== 'gastgeber' || !r.gastgeber) return fehler('nur der Gastgeber');
+        ohne(r, opfer);
+        return antwort(200, stand(r, p.p_person, wer));
+      }
+    } catch (e) {
+      if (e instanceof Abbruch) return fehler(e.message);
+      throw e;
     }
     return antwort(404, { code: 'PGRST202', message: 'Could not find the function' });
   };

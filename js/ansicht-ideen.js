@@ -22,7 +22,7 @@ import {
 } from './ideen.js';
 import { karte, merkeEintrag, bockKnopf, werZeile, wannKurz } from './karte.js';
 import { meinBock } from './speicher.js';
-import { andere } from './gemeinsam.js';
+import { treffer, rolle, gastgeberName } from './gemeinsam.js';
 
 const EXTRA = [['drinnen', 'drinnen'], ['draussen', 'draußen'], ['kostenlos', 'kostenlos'], ['kurz', 'bis 2 Std.'], ['zuZweit', 'zu zweit']];
 const MIT_TEXT = { allein: 'allein', 'zu zweit': 'zu zweit', gruppe: 'in der Gruppe' };
@@ -38,14 +38,36 @@ function vorschlagTag(heute) {
   return d;
 }
 
-function planenForm(x, bereich, heute, gemeinsam) {
+/**
+ * Wer eingeladen ist, sagt beim Einplanen und bei eigenen Ideen gleich dazu,
+ * ob mit dem Gastgeber oder ohne ihn – wie mit den zwei Bock-Knöpfen.
+ */
+function mitWemWahl(name, klasse) {
+  if (rolle() !== 'mitglied') return '';
+  const g = esc(gastgeberName() || 'Gastgeber');
+  return `<fieldset class="checks mitwem-wahl"><legend>Mit wem?</legend>
+    <label class="check"><input type="radio" name="${esc(name)}" class="${klasse}" value="gastgeber" checked> Mit ${g}</label>
+    <label class="check"><input type="radio" name="${esc(name)}" class="${klasse}" value="andere"> Allein/mit anderen</label>
+  </fieldset>`;
+}
+
+/** Was nach dem Einplanen wer sieht – je nach Rolle im Plan. */
+function wohinPlan() {
+  const r = rolle();
+  if (r === 'gastgeber') return 'Steht dann in deinem Kalender und im Programm – deine Leute sehen es und können Bock dazu sagen.';
+  if (r === 'mitglied') return `Steht dann in deinem Kalender und im Programm. ${esc(gastgeberName() || 'Der Gastgeber')} sieht es – mit dir oder als Info, je nachdem, was du wählst.`;
+  return 'Steht dann im Kalender und im Programm.';
+}
+
+function planenForm(x, bereich, heute) {
   return `<div class="formular" data-form="planen">
     <div class="zeile-felder">
       <label class="feld-label">Tag<input type="date" class="eingabe plan-datum" value="${vorschlagTag(heute)}" min="${heute}" max="${plusTage(heute, 400)}"></label>
       <label class="feld-label">Uhrzeit (optional)<input type="time" class="eingabe plan-zeit"></label>
     </div>
     ${x.orte.length > 1 ? `<label class="feld-label">Wo<select class="plan-ort"><option value="">noch offen</option>${x.orte.map((o, i) => `<option value="${i}">${esc(o.name)}${o.teil ? ` (${esc(o.teil)})` : ''}</option>`).join('')}</select></label>` : ''}
-    <p class="fein">${gemeinsam ? 'Steht dann bei euch im Kalender und im Programm – die anderen können Bock dazu sagen.' : 'Steht dann im Kalender und im Programm.'}</p>
+    ${mitWemWahl(`plan-mitwem-${bereich}-${x.schluessel}`, 'plan-mitwem')}
+    <p class="fein">${wohinPlan()}</p>
     <div class="aktionen">
       <button type="button" class="knopf haupt" data-aktion="plan-speichern" data-idee="${esc(x.schluessel)}" data-bereich="${bereich}">Einplanen</button>
       <button type="button" class="knopf" data-aktion="planen" data-idee="${esc(x.schluessel)}" data-bereich="${bereich}">Abbrechen</button>
@@ -75,7 +97,7 @@ const marke = (t, art) => `<span class="marke ${art}">${esc(t)}</span>`;
 /** Eine Idee als Karte. `bereich` sagt, in welchem Abschnitt sie steht. */
 export function ideeKarte(x, ctx, bereich) {
   merkeEintrag(x);
-  const { heute, ui, bil, gemeinsam } = ctx;
+  const { heute, ui, bil } = ctx;
   const b = bil.get(x.schluessel);
   const wer = werZeile(x);
   const hier = `${bereich}|${x.schluessel}`;
@@ -113,7 +135,7 @@ export function ideeKarte(x, ctx, bereich) {
       <button type="button" class="knopf" data-aktion="gemacht" data-idee="${esc(x.schluessel)}" data-bereich="${bereich}" aria-expanded="${ui.bewerten === hier}">Gemacht</button>
       ${x.link ? `<a class="quelle" href="${esc(x.link)}" target="_blank" rel="noopener">Info</a>` : ''}
     </div>
-    ${ui.planen === hier ? planenForm(x, bereich, heute, gemeinsam) : ''}
+    ${ui.planen === hier ? planenForm(x, bereich, heute) : ''}
     ${ui.bewerten === hier ? bewertenForm(x.schluessel, heute) : ''}
   </div></article>`;
 }
@@ -143,12 +165,16 @@ function neuForm(st, ui) {
     <fieldset class="checks"><legend>Was bringt's? (optional)</legend>
       ${Object.entries(WIRKUNG).map(([k, t]) => `<label class="check"><input type="checkbox" class="idee-wirkung" value="${k}"> ${esc(t)}</label>`).join('')}
     </fieldset>
+    ${mitWemWahl('idee-mitwem', 'idee-mitwem')}
     ${ui.fehler ? `<div class="fehlerbox" role="alert">${esc(ui.fehler)}</div>` : ''}
     <div class="aktionen">
       <button type="button" class="knopf haupt" data-aktion="idee-speichern">Speichern</button>
       <button type="button" class="knopf" data-aktion="idee-neu">Abbrechen</button>
     </div>
-    <p class="fein">${st.gemeinsam ? 'Die anderen im Plan sehen die Idee und können Bock darauf haben.' : 'Im gemeinsamen Plan sehen auch die anderen deine Ideen.'}</p>
+    <p class="fein">${{
+    gastgeber: 'Deine Leute im Plan sehen die Idee und können Bock darauf haben.',
+    mitglied: `${esc(gastgeberName() || 'Der Gastgeber')} sieht deine Idee.`,
+  }[rolle()] || 'Im gemeinsamen Plan sehen auch die anderen deine Ideen.'}</p>
   </div>`;
 }
 
@@ -171,7 +197,7 @@ function filterLeiste(f, zahl, saisonWeg, ui) {
 export function ideenAnsicht(alle, geladen, st, heute, ui) {
   const f = st.ideenFilter;
   const monat = Number(heute.slice(5, 7));
-  const ctx = { heute, ui, bil: bilanz(st.verlauf), gemeinsam: Boolean(st.gemeinsam) };
+  const ctx = { heute, ui, bil: bilanz(st.verlauf) };
   const eigene = eigeneIdeen(st);
   const filterAktiv = ideenFilterAn(f);
 
@@ -196,12 +222,12 @@ export function ideenAnsicht(alle, geladen, st, heute, ui) {
     ${kommend.map((e) => karte(e, { zeitSpalte: true, zeitText: wannKurz(e) })).join('')}
   </section>` : '';
 
-  // Wollen wir mal: Ideen mit Bock – die, auf die ihr beide Bock habt, zuerst.
-  const rang = (x) => (meinBock(x.schluessel) && andere(x.schluessel).length ? 0 : (meinBock(x.schluessel) ? 1 : 2));
+  // Wollen wir mal: Ideen mit Bock – Treffer zuerst.
+  const rang = (x) => (treffer(x.schluessel) ? 0 : (meinBock(x.schluessel) ? 1 : 2));
   const wollen = ideenMitBock(alle, st).sort((a, b) => rang(a) - rang(b) || a.titel.localeCompare(b.titel, 'de'));
   const wollenHtml = wollen.length ? `<section class="abschnitt" id="abschnitt-wollen">
     <h2 class="abschnitt-titel">Wollen wir mal</h2>
-    <p class="fein">${st.gemeinsam ? 'Ideen mit Bock – oben, worauf ihr beide Bock habt.' : 'Ideen, auf die du Bock hast.'}</p>
+    <p class="fein">${st.gemeinsam ? 'Ideen mit Bock – oben, worauf ihr zusammen Bock habt.' : 'Ideen, auf die du Bock hast.'}</p>
     ${wollen.map((x) => ideeKarte(x, ctx, 'wollen')).join('')}
   </section>` : '';
 

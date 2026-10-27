@@ -11,7 +11,7 @@ import { monatsRaster, monatVon, monatPlus, monatJahr, datumMitTag, montag } fro
 import { termineAm, laufendZwischen, letzterTag, filterAn } from './filter.js';
 import { karte, eintragTermin } from './karte.js';
 import { meinBock } from './speicher.js';
-import { andere } from './gemeinsam.js';
+import { andere, treffer as istTreffer } from './gemeinsam.js';
 import { geplante } from './ideen.js';
 
 const WOCHENTAGE = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'];
@@ -33,7 +33,7 @@ function punkte(liste, tag, tage, geplant) {
     const sie = andere(x.schluessel);
     if (ich) wer.add('ich');
     for (const p of sie) wer.add(`p${p.nr % 4}`);
-    if (ich && sie.length) treffer = true;
+    if (istTreffer(x.schluessel)) treffer = true;
   }
   return { wer: [...wer], treffer };
 }
@@ -87,7 +87,7 @@ export function kalenderAnsicht(p, st, heute, monatWunsch, gewaehlt) {
     ${WOCHENTAGE.map((w) => `<div class="wt">${w}</div>`).join('')}
     ${felder}
   </div>
-  <div class="legende"><span><i class="pkt ich"></i> du</span><span><i class="pkt p0"></i><i class="pkt p1"></i> die anderen</span><span><span class="feld-mini treffer"></span> ihr habt beide Bock</span></div>
+  <div class="legende"><span><i class="pkt ich"></i> du</span><span><i class="pkt p0"></i><i class="pkt p1"></i> die anderen</span><span><span class="feld-mini treffer"></span> ihr habt zusammen Bock</span></div>
   ${tagHtml}`;
 }
 

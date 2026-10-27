@@ -32,14 +32,20 @@ const LEER = () => ({
   verlauf: [],
   // Ideen mit Ort auch auf der Karte zeigen
   karteIdeen: false,
-  // schluessel → Schnappschuss des Eintrags (siehe schnappschuss()) + gesetzt
+  // schluessel → Schnappschuss des Eintrags (siehe schnappschuss()) + gesetzt,
+  // im Plan als Mitglied auch mitwem: 'gastgeber' oder 'andere'
   bock: {},
-  // { code, ich: { id, name }, stand: { personen: [], bock: [] }, abgeholt } oder null
+  // Der gemeinsame Plan (gemeinsam.js) oder null: { code, ich: { id, name },
+  // rolle: 'gastgeber' | 'mitglied', schluessel (nur der Gastgeber),
+  // stand: { rolle, personen: [], bock: [] }, gastgeber (Name), abgeholt,
+  // raus: '' | 'weg' | 'aufgeloest' | 'schluessel' }
   gemeinsam: null,
   // Was noch zum Server muss: [{ eintrag, bock, daten }], in dieser Reihenfolge
   warteschlange: [],
   // Code aus einem Einladungslink, bis man beigetreten ist
   einladung: '',
+  // Zugang aus einem Link „Weiteres Gerät“ (code.person[.schlüssel]), bis er übernommen ist
+  zugang: '',
   // Wann zuletzt in „Wir“ geschaut wurde – für den Punkt an der Leiste
   gesehen: { andere: '' },
   vergangeneTage: false,
@@ -127,12 +133,16 @@ export function schnappschuss(e) {
 }
 
 /**
- * Bock an oder aus. Im gemeinsamen Plan geht die Änderung zusätzlich in die
+ * Bock an oder aus. Mit `mitwem` ('gastgeber' oder 'andere' – so wählen die
+ * Eingeladenen) heißt dieselbe Wahl noch einmal „aus“ und die andere
+ * „umentschieden“. Im gemeinsamen Plan geht die Änderung zusätzlich in die
  * Warteschlange für den Server (siehe gemeinsam.js). Zurück: an oder aus.
  */
-export function bockUmschalten(eintrag) {
-  const an = !meinBock(eintrag.schluessel);
-  if (an) stand.bock[eintrag.schluessel] = { ...schnappschuss(eintrag), gesetzt: new Date().toISOString() };
+export function bockUmschalten(eintrag, mitwem = '') {
+  const vorher = stand.bock[eintrag.schluessel];
+  const wieVorher = vorher && (vorher.mitwem === 'andere' ? 'andere' : 'gastgeber');
+  const an = mitwem ? wieVorher !== mitwem : !vorher;
+  if (an) stand.bock[eintrag.schluessel] = { ...schnappschuss(eintrag), gesetzt: new Date().toISOString(), ...(mitwem ? { mitwem } : {}) };
   else delete stand.bock[eintrag.schluessel];
   if (stand.gemeinsam) {
     // Ein früherer, noch nicht gesendeter Wunsch für denselben Eintrag ist überholt.

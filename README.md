@@ -147,7 +147,12 @@ node werkzeug/zeiten-senden.mjs --zugang "<Link „Weiteres Gerät“ des Gastge
 
 `termine.json` ist eine Liste `[{ "start": "2026-11-03T18:00:00+01:00", "ende": "…" }, { "start": "2026-11-05", "ende": "2026-11-06", "ganztags": true }]`
 nur mit Terminen, an denen er wirklich belegt ist. Geschrieben werden fünf
-Wochen ab Montag dieser Woche, auch leere (dann heißt es: frei).
+Wochen ab Montag dieser Woche, auch leere (dann heißt es: frei). Die
+geplante Aufgabe „Freizeit: Tobis Zeiten“ macht das dreimal täglich: Sie
+liest Tobis eigene Google-Kalender (ohne als „frei“ markierte Einträge wie
+Geburtstage), rechnet seine Arbeitszeit Mo–Fr dazu und ruft das Werkzeug
+mit seinem Zugang als Gastgeber auf. `--sql` gibt stattdessen die
+SQL-Anweisung für einen Lauf mit Datenbankzugang aus.
 
 **iPhone:** Die App auf dem Home-Bildschirm hat einen eigenen Speicher,
 getrennt von Safari – sie kennt den Link nicht. Deshalb zeigt die Einladung

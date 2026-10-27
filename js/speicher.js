@@ -32,6 +32,8 @@ const LEER = () => ({
   verlauf: [],
   // Ideen mit Ort auch auf der Karte zeigen
   karteIdeen: false,
+  // Kalender: zuletzt gewählte Ansicht (monat, woche, tag)
+  kalenderAnsicht: 'monat',
   // schluessel → Schnappschuss des Eintrags (siehe schnappschuss()) + gesetzt,
   // im Plan als Mitglied auch mitwem: 'gastgeber' oder 'andere'
   bock: {},

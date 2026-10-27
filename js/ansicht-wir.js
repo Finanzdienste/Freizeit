@@ -23,12 +23,13 @@
  */
 import { esc, anzahl, sichererLink } from './text.js';
 import { karte, alleEintraege, wannKurz } from './karte.js';
+import { montag, wochentagKurz, tagMonat } from './zeit.js';
 import { meinBock } from './speicher.js';
 import {
   andere, hakenDerAnderen, syncStatus, einladungsLink, zugangsLink, zugangLesen, person, rolle, gastgeberName, mitWem,
 } from './gemeinsam.js';
 import { istApple } from './teilen.js';
-import { zeitenAbschnitt } from './zeiten.js';
+import { zeitenWochen, belegung } from './zeiten.js';
 import { planAusSchnappschuss, ideeAusSchnappschuss } from './ideen.js';
 
 /** Läuft die App vom Home-Bildschirm (und nicht im Browser)? */
@@ -163,6 +164,15 @@ function zugangKarte(st, ui) {
 
 // --- Mit Plan
 
+/** Die belegten Zeiten des Gastgebers stehen im Kalender (Wochenansicht) – hier nur der Verweis. */
+function zeitenHinweis(heute) {
+  if (!zeitenWochen().some((w) => w >= montag(heute))) return '';
+  const { stand } = belegung();
+  const standText = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(stand) ? ` (Stand ${wochentagKurz(stand.slice(0, 10))} ${tagMonat(stand.slice(0, 10))}, ${stand.slice(11)} Uhr)` : '';
+  const n = esc(gastgeberName() || 'der Gastgeber');
+  return `<p class="fein zeiten-hinweis">${rolle() === 'gastgeber' ? 'Deine belegten Zeiten aus dem Kalender' : `Wann ${n} Zeit hat`}${standText}: im Reiter <button type="button" class="textknopf" data-reiter="kalender" data-kal-wechsel="woche">Kalender</button>, Wochenansicht – und an jeder Karte.</p>`;
+}
+
 /**
  * „So funktioniert's“: Eingeladene sehen die Karte nach dem Beitreten, bis
  * sie „Alles klar“ tippen; danach (und für den Gastgeber) über „So geht's“.
@@ -176,10 +186,11 @@ function hilfeKarte(st) {
     '<b>Hier unter „Wir“</b> siehst du, was wer will: Zusammen, Wollen mit dir, Ohne dich und pro Person.',
     '<b>Wer sieht was:</b> Alle Haken siehst nur du. Die anderen sehen deine und ihre eigenen, voneinander nichts.',
   ] : [
-    '<b>Programm, Kalender, Karte:</b> was in Hamburg und Umgebung los ist – Woche für Woche, gut einen Monat im Voraus.',
+    '<b>Programm, Kalender, Karte:</b> was in Hamburg und Umgebung los ist – Woche für Woche, gut einen Monat im Voraus. Der Kalender kann Monat, Woche und Tag.',
     `<b>Mit ${n}</b> an einem Termin heißt: Das würd ich gern mit dir machen. <b>Allein/mit anderen</b> heißt: Hab ich vor, aber ohne dich. Dieselbe Wahl noch einmal nimmt den Haken weg.`,
     '<b>Ideen:</b> alles ohne festen Termin, von Tischtennis bis Bügelperlen. Auch da kannst du Bock sagen oder dir einen Tag einplanen.',
     `<b>Wir:</b> Hier siehst du, wo ihr beide Bock habt und worauf ${n} Bock hat.`,
+    `<b>Wann hat ${n} Zeit?</b> An jedem Termin steht es dabei, und im Kalender (Woche oder Tag) sind belegte Zeiten grau – ohne zu verraten, was ${n} da macht.`,
     `<b>Wer sieht was:</b> Deine Haken sieht nur ${n}. Die anderen Eingeladenen sehen nichts von dir – und du nichts von ihnen.`,
     ...(alsApp() ? [] : [istApple()
       ? '<b>Als App aufs iPhone:</b> Teilen → „Zum Home-Bildschirm“. Die App dort kennt diesen Plan nicht – tipp vorher unter „Wir“ auf „Weiteres Gerät“, kopier den Link und füg ihn in der App unter „Ich habe einen Code“ ein.'
@@ -381,11 +392,11 @@ export function wirAnsicht(p, ideen, st, heute, ui = {}) {
   }
 
   const hilfe = ui.hilfe || (rolle() === 'mitglied' && !st.hilfeWeg) ? hilfeKarte(st) : '';
-  const zeiten = zeitenAbschnitt(heute, ui.zeitenWoche);
   return `${kopf(st, ui)}
     ${zugang}
     ${hilfe}
-    ${rolle() === 'gastgeber' ? `${gastgeberUeberblick(alle, st, heute, ui)}${zeiten}` : `${zeiten}${mitgliedAnsicht(alle, st, heute)}`}
+    ${zeitenHinweis(heute)}
+    ${rolle() === 'gastgeber' ? gastgeberUeberblick(alle, st, heute, ui) : mitgliedAnsicht(alle, st, heute)}
     ${vorbeiListe(alt, ui)}`;
 }
 

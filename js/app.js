@@ -12,10 +12,10 @@ import {
   laden, speichern, aktuell, bockUmschalten, bockWeg, meinBock, gemachtSpeichern, gemachtWeg, LEERER_FILTER, LEERER_IDEENFILTER,
 } from './speicher.js';
 import { ladeAlles } from './daten.js';
-import { heute, standText, montag, monatVon, monatPlus, plusTage, wochentagKurz, tagMonat } from './zeit.js';
+import { heute, standText, montag, plusTage, wochentagKurz, tagMonat } from './zeit.js';
 import { esc } from './text.js';
 import { programmAnsicht, wochenBereich } from './ansicht-programm.js';
-import { kalenderAnsicht, monatsBereich } from './ansicht-kalender.js';
+import { kalenderAnsicht, ANSICHTEN } from './ansicht-kalender.js';
 import { landkarteGeruest, landkarteZeichnen, landkarteAuffrischen } from './ansicht-landkarte.js';
 import { ideenAnsicht, ideeAnker } from './ansicht-ideen.js';
 import { wirAnsicht, vorbei, alsApp } from './ansicht-wir.js';
@@ -37,8 +37,7 @@ let ideenListe = []; // Katalog und Ausflugsziele aus dem Programm (ideen.js, al
 let geladen = false;
 let reiter = 'programm';
 let woche = null; // Montag der gezeigten Woche im Programm
-let monat = null; // „2026-11“ im Kalender
-let gewaehlt = null; // gewählter Tag im Kalender
+const kal = { ansicht: 'monat', datum: '' }; // Kalender: Monat/Woche/Tag und der gewählte Tag
 let raum = 'woche'; // Zeitraum auf der Karte
 // Reiter Wir: offene Felder, die Person, die gleich herausgenommen wird, wer zu
 // einem Einladungslink einlädt, aufgeklappte Abschnitte (data-offen)
@@ -112,7 +111,7 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
   if (reiter !== 'karte') karteVergessen();
   let html;
   if (!geladen) html = '<div class="leer"><p>Lädt …</p></div>';
-  else if (reiter === 'kalender') html = kalenderAnsicht(daten.programm, st, h, monat || monatVon(h), gewaehlt);
+  else if (reiter === 'kalender') html = kalenderAnsicht(daten.programm, st, h, kal);
   else if (reiter === 'karte') html = landkarteGeruest(st, raum);
   else if (reiter === 'ideen') html = ideenAnsicht(ideenListe, Boolean(daten.ideen), st, h, uiIdeen);
   else if (reiter === 'wir') html = wirAnsicht(daten.programm, ideenListe, st, h, ui);
@@ -240,16 +239,14 @@ function aktion(name, z) {
       woche = null;
       zeichnen({ nachOben: true });
       break;
-    case 'monat-zurueck':
-    case 'monat-vor': {
-      const { erster, letzter } = monatsBereich(daten.programm, h);
-      const jetzt = monat || erster;
-      const neu = monatPlus(jetzt, name === 'monat-vor' ? 1 : -1);
-      monat = neu < erster ? erster : (neu > letzter ? letzter : neu);
-      gewaehlt = null;
+    case 'kal-zurueck':
+    case 'kal-vor':
+      if (z.dataset.datum) { kal.datum = z.dataset.datum; zeichnen(); }
+      break;
+    case 'kal-heute':
+      kal.datum = h;
       zeichnen();
       break;
-    }
     case 'filter-weg':
       st.filter = LEERER_FILTER();
       speichern();
@@ -519,6 +516,13 @@ function zuIdee(schluessel) {
   if (ziel) ziel.scrollIntoView({ block: 'start' });
 }
 
+/** Im Kalender einen Tag öffnen (Tagesansicht). */
+function zuKalenderTag(tag) {
+  kal.datum = tag;
+  kal.ansicht = 'tag';
+  zeichnen({ nachOben: true });
+}
+
 function zuTag(tag) {
   reiter = 'programm';
   history.replaceState(null, '', location.pathname + location.search);
@@ -529,10 +533,11 @@ function zuTag(tag) {
 }
 
 document.addEventListener('click', (ev) => {
-  const z = ev.target.closest('[data-reiter], [data-bock], [data-filter], [data-ifilter], [data-aktion], [data-tag], [data-raum], [data-zu-woche], [data-zu-tag], [data-zu-idee]');
+  const z = ev.target.closest('[data-reiter], [data-bock], [data-filter], [data-ifilter], [data-aktion], [data-zu-eintrag], [data-kal-ansicht], [data-tag], [data-raum], [data-zu-woche], [data-zu-tag], [data-zu-idee]');
   if (!z || z.disabled) return;
   const st = aktuell();
   if (z.dataset.reiter) {
+    if (z.dataset.kalWechsel) { kal.ansicht = z.dataset.kalWechsel; st.kalenderAnsicht = kal.ansicht; speichern(); }
     wechseln(z.dataset.reiter);
   } else if (z.dataset.bock) {
     const eintrag = eintragZu(z.dataset.bock);
@@ -554,11 +559,18 @@ document.addEventListener('click', (ev) => {
     st.filter[z.dataset.filter] = !st.filter[z.dataset.filter];
     speichern();
     zeichnen({ behalteScroll: true });
+  } else if (z.dataset.zuEintrag) {
+    // Ein Chip in der Wochenansicht: den Tag öffnen und zur Karte scrollen.
+    zuKalenderTag(z.dataset.tag);
+    const ziel = document.getElementById(z.dataset.zuEintrag);
+    if (ziel) ziel.scrollIntoView({ block: 'center' });
+  } else if (z.dataset.kalAnsicht) {
+    kal.ansicht = z.dataset.kalAnsicht;
+    st.kalenderAnsicht = kal.ansicht;
+    speichern();
+    zeichnen({ nachOben: true });
   } else if (z.dataset.tag) {
-    gewaehlt = z.dataset.tag;
-    zeichnen({ behalteScroll: true });
-    const t = $('#kal-tag');
-    if (t && t.getBoundingClientRect().top > window.innerHeight * 0.6) t.scrollIntoView({ block: 'start' });
+    zuKalenderTag(z.dataset.tag);
   } else if (z.dataset.raum) {
     raum = z.dataset.raum;
     document.querySelectorAll('[data-raum]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.raum === raum)));
@@ -648,6 +660,7 @@ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
 }
 
 laden();
+kal.ansicht = ANSICHTEN.some(([k]) => k === aktuell().kalenderAnsicht) ? aktuell().kalenderAnsicht : 'monat';
 reiter = adresseLesen() || 'programm';
 zeichnen();
 ladeAlles().then((d) => {

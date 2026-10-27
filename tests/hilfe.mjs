@@ -265,13 +265,13 @@ export function fakeServer() {
  */
 export async function oeffne({
   tag = MO, zeit = '10:00', programm = testProgramm(), ideen = testIdeen(), stand = null, server = fakeServer(), ua = '', hash = '',
-  viewport = { width: 390, height: 844 }, browser: geteilt = null,
+  viewport = { width: 390, height: 844 }, browser: geteilt = null, scale = 1,
 } = {}) {
   const browser = geteilt || await chromium.launch();
   // Ohne Service Worker: Er würde die umgeleiteten Daten am Test vorbei holen.
   // Den Offline-Betrieb prüft test-offline.mjs mit Worker.
   const ctx = await browser.newContext({
-    viewport, locale: 'de-DE', serviceWorkers: 'block', ...(ua ? { userAgent: ua } : {}),
+    viewport, deviceScaleFactor: scale, locale: 'de-DE', serviceWorkers: 'block', ...(ua ? { userAgent: ua } : {}),
   });
   await ctx.addInitScript(uhrStellen);
   const daten = { programm, ideen };

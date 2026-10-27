@@ -235,7 +235,7 @@ select { padding: 7px 8px; border: 1px solid var(--linie); border-radius: 8px; b
 .legende { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 10px; font-size: 12.5px; color: var(--leise); align-items: center; }
 .legende span { display: inline-flex; align-items: center; gap: 4px; }
 .feld-mini { display: inline-block; width: 14px; height: 14px; border-radius: 4px; border: 1px solid var(--p0); background: var(--treffer-weich); }
-.kal-tag { margin-top: 22px; scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 12px); }
+.kal-tag { margin-top: 10px; scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 12px); }
 
 /* Karte (Landkarte) */
 .karte-zeitraum { margin-top: 6px; }
@@ -367,19 +367,60 @@ textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
 .einladung-text summary { cursor: pointer; }
 .einladung-text textarea { margin-top: 6px; font-size: 14px; }
 
-/* Zeiten des Gastgebers: an der Karte und als Wochenraster */
+/* Zeiten des Gastgebers: an der Karte, im Kalender als Blöcke */
 .zeit-hinweis { margin-top: 6px; font-size: 13px; font-weight: 600; }
 .zeit-hinweis.frei { color: var(--akzent); }
 .zeit-hinweis.belegt { color: var(--bernstein); }
-.zeiten-blaettern { margin: 4px 0 8px; }
-.zeiten-raster { display: grid; gap: 4px; }
-.zr-kopf, .zr-zeile { display: grid; grid-template-columns: 4.6rem 1fr; gap: 8px; align-items: center; }
+
+/* Kalender: Ansicht wählen */
+.kal-kopf .blaettern { margin-top: 10px; }
+.kal-schalter { display: flex; align-items: center; gap: 6px; }
+.kal-schalter .knopf { margin-left: auto; }
+.monatstitel.klein { font-size: 17px; min-width: 0; flex: 1; }
+
+/* Kalender: Tagesansicht – der Zeitstreifen */
+.tag-streifen { margin: 10px 0 2px; display: grid; gap: 2px; }
 .zr-skala { position: relative; height: 14px; font-size: 11px; color: var(--leise); font-family: var(--mono); }
 .zr-skala i { position: absolute; transform: translateX(-50%); font-style: normal; }
 .zr-skala i:first-child { transform: none; }
 .zr-skala i:last-child { transform: translateX(-100%); }
-.zr-tag { font-family: var(--mono); font-size: 12.5px; color: var(--leise); white-space: nowrap; }
-.zr-zeile.heute .zr-tag { color: var(--tinte); font-weight: 700; }
-.zr-zeile.vorbei { opacity: .45; }
-.zr-balken { position: relative; height: 22px; border-radius: 6px; background: var(--akzent-weich); border: 1px solid var(--linie); overflow: hidden; }
-.zr-balken b { position: absolute; top: 0; bottom: 0; background: var(--tinte); opacity: .72; }
+.zr-balken { position: relative; height: 26px; border-radius: 6px; background: var(--akzent-weich); border: 1px solid var(--linie); overflow: hidden; }
+.zr-balken .belegt { position: absolute; top: 0; bottom: 0; background: var(--tinte); opacity: .72; }
+.zr-balken .marker { position: absolute; top: 5px; bottom: 5px; min-width: 6px; border-radius: 3px; background: var(--ich); opacity: .95; }
+.zr-balken .marker.p0 { background: var(--p0); } .zr-balken .marker.p1 { background: var(--p1); } .zr-balken .marker.p2 { background: var(--p2); } .zr-balken .marker.p3 { background: var(--p3); }
+.zr-balken .marker.treffer { background: var(--p0); outline: 2px solid var(--ich); }
+.zr-balken .marker.plan { background: var(--bernstein); }
+
+/* Kalender: Wochenansicht */
+.woche-raster { display: grid; grid-template-columns: 2rem repeat(7, minmax(0, 1fr)); grid-template-rows: auto auto auto; gap: 0 3px; margin-top: 14px; --stunden: 17; --hoehe: 44px; }
+/* Jede Spalte teilt sich die drei Zeilen (Kopf, Ganztägiges, Zeit) mit den anderen – so liegen die Stunden überall auf gleicher Höhe. */
+.wo-spalte, .wo-rail { display: grid; grid-row: 1 / 4; grid-template-rows: subgrid; position: relative; min-width: 0; }
+.wo-kopf { border: 0; background: none; padding: 2px 0 4px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 1px; color: var(--leise); position: relative; }
+.wo-kopf.leer { cursor: default; }
+.wo-wt { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; font-weight: 700; }
+.wo-nr { font-family: var(--mono); font-size: 15px; font-weight: 700; color: var(--tinte); line-height: 1.1; }
+.wo-spalte.wo-heute .wo-nr { background: var(--akzent); color: var(--bg); border-radius: 50%; width: 26px; height: 26px; display: grid; place-items: center; }
+.wo-zahl { font-size: 10.5px; color: var(--leise); font-variant-numeric: tabular-nums; }
+.wo-ganz { min-height: 6px; display: grid; gap: 2px; margin-bottom: 3px; }
+.wo-zeit {
+  position: relative; height: calc(var(--stunden) * var(--hoehe)); border-radius: 6px; overflow: hidden; background-color: var(--akzent-weich);
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--hoehe) - 1px), var(--linie) calc(var(--hoehe) - 1px), var(--linie) var(--hoehe));
+}
+.wo-rail .wo-zeit { background: none; }
+.wo-rail .wo-zeit i { position: absolute; right: 4px; transform: translateY(-50%); font-family: var(--mono); font-size: 11px; color: var(--leise); font-style: normal; }
+.wo-spalte.vorbei .wo-zeit { opacity: .55; }
+.wo-zeit .belegt { position: absolute; left: 0; right: 0; background: var(--tinte); opacity: .6; z-index: 1; }
+.wo-zeit .jetzt { position: absolute; left: 0; right: 0; height: 2px; background: var(--warn); z-index: 3; }
+.chip { position: absolute; border: 0; border-radius: 4px; padding: 2px 3px; font-size: 10.5px; line-height: 1.15; text-align: left; overflow: hidden; cursor: pointer; color: #fff; background: var(--p0); z-index: 2; box-sizing: border-box; display: block; }
+.chip span { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; hyphens: auto; }
+.chip.ich { background: var(--ich); color: var(--bg); }
+.chip.p1 { background: var(--p1); } .chip.p2 { background: var(--p2); } .chip.p3 { background: var(--p3); }
+.chip.treffer { background: var(--p0); outline: 2px solid var(--ich); outline-offset: -2px; }
+.chip.plan { background: var(--bernstein); color: var(--bg); }
+.chip.versetzt { margin-left: 6px; }
+.chip.ganz { position: static; width: 100%; padding: 1px 3px; font-size: 10px; }
+.chip.ganz span { -webkit-line-clamp: 1; }
+.chip-mini { display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: var(--p0); }
+.chip-mini.ich { background: var(--ich); } .chip-mini.treffer { background: var(--p0); outline: 2px solid var(--ich); outline-offset: -2px; } .chip-mini.plan { background: var(--bernstein); }
+.feld-mini.belegt { background: var(--tinte); opacity: .6; border-color: transparent; }
+@media (prefers-color-scheme: dark) { .chip { color: #10171c; } }

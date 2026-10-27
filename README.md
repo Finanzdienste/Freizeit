@@ -17,7 +17,7 @@ Fünf Reiter:
 | Reiter | Inhalt |
 | --- | --- |
 | **Programm** | Woche für Woche zum Blättern: Highlights, Filter, Tag für Tag nach Uhrzeit (Eingeplantes oben am Tag), was gerade läuft, Hinweise. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler und Eingeplantes |
-| **Kalender** | Monatsblatt mit der Zahl der Termine je Tag und farbigen Punkten, wer Bock hat; darunter der gewählte Tag |
+| **Kalender** | Monat, Woche und Tag wie bei Google: das Monatsblatt mit der Zahl der Termine je Tag und Punkten, wer Bock hat; die Woche von 7 bis 24 Uhr mit den belegten Zeiten des Gastgebers und Chips für Haken, Treffer und Eingeplantes; der Tag mit Zeitstreifen und allen Terminen |
 | **Karte** | OpenStreetMap, ein Marker je Ort (nahe zu Haufen zusammengefasst), Zeiträume von „Heute“ bis „Alles“ und „Mit Bock“, mit „💡 Ideen“ auch die Orte aus dem Ideen-Katalog |
 | **Ideen** | Alles ohne Termin: Eingeplantes, „Wollen wir mal“ (Ideen mit Bock), „Tut dir gut“, Filter nach Wirkung und Rahmen, der Katalog nach Kategorien, eigene Ideen |
 | **Wir** | Der gemeinsame Plan. Beim Gastgeber der Überblick: Zusammen, Wollen mit dir, Ohne dich, Pro Person, Deine Haken; Einladen, Weiteres Gerät, Auflösen. Bei den Eingeladenen: Du und Tobi, Tobi hat Bock auf, Deine Haken. Ohne Plan die eigene Bock-Liste |
@@ -134,9 +134,10 @@ anderem.
 keine Titel – reisen als seine Haken `z:<Montag der Woche>` mit
 `{ "z": [[von, bis], …], "stand": "…" }` (Minuten ab Montag 0:00, Berliner
 Zeit). Eingeladene sehen dann an jeder Karte „✓ Tobi hat da Zeit“ oder
-„Tobi ist da schon verplant“ und unter „Wir“ ein Wochenraster 8–24 Uhr wie im
-Terminplanungs-Assistenten; der Gastgeber sieht nur, was sich mit seinem
-Kalender beißt. Für Wochen ohne Zeiten sagt die App nichts. Rechnen
+„Tobi ist da schon verplant“ und im Kalender (Woche und Tag) die belegten
+Zeiten als dunkle Blöcke, wie im Terminplanungs-Assistenten; der Gastgeber
+sieht dasselbe und an den Karten nur, was sich mit seinem Kalender beißt.
+Für Wochen ohne Zeiten sagt die App nichts. Rechnen
 (Zeitzone, Mitternacht, Wochenwechsel, Zeitumstellung) tut
 `js/zeiten-rechnen.js`, schicken `werkzeug/zeiten-senden.mjs` – gedacht für
 eine geplante Aufgabe, die den Google Kalender liest:
@@ -379,7 +380,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `js/teilen.js` | WhatsApp-Nachricht, Google-Kalender-Link, .ics |
 | `js/speicher.js` | Filter, eigene Haken mit Schnappschuss, Warteschlange, Verlauf „Wie war's?“ |
 | `js/gemeinsam.js` | der gemeinsame Plan: Code, Schlüssel, Beitreten, weiteres Gerät, Abgleich mit Supabase, Rollen und Treffer |
-| `js/zeiten.js` | die belegten Zeiten des Gastgebers: an den Karten und als Wochenraster |
+| `js/zeiten.js` | die belegten Zeiten des Gastgebers: lesen, prüfen, die Zeile an der Karte |
 | `js/zeiten-rechnen.js` | aus Kalenderterminen belegte Blöcke je Woche (Browser und Node) |
 | `werkzeug/zeiten-senden.mjs` | schickt die Zeiten an den Plan – für eine geplante Aufgabe |
 | `js/config.js` | Adresse und öffentlicher Schlüssel des Servers |
@@ -396,14 +397,14 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | Test | prüft |
 | --- | --- |
 | `test-programm.mjs` | Wochen, beide Zeitregeln, Filter, Laufendes, Konzerte der eigenen Künstler |
-| `test-kalender.mjs` | Monatsblatt, Zahlen, Bock-Punkte, Monate nach dem Programm |
+| `test-kalender.mjs` | Monat, Woche und Tag: Zahlen, Bock-Punkte, Chips, Blättern, „Heute“, Monate nach dem Programm |
 | `test-landkarte.mjs` | Marker, Zeiträume, Liste am Marker, Haken aus der Karte |
 | `test-wir.mjs` | der gemeinsame Plan: Tobi lädt ein, Kim (iPhone) und Jo wählen mit/ohne Tobi und sehen einander nicht, Tobis Überblick, offline, weiteres Gerät, Herausnehmen, Verlassen, Auflösen, ein Plan aus der ersten Fassung, fremder Text |
 | `test-ideen.mjs` | Katalog, Filter nach Wirkung, Saison, Bock, Einplanen (Programm, Kalender), Wie war's? und „Tut dir gut“, eigene Ideen im Plan, Einplanen mit/ohne Gastgeber, fremder Text, Ideen auf der Karte |
 | `test-teilen.mjs` | WhatsApp, Google Kalender, .ics – auch für Eingeplantes |
 | `test-offline.mjs` | Offline-Vorrat, App ohne Netz |
 | `test-daten.mjs` | `daten/programm.json`, `daten/ideen.json` und `daten/orte.json` |
-| `test-zeiten.mjs` | Zeiten des Gastgebers: an den Karten (frei/verplant), das Wochenraster, nirgends als Eintrag |
+| `test-zeiten.mjs` | Zeiten des Gastgebers: an den Karten (frei/verplant), im Kalender als Blöcke, nirgends als Eintrag |
 | `test-zeiten-rechnen.mjs` | Blöcke je Woche: Zeitzone, Mitternacht, Wochenwechsel, Zeitumstellung |
 | `test-zeiten-senden.mjs` | das Werkzeug gegen einen nachgebauten Server |
 | `test-sql.mjs` | `supabase/gemeinsam.sql` in PGlite: über der ersten Fassung, Rollen und was wer sieht, Schlüssel, Funktionen, Rechte, Grenzen |

@@ -59,6 +59,17 @@ function eintraegeMitHaken(p, ideen, st) {
 
 const karten = (es) => es.map((e) => karte(e, { zeitSpalte: true, zeitText: wannKurz(e) })).join('');
 
+/** Was mit dem Einladungslink per WhatsApp mitgeht – vom Gastgeber, in der ersten Person. */
+export function einladungsText(name, link, code) {
+  return `Hey! Ich hab mir eine kleine Freizeit-App gebaut: Da steht drin, was in Hamburg und Umgebung los ist – Konzerte, Theater, Märkte, Ausflüge, gut einen Monat im Voraus – plus Ideen für alles ohne Termin.
+
+Hak einfach an, worauf du Bock hast: „Mit ${name}“ oder „Allein/mit anderen“. Dann seh ich, wo wir zusammen hinwollen, und wir müssen nicht ewig hin und her schreiben. Deine Haken sehe nur ich. Keine Anmeldung, nur dein Name.
+
+${link}
+
+iPhone: Link in Safari öffnen → Teilen → „Zum Home-Bildschirm“, dann in der App unter „Wir“ den Code eingeben: ${code}`;
+}
+
 function abschnitt(id, titel, text, inhalt) {
   return `<section class="abschnitt" id="${id}"><h2 class="abschnitt-titel">${esc(titel)}</h2>${text ? `<p class="fein">${text}</p>` : ''}${inhalt}</section>`;
 }
@@ -95,6 +106,7 @@ function einladungKarte(st, ui) {
   const imBrowserAufIPhone = istApple() && !alsApp();
   return `<section class="einrichten" id="einladung-karte">
     <h3>${name ? `${name} lädt dich ein` : 'Du bist eingeladen'}</h3>
+    <p><b>Freizeit</b> zeigt, was in Hamburg und Umgebung los ist – Konzerte, Theater, Märkte, Ausflüge, gut einen Monat im Voraus –, dazu Ideen für alles ohne Termin.</p>
     <p>Gib deinen Namen ein und hak an, worauf du Bock hast – <b>mit ${name || 'dem, der dich eingeladen hat'}</b> oder <b>allein/mit anderen</b>.
       ${name ? `Deine Haken sieht nur ${name}, und du siehst, worauf ${name} Bock hat` : 'Deine Haken sieht nur, wer dich eingeladen hat'} – sonst niemand.</p>
     ${imBrowserAufIPhone ? `<h4>Erst auf den Home-Bildschirm</h4>${iPhoneSchritte(st.einladung)}<h4>Oder gleich hier im Browser</h4>` : ''}
@@ -150,6 +162,35 @@ function zugangKarte(st, ui) {
 
 // --- Mit Plan
 
+/**
+ * „So funktioniert's“: Eingeladene sehen die Karte nach dem Beitreten, bis
+ * sie „Alles klar“ tippen; danach (und für den Gastgeber) über „So geht's“.
+ */
+function hilfeKarte(st) {
+  const gastgeber = rolle() === 'gastgeber';
+  const n = esc(gastgeberName() || 'dem Gastgeber');
+  const punkte = gastgeber ? [
+    `<b>Einladen:</b> Deine Leute bekommen den Link, geben ihren Namen ein und sehen an jedem Termin zwei Knöpfe: „Mit ${n}“ und „Allein/mit anderen“.`,
+    '<b>Erklärt:</b> Wer den Link öffnet, bekommt erst eine kurze Einladung und nach dem Beitreten diese Erklärung in seiner Fassung.',
+    '<b>Hier unter „Wir“</b> siehst du, was wer will: Zusammen, Wollen mit dir, Ohne dich und pro Person.',
+    '<b>Wer sieht was:</b> Alle Haken siehst nur du. Die anderen sehen deine und ihre eigenen, voneinander nichts.',
+  ] : [
+    '<b>Programm, Kalender, Karte:</b> was in Hamburg und Umgebung los ist – Woche für Woche, gut einen Monat im Voraus.',
+    `<b>Mit ${n}</b> an einem Termin heißt: Das würd ich gern mit dir machen. <b>Allein/mit anderen</b> heißt: Hab ich vor, aber ohne dich. Dieselbe Wahl noch einmal nimmt den Haken weg.`,
+    '<b>Ideen:</b> alles ohne festen Termin, von Tischtennis bis Bügelperlen. Auch da kannst du Bock sagen oder dir einen Tag einplanen.',
+    `<b>Wir:</b> Hier siehst du, wo ihr beide Bock habt und worauf ${n} Bock hat.`,
+    `<b>Wer sieht was:</b> Deine Haken sieht nur ${n}. Die anderen Eingeladenen sehen nichts von dir – und du nichts von ihnen.`,
+    ...(alsApp() ? [] : [istApple()
+      ? '<b>Als App aufs iPhone:</b> Teilen → „Zum Home-Bildschirm“. Die App dort kennt diesen Plan nicht – tipp vorher unter „Wir“ auf „Weiteres Gerät“, kopier den Link und füg ihn in der App unter „Ich habe einen Code“ ein.'
+      : '<b>Als App:</b> im Browser-Menü „App installieren“ bzw. „Zum Startbildschirm“ – dann ist Freizeit ein Symbol wie jede andere App.']),
+  ];
+  return `<section class="einrichten hilfe" id="hilfe-karte">
+    <h3>${gastgeber ? 'So funktioniert\'s für deine Leute' : 'So funktioniert\'s'}</h3>
+    <ul class="hilfe-liste">${punkte.map((x) => `<li>${x}</li>`).join('')}</ul>
+    <div class="aktionen"><button type="button" class="knopf haupt" data-aktion="hilfe-weg">Alles klar</button></div>
+  </section>`;
+}
+
 /** Aus dem Plan gefallen: herausgenommen, aufgelöst oder ohne Schlüssel. */
 function rausKarte(st, ui) {
   const g = st.gemeinsam;
@@ -194,17 +235,18 @@ function kopf(st, ui) {
     ? `Du bist Gastgeber${andereLeute.length ? ` – ${anzahl(andereLeute.length, 'Person', 'Leute')} dabei` : ''}. Alle Haken siehst nur du.`
     : `Du planst mit ${esc(name || 'dem Gastgeber')}: Ihr seht gegenseitig eure Haken – sonst niemand.`;
   const link = einladungsLink(g.code);
-  const waText = `Hey! Ich plane meine Freizeit mit einer kleinen App. Hak an, worauf du Bock hast – mit mir oder allein/mit anderen. Deine Haken sehe nur ich: ${link}\n\nAuf dem iPhone: in Safari öffnen → Teilen → „Zum Home-Bildschirm“, dann in der App unter „Wir“ den Code eingeben: ${g.code}`;
+  const waText = einladungsText(g.ich.name, link, g.code);
   const knopf = (aktion, text, offen) => `<button type="button" class="knopf" data-aktion="${aktion}" aria-expanded="${Boolean(offen)}">${text}</button>`;
   return `<header class="woche-kopf">
     <h2 class="abschnitt-titel">Wir</h2>
     <p class="fein">${wer}</p>
     <div class="leute">${chips}</div>
-    <div class="fein syncstatus">${esc(zeile)}${s.fehler ? ` · <span class="warn-text">${esc(s.fehler)}</span>` : ''}</div>
+    <div class="fein syncstatus">${[zeile ? esc(zeile) : '', s.fehler ? `<span class="warn-text">${esc(s.fehler)}</span>` : ''].filter(Boolean).join(' · ')}</div>
     ${ui.fehler ? `<div class="fehlerbox" role="alert">${esc(ui.fehler)}</div>` : ''}
     <div class="aktionen">
       ${gastgeber ? knopf('einladen', 'Einladen', ui.einladen) : ''}
       <button type="button" class="knopf" data-aktion="abgleichen">Jetzt abgleichen</button>
+      ${knopf('hilfe', 'So geht\'s', ui.hilfe)}
       ${knopf('umbenennen', 'Name ändern', ui.umbenennen)}
       ${knopf('geraet', 'Weiteres Gerät', ui.geraet)}
       ${knopf('verlassen', gastgeber ? 'Auflösen' : 'Verlassen', ui.verlassen)}
@@ -214,8 +256,12 @@ function kopf(st, ui) {
       <input class="eingabe" id="einladungslink" readonly value="${esc(link)}">
       <div class="aktionen">
         <a class="knopf haupt" href="https://wa.me/?text=${esc(encodeURIComponent(waText))}" target="_blank" rel="noopener">Per WhatsApp schicken</a>
-        <button type="button" class="knopf" data-aktion="code-kopieren" data-code="${esc(link)}" data-feld="#einladungslink">Link kopieren</button>
+        <button type="button" class="knopf" data-aktion="code-kopieren" data-code="${esc(waText)}" data-feld="#einladungstext">Text kopieren</button>
+        <button type="button" class="knopf" data-aktion="code-kopieren" data-code="${esc(link)}" data-feld="#einladungslink">Nur Link</button>
       </div>
+      <details class="einladung-text"><summary class="fein">Diesen Text schickt WhatsApp mit</summary>
+        <textarea class="eingabe" id="einladungstext" readonly rows="9">${esc(waText)}</textarea>
+      </details>
       <p class="fein">Code zum Abschreiben: <code class="code">${esc(g.code)}</code> – wer ihn hat, kann eintreten. Alle Haken siehst trotzdem nur du.</p>
     </div>` : ''}
     ${ui.umbenennen ? `<div class="einladung">
@@ -333,8 +379,10 @@ export function wirAnsicht(p, ideen, st, heute, ui = {}) {
       ${vorbeiListe(alt, ui)}`;
   }
 
+  const hilfe = ui.hilfe || (rolle() === 'mitglied' && !st.hilfeWeg) ? hilfeKarte(st) : '';
   return `${kopf(st, ui)}
     ${zugang}
+    ${hilfe}
     ${rolle() === 'gastgeber' ? gastgeberUeberblick(alle, st, heute, ui) : mitgliedAnsicht(alle, st, heute)}
     ${vorbeiListe(alt, ui)}`;
 }

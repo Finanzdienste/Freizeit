@@ -43,7 +43,7 @@ let raum = 'woche'; // Zeitraum auf der Karte
 // Reiter Wir: offene Felder, die Person, die gleich herausgenommen wird, wer zu
 // einem Einladungslink einlädt, aufgeklappte Abschnitte (data-offen)
 const ui = {
-  einladen: false, umbenennen: false, verlassen: false, geraet: false, entfernen: '', fehler: '', laeuft: false, einladungVon: null, offen: new Set(),
+  einladen: false, umbenennen: false, verlassen: false, geraet: false, hilfe: false, entfernen: '', fehler: '', laeuft: false, einladungVon: null, offen: new Set(),
 };
 // Reiter Ideen: offene Formulare („bereich|schlüssel“), aufgeklappte Kategorien, letzte Meldung
 const uiIdeen = { neu: false, planen: '', bewerten: '', offen: new Set(), saisonAlle: false, meldung: null, fehler: '' };
@@ -199,16 +199,20 @@ async function kopieren(text, knopf) {
     knopf.textContent = 'Kopiert ✓';
     setTimeout(() => { knopf.textContent = vorher; }, 2000);
   } catch {
-    // Ohne Zwischenablage: den Link im Feld markieren, zum Kopieren von Hand.
+    // Ohne Zwischenablage: den Text im Feld zeigen und markieren, zum Kopieren von Hand.
     const feld = $(knopf.dataset.feld || '#einladungslink');
-    if (feld) feld.select();
+    if (feld) {
+      const huelle = feld.closest('details');
+      if (huelle) huelle.open = true;
+      feld.select();
+    }
   }
 }
 
 /** Nur eines der Felder unter „Wir“ ist offen. */
 function wirFeld(name) {
   const offen = ui[name];
-  Object.assign(ui, { einladen: false, umbenennen: false, verlassen: false, geraet: false });
+  Object.assign(ui, { einladen: false, umbenennen: false, verlassen: false, geraet: false, hilfe: false });
   ui[name] = !offen;
   zeichnen({ behalteScroll: true });
 }
@@ -293,7 +297,14 @@ function aktion(name, z) {
     case 'umbenennen':
     case 'verlassen':
     case 'geraet':
+    case 'hilfe':
       wirFeld(name);
+      break;
+    case 'hilfe-weg':
+      st.hilfeWeg = true;
+      ui.hilfe = false;
+      speichern();
+      zeichnen({ behalteScroll: true });
       break;
     case 'abgleichen':
       abgleichJetzt();

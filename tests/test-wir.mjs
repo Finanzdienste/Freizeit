@@ -53,8 +53,10 @@ const code = link.split('#einladung=')[1];
 check(/^[a-z2-9]{4}-[a-z2-9]{4}-[a-z2-9]{4}$/.test(code) && !/[lo01]/.test(code), `der Einladungslink trägt einen Code ohne Verwechsler (${code})`);
 check(server.raeume.has(code), 'derselbe Code wie beim Server');
 const wa = decodeURIComponent((await A.page.locator('.einladung a', { hasText: 'WhatsApp' }).getAttribute('href')).split('text=')[1]);
-check(wa.includes(link) && wa.includes(code) && wa.includes('Zum Home-Bildschirm') && wa.includes('mit mir oder allein/mit anderen'),
-  'die WhatsApp-Nachricht: Link, Code, der Weg fürs iPhone – und worum es geht');
+check(wa.includes(link) && wa.includes(code) && wa.includes('Zum Home-Bildschirm'), 'die WhatsApp-Nachricht hat Link, Code und den Weg fürs iPhone');
+check(wa.includes('was in Hamburg und Umgebung los ist') && wa.includes('„Mit Tobi“ oder „Allein/mit anderen“') && wa.includes('Deine Haken sehe nur ich'),
+  '… und sagt, worum es geht: was los ist, die zwei Knöpfe, wer die Haken sieht');
+check((await A.page.locator('#einladungstext').inputValue()) === wa, 'der Text steht auch zum Ansehen und Kopieren da');
 check(!link.includes(tobi.schluessel) && !wa.includes(tobi.schluessel), 'der Schlüssel steht weder im Link noch in der Nachricht');
 
 // Tobi hakt im Programm an.
@@ -72,6 +74,7 @@ check(!B.page.url().includes(code), 'der Code verschwindet aus der Adresszeile')
 await warte(B, 'Tobi lädt dich ein');
 check((await B.page.locator('#einladung-karte h3').innerText()) === 'Tobi lädt dich ein', 'Kim sieht, wer sie einlädt');
 check((await B.page.locator('#einladung-karte').innerText()).includes('Deine Haken sieht nur Tobi'), '… und wer ihre Haken sieht');
+check((await B.page.locator('#einladung-karte').innerText()).includes('Freizeit zeigt, was in Hamburg und Umgebung los ist'), '… und was die App überhaupt ist');
 check((await B.page.locator('.schritte').innerText()).includes('Zum Home-Bildschirm') && (await B.page.locator('.schritte code').innerText()) === code,
   'auf dem iPhone im Browser: der Weg zum Home-Bildschirm und der Code');
 await B.page.fill('#wir-name', 'Kim');
@@ -81,6 +84,16 @@ const kim = (await B.gespeichert()).gemeinsam;
 check(raum().personen.map((p) => p.name).join(',') === 'Tobi,Kim', 'jetzt sind beide im Raum');
 check(kim.rolle === 'mitglied' && !kim.schluessel, 'Kim ist dabei – ohne Schlüssel');
 check((await text(B)).includes('Du planst mit Tobi'), 'Kim weiß, mit wem sie plant');
+const hilfe = B.page.locator('#hilfe-karte');
+check(await hilfe.count() === 1 && (await hilfe.locator('h3').innerText()) === "So funktioniert's"
+  && (await hilfe.innerText()).includes('Mit Tobi an einem Termin heißt') && (await hilfe.innerText()).includes('Deine Haken sieht nur Tobi'),
+"nach dem Beitreten erklärt „So funktioniert's“ die Knöpfe und wer was sieht");
+check((await hilfe.innerText()).includes('Weiteres Gerät'), '… im Safari-Browser auf dem iPhone auch, wie der Plan in die App vom Home-Bildschirm kommt');
+await hilfe.locator('[data-aktion="hilfe-weg"]').click();
+check(await B.page.locator('#hilfe-karte').count() === 0 && (await B.gespeichert()).hilfeWeg === true, '„Alles klar“ – die Erklärung ist weg und bleibt weg');
+await B.page.click('[data-aktion="hilfe"]');
+check(await B.page.locator('#hilfe-karte').count() === 1, '„So geht\'s“ holt sie zurück');
+await B.page.click('[data-aktion="hilfe"]');
 check(await B.page.locator('#wir-seine .karte', { hasText: 'Theater früh' }).count() === 1
   && (await B.page.locator('#wir-seine .abschnitt-titel').innerText()) === 'Tobi hat Bock auf', 'unter „Tobi hat Bock auf“: Tobis Haken');
 check(!JSON.stringify(kim.stand).includes(tobi.ich.id), 'Tobis echte Kennung kommt bei Kim nie an');
@@ -148,6 +161,9 @@ check(await party.count() === 1 && (await party.locator('.wer').innerText()).inc
   'unter „Wollen mit dir“: Jos Party – Tobi hat dort noch nicht Bock');
 const markt = A.page.locator('#wir-ohne-dich .karte', { hasText: 'Nachtmarkt' });
 check(await markt.count() === 1 && (await markt.locator('.wer').innerText()).includes("machen's ohne dich"), "unter „Ohne dich“: den Nachtmarkt machen Kim und Jo ohne ihn");
+await A.page.click('[data-aktion="hilfe"]');
+check((await A.page.locator('#hilfe-karte h3').innerText()) === "So funktioniert's für deine Leute", 'Tobi sieht unter „So geht\'s“, wie es für seine Leute läuft');
+await A.page.click('[data-aktion="hilfe"]');
 const kimZeile = personZeile(A, 'Kim');
 check((await kimZeile.locator('summary').innerText()).includes('1 mit dir · 2 ohne dich'), 'pro Person: Kim – 1 mit dir, 2 ohne dich');
 await kimZeile.locator('summary').click();

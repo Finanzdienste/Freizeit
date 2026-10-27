@@ -50,6 +50,8 @@ const LEER = () => ({
   gesehen: { andere: '' },
   vergangeneTage: false,
   installHinweisWeg: false,
+  // „So funktioniert's“ unter „Wir“ weggeklickt
+  hilfeWeg: false,
 });
 
 let stand = LEER();

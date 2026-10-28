@@ -41,6 +41,14 @@ const auf = async () => { if (!(await feld().getAttribute('open') !== null)) awa
 const unter = (tag, titel) => page.locator(`#tag-${tag} .karte`, { hasText: titel }).locator('.unter').innerText();
 const gespeichert = () => A.gespeichert();
 const warte = (fn, arg) => page.waitForFunction(fn, arg, { timeout: 8000 });
+/**
+ * Bis der Bezugspunkt gespeichert ist (und, wenn angegeben, so heißt). Der
+ * Speicher kann davor noch leer sein – dann einfach weiter warten, nicht werfen.
+ */
+const gespeichertBis = (namensAnfang = '') => warte((anfang) => {
+  const st = JSON.parse(localStorage.getItem('freizeit.stand.v1') || 'null');
+  return Boolean(st && st.standort && String(st.standort.name).startsWith(anfang));
+}, namensAnfang);
 
 // --- ohne Bezugspunkt
 check((await knopf().innerText()).trim() === '📍 Standort' && await feld().getAttribute('open') === null, 'ohne Bezugspunkt: zugeklappt „📍 Standort“');
@@ -59,7 +67,7 @@ check((await page.locator('.standort-fehler').innerText()).includes('nicht freig
 await ctx.grantPermissions(['geolocation']);
 await ctx.setGeolocation({ latitude: 53.55031, longitude: 9.99301 });
 await page.click('[data-aktion="standort-geraet"]');
-await warte(() => JSON.parse(localStorage.getItem('freizeit.stand.v1')).standort);
+await gespeichertBis();
 let st = await gespeichert();
 check(st.standort.art === 'geraet' && st.standort.name === 'Dein Standort' && JSON.stringify(st.standort.geo) === '[53.55031,9.99301]',
   'Mein Standort: gespeichert als Gerät, „Dein Standort“, auf fünf Stellen');
@@ -140,7 +148,7 @@ check((await knopf().innerText()).trim() === '📍 Wandsbek Markt' && (await fel
 check((await unter(DI, 'Theater früh')).startsWith('Thalia · 6,') && (await A.titelAm(DI))[0] === 'Keane', 'die Entfernungen gelten jetzt ab Wandsbek – Keane liegt dort am nächsten');
 await page.fill('#standort-adresse', 'Eindeutig');
 await page.click('[data-aktion="standort-suchen"]');
-await warte(() => JSON.parse(localStorage.getItem('freizeit.stand.v1')).standort.name.startsWith('Rathausmarkt'));
+await gespeichertBis('Rathausmarkt');
 check((await gespeichert()).standort.name === 'Rathausmarkt, Altstadt' && await page.locator('.treffer-knopf').count() === 0, 'ein Treffer: gleich übernommen');
 await page.fill('#standort-adresse', 'Wandsbek');
 await page.click('[data-aktion="standort-suchen"]');
@@ -200,7 +208,7 @@ await page.waitForFunction(() => document.querySelector('#ansicht').innerText.in
 await A.reiter('programm');
 await auf();
 await page.click('[data-aktion="standort-geraet"]');
-await warte(() => JSON.parse(localStorage.getItem('freizeit.stand.v1')).standort);
+await gespeichertBis();
 await page.locator(`#tag-${DI} .karte`, { hasText: 'Theater früh' }).locator('[data-bock]').click();
 await A.abgeglichen();
 const gesendet = JSON.stringify(server.aufrufe);

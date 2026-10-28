@@ -120,6 +120,25 @@ select { padding: 7px 8px; border: 1px solid var(--linie); border-radius: 8px; b
 .schalter.hb[aria-pressed="true"] { background: var(--bernstein); border-color: var(--bernstein); color: var(--bg); }
 .zaehler { font-size: 12.5px; color: var(--leise); }
 
+/* Standort: Bezugspunkt für Entfernungen (standort.js) */
+.aufklappbar.standort-klapp.gesetzt > summary { border-color: var(--akzent); color: var(--akzent); font-weight: 600; }
+.standort-feld { display: grid; gap: 10px; }
+.standort-jetzt { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.standort-name { font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
+.standort-name .fein { font-weight: 400; margin: 0; }
+.standort-wahl { display: grid; gap: 8px; }
+.standort-wahl > .knopf { justify-self: start; }
+.standort-suche { display: flex; gap: 8px; }
+.standort-suche .eingabe { flex: 1 1 auto; min-width: 0; padding: 6px 10px; }
+.standort-fehler { margin: 0; font-size: 13px; color: var(--warn); }
+.standort-treffer { display: grid; gap: 6px; }
+.treffer-knopf { text-align: left; padding: 8px 10px; border: 1px solid var(--linie); border-radius: 8px; background: var(--flaeche); cursor: pointer; font-size: 14px; }
+.treffer-knopf:hover, .treffer-knopf:focus-visible { background: var(--akzent-weich); }
+.standort-zeile { display: grid; gap: 4px; }
+.standort-zeile > .fein, .standort-hinweis { margin: 0; }
+.standort-feld .filterzeile { gap: 5px; }
+.standort-feld .schalter { padding: 4px 9px; font-size: 13px; }
+
 /* Tagesleiste: klebt oben, alles andere scrollt */
 .tagleiste {
   position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none;
@@ -284,6 +303,12 @@ details.menue > summary::after { content: " ▾"; font-size: 11px; }
 .pin.ich { background: var(--ich); color: var(--bg); border-color: var(--bg); }
 .pin.andere { background: var(--p0); color: #fff; border-color: var(--bg); }
 .pin.treffer { background: var(--p0); color: #fff; border-color: var(--ich); border-width: 3px; }
+/* Der Bezugspunkt: ein dunkler Punkt mit Schild – kein Ort mit Terminen.
+   Fest dunkel, auch im dunklen Schema: Die Kacheln von OpenStreetMap sind immer hell. */
+.bezug-huelle { background: none; border: 0; }
+.bezug-punkt { position: absolute; inset: 0; border-radius: 50%; background: #13212b; border: 3px solid #fff; box-shadow: 0 0 0 2px #13212b, 0 1px 5px rgba(0, 0, 0, .4); }
+.bezug-schild { position: absolute; left: 50%; bottom: calc(100% + 7px); transform: translateX(-50%); white-space: nowrap; font: 700 12px/1 var(--schrift); padding: 4px 7px; border-radius: 6px; background: #13212b; color: #fff; box-shadow: 0 1px 4px rgba(0, 0, 0, .3); }
+path.umkreis { stroke: #13212b; fill: #13212b; stroke-dasharray: 6 5; }
 .pop { font: 14px/1.4 var(--schrift); }
 .pop-ort { font-weight: 800; margin-bottom: 6px; }
 .pop-liste { list-style: none; margin: 0; padding: 0; max-height: min(220px, 38dvh); overflow: auto; overscroll-behavior: contain; }

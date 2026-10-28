@@ -8,6 +8,9 @@
  * die Orte aus dem Ideen-Katalog dazu (eckige, gestrichelte Marker);
  * Eingeplantes steht wie ein Termin an seinem Tag.
  *
+ * Mit Bezugspunkt (standort.js) steht er als eigener Punkt darauf, mit dem
+ * Umkreis aus dem Programm als Kreis.
+ *
  * Leaflet (vendor/leaflet, im Offline-Vorrat) lädt erst, wenn der Reiter das
  * erste Mal aufgeht. Die Kacheln kommen von tile.openstreetmap.org und
  * brauchen Netz – alles andere hier nicht.
@@ -18,7 +21,9 @@
  */
 import { esc, anzahl } from './text.js';
 import { plusTage, montag } from './zeit.js';
-import { termineAm, laufendZwischen, filterAn, letzterTag } from './filter.js';
+import { termineAm, laufendZwischen, letzterTag, filterFuer, umkreisAn } from './filter.js';
+import { filterHinweis } from './ansicht-kalender.js';
+import { knopfName } from './standort.js';
 import { eintragTermin, eintragLaufend, merkeEintrag, bockKnopf, wannKurz } from './karte.js';
 import { meinBock } from './speicher.js';
 import { andere, treffer } from './gemeinsam.js';
@@ -84,7 +89,7 @@ function zeitraum(raum, heute, p, plaene) {
  * der Ideen, je Ort ein Eintrag.
  */
 export function eintraegeFuerKarte(p, st, heute, raum, ideen = []) {
-  const f = st.filter;
+  const f = filterFuer(st);
   const plaene = geplante(st);
   const [von, bis] = zeitraum(raum, heute, p, plaene);
   const liste = [];
@@ -161,7 +166,7 @@ export function landkarteGeruest(st, raum) {
       ${ZEITRAEUME.map(([k, text]) => `<button type="button" class="schalter" data-raum="${k}" aria-pressed="${raum === k}">${text}</button>`).join('')}
       <button type="button" class="schalter ideen-schalter" data-aktion="karte-ideen" aria-pressed="${Boolean(st.karteIdeen)}">💡 Ideen</button>
     </div>
-    ${filterAn(st.filter) ? '<p class="fein">Filter aus dem Programm sind aktiv. <button type="button" class="textknopf" data-aktion="filter-weg">Alle zeigen</button></p>' : ''}
+    ${filterHinweis(st)}
   </header>
   <div class="landkarte" id="landkarte" role="region" aria-label="Karte"></div>
   <p class="fein karte-fuss" id="karte-fuss"></p>`;
@@ -169,6 +174,7 @@ export function landkarteGeruest(st, raum) {
 
 let karteL = null;
 let ebene = null;
+let bezugEbene = null; // Bezugspunkt und Umkreis – nicht in den Haufen
 let letzterRaum = '';
 const marker = [];
 
@@ -216,6 +222,7 @@ export async function landkarteZeichnen(p, st, heute, raum, ideen = []) {
         });
       },
     }).addTo(karteL);
+    bezugEbene = L.layerGroup().addTo(karteL);
     karteL.setView([53.55, 10.0], 10);
     letzterRaum = '';
   }
@@ -223,6 +230,18 @@ export async function landkarteZeichnen(p, st, heute, raum, ideen = []) {
   marker.length = 0;
   const eintraege = eintraegeFuerKarte(p, st, heute, raum, ideen);
   const gruppen = gruppieren(eintraege);
+  // Der Bezugspunkt (Gerät oder Adresse) als eigener Punkt, mit dem Umkreis als Kreis.
+  const f = filterFuer(st);
+  bezugEbene.clearLayers();
+  let kreis = null;
+  if (f.bezug) {
+    const name = st.standort.art === 'geraet' ? 'Du' : knopfName(st.standort.name, 24);
+    L.marker(f.bezug, {
+      icon: L.divIcon({ className: 'bezug-huelle', html: `<span class="bezug-punkt"></span><span class="bezug-schild">${esc(name)}</span>`, iconSize: [18, 18], iconAnchor: [9, 9] }),
+      interactive: false, keyboard: false, zIndexOffset: 1000, title: name,
+    }).addTo(bezugEbene);
+    if (umkreisAn(f)) kreis = L.circle(f.bezug, { radius: f.umkreis * 1000, className: 'umkreis', weight: 2, fillOpacity: 0.06, interactive: false }).addTo(bezugEbene);
+  }
   const neue = gruppen.map((g) => {
     const m = L.marker(g.geo, { icon: pinIcon(L, g), title: g.eintraege[0].ort || '', gruppe: g })
       .bindPopup(() => popup(g), { maxWidth: 280, minWidth: 210, autoPanPadding: [12, 12], keepInView: true });
@@ -233,17 +252,19 @@ export async function landkarteZeichnen(p, st, heute, raum, ideen = []) {
   if (raum !== letzterRaum) {
     // Das meiste liegt in Hamburg. Ein Rahmen um alles (bis Kiel und Soltau)
     // drückte die Stadt auf ein paar Haufen zusammen – also erst Hamburg,
-    // das Umland ist einen Fingerzug entfernt.
+    // das Umland ist einen Fingerzug entfernt. Mit Umkreis zeigt die Karte
+    // ihn ganz; mit Bezugspunkt liegt der mit im Rahmen.
     const hh = gruppen.filter((g) => g.eintraege.some((x) => x.region === 'HH'));
-    const rahmen = hh.length ? hh : gruppen;
-    if (rahmen.length) karteL.fitBounds(L.latLngBounds(rahmen.map((g) => g.geo)), { padding: [24, 24], maxZoom: 14 });
+    const rahmen = (hh.length ? hh : gruppen).map((g) => g.geo).concat(f.bezug ? [f.bezug] : []);
+    if (kreis) karteL.fitBounds(kreis.getBounds(), { padding: [16, 16] });
+    else if (rahmen.length) karteL.fitBounds(L.latLngBounds(rahmen), { padding: [24, 24], maxZoom: 14 });
     letzterRaum = raum;
   }
   const ohne = eintraege.filter((x) => !x.geo).length;
   const ideenOrte = eintraege.filter((x) => x.quelle === 'idee').length;
   const fuss = document.getElementById('karte-fuss');
   if (fuss) {
-    fuss.textContent = `${anzahl(eintraege.length - ohne, 'Eintrag', 'Einträge')} an ${anzahl(gruppen.length, 'Ort', 'Orten')}${ideenOrte ? `, davon ${ideenOrte} aus den Ideen` : ''}${ohne ? ` · ${ohne} ohne Ortsangabe nicht auf der Karte` : ''}`;
+    fuss.textContent = `${anzahl(eintraege.length - ohne, 'Eintrag', 'Einträge')} an ${anzahl(gruppen.length, 'Ort', 'Orten')}${ideenOrte ? `, davon ${ideenOrte} aus den Ideen` : ''}${ohne ? ` · ${ohne} ohne Ortsangabe nicht auf der Karte` : ''}${umkreisAn(f) ? ` · Termine bis ${f.umkreis} km` : ''}`;
   }
   setTimeout(() => karteL && karteL.invalidateSize(), 0);
 }

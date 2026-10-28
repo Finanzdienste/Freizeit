@@ -16,6 +16,7 @@ import { whatsappLink, kalenderZiel } from './teilen.js';
 import { WO } from './ideen.js';
 import { zeitZeile } from './zeiten.js';
 import { aktuell, meinBock } from './speicher.js';
+import { bezugVon, entfernung, entfernungText } from './standort.js';
 import {
   andere, rolle, gastgeberName, mitWem, treffer,
 } from './gemeinsam.js';
@@ -183,7 +184,9 @@ export function karte(eintrag, o = {}) {
   const uhr = zeitUnten
     ? [eintrag.zeit + (o.zeitText && /\d$/.test(eintrag.zeit || '') ? ' Uhr' : ''), o.zeitText ? eintrag.endeText : ''].filter(Boolean).join(', ')
     : '';
-  const unterzeile = [eintrag.ort, uhr, eintrag.kategorie].filter(Boolean).join(' · ');
+  // Mit Bezugspunkt steht die Entfernung (Luftlinie) gleich hinter dem Ort.
+  const km = entfernung(bezugVon(aktuell()), eintrag.geo);
+  const unterzeile = [eintrag.ort, km === null ? '' : entfernungText(km), uhr, eintrag.kategorie].filter(Boolean).join(' · ');
   // Zugeklappt nur, was beim Entscheiden hilft; der Rest nach dem Aufklappen.
   const wichtig = [
     eintrag.quelle === 'plan' ? marke('Eingeplant', 'plan') : '',

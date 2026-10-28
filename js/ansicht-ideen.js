@@ -23,8 +23,9 @@ import {
 import {
   karte, merkeEintrag, bockKnopf, werZeile, wannKurz, kopfzeile, istAuf, aufklappbar,
 } from './karte.js';
-import { meinBock } from './speicher.js';
+import { meinBock, aktuell } from './speicher.js';
 import { treffer, rolle, gastgeberName } from './gemeinsam.js';
+import { bezugVon, entfernung, entfernungText } from './standort.js';
 
 const EXTRA = [['drinnen', 'drinnen'], ['draussen', 'draußen'], ['kostenlos', 'kostenlos'], ['kurz', 'bis 2 Std.'], ['zuZweit', 'zu zweit']];
 const MIT_TEXT = { allein: 'allein', 'zu zweit': 'zu zweit', gruppe: 'in der Gruppe' };
@@ -103,7 +104,12 @@ export function ideeKarte(x, ctx, bereich) {
   const b = bil.get(x.schluessel);
   const wer = werZeile(x);
   const hier = `${bereich}|${x.schluessel}`;
-  const unter = [WO[x.wo], DAUER[x.dauer], x.mit.length ? mitText(x.mit) : ''].filter(Boolean).join(' · ');
+  // Mit Bezugspunkt: wie weit es bis zum nächsten der Orte ist („ab“, wenn es mehrere gibt).
+  const von = bezugVon(aktuell());
+  const weiten = x.orte.map((o) => entfernung(von, o.geo));
+  const bekannt = weiten.filter((k) => k !== null);
+  const naechster = bekannt.length ? `${bekannt.length > 1 ? 'ab ' : ''}${entfernungText(Math.min(...bekannt))}` : '';
+  const unter = [WO[x.wo], naechster, DAUER[x.dauer], x.mit.length ? mitText(x.mit) : ''].filter(Boolean).join(' · ');
   // Zugeklappt: Wirkung, Preis, eigene Idee, eine Saison, die gerade nicht ist –
   // der Rest nach dem Aufklappen.
   const saison = saisonText(x.saison) ? marke(`Saison ${saisonText(x.saison)}`, 'rand') : '';
@@ -120,8 +126,8 @@ export function ideeKarte(x, ctx, bereich) {
     ausserSaison ? '' : saison,
     x.hohwacht ? marke('Hohwacht-Kombi', 'hohwacht') : '',
   ].filter(Boolean).join('');
-  const orte = x.orte.length ? `<ul class="orte">${x.orte.map((o) => `<li>
-      ${o.link ? `<a href="${esc(o.link)}" target="_blank" rel="noopener">${esc(o.name)}</a>` : `<span class="ort-name">${esc(o.name)}</span>`}${o.teil ? ` <span class="teil">${esc(o.teil)}</span>` : ''}
+  const orte = x.orte.length ? `<ul class="orte">${x.orte.map((o, i) => `<li>
+      ${o.link ? `<a href="${esc(o.link)}" target="_blank" rel="noopener">${esc(o.name)}</a>` : `<span class="ort-name">${esc(o.name)}</span>`}${o.teil ? ` <span class="teil">${esc(o.teil)}</span>` : ''}${weiten[i] !== null ? ` <span class="teil">· ${entfernungText(weiten[i])}</span>` : ''}
       ${o.info ? `<div class="ort-info">${esc(o.info)}</div>` : ''}</li>`).join('')}</ul>` : '';
   const schnitt = b && b.bewertet ? BEWERTUNG[Math.round(b.summe / b.bewertet)][0] : '';
   const verlauf = b ? `<div class="verlauf">✓ ${b.n}× gemacht · zuletzt ${esc(vorZeit(b.zuletzt, heute))}${schnitt ? ` · ${schnitt}` : ''}${b.flow ? ` · ⚡ ${b.flow}× Flow` : ''}</div>` : '';

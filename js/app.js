@@ -25,6 +25,7 @@ import {
 } from './karte.js';
 import { istApple } from './teilen.js';
 import { pushEinschalten, pushAusschalten } from './push.js';
+import { geraetStandort, adresseSuchen, standortUi, UMKREISE } from './standort.js';
 import {
   planStarten, beitreten, codeLesen, zugangLesen, zugangUebernehmen, einladungAnsehen, abgleichen, umbenennen, verlassen,
   vergessen as planVergessen, wiederBeitreten, entfernen, neuesterAndererHaken, rolle,
@@ -217,6 +218,27 @@ async function kopieren(text, knopf) {
   }
 }
 
+/** Den Bezugspunkt übernehmen (standort.js) – nur hier auf dem Gerät. */
+function standortSetzen({ art, name, geo }) {
+  const st = aktuell();
+  st.standort = { art, name, geo, zeit: new Date().toISOString() };
+  Object.assign(standortUi, { fehler: '', treffer: [] });
+  if (art === 'adresse') standortUi.eingabe = '';
+  speichern();
+}
+
+/** Standort bestimmen oder Adresse suchen: solange es läuft, steht das da; ein Fehler als Satz. */
+function standortHolen(aufgabe, was) {
+  Object.assign(standortUi, { laeuft: was, fehler: '', treffer: [] });
+  zeichnen({ behalteScroll: true });
+  aufgabe()
+    .catch((e) => { standortUi.fehler = e && e.message ? e.message : 'Das hat nicht geklappt.'; })
+    .finally(() => {
+      standortUi.laeuft = '';
+      if (reiter === 'programm') zeichnen({ behalteScroll: true });
+    });
+}
+
 /** Nur eines der Felder unter „Wir“ ist offen. */
 function wirFeld(name) {
   const offen = ui[name];
@@ -252,7 +274,58 @@ function aktion(name, z) {
       zeichnen({ nachOben: true });
       break;
     case 'filter-weg':
-      st.filter = LEERER_FILTER();
+      // Die Reihenfolge ist kein Filter und bleibt; den Umkreis lässt nur
+      // „Alle Filter zurücksetzen“ im Filter-Feld stehen – er hat sein eigenes.
+      st.filter = {
+        ...LEERER_FILTER(),
+        nachEntfernung: st.filter.nachEntfernung,
+        umkreis: z.dataset.behalten === 'umkreis' ? st.filter.umkreis : 0,
+      };
+      speichern();
+      zeichnen({ behalteScroll: true });
+      break;
+    case 'standort-geraet':
+      standortHolen(() => geraetStandort().then((geo) => standortSetzen({ art: 'geraet', name: 'Dein Standort', geo })), 'geraet');
+      break;
+    case 'standort-suchen': {
+      const text = wert('#standort-adresse');
+      standortUi.eingabe = text;
+      if (!text) {
+        standortUi.fehler = 'Tipp eine Adresse oder einen Ort ein, etwa „Wandsbeker Marktstraße 1“ oder „Rahlstedt“.';
+        standortUi.treffer = [];
+        zeichnen({ behalteScroll: true });
+        break;
+      }
+      standortHolen(() => adresseSuchen(text).then((treffer) => {
+        if (!treffer.length) throw new Error(`Nichts gefunden für „${text}“. Mit Stadt probieren, etwa „${text}, Hamburg“.`);
+        if (treffer.length === 1) standortSetzen({ art: 'adresse', ...treffer[0] });
+        else standortUi.treffer = treffer;
+      }), 'suche');
+      break;
+    }
+    case 'standort-waehlen': {
+      const t = standortUi.treffer[Number(z.dataset.nr)];
+      if (t) standortSetzen({ art: 'adresse', ...t });
+      zeichnen({ behalteScroll: true });
+      break;
+    }
+    case 'standort-weg':
+      st.standort = null;
+      st.filter.umkreis = 0;
+      st.filter.nachEntfernung = false;
+      Object.assign(standortUi, { fehler: '', treffer: [], eingabe: '' });
+      speichern();
+      zeichnen({ behalteScroll: true });
+      break;
+    case 'umkreis': {
+      const km = Number(z.dataset.km);
+      st.filter.umkreis = UMKREISE.includes(km) ? km : 0;
+      speichern();
+      zeichnen({ behalteScroll: true });
+      break;
+    }
+    case 'reihenfolge':
+      st.filter.nachEntfernung = z.dataset.wert === 'entfernung';
       speichern();
       zeichnen({ behalteScroll: true });
       break;
@@ -626,6 +699,14 @@ document.addEventListener('keydown', (ev) => {
   if ((ev.key !== 'Enter' && ev.key !== ' ') || !ev.target.matches || !ev.target.matches('[data-auf]')) return;
   ev.preventDefault();
   ev.target.click();
+});
+
+// Enter im Adressfeld des Standorts sucht.
+document.addEventListener('keydown', (ev) => {
+  if (ev.key !== 'Enter' || !ev.target.matches || !ev.target.matches('#standort-adresse')) return;
+  ev.preventDefault();
+  const knopf = document.querySelector('[data-aktion="standort-suchen"]');
+  if (knopf && !knopf.disabled) knopf.click();
 });
 
 // Enter in einem Eingabefeld drückt den Hauptknopf daneben.

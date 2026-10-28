@@ -16,7 +16,7 @@ Vier Reiter:
 
 | Reiter | Inhalt |
 | --- | --- |
-| **Programm** | Vier Ansichten wie bei Google, der gewählte Tag gilt in allen: **Liste** – Woche für Woche zum Blättern: Highlights, Filter, Tag für Tag nach Uhrzeit (Eingeplantes oben am Tag), was gerade läuft, Hinweise; **Monat** – das Blatt mit der Zahl der Termine je Tag und Punkten, wer Bock hat; **Woche** – 7 bis 24 Uhr mit den belegten Zeiten des Gastgebers und Chips für Haken, Treffer und Eingeplantes; **Tag** – Zeitstreifen und alle Termine. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler und Eingeplantes |
+| **Programm** | Vier Ansichten wie bei Google, der gewählte Tag gilt in allen: **Liste** – Woche für Woche zum Blättern: Highlights, Filter, Standort (Entfernung, Umkreis, nach Nähe), Tag für Tag nach Uhrzeit (Eingeplantes oben am Tag), was gerade läuft, Hinweise; **Monat** – das Blatt mit der Zahl der Termine je Tag und Punkten, wer Bock hat; **Woche** – 7 bis 24 Uhr mit den belegten Zeiten des Gastgebers und Chips für Haken, Treffer und Eingeplantes; **Tag** – Zeitstreifen und alle Termine. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler und Eingeplantes |
 | **Karte** | OpenStreetMap, ein Marker je Ort (nahe zu Haufen zusammengefasst), Zeiträume von „Heute“ bis „Alles“ und „Mit Bock“, mit „💡 Ideen“ auch die Orte aus dem Ideen-Katalog |
 | **Ideen** | Alles ohne Termin: Eingeplantes, „Wollen wir mal“ (Ideen mit Bock), „Tut dir gut“, Filter nach Wirkung und Rahmen, der Katalog nach Kategorien, eigene Ideen |
 | **Wir** | Der gemeinsame Plan. Beim Gastgeber der Überblick: Zusammen, Wollen mit dir, Ohne dich, Pro Person, Deine Haken; Einladen, Weiteres Gerät, Auflösen. Bei den Eingeladenen: Du und Tobi, Tobi hat Bock auf, Deine Haken. Ohne Plan die eigene Bock-Liste |
@@ -29,7 +29,7 @@ Region, drinnen/draußen, Anreise, dazu **WhatsApp** (fertige Nachricht:
 Titel, Datum und Uhrzeit, Ort, Beschreibung, Preis, Anreise, Link),
 **Kalender** (auf dem iPhone eine .ics-Datei für den Kalender des Geräts,
 sonst ein ausgefüllter Termin in Google Kalender) und die **Quelle**.
-Highlights und Filter stecken genauso hinter einem Knopf, unter „Wir“ alles
+Highlights, Filter und Standort stecken genauso hinter einem Knopf, unter „Wir“ alles
 außer Einladen hinter **Mehr**. Konzerte der eigenen Künstler tragen
 „♫ Dein Künstler“, der Filter „♫ Meine Künstler“ zeigt nur sie.
 
@@ -51,6 +51,32 @@ und Ausstellungen sind zum Kommen und Gehen – dort reicht ein Beginn bis
 
 Gerechnet wird in `js/zeit.js` und `js/filter.js`, geprüft in
 `tests/test-programm.mjs`.
+
+## Standort und Entfernung
+
+Im Programm steht neben „Filter“ der Knopf **📍 Standort**. Darin wählt man
+einen Bezugspunkt: **Mein Standort** (der Browser fragt einmal um Erlaubnis)
+oder eine eingetippte **Adresse oder Ort** – gesucht wird erst auf „Suchen“
+oder Enter, bei OpenStreetMap (Nominatim, nur Deutschland, Hamburg und
+Umgebung zuerst); bei mehreren Treffern tippt man den richtigen an. Dann:
+
+- An jeder Karte steht die Entfernung gleich hinter dem Ort („Thalia ·
+  300 m · Bühne“), bei Ideen die zum nächsten ihrer Orte („ab 800 m“).
+- **Umkreis** (alle · 2 · 5 · 10 · 25 · 50 km) blendet Fernes aus – in der
+  Liste, in Monat, Woche und Tag und auf der Karte; was keine Koordinaten
+  hat, fällt dann mit weg. Der Knopf zeigt ihn („📍 Wandsbek Markt · 5 km“),
+  die Kalenderansichten und die Karte sagen „nur bis 5 km um …“, und „Alle
+  zeigen“ nimmt ihn zurück.
+- **Reihenfolge am Tag: Entfernung** stellt das Nächste nach oben (Eingeplantes
+  bleibt oben), auch unter „Läuft gerade“ und in der Tagesansicht.
+- Auf der Karte steht der Bezugspunkt als dunkler Punkt („Du“ bzw. der Name
+  der Adresse), mit Umkreis als gestrichelter Kreis.
+
+Entfernungen sind Luftlinie. Der Bezugspunkt liegt nur im Speicher des Geräts
+(`standort` in `freizeit.stand.v1`) und geht nie an den Server des
+gemeinsamen Plans; zu OpenStreetMap geht nur eine eingetippte Adresse.
+„Löschen“ nimmt Bezugspunkt, Umkreis und Reihenfolge zurück. Rechnen und
+Suchen tut `js/standort.js`, geprüft in `tests/test-standort.mjs`.
 
 ## Ideen
 
@@ -417,6 +443,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `js/zeiten-rechnen.js` | aus Kalenderterminen belegte Blöcke je Woche (Browser und Node) |
 | `werkzeug/zeiten-senden.mjs` | schickt die Zeiten an den Plan – für eine geplante Aufgabe |
 | `js/push.js` | Push-Mitteilungen für den Gastgeber: Abo holen, beim Server an- und abmelden |
+| `js/standort.js` | Bezugspunkt für Entfernungen: Gerätestandort, Adresssuche (Nominatim), Luftlinie, „3,2 km“ |
 | `supabase/functions/freizeit-push/` | die Edge Function: offene Nachrichten holen, verschlüsseln, an die Push-Dienste schicken |
 | `werkzeug/push-buendeln.mjs` | die Function als eine Datei fürs Dashboard |
 | `js/config.js` | Adresse und öffentlicher Schlüssel des Servers |
@@ -445,6 +472,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `test-zeiten-senden.mjs` | das Werkzeug gegen einen nachgebauten Server |
 | `test-sql.mjs` | `supabase/gemeinsam.sql` in PGlite: über der ersten Fassung, Rollen und was wer sieht, Schlüssel, Funktionen, Rechte, Grenzen, Push (Abos, was gemeldet wird, Abholen, VAPID-Paar) |
 | `test-push.mjs` | Push in der App: anschalten, was der Server sammelt, ausschalten, ohne Erlaubnis, iPhone im Browser |
+| `test-standort.mjs` | Standort und Adresse als Bezugspunkt: Entfernung an den Karten, Umkreis in allen Ansichten und auf der Karte, Reihenfolge nach Nähe, Ideen, Löschen, Neuladen, nichts davon zum Server |
 | `test-push-senden.mjs` | die Edge Function in Node: VAPID-Token, Verschlüsselung (ein nachgebautes Gerät liest sie), Texte, ein Durchlauf |
 
 Die Browsertests laufen gegen feste Testdaten und einen nachgebauten Server

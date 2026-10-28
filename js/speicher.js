@@ -12,10 +12,18 @@
  * ist jetzt ein eigener Bock-Haken.
  */
 
+import { UMKREISE, standortPruefen } from './standort.js';
+
 export const SCHLUESSEL = 'freizeit.stand.v1';
 
+/**
+ * Filter im Programm. umkreis (km, 0 = alle) gilt nur mit Bezugspunkt
+ * (standort, siehe unten); nachEntfernung ist kein Filter, sondern die
+ * Reihenfolge am Tag – „Alle zeigen“ lässt sie stehen.
+ */
 export const LEERER_FILTER = () => ({
   region: '', kategorie: '', kostenlos: false, feierabend: false, drinnen: false, draussen: false, hohwacht: false, kuenstler: false,
+  umkreis: 0, nachEntfernung: false,
 });
 
 /** Filter im Reiter Ideen: Wirkungen (alle müssen passen), wo, und Schalter. */
@@ -56,13 +64,24 @@ const LEER = () => ({
   hilfeWeg: false,
   // Push-Mitteilungen auf diesem Gerät an (push.js): { code, endpunkt } oder null
   push: null,
+  // Bezugspunkt für Entfernungen (standort.js) – nur auf diesem Gerät:
+  // { art: 'geraet' | 'adresse', name, geo: [lat, lon], zeit } oder null
+  standort: null,
 });
+
+/** Ein gespeicherter Filter mit allen Feldern, der Umkreis eine der erlaubten Weiten. */
+function filterPruefen(roh) {
+  const f = { ...LEERER_FILTER(), ...(roh && typeof roh === 'object' ? roh : {}) };
+  f.umkreis = UMKREISE.includes(Number(f.umkreis)) ? Number(f.umkreis) : 0;
+  f.nachEntfernung = f.nachEntfernung === true;
+  return f;
+}
 
 let stand = LEER();
 
 function ausErsterFassung(roh) {
   const st = LEER();
-  st.filter = { ...st.filter, ...(roh.filter || {}) };
+  st.filter = filterPruefen(roh.filter);
   for (const m of Array.isArray(roh.merkliste) ? roh.merkliste : []) {
     if (m && m.schluessel && m.titel) st.bock[m.schluessel] = { ...schnappschuss(m), gesetzt: m.gemerktAm || '' };
   }
@@ -81,12 +100,13 @@ export function laden() {
       stand = {
         ...leer,
         ...roh,
-        filter: { ...leer.filter, ...(roh.filter || {}) },
+        filter: filterPruefen(roh.filter),
         ideenFilter: { ...leer.ideenFilter, ...(roh.ideenFilter || {}) },
         verlauf: Array.isArray(roh.verlauf) ? roh.verlauf.filter((v) => v && typeof v.schluessel === 'string') : [],
         gesehen: { ...leer.gesehen, ...(roh.gesehen || {}) },
         bock: roh.bock && typeof roh.bock === 'object' ? roh.bock : {},
         warteschlange: Array.isArray(roh.warteschlange) ? roh.warteschlange : [],
+        standort: standortPruefen(roh.standort),
       };
     }
   } catch { /* ohne Gedächtnis weiter */ }

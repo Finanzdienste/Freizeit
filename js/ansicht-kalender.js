@@ -21,7 +21,8 @@ import {
   monatsRaster, monatVon, monatPlus, monatJahr, datumMitTag, montag, plusTage, kalenderwoche, wochentagKurz, tagMonat,
   beginn, ende, zeitAm, uhrzeit, jetztMinuten,
 } from './zeit.js';
-import { termineAm, laufendZwischen, letzterTag, filterAn } from './filter.js';
+import { termineAm, laufendZwischen, letzterTag, filterAn, filterFuer, umkreisAn } from './filter.js';
+import { knopfName } from './standort.js';
 import { karte, eintragTermin, merkeEintrag } from './karte.js';
 import { meinBock } from './speicher.js';
 import { andere, treffer as istTreffer, rolle, gastgeberName } from './gemeinsam.js';
@@ -151,7 +152,7 @@ function wochenAnsicht(p, st, heute, mo, plaene) {
   const n = esc(gastgeberName() || 'der Gastgeber');
   return `<div class="woche-raster" role="grid" aria-label="Woche ab ${esc(tagMonat(mo))}">
     <div class="wo-rail"><div class="wo-kopf leer"></div><div class="wo-ganz"></div><div class="wo-zeit">${stunden.join('')}</div></div>
-    ${tage.map((d) => wochenSpalte(p, d, st.filter, plaene, heute)).join('')}
+    ${tage.map((d) => wochenSpalte(p, d, filterFuer(st), plaene, heute)).join('')}
   </div>
   <div class="legende">
     ${zeiten ? `<span><i class="feld-mini belegt"></i> ${rolle() === 'gastgeber' ? 'du bist belegt (Kalender)' : `${n} ist belegt`}</span>` : ''}
@@ -162,9 +163,10 @@ function wochenAnsicht(p, st, heute, mo, plaene) {
 
 function monatsAnsicht(p, st, heute, monat, plaene) {
   const raster = monatsRaster(monat);
+  const f = filterFuer(st);
   const felder = raster.map((d) => {
     const imMonat = monatVon(d) === monat;
-    const { eintraege } = tagesEintraege(p, d, st.filter, plaene);
+    const { eintraege } = tagesEintraege(p, d, f, plaene);
     const { wer, treffer } = punkte(eintraege);
     const klassen = ['feld', imMonat ? '' : 'fremd', d < heute ? 'vorbei' : '', d === heute ? 'heute' : '', d > p.bis ? 'ohne' : '', treffer ? 'treffer' : '']
       .filter(Boolean).join(' ');
@@ -182,8 +184,9 @@ function monatsAnsicht(p, st, heute, monat, plaene) {
 }
 
 function tagesAnsicht(p, st, tag, plaene) {
-  const { tag: t, spaet, eintraege } = tagesEintraege(p, tag, st.filter, plaene);
-  const laufend = laufendZwischen(p, tag, tag, st.filter);
+  const f = filterFuer(st);
+  const { tag: t, spaet, eintraege } = tagesEintraege(p, tag, f, plaene);
+  const laufend = laufendZwischen(p, tag, tag, f);
   const wichtig = eintraege.filter(zaehlt);
   const marker = wichtig.map((e) => ({ e, s: spanne(e) })).filter((x) => x.s)
     .map(({ e, s }) => `<i class="marker ${chipKlasse(e)}" style="left:${prozent(s[0])};width:calc(${prozent(s[1])} - ${prozent(s[0])})" title="${esc(`${uhrzeit(s[0])} ${e.titel}`)}"></i>`).join('');
@@ -207,6 +210,19 @@ function tagesAnsicht(p, st, tag, plaene) {
     ${eintraege.length ? eintraege.map((e) => karte(e, { zeitSpalte: true })).join('')
     : `<div class="leer-klein">${tag > p.bis ? 'Für diesen Tag gibt es noch kein Programm – nur Konzerte deiner Künstler und Eingeplantes stehen schon fest.' : 'Keine Termine für diese Filter.'}</div>`}
   </section>`;
+}
+
+/**
+ * „Filter aus dem Programm sind aktiv“ – mit dem Umkreis, wenn er gilt.
+ * Auch für die Karte (ansicht-landkarte.js).
+ */
+export function filterHinweis(st) {
+  const f = filterFuer(st);
+  if (!filterAn(f)) return '';
+  // „um deinen Standort“ bzw. „um Wandsbek Markt“ – den Umkreis gibt es nur mit Bezugspunkt.
+  const wo = () => (st.standort.art === 'geraet' ? 'deinen Standort' : esc(knopfName(st.standort.name, 28)));
+  const um = umkreisAn(f) ? ` – nur bis ${f.umkreis} km um ${wo()}` : '';
+  return `<p class="fein">Filter aus dem Programm sind aktiv${um}. <button type="button" class="textknopf" data-aktion="filter-weg">Alle zeigen</button></p>`;
 }
 
 /**
@@ -244,7 +260,7 @@ export function kalenderAnsicht(p, st, heute, ui) {
       <h2 class="monatstitel${ansicht === 'monat' ? '' : ' klein'}">${esc(titel)}</h2>
       <button type="button" class="pfeil" data-aktion="kal-vor" data-datum="${esc(vor)}" aria-label="Weiter"${vor ? '' : ' disabled'}>›</button>
     </div>
-    ${filterAn(st.filter) ? '<p class="fein">Filter aus dem Programm sind aktiv. <button type="button" class="textknopf" data-aktion="filter-weg">Alle zeigen</button></p>' : ''}
+    ${filterHinweis(st)}
   </header>`;
 
   if (ansicht === 'woche') return `${kopf}${wochenAnsicht(p, st, heute, mo, plaene)}`;

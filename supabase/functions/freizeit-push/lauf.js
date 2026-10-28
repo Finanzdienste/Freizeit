@@ -17,15 +17,20 @@ import { senden, b64url, schluesselpaar } from './webpush.js';
 /** Wen ein Push-Dienst anschreiben kann, wenn etwas klemmt (RFC 8292, sub). */
 export const SUBJECT = 'https://finanzdienste.github.io/Freizeit/';
 
-/** Die Funktionen bei Supabase, die nur der Betreiber-Schlüssel aufrufen darf. */
+/**
+ * Die Funktionen bei Supabase, die nur der Betreiber-Schlüssel aufrufen darf.
+ * Eine Funktion ohne Rückgabe (freizeit_push_fertig) beantwortet PostgREST
+ * mit leerem Körper (204) – das ist null, kein Fehler.
+ */
 async function rpc(url, schluessel, name, body, holen) {
   const r = await holen(`${url}/rest/v1/rpc/${name}`, {
     method: 'POST',
     headers: { apikey: schluessel, Authorization: `Bearer ${schluessel}`, 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   });
-  if (!r.ok) throw new Error(`${name}: ${r.status} ${(await r.text()).slice(0, 200)}`);
-  return r.json();
+  const text = await r.text();
+  if (!r.ok) throw new Error(`${name}: ${r.status} ${text.slice(0, 200)}`);
+  return text.trim() ? JSON.parse(text) : null;
 }
 
 /**
@@ -55,27 +60,32 @@ async function thema(tag) {
  * @param {string} o.schluessel  service_role
  * @param {object} [o.vapid]     { oeffentlich, privat, subject } – sonst aus der Datenbank
  * @param {Function} [o.holen]   fetch
- * @returns {{ nachrichten, mitteilungen, gesendet, fehler, tot }}
+ * @returns {{ nachrichten, mitteilungen, gesendet, fehler, tot, versuche }}
  */
 export async function lauf({ url, schluessel, vapid = null, holen = fetch }) {
   const liste = await rpc(url, schluessel, 'freizeit_push_offen', {}, holen);
-  if (!liste.length) return { nachrichten: 0, mitteilungen: 0, gesendet: 0, fehler: [], tot: 0 };
+  if (!liste.length) return { nachrichten: 0, mitteilungen: 0, gesendet: 0, fehler: [], tot: 0, versuche: [] };
   if (!vapid) vapid = await vapidHolen({ url, schluessel, holen });
   const alle = mitteilungen(liste);
   const tot = new Set();
   let gesendet = 0;
   const fehler = [];
+  // Je Versuch eine Zeile fürs Protokoll: Push-Dienst und sein Status.
+  const versuche = [];
   for (const m of alle) {
     const text = JSON.stringify({ titel: m.titel, text: m.text, tag: m.tag, url: m.url });
     const topic = await thema(m.tag);
     for (const abo of m.abos) {
       if (!abo || typeof abo.endpoint !== 'string' || tot.has(abo.endpoint)) continue;
+      const dienst = new URL(abo.endpoint).host;
       try {
         const status = await senden(abo, text, vapid, { topic, holen });
+        versuche.push(`${dienst} ${status}`);
         if (status === 201 || status === 200) gesendet++;
         else if (status === 404 || status === 410) tot.add(abo.endpoint);
-        else fehler.push(`${status} ${new URL(abo.endpoint).host}`);
+        else fehler.push(`${status} ${dienst}`);
       } catch (e) {
+        versuche.push(`${dienst} ${String(e && e.message ? e.message : e).slice(0, 60)}`);
         fehler.push(String(e && e.message ? e.message : e).slice(0, 120));
       }
     }
@@ -84,5 +94,5 @@ export async function lauf({ url, schluessel, vapid = null, holen = fetch }) {
   if (ids.length || tot.size) {
     await rpc(url, schluessel, 'freizeit_push_fertig', { p_ids: ids, p_tot: [...tot] }, holen);
   }
-  return { nachrichten: liste.length, mitteilungen: alle.length, gesendet, fehler, tot: tot.size };
+  return { nachrichten: liste.length, mitteilungen: alle.length, gesendet, fehler, tot: tot.size, versuche };
 }

@@ -140,16 +140,22 @@ const offen = [
 ];
 const supabase = [];
 anfragen.length = 0;
+// PostgREST, nachgebaut: jsonb kommt als Text, eine Funktion ohne Rückgabe als 204 mit leerem Körper –
+// json() würde dann werfen, wie in Deno.
+const postgrest = (wert) => (wert === undefined
+  ? { ok: true, status: 204, text: async () => '', json: async () => { throw new SyntaxError('Unexpected end of JSON input'); } }
+  : { ok: true, status: 200, text: async () => JSON.stringify(wert), json: async () => wert });
 const holen2 = async (url, init) => {
   if (url.startsWith('https://db.example.org/rest/v1/rpc/')) {
     supabase.push({ name: url.split('/').pop(), init });
-    return { ok: true, status: 200, json: async () => (url.endsWith('freizeit_push_offen') ? offen : null), text: async () => '' };
+    return postgrest(url.endsWith('freizeit_push_offen') ? offen : undefined);
   }
   return holen(url, init);
 };
 const ergebnis = await lauf({ url: 'https://db.example.org', schluessel: 'dienst', vapid, holen: holen2 });
-check(gleich(ergebnis, { nachrichten: 3, mitteilungen: 2, gesendet: 2, fehler: ['500 push.example.org', '500 push.example.org'], tot: 1 }),
-  `lauf: drei Nachrichten, zwei Mitteilungen, an Gerät 1 zweimal zugestellt, Gerät 2 tot, Gerät 3 kaputt (${JSON.stringify(ergebnis)})`);
+check(gleich(ergebnis, { nachrichten: 3, mitteilungen: 2, gesendet: 2, fehler: ['500 push.example.org', '500 push.example.org'], tot: 1,
+  versuche: ['push.example.org 201', 'push.example.org 410', 'push.example.org 500', 'push.example.org 201', 'push.example.org 500'] }),
+  `lauf: drei Nachrichten, zwei Mitteilungen, an Gerät 1 zweimal zugestellt, Gerät 2 tot, Gerät 3 kaputt – und jeder Versuch im Protokoll (${JSON.stringify(ergebnis)})`);
 check(supabase[0].name === 'freizeit_push_offen' && supabase[0].init.headers.apikey === 'dienst' && supabase[0].init.headers.Authorization === 'Bearer dienst'
   && supabase[0].init.body === '{}' && supabase[0].init.method === 'POST',
   'erst freizeit_push_offen, mit dem Betreiber-Schlüssel als apikey und Bearer');
@@ -163,8 +169,8 @@ for (const x of an1) texte.push(JSON.parse((await entschluesseln(x.init.body, g1
 check(gleich(texte.map((t) => t.titel), ['Kim: 2 Neuigkeiten', 'Jo hat Bock – ohne dich']) && texte.every((t) => t.url === './#wir' && t.tag.startsWith('freizeit:r1:')),
   'entschlüsselt: die beiden Mitteilungen als JSON mit titel, text, tag und url');
 check(an1[0].init.headers.Topic !== an1[1].init.headers.Topic && /^[A-Za-z0-9_-]{32}$/.test(an1[0].init.headers.Topic), 'je Mitteilung ein eigenes Topic, 32 Zeichen base64url');
-const leer = await lauf({ url: 'https://db.example.org', schluessel: 'dienst', holen: async (url, init) => (url.endsWith('freizeit_push_offen') ? { ok: true, status: 200, json: async () => [], text: async () => '' } : (supabase.push({ name: 'falsch', init }), { ok: true, status: 200, json: async () => null, text: async () => '' })) });
-check(gleich(leer, { nachrichten: 0, mitteilungen: 0, gesendet: 0, fehler: [], tot: 0 }) && supabase.length === 2, 'nichts offen: nichts geschickt, kein fertig, kein Schlüssel geholt');
+const leer = await lauf({ url: 'https://db.example.org', schluessel: 'dienst', holen: async (url, init) => (url.endsWith('freizeit_push_offen') ? postgrest([]) : (supabase.push({ name: 'falsch', init }), postgrest(null))) });
+check(gleich(leer, { nachrichten: 0, mitteilungen: 0, gesendet: 0, fehler: [], tot: 0, versuche: [] }) && supabase.length === 2, 'nichts offen: nichts geschickt, kein fertig, kein Schlüssel geholt');
 
 // --------------------------------------------------- Schlüssel aus der Datenbank
 let abgelegt = null;
@@ -172,14 +178,14 @@ const db = async (url, init) => {
   if (!url.includes('/rest/v1/rpc/')) return holen(url, init);
   const name = url.split('/').pop();
   supabase.push({ name, init });
-  if (name === 'freizeit_push_schluessel') return { ok: true, status: 200, json: async () => abgelegt, text: async () => '' };
+  if (name === 'freizeit_push_schluessel') return postgrest(abgelegt);
   if (name === 'freizeit_push_schluessel_setzen') {
     const b = JSON.parse(init.body);
     if (!abgelegt) abgelegt = { oeffentlich: b.p_oeffentlich, privat: b.p_privat };
-    return { ok: true, status: 200, json: async () => abgelegt, text: async () => '' };
+    return postgrest(abgelegt);
   }
-  if (name === 'freizeit_push_offen') return { ok: true, status: 200, json: async () => [offen[0]], text: async () => '' };
-  if (name === 'freizeit_push_fertig') return { ok: true, status: 200, json: async () => null, text: async () => '' };
+  if (name === 'freizeit_push_offen') return postgrest([offen[0]]);
+  if (name === 'freizeit_push_fertig') return postgrest(undefined);
   return holen(url, init);
 };
 supabase.length = 0;
@@ -197,7 +203,7 @@ const ausweis = anfragen[0].init.headers.Authorization.match(/k=(\S+)$/)[1];
 check(mitDb.gesendet === 1 && ausweis === v1.oeffentlich && gleich(supabase.map((x) => x.name), ['freizeit_push_offen', 'freizeit_push_schluessel', 'freizeit_push_fertig']),
   'lauf ohne vapid: holt das Paar aus der Datenbank und weist sich damit aus');
 let ohnePaar = null;
-try { await vapidHolen({ url: 'https://db.example.org', schluessel: 'dienst', holen: async () => ({ ok: true, status: 200, json: async () => ({ oeffentlich: 'x' }), text: async () => '' }) }); } catch (e) { ohnePaar = e.message; }
+try { await vapidHolen({ url: 'https://db.example.org', schluessel: 'dienst', holen: async () => postgrest({ oeffentlich: 'x' }) }); } catch (e) { ohnePaar = e.message; }
 check(ohnePaar === 'kein VAPID-Schlüsselpaar', 'kommt kein brauchbares Paar zurück, bricht es ab');
 let kaputterServer = null;
 try { await lauf({ url: 'https://db.example.org', schluessel: 'dienst', vapid, holen: async () => ({ ok: false, status: 401, text: async () => 'Invalid API key', json: async () => null }) }); } catch (e) { kaputterServer = e.message; }

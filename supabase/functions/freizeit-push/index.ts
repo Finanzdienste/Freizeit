@@ -31,6 +31,8 @@ Deno.serve(async (req: Request) => {
       return antwort({ oeffentlich });
     }
     const ergebnis = await lauf({ url, schluessel });
+    // Jeder Lauf eine Zeile im Protokoll (Supabase → Edge Functions → Logs): was raus ging und was die Dienste sagten.
+    if (ergebnis.nachrichten) console.log('freizeit-push:', JSON.stringify(ergebnis));
     if (ergebnis.fehler.length) console.warn('freizeit-push:', ergebnis.fehler.join(' | '));
     return antwort(ergebnis);
   } catch (e) {

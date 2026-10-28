@@ -158,6 +158,35 @@ Geburtstage), rechnet seine Arbeitszeit Mo–Fr dazu und ruft das Werkzeug
 mit seinem Zugang als Gastgeber auf. `--sql` gibt stattdessen die
 SQL-Anweisung für einen Lauf mit Datenbankzugang aus.
 
+**Bescheid sagen (Push):** Unter „Wir“ schaltet der Gastgeber mit „🔔
+Bescheid sagen“ Push-Mitteilungen ein – auch bei geschlossener App: „Kim
+ist dabei“, „Kim hat Bock – mit dir: Theater früh · Di 3.11., 19:00 Uhr“,
+„Kim ist doch nicht dabei“ (ein zurückgenommenes „mit dir“), „Kim hat den
+Plan verlassen“; mehrere Haken derselben Person kurz nacheinander werden
+eine Mitteilung. Die eigenen Haken des Gastgebers melden nichts, ein
+zurückgenommenes „ohne dich“ auch nicht. Technisch: `js/push.js` holt sich
+vom Browser ein Web-Push-Abo und legt es über `freizeit_push` beim Server ab
+(nur der Gastgeber, bis zu fünf Geräte je Plan). Die vier Funktionen
+schreiben, was zu melden ist, in `freizeit_nachricht` – nur solange ein Abo
+im Plan liegt –, und ein Trigger ruft über `pg_net` die **Edge Function
+`freizeit-push`** ([`supabase/functions/freizeit-push`](supabase/functions/freizeit-push)).
+Die holt alles Offene mit dem Betreiber-Schlüssel ab, verschlüsselt es
+selbst (RFC 8291, VAPID nach RFC 8292, nur WebCrypto, ohne Bibliothek) und
+schickt es an die Push-Dienste; `sw.js` zeigt die Mitteilung, ein Tipp
+öffnet „Wir“. Ihr VAPID-Schlüsselpaar erzeugt die Function beim ersten Lauf
+selbst und legt es in `freizeit_einstellung` ab; den öffentlichen Teil gibt
+sie der App per GET. Geheimnisse von Hand braucht es keine. Einrichten: den
+SQL-Block einspielen (unten) und die Function deployen – mit der CLI
+(`supabase functions deploy freizeit-push --no-verify-jwt`) oder im
+Dashboard als eine Datei: `node werkzeug/push-buendeln.mjs > index.ts`,
+einfügen, „Enforce JWT verification“ aus. Zugestellt ist, was einmal
+versucht wurde; tote Abos (404, 410) räumt die Function weg, Nachrichten
+älter als ein Tag gelten als erledigt. Geprüft: `tests/test-push.mjs`
+(App, mit nachgebautem Push-Dienst), `tests/test-push-senden.mjs` (die
+Function in Node: ein nachgebautes Gerät entschlüsselt, der Push-Dienst
+prüft die Unterschrift) und `tests/test-sql.mjs`. Auf dem iPhone geht Push
+erst in der App vom Home-Bildschirm.
+
 **iPhone:** Die App auf dem Home-Bildschirm hat einen eigenen Speicher,
 getrennt von Safari – sie kennt den Link nicht. Deshalb zeigt die Einladung
 in Safari den Weg zum Home-Bildschirm und den Code; in der App fügt man ihn
@@ -170,7 +199,8 @@ wieder ein. „Wieder beitreten“ oder „Plan vergessen“ entscheidet man sel
 
 **Server:** das Supabase-Projekt der Workout-App (`js/config.js`). Die
 Tabellen sind für den öffentlichen Schlüssel gesperrt; erreichbar sind nur
-vier Funktionen, und die entscheiden selbst, wer was zu sehen bekommt.
+fünf Funktionen (vier für den Plan, `freizeit_push` für die Mitteilungen),
+und die entscheiden selbst, wer was zu sehen bekommt.
 Einrichten: den Block aus [`supabase/gemeinsam.sql`](supabase/gemeinsam.sql)
 in *Supabase → SQL Editor* einfügen und ausführen. Der Block ist wiederholbar
 und läuft auch über der ersten Fassung (zwei Tabellen, jeder sah alles):
@@ -386,6 +416,9 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `js/zeiten.js` | die belegten Zeiten des Gastgebers: lesen, prüfen, die Zeile an der Karte |
 | `js/zeiten-rechnen.js` | aus Kalenderterminen belegte Blöcke je Woche (Browser und Node) |
 | `werkzeug/zeiten-senden.mjs` | schickt die Zeiten an den Plan – für eine geplante Aufgabe |
+| `js/push.js` | Push-Mitteilungen für den Gastgeber: Abo holen, beim Server an- und abmelden |
+| `supabase/functions/freizeit-push/` | die Edge Function: offene Nachrichten holen, verschlüsseln, an die Push-Dienste schicken |
+| `werkzeug/push-buendeln.mjs` | die Function als eine Datei fürs Dashboard |
 | `js/config.js` | Adresse und öffentlicher Schlüssel des Servers |
 | `js/ansicht-*.js` | die vier Reiter – `ansicht-programm.js` die Liste, `ansicht-kalender.js` Monat, Woche und Tag |
 | `supabase/gemeinsam.sql` | Tabellen und Funktionen für den gemeinsamen Plan |
@@ -410,7 +443,9 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `test-zeiten.mjs` | Zeiten des Gastgebers: an den Karten (frei/verplant), in Woche und Tag als Blöcke, nirgends als Eintrag |
 | `test-zeiten-rechnen.mjs` | Blöcke je Woche: Zeitzone, Mitternacht, Wochenwechsel, Zeitumstellung |
 | `test-zeiten-senden.mjs` | das Werkzeug gegen einen nachgebauten Server |
-| `test-sql.mjs` | `supabase/gemeinsam.sql` in PGlite: über der ersten Fassung, Rollen und was wer sieht, Schlüssel, Funktionen, Rechte, Grenzen |
+| `test-sql.mjs` | `supabase/gemeinsam.sql` in PGlite: über der ersten Fassung, Rollen und was wer sieht, Schlüssel, Funktionen, Rechte, Grenzen, Push (Abos, was gemeldet wird, Abholen, VAPID-Paar) |
+| `test-push.mjs` | Push in der App: anschalten, was der Server sammelt, ausschalten, ohne Erlaubnis, iPhone im Browser |
+| `test-push-senden.mjs` | die Edge Function in Node: VAPID-Token, Verschlüsselung (ein nachgebautes Gerät liest sie), Texte, ein Durchlauf |
 
 Die Browsertests laufen gegen feste Testdaten und einen nachgebauten Server
 (`tests/hilfe.mjs`), nicht gegen `daten/` und nicht gegen Supabase. Auf

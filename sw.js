@@ -21,7 +21,7 @@
  * Datei zu müssen.
  */
 
-const VERSION = 'v12';
+const VERSION = 'v13';
 const CACHE = `freizeit-${VERSION}`;
 
 const SHELL = [
@@ -46,6 +46,7 @@ const SHELL = [
   './js/ideen.js',
   './js/zeiten.js',
   './js/zeiten-rechnen.js',
+  './js/push.js',
   './vendor/leaflet/leaflet.js',
   './vendor/leaflet/leaflet.css',
   './vendor/leaflet/leaflet.markercluster.js',
@@ -123,3 +124,38 @@ self.addEventListener('fetch', (event) => {
     }),
   );
 });
+
+/*
+ * Push-Mitteilungen (js/push.js): Die Edge Function freizeit-push schickt
+ * { titel, text, tag, url } – verschlüsselt, der Browser packt es aus. Der
+ * tag lässt eine neuere Mitteilung derselben Person die ältere ersetzen. Ein
+ * Tipp darauf öffnet die App unter „Wir“ – ein schon offenes Fenster wird
+ * geholt statt ein zweites aufzumachen.
+ */
+self.addEventListener('push', (event) => {
+  let d = {};
+  try { d = event.data ? event.data.json() : {}; } catch { d = { text: event.data ? event.data.text() : '' }; }
+  if (!d || typeof d !== 'object') d = {};
+  const titel = typeof d.titel === 'string' && d.titel ? d.titel : 'Freizeit';
+  event.waitUntil(self.registration.showNotification(titel, {
+    body: typeof d.text === 'string' ? d.text : '',
+    tag: typeof d.tag === 'string' && d.tag ? d.tag : undefined,
+    renotify: Boolean(d.tag),
+    icon: './icon-192.png',
+    badge: './icon-192.png',
+    data: { url: typeof d.url === 'string' && d.url.startsWith('./') ? d.url : './#wir' },
+  }));
+});
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  const ziel = new URL((event.notification.data && event.notification.data.url) || './#wir', self.location.href).href;
+  event.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((fenster) => {
+    const offen = fenster.find((f) => f.url.startsWith(new URL('./', self.location.href).href));
+    if (offen) {
+      return (offen.navigate ? offen.navigate(ziel) : Promise.resolve(offen)).then((f) => (f || offen).focus());
+    }
+    return self.clients.openWindow(ziel);
+  }));
+});
+

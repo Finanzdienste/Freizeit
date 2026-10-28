@@ -24,6 +24,7 @@ import {
   eintragZu, vergessen as karteVergessen, bockKnopf, aufklappen, abschnittUmschalten,
 } from './karte.js';
 import { istApple } from './teilen.js';
+import { pushEinschalten, pushAusschalten } from './push.js';
 import {
   planStarten, beitreten, codeLesen, zugangLesen, zugangUebernehmen, einladungAnsehen, abgleichen, umbenennen, verlassen,
   vergessen as planVergessen, wiederBeitreten, entfernen, neuesterAndererHaken, rolle,
@@ -314,6 +315,12 @@ function aktion(name, z) {
       break;
     case 'abgleichen':
       abgleichJetzt();
+      break;
+    case 'push-an':
+      mitWarten(() => pushEinschalten());
+      break;
+    case 'push-aus':
+      mitWarten(() => pushAusschalten());
       break;
     case 'name-speichern': {
       const name2 = wert('#wir-neuname');

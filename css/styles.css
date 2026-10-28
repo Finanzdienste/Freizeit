@@ -315,6 +315,8 @@ code.code { background: var(--akzent-weich); padding: 1px 6px; border-radius: 4p
 .schritte { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
 .leute { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
 .syncstatus { margin-top: 6px; }
+.push-zeile { margin-top: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.push-zeile[data-push="an"] { display: block; }
 .warn-text { color: var(--warn); }
 .einladung { margin-top: 10px; padding: 12px; border: 1px solid var(--linie); border-radius: 10px; background: var(--flaeche); display: grid; gap: 8px; }
 .einladung p { margin: 0; }

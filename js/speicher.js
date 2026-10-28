@@ -54,6 +54,8 @@ const LEER = () => ({
   installHinweisWeg: false,
   // „So funktioniert's“ unter „Wir“ weggeklickt
   hilfeWeg: false,
+  // Push-Mitteilungen auf diesem Gerät an (push.js): { code, endpunkt } oder null
+  push: null,
 });
 
 let stand = LEER();

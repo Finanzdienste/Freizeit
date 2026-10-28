@@ -25,6 +25,7 @@ export const APP_URL = process.env.FREIZEIT_URL || 'http://127.0.0.1:8099/index.
 export const SCHLUESSEL = 'freizeit.stand.v1';
 export const IPHONE = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1';
 const SUPABASE = 'https://vjyohppohmvhhxgwouti.supabase.co/rest/v1/rpc/*';
+const FUNKTION = 'https://vjyohppohmvhhxgwouti.supabase.co/functions/v1/freizeit-push';
 // 1×1 durchsichtig – statt Kacheln von tile.openstreetmap.org
 const LEERES_PNG = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=', 'base64');
 
@@ -147,13 +148,75 @@ export function testIdeen(mehr = {}) {
  * Zwei Browser, die denselben bekommen, sehen dieselben Räume. Ein Raum ist
  * { personen: [{ id, name }] in der Reihenfolge des Eintretens,
  *   bock: Map 'person|eintrag' → { person, eintrag, daten, geaendert },
- *   gastgeber: { person, schluessel } | null }.
+ *   gastgeber: { person, schluessel } | null,
+ *   push: Map endpoint → Abo (die Geräte des Gastgebers, freizeit_push),
+ *   nachrichten: [{ art, name, daten }] – was die Datenbank für die Edge
+ *   Function sammelt, sobald ein Abo da ist (neu, bock, aus, weg) }.
  * `offline = true` lässt jede Anfrage scheitern wie ohne Netz.
  */
+/**
+ * Push, nachgebaut: Im Test gibt es keinen Service Worker (und ohne
+ * Push-Dienst kein echtes Abo). Die Attrappe antwortet wie ein Browser, der
+ * eins hat – mit einem Abo, dessen Schlüssel die Form echter haben – und
+ * merkt sich unter window.__push, was die App tat: Erlaubnis gefragt,
+ * abonniert (mit welchem Schlüssel), gekündigt.
+ * @param {string} antwort  was die Erlaubnisfrage ergibt: granted, denied, default –
+ *                          oder 'keins': ein Browser ohne Push (iPhone im Browser, alte Browser)
+ */
+function pushAttrappe(antwort) {
+  if (antwort === 'keins') {
+    try { delete window.PushManager; } catch { /* dann unten */ }
+    if ('PushManager' in window) Object.defineProperty(window, 'PushManager', { value: undefined, configurable: true });
+    return;
+  }
+  // Wie ein Browser behält die Attrappe Abo und Zähler über ein Neuladen (localStorage).
+  let gemerkt = { gefragt: 0, abonniert: 0, gekuendigt: 0, schluessel: null, abo: false };
+  try { gemerkt = { ...gemerkt, ...JSON.parse(localStorage.getItem('__push') || '{}') }; } catch { /* frisch */ }
+  const protokoll = gemerkt;
+  window.__push = protokoll;
+  const merken = () => { try { localStorage.setItem('__push', JSON.stringify(protokoll)); } catch { /* egal */ } };
+  const b64 = (n, zeichen) => zeichen.repeat(n);
+  let abo = null;
+  const aboBauen = (schluessel) => ({
+    endpoint: 'https://push.example.org/send/testgeraet',
+    options: { applicationServerKey: schluessel ? new Uint8Array(schluessel).buffer : null },
+    toJSON: () => ({ endpoint: 'https://push.example.org/send/testgeraet', keys: { p256dh: `B${b64(86, 'k')}`, auth: b64(22, 'a') } }),
+    unsubscribe: async () => { protokoll.gekuendigt++; protokoll.abo = false; abo = null; merken(); return true; },
+  });
+  if (protokoll.abo) abo = aboBauen(protokoll.schluessel);
+  const neuesAbo = (optionen) => {
+    protokoll.abonniert++;
+    protokoll.schluessel = optionen && optionen.applicationServerKey ? Array.from(new Uint8Array(optionen.applicationServerKey)) : null;
+    protokoll.abo = true;
+    abo = aboBauen(protokoll.schluessel);
+    merken();
+    return abo;
+  };
+  const registrierung = {
+    pushManager: { getSubscription: async () => abo, subscribe: async (o) => neuesAbo(o) },
+    showNotification: async () => {},
+  };
+  Object.defineProperty(navigator, 'serviceWorker', {
+    configurable: true,
+    value: { ready: Promise.resolve(registrierung), getRegistration: async () => registrierung, register: async () => registrierung, addEventListener() {}, controller: null },
+  });
+  window.PushManager = function PushManager() {};
+  let erlaubnis = antwort === 'denied' ? 'denied' : 'default';
+  window.Notification = function Notification() {};
+  Object.defineProperty(window.Notification, 'permission', { get: () => erlaubnis });
+  window.Notification.requestPermission = async () => { protokoll.gefragt++; erlaubnis = antwort; merken(); return antwort; };
+}
+
 export function fakeServer() {
   const raeume = new Map();
   const aufrufe = [];
-  const s = { offline: false, aufrufe, raeume };
+  // Der öffentliche VAPID-Schlüssel, den die Edge Function herausgibt (65 Byte base64url).
+  const s = { offline: false, aufrufe, raeume, vapid: `B${'A'.repeat(86)}` };
+  const melden = (r, art, person, daten = null) => {
+    if (!r || !r.push || !r.push.size) return;
+    const x = r.personen.find((y) => y.id === person);
+    r.nachrichten.push({ art, name: x ? x.name : '', daten });
+  };
   const gastgeberVon = (r) => (r.gastgeber ? r.gastgeber.person : (r.personen[0] ? r.personen[0].id : null));
   class Abbruch extends Error {}
   const rolle = (r, person, schluessel) => {
@@ -182,6 +245,11 @@ export function fakeServer() {
 
   s.route = async (route) => {
     if (s.offline) return route.abort('internetdisconnected');
+    if (!route.request().url().includes('/rpc/')) {
+      // Die Edge Function: GET gibt den öffentlichen Schlüssel, POST stößt die Zustellung an.
+      aufrufe.push({ name: 'freizeit-push', methode: route.request().method() });
+      return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(route.request().method() === 'GET' ? { oeffentlich: s.vapid } : { nachrichten: 0 }) });
+    }
     const name = route.request().url().split('/rpc/')[1];
     const p = route.request().postDataJSON() || {};
     aufrufe.push({ name, p });
@@ -203,7 +271,10 @@ export function fakeServer() {
         const n = String(p.p_name || '').trim();
         if (!n || n.length > 30) return fehler('Name fehlt oder ist zu lang');
         if (!r) {
-          const neu = { personen: [{ id: p.p_person, name: n }], bock: new Map(), gastgeber: schluessel ? { person: p.p_person, schluessel } : null };
+          const neu = {
+            personen: [{ id: p.p_person, name: n }], bock: new Map(), gastgeber: schluessel ? { person: p.p_person, schluessel } : null,
+            push: new Map(), nachrichten: [],
+          };
           raeume.set(code, neu);
           return antwort(200, stand(neu, p.p_person, 'gastgeber'));
         }
@@ -216,6 +287,7 @@ export function fakeServer() {
         }
         if (r.personen.length >= 30) return fehler('Raum ist voll');
         r.personen.push({ id: p.p_person, name: n });
+        melden(r, 'neu', p.p_person);
         return antwort(200, stand(r, p.p_person, 'mitglied'));
       }
       if (name === 'freizeit_bock') {
@@ -223,8 +295,15 @@ export function fakeServer() {
         const wer = rolle(r, p.p_person, schluessel);
         if (wer === 'gast') return fehler('unbekannte Person');
         const k = `${p.p_person}|${p.p_eintrag}`;
-        if (p.p_bock) r.bock.set(k, { person: p.p_person, eintrag: p.p_eintrag, daten: p.p_daten || null, geaendert: new Date().toISOString() });
-        else r.bock.delete(k);
+        const alt = r.bock.get(k);
+        const mitwem = (d) => (d && d.mitwem) || '';
+        if (p.p_bock) {
+          r.bock.set(k, { person: p.p_person, eintrag: p.p_eintrag, daten: p.p_daten || null, geaendert: new Date().toISOString() });
+          if (wer === 'mitglied' && (!alt || mitwem(alt.daten) !== mitwem(p.p_daten))) melden(r, 'bock', p.p_person, { ...(p.p_daten || {}), eintrag: p.p_eintrag });
+        } else {
+          r.bock.delete(k);
+          if (alt && wer === 'mitglied' && mitwem(alt.daten) === 'gastgeber') melden(r, 'aus', p.p_person, { ...(alt.daten || {}), eintrag: p.p_eintrag });
+        }
         return antwort(200, stand(r, p.p_person, wer));
       }
       if (name === 'freizeit_weg') {
@@ -233,13 +312,29 @@ export function fakeServer() {
         const wer = rolle(r, p.p_person, schluessel);
         if (opfer === p.p_person) {
           if (wer === 'gastgeber' && r.gastgeber) raeume.delete(code);
-          else if (r) ohne(r, p.p_person);
+          else if (r) { if (wer === 'mitglied') melden(r, 'weg', p.p_person); ohne(r, p.p_person); }
           if (r && !r.personen.length) raeume.delete(code);
           return antwort(200, stand(raeume.get(code), null, 'gast'));
         }
         if (wer !== 'gastgeber' || !r.gastgeber) return fehler('nur der Gastgeber');
         ohne(r, opfer);
         return antwort(200, stand(r, p.p_person, wer));
+      }
+      if (name === 'freizeit_push') {
+        const abo = p.p_abo;
+        if (!abo || typeof abo !== 'object' || typeof abo.endpoint !== 'string' || !/^https:\/\/\S{8,}$/.test(abo.endpoint)
+          || !abo.keys || !/^[A-Za-z0-9_=-]{80,120}$/.test(abo.keys.p256dh || '') || !/^[A-Za-z0-9_=-]{16,32}$/.test(abo.keys.auth || '')) {
+          return fehler('ungültiges Abo');
+        }
+        if (!r || rolle(r, p.p_person, schluessel) !== 'gastgeber' || !r.gastgeber) return fehler('nur der Gastgeber');
+        if (!r.push) { r.push = new Map(); r.nachrichten = []; }
+        if (p.p_an) {
+          if (!r.push.has(abo.endpoint) && r.push.size >= 5) return fehler('zu viele Geräte');
+          r.push.set(abo.endpoint, abo);
+        } else {
+          r.push.delete(abo.endpoint);
+        }
+        return antwort(200, { push: Boolean(p.p_an), geraete: r.push.size });
       }
     } catch (e) {
       if (e instanceof Abbruch) return fehler(e.message);
@@ -262,10 +357,13 @@ export function fakeServer() {
  * @param {string} [o.ua]             anderer User-Agent (z. B. IPHONE)
  * @param {string} [o.hash]           Adresse ab # beim ersten Öffnen (z. B. „einladung=…“)
  * @param {object} [o.browser]        vorhandenen Browser mitbenutzen (zweite Person)
+ * @param {string} [o.push]           Push-Attrappe statt des Browsers: 'granted' | 'denied' | 'default'
+ *                                    (die Antwort auf die Erlaubnisfrage) oder 'keins' (ein Browser ohne
+ *                                    Push); ohne Angabe bleibt der Browser, wie er ist
  */
 export async function oeffne({
   tag = MO, zeit = '10:00', programm = testProgramm(), ideen = testIdeen(), stand = null, server = fakeServer(), ua = '', hash = '',
-  viewport = { width: 390, height: 844 }, browser: geteilt = null, scale = 1,
+  viewport = { width: 390, height: 844 }, browser: geteilt = null, scale = 1, push = '',
 } = {}) {
   const browser = geteilt || await chromium.launch();
   // Ohne Service Worker: Er würde die umgeleiteten Daten am Test vorbei holen.
@@ -274,6 +372,7 @@ export async function oeffne({
     viewport, deviceScaleFactor: scale, locale: 'de-DE', serviceWorkers: 'block', ...(ua ? { userAgent: ua } : {}),
   });
   await ctx.addInitScript(uhrStellen);
+  if (push) await ctx.addInitScript(pushAttrappe, push);
   const daten = { programm, ideen };
   await ctx.route('**/daten/programm.json', (route) => {
     if (daten.programm === null || daten.programm === undefined) return route.fulfill({ status: 404, body: 'fehlt' });
@@ -284,6 +383,7 @@ export async function oeffne({
     return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(daten.ideen) });
   });
   await ctx.route(SUPABASE, (route) => server.route(route));
+  await ctx.route(FUNKTION, (route) => server.route(route));
   await ctx.route('https://tile.openstreetmap.org/**', (route) => route.fulfill({ status: 200, contentType: 'image/png', body: LEERES_PNG }));
   const page = await ctx.newPage();
   const fehler = [];

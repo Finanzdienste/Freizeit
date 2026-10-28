@@ -14,7 +14,7 @@ export default [
   },
   js.configs.recommended,
   {
-    files: ['js/**/*.js', 'sw.js', 'tests/**/*.mjs', 'werkzeug/**/*.mjs'],
+    files: ['js/**/*.js', 'sw.js', 'tests/**/*.mjs', 'werkzeug/**/*.mjs', 'supabase/functions/**/*.js'],
     languageOptions: {
       ecmaVersion: 2023,
       sourceType: 'module',
@@ -40,6 +40,11 @@ export default [
         crypto: 'readonly',
         AbortController: 'readonly',
         TextEncoder: 'readonly',
+        TextDecoder: 'readonly',
+        Notification: 'readonly',
+        PushManager: 'readonly',
+        atob: 'readonly',
+        btoa: 'readonly',
         CSS: 'readonly',
         console: 'readonly',
         self: 'readonly',
@@ -58,8 +63,8 @@ export default [
     },
   },
   {
-    // Die Tests und die Werkzeuge laufen in Node.
-    files: ['tests/**/*.mjs', 'werkzeug/**/*.mjs'],
+    // Die Tests, die Werkzeuge und die Edge Function (Deno) laufen nicht im Browser.
+    files: ['tests/**/*.mjs', 'werkzeug/**/*.mjs', 'supabase/functions/**/*.js'],
     languageOptions: {
       globals: {
         process: 'readonly',

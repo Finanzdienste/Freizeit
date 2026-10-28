@@ -206,6 +206,17 @@ export async function umbenennen(name) {
 }
 
 /**
+ * Dieses Gerät beim Server für Push an- (an = true) oder abmelden – nur der
+ * Gastgeber; das Abo ist das des Browsers (push.js). Zurück kommt
+ * { push, geraete }.
+ */
+export async function pushMelden(abo, an) {
+  const g = aktuell().gemeinsam;
+  if (!g) throw new Error('Kein gemeinsamer Plan.');
+  return rpc('freizeit_push', { ...ichImPlan(g), p_abo: abo, p_an: Boolean(an) });
+}
+
+/**
  * Gehen. Die eigenen Haken verschwinden beim Server, hier bleiben sie. Geht
  * der Gastgeber, ist der Plan für alle aufgelöst.
  */

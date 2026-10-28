@@ -29,6 +29,7 @@ import {
   andere, hakenDerAnderen, syncStatus, einladungsLink, zugangsLink, zugangLesen, person, rolle, gastgeberName, mitWem,
 } from './gemeinsam.js';
 import { istApple } from './teilen.js';
+import { pushAn, pushHindernis } from './push.js';
 import { zeitenWochen, belegung } from './zeiten.js';
 import { planAusSchnappschuss, ideeAusSchnappschuss } from './ideen.js';
 
@@ -270,6 +271,7 @@ function kopf(st, ui) {
       ${gastgeber ? knopf('einladen', 'Einladen', ui.einladen, 'knopf haupt') : knopf('hilfe', 'So geht\'s', ui.hilfe)}
       ${menue}
     </div>
+    ${gastgeber ? pushZeile() : ''}
     ${gastgeber && ui.einladen ? `<div class="einladung">
       <p>Schick diesen Link an deine Leute – einzeln oder in eine Gruppe. Jeder gibt seinen Namen ein und hakt an, worauf er Bock hat: mit dir oder allein/mit anderen.</p>
       <input class="eingabe" id="einladungslink" readonly value="${esc(link)}">
@@ -302,6 +304,24 @@ function kopf(st, ui) {
     </div>` : ''}
   </header>
   ${gastgeber && !andereLeute.length && !ui.einladen ? '<div class="banner">Noch ist niemand dabei. Tipp auf „Einladen“ und schick den Link an deine Leute.</div>' : ''}`;
+}
+
+/**
+ * Push für den Gastgeber (push.js): an, ausschaltbar – oder der Knopf zum
+ * Anschalten. Steht etwas im Weg, steht das da statt des Knopfs; ein
+ * Browser, der es gar nicht kann, bekommt keine Zeile.
+ */
+function pushZeile() {
+  if (pushAn()) {
+    return `<div class="push-zeile fein" data-push="an">🔔 Du bekommst Bescheid, wenn jemand dazukommt oder anhakt.
+      <button type="button" class="textknopf" data-aktion="push-aus">Ausschalten</button></div>`;
+  }
+  const h = pushHindernis();
+  if (h.grund === 'browser') return '';
+  if (h.grund) return `<div class="push-zeile fein" data-push="${esc(h.grund)}">🔔 ${esc(h.text)}</div>`;
+  return `<div class="push-zeile" data-push="aus">
+      <button type="button" class="knopf" data-aktion="push-an">🔔 Bescheid sagen</button>
+      <span class="fein">wenn jemand dazukommt oder anhakt – auch bei geschlossener App</span></div>`;
 }
 
 /** Je Person: wie viel mit dir, wie viel ohne dich, die Liste – und herausnehmen. */

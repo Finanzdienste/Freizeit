@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "stand": "2026-10-28T12:52",
+  "stand": "2026-10-28T13:55",
   "von": "2026-10-26",
   "bis": "2026-11-29",
   "infos": [
@@ -11051,6 +11051,1720 @@
       "link": "https://www.hannover.de/Veranstaltungskalender/Lesungen-Vortr%C3%A4ge/Lesung-mit-Caroline-Wahl-1999-Meter-%C3%BCber-dem-Meer",
       "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
       "unsicher": "Dauer geschätzt; Ort aus der Adresse (Oskar-Winter-Str. 7 = Markuskirche) abgeleitet"
+    },
+    {
+      "id": "freche-moewe-stand-up-comedy-open-mic-kulturschloss-wandsbek",
+      "daten": [
+        "2026-10-28",
+        "2026-11-25"
+      ],
+      "zeit": "19:00",
+      "ende": "21:15",
+      "titel": "Freche Möwe – Stand-up-Comedy Open Mic",
+      "ort": "Kulturschloss Wandsbek",
+      "geo": [
+        53.57418,
+        10.05968
+      ],
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Bunt gemischtes Stand-up-Open-Mic: Acht Comedians testen ihre neuesten Jokes, eine Moderation führt durch den Abend – Newcomer und erfahrene Leute aus der deutschen Comedy-Szene. Einlass 18:30 Uhr, ab 16 Jahren.",
+      "preis": "15 €, erm. 12 € (VVK zzgl. Gebühren)",
+      "draussen": "drinnen",
+      "link": "https://www.kulturschloss-wandsbek.de/?cat=1",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "buchpremiere-vermisst-verletzt-zerfetzt-bramfelder",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "18:00",
+      "ende": "19:30",
+      "titel": "Buchpremiere „Vermisst·verletzt·zerfetzt“ – Bramfelder Schicksale im Ersten Weltkrieg",
+      "ort": "Buchhandlung Heymann, Marktplatz Galerie Bramfeld",
+      "geo": [
+        53.61246,
+        10.07652
+      ],
+      "region": "HH",
+      "kategorie": "Lesung",
+      "beschreibung": "Gudrun Wohlrab vom Stadtteilarchiv Bramfeld stellt ihr neues Buch über die toten „Helden“ des Ersten Weltkriegs aus Bramfeld, Steilshoop und Wellingsbüttel vor – mit vielen Bildern, Einzelschicksalen und Geschichten aus fünf Jahren Recherche.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.stadtteilarchiv-bramfeld.de/3838-2/",
+      "unsicher": "Anmeldung bei Heymann nötig (040 641 43 42); Ende geschätzt"
+    },
+    {
+      "id": "silent-book-club-buecherhalle-wandsbek",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "18:00–20:00",
+      "ende": "20:00",
+      "titel": "Silent Book Club",
+      "ort": "Bücherhalle Wandsbek",
+      "geo": [
+        53.57444,
+        10.06954
+      ],
+      "region": "HH",
+      "kategorie": "Lesung",
+      "beschreibung": "Eigenes Buch mitbringen (oder eins aus dem Bestand greifen), kurz vorstellen, dann eine Stunde in Ruhe gemeinsam lesen und anschließend zwanglos über die Bücher quatschen.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.buecherhallen.de/wandsbek-termin/silent-book-club-18807/datum/20261029.html",
+      "unsicher": "Anmeldung erbeten (wandsbek@buecherhallen.de)"
+    },
+    {
+      "id": "moinpro-improtheater-bim-buergerhaus-in-meiendorf",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "19:00–21:30",
+      "ende": "21:30",
+      "titel": "Moinpro – Improtheater",
+      "ort": "BiM – Bürgerhaus in Meiendorf",
+      "geo": [
+        53.62345,
+        10.163
+      ],
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Das Impro-Theater-Ensemble Moinpro baut aus den Ideen des Publikums die verrücktesten Geschichten – viele Formate, viel Musik, eine Prise Wahnsinn und Chaos. Einlass 18:30 Uhr.",
+      "preis": "15 €, erm. 12 € (Tickets: kontakt@bim-hamburg.de, 040 678 91 22)",
+      "draussen": "drinnen",
+      "link": "https://bim-hamburg.de/Veranstaltung/moinpro-2/?instance_id=3457"
+    },
+    {
+      "id": "sixteen-strings-a-box-bossa-latin-jazz-kulturwerk-rahlstedt",
+      "daten": [
+        "2026-10-29"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "SIXTEEN STRINGS & a Box – Bossa, Latin & Jazz",
+      "ort": "KulturWerk Rahlstedt",
+      "geo": [
+        53.60449,
+        10.15623
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Quartett aus zwei Gitarren, Bass und Cajón: Bossa Nova, Latin, Jazz, instrumentale Rock- und Pop-Klassiker und Eigenkompositionen im kleinen Rahlstedter Kulturzentrum. Einlass und Getränke ab 19 Uhr.",
+      "preis": "10 € (Abendkasse)",
+      "draussen": "drinnen",
+      "link": "https://www.kulturwerk-rahlstedt.de/events/sixteen-strings-3/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "silent-book-club-deutschsprachig-buecherhalle-bramfeld",
+      "daten": [
+        "2026-10-30",
+        "2026-11-27"
+      ],
+      "zeit": "18:30–20:30",
+      "ende": "20:30",
+      "titel": "Silent Book Club (deutschsprachig)",
+      "ort": "Bücherhalle Bramfeld",
+      "geo": [
+        53.61114,
+        10.07871
+      ],
+      "region": "HH",
+      "kategorie": "Lesung",
+      "beschreibung": "Lesen in Gesellschaft: Begrüßung und Buchvorstellungen, eine Stunde stilles Lesen, danach Austausch über das Gelesene. Ab 18 Jahren.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.buecherhallen.de/bramfeld-termin/silent-book-club-deutschsprachig-21152/datum/20261030.html",
+      "unsicher": "Begrenzte Plätze, Anmeldung erforderlich (bramfeld@buecherhallen.de, 040 641 59 33)"
+    },
+    {
+      "id": "jens-wawrczeck-immer-aerger-mit-harry-krimiabend-mit",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "Jens Wawrczeck: „Immer Ärger mit Harry“ – Krimiabend mit Akkordeon",
+      "ort": "Schulungshaus Hamburg Wasser, Wellingsbüttel",
+      "geo": [
+        53.63955,
+        10.06262
+      ],
+      "region": "HH",
+      "kategorie": "Lesung",
+      "beschreibung": "Sprecher Jens Wawrczeck liest aus seiner Hitchcock-Reihe „Hitch und ich“ den rabenschwarzen britischen Krimi von Jack Trevor Story – drei Leute behaupten, Harry umgebracht zu haben, und wollen die Leiche loswerden. Natalie Böttcher spielt dazu Akkordeon.",
+      "preis": "ab 33 € (Reservix)",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/hamburg/veranstaltungen/immer-aerger-mit-harry-ein-krimiabend-hamburg/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "226-wandsbeker-abendmusik-schubert-die-schoene-muellerin",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "19:30",
+      "ende": "20:45",
+      "titel": "226. Wandsbeker Abendmusik: Schubert „Die schöne Müllerin“",
+      "ort": "Christuskirche Wandsbek",
+      "geo": [
+        53.57261,
+        10.07113
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Liederabend in der Christuskirche Wandsbek: Tenor Christian Georg (NDR Vokalensemble) singt Schuberts Zyklus „Die schöne Müllerin“, am Klavier Gerd Jordan.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/226-wandsbeker-abendmusik/",
+      "unsicher": "Eintritt laut Kirchenmusik-Heft ohne Preisangabe (dann i. d. R. frei); Ende geschätzt"
+    },
+    {
+      "id": "crocodiles-hamburg-fass-berlin-eishockey-osweno-pokal",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Crocodiles Hamburg – FASS Berlin (Eishockey, OsWeNo-Pokal)",
+      "ort": "Eisland Farmsen",
+      "geo": [
+        53.60442,
+        10.12043
+      ],
+      "region": "HH",
+      "kategorie": "Sport",
+      "beschreibung": "Pokal-Heimspiel der Crocodiles gegen FASS Berlin im Eisland Farmsen, wo der Club seit 1990 zu Hause ist – ehrliche Eishockey-Atmosphäre mit Pistenbar (Pommes, Currywurst) und Fan-Merch.",
+      "preis": "Stehplatz 11 € (VVK, AK 14 €), Sitzplatz ab 17 € (AK 20 €)",
+      "draussen": "drinnen",
+      "link": "https://www.crocodiles-hamburg.de/game-center",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "flohmarkt-im-parkhaus-p-r-berne-p-r-parkhaus-berne",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "ab 08:00",
+      "ende": "14:00",
+      "ganztags": true,
+      "titel": "Flohmarkt im Parkhaus P+R Berne",
+      "ort": "P+R-Parkhaus Berne",
+      "geo": [
+        53.60242,
+        10.11923
+      ],
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Überdachter Trödelmarkt im Parkhaus direkt an der U-Bahn Berne – wetterfest stöbern, Händler mit und ohne Auto.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/flohmarkt-parkhaus-pr-berne/",
+      "unsicher": "Ende und Eintritt nicht angegeben (Ende geschätzt)"
+    },
+    {
+      "id": "pilzfuehrung-im-buchenwald-waldsamkeit-schule-am-walde",
+      "daten": [
+        "2026-10-31",
+        "2026-11-01",
+        "2026-11-07",
+        "2026-11-08",
+        "2026-11-14"
+      ],
+      "zeit": "10:00",
+      "dauer": 180,
+      "titel": "Pilzführung im Buchenwald (Waldsamkeit)",
+      "ort": "Schule am Walde (Treffpunkt), Wohldorf-Ohlstedt",
+      "geo": [
+        53.69761,
+        10.13639
+      ],
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Rund dreistündige Pilzexkursion mit Feldmykologe Ben Nurgenç: Speisepilze, giftige Doppelgänger und die ökologische Rolle der Pilze – es wird bestimmt, nicht gesammelt. Max. 15 Teilnehmende.",
+      "preis": "59 €",
+      "draussen": "draußen",
+      "link": "https://waldsamkeit.de/produkt/pilzfuehrung-hamburg",
+      "unsicher": "Treffpunkt laut hamburg-tourism (Buchungsseite: „Buchenwald im Osten Hamburgs“, Ort bei Buchung wählen); bei Trockenheit kurzfristige Absage möglich; 15.11. nur bei hamburg-tourism gelistet"
+    },
+    {
+      "id": "eroeffnung-21-wandsbeker-winterzauber-mit-eisbahn",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "12:00",
+      "ende": "13:00",
+      "titel": "Eröffnung: 21. Wandsbeker Winterzauber mit Eisbahn",
+      "ort": "Wandsbeker Marktplatz, Wandsbek",
+      "geo": [
+        53.5717,
+        10.06708
+      ],
+      "region": "HH",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Bezirksamtsleiter Thomas Ritzenhoff eröffnet um 12 Uhr auf der Schlittschuhbahn feierlich das 21. Winterdorf auf dem Wandsbeker Marktplatz – mit 240 m² großer Like-Ice-Bahn, Almhütten, Schmalzgebäck und Bratwurst. Danach täglich 12 bis 22 Uhr.",
+      "preis": "Eintritt frei; Eisbahn Erw. 4 € (90 Min.), Kinder 3 €, Leihschuhe 4 €",
+      "draussen": "draußen",
+      "link": "https://www.wandsbekerwinterzauber.info/veranstaltungen/",
+      "unsicher": "Dauer der Eröffnung geschätzt; der Markt selbst hat bis 22 Uhr geöffnet"
+    },
+    {
+      "id": "weinverkostung-im-wagnerhof-chateau-perayne-mit",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "18:30",
+      "ende": "22:00",
+      "titel": "Weinverkostung im Wagnerhof: Château Perayne mit französischem Buffet",
+      "ort": "Museumsdorf Volksdorf",
+      "geo": [
+        53.64981,
+        10.16893
+      ],
+      "region": "HH",
+      "kategorie": "Food",
+      "beschreibung": "Bordeaux-Weine von Château Perayne, vorgestellt mit dem Winzer im historischen Wagnerhof – dazu ein französisches Buffet mit Austern, Pasteten, Käse und Boeuf Bourguignon. Ein Teil des Preises geht an das Museumsdorf.",
+      "preis": "89 € inkl. Weinverkostung und Buffet (Eventim zzgl. Gebühr)",
+      "draussen": "drinnen",
+      "link": "https://www.museumsdorf-volksdorf.de/Aktuelles/Weinverkostung/",
+      "unsicher": "Ende geschätzt; Plätze begrenzt"
+    },
+    {
+      "id": "big-slam-wrestling-9-nordisch-fight-club-wandsbek",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Big Slam Wrestling 9",
+      "ort": "Nordisch Fight Club, Wandsbek",
+      "geo": [
+        53.58372,
+        10.09876
+      ],
+      "region": "HH",
+      "kategorie": "Sport",
+      "beschreibung": "Live-Wrestling-Show in der Wrestlingschule von Karsten Kretschmer: Showkämpfe, Storylines und Action direkt am Ring. Einlass 19:15 Uhr.",
+      "preis": "ab 22 € (Reservix)",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/big-slam-wrestling-11/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "halloween-horror-party-brakula",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "21:00",
+      "ende": "03:00",
+      "titel": "Halloween Horror Party",
+      "ort": "Brakula",
+      "geo": [
+        53.61524,
+        10.07575
+      ],
+      "region": "HH",
+      "kategorie": "Party",
+      "beschreibung": "Kostümparty in Grusel-Deko, die es im Brakula seit 2000 gibt: DJ Marky Mark legt Rock, Metal, Glam, Gothic, Punk und Wave bis zum Morgengrauen auf.",
+      "preis": "VVK 8 €, AK 10 € (nur Barzahlung an Abendkasse und Bar)",
+      "draussen": "drinnen",
+      "link": "https://www.brakula.de/programm/Halloween-Horror-Party/311020262100/"
+    },
+    {
+      "id": "drum-circle-im-kulturschloss-kulturschloss-wandsbek",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "17:00",
+      "ende": "18:30",
+      "titel": "Drum Circle im Kulturschloss",
+      "ort": "Kulturschloss Wandsbek",
+      "geo": [
+        53.57418,
+        10.05968
+      ],
+      "region": "HH",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Gemeinsam trommeln, ohne Vorkenntnisse: Multipercussionist Khayrullo Dadoboev und Uta Schilling leiten den offenen Rhythmus-Kreis für Anfänger und Fortgeschrittene.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.kulturschloss-wandsbek.de/?p=17359",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "nordlicht-improtheater-brakula",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "17:00",
+      "ende": "18:45",
+      "titel": "Nordlicht Improtheater",
+      "ort": "Brakula",
+      "geo": [
+        53.61524,
+        10.07575
+      ],
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Die Bramfelder Improgruppe NordLicht erzählt spontan improvisierte Geschichten über Wunsch und Wirklichkeit – mal ernst und tiefgründig, mal lustig und unvorhersehbar.",
+      "preis": "VVK 10 €, AK 12 €",
+      "draussen": "drinnen",
+      "link": "https://www.brakula.de/programm/nordlicht-improtheater/11120261700/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "wortreich-offener-lesetreff-kulturwerk-rahlstedt",
+      "daten": [
+        "2026-11-02"
+      ],
+      "zeit": "17:00",
+      "ende": "18:30",
+      "titel": "wortreich – offener Lesetreff",
+      "ort": "KulturWerk Rahlstedt",
+      "geo": [
+        53.60449,
+        10.15623
+      ],
+      "region": "HH",
+      "kategorie": "Lesung",
+      "beschreibung": "Alle zwei Monate tauschen sich Literaturfans über Lieblingsbücher, Neuerscheinungen und alles aus, was sie literarisch bewegt – Schnuppern und Zuhören ausdrücklich erwünscht. Mit Monika Engel.",
+      "preis": "Spende",
+      "draussen": "drinnen",
+      "link": "https://www.kulturwerk-rahlstedt.de/events/wortreich-24/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "laternenumzug-durch-die-gartenstadt-wandsbek",
+      "daten": [
+        "2026-11-03"
+      ],
+      "zeit": "17:30",
+      "ende": "19:45",
+      "titel": "Laternenumzug durch die Gartenstadt Wandsbek",
+      "ort": "Wohnungsbaugenossenschaft Gartenstadt Wandsbek (Treffpunkt)",
+      "geo": [
+        53.5914,
+        10.07948
+      ],
+      "region": "HH",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Treffen ab 17:30 Uhr mit Glühwein und Kinderpunsch, gegen 18:45 Uhr zieht der Laternenlauf mit dem Spielmannszug Show- und Marchingband 2000 durch die Gartenstadt.",
+      "draussen": "draußen",
+      "link": "https://www.hamburg.de/freizeit/jahreszeiten/herbst/laternenumzug-hamburg-22840",
+      "unsicher": "Eintritt nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "mimi-schell-trio-cineastischer-pop-zwischen-folk-americana",
+      "daten": [
+        "2026-11-03"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "Mimi Schell Trio – Cineastischer Pop zwischen Folk, Americana und Soul",
+      "ort": "Parkresidenz Alstertal, Theatersaal",
+      "geo": [
+        53.652,
+        10.08809
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Hamburger Singer-Songwriterin mit Jürgen Scholz (Gitarre) und Florian Jacob (Piano): erzählerische Songs, große Refrains, neue Stücke ihrer EP „Le Salon Vert“ und Country-/Americana-Cover. Konzertsaal der Seniorenresidenz, für externe Gäste offen.",
+      "preis": "20 €",
+      "draussen": "drinnen",
+      "link": "https://www.parkresidenz-alstertal.de/kultur",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "vortrag-ns-verbrechen-die-verhaengnisvolle-verbindung-einer",
+      "daten": [
+        "2026-11-03"
+      ],
+      "zeit": "19:30",
+      "ende": "21:00",
+      "titel": "Vortrag: NS-Verbrechen – die verhängnisvolle Verbindung einer Rahlstedter Kinderärztin",
+      "ort": "KulturWerk Rahlstedt",
+      "geo": [
+        53.60449,
+        10.15623
+      ],
+      "region": "HH",
+      "kategorie": "Lesung",
+      "beschreibung": "Journalist Andreas Babel über Dr. Ingeborg Tyrolf-Wetzel, die in der NS-Zeit im Kinderkrankenhaus Rothenburgsort Kinder mit Behinderung tötete und später jahrzehntelang in Rahlstedt praktizierte – und über den Richter, der sie hätte verfolgen sollen und ihr Ehemann wurde. Mit Diskussion.",
+      "preis": "10 € (Abendkasse)",
+      "draussen": "drinnen",
+      "link": "https://www.kulturwerk-rahlstedt.de/events/ns-verbrechen-die-verhaengnisvolle-verbindung-einer-rahlstedter-kinderaerztin/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "kleidertauschparty-bim-buergerhaus-in-meiendorf",
+      "daten": [
+        "2026-11-05"
+      ],
+      "zeit": "17:30–20:00",
+      "ende": "20:00",
+      "titel": "Kleidertauschparty",
+      "ort": "BiM – Bürgerhaus in Meiendorf",
+      "geo": [
+        53.62345,
+        10.163
+      ],
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Bis zu zehn saubere, gut erhaltene Kleidungsstücke oder Accessoires in Erwachsenengrößen mitbringen und gegen andere tauschen (keine Socken, Unterwäsche, Schuhe). Ohne Anmeldung.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://bim-hamburg.de/Veranstaltung/kleidertauschparty-2/?instance_id=3587"
+    },
+    {
+      "id": "wylando-country-abend-parkresidenz-rahlstedt-theater",
+      "daten": [
+        "2026-11-05"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "Wylando – Country-Abend",
+      "ort": "Parkresidenz Rahlstedt, Theater",
+      "geo": [
+        53.59379,
+        10.14242
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Hamburger Country-Band mit mehrstimmigem Gesang – mal rockig, mal poppig, mal urtypisch: Alan Jackson, Willie Nelson, CCR, Eagles und eigene Songs. Theater der Seniorenresidenz, offen für externe Gäste.",
+      "preis": "16 €",
+      "draussen": "drinnen",
+      "link": "https://www.parkresidenz-rahlstedt.de/kultur",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "12-hamburg-blues-nights-sasel-haus",
+      "daten": [
+        "2026-11-06",
+        "2026-11-07"
+      ],
+      "zeit": "19:00",
+      "ende": "22:45",
+      "titel": "12. Hamburg Blues Nights",
+      "ort": "Sasel-Haus",
+      "geo": [
+        53.65471,
+        10.10997
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Internationales Blues-Festival mit drei Acts pro Abend (19:00, 20:15, 21:30 Uhr): Freitag Chris Kramer & Beatbox ’n’ Blues, Steve Baker & the Live Wires und Friend ’n’ Fellow, Samstag Jaimi Faulkner, Black Cat Biscuit und die Latvian Blues Band.",
+      "preis": "ab 29 € pro Abend, Kombiticket beide Abende ab 55 €",
+      "draussen": "drinnen",
+      "link": "https://sasel-haus.de/veranstaltungen/12-hamburg-blues-nights/",
+      "unsicher": "Ende geschätzt (letzter Act beginnt 21:30)"
+    },
+    {
+      "id": "der-geizige-moliere-komoedie-der-jugend-theatergruppe-t2c",
+      "daten": [
+        "2026-11-06",
+        "2026-11-07",
+        "2026-11-13",
+        "2026-11-14"
+      ],
+      "zeit": "19:00",
+      "zeiten": {
+        "2026-11-07": "15:00 + 19:00",
+        "2026-11-14": "15:00 + 19:00"
+      },
+      "ende": "21:00",
+      "titel": "„Der Geizige“ – Molière-Komödie der Jugend-Theatergruppe t2c",
+      "ort": "Gemeindehaus Trinitatiskirche, Rahlstedt",
+      "geo": [
+        53.58754,
+        10.14782
+      ],
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Frei nach Molière in moderner Sprache: Geizhals Harpagon hält Geld und Kinder fest im Griff, eine geschäftstüchtige Frosine und eine chaotische beste Freundin machen alles noch komplizierter.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/3-vorstellung-von-der-geizige/",
+      "unsicher": "Keine Platzreservierung möglich; Ende geschätzt"
+    },
+    {
+      "id": "crocodiles-hamburg-adendorfer-ec-eishockey-regionalliga",
+      "daten": [
+        "2026-11-06"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Crocodiles Hamburg – Adendorfer EC (Eishockey-Regionalliga)",
+      "ort": "Eisland Farmsen",
+      "geo": [
+        53.60442,
+        10.12043
+      ],
+      "region": "HH",
+      "kategorie": "Sport",
+      "beschreibung": "Heimspiel in der Regionalliga Nordost gegen den Adendorfer EC – der Gegner, an dem die Crocodiles im Frühjahr im Playoff-Halbfinale gescheitert sind.",
+      "preis": "Stehplatz 11 € (VVK, AK 14 €), Sitzplatz ab 17 € (AK 20 €)",
+      "draussen": "drinnen",
+      "link": "https://www.crocodiles-hamburg.de/game-center",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "vernissage-floral-trifft-orte-torsten-schaefer-mechthild",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "12:00",
+      "ende": "14:00",
+      "titel": "Vernissage „Floral trifft Orte“ – Torsten Schaefer & Mechthild Strunk",
+      "ort": "KulturWerk Rahlstedt",
+      "geo": [
+        53.60449,
+        10.15623
+      ],
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Eröffnung der Novemberausstellung: Schaefers Bilder von Orten „in der zweiten Reihe“ zwischen Lost Places, Illustration und Vintage-Stil treffen auf die abstrakten, naturinspirierten Arbeiten von Mechthild Strunk.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.kulturwerk-rahlstedt.de/events/floral-trifft-orte/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "etv-sv-todesfelde-fussball-regionalliga-nord-sportpark",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "14:00",
+      "ende": "15:55",
+      "titel": "ETV – SV Todesfelde (Fußball-Regionalliga Nord)",
+      "ort": "Sportpark Hinschenfelde",
+      "geo": [
+        53.58159,
+        10.09867
+      ],
+      "region": "HH",
+      "kategorie": "Sport",
+      "beschreibung": "Viertklassiger Fußball in Wandsbek: Der Eimsbütteler TV trägt seine Regionalliga-Heimspiele im Sportpark Hinschenfelde aus, zu Gast ist der SV Todesfelde aus Schleswig-Holstein (17. Spieltag).",
+      "draussen": "draußen",
+      "link": "https://www.t-online.de/sport/live-ticker/fussball/regionalliga-nord/sdc_fm-60041/eimsbuetteler-tv-sv-todesfelde-regionalliga-nord-im-liveticker.html",
+      "unsicher": "Eintrittspreis nicht gefunden; ein Wettportal nennt 13:00 Uhr, t-online und hamburg-tourism 14:00 Uhr"
+    },
+    {
+      "id": "stadtfuehrung-wandsbek-muehlen-ein-sklavenhaendler-und-der",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "15:00",
+      "ende": "17:00",
+      "titel": "Stadtführung: Wandsbek – Mühlen, ein Sklavenhändler und der Bothe",
+      "ort": "Wandsbeker Marktplatz, Wandsbek",
+      "geo": [
+        53.5717,
+        10.06708
+      ],
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Stadtrundgang durchs historische Zentrum rund um den Marktplatz: jüdischer Friedhof, Schimmelmann-Mausoleum, Reste des Wandsbeker Schlosses, Matthias-Claudius-Denkmäler und neue Wohnquartiere – dazu Heinrich Rantzau und der lukrative Dreiecks- und Sklavenhandel.",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/wandsbek-sklavenhandel-herrenhaeuser-und-ein-dichter/",
+      "unsicher": "Preis und Dauer nicht angegeben (Ende geschätzt)"
+    },
+    {
+      "id": "laternelaufen-mit-feuerwerk-im-berner-gutspark-berner",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "18:00",
+      "ende": "19:30",
+      "titel": "Laternelaufen mit Feuerwerk im Berner Gutspark",
+      "ort": "Berner Gutspark (Start an drei Treffpunkten)",
+      "region": "HH",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "TSV Berne und Freiwillige Feuerwehr Berne starten um 18 Uhr drei Laternenumzüge gleichzeitig (Kriegkamp/Saseler Straße, Quartiersplatz Busbrookhöhe 72–90, Roter Hahn/Kathenkoppel); alle Züge treffen sich zum Feuerwerk im Berner Gutspark.",
+      "draussen": "draußen",
+      "link": "https://www.hamburg.de/freizeit/jahreszeiten/herbst/laternenumzug-hamburg-22840",
+      "unsicher": "Eintritt nicht angegeben; Ende geschätzt",
+      "geo": [
+        53.62719,
+        10.13491
+      ]
+    },
+    {
+      "id": "flamenco-konzert-ruediger-zietz-anton-graefe-bim",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "19:00–21:00",
+      "ende": "21:00",
+      "titel": "Flamenco-Konzert: Rüdiger Zietz & Anton Graefe",
+      "ort": "BiM – Bürgerhaus in Meiendorf",
+      "geo": [
+        53.62345,
+        10.163
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Zwei Flamenco-Gitarren auf Reise von Spanien nach Lateinamerika und zurück – eigene Kompositionen und klassische Flamencostile, mal melancholisch, mal fröhlich. Ohne Anmeldung.",
+      "preis": "Eintritt frei, Hut geht rum",
+      "draussen": "drinnen",
+      "link": "https://bim-hamburg.de/Veranstaltung/flamenco-konzert/?instance_id=3570"
+    },
+    {
+      "id": "boogiewoogie-blues-mit-marcus-paquet-und-martin-friedenstab",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "19:30",
+      "ende": "22:00",
+      "titel": "Boogiewoogie & Blues mit Marcus Paquet und Martin Friedenstab",
+      "ort": "KulturWerk Rahlstedt",
+      "geo": [
+        53.60449,
+        10.15623
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Piano-Boogie-Woogie und Blues mit rauer Stimme und vielen deutschen Texten – Marcus Paquet spielt seit 30 Jahren, Martin Friedenstab steuert Blues- und Roots-Gitarre bei.",
+      "preis": "10 € (nur Abendkasse)",
+      "draussen": "drinnen",
+      "link": "https://www.kulturwerk-rahlstedt.de/events/boogiewoogie-und-blues-mit-marcus-paquet-und-martin-friedenstab-2/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "ana-vidovic-gitarrenabend-hanse-guitar-festival-st-stephan",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "20:30–22:00",
+      "ende": "22:00",
+      "titel": "Ana Vidović – Gitarrenabend (Hanse Guitar Festival)",
+      "ort": "St.-Stephan-Kirche, Wandsbek-Gartenstadt",
+      "geo": [
+        53.5903,
+        10.08373
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Die gebürtige Kroatin gilt als eine der eindrucksvollsten klassischen Gitarristinnen unserer Zeit – Kirchenkonzert des Hanse Guitar Festivals in Wandsbek-Gartenstadt.",
+      "preis": "25 €, erm. 17 € (zzgl. Eventim-Gebühr)",
+      "draussen": "drinnen",
+      "link": "https://gitarrehamburg.de/event/ana-vidovic-konzert-hgf2026/"
+    },
+    {
+      "id": "puccini-gala-der-opernfactory-opernfactory-tonndorf",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "15:00",
+      "ende": "17:00",
+      "titel": "Puccini-Gala der Opernfactory",
+      "ort": "Opernfactory, Tonndorf",
+      "geo": [
+        53.58139,
+        10.10648
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Moderierte Gala mit szenisch umgesetzten Arien und Duetten aus „Turandot“, „La Bohème“, „Tosca“ und „Madama Butterfly“ – in der ehemaligen Gewürzmühle an der Ahrensburger Straße.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/puccini-gala/",
+      "unsicher": "Preis nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "schnippelparty-mit-geretteten-lebensmitteln-brakula",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "16:00",
+      "ende": "19:00",
+      "titel": "Schnippelparty mit geretteten Lebensmitteln",
+      "ort": "Brakula",
+      "geo": [
+        53.61524,
+        10.07575
+      ],
+      "region": "HH",
+      "kategorie": "Food",
+      "beschreibung": "Foodsaver verarbeiten mit allen Gästen gerettete Lebensmittel zu einem gemeinsamen Abendessen – Dosen oder Boxen mitbringen, um Reste mitzunehmen.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.brakula.de/programm/schnippelparty-mit-geretteten-lebensmitteln/81120261600/",
+      "unsicher": "Anmeldung bei der Gruppenleitung (Foodsharing); Ende geschätzt"
+    },
+    {
+      "id": "scheibes-hit-kitchen-das-publikum-bestimmt-das-programm",
+      "daten": [
+        "2026-11-10"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "Scheibes Hit-Kitchen – das Publikum bestimmt das Programm",
+      "ort": "Parkresidenz Alstertal, Theatersaal",
+      "geo": [
+        53.652,
+        10.08809
+      ],
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Jan-Christof Scheibe verwandelt Zurufe, Wünsche und spontane Ideen aus dem Publikum – vom Gedicht bis zur Bedienungsanleitung – in Songs: Improvisation, Humor und Genrewechsel, bei denen der ganze Saal mitmacht.",
+      "preis": "20 €",
+      "draussen": "drinnen",
+      "link": "https://www.parkresidenz-alstertal.de/kultur",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "dixie-swing-abend-bim-buergerhaus-in-meiendorf",
+      "daten": [
+        "2026-11-10"
+      ],
+      "zeit": "19:00–21:00",
+      "ende": "21:00",
+      "titel": "Dixie-Swing-Abend",
+      "ort": "BiM – Bürgerhaus in Meiendorf",
+      "geo": [
+        53.62345,
+        10.163
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Handgemachter Dixieland, Swing und Jazz zum Mitklatschen und Mittanzen – jeden zweiten Dienstag im Monat im alten Meiendorfer Schulhaus.",
+      "preis": "Eintritt frei, Hut geht rum",
+      "draussen": "drinnen",
+      "link": "https://bim-hamburg.de/Veranstaltung/dixie-swing-abend/?instance_id=2944"
+    },
+    {
+      "id": "von-koenigshaeusern-und-helga-feddersen-abend-mit-juergen",
+      "daten": [
+        "2026-11-10"
+      ],
+      "zeit": "19:30",
+      "ende": "21:15",
+      "titel": "Von Königshäusern und Helga Feddersen – Abend mit Jürgen Worlitz",
+      "ort": "KulturWerk Rahlstedt",
+      "geo": [
+        53.60449,
+        10.15623
+      ],
+      "region": "HH",
+      "kategorie": "Lesung",
+      "beschreibung": "Der TV-Adelsexperte und Society-Reporter erzählt Anekdoten hinter den Kulissen der Königshäuser und persönliche Erinnerungen an Helga Feddersen.",
+      "preis": "10 €",
+      "draussen": "drinnen",
+      "link": "https://www.kulturwerk-rahlstedt.de/events/von-koenigshaeusern-und-helga-feddersen/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "trio-suzana-marinkovic-lieblingssongs-von-etta-james-bis",
+      "daten": [
+        "2026-11-12"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "Trio Suzana Marinkovic – Lieblingssongs von Etta James bis Adele",
+      "ort": "Parkresidenz Rahlstedt, Theater",
+      "geo": [
+        53.59379,
+        10.14242
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Sängerin Suzana Marinkovic mit Klaus Winzer und André Krikula: Jazz von Etta James und Nina Simone, Klassiker von den Beatles und Sting bis zu Adele und Ed Sheeran – im Theater der Seniorenresidenz, offen für externe Gäste.",
+      "preis": "16 €",
+      "draussen": "drinnen",
+      "link": "https://www.parkresidenz-rahlstedt.de/kultur",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "mensch-maschine-partnerschaft-ki-zum-wohle-und-fuer-die",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "19:00",
+      "ende": "20:45",
+      "titel": "Mensch-Maschine-Partnerschaft: KI zum Wohle und für die Würde des Menschen",
+      "ort": "Sasel-Haus",
+      "geo": [
+        53.65471,
+        10.10997
+      ],
+      "region": "HH",
+      "kategorie": "Lesung",
+      "beschreibung": "Vortrag und Diskussion mit Prof. Dr. Ronald Deckert (Physiker, Dekan Technik an der HFH) darüber, wie wir mit KI im Leben und Arbeiten umgehen wollen – und welche Partnerschaft mit der Maschine man eingehen möchte.",
+      "preis": "ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://sasel-haus.de/veranstaltungen/mensch-maschine-partnerschaft/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "gospelkonzert-mit-den-stormarn-singers-erloeserkirche",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "19:00",
+      "ende": "20:45",
+      "titel": "Gospelkonzert mit den Stormarn Singers",
+      "ort": "Erlöserkirche Farmsen",
+      "geo": [
+        53.60771,
+        10.11178
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Der norddeutsche Gospelchor (seit fast 40 Jahren, Leitung und Arrangements Eggo Fuhrmann) singt Gospels und Spirituals – mitreißend und auch mal leise. Einlass 18:30 Uhr.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/gospelkonzert-in-der-erloeserkirche-hamburg-farmsen/",
+      "unsicher": "Eintritt frei, Spende erbeten; Ende geschätzt"
+    },
+    {
+      "id": "88-tasten-vier-kurzkonzerte-zur-piano-einweihung-bim",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "19:00–21:30",
+      "ende": "21:30",
+      "titel": "88 Tasten – vier Kurzkonzerte zur Piano-Einweihung",
+      "ort": "BiM – Bürgerhaus in Meiendorf",
+      "geo": [
+        53.62345,
+        10.163
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Das BiM weiht sein per Spendenaktion finanziertes Digitalpiano ein: vier Kurzkonzerte mit freier Improvisation, Sinti-Swing, Bluegrass und Pop-/Jazz-Klassikern.",
+      "preis": "Eintritt frei, Hut geht rum",
+      "draussen": "drinnen",
+      "link": "https://bim-hamburg.de/Veranstaltung/88-tasten-4-konzerte/?instance_id=3601"
+    },
+    {
+      "id": "mulann-dumpling-kochkurs-gut-karlshoehe-bramfeld",
+      "daten": [
+        "2026-11-14",
+        "2026-11-21"
+      ],
+      "zeit": "10:00–13:00",
+      "zeiten": {
+        "2026-11-14": "10:00–13:00 + 14:00–17:00",
+        "2026-11-21": "10:00–13:00 + 14:00–17:00"
+      },
+      "ende": "17:00",
+      "titel": "MULANN Dumpling-Kochkurs",
+      "ort": "Gut Karlshöhe, Bramfeld",
+      "geo": [
+        53.63066,
+        10.10981
+      ],
+      "region": "HH",
+      "kategorie": "Food",
+      "beschreibung": "Kochkurs in der Hobenköök auf Gut Karlshöhe: chinesische Teigtaschen von der Pike auf – Teig, zwei Füllungen (Fleisch oder Tofu-Gemüse), Falten, Kochen und Braten, danach gemeinsames Essen mit Suppe und Gurkensalat. Mit Aperitif.",
+      "preis": "99 €",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/mulann-dumpling-kochkurs/",
+      "unsicher": "Zwei Kurse pro Tag (vormittags/nachmittags)"
+    },
+    {
+      "id": "gartenwissen-hortus-voegel-in-der-stadt-botanischer",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "11:00",
+      "dauer": 120,
+      "titel": "Gartenwissen @hortus: Vögel in der Stadt",
+      "ort": "Botanischer Sondergarten Wandsbek",
+      "geo": [
+        53.58328,
+        10.09873
+      ],
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Zweistündige Vogelwanderung mit Michael Rademann: Amsel, Zaunkönig, Kleiber, Gartenbaumläufer & Co. an Stimme, Gestalt und Gefieder erkennen – mit etwas Glück zeigen sich Sperber oder Austernfischer.",
+      "preis": "Spende 2 € erbeten",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/gartenwissen-athortus-vogel/",
+      "unsicher": "Anmeldung erforderlich"
+    },
+    {
+      "id": "floraler-fotowalk-herbstzauber-zwischen-astern-und-laub",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "14:00",
+      "ende": "16:00",
+      "titel": "Floraler Fotowalk: Herbstzauber zwischen Astern und Laub",
+      "ort": "Botanischer Sondergarten Wandsbek",
+      "geo": [
+        53.58328,
+        10.09873
+      ],
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Fotospaziergang mit Helge Masch durch den herbstlichen Garten – für Smartphone bis Spiegelreflex, mit Tipps zu Licht, Farben und Einstellungen.",
+      "preis": "5 €",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/gartenfotografie-athortus-floraler-fotowalk-herbstzauber/",
+      "unsicher": "Anmeldung erforderlich; Ende geschätzt"
+    },
+    {
+      "id": "laternenumzug-mit-martinsreiter-in-volksdorf-museumsdorf",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "15:00–18:30",
+      "ende": "18:30",
+      "titel": "Laternenumzug mit Martinsreiter in Volksdorf",
+      "ort": "Museumsdorf Volksdorf",
+      "geo": [
+        53.64981,
+        10.16893
+      ],
+      "region": "HH",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Ein Martinsreiter führt den Umzug durch die Horst, im Museumsdorf wird die Martinsgeschichte aufgeführt – dazu warme Getränke und Würstchen vom Grill.",
+      "preis": "5 € je Familie (Mitglieder frei)",
+      "draussen": "draußen",
+      "link": "https://www.hamburg.de/freizeit/jahreszeiten/herbst/laternenumzug-hamburg-22840"
+    },
+    {
+      "id": "stammtisch-der-kulturen-algerischer-kulturtag-kulturschloss",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "16:00–22:00",
+      "ende": "22:00",
+      "titel": "Stammtisch der Kulturen: Algerischer Kulturtag",
+      "ort": "Kulturschloss Wandsbek",
+      "geo": [
+        53.57418,
+        10.05968
+      ],
+      "region": "HH",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Maghreb Haus e.V. und der Deutsch-Algerische Kulturverein feiern die Vielfalt Algeriens mit Kunstausstellung, Vorträgen, andalusisch-algerischer Live-Musik und algerischer Küche.",
+      "preis": "Eintritt frei bzw. gegen Spende",
+      "draussen": "drinnen",
+      "link": "https://www.kulturschloss-wandsbek.de/?p=17479",
+      "unsicher": "Anmeldung erforderlich über maghreb-haus.de"
+    },
+    {
+      "id": "kammermusikabend-brahms-mahler-bartok-milhaud-schulungshaus",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "18:00",
+      "ende": "19:45",
+      "titel": "Kammermusikabend: Brahms, Mahler, Bartók, Milhaud",
+      "ort": "Schulungshaus Hamburg Wasser, Wellingsbüttel",
+      "geo": [
+        53.63955,
+        10.06262
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Violine, Klarinette, Klavier: Bogdan Dumitrascu und Christian Seibold (beide Philharmonisches Staatsorchester) mit Gerd Jordan – Ungarische Tänze, Rumänische Volkstänze, Mahler, Milhaud, Menotti und Horowitz.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/brahms-mahler-bartok-milhaud-ein-kammermusikabend/",
+      "unsicher": "Preis nicht angegeben (Tickets über Reservix); Ende geschätzt"
+    },
+    {
+      "id": "kammerorchester-eimsbuettel-beethovens-violinkonzert",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "18:00",
+      "ende": "20:00",
+      "titel": "Kammerorchester Eimsbüttel: Beethovens Violinkonzert & Farrenc",
+      "ort": "Kirche am Rockenhof, Volksdorf",
+      "geo": [
+        53.65083,
+        10.16495
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Beethovens Violinkonzert D-Dur mit Solistin Alexandra Psareva (2. Konzertmeisterin des NDR Elbphilharmonie Orchesters), dazu die selten gespielte 3. Sinfonie von Louise Farrenc.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/orchesterkonzert-kammerorchester-eimsbuettel/",
+      "unsicher": "Preis nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "kunst-slam-brakula",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "19:00",
+      "ende": "21:30",
+      "titel": "Kunst Slam",
+      "ort": "Brakula",
+      "geo": [
+        53.61524,
+        10.07575
+      ],
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Hamburgs einziger Kunst Slam: Sechs Künstler*innen malen in zwei Runden gegeneinander, je 20 Minuten Zeit, das Publikum entscheidet – mit Live-Musik und anschließender Auktion der Werke.",
+      "preis": "VVK 8 €, AK 10 €",
+      "draussen": "drinnen",
+      "link": "https://www.brakula.de/programm/kunst-slam/141120261900/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "john-dowland-chor-sagen-und-maerchen-vicelinkirche-sasel",
+      "daten": [
+        "2026-11-15"
+      ],
+      "zeit": "18:00",
+      "ende": "19:30",
+      "titel": "John-Dowland-Chor: „Sagen und Märchen“",
+      "ort": "Vicelinkirche Sasel",
+      "geo": [
+        53.65432,
+        10.11361
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Chorabend im November mit dem John-Dowland-Chor Hamburg unter Samuel Raphaelis – Lieder und Chorsätze rund um Sagen und Märchen.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/konzert-sagen-und-maerchen-ii/",
+      "unsicher": "Eintritt frei, Spenden willkommen; Ende geschätzt"
+    },
+    {
+      "id": "musikalisches-vielerlei-thraenen-die-musik-geworden",
+      "daten": [
+        "2026-11-15"
+      ],
+      "zeit": "18:00",
+      "ende": "19:15",
+      "titel": "Musikalisches Vielerlei: „Thränen, die Musik geworden …“",
+      "ort": "Friedenskirche Eilbek",
+      "geo": [
+        53.56519,
+        10.04401
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Diego Grützmacher und sein Cello-Ensemble spielen Kompositionen von Leid, Trost und Frieden.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/musikalisches-vielerlei-thraenen-die-musik-geworden-2/",
+      "unsicher": "Eintritt laut Kirchenmusik-Heft ohne Preisangabe (i. d. R. frei); Ende geschätzt"
+    },
+    {
+      "id": "lagerfeuerklassiker-singen-mit-jan-jahn-brakula",
+      "daten": [
+        "2026-11-15"
+      ],
+      "zeit": "18:30–20:30",
+      "ende": "20:30",
+      "titel": "Lagerfeuerklassiker Singen mit Jan Jahn",
+      "ort": "Brakula",
+      "geo": [
+        53.61524,
+        10.07575
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Mitsingabend wie am Lagerfeuer: Jan Jahn spielt auf Zuruf Rock- und Pop-Klassiker, Schlager, Chansons und Volkslieder, die Texte kommen auf die Leinwand.",
+      "preis": "VVK 9 €, AK 10 €",
+      "draussen": "drinnen",
+      "link": "https://www.brakula.de/programm/lagerfeuerklassiker-singen/151120261830/"
+    },
+    {
+      "id": "elbe-saiten-quartett-elbzeiten-parkresidenz-alstertal",
+      "daten": [
+        "2026-11-17"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "Elbe-Saiten-Quartett: „Elbzeiten“",
+      "ort": "Parkresidenz Alstertal, Theatersaal",
+      "geo": [
+        53.652,
+        10.08809
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Vier Gitarren, Kantele, Cello und Bodhrán: Bach, Satie und Kapsberger treffen finnische und irische Folklore und neue Stücke aus Hamburg und Lüneburg.",
+      "preis": "20 €",
+      "draussen": "drinnen",
+      "link": "https://www.parkresidenz-alstertal.de/kultur",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "vhs-kochkurs-fleisch-schmackhaft-gekonnt-zubereiten-vhs",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "17:15",
+      "ende": "21:00",
+      "titel": "VHS-Kochkurs: Fleisch – schmackhaft & gekonnt zubereiten",
+      "ort": "VHS-Zentrum Ost, Farmsen",
+      "geo": [
+        53.60719,
+        10.11986
+      ],
+      "region": "HH",
+      "kategorie": "Food",
+      "beschreibung": "Richtig anbraten, Niedertemperatur oder Schmoren, welche Stücke für was: Der Abendkurs zeigt die wichtigsten Techniken – und warum sich beim Anbraten keine „Poren schließen“.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/fleisch-schmackhaft-gekonnt-zubereiten-6/",
+      "unsicher": "Preis und Dauer nicht angegeben (Ende geschätzt); Anmeldung über die Hamburger Volkshochschule"
+    },
+    {
+      "id": "groove-your-move-disco-fuer-alle-brakula",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "20:00",
+      "ende": "23:00",
+      "titel": "Groove your Move – Disco für alle",
+      "ort": "Brakula",
+      "geo": [
+        53.61524,
+        10.07575
+      ],
+      "region": "HH",
+      "kategorie": "Party",
+      "beschreibung": "Tanzabend für jede*n in Kooperation mit dem Rauhen Haus: Hier wird gerockt, geschwoft und aus der Reihe getanzt – ohne Anmeldung.",
+      "preis": "5 € (nur Abendkasse)",
+      "draussen": "drinnen",
+      "link": "https://www.brakula.de/programm/groove-your-move/201120262000/",
+      "unsicher": "Ende nicht angegeben (geschätzt)"
+    },
+    {
+      "id": "linedance-fruehstueck-brakula",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "10:00–14:00",
+      "ende": "14:00",
+      "titel": "Linedance-Frühstück",
+      "ort": "Brakula",
+      "geo": [
+        53.61524,
+        10.07575
+      ],
+      "region": "HH",
+      "kategorie": "Sport",
+      "beschreibung": "Linedance zum Ausprobieren für Anfänger*innen mit und ohne Tanzerfahrung – Janetta zeigt jeden Tanz einmal, Frühstück und Getränke bringt man selbst mit.",
+      "preis": "kostenlos, Spende (ca. 2 €) erbeten",
+      "draussen": "drinnen",
+      "link": "https://www.brakula.de/programm/linedance-fruehstueck/211120261000/",
+      "unsicher": "Anmeldung bei der Kursleitung (janny-liners@web.de)"
+    },
+    {
+      "id": "vernissage-art-flow-surreale-traumwelten-marzena-thiem",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "15:00–16:30",
+      "ende": "16:30",
+      "titel": "Vernissage „Art Flow – Surreale Traumwelten“ (Marzena Thiem)",
+      "ort": "Brakula",
+      "geo": [
+        53.61524,
+        10.07575
+      ],
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Eröffnung der Ausstellung von Marzena Thiem: leuchtende Traumwelten aus Tieren, Frauenfiguren, floralen Elementen und Spiralen in Graphit, Pastell, Acryl und Öl – mit der Künstlerin im Gespräch.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.brakula.de/programm/vernissage-art-flow/211120261500/"
+    },
+    {
+      "id": "etv-vfb-oldenburg-fussball-regionalliga-nord-sportpark",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "15:30",
+      "ende": "17:25",
+      "titel": "ETV – VfB Oldenburg (Fußball-Regionalliga Nord)",
+      "ort": "Sportpark Hinschenfelde",
+      "geo": [
+        53.58159,
+        10.09867
+      ],
+      "region": "HH",
+      "kategorie": "Sport",
+      "beschreibung": "Regionalliga-Heimspiel des Eimsbütteler TV im Sportpark Hinschenfelde gegen den VfB Oldenburg (19. Spieltag).",
+      "draussen": "draußen",
+      "link": "https://www.t-online.de/sport/live-ticker/fussball/regionalliga-nord/sdc_fm-60059/eimsbuetteler-tv-oldenburg-regionalliga-nord-im-liveticker.html",
+      "unsicher": "Anstoß laut Spielplan (t-online), Verlegung möglich; Eintrittspreis nicht gefunden"
+    },
+    {
+      "id": "lux-aeterna-faure-durufle-lauridsen-lutherkirche",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "18:00",
+      "ende": "19:30",
+      "titel": "Lux aeterna – Fauré, Duruflé, Lauridsen",
+      "ort": "Lutherkirche Wellingsbüttel",
+      "geo": [
+        53.64049,
+        10.07459
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Kantorei Wellingsbüttel singt mit Streichquintett unter Ulrike Dreßel Chorwerke von Fauré, Duruflé und Morten Lauridsen.",
+      "preis": "15 € (Abendkasse)",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/lux-aeterna",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "10nach6-festkonzert-70-jahre-st-stephan-mozarts-requiem-st",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "18:10",
+      "ende": "19:45",
+      "titel": "10nach6: Festkonzert 70 Jahre St. Stephan – Mozarts Requiem",
+      "ort": "St.-Stephan-Kirche, Wandsbek-Gartenstadt",
+      "geo": [
+        53.5903,
+        10.08373
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Zum Kirchenjubiläum: Mozarts Requiem und Bachs Kantate „Wachet auf, ruft uns die Stimme“ mit den Kantoreien der Kreuzkirche und St. Stephan, Solisten und Sinfonieorchester unter Kai Dittmann.",
+      "preis": "18 €, erm. 15 € (Abendkasse, freie Platzwahl)",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/10nach6-festkonzert-70-jahre-st-stephan/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "the-hey-hills-country-rock-pop-kulturwerk-rahlstedt",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "19:30",
+      "ende": "22:00",
+      "titel": "The Hey Hills – Country Rock & Pop",
+      "ort": "KulturWerk Rahlstedt",
+      "geo": [
+        53.60449,
+        10.15623
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Good old Country von Johnny Cash bis zu den Eagles, rockige Songs und eigene Stücke der vierköpfigen Hamburger Band. Einlass und Getränke ab 19 Uhr.",
+      "preis": "10 € (Abendkasse)",
+      "draussen": "drinnen",
+      "link": "https://www.kulturwerk-rahlstedt.de/events/the-hey-hills/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "hg-hamburg-barmbek-sv-04-plauen-oberlosa-handball-3-liga",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "20:00",
+      "ende": "21:45",
+      "titel": "HG Hamburg-Barmbek – SV 04 Plauen-Oberlosa (Handball, 3. Liga)",
+      "ort": "Bezirkssporthalle Wandsbek",
+      "geo": [
+        53.57406,
+        10.07463
+      ],
+      "region": "HH",
+      "kategorie": "Sport",
+      "beschreibung": "Drittliga-Handball in Wandsbek: Die HG Hamburg-Barmbek („Bei uns wird Handball gearbeitet“) empfängt den SV 04 Plauen-Oberlosa in der Staffel Nord-Ost.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/hghb-vssv-04-plauenoberlosa/",
+      "unsicher": "Eintrittspreis nicht gefunden; Ende geschätzt"
+    },
+    {
+      "id": "stadtteilrundgang-eilbek-hausboote-hinterhoefe-und-der",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "14:00",
+      "ende": "16:00",
+      "titel": "Stadtteilrundgang Eilbek – Hausboote, Hinterhöfe und der Hasselbrook",
+      "ort": "S-Bahnhof Landwehr (Treffpunkt), Eilbek",
+      "geo": [
+        53.55586,
+        10.042
+      ],
+      "region": "HH",
+      "kategorie": "Führung",
+      "beschreibung": "Eilbek abseits der Wandsbeker Chaussee: bürgerliche Straßen im Norden, Hausboote auf dem Kanal, Hinterhöfe und alte Fabriken im Süden, Geschichten von Landwehr, Hasselbrook und den „Ihlen“ – Abschluss im Auenviertel.",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/eilbek-ein-kloster-bunker-und-das-auenland/",
+      "unsicher": "Veranstalter, Preis und Dauer nicht angegeben (Ende geschätzt)"
+    },
+    {
+      "id": "die-winterreise-soenke-tams-freier-henriette-zahn-sasel-haus",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "18:00",
+      "ende": "19:30",
+      "titel": "Die Winterreise – Sönke Tams Freier & Henriette Zahn",
+      "ort": "Sasel-Haus",
+      "geo": [
+        53.65471,
+        10.10997
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Schuberts Liederzyklus am Totensonntag mit Bassbariton Sönke Tams Freier und Pianistin Henriette Zahn, begleitet von Leinwand-Projektionen der Künstlerin Miriam Endrulat (Reihe „Tor zur Klassik“).",
+      "preis": "ab 12 €",
+      "draussen": "drinnen",
+      "link": "https://sasel-haus.de/veranstaltungen/die-winterreise-soenke-tams-freier-und-henriette-zahn/",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "crocodiles-hamburg-hamburger-sv-eishockey-derby-eisland",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "19:00",
+      "ende": "21:30",
+      "titel": "Crocodiles Hamburg – Hamburger SV (Eishockey-Derby)",
+      "ort": "Eisland Farmsen",
+      "geo": [
+        53.60442,
+        10.12043
+      ],
+      "region": "HH",
+      "kategorie": "Sport",
+      "beschreibung": "Hamburger Eishockey-Stadtderby in der Regionalliga Nordost: Die Crocodiles empfangen den HSV – das erste Saisonduell gewannen die Crocodiles auswärts 4:3 nach Penaltyschießen.",
+      "preis": "Stehplatz 11 € (VVK, AK 14 €), Sitzplatz ab 17 € (AK 20 €)",
+      "draussen": "drinnen",
+      "link": "https://www.crocodiles-hamburg.de/game-center",
+      "unsicher": "Ende geschätzt – kann bei Verlängerung später werden"
+    },
+    {
+      "id": "humor-eine-gabe-des-himmels-kulturwerk-rahlstedt",
+      "daten": [
+        "2026-11-25"
+      ],
+      "zeit": "19:30",
+      "ende": "21:15",
+      "titel": "Humor – eine Gabe des Himmels",
+      "ort": "KulturWerk Rahlstedt",
+      "geo": [
+        53.60449,
+        10.15623
+      ],
+      "region": "HH",
+      "kategorie": "Comedy",
+      "beschreibung": "Ein Abend über die befreiende Wirkung der Pointe: Witze erzählen und sammeln (das Publikum darf mitmachen), Cartoonist Björn von Schlippe zeichnet live, das Trio Treibgut spielt Lustiges.",
+      "draussen": "drinnen",
+      "link": "https://www.kulturwerk-rahlstedt.de/events/humor-eine-gabe-des-himmels/",
+      "unsicher": "Eintrittspreis nicht angegeben (Abendkasse); Ende geschätzt"
+    },
+    {
+      "id": "lesung-wolfgang-bremer-liest-mascha-kaleko-und-erich",
+      "daten": [
+        "2026-11-26"
+      ],
+      "zeit": "19:00–21:00",
+      "ende": "21:00",
+      "titel": "Lesung: Wolfgang Bremer liest Mascha Kaléko und Erich Kästner",
+      "ort": "BiM – Bürgerhaus in Meiendorf",
+      "geo": [
+        53.62345,
+        10.163
+      ],
+      "region": "HH",
+      "kategorie": "Lesung",
+      "beschreibung": "Heitere, nachdenkliche und politische Texte der beiden Bestsellerautoren der Weimarer Republik – mit Hintergründen zu Zeit, Kultur und den Lebensläufen von Kaléko und Kästner.",
+      "preis": "Eintritt frei, Hut geht rum",
+      "draussen": "drinnen",
+      "link": "https://bim-hamburg.de/Veranstaltung/lesung-mit-wolfgang-bremer/?instance_id=3576"
+    },
+    {
+      "id": "duo-cellina-zwei-celli-von-klassik-bis-pop-parkresidenz",
+      "daten": [
+        "2026-11-26"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "Duo Cellina – zwei Celli von Klassik bis Pop",
+      "ort": "Parkresidenz Rahlstedt, Theater",
+      "geo": [
+        53.59379,
+        10.14242
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Cellistinnen Maria Luis Duarte (Portugal) und Charlotte Ketel (Neuseeland) spielen Klassik, epische Filmmusik und Pop-Arrangements im eigenen Crossover-Sound.",
+      "preis": "16 €",
+      "draussen": "drinnen",
+      "link": "https://www.parkresidenz-rahlstedt.de/kultur",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "sturmfrei-die-impro-theater-show-kulturschloss-wandsbek",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "„Sturmfrei“ – Die Impro-Theater-Show",
+      "ort": "Kulturschloss Wandsbek",
+      "geo": [
+        53.57418,
+        10.05968
+      ],
+      "region": "HH",
+      "kategorie": "Bühne",
+      "beschreibung": "Die Impro-Gruppe „Sturmfrei“ spielt Szenen, die alle im Moment entstehen – das Publikum bestimmt mit eigenen Ideen den Verlauf des Abends.",
+      "preis": "Eintritt gegen Spende",
+      "draussen": "drinnen",
+      "link": "https://www.kulturschloss-wandsbek.de/?p=17472",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "227-wandsbeker-abendmusik-schumann-poulenc-u-a",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "19:30",
+      "ende": "21:00",
+      "titel": "227. Wandsbeker Abendmusik: Schumann, Poulenc u. a.",
+      "ort": "Christuskirche Wandsbek",
+      "geo": [
+        53.57261,
+        10.07113
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Kammermusik mit Bogdan Dumitrascu (Violine) und Christian Seibold (Klarinette) vom Philharmonischen Staatsorchester und Gerd Jordan (Klavier) – u. a. Schumanns Klaviertrio Nr. 2 und Poulencs „L’Invitation au château“.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/227-wandsbeker-abendmusik/",
+      "unsicher": "Eintritt laut Kirchenmusik-Heft ohne Preisangabe (i. d. R. frei); Ende geschätzt"
+    },
+    {
+      "id": "crocodiles-hamburg-ecw-sande-jadehaie-eishockey",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Crocodiles Hamburg – ECW Sande Jadehaie (Eishockey-Regionalliga)",
+      "ort": "Eisland Farmsen",
+      "geo": [
+        53.60442,
+        10.12043
+      ],
+      "region": "HH",
+      "kategorie": "Sport",
+      "beschreibung": "Freitagabend-Heimspiel der Crocodiles in der Regionalliga Nordost gegen die Jadehaie aus Sande.",
+      "preis": "Stehplatz 11 € (VVK, AK 14 €), Sitzplatz ab 17 € (AK 20 €)",
+      "draussen": "drinnen",
+      "link": "https://www.crocodiles-hamburg.de/game-center",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "ping-pong-party-tischtennis-rundlauf-zu-dj-sets-brakula",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "20:00–23:00",
+      "ende": "23:00",
+      "titel": "Ping Pong Party – Tischtennis-Rundlauf zu DJ-Sets",
+      "ort": "Brakula",
+      "geo": [
+        53.61524,
+        10.07575
+      ],
+      "region": "HH",
+      "kategorie": "Party",
+      "beschreibung": "Rundlauf an zwei Tischtennisplatten, dazu legen DJs nach dem Open-Decks-Prinzip auf, Getränke gibt’s an der Bar – Kelle mitbringen, mitspielen, tanzen oder einfach zuhören.",
+      "preis": "auf Spendenbasis (nur Abendkasse)",
+      "draussen": "drinnen",
+      "link": "https://www.brakula.de/programm/ping-pong-party/271120262000/"
+    },
+    {
+      "id": "kunsthandwerkermarkt-auf-gut-karlshoehe-gut-karlshoehe",
+      "daten": [
+        "2026-11-28",
+        "2026-11-29"
+      ],
+      "zeit": "ab 11:00",
+      "ende": "17:00",
+      "ganztags": true,
+      "titel": "Kunsthandwerkermarkt auf Gut Karlshöhe",
+      "ort": "Gut Karlshöhe, Bramfeld",
+      "geo": [
+        53.63066,
+        10.10981
+      ],
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Über 30 Aussteller mit ausschließlich Selbstgemachtem in zwei Räumen und im Außenbereich des Umweltzentrums; die Hobenköök verkauft Bio-Spezialitäten. Eintritt und Parken frei.",
+      "kostenlos": true,
+      "draussen": "beides",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/kunsthandwerkermarkt-102/",
+      "unsicher": "Ende nicht angegeben (geschätzt)"
+    },
+    {
+      "id": "weihnachtsbasar-in-der-parkresidenz-alstertal-parkresidenz",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "14:00",
+      "ende": "17:00",
+      "titel": "Weihnachtsbasar in der Parkresidenz Alstertal",
+      "ort": "Parkresidenz Alstertal, Theatersaal",
+      "geo": [
+        53.652,
+        10.08809
+      ],
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Kunsthandwerk, Selbstgebasteltes und Leckereien von Hobbyausstellern in der Seniorenresidenz – mit Verpflegung.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.parkresidenz-alstertal.de/kultur",
+      "unsicher": "Ende nicht angegeben (geschätzt)"
+    },
+    {
+      "id": "etv-eintracht-norderstedt-fussball-regionalliga-nord",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "15:30",
+      "ende": "17:25",
+      "titel": "ETV – Eintracht Norderstedt (Fußball-Regionalliga Nord)",
+      "ort": "Sportpark Hinschenfelde",
+      "geo": [
+        53.58159,
+        10.09867
+      ],
+      "region": "HH",
+      "kategorie": "Sport",
+      "beschreibung": "Regionalliga-Heimspiel des Eimsbütteler TV im Sportpark Hinschenfelde gegen Eintracht Norderstedt (20. Spieltag).",
+      "draussen": "draußen",
+      "link": "https://www.t-online.de/sport/live-ticker/fussball/regionalliga-nord/sdc_fm-60069/eimsbuetteler-tv-norderstedt-regionalliga-nord-im-liveticker.html",
+      "unsicher": "Anstoß laut Spielplan (t-online), Verlegung möglich; Eintrittspreis nicht gefunden"
+    },
+    {
+      "id": "grandisinvolto-gaudete-o-nata-lux-advents-a-cappella-kirche",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "17:00",
+      "ende": "19:00",
+      "titel": "grandisinvolto gaudete!: „O nata lux“ – Advents-A-cappella",
+      "ort": "Kirche Alt-Rahlstedt",
+      "geo": [
+        53.59674,
+        10.15219
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Achtköpfiges Vokalensemble unter Martje Grandis: sieben Vertonungen des Hymnus „O nata lux“ von Gregorianik bis heute, dazu Augenzwinkerndes wie „Santamagic“ und „Eine kleine Weihnachtsmusik“ in der über 750 Jahre alten Kirche.",
+      "preis": "VVK 15 €, AK 18 € (5 € Ermäßigung für Schüler, Studierende, Azubis, Arbeitssuchende)",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/grandisinvolto-gaudete-o-nata-lux-3/",
+      "unsicher": "hamburg-tourism führt für denselben Abend zusätzlich einen Eintrag um 19:00 Uhr – Uhrzeit vorher prüfen"
+    },
+    {
+      "id": "rock-night-john-law-the-tremors-glad-all-over-frank-s",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "20:00",
+      "ende": "23:30",
+      "titel": "Rock Night: John Law & The Tremors + Glad All Over",
+      "ort": "Frank's Sunshine Lounge, Farmsen",
+      "geo": [
+        53.62368,
+        10.13181
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Zwei Bands, ein Abend: Rock, Blues, Rock'n'Roll, Oldies und Pop zum Mitsingen und Tanzen mit Glad All Over und dem „legendären“ John Law & The Tremors.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/rock-night-mit-john-law-the-tremors-und-glad-all-over/",
+      "unsicher": "Preis nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "adventsmarkt-an-der-friedenskirche-eilbek-mit-shelvis-xmas",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "15:00",
+      "ende": "18:00",
+      "titel": "Adventsmarkt an der Friedenskirche Eilbek – mit SHELVIS-XMAS-Show",
+      "ort": "Friedenskirche Eilbek",
+      "geo": [
+        53.56519,
+        10.04401
+      ],
+      "region": "HH",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Am 1. Advent nach dem Gottesdienst: Waffeln, Punsch und Grillwurst auf dem Kirchplatz, Flohmarktcafé und Kaffeestube im Gemeindehaus, Märchen und Musik in der Kirche – um 16:30 Uhr bringt Elvis-Entertainer SHELVIS Auszüge aus seiner XMAS-Show „Rocking around the Christmas Tree“.",
+      "draussen": "beides",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/adventsmarkt-38/",
+      "unsicher": "Eintritt/Preise nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "bluegrass-und-oldtime-session-brakula",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "18:00–21:00",
+      "ende": "21:00",
+      "titel": "Bluegrass- und Oldtime-Session",
+      "ort": "Brakula",
+      "geo": [
+        53.61524,
+        10.07575
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "beschreibung": "Neuauflage der Bluegrass-DeLuxe-Sessions: Kleine Bands spielen je drei Songs, danach große Jam-Session im Kreis – Zuhörer ausdrücklich willkommen.",
+      "preis": "Hutspende",
+      "draussen": "drinnen",
+      "link": "https://www.brakula.de/programm/Bluegrass-and-Oldtime-Session-/291120261800/"
+    },
+    {
+      "id": "lesung-daniel-glattauer-der-weihnachtshund-schulungshaus",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "18:00",
+      "ende": "19:30",
+      "titel": "Lesung: Daniel Glattauer „Der Weihnachtshund“",
+      "ort": "Schulungshaus Hamburg Wasser, Wellingsbüttel",
+      "geo": [
+        53.63955,
+        10.06262
+      ],
+      "region": "HH",
+      "kategorie": "Lesung",
+      "beschreibung": "Glattauers Roman als „Antidepressivum gegen vorweihnachtlichen Frust“ – eine Liebesgeschichte zum Lachen, gelesen von Schauspieler und Hörbuchsprecher Volker Hanisch und Anita Gramser (McGonagall im Hamburger „Harry Potter“).",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/glattauer-der-weihnachtshund-eine-lesung/",
+      "unsicher": "Preis nicht angegeben (Tickets über Reservix); Bildunterschrift nennt Sonja Szylowicki statt Anita Gramser; Ende geschätzt"
+    },
+    {
+      "id": "vortrag-kuenstliche-intelligenz-fluch-oder-segen-kulturwerk",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "19:30",
+      "ende": "21:00",
+      "titel": "Vortrag: Künstliche Intelligenz – Fluch oder Segen?",
+      "ort": "KulturWerk Rahlstedt",
+      "geo": [
+        53.60449,
+        10.15623
+      ],
+      "region": "HH",
+      "kategorie": "Lesung",
+      "beschreibung": "Prof. Dr. Kerstin Prechel (Wirtschaftsethik und Digitalisierung) erklärt verständlich, wie KI funktioniert, wo sie uns schon begegnet und welche Chancen und Risiken sie für Gesellschaft, Jobs und Sicherheit hat – mit viel Zeit für Fragen.",
+      "preis": "10 € (Abendkasse)",
+      "draussen": "drinnen",
+      "link": "https://www.kulturwerk-rahlstedt.de/events/kuenstliche-intelligenz-fluch-oder-segen/",
+      "unsicher": "Kopfzeile des KulturWerk-Kalenders nennt 18:00 Uhr, Beschreibung und hamburg-tourism 19:30 Uhr (Einlass 19 Uhr); Ende geschätzt"
     }
   ],
   "laufend": [
@@ -12635,6 +14349,96 @@
       "draussen": "draußen",
       "link": "https://www.hannover.de/Veranstaltungskalender/Weihnachten/Weihnachtsmarkt-Lister-Meile",
       "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "ausstellung-floral-trifft-orte-torsten-schaefer-mechthild",
+      "von": "2026-11-07",
+      "bis": "2026-11-28",
+      "zeit": "Mi, Do, Sa 11–14 Uhr",
+      "titel": "Ausstellung „Floral trifft Orte“ – Torsten Schaefer & Mechthild Strunk",
+      "ort": "KulturWerk Rahlstedt",
+      "geo": [
+        53.60449,
+        10.15623
+      ],
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Gemälde und Aquarelle von unscheinbaren Orten „in der zweiten Reihe“ (Schaefer) und titellose, naturinspirierte Abstraktionen (Strunk) im Rahlstedter Kulturzentrum.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.kulturwerk-rahlstedt.de/events/floral-trifft-orte/"
+    },
+    {
+      "id": "ausstellung-kriegsaltlasten-im-wandel-der-zeit-80-jahre",
+      "von": "2026-09-29",
+      "bis": "2027-02-26",
+      "zeit": "Mo–Do 9–16, Fr 9–14 Uhr (an Feiertagen geschlossen)",
+      "titel": "Ausstellung „Kriegsaltlasten im Wandel der Zeit – 80 Jahre Kampfmittelräumdienst“",
+      "ort": "Bibliothek der Helmut-Schmidt-Universität, Jenfeld",
+      "geo": [
+        53.56877,
+        10.11122
+      ],
+      "region": "HH",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Vom Bombenräumkommando 1946 zum heutigen Kampfmittelräumdienst der Feuerwehr: Dokumente, Fotos, Filme und Exponate zu Blindgängern in Hamburg und wie sie heute entschärft werden. Lichtbildausweis fürs Uni-Gelände mitbringen.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/ausstellung-kriegsaltlasten-im-wandel-der-zeit-1946-2026-vom-bombenraeumkommando-zum-kampf/"
+    },
+    {
+      "id": "wochenmarkt-volksdorf-kattjahren-halenreie-marktplatz",
+      "von": "2026-10-28",
+      "bis": "2026-11-28",
+      "zeit": "Mi und Sa 8–13 Uhr (Sa 31.10. entfällt wegen Reformationstag, dafür Fr 30.10. 8–13 Uhr)",
+      "titel": "Wochenmarkt Volksdorf (Kattjahren/Halenreie)",
+      "ort": "Marktplatz Volksdorf",
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Einer der größten Märkte im Bezirk: regionale Lebensmittel, Blumen, Textilien und Imbissstände – samstags besonders voll und gemütlich.",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/wochenmarkt-kattjahrenhalenreievolksdorf/",
+      "geo": [
+        53.652,
+        10.16244
+      ]
+    },
+    {
+      "id": "wochenmaerkte-in-der-rahlstedter-bahnhofstrasse-rahlstedter",
+      "von": "2026-10-28",
+      "bis": "2026-11-28",
+      "zeit": "Mi und Sa 8–13 Uhr (Sa 31.10. entfällt, dafür Fr 30.10.), Do ab 9 Uhr „Food Lovers Market“",
+      "titel": "Wochenmärkte in der Rahlstedter Bahnhofstraße",
+      "ort": "Rahlstedter Bahnhofstraße",
+      "geo": [
+        53.59888,
+        10.15402
+      ],
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Markt im Rahlstedter Ortskern zwischen Bahnhof und ZOB: Obst, Gemüse, Fisch, Käse, Feinkost, Blumen und Imbiss; donnerstags kommt der Food Lovers Market mit Spezialitäten dazu.",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/oeko-wochenmarkt-rahlstedt/"
+    },
+    {
+      "id": "wochenmarkt-am-quarree-wandsbek-quarree-wandsbek",
+      "von": "2026-10-28",
+      "bis": "2026-11-28",
+      "zeit": "Mo–Sa ab 8 Uhr (am Reformationstag, Sa 31.10., vorher prüfen)",
+      "titel": "Wochenmarkt am Quarree Wandsbek",
+      "ort": "Quarree Wandsbek",
+      "geo": [
+        53.57261,
+        10.06648
+      ],
+      "region": "HH",
+      "kategorie": "Markt",
+      "beschreibung": "Täglicher Markt hinter dem Einkaufszentrum: Lebensmittel, Fleisch, Fisch, Käse, Backwaren, Blumen und Imbissstände direkt an der U Wandsbek Markt.",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/wochenmarkt-am-quarree-wandsbek/"
     }
   ],
   "immer": [

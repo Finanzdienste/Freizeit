@@ -17,6 +17,7 @@ export const REGIONEN = {
   STD: 'Stade & Altes Land',
   HB: 'Hohwachter Bucht & Kiel',
   WIS: 'Wismar',
+  HAN: 'Hannover',
   WEI: 'Weitere Ziele',
 };
 

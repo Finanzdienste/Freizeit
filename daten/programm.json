@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "stand": "2026-10-28T00:29",
+  "stand": "2026-10-28T12:52",
   "von": "2026-10-26",
   "bis": "2026-11-29",
   "infos": [
@@ -8797,6 +8797,2260 @@
       "link": "https://www.wismar.de/Tourismus/Veranstaltungen/Veranstaltungskalender/-Swinging-Christmas-mit-Andreas-Pasternack.php?object=tx%2C4176.4.1&ModID=11&FID=4176.1642.1",
       "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 12 Min. zu Fuß · Auto: ca. 1:45 Std. (A1/A20)",
       "unsicher": "Preis und Dauer nicht angegeben"
+    },
+    {
+      "id": "winterzauber-herrenhausen-wintermarkt-mit-illuminiertem",
+      "daten": [
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "Mi 13–20, Do 11–20, Fr/Sa 11–21, So 11–19 Uhr",
+      "zeiten": {
+        "2026-10-28": "13:00–20:00",
+        "2026-10-29": "11:00–20:00",
+        "2026-10-30": "11:00–21:00",
+        "2026-10-31": "11:00–21:00",
+        "2026-11-01": "11:00–19:00"
+      },
+      "ende": "21:00",
+      "ganztags": true,
+      "titel": "Winterzauber Herrenhausen – Wintermarkt mit illuminiertem Großen Garten",
+      "ort": "Galerie Herrenhausen, Hannover",
+      "geo": [
+        52.39089,
+        9.6999
+      ],
+      "region": "HAN",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Vorweihnachtlicher Markt im Ehrenhof und in der Galerie von Schloss Herrenhausen mit rund 120 Ausstellern (Kunsthandwerk, Deko, Mode, Genuss) – abends ist der illuminierte Große Garten exklusiv für Besucher geöffnet (ab ca. 17 Uhr). Showprogramm und Illumination sind im Eintritt enthalten.",
+      "preis": "15 €, erm. 13 € (VVK online 14 € + 0,30 €)",
+      "draussen": "beides",
+      "link": "https://www.gartenfestivals.de/winterzauber-herrenhausen/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Do-Öffnung: Veranstalter nennt 11–20 Uhr, hannover.de 11–21 Uhr"
+    },
+    {
+      "id": "hannover-wies-n-oktoberfest-im-festzelt-auf-der-gilde",
+      "daten": [
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01",
+        "2026-11-06",
+        "2026-11-07"
+      ],
+      "zeit": "18:00",
+      "zeiten": {
+        "2026-11-01": "11:30"
+      },
+      "ende": "23:00",
+      "titel": "Hannover Wies'n – Oktoberfest im Festzelt auf der Gilde Parkbühne",
+      "ort": "Gilde Parkbühne, Hannover",
+      "geo": [
+        52.35704,
+        9.72997
+      ],
+      "region": "HAN",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Siebte Auflage des Hannoveraner Oktoberfests: Festzelt ab 17 Uhr, Live-Musik und Programm 18–23 Uhr (29.10.–1.11. mit „Ois Easy“, 6./7.11. mit „Münchner G'schichten“), am So 1.11. Frühschoppen ab 11:30 Uhr. Sa 31.10. sowie Fr 6. und Sa 7.11. laut Veranstalter ausverkauft, vereinzelt Stehplätze an der Almrausch-Bar.",
+      "preis": "Stehplatz Almrausch-Bar/Kuhstadl 31 €, Tische ab 196 € (bis 6 Pers.)",
+      "draussen": "drinnen",
+      "link": "https://www.hannover-wiesn.de/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · 30.10.–1.11. abends Bauarbeiten Hannover–Celle (teils Busersatz, längere Fahrzeit) – Verbindung vorher prüfen · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Einzelabende ausverkauft (31.10., 6.11., 7.11.) – Stand Veranstalter-Website; Ende 23 Uhr laut hannover.de"
+    },
+    {
+      "id": "altstadtflohmarkt-am-hohen-ufer-letzter-markttag-der-saison",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "10:00–18:00",
+      "ende": "18:00",
+      "titel": "Altstadtflohmarkt am Hohen Ufer – letzter Markttag der Saison",
+      "ort": "Flohmarkt am Hohen Ufer, Hannover",
+      "geo": [
+        52.37267,
+        9.73064
+      ],
+      "region": "HAN",
+      "kategorie": "Markt",
+      "beschreibung": "Deutschlands ältester Flohmarkt (seit 1967) am Leineufer unterhalb der Nanas: Trödel, Antiquitäten, Bücher und Kurioses in der Altstadt – am 31.10. zum letzten Mal in dieser Saison (März–Oktober), danach Winterpause.",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Altstadtflohmarkt-Hannover-am-Hohen-Ufer",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "lichterfest-im-strassenbahn-museum-sehnde-hannoversches",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "14:00–20:00",
+      "ende": "20:00",
+      "titel": "Lichterfest im Straßenbahn-Museum Sehnde",
+      "ort": "Hannoversches Straßenbahn-Museum, Sehnde",
+      "geo": [
+        52.2875,
+        9.9315
+      ],
+      "region": "HAN",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Saisonabschluss des Hannoverschen Straßenbahn-Museums in Sehnde-Wehmingen: illuminierte historische Bahnen, Fahrten in der Dämmerung, Laternenumzug und Feuerwerk. Rund 25 km südöstlich von Hannover (Regio-Bahn bis Sehnde, von dort Bus/Taxi).",
+      "preis": "8 €, erm. 4,50 €, Familie 21 €",
+      "draussen": "beides",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Lichterfest-im-Stra%C3%9Fenbahn-Museum",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Anreise mit DT ab Hannover: Sehnde liegt außerhalb, Museum ca. 4 km vom Bahnhof Sehnde"
+    },
+    {
+      "id": "faust-flohmarkt-in-linden-mit-handgemacht-markt-in-der",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "08:00–17:00",
+      "ende": "17:00",
+      "titel": "Faust-Flohmarkt in Linden (mit „Handgemacht!“-Markt in der Warenannahme)",
+      "ort": "Kulturzentrum Faust, Hannover",
+      "geo": [
+        52.37635,
+        9.71103
+      ],
+      "region": "HAN",
+      "kategorie": "Markt",
+      "beschreibung": "Stadtteilflohmarkt auf dem Freigelände des Kulturzentrums Faust in Linden: Trödel, Kitsch und Schnäppchen – parallel 11–17 Uhr in der Warenannahme der Markt „Handgemacht!“ mit Selbstgemachtem, Kunst und Kunsthandwerk (jeden ersten Sonntag im Monat).",
+      "kostenlos": true,
+      "draussen": "beides",
+      "link": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Faust-Flohmarkt",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "stoffmarkt-holland-auf-dem-schuetzenplatz-schuetzenplatz",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "10:00–16:00",
+      "ende": "16:00",
+      "titel": "Stoffmarkt Holland auf dem Schützenplatz",
+      "ort": "Schützenplatz Hannover",
+      "geo": [
+        52.36355,
+        9.73193
+      ],
+      "region": "HAN",
+      "kategorie": "Markt",
+      "beschreibung": "Über 100 Stände mit Stoffen, Kurzwaren und Nähzubehör – der niederländische Stoffmarkt macht am Sonntag Station auf dem Schützenplatz.",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Stoffmarkt-Holland",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Eintritt frei angenommen (Markt im Freien, keine Preisangabe)"
+    },
+    {
+      "id": "vintage-wonderland-troedellager-verkaufstag-vintage",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "10:00–16:00",
+      "ende": "16:00",
+      "titel": "Vintage Wonderland – Trödellager-Verkaufstag",
+      "ort": "Vintage Wonderland, Hannover",
+      "geo": [
+        52.41585,
+        9.71876
+      ],
+      "region": "HAN",
+      "kategorie": "Markt",
+      "beschreibung": "Das 540 m² große Trödellager Vintage Wonderland öffnet jeden zweiten Samstag im Monat: Vintage-Möbel, Antiquitäten, Lampen, Deko und Kurioses zum Stöbern.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Vintage-Wonderland",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Eintritt frei angenommen (Verkaufsveranstaltung, keine Preisangabe)"
+    },
+    {
+      "id": "kreativmarkt-im-freizeitheim-vahrenwald-freizeitheim",
+      "daten": [
+        "2026-11-15"
+      ],
+      "zeit": "11:00–17:00",
+      "ende": "17:00",
+      "titel": "Kreativmarkt im Freizeitheim Vahrenwald",
+      "ort": "Freizeitheim Vahrenwald, Hannover",
+      "geo": [
+        52.39359,
+        9.73589
+      ],
+      "region": "HAN",
+      "kategorie": "Markt",
+      "beschreibung": "Markt für Selbstgemachtes: Schmuck, Textiles, Keramik, Papierwaren und Geschenke von Hobby- und Kleinkünstlern aus der Region.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/KREATIVMARKT",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "buchlust-messe-der-unabhaengigen-verlage-im-literaturhaus",
+      "daten": [
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "zeit": "10:00–18:00",
+      "ende": "18:00",
+      "ganztags": true,
+      "titel": "Buchlust – Messe der unabhängigen Verlage im Literaturhaus",
+      "ort": "Literaturhaus Hannover",
+      "geo": [
+        52.3729,
+        9.74297
+      ],
+      "region": "HAN",
+      "kategorie": "Lesung",
+      "beschreibung": "32. Buchlust: 30 unabhängige Verlage aus Deutschland und Österreich zeigen ihre Programme, dazu Lesungen im Stundentakt (Sa u. a. Angelina Maccarone 14:30, Jochen Schimmang 16:00; So Ingo Schulze 11:00, Thea Mengeler 14:30, Anna Julian Mendlik 16:00) und am Sonntag um 18 Uhr die Verleihung des Publikumspreises.",
+      "preis": "5 € (Tageskarte, nur vor Ort)",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Messen-Kongresse/32.-Buchlust-Messe-in-Hannover",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "winterfest-der-bio-handwerksbaeckerei-backwerk-in-den",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "11:00–16:00",
+      "ende": "16:00",
+      "titel": "Winterfest der Bio-Handwerksbäckerei Backwerk in den Hannover-Docks",
+      "ort": "Backwerk Bio-Handwerksbäckerei (Hannover-Docks), Hannover",
+      "geo": [
+        52.37355,
+        9.68775
+      ],
+      "region": "HAN",
+      "kategorie": "Food",
+      "beschreibung": "Hoffest der Bio-Bäckerei auf dem Docks-Gelände in Linden-Nord: Backstuben-Einblicke, Brot, Stollen und Gebäck, Winterspezialitäten und Musik.",
+      "kostenlos": true,
+      "draussen": "beides",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Winterfest-der-Bio-Handwerksb%C3%A4ckerei-Backwerk",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "hannover.de nennt im Text 11–16 Uhr, im Terminblock 11–13 Uhr und eine andere Adresse (Heinrich-Heine-Straße 38)"
+    },
+    {
+      "id": "designachten-design-und-kunsthandwerksmarkt-im-pavillon",
+      "daten": [
+        "2026-11-27",
+        "2026-11-28",
+        "2026-11-29"
+      ],
+      "zeit": "Fr 18–21, Sa 12–19, So 11–18 Uhr",
+      "zeiten": {
+        "2026-11-27": "18:00–21:00",
+        "2026-11-28": "12:00–19:00",
+        "2026-11-29": "11:00–18:00"
+      },
+      "ende": "21:00",
+      "ganztags": true,
+      "titel": "Designachten – Design- und Kunsthandwerksmarkt im Pavillon",
+      "ort": "Pavillon Hannover",
+      "geo": [
+        52.38031,
+        9.74527
+      ],
+      "region": "HAN",
+      "kategorie": "Markt",
+      "beschreibung": "17. Ausgabe des Designmarkts („Glanz & Glitzer Edition“) mit kuratierten Labels und Newcomern: handgemachte Mode, Schmuck, Keramik, Grafik, Papeterie und Wohnaccessoires – gute Adresse für ungewöhnliche Weihnachtsgeschenke.",
+      "preis": "Tageskarte 7 €, Wochenende 10 €",
+      "draussen": "drinnen",
+      "link": "https://pavillon-hannover.de/event/details/101808/designachten",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "exit-x-electric-sunday-koelsch-brina-knauss-henrik-schwarz",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "21:00",
+      "ende": "04:00",
+      "titel": "EXIT x Electric Sunday: Kölsch, Brina Knauss & Henrik Schwarz (live) im Kuppelsaal",
+      "ort": "Kuppelsaal im HCC, Hannover",
+      "geo": [
+        52.37686,
+        9.76938
+      ],
+      "region": "HAN",
+      "kategorie": "Party",
+      "beschreibung": "Premiere der „Boutique Electronic Experience“ im historischen Kuppelsaal des HCC: Melodic House und Techno mit Kölsch und Brina Knauss sowie ein Live-Set von Henrik Schwarz zwischen House, Jazz und Klassik, dazu Lichtkunst in der großen Halle.",
+      "preis": "VVK über Ticket2Go (Preis nicht angegeben)",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/EXIT-x-Electric-Sunday",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · nach Mitternacht keine Rückfahrt mit dem DT (nächster RE3 ab Hannover 3:48 bzw. 5:40) – eher Auto oder Übernachtung · 30.10.–1.11. abends Bauarbeiten Hannover–Celle (teils Busersatz, längere Fahrzeit) – Verbindung vorher prüfen · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt; Ticketpreis nicht auf den Seiten"
+    },
+    {
+      "id": "glitterbox-hannover-house-disco-mit-carl-craig-mousse-t",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "21:00",
+      "ende": "05:00",
+      "titel": "Glitterbox Hannover – House & Disco mit Carl Craig, Mousse T., Michael Gray, Aline Rocha",
+      "ort": "Kuppelsaal im HCC, Hannover",
+      "geo": [
+        52.37686,
+        9.76938
+      ],
+      "region": "HAN",
+      "kategorie": "Party",
+      "beschreibung": "Die einzige Glitterbox-Party 2026 in Deutschland: House, Disco, Funk und Soul im Kuppelsaal mit Carl Craig, Mousse T., Michael Gray („The Weekend“), Aline Rocha und dem Revival House Project, dazu Drag-Performances, Dancers und Konfetti-Momente.",
+      "preis": "ab 40 € zzgl. VVK-Gebühr (gb.ticket2go.de)",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Glitterbox-Hannover",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · nach Mitternacht keine Rückfahrt mit dem DT (nächster RE3 ab Hannover 3:48 bzw. 5:40) – eher Auto oder Übernachtung · 30.10.–1.11. abends Bauarbeiten Hannover–Celle (teils Busersatz, längere Fahrzeit) – Verbindung vorher prüfen · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "fairground-festival-electronic-indoor-festival-mit-armin",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "17:00",
+      "ende": "05:00",
+      "titel": "Fairground Festival – Electronic Indoor Festival mit Armin van Buuren, Boris Brejcha u. v. a.",
+      "ort": "Messegelände Hannover, Hallen 2–4",
+      "geo": [
+        52.33201,
+        9.81277
+      ],
+      "region": "HAN",
+      "kategorie": "Party",
+      "beschreibung": "Zwölf Stunden elektronische Musik auf mehreren Bühnen in den Messehallen 2–4: Mainstage mit Armin van Buuren, Boris Brejcha, Deborah De Luca, Indira Paganotto und Kevin de Vries, Techno auf der Torus Stage (Clara Cuvé, Somewhen …), Harder Styles (Da Tweekaz, Sub Zero Project, D-Block & S-te-Fan) sowie eine Cube Stage mit Dr. Motte und Moguai.",
+      "preis": "Tickets in mehreren Kategorien über die Festival-Website",
+      "draussen": "drinnen",
+      "link": "https://fairground-festival.de/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · nach Mitternacht keine Rückfahrt mit dem DT (nächster RE3 ab Hannover 3:48 bzw. 5:40) – eher Auto oder Übernachtung · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Beginn 17 Uhr laut hannover.de/visit-hannover, Festivalseite nennt nur „12 Stunden“; Ticketpreise nur im Shop"
+    },
+    {
+      "id": "eishockey-derby-hannover-indians-hannover-scorpions",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Eishockey-Derby: Hannover Indians – Hannover Scorpions (Oberliga Nord)",
+      "ort": "Eisstadion am Pferdeturm, Hannover",
+      "geo": [
+        52.37233,
+        9.7804
+      ],
+      "region": "HAN",
+      "kategorie": "Sport",
+      "beschreibung": "Derbytime am Pferdeturm: Der ECH empfängt den Rivalen aus der Wedemark im traditionsreichen Eisstadion – laut Eventim derzeit nur Warteliste.",
+      "preis": "ab 20,10 € (wenn verfügbar)",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/artist/hannover-indians/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · 30.10.–1.11. abends Bauarbeiten Hannover–Celle (teils Busersatz, längere Fahrzeit) – Verbindung vorher prüfen · Auto: ca. 1:45 Std. (A7)",
+      "ausverkauft": true,
+      "unsicher": "Eventim: „derzeit nicht verfügbar (Warteliste)“"
+    },
+    {
+      "id": "handball-bundesliga-die-recken-tsv-hannover-burgdorf",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "Handball-Bundesliga: Die Recken (TSV Hannover-Burgdorf) – Bergischer HC",
+      "ort": "ZAG Arena, Hannover",
+      "geo": [
+        52.32243,
+        9.8165
+      ],
+      "region": "HAN",
+      "kategorie": "Sport",
+      "beschreibung": "Heimspiel der Recken in der ZAG Arena (Einlass 17:30) gegen den Bergischen HC aus dem unteren Tabellendrittel – Erstliga-Handball vor bis zu 10.000 Fans.",
+      "preis": "ab 11,50 € (Eventim), Mystery-Ticket 18,09 €",
+      "draussen": "drinnen",
+      "link": "https://www.die-recken.de/einzeltickets/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · 30.10.–1.11. abends Bauarbeiten Hannover–Celle (teils Busersatz, längere Fahrzeit) – Verbindung vorher prüfen · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "2-bundesliga-hannover-96-dynamo-dresden-heinz-von-heiden",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "13:30",
+      "ende": "15:30",
+      "titel": "2. Bundesliga: Hannover 96 – Dynamo Dresden",
+      "ort": "Heinz-von-Heiden-Arena, Hannover",
+      "geo": [
+        52.36099,
+        9.73294
+      ],
+      "region": "HAN",
+      "kategorie": "Sport",
+      "beschreibung": "10. Spieltag in der Heinz-von-Heiden-Arena am Maschsee: Die Roten empfangen Dynamo Dresden – Sonntagsspiel um 13:30 Uhr, Anstoß laut DFL fest terminiert.",
+      "preis": "ab 33,80 € (Eventim)",
+      "draussen": "draußen",
+      "link": "https://www.hannover96.de/profis/spielplan",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "oktagon-97-mma-fight-night-in-der-zag-arena-zag-arena",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "18:00",
+      "ende": "23:00",
+      "titel": "OKTAGON 97 – MMA-Fight-Night in der ZAG Arena",
+      "ort": "ZAG Arena, Hannover",
+      "geo": [
+        52.32243,
+        9.8165
+      ],
+      "region": "HAN",
+      "kategorie": "Sport",
+      "beschreibung": "Zum dritten Mal gastiert die größte europäische MMA-Serie in Hannover: Kampfsport-Show mit Lichtinszenierung, Walk-ins und mehreren Profi-Kämpfen (Einlass 17 Uhr).",
+      "preis": "39–249 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Sport/Zum-dritten-Mal-in-Hannover-OKTAGON-MMA",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "eishockey-hannover-indians-herforder-ice-dragons-oberliga",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Eishockey: Hannover Indians – Herforder Ice Dragons (Oberliga Nord)",
+      "ort": "Eisstadion am Pferdeturm, Hannover",
+      "geo": [
+        52.37233,
+        9.7804
+      ],
+      "region": "HAN",
+      "kategorie": "Sport",
+      "beschreibung": "Freitagabend-Heimspiel des ECH im Eisstadion am Pferdeturm gegen Herford – Oberliga-Eishockey mit Stehplatz-Kurve und Kult-Atmosphäre.",
+      "preis": "ab 20,10 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/artist/hannover-indians/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "handball-bundesliga-die-recken-tsv-hannover-burgdorf-tvb",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "Handball-Bundesliga: Die Recken (TSV Hannover-Burgdorf) – TVB Stuttgart",
+      "ort": "ZAG Arena, Hannover",
+      "geo": [
+        52.32243,
+        9.8165
+      ],
+      "region": "HAN",
+      "kategorie": "Sport",
+      "beschreibung": "Freitagabend-Heimspiel der Recken in der ZAG Arena gegen den TVB Stuttgart (Einlass 17:30).",
+      "preis": "ab 11,50 € (Eventim)",
+      "draussen": "drinnen",
+      "link": "https://www.die-recken.de/einzeltickets/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "eishockey-hannover-indians-hammer-eisbaeren-oberliga-nord",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Eishockey: Hannover Indians – Hammer Eisbären (Oberliga Nord)",
+      "ort": "Eisstadion am Pferdeturm, Hannover",
+      "geo": [
+        52.37233,
+        9.7804
+      ],
+      "region": "HAN",
+      "kategorie": "Sport",
+      "beschreibung": "Heimspiel des ECH am Pferdeturm gegen die Hammer Eisbären.",
+      "preis": "ab 20,10 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/artist/hannover-indians/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "2-bundesliga-hannover-96-spvgg-greuther-fuerth-heinz-von",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "13:00",
+      "ende": "15:00",
+      "titel": "2. Bundesliga: Hannover 96 – SpVgg Greuther Fürth",
+      "ort": "Heinz-von-Heiden-Arena, Hannover",
+      "geo": [
+        52.36099,
+        9.73294
+      ],
+      "region": "HAN",
+      "kategorie": "Sport",
+      "beschreibung": "12. Spieltag: Samstagsspiel um 13 Uhr in der Heinz-von-Heiden-Arena gegen Greuther Fürth – Anstoß laut DFL fest terminiert.",
+      "preis": "ab 33,80 € (Eventim)",
+      "draussen": "draußen",
+      "link": "https://www.hannover96.de/profis/spielplan",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "eishockey-hannover-indians-ehc-neuwied-oberliga-nord",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Eishockey: Hannover Indians – EHC Neuwied (Oberliga Nord)",
+      "ort": "Eisstadion am Pferdeturm, Hannover",
+      "geo": [
+        52.37233,
+        9.7804
+      ],
+      "region": "HAN",
+      "kategorie": "Sport",
+      "beschreibung": "Heimspiel des ECH am Pferdeturm gegen den EHC Neuwied.",
+      "preis": "ab 20,10 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/artist/hannover-indians/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "disney-in-concert-2026-wishes-and-wonders-mit-dem-hollywood",
+      "daten": [
+        "2026-10-30"
+      ],
+      "zeit": "19:30",
+      "ende": "22:00",
+      "titel": "Disney in Concert 2026: „Wishes and Wonders“ mit dem Hollywood Sound Orchestra",
+      "ort": "ZAG Arena, Hannover",
+      "geo": [
+        52.32243,
+        9.8165
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Jubiläumstournee des Live-Formats: Starsolisten und das Hollywood Sound Orchestra spielen die größten Disney-Songs, dazu die Filmszenen auf großer Leinwand (Einlass 18 Uhr).",
+      "preis": "62,90–93,90 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Disney-in-Concert-2026-%E2%80%93-Jubil%C3%A4umstour",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · 30.10.–1.11. abends Bauarbeiten Hannover–Celle (teils Busersatz, längere Fahrzeit) – Verbindung vorher prüfen · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "rudolf-buchbinder-spielt-beethoven-sonaten-ndr-konzerthaus",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "17:00",
+      "ende": "19:00",
+      "titel": "Rudolf Buchbinder spielt Beethoven-Sonaten",
+      "ort": "NDR Konzerthaus, Hannover",
+      "geo": [
+        52.3607,
+        9.74178
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Pianistenlegende Rudolf Buchbinder mit Beethoven-Sonaten im Großen Sendesaal des NDR Konzerthauses.",
+      "preis": "25–70 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Rudolf-Buchbinder",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "ndr-radiophilharmonie-mirga-grazinyte-tyla-onute-grazinyte",
+      "daten": [
+        "2026-11-06"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "NDR Radiophilharmonie: Mirga Gražinytė-Tyla & Onutė Gražinytė – Britten, Clara Schumann, Tschaikowsky",
+      "ort": "NDR Konzerthaus, Hannover",
+      "geo": [
+        52.3607,
+        9.74178
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Schwestern Mirga Gražinytė-Tyla (Dirigat) und Onutė Gražinytė (Klavier) zu Gast bei der NDR Radiophilharmonie: Brittens „Young Person's Guide to the Orchestra“, Clara Schumanns Klavierkonzert a-Moll und Tschaikowskys 5. Sinfonie. Einführung „Das Gelbe Sofa“ eine Stunde vor Beginn.",
+      "preis": "12–55 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Konzert-Highlights-in-Hannover/Britten,-Tschaikowsky-und-Clara-Schumann",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "beast-in-black-resurrection-tour-2026-sonata-arctica-frozen",
+      "daten": [
+        "2026-11-06"
+      ],
+      "zeit": "19:00",
+      "ende": "22:30",
+      "titel": "Beast in Black – Resurrection Tour 2026 (+ Sonata Arctica, Frozen Crown)",
+      "ort": "Swiss Life Hall, Hannover",
+      "geo": [
+        52.35704,
+        9.72997
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Hymnischer Power Metal aus Finnland: Beast in Black mit den Supports Sonata Arctica und Frozen Crown in der Swiss Life Hall (Einlass 17:30).",
+      "preis": "63,35 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Beast-In-Black-Resurrection-Tour-2026",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "mireille-mathieu-abschiedstournee-im-kuppelsaal-kuppelsaal",
+      "daten": [
+        "2026-11-06"
+      ],
+      "zeit": "20:00",
+      "ende": "22:15",
+      "titel": "Mireille Mathieu – Abschiedstournee im Kuppelsaal",
+      "ort": "Kuppelsaal im HCC, Hannover",
+      "geo": [
+        52.37686,
+        9.76938
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Die französische Chanson-Ikone mit dem Pagenschnitt auf ihrer Abschiedstournee im Kuppelsaal des HCC.",
+      "preis": "73,75–119,75 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Mireille-Mathieu",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "heinz-rudolf-kunze-verstaerkung-angebot-und-nachfrage-tour",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Heinz Rudolf Kunze & Verstärkung – „Angebot und Nachfrage“-Tour (Heimspiel)",
+      "ort": "Kuppelsaal im HCC, Hannover",
+      "geo": [
+        52.37686,
+        9.76938
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Deutschlands Rockpoet aus der Wedemark lädt zum Heimspiel im Kuppelsaal: neue Songs und die Klassiker von „Dein ist mein ganzes Herz“ bis „Finden Sie Mabel“.",
+      "preis": "ab 63,45 € (mvp.de/Eventim)",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Heinz-Rudolf-Kunze-Verst%C3%A4rkung",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "milano-diamonds-tour-2026-nachholtermin-swiss-life-hall",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Milano – Diamonds Tour 2026 (Nachholtermin)",
+      "ort": "Swiss Life Hall, Hannover",
+      "geo": [
+        52.35704,
+        9.72997
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Nachholtermin des im Mai ausgefallenen Konzerts: der Rapper Milano mit seiner „Diamonds“-Tour in der Swiss Life Hall (Einlass 18:30).",
+      "preis": "51,60–57,35 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Nachholtermin-Milano-live-in-Hannover",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "tim-fischer-chansons-pavillon-hannover",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Tim Fischer – Chansons",
+      "ort": "Pavillon Hannover",
+      "geo": [
+        52.38031,
+        9.74527
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Der Chansonnier Tim Fischer mit seinem unverwechselbaren Abend zwischen Hildegard Knef, Georg Kreisler und eigenen Liedern im Pavillon (Einlass 19:30).",
+      "preis": "ab 30,60 €",
+      "draussen": "drinnen",
+      "link": "https://pavillon-hannover.de/event/details/101509/tim-fischer",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "korn-euro-tour-2026-special-guests-architects-pixel-grip",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "19:30",
+      "ende": "23:00",
+      "titel": "Korn – Euro Tour 2026 (Special Guests: Architects, Pixel Grip)",
+      "ort": "ZAG Arena, Hannover",
+      "geo": [
+        52.32243,
+        9.8165
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Nu-Metal-Legenden aus Bakersfield mit ihren größten Hits in der ZAG Arena, als Special Guests Architects und Pixel Grip (Einlass 18 Uhr). Bei Eventim sind derzeit alle Kategorien vergriffen.",
+      "preis": "79,80–120,05 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/korn-euro-tour-2026-zag-arena-21371946/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "ausverkauft": true,
+      "unsicher": "Eventim: alle Kategorien „zurzeit nicht verfügbar“ (hohe Nachfrage); Ende geschätzt"
+    },
+    {
+      "id": "madsen-smile-tour-2026-swiss-life-hall-hannover",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Madsen – Smile-Tour 2026",
+      "ort": "Swiss Life Hall, Hannover",
+      "geo": [
+        52.35704,
+        9.72997
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Wendland-Rockband Madsen mit neuem Album „Smile“ und ihren Mitsing-Hymnen in der Swiss Life Hall (Einlass 18:30).",
+      "preis": "51,25 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Madsen-%E2%80%93-Smile-Tour-2026",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "max-raabe-palast-orchester-hummel-streicheln-kuppelsaal-im",
+      "daten": [
+        "2026-11-13",
+        "2026-11-14"
+      ],
+      "zeit": "20:00",
+      "ende": "22:15",
+      "titel": "Max Raabe & Palast Orchester – „Hummel streicheln“",
+      "ort": "Kuppelsaal im HCC, Hannover",
+      "geo": [
+        52.37686,
+        9.76938
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Zwei Abende im Kuppelsaal mit Max Raabe und seinem Palast Orchester: Schlager der 20er und 30er, eigene Songs und das trockene Conférencier-Programm.",
+      "preis": "60,40–100,40 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Max-Raabe-und-das-Palast-Orchester",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "itchy-25-years-tour-capitol-hannover",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "ITCHY – 25 Years Tour",
+      "ort": "Capitol Hannover",
+      "geo": [
+        52.36844,
+        9.72033
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Das Punkrock-Trio Itchy (ehemals Itchy Poopzkid) feiert 25 Jahre Bandgeschichte im Capitol.",
+      "preis": "ab 45 € (Eventim)",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/artist/itchy/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "haematom-gagamania-tour-2026-j-b-o-anstandslos",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "19:00",
+      "ende": "23:00",
+      "titel": "Hämatom – Gagamania Tour 2026 (+ J.B.O., Anstandslos & Durchgeknallt)",
+      "ort": "Swiss Life Hall, Hannover",
+      "geo": [
+        52.35704,
+        9.72997
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Schrill, bunt und laut: die Metal-Band Hämatom mit Support von J.B.O. und Anstandslos & Durchgeknallt in der Swiss Life Hall.",
+      "preis": "ab 65,40 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/H%C3%A4matom-%E2%80%93-Gagamania-Tour-2026",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "apsilon-glanz-null-tour-capitol-hannover",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Apsilon – Glanz Null Tour",
+      "ort": "Capitol Hannover",
+      "geo": [
+        52.36844,
+        9.72033
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Der Berliner Rapper Apsilon („Haut wie Pelle“) mit seinem politischen Deutschrap zwischen Moabit und Anatolien auf der „Glanz Null“-Tour im Capitol.",
+      "preis": "ab 50,25 € (Eventim – derzeit nicht verfügbar)",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/hannover/veranstaltungen/apsilon-glanz-null-tour-capitol-hannover/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "ausverkauft": true,
+      "unsicher": "Ende geschätzt; mvp.de/Eventim: Tickets „zur Zeit nicht verfügbar“"
+    },
+    {
+      "id": "mighty-oaks-capitol-hannover-2026-11-16",
+      "daten": [
+        "2026-11-16"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Mighty Oaks – Tour 2026",
+      "ort": "Capitol Hannover",
+      "geo": [
+        52.36844,
+        9.72033
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Berliner Folk-Band um Ian Hooper mit ihren Harmonie-Hymnen („Brother“, „Just One Day“) im Capitol – am Folgetag spielen sie in der Großen Freiheit 36 in Hamburg.",
+      "preis": "44,70 € (Eventim)",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/mighty-oaks-tour-2026-capitol-21026969/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "kuenstler": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "freistil-jeremias-die-ndr-radiophilharmonie-ndr-konzerthaus",
+      "daten": [
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Freistil: Jeremias & die NDR Radiophilharmonie",
+      "ort": "NDR Konzerthaus, Hannover",
+      "geo": [
+        52.3607,
+        9.74178
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Indie-Pop-Band Jeremias („grüne augen lügen nicht“) trifft im Großen Sendesaal auf die NDR Radiophilharmonie unter Aurel Dawidiuk – Bandsongs in Orchesterfassung an drei Abenden.",
+      "preis": "12–50 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Freistil-Jerimias-und-die-NDR-Radiophilharmonie",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "britten-war-requiem-bachchor-hannover-in-der-marktkirche",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Britten: War Requiem – Bachchor Hannover in der Marktkirche",
+      "ort": "Marktkirche, Hannover",
+      "geo": [
+        52.37212,
+        9.73486
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Der Bachchor Hannover, der Kinder- und Jugendchor der Marktkirche und das Osnabrücker Symphonieorchester führen Benjamin Brittens monumentales War Requiem in der Marktkirche auf.",
+      "preis": "8–45 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/War-Requiem",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "david-bowie-symphony-the-celebration-concert-theater-am",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "20:00",
+      "ende": "23:00",
+      "titel": "David Bowie Symphony – The Celebration Concert",
+      "ort": "Theater am Aegi, Hannover",
+      "geo": [
+        52.36763,
+        9.74316
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Bowie-Klassiker von „Space Oddity“ bis „Heroes“ in sinfonischem Gewand: Milan Devinne & The Thin White Duke Orchestra im Theater am Aegi (Einlass 19 Uhr).",
+      "preis": "52,90–84,90 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/David-Bowie-Symphony-The-Celebration-Concert",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "massendefekt-25-live-musikzentrum-hannover",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Massendefekt – 25 Live",
+      "ort": "MusikZentrum Hannover",
+      "geo": [
+        52.39144,
+        9.7272
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Düsseldorfer Punkrock-Band Massendefekt feiert 25 Jahre Bandgeschichte im MusikZentrum.",
+      "preis": "34,70 € zzgl. Gebühren",
+      "draussen": "drinnen",
+      "link": "https://musikzentrum-hannover.de/veranstaltung/massendefekt/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "strangelove-the-depeche-mode-experience-capitol-hannover",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Strangelove – The Depeche Mode Experience",
+      "ort": "Capitol Hannover",
+      "geo": [
+        52.36844,
+        9.72033
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Tribute-Band aus Los Angeles mit einer detailgetreuen Depeche-Mode-Show von „Just Can't Get Enough“ bis „Enjoy the Silence“ im Capitol.",
+      "preis": "ab 65,75 €",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/hannover/veranstaltungen/strangelove-the-depeche-mode-experience-capitol-hannover/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "rock-the-opera-pink-floyd-queen-ac-dc-deep-purple-mit",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Rock the Opera – Pink Floyd, Queen, AC/DC & Deep Purple mit Orchester",
+      "ort": "Kuppelsaal im HCC, Hannover",
+      "geo": [
+        52.37686,
+        9.76938
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Das Spektakel aus der Wiener Staatsoper erstmals in Hannover: Rockhits von Pink Floyd, Queen, AC/DC und Deep Purple mit Band, Solisten und Sinfonieorchester im Kuppelsaal.",
+      "preis": "ab 39 € (mvp.de)",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Rock-The-Opera-im-Kuppelsaal",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "berq-tour-2026-ausverkauft-swiss-life-hall-hannover",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Berq – Tour 2026 (ausverkauft)",
+      "ort": "Swiss Life Hall, Hannover",
+      "geo": [
+        52.35704,
+        9.72997
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Der Pop-Senkrechtstarter Berq („Rote Flaggen“, 1LIVE-Krone) mit neuer Musik in der Swiss Life Hall – laut hannover.de ausverkauft.",
+      "preis": "58,90 € (regulär, wenn verfügbar)",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Ausverkauft-Berq-live-in-Hannover",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "ausverkauft": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "phillip-boa-and-the-voodooclub-singles-songs-from-the",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Phillip Boa and the Voodooclub – Singles & Songs from the Catalogue",
+      "ort": "Capitol Hannover",
+      "geo": [
+        52.36844,
+        9.72033
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Der Dortmunder Indie-Pionier Phillip Boa spielt mit dem Voodooclub Singles und Lieblingssongs aus 40 Jahren Bandgeschichte im Capitol.",
+      "preis": "ab 59,95 €",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/hannover/veranstaltungen/phillip-boa-and-the-voodooclub-play-singles-songs-from-hannover/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "bach-messe-in-h-moll-norddeutscher-figuralchor-in-der",
+      "daten": [
+        "2026-11-27",
+        "2026-11-28"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Bach: Messe in h-Moll – Norddeutscher Figuralchor in der Marktkirche",
+      "ort": "Marktkirche, Hannover",
+      "geo": [
+        52.37212,
+        9.73486
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Der Norddeutsche Figuralchor führt mit Solisten und dem Barockensemble Musica Alta Ripa Bachs h-Moll-Messe in der Marktkirche auf – an zwei Abenden zum Beginn der Adventszeit.",
+      "preis": "15–45 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Bach-Messe-in-h-Moll",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "90s-super-show-live-on-stage-lou-bega-corona-whigfield-mr",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "17:00",
+      "ende": "23:00",
+      "titel": "90s Super Show – live & on stage (Lou Bega, Corona, Whigfield, Mr. President u. v. a.)",
+      "ort": "ZAG Arena, Hannover",
+      "geo": [
+        52.32243,
+        9.8165
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Sechs Stunden Eurodance-Nostalgie in der ZAG Arena: Lou Bega, Corona, Whigfield, Oli.P, Caught in the Act, Mr. President, Masterboy & Beatrix Delgado, Kelly O (Cappella), Bellini, DJ Quicksilver und Aquagen, moderiert von T-Seven und Matze Knop (Einlass 15 Uhr, Ende 23 Uhr).",
+      "preis": "ab 48,15 € (viele Kategorien bereits vergriffen)",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/90s-super-show-zag-arena-20695817/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Eventim: mehrere Kategorien „Last Chance“ bzw. nicht verfügbar"
+    },
+    {
+      "id": "fannys-salon-hannoversche-orchestervereinigung-im-ndr",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "18:00",
+      "ende": "20:00",
+      "titel": "Fannys Salon – Hannoversche Orchestervereinigung im NDR Konzerthaus",
+      "ort": "NDR Konzerthaus, Hannover",
+      "geo": [
+        52.3607,
+        9.74178
+      ],
+      "region": "HAN",
+      "kategorie": "Konzert",
+      "beschreibung": "Herbstkonzert des Laienorchesters mit Werken der Geschwister Fanny Hensel und Felix Mendelssohn Bartholdy, Solistin ist die Violinistin Felicitas Schiffner.",
+      "preis": "11–37 €, erm. 9–19 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Konzerte/Fannys-Salon",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "breakin-circus-urban-dance-artistic-show-swiss-life-hall",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "16:00",
+      "ende": "18:15",
+      "titel": "Breakin' Circus – Urban Dance & Artistic Show",
+      "ort": "Swiss Life Hall, Hannover",
+      "geo": [
+        52.35704,
+        9.72997
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Zirkusshow zwischen Breakdance, Hip-Hop und Artistik: Tänzer und Akrobaten verschmelzen urbane Moves mit Luft- und Bodenakrobatik (Einlass 14:30).",
+      "preis": "49–99 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Breakin'-Circus-2026",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "edgar-selge-liest-aus-juras-letzter-winter-schauspielhaus",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "17:00",
+      "ende": "18:30",
+      "titel": "Edgar Selge liest aus „Juras letzter Winter“",
+      "ort": "Schauspielhaus Hannover",
+      "geo": [
+        52.37346,
+        9.74392
+      ],
+      "region": "HAN",
+      "kategorie": "Lesung",
+      "beschreibung": "Der Schauspieler und Autor Edgar Selge liest im Schauspielhaus aus seinem neuen Roman und spricht anschließend darüber.",
+      "preis": "30 €, erm. ab 15 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/edgar-selge-liest-aus-juras-letzter-winter.1405849",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "lars-reichow-boomerland-pavillon-hannover",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "19:00",
+      "dauer": 120,
+      "titel": "Lars Reichow: „Boomerland“",
+      "ort": "Pavillon Hannover",
+      "geo": [
+        52.38031,
+        9.74527
+      ],
+      "region": "HAN",
+      "kategorie": "Comedy",
+      "beschreibung": "Der Mainzer Klavierkabarettist widmet sich mit Wortwitz, Musik und Satire der Generation der Boomer (Einlass 18 Uhr).",
+      "preis": "27,30 € (VVK), AK 29 €, erm. 24 €",
+      "draussen": "drinnen",
+      "link": "https://pavillon-hannover.de/event/details/101419/lars-reichow",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Dauer geschätzt (Sonntagabend, Ende evtl. nach 21:30)"
+    },
+    {
+      "id": "science-slam-hannover-das-rockkonzert-der-wissenschaft",
+      "daten": [
+        "2026-11-06"
+      ],
+      "zeit": "19:30",
+      "ende": "21:45",
+      "titel": "Science Slam Hannover – das Rockkonzert der Wissenschaft",
+      "ort": "Schauspielhaus Hannover",
+      "geo": [
+        52.37346,
+        9.74392
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Forschende erklären ihre Themen in zehn Minuten so unterhaltsam wie möglich, das Publikum kürt den Sieger – Gastspiel im Schauspielhaus.",
+      "preis": "22 €, erm. ab 9 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/science-slam-hannover.1406745",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "hannover.de nennt 18:30 Uhr, Staatstheater-Spielplan 19:30 Uhr; Ende geschätzt"
+    },
+    {
+      "id": "jan-philipp-zymny-illegale-strassentherapie-comedy",
+      "daten": [
+        "2026-11-06",
+        "2026-11-07"
+      ],
+      "zeit": "19:30",
+      "ende": "21:45",
+      "titel": "Jan Philipp Zymny: „Illegale Straßentherapie“ (Comedy)",
+      "ort": "Warenannahme (Faust-Gelände), Hannover",
+      "geo": [
+        52.37637,
+        9.71011
+      ],
+      "region": "HAN",
+      "kategorie": "Comedy",
+      "beschreibung": "Der Poetry-Slam-Meister und Comedian zerpflückt in seiner neuen Show die Realität mithilfe der Absurdität des Alltags – zwei Abende in der Warenannahme auf dem Faust-Gelände (Einlass 19 Uhr).",
+      "preis": "VVK 22 €, AK 26 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Comedy-Show-Illegale-Stra%C3%9Fentherapie",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "gude-leude-vs-ki-impro-comedy-gegen-kuenstliche-intelligenz",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "19:30",
+      "ende": "21:45",
+      "titel": "Gude Leude vs. KI – Impro-Comedy gegen künstliche Intelligenz",
+      "ort": "Pavillon Hannover",
+      "geo": [
+        52.38031,
+        9.74527
+      ],
+      "region": "HAN",
+      "kategorie": "Comedy",
+      "beschreibung": "Das Impro-Ensemble Gude Leude tritt live gegen eine KI an: Szenen aus Publikumsvorgaben, Maschinenlogik und viel Improvisation im Pavillon (Einlass 19 Uhr).",
+      "preis": "27,30 € (VVK), AK 29 €, erm. 24 €",
+      "draussen": "drinnen",
+      "link": "https://pavillon-hannover.de/event/details/119743/gude-leude-vs-ki",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "kestner-gesellschaft-artist-talk-mit-karimah-ashadu-kestner",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "18:00",
+      "dauer": 90,
+      "titel": "Kestner Gesellschaft: Artist Talk mit Karimah Ashadu",
+      "ort": "Kestner Gesellschaft, Hannover",
+      "geo": [
+        52.37743,
+        9.7316
+      ],
+      "region": "HAN",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Die britisch-nigerianische Künstlerin und Filmemacherin (Silberner Löwe der Biennale Venedig 2024) spricht über ihre Ausstellung „Crystalline“ mit der Weltpremiere des Films „WAVES“ – kurz vor der Finissage am 15.11.",
+      "preis": "5 €, erm. 3 € (Begleitveranstaltung)",
+      "draussen": "drinnen",
+      "link": "https://kestnergesellschaft.de/de/ausstellung/112",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Dauer geschätzt; Preis laut allgemeiner Preisliste"
+    },
+    {
+      "id": "european-outdoor-film-tour-2026-27-theater-am-aegi-hannover",
+      "daten": [
+        "2026-11-15"
+      ],
+      "zeit": "15:00 + 19:00",
+      "dauer": 130,
+      "titel": "European Outdoor Film Tour 2026/27",
+      "ort": "Theater am Aegi, Hannover",
+      "geo": [
+        52.36763,
+        9.74316
+      ],
+      "region": "HAN",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Zwei Stunden Sport und Abenteuer in atemberaubenden Bildern: Die E.O.F.T. zeigt die besten Outdoor-Kurzfilme der Saison im Theater am Aegi, zwei Vorstellungen (Einlass eine Stunde vorher).",
+      "preis": "ab 22 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Kino-Events/European-Outdoor-Film-Tour-2026-27",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Dauer ca. 2 Std. laut Veranstalter; Filmtour, kein regulärer Kinofilm"
+    },
+    {
+      "id": "kestner-gesellschaft-finissage-der-ausstellungen-min-yoon",
+      "daten": [
+        "2026-11-15"
+      ],
+      "zeit": "12:00–18:00",
+      "ende": "18:00",
+      "titel": "Kestner Gesellschaft: Finissage der Ausstellungen Min Yoon & Karimah Ashadu",
+      "ort": "Kestner Gesellschaft, Hannover",
+      "geo": [
+        52.37743,
+        9.7316
+      ],
+      "region": "HAN",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Letzter Tag der beiden Herbstausstellungen mit Rundgängen (16 Uhr mit Gabriele Sand) und offener Finissage-Werkstatt 15–17 Uhr für alle ohne Anmeldung – zum Abschluss der Schau mit Min Yoons raumgreifender Installation und Ashadus Filmen.",
+      "preis": "7 €, erm. 5 € (Werkstatt frei)",
+      "draussen": "drinnen",
+      "link": "https://kestnergesellschaft.de/de/seite/veranstaltungen",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "chris-tall-keep-laughing-tour-zag-arena-hannover",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Chris Tall – „Keep Laughing“-Tour",
+      "ort": "ZAG Arena, Hannover",
+      "geo": [
+        52.32243,
+        9.8165
+      ],
+      "region": "HAN",
+      "kategorie": "Comedy",
+      "beschreibung": "Der Hamburger Comedian mit seinem neuen Arena-Programm „Keep Laughing“ in der ZAG Arena (Einlass 18:30).",
+      "preis": "49,90–74,90 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Chris-Tall-2026-%E2%80%93-Keep-Laughing-Tour",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "andreas-rebers-rein-geschaeftlich-bilanz-pavillon-hannover",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "20:00",
+      "ende": "22:15",
+      "titel": "Andreas Rebers: „rein geschäftlich: Bilanz“",
+      "ort": "Pavillon Hannover",
+      "geo": [
+        52.38031,
+        9.74527
+      ],
+      "region": "HAN",
+      "kategorie": "Comedy",
+      "beschreibung": "Der Kabarettist und Akkordeonist Andreas Rebers zieht satirische Bilanz über Leben, Politik und Kapitalismus (Einlass 19 Uhr).",
+      "preis": "ab 26,60 €",
+      "draussen": "drinnen",
+      "link": "https://pavillon-hannover.de/event/details/101719/andreas-rebers",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "gespraech-mit-dieter-hallervorden-skylight-im-hannover",
+      "daten": [
+        "2026-11-23"
+      ],
+      "zeit": "19:00",
+      "dauer": 100,
+      "titel": "Gespräch mit Dieter Hallervorden",
+      "ort": "Skylight im Hannover Airport, Langenhagen",
+      "geo": [
+        52.45891,
+        9.69517
+      ],
+      "region": "HAN",
+      "kategorie": "Lesung",
+      "beschreibung": "„Unkaputtbar – 90 Jahre Hallervorden“: Didi Hallervorden spricht in der Lesereihe „Erleben & Erlesen“ im Skylight des Flughafens Hannover (Abflugebene zwischen Terminal A und B) über sein Leben zwischen „Nonstop Nonsens“, Schlosspark Theater und „Sein letztes Rennen“ – Einlass 18:30, freie Platzwahl.",
+      "preis": "36,75 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Lesungen-Vortr%C3%A4ge/Gespr%C3%A4ch-mit-Dieter-Hallervorden",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · S-Bahn ab Hannover Hbf ca. 20 Min. zum Flughafen · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Dauer geschätzt (Montagabend); hannover.de nennt als Adresse „Maritimstraße 1“, Veranstaltungsort laut Reihe ist das Skylight im Terminal"
+    },
+    {
+      "id": "juergen-von-der-lippe-liest-sextextsextett-theater-am-aegi",
+      "daten": [
+        "2026-11-28",
+        "2026-11-29"
+      ],
+      "zeit": "20:00",
+      "ende": "23:00",
+      "titel": "Jürgen von der Lippe liest „Sextextsextett“",
+      "ort": "Theater am Aegi, Hannover",
+      "geo": [
+        52.36763,
+        9.74316
+      ],
+      "region": "HAN",
+      "kategorie": "Comedy",
+      "beschreibung": "Der Meister der beiläufigen Pointe liest an zwei Abenden im Theater am Aegi aus seinem neuen Buch (Einlass 19 Uhr).",
+      "preis": "42,70–55,30 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/J%C3%BCrgen-von-der-Lippe-liest-Sextextsextett",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "schwindel-urauffuehrung-von-herbert-fritsch-premiere-am-28",
+      "daten": [
+        "2026-10-28",
+        "2026-11-17",
+        "2026-11-28"
+      ],
+      "zeit": "19:30",
+      "ende": "21:15",
+      "titel": "Schwindel – Uraufführung von Herbert Fritsch (Premiere am 28.10.)",
+      "ort": "Schauspielhaus Hannover",
+      "geo": [
+        52.37346,
+        9.74392
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Der Regisseur und Schauspieler Herbert Fritsch entwickelt mit dem Ensemble des Schauspiels Hannover einen neuen Abend – bei der Programmvorstellung wusste noch niemand, was genau passiert; ein Themenabend über Schwindel wird es nicht. Ohne Pause, ca. 1:45 Std.",
+      "preis": "17–52 €, erm. ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/schwindel.1379352",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Premiere 28.10.; Preise je Termin unterschiedlich (17–44 € bzw. 24–52 €)"
+    },
+    {
+      "id": "burn-baby-burn-urauffuehrung-von-yael-ronen-schauspielhaus",
+      "daten": [
+        "2026-10-30",
+        "2026-11-04",
+        "2026-11-21"
+      ],
+      "zeit": "19:30",
+      "ende": "21:00",
+      "titel": "Burn, Baby, Burn! – Uraufführung von Yael Ronen",
+      "ort": "Schauspielhaus Hannover",
+      "geo": [
+        52.37346,
+        9.74392
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Neues Stück der israelischen Regisseurin Yael Ronen im Schauspielhaus (Premiere am 30.10.), ohne Pause, ca. 1:30 Std.",
+      "preis": "20–54 €, erm. ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/burn-baby-burn.1379334",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · 30.10.–1.11. abends Bauarbeiten Hannover–Celle (teils Busersatz, längere Fahrzeit) – Verbindung vorher prüfen · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "haus-zur-sonne-urauffuehrung-nach-thomas-melle",
+      "daten": [
+        "2026-10-31",
+        "2026-11-03",
+        "2026-11-15",
+        "2026-11-26"
+      ],
+      "zeit": "19:30",
+      "zeiten": {
+        "2026-11-15": "17:00"
+      },
+      "ende": "21:15",
+      "titel": "Haus zur Sonne – Uraufführung nach Thomas Melle",
+      "ort": "Schauspielhaus Hannover",
+      "geo": [
+        52.37346,
+        9.74392
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Adrian Figueroa inszeniert Thomas Melles Roman über eine Klinik, in der Menschen ihr Leben beenden dürfen – Premiere am 31.10. im Schauspielhaus, ohne Pause, ca. 1:45 Std.",
+      "preis": "19–54 €, erm. ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/haus-zur-sonne.1399012",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · 30.10.–1.11. abends Bauarbeiten Hannover–Celle (teils Busersatz, längere Fahrzeit) – Verbindung vorher prüfen · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "So 15.11. um 17:00 Uhr (Ende ca. 18:45)"
+    },
+    {
+      "id": "la-boheme-oper-von-giacomo-puccini-staatsoper-hannover",
+      "daten": [
+        "2026-10-31",
+        "2026-11-21"
+      ],
+      "zeit": "18:30",
+      "zeiten": {
+        "2026-11-21": "19:30"
+      },
+      "ende": "20:45",
+      "titel": "La Bohème – Oper von Giacomo Puccini",
+      "ort": "Staatsoper Hannover",
+      "geo": [
+        52.37337,
+        9.7409
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Traditionell zur Vorweihnachtszeit kehrt Puccinis Oper um die Pariser Künstler-WG und die Liebe von Mimì und Rodolfo in den Spielplan der Staatsoper zurück (ca. 2:15 Std. inkl. Pause).",
+      "preis": "26–84 €, erm. ab 7 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/la-boheme.1397722",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · 30.10.–1.11. abends Bauarbeiten Hannover–Celle (teils Busersatz, längere Fahrzeit) – Verbindung vorher prüfen · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "21.11. um 19:30 Uhr, Ende dann ca. 21:45"
+    },
+    {
+      "id": "matinee-romeo-und-julia-einfuehrung-mit-ballettdirektor",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "11:00",
+      "ende": "12:30",
+      "titel": "Matinee: Romeo und Julia – Einführung mit Ballettdirektor Goyo Montero",
+      "ort": "Staatsoper Hannover",
+      "geo": [
+        52.37337,
+        9.7409
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Vormittags-Einführung in die neue Ballettproduktion mit Goyo Montero und seinem Team sowie Highlights aus der Probenarbeit – eine Woche vor der Premiere.",
+      "preis": "11 €, erm. ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/matinee-romeo-und-julia.1399482",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "il-viaggio-dante-oper-von-pascal-dusapin-staatsoper-hannover",
+      "daten": [
+        "2026-11-01",
+        "2026-11-14",
+        "2026-11-24"
+      ],
+      "zeit": "16:00",
+      "zeiten": {
+        "2026-11-14": "19:30",
+        "2026-11-24": "19:30"
+      },
+      "ende": "18:00",
+      "titel": "Il Viaggio, Dante – Oper von Pascal Dusapin",
+      "ort": "Staatsoper Hannover",
+      "geo": [
+        52.37337,
+        9.7409
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Dantes „Göttliche Komödie“ als zeitgenössisches Musiktheater von Pascal Dusapin an der Staatsoper (ca. 2 Std.); am 24.11. zum letzten Mal.",
+      "preis": "23–75 €, erm. ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/il-viaggio-dante.1399056",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "14.11. und 24.11. um 19:30 Uhr (Ende ca. 21:30)"
+    },
+    {
+      "id": "die-frau-mit-den-vier-armen-niedersachsen-noir-nach-jakob",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "Die Frau mit den vier Armen – Niedersachsen-Noir nach Jakob Nolte (Uraufführung)",
+      "ort": "Ballhof Zwei, Hannover",
+      "geo": [
+        52.37233,
+        9.73299
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Tatort Hannover: Uraufführung der Kriminalgeschichte nach dem Roman von Jakob Nolte im Ballhof Zwei, ohne Pause, ca. 2 Std.",
+      "preis": "23 €, erm. ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/die-frau-mit-den-vier-armen.1379339",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "romeo-und-julia-ballett-von-goyo-montero-premiere-am-6-11",
+      "daten": [
+        "2026-11-06",
+        "2026-11-08",
+        "2026-11-13",
+        "2026-11-19",
+        "2026-11-22",
+        "2026-11-27",
+        "2026-11-29"
+      ],
+      "zeit": "19:30",
+      "zeiten": {
+        "2026-11-08": "18:30",
+        "2026-11-22": "16:00",
+        "2026-11-29": "18:30"
+      },
+      "dauer": 150,
+      "titel": "Romeo und Julia – Ballett von Goyo Montero (Premiere am 6.11.)",
+      "ort": "Staatsoper Hannover",
+      "geo": [
+        52.37337,
+        9.7409
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Neue Ballettproduktion des Staatsballetts Hannover nach Shakespeare mit Prokofjews Musik, choreografiert von Ballettdirektor Goyo Montero – Premiere am Freitag, 6.11., im Opernhaus.",
+      "preis": "27–95 €, erm. ab 7 € (Premiere 30–95 €)",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/romeo-und-julia.1399482",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Dauer geschätzt (Staatstheater nennt kein Ende)"
+    },
+    {
+      "id": "pique-dame-oper-von-tschaikowski-staatsoper-hannover",
+      "daten": [
+        "2026-11-07",
+        "2026-11-15"
+      ],
+      "zeit": "19:30",
+      "zeiten": {
+        "2026-11-15": "18:30"
+      },
+      "ende": "22:45",
+      "titel": "Pique Dame – Oper von Tschaikowski",
+      "ort": "Staatsoper Hannover",
+      "geo": [
+        52.37337,
+        9.7409
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Tschaikowskis Spieler-Oper um die geheime Kartenkombination der alten Gräfin an der Staatsoper (ca. 3:15 Std. inkl. Pausen); 15.11. zum letzten Mal in dieser Spielzeit (ausverkauft).",
+      "preis": "27–90 €, erm. ab 7 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/pique-dame.1399071",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "15.11. laut Spielplan ausverkauft (Ende ca. 21:45)"
+    },
+    {
+      "id": "der-sandmann-nach-e-t-a-hoffmann-ballhof-eins-hannover",
+      "daten": [
+        "2026-10-30",
+        "2026-11-07",
+        "2026-11-15",
+        "2026-11-26"
+      ],
+      "zeit": "19:30",
+      "zeiten": {
+        "2026-11-15": "19:00"
+      },
+      "ende": "21:00",
+      "titel": "Der Sandmann – nach E.T.A. Hoffmann",
+      "ort": "Ballhof Eins, Hannover",
+      "geo": [
+        52.37233,
+        9.73299
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Tom Schneiders Inszenierung der Schauererzählung um Nathanael, Coppelius und die Automatenfrau Olimpia im Ballhof Eins, ohne Pause, ca. 1:30 Std. (30.10. und 15.11. ausverkauft).",
+      "preis": "21–35 €, erm. ab 6 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/der-sandmann.1399022",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · 30.10.–1.11. abends Bauarbeiten Hannover–Celle (teils Busersatz, längere Fahrzeit) – Verbindung vorher prüfen · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "30.10. und 15.11. laut Spielplan ausverkauft"
+    },
+    {
+      "id": "hoehere-gewalt-nach-dem-film-von-ruben-oestlund",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "19:30",
+      "ende": "22:00",
+      "titel": "Höhere Gewalt – nach dem Film von Ruben Östlund (Deutschsprachige Erstaufführung)",
+      "ort": "Schauspielhaus Hannover",
+      "geo": [
+        52.37346,
+        9.74392
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Premiere im Schauspielhaus: Die Bühnenfassung von Ruben Östlunds Lawinen-Familiendrama „Force Majeure“ (bearbeitet von Tim Price), mit Pause, ca. 2:30 Std.",
+      "preis": "24–52 €, erm. ab 6 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/hoehere-gewalt.1379344",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "romeo-und-julia-schauspiel-nach-shakespeare-regie-lena",
+      "daten": [
+        "2026-11-14",
+        "2026-11-25"
+      ],
+      "zeit": "19:30",
+      "ende": "22:20",
+      "titel": "Romeo und Julia – Schauspiel nach Shakespeare (Regie Lena Brasch)",
+      "ort": "Schauspielhaus Hannover",
+      "geo": [
+        52.37346,
+        9.74392
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Lena Brasch hat sich im Schauspielhaus der berühmtesten Liebesgeschichte angenommen – in der Übersetzung von Thomas Brasch, mit Pause, ca. 2:50 Std.",
+      "preis": "24–58 €, erm. ab 6 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/romeo-und-julia.1399020",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "all-the-sex-i-ve-ever-had-mammalian-diving-reflex",
+      "daten": [
+        "2026-10-28",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-24"
+      ],
+      "zeit": "19:30",
+      "ende": "21:00",
+      "titel": "All the Sex I've Ever Had – Mammalian Diving Reflex",
+      "ort": "Cumberlandsche Bühne, Hannover",
+      "geo": [
+        52.37346,
+        9.74392
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Sechs Hannoveraner:innen über 65 erzählen auf der Cumberlandschen Bühne freimütig aus ihrem Liebes- und Sexleben – das international gefeierte Format von Darren O'Donnell, ohne Pause, ca. 1:30 Std.",
+      "preis": "27 €, erm. ab 10 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/all-the-sex-i-ve-ever-had.1379332",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "blutbuch-nach-dem-roman-von-kim-de-l-horizon-ballhof-zwei",
+      "daten": [
+        "2026-11-15"
+      ],
+      "zeit": "19:00",
+      "ende": "21:10",
+      "titel": "Blutbuch – nach dem Roman von Kim de l'Horizon",
+      "ort": "Ballhof Zwei, Hannover",
+      "geo": [
+        52.37233,
+        9.73299
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Das kontrastreiche Stück nach dem mit dem Deutschen Buchpreis ausgezeichneten Debütroman im Ballhof Zwei, ohne Pause, ca. 2:10 Std.",
+      "preis": "21 €, erm. ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/blutbuch.1379359",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "iconic-sisi-lady-di-und-die-welfinnen-urauffuehrung",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "19:30",
+      "ende": "21:40",
+      "titel": "Iconic – Sisi, Lady Di und die Welfinnen (Uraufführung)",
+      "ort": "Schauspielhaus Hannover",
+      "geo": [
+        52.37346,
+        9.74392
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Premiere im Schauspielhaus: Texte von Mareike Fallwickl, lynn t musiol u. a. über die Faszination von Sisi, Lady Di und den hannoverschen Welfinnen, ca. 2:10 Std.",
+      "preis": "24–52 €, erm. ab 6 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/iconic.1379346",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "kuss-der-spinnenfrau-musical-von-kander-ebb-premiere",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "19:30",
+      "dauer": 160,
+      "titel": "Kuss der Spinnenfrau – Musical von Kander & Ebb (Premiere)",
+      "ort": "Staatsoper Hannover",
+      "geo": [
+        52.37337,
+        9.7409
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Premiere des Broadway-Musicals von John Kander und Fred Ebb nach Manuel Puig an der Staatsoper: zwei Gefangene in einer Zelle, Filmträume und die Spinnenfrau.",
+      "preis": "27–84 €, erm. ab 7 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/kuss-der-spinnenfrau.1399483",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "wintervariete-flow-where-art-moves-in-der-orangerie",
+      "daten": [
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22",
+        "2026-11-25",
+        "2026-11-26",
+        "2026-11-28",
+        "2026-11-29"
+      ],
+      "zeit": "19:00",
+      "zeiten": {
+        "2026-11-20": "20:00",
+        "2026-11-22": "17:00",
+        "2026-11-25": "19:30",
+        "2026-11-26": "19:30",
+        "2026-11-29": "17:00"
+      },
+      "dauer": 150,
+      "titel": "Wintervarieté „Flow – where art moves“ in der Orangerie Herrenhausen (Premiere am 20.11.)",
+      "ort": "Orangerie Herrenhausen, Hannover",
+      "geo": [
+        52.39125,
+        9.69999
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Das GOP-Wintervarieté in der barocken Orangerie: Drei junge Künstler erwecken ein verlassenes Theater zum Leben – mit Partnerakrobatik (Duo Satin), Rollerskating (Skating Rebels), Chinese Pole, Strapaten, Magie (SangSoon Kim) und Tanz von Poppin' Pain, inkl. Dinner-Option.",
+      "preis": "regulär ab 39 €, Premiere 84 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Wintervariet%C3%A9-Flow-%E2%80%93-where-art-moves",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · letzte Rückfahrt RE3 ab Hannover Hbf 22:48 (Hamburg Hbf ca. 01:09, bis 22.11. ab Harburg per S-Bahn), davor 21:40 (an ca. 00:20) und 20:40 (an ca. 23:05) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Dauer geschätzt (Show mit Pause)"
+    },
+    {
+      "id": "flashlight-tour-mit-der-taschenlampe-durchs-neue-rathaus",
+      "daten": [
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-06",
+        "2026-11-07",
+        "2026-11-13",
+        "2026-11-14",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-27",
+        "2026-11-28"
+      ],
+      "zeit": "19:00–21:00",
+      "ende": "21:00",
+      "titel": "Flashlight Tour – mit der Taschenlampe durchs Neue Rathaus",
+      "ort": "Neues Rathaus, Hannover",
+      "geo": [
+        52.36722,
+        9.73735
+      ],
+      "region": "HAN",
+      "kategorie": "Führung",
+      "beschreibung": "Abendführung freitags und samstags: Mit der Taschenlampe geht es durch sonst unbekannte Ecken des Neuen Rathauses und der Innenstadt (Treffpunkt Platz der Menschenrechte).",
+      "preis": "15 €, erm. 10 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Gef%C3%BChrte-Touren/Flashlight-Tour",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Laufzeit 30.10.–28.11. freitags/samstags laut hannover.de – einzelne Termine nicht separat bestätigt"
+    },
+    {
+      "id": "fuehrung-im-beginenturm-hannovers-geschichte-vom",
+      "daten": [
+        "2026-10-30",
+        "2026-11-27"
+      ],
+      "zeit": "17:00",
+      "ende": "17:45",
+      "titel": "Führung im Beginenturm – Hannovers Geschichte vom Mittelalter bis heute",
+      "ort": "Beginenturm (Historisches Museum), Hannover",
+      "geo": [
+        52.37172,
+        9.73177
+      ],
+      "region": "HAN",
+      "kategorie": "Führung",
+      "beschreibung": "45-minütige Führung im mittelalterlichen Beginenturm des (wegen Sanierung geschlossenen) Historischen Museums – Online-Tickets oder Anmeldung unter 0511 168 43945.",
+      "preis": "3 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Gef%C3%BChrte-Touren/F%C3%BChrung-im-Beginenturm",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "bruchmeister-tour-inkl-luettje-lage-neues-rathaus-hannover",
+      "daten": [
+        "2026-10-31",
+        "2026-11-06",
+        "2026-11-28"
+      ],
+      "zeit": "15:00",
+      "zeiten": {
+        "2026-11-06": "17:00"
+      },
+      "dauer": 90,
+      "titel": "Bruchmeister-Tour inkl. Lüttje Lage",
+      "ort": "Neues Rathaus, Hannover",
+      "geo": [
+        52.36722,
+        9.73735
+      ],
+      "region": "HAN",
+      "kategorie": "Führung",
+      "beschreibung": "Öffentliche Stadtführung mit historischen Fakten, Anekdoten und der hannöverschen Tradition der Bruchmeister – zum Abschluss gibt es eine Lüttje Lage (Treffpunkt Neues Rathaus, Platz der Menschenrechte). Samstags 15 Uhr, am Fr 6.11. um 17 Uhr.",
+      "preis": "18 €",
+      "draussen": "draußen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Gef%C3%BChrte-Touren/Bruchmeister-Tour-inkl.-L%C3%BCttje-Lage",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "hanno-ver-nascht-altstadt-kulinarischer-stadtbummel-tourist",
+      "daten": [
+        "2026-10-31",
+        "2026-11-01",
+        "2026-11-08",
+        "2026-11-15",
+        "2026-11-22",
+        "2026-11-29"
+      ],
+      "zeit": "11:00–14:00",
+      "zeiten": {
+        "2026-10-31": "13:30–16:30"
+      },
+      "ende": "14:00",
+      "titel": "Hanno(ver)nascht! Altstadt – kulinarischer Stadtbummel",
+      "ort": "Tourist-Information Hannover",
+      "geo": [
+        52.37523,
+        9.7415
+      ],
+      "region": "HAN",
+      "kategorie": "Food",
+      "beschreibung": "Genussvoller Innen- und Altstadtbummel mit Kostproben in traditionellen Lokalen, charmanten Cafés und urigen Kneipen – sonntags um 11 Uhr, am Sa 31.10. um 13:30 Uhr (Start Tourist-Information).",
+      "preis": "46 € p. P. (inkl. Kostproben)",
+      "draussen": "beides",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Gef%C3%BChrte-Touren/Hanno-ver-nascht!-Altstadt",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "stadtbahn-u-bahn-und-ein-grosses-loch-fuehrung-zu-50-jahren",
+      "daten": [
+        "2026-11-01",
+        "2026-11-08",
+        "2026-11-22"
+      ],
+      "zeit": "11:00–13:00",
+      "ende": "13:00",
+      "titel": "Stadtbahn, U-Bahn und ein großes Loch – Führung zu 50 Jahren Stadtbahn (mit geheimer Station)",
+      "ort": "Treffpunkt Stadtbahnstation Waterloo, Hannover",
+      "geo": [
+        52.36593,
+        9.73182
+      ],
+      "region": "HAN",
+      "kategorie": "Führung",
+      "beschreibung": "Spaziergang von Stattreisen zur Geschichte der hannoverschen Stadtbahn inklusive Besuch des nie fertiggestellten U-Bahnhofs unter dem Steintor.",
+      "preis": "15 €, erm. 12 €",
+      "draussen": "beides",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Gef%C3%BChrte-Touren/Stadtbahn,-U-Bahn-und-ein-gro%C3%9Fes-Loch",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "kunst-umgehen-skulpturenmeile-am-abend-kostenlose-fuehrung",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "18:00–20:00",
+      "ende": "20:00",
+      "titel": "Kunst umgehen: Skulpturenmeile am Abend (kostenlose Führung)",
+      "ort": "Treffpunkt Königsworther Platz, Hannover",
+      "geo": [
+        52.3785,
+        9.72239
+      ],
+      "region": "HAN",
+      "kategorie": "Führung",
+      "beschreibung": "Kostenfreier Rundgang entlang der Skulpturenmeile zwischen fließendem Verkehr und wechselndem Licht – Treffpunkt an der Skulptur „Genesis“ am Königsworther Platz.",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Gef%C3%BChrte-Touren/Kunst-umgehen-F%C3%BChrung-|-Skulpturenmeile-am-Abend",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "krimi-tour-mord-intrigen-hexerei-500-jahre",
+      "daten": [
+        "2026-11-06"
+      ],
+      "zeit": "17:00–19:00",
+      "ende": "19:00",
+      "titel": "Krimi-Tour: Mord, Intrigen, Hexerei – 500 Jahre Kriminalgeschichte",
+      "ort": "Treffpunkt Neustädter Hof- und Stadtkirche, Hannover",
+      "geo": [
+        52.37115,
+        9.72851
+      ],
+      "region": "HAN",
+      "kategorie": "Führung",
+      "beschreibung": "Stattreisen-Spaziergang zu 500 Jahren hannoverscher Kriminalgeschichte, Treffpunkt Neustädter Hof- und Stadtkirche St. Johannis (Rote Reihe).",
+      "preis": "12 €, erm. 9 €",
+      "draussen": "draußen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Gef%C3%BChrte-Touren/Krimi-Tour-Mord,-Intrigen,-Hexerei",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "tropentour-im-berggarten-durch-die-schauhaeuser-berggarten",
+      "daten": [
+        "2026-11-15"
+      ],
+      "zeit": "14:00–16:00",
+      "ende": "16:00",
+      "titel": "Tropentour im Berggarten – durch die Schauhäuser",
+      "ort": "Berggarten Herrenhausen, Hannover",
+      "geo": [
+        52.39188,
+        9.7001
+      ],
+      "region": "HAN",
+      "kategorie": "Führung",
+      "beschreibung": "Schätze unter Glas: Führung durch die tropischen Schauhäuser des Berggartens mit Orchideen, Kakteen und Regenwaldpflanzen (einmal im Monat von November bis März).",
+      "preis": "12 €, erm. 10 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Gef%C3%BChrte-Touren/Tropentour-im-Berggarten",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "der-alte-hofmarschall-erinnert-sich-szenische-fuehrung-im",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "11:30",
+      "ende": "12:30",
+      "titel": "Der alte Hofmarschall erinnert sich … – szenische Führung im Museum Schloss Herrenhausen",
+      "ort": "Museum Schloss Herrenhausen, Hannover",
+      "geo": [
+        52.39099,
+        9.69721
+      ],
+      "region": "HAN",
+      "kategorie": "Führung",
+      "beschreibung": "Rainer Künnecke führt als alter Hofmarschall durch das Museum Schloss Herrenhausen und erzählt aus dem Leben am Welfenhof (Anmeldung beim Historischen Museum).",
+      "preis": "Gesamtkarte Herrenhäuser Gärten (10 €) zzgl. Führungsgebühr laut Museum",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Gef%C3%BChrte-Touren/Der-alte-Hofmarschall-erinnert-sich%E2%80%A6",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Preis der Führung nicht angegeben"
+    },
+    {
+      "id": "sprengel-museum-eroeffnung-nevin-aladag-kurt-schwitters",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "19:00",
+      "dauer": 120,
+      "titel": "Sprengel Museum: Eröffnung Nevin Aladağ – Kurt Schwitters Preis 2026",
+      "ort": "Sprengel Museum Hannover",
+      "geo": [
+        52.36263,
+        9.7403
+      ],
+      "region": "HAN",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Eröffnung der Einzelausstellung der Preisträgerin Nevin Aladağ (documenta 14, Biennale Venedig): Im Zentrum steht der Porsche ihres verstorbenen Vaters, mit Saz, Kabassa und Akkordeon in eine bespielbare Klangskulptur verwandelt. Anmeldung über gstoo.de/kurt-schwitters-preis erbeten; Ausstellung bis 21.2.2027.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.sprengel-museum.de/aladag",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Eintritt zur Eröffnung frei angenommen (Anmeldung erbeten); Dauer geschätzt"
+    },
+    {
+      "id": "ella-carina-werner-liest-aus-menopause-turbosause-pavillon",
+      "daten": [
+        "2026-11-05"
+      ],
+      "zeit": "19:00",
+      "dauer": 90,
+      "titel": "Ella Carina Werner liest aus „Menopause Turbosause“",
+      "ort": "Pavillon Hannover",
+      "geo": [
+        52.38031,
+        9.74527
+      ],
+      "region": "HAN",
+      "kategorie": "Lesung",
+      "beschreibung": "Die Titanic-Autorin und Satirikerin Ella Carina Werner liest aus ihrem Buch über die Wechseljahre – komisch, böse und entwaffnend offen (Einlass 18:30).",
+      "preis": "VVK 20,70 €, AK 22 €, erm. 18 €",
+      "draussen": "drinnen",
+      "link": "https://pavillon-hannover.de/event/details/101480/ella-carina-werner",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "nie-wieder-hannover-im-november-1938-lesung-und-gespraech",
+      "daten": [
+        "2026-11-09"
+      ],
+      "zeit": "19:30",
+      "dauer": 90,
+      "titel": "Nie wieder – Hannover im November 1938 (Lesung und Gespräch)",
+      "ort": "Cumberlandsche Bühne, Hannover",
+      "geo": [
+        52.37346,
+        9.74392
+      ],
+      "region": "HAN",
+      "kategorie": "Lesung",
+      "beschreibung": "Am Jahrestag der Pogromnacht: Lesung und Gespräch des Schauspiels Hannover über den November 1938 in Hannover auf der Cumberlandschen Bühne.",
+      "preis": "10 €, erm. ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/nie-wieder.1406748",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "ich-will-alles-oder-nichts-musikalischer-abend-zu-100",
+      "daten": [
+        "2026-11-10"
+      ],
+      "zeit": "19:30",
+      "ende": "21:10",
+      "titel": "Ich will alles – oder nichts! Musikalischer Abend zu 100 Jahren Hildegard Knef",
+      "ort": "Schauspielhaus Hannover",
+      "geo": [
+        52.37346,
+        9.74392
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Wieder im Programm, nur noch wenige Termine: der musikalische Knef-Abend im Schauspielhaus mit den Chansons der Diva, ohne Pause, ca. 1:40 Std.",
+      "preis": "19–46 €, erm. ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/ich-will-alles-oder-nichts.1379345",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "ich-ich-ich-oper-von-raquel-garcia-tomas-ballhof-eins",
+      "daten": [
+        "2026-10-31",
+        "2026-11-03",
+        "2026-11-11",
+        "2026-11-18",
+        "2026-11-21",
+        "2026-11-25"
+      ],
+      "zeit": "19:30",
+      "zeiten": {
+        "2026-10-31": "18:30"
+      },
+      "ende": "21:00",
+      "titel": "Ich, ich, ich! – Oper von Raquel García-Tomás",
+      "ort": "Ballhof Eins, Hannover",
+      "geo": [
+        52.37233,
+        9.73299
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Kammeroper der katalanischen Komponistin über die Krankheiten unserer Zeit – pathologische Selbstverliebtheit und Online-Veräußerungsdrang – im Ballhof Eins, ca. 1:30 Std.; am 25.11. zum letzten Mal in dieser Spielzeit.",
+      "preis": "19–31 €, erm. ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/ich-ich-ich.1399065",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "31.10. um 18:30 Uhr (Ende ca. 20:00)"
+    },
+    {
+      "id": "hamlet-r2d2-or-not-2b2-de-warme-winkel-frei-nach",
+      "daten": [
+        "2026-11-12"
+      ],
+      "zeit": "19:30",
+      "ende": "20:45",
+      "titel": "Hamlet: R2D2 or not 2B2 – De Warme Winkel frei nach Shakespeare",
+      "ort": "Schauspielhaus Hannover",
+      "geo": [
+        52.37346,
+        9.74392
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Das niederländische Kollektiv De Warme Winkel spielt Hamlet als ferngesteuerten Roboter – nur noch wenige Termine im Schauspielhaus, ohne Pause, ca. 1:15 Std.",
+      "preis": "17–44 €, erm. ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/hamlet-r2d2-or-not-2b2.1379340",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "julia-brandner-calm-your-tits-comedy-pavillon-hannover",
+      "daten": [
+        "2026-11-12"
+      ],
+      "zeit": "19:00",
+      "dauer": 120,
+      "titel": "Julia Brandner: „Calm your tits“ (Comedy)",
+      "ort": "Pavillon Hannover",
+      "geo": [
+        52.38031,
+        9.74527
+      ],
+      "region": "HAN",
+      "kategorie": "Comedy",
+      "beschreibung": "Die österreichische Comedienne erzählt mit viel Witz und Selbstironie von Beziehungen, Tabus und den Absurditäten des Alltags (Einlass 18:30).",
+      "preis": "VVK 24 €, AK 25 €, erm. 21 €",
+      "draussen": "drinnen",
+      "link": "https://pavillon-hannover.de/event/details/101585/julia-brandner",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Dauer geschätzt (Donnerstag, Ende evtl. nach 21:30)"
+    },
+    {
+      "id": "michael-koehlmeier-liest-mein-privates-glueck-literaturhaus",
+      "daten": [
+        "2026-11-17"
+      ],
+      "zeit": "19:00",
+      "dauer": 90,
+      "titel": "Michael Köhlmeier liest „Mein privates Glück“",
+      "ort": "Literaturhaus Hannover",
+      "geo": [
+        52.3729,
+        9.74297
+      ],
+      "region": "HAN",
+      "kategorie": "Lesung",
+      "beschreibung": "Der österreichische Erzähler Michael Köhlmeier stellt im Literaturhaus sein neues Buch vor.",
+      "preis": "14 €, erm. 7 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Lesungen-Vortr%C3%A4ge/Lesung-mit-Michael-K%C3%B6hlmeier-Mein-privates-Gl%C3%BCck",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Dauer geschätzt"
+    },
+    {
+      "id": "mit-anderen-augen-musikalischer-abend-ueber-das-sehen-zum",
+      "daten": [
+        "2026-11-18"
+      ],
+      "zeit": "19:30",
+      "ende": "21:00",
+      "titel": "Mit anderen Augen – musikalischer Abend über das Sehen (zum letzten Mal)",
+      "ort": "Schauspielhaus Hannover",
+      "geo": [
+        52.37346,
+        9.74392
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Letzte Vorstellung des musikalischen Abends von Selen Kara und Torsten Kindermann im Schauspielhaus, ohne Pause, ca. 1:30 Std.",
+      "preis": "17–44 €, erm. ab 5 €",
+      "draussen": "drinnen",
+      "link": "https://staatstheater-hannover.de/de_DE/programm/mit-anderen-augen.1379348",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "caroline-wahl-liest-1999-meter-ueber-dem-meer-markuskirche",
+      "daten": [
+        "2026-11-19"
+      ],
+      "zeit": "19:30",
+      "dauer": 90,
+      "titel": "Caroline Wahl liest „1999 Meter über dem Meer“",
+      "ort": "Markuskirche, Hannover",
+      "geo": [
+        52.38832,
+        9.75228
+      ],
+      "region": "HAN",
+      "kategorie": "Lesung",
+      "beschreibung": "Die Bestsellerautorin („22 Bahnen“, „Windstärke 17“) liest aus ihrem neuen Roman in der Markuskirche in der List.",
+      "preis": "43,72 €",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Lesungen-Vortr%C3%A4ge/Lesung-mit-Caroline-Wahl-1999-Meter-%C3%BCber-dem-Meer",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Dauer geschätzt; Ort aus der Adresse (Oskar-Winter-Str. 7 = Markuskirche) abgeleitet"
     }
   ],
   "laufend": [
@@ -9495,7 +11749,11 @@
       "beschreibung": "Französisch angehauchter Weihnachtsmarkt mit Rundhütten unter Kupferkuppeln, eigenem Glühwein in Rot, Weiß und Rosé und Musikprogramm.",
       "kostenlos": true,
       "draussen": "draußen",
-      "link": "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/kleine-weihnachtsmaerkte-hamburg-307632"
+      "link": "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/kleine-weihnachtsmaerkte-hamburg-307632",
+      "geo": [
+        53.55226,
+        9.98741
+      ]
     },
     {
       "id": "weihnachtsmarkt-osterstrasse-fanny-mendelssohn-platz-eimsbue",
@@ -10142,6 +12400,241 @@
       "link": "https://www.wismar.de/Tourismus/Veranstaltungen/H%C3%B6hepunkte-des-Jahres/Weihnachten-in-Wismar/",
       "anreise": "DT: ca. 2 Std. ab Hamburg Hbf (RE1 bis Bad Kleinen, dort RE8/RB nach Wismar, ca. 15 Min.), vom Bahnhof ca. 10 Min. zu Fuß zum Markt · Auto: ca. 1:45 Std. (A1/A20)",
       "unsicher": "Termin 2026 von der Stadt noch nicht veröffentlicht (Stand 28.10.): 23.11.–20.12. laut ostsee.de (Stand Aug. 2026), der Start deckt sich mit dem Sternenwald (23.11. laut Betreiber); Öffnungszeiten aus dem Vorjahr. Offizielle Eröffnung mit dem Weihnachtsmann traditionell am ersten Samstag (= 28.11., ca. 13:30 Alter Hafen / 14:00 Rathausbalkon) – unbestätigt"
+    },
+    {
+      "id": "kuppelauffahrt-im-bogenaufzug-auf-die-rathauskuppel-bis-1",
+      "von": "2026-10-28",
+      "bis": "2026-11-01",
+      "zeit": "täglich 10–16:30 Uhr",
+      "titel": "Kuppelauffahrt im Bogenaufzug auf die Rathauskuppel (bis 1.11.)",
+      "ort": "Neues Rathaus, Hannover",
+      "geo": [
+        52.36722,
+        9.73735
+      ],
+      "region": "HAN",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Mit dem weltweit einzigartigen Bogenaufzug von 1913 geht es schräg an der 97,73 m hohen Kuppel des Neuen Rathauses entlang hinauf – drei Aussichtsebenen mit Blick über Maschsee, Innenstadt und Eilenriede. Letzte Chance vor der Winterpause, keine Reservierung, mit Wartezeiten rechnen.",
+      "preis": "5 €, erm. 4 €",
+      "draussen": "beides",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Sonstiges/Kuppelauffahrt-im-Bogenaufzug",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "hannover.de nennt 10–16:30 Uhr und zugleich „letzte Auffahrt 17:30“"
+    },
+    {
+      "id": "flow-immersive-licht-und-klangshow-zur-moldau-in-der",
+      "von": "2026-10-28",
+      "bis": "2026-11-29",
+      "zeit": "meist Mi/Do–So, Zeitfenster zwischen ca. 17:00 und 21:15 Uhr (30 Min., Online-Buchung)",
+      "titel": "FLOW – immersive Licht- und Klangshow zur „Moldau“ in der Kreuzkirche",
+      "ort": "Kreuzkirche, Hannover",
+      "geo": [
+        52.37324,
+        9.73281
+      ],
+      "region": "HAN",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Die Gewölbe der Kreuzkirche werden zum 360°-Kunstwerk aus Licht, Klang und Bewegtbild: Smetanas „Die Moldau“, neu eingespielt mit dem Prager Philharmonischen Orchester und elektronisch erweitert, erzählt die Reise des Flusses von der Quelle bis zur Mündung (läuft bis 22.12.).",
+      "preis": "15,90 € zzgl. Gebühren",
+      "draussen": "drinnen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Sonstiges/FLOW-Eine-immersive-Show-in-der-Kreuzkirche-Hannover",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Spieltage wechseln (z. B. 2./3.11., 9./10.11. keine Shows) – Termine bis 12.11. auf hannover.de gelistet, danach Buchungsseite prüfen"
+    },
+    {
+      "id": "sprengel-museum-hannover-sammlung-mein-lieber-schwan-und",
+      "von": "2026-10-28",
+      "bis": "2026-11-29",
+      "zeit": "Di 10–20 Uhr, Mi–So 10–18 Uhr, Mo geschlossen (31.10. geschlossen); freitags Eintritt frei",
+      "titel": "Sprengel Museum Hannover – Sammlung „Mein lieber Schwan!“ und Anton Henning: Neue Bilder",
+      "ort": "Sprengel Museum Hannover",
+      "geo": [
+        52.36263,
+        9.7403
+      ],
+      "region": "HAN",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Eines der wichtigsten Museen für Kunst des 20./21. Jahrhunderts: die 2026 neu konzipierte Sammlungspräsentation „Mein lieber Schwan!“ (Beckmann, Picasso, Schwitters, Niki de Saint Phalle, Richter, Genzken u. a.) auf 3.000 m², dazu im Sprengel Focus die Schenkung von Anton Henning (bis 28.3.27) und bis 1.11. die Expressionismus-Schau zu Otto Gleichmann; ab 28.11. die Kurt-Schwitters-Preis-Ausstellung von Nevin Aladağ.",
+      "preis": "14 €, erm. 6 €; freitags frei",
+      "draussen": "drinnen",
+      "link": "https://www.sprengel-museum.de/ausstellungen/aktuell",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "kestner-gesellschaft-karimah-ashadu-crystalline-min-yoon-a",
+      "von": "2026-10-28",
+      "bis": "2026-11-15",
+      "zeit": "Di–So 11–18 Uhr, Do bis 20 Uhr, Mo geschlossen; freitags Eintritt frei",
+      "titel": "Kestner Gesellschaft: Karimah Ashadu „Crystalline“ & Min Yoon „A Pronoun of B“ (bis 15.11.)",
+      "ort": "Kestner Gesellschaft, Hannover",
+      "geo": [
+        52.37743,
+        9.7316
+      ],
+      "region": "HAN",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Zwei Einzelausstellungen im ehemaligen Goseriedebad: Karimah Ashadus erste institutionelle Schau in Deutschland mit der Weltpremiere ihres Films „WAVES“ über eine Autowaschanlage in Lagos (Kuppelhalle), und Min Yoons raumgreifende Installation aus Skulpturen, Malerei und zensierten koreanischen Kinderbüchern. Rundgänge Do 18 Uhr und So 16 Uhr; Finissage am 15.11.",
+      "preis": "7 €, erm. 5 €; freitags frei",
+      "draussen": "drinnen",
+      "link": "https://kestnergesellschaft.de/de/ausstellung/112",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "landesmuseum-hannover-weltenmuseum-ab-27-11",
+      "von": "2026-10-28",
+      "bis": "2026-11-29",
+      "zeit": "Di–So 10–18 Uhr, Mo geschlossen",
+      "titel": "Landesmuseum Hannover (WeltenMuseum) – ab 27.11. Sonderausstellung „Unter schwarzer Flagge – Piraten zwischen Nordsee und Karibik“",
+      "ort": "Landesmuseum Hannover",
+      "geo": [
+        52.36547,
+        9.74017
+      ],
+      "region": "HAN",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Kunst von Cranach bis zu den Impressionisten, Naturkunde mit Aquarien und Vivarium, Archäologie und Völkerkunde unter einem Dach; ab Freitag, 27.11., die Piraten-Ausstellung mit teils erstmals in Deutschland gezeigten Leihgaben zu Kaperfahrten, Leben an Bord, Piratenkodex und früher Globalisierung (bis 2.5.2027).",
+      "preis": "Tageskarte 10 €, erm. 8 € (inkl. Sonderausstellung)",
+      "draussen": "drinnen",
+      "link": "https://landesmuseum-hannover.de/ausstellungen/sonderausstellungen/unter-schwarzer-flagge-piraten-zwischen-nordsee-und-karibik/",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "herrenhaeuser-gaerten-grosser-garten-mit-grotte-von-niki-de",
+      "von": "2026-10-28",
+      "bis": "2026-11-29",
+      "zeit": "Gärten täglich ab 9 Uhr bis Einbruch der Dunkelheit (Wintersaison ab 1.11.); Museum Di–So 9–16 Uhr",
+      "titel": "Herrenhäuser Gärten – Großer Garten mit Grotte von Niki de Saint Phalle, Berggarten und Museum Schloss Herrenhausen",
+      "ort": "Herrenhäuser Gärten, Hannover",
+      "geo": [
+        52.39188,
+        9.7001
+      ],
+      "region": "HAN",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Der barocke Große Garten mit der von Niki de Saint Phalle gestalteten Grotte, der Berggarten mit tropischen Schauhäusern und Orchideen sowie das Museum Schloss Herrenhausen – im Winter ruhig und ohne Fontäne, dafür fast leer. 28.10.–1.11. zusätzlich Winterzauber-Markt im Ehrenhof (eigener Eintritt).",
+      "preis": "Gesamtkarte 10 €, erm. 8 €; nur Berggarten 5 €",
+      "draussen": "beides",
+      "link": "https://www.hannover.de/Herrenhausen",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Winter-Öffnungszeiten laut Flyer 2026 „bis Einbruch der Dunkelheit, zeitweise eingeschränkt“"
+    },
+    {
+      "id": "gop-variete-streng-geheim-agenten-show-mit-marcel-koesling",
+      "von": "2026-10-28",
+      "bis": "2026-11-29",
+      "zeit": "Di–So, Abendvorstellungen meist 17:30/20:00/21:00 Uhr, teils Nachmittagsshows 14/15 Uhr (Spielplan prüfen)",
+      "titel": "GOP Varieté: „Streng geheim!“ – Agenten-Show mit Marcel Kösling",
+      "ort": "GOP Varieté-Theater Hannover",
+      "geo": [
+        52.3732,
+        9.7393
+      ],
+      "region": "HAN",
+      "kategorie": "Bühne",
+      "beschreibung": "Zauberkünstler Marcel Kösling führt als Geheimagent durch den Abend, ein internationales Artistik-Ensemble zeigt Luftakrobatik, Hula Hoop, Diabolo, Kunstradfahren, Hand-auf-Hand- und Rollschuhakrobatik – Varieté mit Dinner-Option an der Georgstraße (bis 3.1.2027).",
+      "preis": "So, Di–Do 35–59 €; Fr/Sa 35–64 €",
+      "draussen": "drinnen",
+      "link": "https://www.variete.de/hannover/programm/streng-geheim",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Vorstellungszeiten nur grob (laut hannover.de), Preise laut hannover.de"
+    },
+    {
+      "id": "flohmarkt-auf-der-neuen-bult-samstags-vor-der",
+      "von": "2026-10-31",
+      "bis": "2026-11-29",
+      "zeit": "samstags 8–15 Uhr",
+      "titel": "Flohmarkt auf der Neuen Bult – samstags vor der Galopprennbahn Langenhagen",
+      "ort": "Pferderennbahn Neue Bult, Langenhagen",
+      "geo": [
+        52.44834,
+        9.76017
+      ],
+      "region": "HAN",
+      "kategorie": "Markt",
+      "beschreibung": "Einer der größten Flohmärkte Niedersachsens: an manchen Tagen bis zu 700 Händler in der Halle, auf dem Freigelände und in den Marktbuden vor den Toren der Langenhagener Galopprennbahn (Saison bis 12.12.).",
+      "kostenlos": true,
+      "draussen": "beides",
+      "link": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Eintritt frei angenommen (keine Preisangabe)"
+    },
+    {
+      "id": "zoolights-magische-lichterwelten-im-erlebnis-zoo-ab-17-11",
+      "von": "2026-11-17",
+      "bis": "2026-11-29",
+      "zeit": "Di–So 17–22 Uhr (Einlass bis 21 Uhr), Mo geschlossen",
+      "titel": "ZooLights – Magische Lichterwelten im Erlebnis-Zoo (ab 17.11.)",
+      "ort": "Erlebnis-Zoo Hannover",
+      "geo": [
+        52.38107,
+        9.77074
+      ],
+      "region": "HAN",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Winterliches Lichterfestival mit Lumagica: über 750 illuminierte Objekte und rund 20.000 m Lichterketten auf einem 2 km langen Rundweg durch den Zoo – mit begehbarem Lichterzug, leuchtendem Heißluftballon, Lichttieren und zwei Sound-to-Light-Shows (bis 2.2.2027). Ersetzt den früheren Winterzoo/Christmas Garden.",
+      "preis": "Erwachsene ab 23,80 € (laut hannover.de), Online-Ticket mit Zeitfenster",
+      "draussen": "draußen",
+      "link": "https://www.zoo-hannover.de/eventkalender/zoolights",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Preis laut hannover.de; Zoo-Seite nennt keine Preise"
+    },
+    {
+      "id": "weihnachtsmarkt-hannover-in-der-altstadt-ab-mo-23-11-mit",
+      "von": "2026-11-23",
+      "bis": "2026-11-29",
+      "zeit": "täglich 11–21 Uhr",
+      "titel": "Weihnachtsmarkt Hannover in der Altstadt (ab Mo 23.11.) – mit Finnischem Weihnachtsdorf und Wunschbrunnenwald",
+      "ort": "Weihnachtsmarkt an der Marktkirche, Hannover",
+      "geo": [
+        52.37201,
+        9.73498
+      ],
+      "region": "HAN",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Rund 190 Stände von der Marktkirche über den Platz der Weltausstellung bis zum Ballhofplatz: traditioneller Markt, Historisches Weihnachtsdorf mit Schmiede und Karussells, Finnisches Dorf mit lappländischem Zelt und Glögi auf dem Ballhofplatz, Wunschbrunnenwald mit 50 Tannen auf dem Holzmarkt, Weihnachtspyramide am Kröpcke; Feuershows abends, Weihnachtsmann täglich 17:30 Uhr (bis 22.12.).",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Weihnachten/Weihnachtsmarkt-Hannover",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)",
+      "unsicher": "Eröffnungsakt am 23.11. (2025: 16 Uhr Baumbeleuchtung mit OB Onay) für 2026 noch nicht angekündigt"
+    },
+    {
+      "id": "weihnachtsdorf-am-hauptbahnhof-roncalli-ab-23-11-ernst",
+      "von": "2026-11-23",
+      "bis": "2026-11-29",
+      "zeit": "täglich 11–21 Uhr",
+      "titel": "Weihnachtsdorf am Hauptbahnhof (Roncalli, ab 23.11.)",
+      "ort": "Ernst-August-Platz, Hannover",
+      "geo": [
+        52.37623,
+        9.74039
+      ],
+      "region": "HAN",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Das Roncalli-Marktteam verwandelt den Ernst-August-Platz in ein Weihnachtsdorf mit nostalgischen Buden, Gastronomie und einer Lichtprojektion auf die historische Bahnhofsfassade täglich um 17, 18:30 und 20 Uhr (bis 30.12.).",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Weihnachten/Weih%C2%ADnachts%C2%ADdorf-am-Haupt%C2%ADbahnhof",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
+    },
+    {
+      "id": "weihnachtsmarkt-lister-meile-ab-23-11-lister-meile-hannover",
+      "von": "2026-11-23",
+      "bis": "2026-11-29",
+      "zeit": "täglich 11–21 Uhr",
+      "titel": "Weihnachtsmarkt Lister Meile (ab 23.11.)",
+      "ort": "Lister Meile, Hannover",
+      "geo": [
+        52.38518,
+        9.74707
+      ],
+      "region": "HAN",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Festlich geschmückte Häuschen in der Fußgängerzone der Lister Meile – der kleinere, entspanntere Stadtteil-Weihnachtsmarkt in der List, fünf Minuten vom Hauptbahnhof (bis 22.12.).",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.hannover.de/Veranstaltungskalender/Weihnachten/Weihnachtsmarkt-Lister-Meile",
+      "anreise": "DT: ca. 2:20 Std. (metronom RE3 ab Hamburg Hbf z. B. 8:56 → Hannover Hbf 11:15, über Uelzen; bis 22.11. Sperrung Hamburg Hbf–Harburg: S-Bahn bis Harburg, dort in den metronom) · Auto: ca. 1:45 Std. (A7)"
     }
   ],
   "immer": [

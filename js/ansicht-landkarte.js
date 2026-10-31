@@ -9,7 +9,12 @@
  * Eingeplantes steht wie ein Termin an seinem Tag.
  *
  * Mit Bezugspunkt (standort.js) steht er als eigener Punkt darauf, mit dem
- * Umkreis aus dem Programm als Kreis.
+ * Umkreis aus dem Filter als Kreis.
+ *
+ * Oben der Zeitraum (eine Auswahl) und dieselbe Filterleiste wie im
+ * Programm; das Blatt hat dazu die Gruppe „Karte“: nur, worauf jemand Bock
+ * hat, und die Orte aus den Ideen. Online & TV hat keinen Ort – die Zeile
+ * unter der Karte sagt, wie viel davon im Zeitraum liegt.
  *
  * Leaflet (vendor/leaflet, im Offline-Vorrat) lädt erst, wenn der Reiter das
  * erste Mal aufgeht. Die Kacheln kommen von tile.openstreetmap.org und
@@ -19,10 +24,10 @@
  * gezeichnet: Ein Bock-Haken färbt nur die Marker um, damit die offene Liste
  * stehen bleibt.
  */
-import { esc, anzahl } from './text.js';
+import { esc, anzahl, istOnline } from './text.js';
 import { plusTage, montag } from './zeit.js';
 import { termineAm, laufendZwischen, letzterTag, filterFuer, umkreisAn } from './filter.js';
-import { filterHinweis } from './ansicht-kalender.js';
+import { filterLeiste, chipsProgramm } from './ansicht-filter.js';
 import { knopfName } from './standort.js';
 import { eintragTermin, eintragLaufend, merkeEintrag, bockKnopf, wannKurz } from './karte.js';
 import { meinBock } from './speicher.js';
@@ -35,7 +40,6 @@ export const ZEITRAEUME = [
   ['woche', 'Diese Woche'],
   ['naechste', 'Nächste Woche'],
   ['alles', 'Alles'],
-  ['bock', 'Mit Bock'],
 ];
 
 let laden = null;
@@ -79,14 +83,15 @@ function zeitraum(raum, heute, p, plaene) {
     const m = plusTage(montag(heute), 7);
     return [m, plusTage(m, 6)];
   }
-  if (raum === 'alles' || raum === 'bock') return [heute, weit > heute ? weit : heute];
+  if (raum === 'alles') return [heute, weit > heute ? weit : heute];
   return [heute, plusTage(montag(heute), 6)];
 }
 
 /**
  * Was im Zeitraum auf die Karte gehört – Termine je Tag, Laufendes und
- * Eingeplantes; mit dem Schalter „Ideen“ (und bei „Mit Bock“) auch die Orte
- * der Ideen, je Ort ein Eintrag.
+ * Eingeplantes; mit „Orte aus Ideen zeigen“ (und bei „Nur mit Bock“) auch
+ * die Orte der Ideen, je Ort ein Eintrag. Online & TV ist dabei – ohne Ort,
+ * also nicht auf der Karte, nur gezählt.
  */
 export function eintraegeFuerKarte(p, st, heute, raum, ideen = []) {
   const f = filterFuer(st);
@@ -99,11 +104,14 @@ export function eintraegeFuerKarte(p, st, heute, raum, ideen = []) {
   }
   for (const e of laufendZwischen(p, von, bis, f)) liste.push(eintragLaufend(e));
   for (const e of plaene) if (e.datum >= von && e.datum <= bis) liste.push(e);
-  if (st.karteIdeen || raum === 'bock') {
+  if (st.karteIdeen || st.karteBock) {
     for (const x of ideen) for (const o of x.orte) if (o.geo) liste.push({ ...x, ort: o.name, geo: o.geo, link: o.link || x.link });
   }
-  return raum === 'bock' ? liste.filter((x) => meinBock(x.schluessel) || andere(x.schluessel).length) : liste;
+  return st.karteBock ? liste.filter((x) => meinBock(x.schluessel) || andere(x.schluessel).length) : liste;
 }
+
+/** Wie viele Einträge auf der Karte stehen – für den Knopf unten im Filter-Blatt. */
+export const kartenZahl = (p, st, heute, raum, ideen) => (p ? eintraegeFuerKarte(p, st, heute, raum, ideen).filter((x) => x.geo).length : 0);
 
 /** Nach Ort zusammenfassen: gleiche Koordinaten (auf etwa 10 m) sind ein Marker. */
 function gruppieren(eintraege) {
@@ -160,14 +168,16 @@ function popup(gruppe) {
   </div>`;
 }
 
+/** Der Kopf über der Karte: Zeitraum und Filterleiste – auch zum Auffrischen ohne neue Karte. */
+export function karteKopf(st, raum) {
+  const wahl = `<label class="raum-wahl"><span class="sr">Zeitraum</span>
+      <select id="k-raum">${ZEITRAEUME.map(([k, text]) => `<option value="${k}"${raum === k ? ' selected' : ''}>${text}</option>`).join('')}</select>
+    </label>`;
+  return filterLeiste(chipsProgramm(st, { karte: true }), { vorn: wahl });
+}
+
 export function landkarteGeruest(st, raum) {
-  return `<header class="woche-kopf">
-    <div class="filterzeile karte-zeitraum">
-      ${ZEITRAEUME.map(([k, text]) => `<button type="button" class="schalter" data-raum="${k}" aria-pressed="${raum === k}">${text}</button>`).join('')}
-      <button type="button" class="schalter ideen-schalter" data-aktion="karte-ideen" aria-pressed="${Boolean(st.karteIdeen)}">💡 Ideen</button>
-    </div>
-    ${filterHinweis(st)}
-  </header>
+  return `<header class="karte-kopf" id="karte-kopf">${karteKopf(st, raum)}</header>
   <div class="landkarte" id="landkarte" role="region" aria-label="Karte"></div>
   <p class="fein karte-fuss" id="karte-fuss"></p>`;
 }
@@ -175,7 +185,7 @@ export function landkarteGeruest(st, raum) {
 let karteL = null;
 let ebene = null;
 let bezugEbene = null; // Bezugspunkt und Umkreis – nicht in den Haufen
-let letzterRaum = '';
+let letzterRahmen = ''; // Zeitraum, Bezugspunkt und Umkreis, für die der Ausschnitt zuletzt gewählt wurde
 const marker = [];
 
 const pinIcon = (L, gruppe) => L.divIcon({
@@ -224,8 +234,10 @@ export async function landkarteZeichnen(p, st, heute, raum, ideen = []) {
     }).addTo(karteL);
     bezugEbene = L.layerGroup().addTo(karteL);
     karteL.setView([53.55, 10.0], 10);
-    letzterRaum = '';
+    letzterRahmen = '';
   }
+  // Eine offene Liste gehört zu den alten Markern – sie ginge sonst nicht mehr zu.
+  karteL.closePopup();
   ebene.clearLayers();
   marker.length = 0;
   const eintraege = eintraegeFuerKarte(p, st, heute, raum, ideen);
@@ -249,22 +261,24 @@ export async function landkarteZeichnen(p, st, heute, raum, ideen = []) {
     return m;
   });
   ebene.addLayers(neue);
-  if (raum !== letzterRaum) {
+  const rahmenSchluessel = `${raum}|${f.bezug || ''}|${umkreisAn(f) ? f.umkreis : 0}`;
+  if (rahmenSchluessel !== letzterRahmen) {
     // Das meiste liegt in Hamburg. Ein Rahmen um alles (bis Kiel und Soltau)
-    // drückte die Stadt auf ein paar Haufen zusammen – also erst Hamburg,
-    // das Umland ist einen Fingerzug entfernt. Mit Umkreis zeigt die Karte
-    // ihn ganz; mit Bezugspunkt liegt der mit im Rahmen.
-    const hh = gruppen.filter((g) => g.eintraege.some((x) => x.region === 'HH'));
-    const rahmen = (hh.length ? hh : gruppen).map((g) => g.geo).concat(f.bezug ? [f.bezug] : []);
+    // drückte die Stadt auf ein paar Haufen zusammen – also erst Hamburg (und
+    // Ahrensburg nebenan), das Umland ist einen Fingerzug entfernt. Mit
+    // Umkreis zeigt die Karte ihn ganz; mit Bezugspunkt liegt der mit im Rahmen.
+    const nah = gruppen.filter((g) => g.eintraege.some((x) => x.region === 'HH' || x.region === 'AHR'));
+    const rahmen = (nah.length ? nah : gruppen).map((g) => g.geo).concat(f.bezug ? [f.bezug] : []);
     if (kreis) karteL.fitBounds(kreis.getBounds(), { padding: [16, 16] });
     else if (rahmen.length) karteL.fitBounds(L.latLngBounds(rahmen), { padding: [24, 24], maxZoom: 14 });
-    letzterRaum = raum;
+    letzterRahmen = rahmenSchluessel;
   }
-  const ohne = eintraege.filter((x) => !x.geo).length;
+  const online = eintraege.filter((x) => istOnline(x)).length;
+  const ohne = eintraege.filter((x) => !x.geo && !istOnline(x)).length;
   const ideenOrte = eintraege.filter((x) => x.quelle === 'idee').length;
   const fuss = document.getElementById('karte-fuss');
   if (fuss) {
-    fuss.textContent = `${anzahl(eintraege.length - ohne, 'Eintrag', 'Einträge')} an ${anzahl(gruppen.length, 'Ort', 'Orten')}${ideenOrte ? `, davon ${ideenOrte} aus den Ideen` : ''}${ohne ? ` · ${ohne} ohne Ortsangabe nicht auf der Karte` : ''}${umkreisAn(f) ? ` · Termine bis ${f.umkreis} km` : ''}`;
+    fuss.textContent = `${anzahl(eintraege.length - ohne - online, 'Eintrag', 'Einträge')} an ${anzahl(gruppen.length, 'Ort', 'Orten')}${ideenOrte ? `, davon ${ideenOrte} aus den Ideen` : ''}${ohne ? ` · ${ohne} ohne Ortsangabe nicht auf der Karte` : ''}${online ? ` · ${online} online, nur im Programm` : ''}${umkreisAn(f) ? ` · Termine bis ${f.umkreis} km` : ''}`;
   }
   setTimeout(() => karteL && karteL.invalidateSize(), 0);
 }
@@ -284,14 +298,28 @@ export function landkarteAuffrischen() {
 /** Die Zahl der Orte auf der Karte – für die Tests. */
 export const markerZahl = () => marker.length;
 
-/** Den Marker eines Orts zeigen und seine Liste öffnen (Haufen werden dafür aufgefächert). */
+/**
+ * Den Marker eines Orts zeigen und seine Liste öffnen (Haufen werden dafür
+ * aufgefächert) – für die Tests. zoomToShowLayer meldet sich nicht, wenn das
+ * Hineinzoomen die Karte gar nicht bewegt (dann kommt kein „moveend“); nach
+ * anderthalb Sekunden geht es deshalb ohne Animation auf die größte Stufe.
+ */
 export function markerOeffnen(ortText) {
   const treffer = marker.find(({ g }) => g.eintraege.some((x) => (x.ort || '').includes(ortText)));
   if (!treffer || !ebene) return Promise.resolve(false);
   return new Promise((fertig) => {
-    ebene.zoomToShowLayer(treffer.m, () => {
+    let erledigt = false;
+    const auf = () => {
+      if (erledigt) return;
+      erledigt = true;
       treffer.m.openPopup();
       fertig(true);
-    });
+    };
+    ebene.zoomToShowLayer(treffer.m, auf);
+    setTimeout(() => {
+      if (erledigt || !karteL) return;
+      karteL.setView(treffer.m.getLatLng(), karteL.getMaxZoom(), { animate: false });
+      setTimeout(auf, 100);
+    }, 1500);
   });
 }

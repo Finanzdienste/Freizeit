@@ -9,7 +9,7 @@
  * Ausflugsziel baut (siehe dort).
  */
 import { datumMitTag, tagMonat, datumLang, beginn, plusTage } from './zeit.js';
-import { preisSagtWas, sichererLink } from './text.js';
+import { preisSagtWas, sichererLink, istOnline } from './text.js';
 
 /** Datum und Uhrzeit für Menschen: „Mittwoch, 28.10.2026, 19:30 Uhr“. */
 export function wannText(eintrag) {
@@ -26,7 +26,7 @@ export function whatsappText(eintrag) {
   const zeilen = [`*${eintrag.titel}*`];
   const wann = wannText(eintrag);
   if (wann) zeilen.push(`${eintrag.datum || eintrag.von ? '📅' : '🕒'} ${wann}`);
-  if (eintrag.ort) zeilen.push(`📍 ${eintrag.ort}`);
+  if (eintrag.ort) zeilen.push(`${istOnline(eintrag) ? '📺' : '📍'} ${eintrag.ort}`);
   if (eintrag.beschreibung) zeilen.push(eintrag.beschreibung);
   if (eintrag.imdb) zeilen.push(`⭐ IMDb Top 250, Platz ${eintrag.imdb}`);
   if (preisSagtWas(eintrag.preis)) zeilen.push(`💶 ${eintrag.preis}`);
@@ -72,6 +72,9 @@ export function kalenderLink(eintrag) {
 /** iPhone, iPad (auch das iPad, das sich als Mac ausgibt). */
 export const istApple = () => /iPhone|iPad|iPod/.test(navigator.userAgent)
   || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+/** Läuft die App vom Home-Bildschirm (und nicht im Browser)? */
+export const alsApp = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
 
 /** Text für eine iCalendar-Zeile: \, ; , und Zeilenumbrüche maskieren. */
 const icsWert = (t) => String(t || '').replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');

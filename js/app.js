@@ -1,42 +1,70 @@
 /*
  * Freizeit – was in Hamburg und Umgebung los ist, mit den Konzerten deiner
- * Künstler, als Liste, Monat, Woche und Tag, auf der Karte, Ideen für alles ohne Termin, und
- * gemeinsam mit deinen Leuten.
+ * Künstler, als Liste, Monat, Woche und Tag, auf der Karte, Ideen für alles
+ * ohne Termin, und gemeinsam mit deinen Leuten.
  *
  * Einstieg: Daten laden, Reiter zeichnen, Knöpfe verdrahten, den gemeinsamen
  * Plan abgleichen. Das Programm schreibt ein geplanter Lauf montags früh nach
  * daten/, den Ideen-Katalog pflegt man von Hand; die App selbst ändert
  * beides nie.
+ *
+ * Wo was ist: unten die Reiter Programm, Karte, Ideen, Wir und Einstellungen;
+ * in Programm, Karte und Ideen oben der Knopf „Filter“ mit dem Blatt von unten
+ * (blatt.js, ansicht-filter.js); alles Einmalige – welche Reiter unten
+ * stehen, Standort, Mitteilungen, der Plan, die App – im Reiter Einstellungen
+ * (#einstellungen). Ein ausgeblendeter Reiter bleibt über Links erreichbar;
+ * unten ist dann keiner markiert.
  */
 import {
-  laden, speichern, aktuell, bockUmschalten, bockWeg, meinBock, gemachtSpeichern, gemachtWeg, LEERER_FILTER, LEERER_IDEENFILTER,
+  laden, speichern, aktuell, bockUmschalten, bockWeg, meinBock, gemachtSpeichern, gemachtWeg, LEERER_FILTER, LEERER_IDEENFILTER, ARTEN,
+  INHALTS_REITER,
 } from './speicher.js';
 import { ladeAlles } from './daten.js';
-import { heute, standText, montag, plusTage, wochentagKurz, tagMonat } from './zeit.js';
-import { esc } from './text.js';
-import { programmAnsicht, wochenBereich } from './ansicht-programm.js';
-import { kalenderAnsicht, ansichtSchalter, ANSICHTEN } from './ansicht-kalender.js';
-import { landkarteGeruest, landkarteZeichnen, landkarteAuffrischen } from './ansicht-landkarte.js';
-import { ideenAnsicht, ideeAnker } from './ansicht-ideen.js';
-import { wirAnsicht, vorbei, alsApp } from './ansicht-wir.js';
-import { alleIdeen, planEintrag, neueIdee, BEWERTUNG } from './ideen.js';
+import {
+  heute, montag, plusTage, wochentagKurz, tagMonat,
+} from './zeit.js';
+import { anzahl } from './text.js';
+import { SCHALTER } from './filter.js';
+import {
+  programmAnsicht, wochenBereich, listenZahl, tagesleisteNeu,
+} from './ansicht-programm.js';
+import {
+  kalenderAnsicht, ansichtSchalter, ANSICHTEN, kalenderZahl,
+} from './ansicht-kalender.js';
+import {
+  landkarteGeruest, landkarteZeichnen, landkarteAuffrischen, karteKopf, kartenZahl, ZEITRAEUME,
+} from './ansicht-landkarte.js';
+import { ideenAnsicht, ideeAnker, ideenZahl } from './ansicht-ideen.js';
+import { wirAnsicht, vorbei } from './ansicht-wir.js';
+import { einstellungenAnsicht } from './ansicht-einstellungen.js';
+import { programmBlatt, ideenBlatt } from './ansicht-filter.js';
+import {
+  blattOeffnen, blattSchliessen, blattAuffrischen, blattArt,
+} from './blatt.js';
+import {
+  alleIdeen, planEintrag, neueIdee, BEWERTUNG,
+} from './ideen.js';
 import {
   eintragZu, vergessen as karteVergessen, bockKnopf, aufklappen, abschnittUmschalten,
 } from './karte.js';
-import { istApple } from './teilen.js';
 import { pushEinschalten, pushAusschalten } from './push.js';
-import { geraetStandort, adresseSuchen, standortUi, UMKREISE } from './standort.js';
+import {
+  geraetStandort, adresseSuchen, standortUi, UMKREISE,
+} from './standort.js';
 import {
   planStarten, beitreten, codeLesen, zugangLesen, zugangUebernehmen, einladungAnsehen, abgleichen, umbenennen, verlassen,
   vergessen as planVergessen, wiederBeitreten, entfernen, neuesterAndererHaken, rolle,
 } from './gemeinsam.js';
 
-const REITER = ['programm', 'karte', 'ideen', 'wir'];
+// Die Reiter unten: vier mit Inhalt (abschaltbar) und Einstellungen, immer da.
+const SEITEN = [...INHALTS_REITER, 'einstellungen'];
 // Adressen aus früheren Fassungen (Lesezeichen) landen sinnvoll.
 const ALTE_REITER = { woche: 'programm', konzerte: 'programm', kalender: 'programm', merkliste: 'wir' };
 const $ = (s) => document.querySelector(s);
 
-let daten = { programm: null, ideen: null, fehler: [] };
+let daten = {
+  programm: null, ideen: null, ideenStand: '', fehler: [],
+};
 let ideenListe = []; // Katalog und Ausflugsziele aus dem Programm (ideen.js, alleIdeen)
 let geladen = false;
 let reiter = 'programm';
@@ -44,14 +72,18 @@ let reiter = 'programm';
 // Liste zeigt seine Woche, der Monat seinen Monat.
 const prog = { ansicht: 'liste', datum: '' };
 let raum = 'woche'; // Zeitraum auf der Karte
-// Reiter Wir: offene Felder, die Person, die gleich herausgenommen wird, wer zu
-// einem Einladungslink einlädt, aufgeklappte Abschnitte (data-offen)
+// Wir und Einstellungen: offene Felder, die Person, die gleich herausgenommen
+// wird, wer zu einem Einladungslink einlädt, aufgeklappte Abschnitte
+// (data-offen), ein Fehler und wo er hingehört (wir, plan, push).
 const ui = {
-  einladen: false, umbenennen: false, verlassen: false, geraet: false, hilfe: false, entfernen: '', fehler: '', laeuft: false, einladungVon: null, offen: new Set(),
+  einladen: false, umbenennen: false, verlassen: false, geraet: false, hilfe: false, entfernen: '', fehler: '', fehlerOrt: '', laeuft: false,
+  einladungVon: null, offen: new Set(),
   zeitenWoche: '', // Montag der Woche in „Wann hat … Zeit?“
 };
 // Reiter Ideen: offene Formulare („bereich|schlüssel“), aufgeklappte Kategorien, letzte Meldung
-const uiIdeen = { neu: false, planen: '', bewerten: '', offen: new Set(), saisonAlle: false, meldung: null, fehler: '' };
+const uiIdeen = {
+  neu: false, planen: '', bewerten: '', offen: new Set(), saisonAlle: false, meldung: null, fehler: '',
+};
 let installEreignis = null;
 
 /**
@@ -71,7 +103,7 @@ function adresseLesen() {
     history.replaceState(null, '', `${location.pathname}${location.search}#wir`);
     return 'wir';
   }
-  if (REITER.includes(h)) return h;
+  if (SEITEN.includes(h)) return h;
   return ALTE_REITER[h] || null;
 }
 
@@ -85,48 +117,68 @@ async function einladungPruefen() {
   } catch { /* dann ohne */ }
 }
 
-function leisteAktualisieren() {
-  const st = aktuell();
-  document.querySelectorAll('[data-reiter]').forEach((b) => {
-    if (b.dataset.reiter === reiter) b.setAttribute('aria-current', 'page');
-    else b.removeAttribute('aria-current');
-  });
-  const neu = neuesterAndererHaken();
-  $('#wir-neu').hidden = !(st.gemeinsam && neu && neu > (st.gesehen.andere || '') && reiter !== 'wir');
-  const p = daten.programm;
-  $('#stand').textContent = p && p.stand ? `Stand ${standText(p.stand)}` : '';
+/** Die Reiter, die unten stehen, in der Reihenfolge der Leiste – Einstellungen zuletzt und immer. */
+const sichtbareReiter = () => [...INHALTS_REITER.filter((r) => !aktuell().reiterAus.includes(r)), 'einstellungen'];
+
+/** Womit die App aufgeht, wenn die Adresse nichts sagt: der erste Reiter, der an ist. */
+const startReiter = () => sichtbareReiter()[0];
+
+/** Der Reiter steht in der Adresse, damit Neuladen ihn behält – ohne neuen Eintrag im Verlauf. Der Start-Reiter braucht keinen. */
+function adresseSetzen(r) {
+  history.replaceState(null, '', r === startReiter() ? location.pathname + location.search : `#${r}`);
 }
 
-function installHinweis(st) {
-  if (alsApp() || st.installHinweisWeg) return '';
-  const weg = '<button type="button" class="textknopf" data-aktion="hinweis-weg" aria-label="Hinweis schließen">✕</button>';
-  if (istApple()) {
-    return `<div class="banner hinweis-install"><span>Als App auf den Home-Bildschirm: unten auf <b>Teilen</b> tippen, dann <b>„Zum Home-Bildschirm“</b>.</span>${weg}</div>`;
-  }
-  if (installEreignis) {
-    return `<div class="banner hinweis-install"><span>Freizeit lässt sich als App installieren.</span><button type="button" class="knopf klein" data-aktion="installieren">Installieren</button>${weg}</div>`;
-  }
-  return '';
+function leisteAktualisieren() {
+  const st = aktuell();
+  const sichtbar = sichtbareReiter();
+  const leiste = $('.reiterleiste');
+  leiste.querySelectorAll('[data-reiter]').forEach((b) => {
+    b.hidden = !sichtbar.includes(b.dataset.reiter);
+    // Über einen Link in einem ausgeblendeten Reiter: Dann ist unten keiner markiert.
+    if (b.dataset.reiter === reiter && !b.hidden) b.setAttribute('aria-current', 'page');
+    else b.removeAttribute('aria-current');
+  });
+  // Für die Schriftgröße: fünf Reiter brauchen etwas kleinere Beschriftungen.
+  leiste.dataset.anzahl = String(sichtbar.length);
+  // Der Punkt gehört zu „Wir“ – ist der Reiter aus, gibt es ihn nicht, auch nicht anderswo.
+  const neu = neuesterAndererHaken();
+  $('#wir-neu').hidden = !(sichtbar.includes('wir') && st.gemeinsam && neu && neu > (st.gesehen.andere || '') && reiter !== 'wir');
+}
+
+/**
+ * Woran sich ein Knopf nach dem Neuzeichnen wiederfinden lässt: id oder
+ * seine data-Attribute. So bleibt der Fokus, wo er war – wichtig für alle,
+ * die mit der Tastatur unterwegs sind.
+ */
+function fokusSchluessel(el) {
+  const ansicht = $('#ansicht');
+  if (!el || el === ansicht || !ansicht.contains(el)) return '';
+  if (el.id) return `#${CSS.escape(el.id)}`;
+  const teile = ['aktion', 'filter', 'ifilter', 'kalAnsicht', 'reiter', 'chip', 'person', 'idee', 'bereich', 'plan', 'wert', 'km', 'bock', 'mitwem', 'auf', 'tag']
+    .filter((a) => el.dataset && el.dataset[a] !== undefined)
+    .map((a) => `[data-${a.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`)}="${CSS.escape(el.dataset[a])}"]`);
+  return teile.join('');
 }
 
 function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
   const st = aktuell();
   const h = heute();
   const y = window.scrollY;
+  const fokus = fokusSchluessel(document.activeElement);
   if (reiter !== 'karte') karteVergessen();
   let html;
-  if (!geladen) html = '<div class="leer"><p>Lädt …</p></div>';
+  if (reiter === 'einstellungen') {
+    html = einstellungenAnsicht(st, ui, {
+      p: daten.programm, ideenStand: daten.ideenStand, datenFehler: daten.fehler, installierbar: Boolean(installEreignis),
+    });
+  } else if (!geladen) html = '<div class="leer"><p>Lädt …</p></div>';
   else if (reiter === 'karte') html = landkarteGeruest(st, raum);
   else if (reiter === 'ideen') html = ideenAnsicht(ideenListe, Boolean(daten.ideen), st, h, uiIdeen);
   else if (reiter === 'wir') html = wirAnsicht(daten.programm, ideenListe, st, h, ui);
   else {
     const datum = prog.datum || h;
-    const heuteSchon = prog.ansicht === 'liste' ? montag(datum) === montag(h) : (datum === h && (prog.ansicht !== 'monat' || datum.slice(0, 7) === h.slice(0, 7)));
-    html = installHinweis(st) + (daten.programm ? ansichtSchalter(prog.ansicht, heuteSchon) : '')
+    html = (daten.programm ? ansichtSchalter(prog.ansicht) : '')
       + (prog.ansicht === 'liste' ? programmAnsicht(daten.programm, st, h, montag(datum)) : kalenderAnsicht(daten.programm, st, h, prog));
-  }
-  if (geladen && daten.fehler.length && reiter !== 'wir') {
-    html += `<details class="datenfehler"><summary>Hinweise zu den Daten (${daten.fehler.length})</summary><ul>${daten.fehler.map((f) => `<li>${esc(f)}</li>`).join('')}</ul></details>`;
   }
   $('#ansicht').innerHTML = html;
   if (geladen && reiter === 'karte') landkarteZeichnen(daten.programm, st, h, raum, ideenListe);
@@ -138,19 +190,28 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
     }
   }
   leisteAktualisieren();
+  blattAuffrischen();
+  if (fokus && !blattArt() && !nachOben) {
+    const wieder = document.querySelector(`#ansicht ${fokus}`);
+    if (wieder) wieder.focus({ preventScroll: true });
+  }
   if (nachOben) window.scrollTo(0, 0);
   else if (behalteScroll) window.scrollTo(0, y);
 }
 
 function wechseln(neu) {
-  if (!REITER.includes(neu)) return;
+  if (!SEITEN.includes(neu)) return;
+  blattSchliessen();
+  // Was in den Einstellungen offen war, geht beim Verlassen zu.
+  if (reiter === 'einstellungen' && neu !== 'einstellungen') Object.assign(ui, { umbenennen: false, verlassen: false, geraet: false, hilfe: false });
   reiter = neu;
   ui.fehler = '';
+  ui.fehlerOrt = '';
   ui.entfernen = '';
-  Object.assign(uiIdeen, { neu: false, planen: '', bewerten: '', meldung: null, fehler: '' });
-  // Der Reiter steht in der Adresse, damit Neuladen ihn behält – ohne neuen
-  // Eintrag im Verlauf.
-  history.replaceState(null, '', neu === 'programm' ? location.pathname + location.search : `#${neu}`);
+  Object.assign(uiIdeen, {
+    neu: false, planen: '', bewerten: '', meldung: null, fehler: '',
+  });
+  adresseSetzen(neu);
   zeichnen({ nachOben: true });
   $('#ansicht').focus({ preventScroll: true });
 }
@@ -168,15 +229,16 @@ const ideenFormularOffen = () => reiter === 'ideen' && Boolean(uiIdeen.neu || ui
 /** Tippt man gerade in ein Feld? Dann auch nicht – die Eingabe ginge verloren. */
 const wirEingabeOffen = () => Boolean(document.activeElement && document.activeElement.matches('#ansicht input, #ansicht textarea, #ansicht select'));
 
-async function abgleichJetzt() {
+/** Abgleichen. In den Einstellungen zeichnet nur ein Tipp auf „Jetzt abgleichen“ neu – oder wenn sich etwas getan hat. */
+async function abgleichJetzt({ manuell = false } = {}) {
   einladungPruefen();
   if (!aktuell().gemeinsam) return;
   const vorher = fingerabdruck();
   await abgleichen();
-  if (!geladen) return;
-  if (ideenFormularOffen() || wirEingabeOffen()) { leisteAktualisieren(); return; }
+  if (!geladen && reiter !== 'einstellungen') return;
+  if (ideenFormularOffen() || wirEingabeOffen() || blattArt()) { leisteAktualisieren(); return; }
   if (reiter === 'karte') landkarteAuffrischen();
-  else if (vorher !== fingerabdruck() || reiter === 'wir') zeichnen({ behalteScroll: true });
+  else if (vorher !== fingerabdruck() || reiter === 'wir' || (reiter === 'einstellungen' && manuell)) zeichnen({ behalteScroll: true });
   leisteAktualisieren();
 }
 
@@ -185,17 +247,26 @@ function abgleichSpaeter(ms = 600) {
   syncUhr = setTimeout(abgleichJetzt, ms);
 }
 
-async function mitWarten(aufgabe) {
+/**
+ * Etwas mit dem Server tun und solange „Einen Moment …“ zeigen. Ein Fehler
+ * steht dort, wo man getippt hat (`ort`: wir, plan, push); `danach` läuft
+ * nur, wenn es geklappt hat – statt des Neuzeichnens.
+ */
+async function mitWarten(aufgabe, { ort = 'wir', danach = null } = {}) {
   ui.laeuft = true;
   ui.fehler = '';
+  ui.fehlerOrt = ort;
   zeichnen({ behalteScroll: true });
+  let ok = false;
   try {
     await aufgabe();
+    ok = true;
   } catch (e) {
     ui.fehler = e && e.message && !/fetch|network|abort/i.test(e.message) ? e.message : 'Keine Verbindung zum Server. Später noch einmal versuchen.';
   } finally {
     ui.laeuft = false;
-    zeichnen({ behalteScroll: true });
+    if (ok && danach) danach();
+    else zeichnen({ behalteScroll: true });
   }
 }
 
@@ -221,7 +292,9 @@ async function kopieren(text, knopf) {
 /** Den Bezugspunkt übernehmen (standort.js) – nur hier auf dem Gerät. */
 function standortSetzen({ art, name, geo }) {
   const st = aktuell();
-  st.standort = { art, name, geo, zeit: new Date().toISOString() };
+  st.standort = {
+    art, name, geo, zeit: new Date().toISOString(),
+  };
   Object.assign(standortUi, { fehler: '', treffer: [] });
   if (art === 'adresse') standortUi.eingabe = '';
   speichern();
@@ -235,22 +308,144 @@ function standortHolen(aufgabe, was) {
     .catch((e) => { standortUi.fehler = e && e.message ? e.message : 'Das hat nicht geklappt.'; })
     .finally(() => {
       standortUi.laeuft = '';
-      if (reiter === 'programm') zeichnen({ behalteScroll: true });
+      zeichnen({ behalteScroll: true });
     });
 }
 
-/** Nur eines der Felder unter „Wir“ ist offen. */
+/** Nur eines der Felder unter „Wir“ bzw. in den Einstellungen ist offen. */
 function wirFeld(name) {
   const offen = ui[name];
-  Object.assign(ui, { einladen: false, umbenennen: false, verlassen: false, geraet: false, hilfe: false });
+  Object.assign(ui, {
+    einladen: false, umbenennen: false, verlassen: false, geraet: false, hilfe: false,
+  });
   ui[name] = !offen;
   zeichnen({ behalteScroll: true });
+}
+
+// --- Filter: das Blatt von unten, die Chips, Zurücksetzen
+
+/** Was im Blatt steht – je nach Reiter, mit der Zahl der Treffer für den Knopf unten. */
+function blattBauen() {
+  const st = aktuell();
+  const h = heute();
+  if (reiter === 'ideen') {
+    return ideenBlatt(st.ideenFilter, uiIdeen.saisonAlle, anzahl(ideenZahl(ideenListe, st, h, uiIdeen), 'Idee', 'Ideen'));
+  }
+  if (reiter === 'karte') {
+    return programmBlatt(daten.programm, st, { karte: true, zahlText: anzahl(kartenZahl(daten.programm, st, h, raum, ideenListe), 'Eintrag', 'Einträge') });
+  }
+  const n = prog.ansicht === 'liste' ? listenZahl(daten.programm, st, h, montag(prog.datum || h)) : kalenderZahl(daten.programm, st, h, prog);
+  return programmBlatt(daten.programm, st, { zahlText: anzahl(n, 'Termin', 'Termine') });
+}
+
+/** Nach einer Wahl: speichern, die Seite dahinter neu, das Blatt mit. Die Karte bleibt stehen, nur Kopf und Marker kommen neu. */
+function filterGeaendert() {
+  speichern();
+  if (reiter === 'karte') {
+    const kopf = $('#karte-kopf');
+    if (kopf) kopf.innerHTML = karteKopf(aktuell(), raum);
+    landkarteZeichnen(daten.programm, aktuell(), heute(), raum, ideenListe);
+    blattAuffrischen();
+  } else {
+    zeichnen({ behalteScroll: true });
+  }
+}
+
+/** Alle Filter des Reiters zurück – die Reihenfolge am Tag bleibt, sie ist kein Filter. */
+function filterZuruecksetzen() {
+  const st = aktuell();
+  if (reiter === 'ideen') {
+    st.ideenFilter = LEERER_IDEENFILTER();
+    uiIdeen.saisonAlle = false;
+  } else {
+    st.filter = { ...LEERER_FILTER(), nachEntfernung: st.filter.nachEntfernung };
+    if (reiter === 'karte') Object.assign(st, { karteBock: false, karteIdeen: false });
+  }
+  filterGeaendert();
+}
+
+/** Einen Chip wegnehmen: sein Filter geht zurück. */
+function chipWeg(k) {
+  const st = aktuell();
+  const f = st.filter;
+  const fi = st.ideenFilter;
+  const [art, rest] = k.includes(':') ? k.split(':') : ['', k];
+  if (reiter === 'ideen') {
+    if (art === 'w') fi.wirkung = fi.wirkung.filter((w) => w !== rest);
+    else if (art === 'wo') fi.wo = '';
+    else if (art === 'x' && Object.hasOwn(fi, rest)) fi[rest] = false;
+    else if (k === 'saison') uiIdeen.saisonAlle = false;
+  } else if (k === 'art' || k === 'region' || k === 'kategorie') f[k] = '';
+  else if (k === 'umkreis') f.umkreis = 0;
+  else if (k === 'karte-bock') st.karteBock = false;
+  else if (k === 'karte-ideen') st.karteIdeen = false;
+  else if (SCHALTER.some(([s]) => s === k)) f[k] = false;
+  filterGeaendert();
+  // Der Chip ist weg – der Fokus geht auf den Filter-Knopf.
+  const knopf = $('#ansicht [data-aktion="filter-auf"]');
+  if (knopf) knopf.focus({ preventScroll: true });
 }
 
 function aktion(name, z) {
   const st = aktuell();
   const h = heute();
   switch (name) {
+    case 'reiter-an': {
+      // Einstellungen → Reiter unten: einen der vier ein- oder ausblenden. Der letzte bleibt.
+      const r = z.dataset.wert;
+      if (!INHALTS_REITER.includes(r) || z.getAttribute('aria-disabled') === 'true') break;
+      const aus = st.reiterAus.includes(r) ? st.reiterAus.filter((x) => x !== r) : [...st.reiterAus, r];
+      if (aus.length >= INHALTS_REITER.length) break;
+      st.reiterAus = INHALTS_REITER.filter((x) => aus.includes(x));
+      speichern();
+      zeichnen({ behalteScroll: true });
+      break;
+    }
+    case 'filter-auf':
+      blattOeffnen(reiter, blattBauen, '#ansicht [data-aktion="filter-auf"]');
+      break;
+    case 'blatt-zu':
+      blattSchliessen();
+      break;
+    case 'blatt-zuruecksetzen':
+    case 'filter-weg':
+    case 'ideen-filter-weg':
+      filterZuruecksetzen();
+      break;
+    case 'chip-weg':
+      chipWeg(z.dataset.chip || '');
+      break;
+    case 'art':
+      if (ARTEN.includes(z.dataset.wert)) st.filter.art = z.dataset.wert;
+      filterGeaendert();
+      break;
+    case 'umkreis': {
+      const km = Number(z.dataset.km);
+      st.filter.umkreis = UMKREISE.includes(km) ? km : 0;
+      filterGeaendert();
+      break;
+    }
+    case 'reihenfolge':
+      st.filter.nachEntfernung = z.dataset.wert === 'entfernung';
+      filterGeaendert();
+      break;
+    case 'karte-bock':
+      st.karteBock = !st.karteBock;
+      filterGeaendert();
+      break;
+    case 'karte-ideen':
+      st.karteIdeen = !st.karteIdeen;
+      filterGeaendert();
+      break;
+    case 'saison-alle':
+      uiIdeen.saisonAlle = !uiIdeen.saisonAlle;
+      filterGeaendert();
+      break;
+    case 'standort-festlegen':
+      // Aus dem Filter-Blatt: in die Einstellungen, gleich zu „Mein Standort“ (steht unter „Reiter unten“).
+      wechseln('einstellungen');
+      $('#e-standort')?.scrollIntoView({ block: 'start' });
+      break;
     case 'vergangene':
       st.vergangeneTage = !st.vergangeneTage;
       speichern();
@@ -272,17 +467,6 @@ function aktion(name, z) {
     case 'kal-heute':
       prog.datum = h;
       zeichnen({ nachOben: true });
-      break;
-    case 'filter-weg':
-      // Die Reihenfolge ist kein Filter und bleibt; den Umkreis lässt nur
-      // „Alle Filter zurücksetzen“ im Filter-Feld stehen – er hat sein eigenes.
-      st.filter = {
-        ...LEERER_FILTER(),
-        nachEntfernung: st.filter.nachEntfernung,
-        umkreis: z.dataset.behalten === 'umkreis' ? st.filter.umkreis : 0,
-      };
-      speichern();
-      zeichnen({ behalteScroll: true });
       break;
     case 'standort-geraet':
       standortHolen(() => geraetStandort().then((geo) => standortSetzen({ art: 'geraet', name: 'Dein Standort', geo })), 'geraet');
@@ -314,18 +498,6 @@ function aktion(name, z) {
       st.filter.umkreis = 0;
       st.filter.nachEntfernung = false;
       Object.assign(standortUi, { fehler: '', treffer: [], eingabe: '' });
-      speichern();
-      zeichnen({ behalteScroll: true });
-      break;
-    case 'umkreis': {
-      const km = Number(z.dataset.km);
-      st.filter.umkreis = UMKREISE.includes(km) ? km : 0;
-      speichern();
-      zeichnen({ behalteScroll: true });
-      break;
-    }
-    case 'reihenfolge':
-      st.filter.nachEntfernung = z.dataset.wert === 'entfernung';
       speichern();
       zeichnen({ behalteScroll: true });
       break;
@@ -373,6 +545,7 @@ function aktion(name, z) {
     case 'verlassen':
     case 'geraet':
     case 'hilfe':
+      ui.fehler = '';
       wirFeld(name);
       break;
     case 'zeiten-zurueck':
@@ -387,27 +560,33 @@ function aktion(name, z) {
       zeichnen({ behalteScroll: true });
       break;
     case 'abgleichen':
-      abgleichJetzt();
+      abgleichJetzt({ manuell: true });
       break;
     case 'push-an':
-      mitWarten(() => pushEinschalten());
+      mitWarten(() => pushEinschalten(), { ort: 'push' });
       break;
     case 'push-aus':
-      mitWarten(() => pushAusschalten());
+      mitWarten(() => pushAusschalten(), { ort: 'push' });
       break;
     case 'name-speichern': {
       const name2 = wert('#wir-neuname');
       if (!name2) break;
-      mitWarten(async () => { await umbenennen(name2); ui.umbenennen = false; });
+      mitWarten(async () => { await umbenennen(name2); ui.umbenennen = false; }, { ort: 'plan' });
       break;
     }
     case 'verlassen-ja':
-      mitWarten(async () => { await verlassen(); ui.verlassen = false; });
+      // Danach geht es nach „Wir“: Dort steht jetzt, wie man einen neuen Plan startet. Ist
+      // „Wir“ ausgeblendet, bleibt man hier – der Abschnitt zeigt dann den Weg dorthin.
+      mitWarten(async () => { await verlassen(); ui.verlassen = false; }, {
+        ort: 'plan', danach: () => (sichtbareReiter().includes('wir') ? wechseln('wir') : zeichnen({ behalteScroll: true })),
+      });
       break;
     case 'zugang-uebernehmen':
       mitWarten(async () => {
         await zugangUebernehmen(st.zugang);
-        Object.assign(ui, { einladen: false, umbenennen: false, verlassen: false, geraet: false });
+        Object.assign(ui, {
+          einladen: false, umbenennen: false, verlassen: false, geraet: false,
+        });
       });
       break;
     case 'zugang-weg':
@@ -433,15 +612,11 @@ function aktion(name, z) {
       break;
     case 'installieren':
       if (installEreignis) {
-        installEreignis.prompt();
+        const e = installEreignis;
         installEreignis = null;
+        e.prompt();
         zeichnen({ behalteScroll: true });
       }
-      break;
-    case 'hinweis-weg':
-      st.installHinweisWeg = true;
-      speichern();
-      zeichnen({ behalteScroll: true });
       break;
     default:
       ideenAktion(name, z);
@@ -560,34 +735,18 @@ function ideenAktion(name, z) {
       uiIdeen.meldung = null;
       neuZeichnen();
       break;
-    case 'saison-alle':
-      uiIdeen.saisonAlle = !uiIdeen.saisonAlle;
-      neuZeichnen();
-      break;
-    case 'ideen-filter-weg':
-      st.ideenFilter = LEERER_IDEENFILTER();
-      speichern();
-      neuZeichnen();
-      break;
-    case 'karte-ideen':
-      st.karteIdeen = !st.karteIdeen;
-      speichern();
-      z.setAttribute('aria-pressed', String(st.karteIdeen));
-      landkarteZeichnen(daten.programm, st, h, raum, ideenListe);
-      break;
     default:
   }
 }
 
 /** Filter im Reiter Ideen: „w:flow“ (Wirkung), „wo:hamburg“, „x:kostenlos“. */
-function ideenFilterUmschalten(wert) {
+function ideenFilterUmschalten(wahl) {
   const f = aktuell().ideenFilter;
-  const [art, k] = wert.split(':');
+  const [art, k] = wahl.split(':');
   if (art === 'w') f.wirkung = f.wirkung.includes(k) ? f.wirkung.filter((w) => w !== k) : [...f.wirkung, k];
   else if (art === 'wo') f.wo = f.wo === k ? '' : k;
   else if (art === 'x' && Object.hasOwn(f, k)) f[k] = !f[k];
-  speichern();
-  zeichnen({ behalteScroll: true });
+  filterGeaendert();
 }
 
 /** Aus der Karte zu einer Idee: Reiter Ideen, Kategorie auf, hinscrollen. */
@@ -619,7 +778,7 @@ function zuKalenderTag(tag) {
  */
 function zuListe(datum, anker = '') {
   reiter = 'programm';
-  history.replaceState(null, '', location.pathname + location.search);
+  adresseSetzen('programm');
   if (!prog.datum || montag(prog.datum) !== montag(datum) || datum !== montag(datum)) prog.datum = datum;
   ansichtWechseln('liste');
   zeichnen({ nachOben: true });
@@ -628,7 +787,7 @@ function zuListe(datum, anker = '') {
 }
 
 document.addEventListener('click', (ev) => {
-  const z = ev.target.closest('[data-reiter], [data-bock], [data-auf], [data-filter], [data-ifilter], [data-aktion], [data-zu-eintrag], [data-kal-ansicht], [data-tag], [data-raum], [data-zu-woche], [data-zu-tag], [data-zu-idee]');
+  const z = ev.target.closest('[data-reiter], [data-bock], [data-auf], [data-filter], [data-ifilter], [data-aktion], [data-zu-eintrag], [data-kal-ansicht], [data-tag], [data-zu-woche], [data-zu-tag], [data-zu-idee]');
   if (!z || z.disabled) return;
   const st = aktuell();
   if (z.dataset.auf !== undefined) {
@@ -652,6 +811,11 @@ document.addEventListener('click', (ev) => {
     });
     if (reiter === 'karte') landkarteAuffrischen();
     else if ((reiter === 'programm' && prog.ansicht !== 'liste') || reiter === 'wir' || reiter === 'ideen') zeichnen({ behalteScroll: true });
+    else if (reiter === 'programm') {
+      // In der Liste nur die Tagesleiste – ihre Punkte zeigen, wer Bock hat.
+      const leiste = $('#ansicht .tagleiste');
+      if (leiste) leiste.outerHTML = tagesleisteNeu(daten.programm, st, heute(), montag(prog.datum || heute()));
+    }
     leisteAktualisieren();
     if (st.gemeinsam) abgleichSpaeter();
   } else if (z.dataset.ifilter !== undefined) {
@@ -660,8 +824,7 @@ document.addEventListener('click', (ev) => {
     zuIdee(z.dataset.zuIdee);
   } else if (z.dataset.filter) {
     st.filter[z.dataset.filter] = !st.filter[z.dataset.filter];
-    speichern();
-    zeichnen({ behalteScroll: true });
+    filterGeaendert();
   } else if (z.dataset.zuEintrag) {
     // Ein Chip in der Wochenansicht: den Tag öffnen und zur Karte scrollen.
     zuKalenderTag(z.dataset.tag);
@@ -672,10 +835,6 @@ document.addEventListener('click', (ev) => {
     zeichnen({ nachOben: true });
   } else if (z.dataset.tag) {
     zuKalenderTag(z.dataset.tag);
-  } else if (z.dataset.raum) {
-    raum = z.dataset.raum;
-    document.querySelectorAll('[data-raum]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.raum === raum)));
-    landkarteZeichnen(daten.programm, st, heute(), raum, ideenListe);
   } else if (z.dataset.zuWoche) {
     zuListe(z.dataset.zuWoche);
   } else if (z.dataset.zuTag) {
@@ -689,9 +848,12 @@ document.addEventListener('change', (ev) => {
   const st = aktuell();
   if (ev.target.id === 'f-region') st.filter.region = ev.target.value;
   else if (ev.target.id === 'f-kategorie') st.filter.kategorie = ev.target.value;
-  else return;
-  speichern();
-  zeichnen({ behalteScroll: true });
+  else if (ev.target.id === 'k-raum') {
+    if (ZEITRAEUME.some(([k]) => k === ev.target.value)) raum = ev.target.value;
+    landkarteZeichnen(daten.programm, st, heute(), raum, ideenListe);
+    return;
+  } else return;
+  filterGeaendert();
 });
 
 // Enter oder Leertaste auf einer Kopfzeile klappt die Karte auf.
@@ -711,8 +873,9 @@ document.addEventListener('keydown', (ev) => {
 
 // Enter in einem Eingabefeld drückt den Hauptknopf daneben.
 document.addEventListener('keydown', (ev) => {
-  if (ev.key !== 'Enter' || !ev.target.matches || !ev.target.matches('.einrichten input, .einladung input, .formular input')) return;
-  const knopf = ev.target.closest('.einrichten, .einladung, .formular').querySelector('.knopf.haupt');
+  const felder = '.einrichten input, .einladung input, .formular input, .einstellung-feld input';
+  if (ev.key !== 'Enter' || !ev.target.matches || !ev.target.matches(felder)) return;
+  const knopf = ev.target.closest('.einrichten, .einladung, .formular, .einstellung-feld').querySelector('.knopf.haupt');
   if (knopf) {
     ev.preventDefault();
     knopf.click();
@@ -732,14 +895,7 @@ document.addEventListener('click', (ev) => {
   else menge.add(k);
 }, true);
 
-// Das Menü „Mehr“ unter „Wir“ schließt, sobald man daneben tippt.
-document.addEventListener('click', (ev) => {
-  document.querySelectorAll('details.menue[open]').forEach((m) => {
-    if (!m.contains(ev.target)) m.open = false;
-  });
-});
-
-// #programm, #karte, #ideen und #wir öffnen den Reiter direkt; #tag-… sind Anker.
+// #programm, #karte, #ideen, #wir und #einstellungen öffnen die Seite direkt; #tag-… sind Anker.
 window.addEventListener('hashchange', () => {
   const r = adresseLesen();
   if (r && r !== reiter) wechseln(r);
@@ -747,10 +903,15 @@ window.addEventListener('hashchange', () => {
   einladungPruefen();
 });
 
+// Chrome & Co. bieten „Installieren“ an – der Knopf dafür steht in den Einstellungen.
 window.addEventListener('beforeinstallprompt', (ev) => {
   ev.preventDefault();
   installEreignis = ev;
-  if (reiter === 'programm' && geladen) zeichnen({ behalteScroll: true });
+  if (reiter === 'einstellungen') zeichnen({ behalteScroll: true });
+});
+window.addEventListener('appinstalled', () => {
+  installEreignis = null;
+  if (reiter === 'einstellungen') zeichnen({ behalteScroll: true });
 });
 
 document.addEventListener('visibilitychange', () => {
@@ -782,7 +943,7 @@ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
 
 laden();
 prog.ansicht = ANSICHTEN.some(([k]) => k === aktuell().programmAnsicht) ? aktuell().programmAnsicht : 'liste';
-reiter = adresseLesen() || 'programm';
+reiter = adresseLesen() || startReiter();
 zeichnen();
 ladeAlles().then((d) => {
   daten = d;

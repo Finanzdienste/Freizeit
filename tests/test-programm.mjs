@@ -1,5 +1,6 @@
 /*
- * Reiter „Programm“: Woche für Woche, beide Zeitregeln, Filter, Laufendes.
+ * Reiter „Programm“: Woche für Woche, der Kopf (blättern, Filter, Tagesleiste,
+ * „Diese Woche“), beide Zeitregeln, Filter, Laufendes.
  *
  * Die Testdaten (hilfe.mjs) haben für jede Regel einen eigenen Termin:
  * „Konzert spät“ endet nach Richtwert um 22:15, „Theater früh“ laut
@@ -9,16 +10,30 @@
  */
 import { oeffne, testProgramm, MO, DI, MI, DO, FR, SA, SO, DI2 } from './hilfe.mjs';
 
-const { page, check, uhr, titelAm, datenTauschen, gespeichert, filter, ende } = await oeffne({ tag: MO, zeit: '10:00' });
+const {
+  page, check, uhr, titelAm, datenTauschen, gespeichert, filter, waehle, reiter, einstellungen, ende,
+} = await oeffne({ tag: MO, zeit: '10:00' });
 
 // --- Aufbau
-check(await page.locator('.highlights li').count() === 1, 'Highlights stehen oben');
-check((await page.locator('.blaettern .kicker').innerText()).includes('KW 45'), 'Kopf nennt die Kalenderwoche');
+const kasten = page.locator('details[data-offen="diese-woche"]');
+check(await kasten.count() === 1 && await kasten.getAttribute('open') === null && await page.locator('.highlights li').count() === 1
+  && (await kasten.locator('.dw-vorschau').innerText()).includes('Highlight eins'), 'Highlights und Infos stecken zugeklappt in „Diese Woche“ – mit einer Zeile Vorschau');
+check((await kasten.locator('.infos').textContent()).includes('Ferien: keine'), '… dort auch die Infos der Woche');
+check((await page.locator('.blaettern .monatstitel').innerText()).includes('KW 45'), 'Kopf nennt die Kalenderwoche');
 check(await page.locator('.tag').first().getAttribute('id') === `tag-${MO}`, 'der erste Tag ist heute (Montag)');
 check(await page.locator(`#tag-${MO} .heute`).count() === 1, 'heute ist markiert');
 check(await page.locator('[data-aktion="vergangene"]').count() === 0, 'am Montag gibt es keine vergangenen Tage');
-check((await page.locator('#stand').innerText()).includes('Mo 2.11.'), 'der Kopf nennt den Stand der Daten');
 check(await page.locator('[data-aktion="woche-zurueck"]').isDisabled(), 'vor diese Woche geht es nicht zurück');
+check(await page.locator('[data-aktion="kal-heute"]').count() === 0, 'in dieser Woche gibt es keinen Knopf „Heute“ – man ist ja schon da');
+const zellen = page.locator('.tagleiste .tagzelle');
+check(await zellen.count() === 7 && await page.locator('.tagleiste .tagzelle.ist-heute .tz-nr').innerText() === '2', 'die Tagesleiste: sieben Tage, heute hervorgehoben');
+check(await page.locator(`.tagleiste a[href="#tag-${DI}"] .tz-zahl`).innerText() === '4', 'Di: vier Termine in der Leiste – dieselbe Auswahl wie die Liste');
+const ersteKarte = await page.locator('.tag .karte').first().boundingBox();
+check(ersteKarte && ersteKarte.y < 844 - 64 - 40, `der erste Termin steht ohne Scrollen auf dem Schirm (oben bei ${Math.round(ersteKarte?.y)} px)`);
+check(await page.locator('#ansicht .stand, #ansicht .hinweis-install, details.menue').count() === 0, 'kein Stand, kein Installier-Banner, kein Menü mehr im Programm');
+await einstellungen();
+check((await page.locator('#stand').innerText()).includes('Mo 2.11.'), 'der Stand der Daten steht in den Einstellungen unter „App“');
+await reiter('programm');
 
 // --- 21:30-Regel
 const di = await titelAm(DI);
@@ -47,18 +62,21 @@ check(!(await titelAm(SO)).includes('Sonntagskonzert'), 'So: Konzert 19:30 (Ende
 // --- Laufendes, und was ohne Termin geht
 check(await page.locator('#abschnitt-laufend .karte', { hasText: 'Ausstellung X' }).count() === 1, 'Ausstellung steht unter „Läuft gerade“');
 check(!(await titelAm(MO)).includes('Ausstellung X'), '… und nicht noch einmal an jedem Tag');
-check((await page.locator(`#tag-${MO} .tag-info`).innerText()).includes('Außerdem 1 Angebot'), 'der Tag verweist auf das Laufende');
-check(await page.locator('#abschnitt-immer').count() === 0 && await page.locator('.verweis [data-reiter="ideen"]').count() === 1,
-  '„Geht immer“ ist in den Reiter Ideen umgezogen – das Programm verweist dorthin');
+check((await page.locator('#zaehler a[href="#abschnitt-laufend"]').innerText()) === '1 laufend', 'oben neben der Zahl der Termine ein Sprung zum Laufenden – statt einer Zeile an jedem Tag');
+check(await page.locator('#abschnitt-immer').count() === 0 && await page.locator('.verweis').count() === 0,
+  '„Geht immer“ und der Verweis „Ohne Termin“ sind weg – die Ideen haben ihren Reiter');
 
 // --- Filter
 await filter('kostenlos');
 check(JSON.stringify(await titelAm(MO)) === JSON.stringify(['Gratis Lesung']), 'kostenlos: Mo nur noch die Gratis-Lesung');
 check(!(await titelAm(DI)).length, 'kostenlos: Di ohne Treffer');
 check((await page.locator('#zaehler').innerText()).startsWith('2 Termine'), 'kostenlos: Zähler stimmt (Lesung, Nachtmarkt)');
+check(await page.locator('.filterleiste .filterchip[data-chip="kostenlos"]').count() === 1 && await page.locator('[data-aktion="filter-auf"] .zahl-marke').innerText() === '1',
+  'kostenlos steht als Chip neben dem Filter-Knopf, der Knopf zählt 1');
 await page.reload({ waitUntil: 'networkidle' });
-check(await page.locator('[data-filter="kostenlos"]').getAttribute('aria-pressed') === 'true', 'der Filter überlebt das Neuladen');
+check(await page.locator('.filterchip[data-chip="kostenlos"]').count() === 1, 'der Filter überlebt das Neuladen');
 await filter('kostenlos');
+check(await page.locator('.filterchip').count() === 0 && await page.locator('[data-aktion="filter-auf"] .zahl-marke').count() === 0, 'wieder aus: kein Chip, keine Zahl');
 
 await filter('feierabend');
 check(!(await titelAm(DI)).includes('Workshop mittags'), 'Mo–Fr ab 15:30: Workshop um 12:30 fällt weg');
@@ -70,28 +88,31 @@ await filter('kuenstler');
 check(JSON.stringify(await titelAm(DI)) === JSON.stringify(['Keane']) && !(await titelAm(MO)).length, 'Meine Künstler: nur das Konzert von Keane');
 await filter('kuenstler');
 
-await page.selectOption('#f-region', 'HB');
+await waehle('#f-region', 'HB');
 check(JSON.stringify(await titelAm(SA)) === JSON.stringify(['Strandwanderung']), 'Region Hohwachter Bucht: nur die Strandwanderung');
-await page.selectOption('#f-region', '');
+check((await page.locator('.filterchip[data-chip="region"]').innerText()).includes('Hohwachter Bucht & Kiel'), '… als Chip mit dem Namen der Region');
+await waehle('#f-region', '');
 const st = await gespeichert();
 check(st && st.version === 2 && st.filter.region === '' && st.filter.kostenlos === false, 'Filter stehen im Speicher');
 
 // --- Blättern
 await page.click('[data-aktion="woche-vor"]');
-check((await page.locator('.blaettern .kicker').innerText()).includes('KW 46'), 'eine Woche weiter: KW 46');
+check((await page.locator('.blaettern .monatstitel').innerText()).includes('KW 46'), 'eine Woche weiter: KW 46');
 check((await titelAm(DI2)).includes('Lesung zweite Woche'), 'KW 46: der Termin der zweiten Woche');
-check(await page.locator('.highlights').count() === 0 && await page.locator('#abschnitt-immer').count() === 0, 'KW 46: ohne Highlights und „Geht immer“');
+check(await page.locator('.highlights').count() === 0 && await page.locator('details[data-offen="diese-woche"]').count() === 0, 'KW 46: ohne „Diese Woche“');
 check(!(await page.locator('[data-aktion="kal-heute"]').isDisabled()), 'KW 46: der Knopf „Heute“ ist aktiv');
 await page.click('[data-aktion="woche-vor"]');
 check((await page.locator('.banner').innerText()).includes('noch kein Programm'), 'KW 47: nach dem Programm ein Hinweis, dass es noch keins gibt');
 check(await page.locator('.tag').count() === 0, 'KW 47: keine Tage ohne Konzert');
 await page.click('[data-aktion="kal-heute"]');
-check((await page.locator('.blaettern .kicker').innerText()).includes('KW 45'), '„Heute“ bringt zurück in KW 45');
+check((await page.locator('.blaettern .monatstitel').innerText()).includes('KW 45'), '„Heute“ bringt zurück in KW 45');
 
 // --- vergangene Tage
 await uhr(MI, '18:00');
 check(await page.locator(`#tag-${MO}`).count() === 0 && await page.locator(`#tag-${DI}`).count() === 0, 'Mi: Mo und Di sind eingeklappt');
 check((await page.locator('[data-aktion="vergangene"]').innerText()).includes('(2)'), 'Mi: Knopf nennt zwei vergangene Tage');
+check(await page.locator('.tagleiste span.tagzelle.vorbei').count() === 2 && await page.locator('.tagleiste a.tagzelle').count() === 5,
+  'Mi: in der Tagesleiste stehen Mo und Di blass und ohne Sprung');
 await page.click('[data-aktion="vergangene"]');
 check(await page.locator(`#tag-${MO}.vorbei`).count() === 1, 'nach dem Tipp sind sie wieder da, als vergangen markiert');
 await page.click('[data-aktion="vergangene"]');

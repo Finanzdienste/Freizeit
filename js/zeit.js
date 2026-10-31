@@ -7,7 +7,9 @@
  *                    nach Feierabend noch geht.
  *   bis 21:30        immer an: Abends vor einem Arbeitstag (So–Do) steht nur,
  *                    was spätestens um 21:30 endet. Wer am nächsten Morgen ins
- *                    Büro muss, will um zehn zu Hause sein.
+ *                    Büro muss, will um zehn zu Hause sein. Für Online & TV
+ *                    zählt der Beginn (spätestens 21:30) – da ist man schon
+ *                    zu Hause.
  *
  * Alle Tage sind ISO-Daten („2026-10-28“). Gerechnet wird mittags, damit die
  * Umstellung auf Winterzeit kein Datum verschiebt.
@@ -184,6 +186,13 @@ export function endetRechtzeitig(e, tag, tage) {
   }
   const i = ende(e, tag.datum);
   return !i || i.ende <= SPAETESTES_ENDE;
+}
+
+/** Die 21:30-Regel für Online & TV: Hier zählt der Beginn – Anstoß um 21:00 geht, um 22:00 nicht. */
+export function beginntRechtzeitig(e, tag, tage) {
+  if (e.ganztags || !abendVorArbeitstag(tag, tage)) return true;
+  const b = beginn(zeitAm(e, tag.datum));
+  return b === null || b <= SPAETESTES_ENDE;
 }
 
 /**

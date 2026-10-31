@@ -58,14 +58,22 @@ export function programmBereinigen(roh, fehler = []) {
   };
 }
 
-/** Programm und Ideen, unabhängig voneinander: Fehlt eins, geht das andere trotzdem. */
+/**
+ * Programm und Ideen, unabhängig voneinander: Fehlt eins, geht das andere
+ * trotzdem. ideenStand ist der Stand des Katalogs (für die Einstellungen).
+ */
 export async function ladeAlles() {
   const fehler = [];
+  let ideenStand = '';
   const [programm, ideen] = await Promise.all([
     holen('daten/programm.json').then((roh) => programmBereinigen(roh, fehler))
       .catch((e) => { fehler.push(`Programm nicht geladen (${e.message})`); return null; }),
-    holen('daten/ideen.json').then((roh) => ideenBereinigen(roh, fehler))
-      .catch((e) => { fehler.push(`Ideen nicht geladen (${e.message})`); return null; }),
+    holen('daten/ideen.json').then((roh) => {
+      ideenStand = roh && typeof roh.stand === 'string' ? roh.stand : '';
+      return ideenBereinigen(roh, fehler);
+    }).catch((e) => { fehler.push(`Ideen nicht geladen (${e.message})`); return null; }),
   ]);
-  return { programm, ideen, fehler };
+  return {
+    programm, ideen, ideenStand, fehler,
+  };
 }

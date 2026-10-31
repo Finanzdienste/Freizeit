@@ -8,7 +8,9 @@
  */
 import { oeffne, MO, DI, SA, FERN } from './hilfe.mjs';
 
-const { page, check, reiter, filter, gespeichert, ende } = await oeffne({ tag: MO, zeit: '10:00' });
+const {
+  page, check, reiter, filter, gespeichert, ende,
+} = await oeffne({ tag: MO, zeit: '10:00' });
 
 const feld = (d) => page.locator(`.feld[data-tag="${d}"]`);
 const titel = () => page.locator('.monatstitel').innerText();
@@ -21,10 +23,11 @@ await ansicht('monat');
 check(await page.locator('[data-kal-ansicht="monat"]').getAttribute('aria-pressed') === 'true', '„Monat“ schaltet um');
 check((await titel()) === 'November 2026', 'der Kalender beginnt im laufenden Monat');
 check(await page.locator('.kalender .feld').count() === 42, 'sechs Wochen à sieben Tage');
-check(await page.locator('.kalender .wt').first().innerText() === 'MO', 'die Woche beginnt am Montag');
+check(await page.locator('.kalender .wt').first().innerText() === 'Mo', 'die Woche beginnt am Montag (Wochentage ohne Großbuchstaben)');
 check((await feld(DI).locator('.zahl').innerText()) === '4', 'Di: vier Termine – das späte Konzert zählt nicht, Keane schon');
 check((await feld(MO).getAttribute('class')).includes('heute'), 'heute ist markiert');
-check(await page.locator('[data-aktion="kal-zurueck"]').isDisabled() && await page.locator('[data-aktion="kal-heute"]').isDisabled(), 'vor diesen Monat geht es nicht zurück; „Heute“ ist man schon');
+check(await page.locator('[data-aktion="kal-zurueck"]').isDisabled() && await page.locator('[data-aktion="kal-heute"]').count() === 0, 'vor diesen Monat geht es nicht zurück; „Heute“ fehlt, man ist ja schon da');
+check(await page.locator('.kal-kopf [data-aktion="filter-auf"]').count() === 1, 'auch im Monat steht der Filter-Knopf – derselbe wie in der Liste');
 
 // Ein Tipp auf einen Tag öffnet den Tag.
 await feld(DI).click();
@@ -73,7 +76,7 @@ check(titelSa[0] === 'Messe' && titelSa.includes('Party'), 'Sa: Ganztägiges obe
 
 // Laufendes führt in die Liste – und zurück in den Tag.
 await page.click('[data-zu-woche]');
-check(await page.locator('[data-kal-ansicht="liste"]').getAttribute('aria-pressed') === 'true' && (await page.locator('.blaettern .kicker').innerText()).includes('KW 45'),
+check(await page.locator('[data-kal-ansicht="liste"]').getAttribute('aria-pressed') === 'true' && (await page.locator('.blaettern .monatstitel').innerText()).includes('KW 45'),
   '„im Programm ansehen“ springt in die Liste derselben Woche');
 await ansicht('tag');
 check((await titel()).startsWith('Samstag, 7.11.2026'), 'zurück im Tag: der Samstag ist noch gewählt');
@@ -85,10 +88,17 @@ check(await page.locator('[data-kal-ansicht="tag"]').getAttribute('aria-pressed'
 await ansicht('liste');
 await filter('kostenlos');
 await ansicht('monat');
-check((await page.locator('.kal-kopf').innerText()).includes('Filter aus dem Programm sind aktiv'), 'ein aktiver Filter wird genannt');
+check(await page.locator('.kal-kopf .filterchip[data-chip="kostenlos"]').count() === 1, 'ein aktiver Filter steht als Chip auch im Monat');
 check(await feld(DI).locator('.zahl').count() === 0, 'mit „kostenlos“ hat der Dienstag nichts');
-await page.click('[data-aktion="filter-weg"]');
-check((await feld(DI).locator('.zahl').innerText()) === '4', '„Alle zeigen“ nimmt die Filter zurück');
+await page.click('.kal-kopf .filterchip[data-chip="kostenlos"]');
+check((await feld(DI).locator('.zahl').innerText()) === '4' && await page.locator('.filterchip').count() === 0, '✕ am Chip nimmt den Filter zurück');
+await page.click('.kal-kopf [data-aktion="filter-auf"]');
+check(/^\d+ Termine zeigen$/.test((await page.locator('#blatt .blatt-fuss .knopf.haupt').innerText()).trim()), 'das Blatt im Monat: unten „… Termine zeigen“');
+await page.click('#blatt [data-filter="kostenlos"]');
+check(await feld(DI).locator('.zahl').count() === 0 && (await page.locator('#blatt .blatt-fuss .knopf.haupt').innerText()).trim() === '4 Termine zeigen',
+  'eine Wahl im Blatt gilt sofort – dahinter und in der Zahl unten (November kostenlos: Lesung, Nachtmarkt, Schach am Freitag, Länderspiel)');
+await page.click('#blatt [data-filter="kostenlos"]');
+await page.click('#blatt .blatt-x');
 
 // Weiter in die Monate nach dem Programm: nur noch Konzerte.
 await page.click('[data-aktion="kal-vor"]');

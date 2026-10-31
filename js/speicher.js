@@ -16,13 +16,25 @@ import { UMKREISE, standortPruefen } from './standort.js';
 
 export const SCHLUESSEL = 'freizeit.stand.v1';
 
+/** Die Wahl „Art“ im Filter: alles, nur vor Ort, nur Online & TV. */
+export const ARTEN = ['', 'vorort', 'online'];
+
+/** Die Reiter unten, die man ausblenden kann – Einstellungen sind immer da. */
+export const INHALTS_REITER = ['programm', 'karte', 'ideen', 'wir'];
+
+/** Ausgeblendete Reiter, geprüft: nur bekannte, jeder einmal – und nie alle (dann gilt: alle an). */
+function reiterAusPruefen(roh) {
+  const aus = Array.isArray(roh) ? [...new Set(roh.filter((r) => INHALTS_REITER.includes(r)))] : [];
+  return aus.length >= INHALTS_REITER.length ? [] : aus;
+}
+
 /**
- * Filter im Programm. umkreis (km, 0 = alle) gilt nur mit Bezugspunkt
- * (standort, siehe unten); nachEntfernung ist kein Filter, sondern die
- * Reihenfolge am Tag – „Alle zeigen“ lässt sie stehen.
+ * Filter im Programm (und auf der Karte). umkreis (km, 0 = alle) gilt nur
+ * mit Bezugspunkt (standort, siehe unten); nachEntfernung ist kein Filter,
+ * sondern die Reihenfolge am Tag – Zurücksetzen lässt sie stehen.
  */
 export const LEERER_FILTER = () => ({
-  region: '', kategorie: '', kostenlos: false, feierabend: false, drinnen: false, draussen: false, hohwacht: false, kuenstler: false,
+  art: '', region: '', kategorie: '', kostenlos: false, feierabend: false, drinnen: false, draussen: false, hohwacht: false, kuenstler: false,
   umkreis: 0, nachEntfernung: false,
 });
 
@@ -38,10 +50,13 @@ const LEER = () => ({
   // Was man gemacht hat und wie es war – nur auf diesem Gerät:
   // [{ schluessel, titel, datum, bewertung (0–3), flow, plan? }]
   verlauf: [],
-  // Ideen mit Ort auch auf der Karte zeigen
+  // Karte: Orte aus den Ideen dazu; nur, worauf jemand Bock hat
   karteIdeen: false,
+  karteBock: false,
   // Programm: zuletzt gewählte Ansicht (liste, monat, woche, tag)
   programmAnsicht: 'liste',
+  // Reiter, die unten nicht stehen sollen (Einstellungen → Reiter unten); leer: alle da
+  reiterAus: [],
   // schluessel → Schnappschuss des Eintrags (siehe schnappschuss()) + gesetzt,
   // im Plan als Mitglied auch mitwem: 'gastgeber' oder 'andere'
   bock: {},
@@ -59,7 +74,6 @@ const LEER = () => ({
   // Wann zuletzt in „Wir“ geschaut wurde – für den Punkt an der Leiste
   gesehen: { andere: '' },
   vergangeneTage: false,
-  installHinweisWeg: false,
   // „So funktioniert's“ unter „Wir“ weggeklickt
   hilfeWeg: false,
   // Push-Mitteilungen auf diesem Gerät an (push.js): { code, endpunkt } oder null
@@ -72,6 +86,7 @@ const LEER = () => ({
 /** Ein gespeicherter Filter mit allen Feldern, der Umkreis eine der erlaubten Weiten. */
 function filterPruefen(roh) {
   const f = { ...LEERER_FILTER(), ...(roh && typeof roh === 'object' ? roh : {}) };
+  f.art = ARTEN.includes(f.art) ? f.art : '';
   f.umkreis = UMKREISE.includes(Number(f.umkreis)) ? Number(f.umkreis) : 0;
   f.nachEntfernung = f.nachEntfernung === true;
   return f;
@@ -107,6 +122,7 @@ export function laden() {
         bock: roh.bock && typeof roh.bock === 'object' ? roh.bock : {},
         warteschlange: Array.isArray(roh.warteschlange) ? roh.warteschlange : [],
         standort: standortPruefen(roh.standort),
+        reiterAus: reiterAusPruefen(roh.reiterAus),
       };
     }
   } catch { /* ohne Gedächtnis weiter */ }
@@ -128,7 +144,7 @@ export const aktuell = () => stand;
 export const meinBock = (schluessel) => Object.hasOwn(stand.bock, schluessel);
 
 const FELDER = ['quelle', 'titel', 'ort', 'datum', 'zeit', 'von', 'bis', 'ganztags', 'endeMin', 'link', 'kategorie',
-  'region', 'kuenstler', 'preis', 'kostenlos', 'anreise', 'beschreibung', 'geo',
+  'region', 'online', 'kuenstler', 'preis', 'kostenlos', 'anreise', 'beschreibung', 'geo',
   // Ideen (ideen.js): Kategorie, Wirkung, wo, wer sie angelegt hat; beim Eingeplanten die Idee dahinter
   'kat', 'wirkung', 'wo', 'draussen', 'dauer', 'mit', 'urheber', 'idee'];
 const bytes = (o) => new TextEncoder().encode(JSON.stringify(o)).length;

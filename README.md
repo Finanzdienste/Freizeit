@@ -12,26 +12,42 @@ worauf er Bock hat – mit Tobi oder allein/mit anderen –, und Tobi sieht in
 (Android: in Chrome öffnen, Menü ⋮ → „App installieren“; iPhone: in Safari
 öffnen, Teilen → „Zum Home-Bildschirm“).
 
-Vier Reiter:
+Fünf Reiter unten – welche davon dort stehen, wählt man unter Einstellungen → **Reiter unten**:
 
 | Reiter | Inhalt |
 | --- | --- |
-| **Programm** | Vier Ansichten wie bei Google, der gewählte Tag gilt in allen: **Liste** – Woche für Woche zum Blättern: Highlights, Filter, Standort (Entfernung, Umkreis, nach Nähe), Tag für Tag nach Uhrzeit (Eingeplantes oben am Tag), was gerade läuft, Hinweise; **Monat** – das Blatt mit der Zahl der Termine je Tag und Punkten, wer Bock hat; **Woche** – 7 bis 24 Uhr mit den belegten Zeiten des Gastgebers und Chips für Haken, Treffer und Eingeplantes; **Tag** – Zeitstreifen und alle Termine. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler und Eingeplantes |
-| **Karte** | OpenStreetMap, ein Marker je Ort (nahe zu Haufen zusammengefasst), Zeiträume von „Heute“ bis „Alles“ und „Mit Bock“, mit „💡 Ideen“ auch die Orte aus dem Ideen-Katalog |
-| **Ideen** | Alles ohne Termin: Eingeplantes, „Wollen wir mal“ (Ideen mit Bock), „Tut dir gut“, Filter nach Wirkung und Rahmen, der Katalog nach Kategorien, eigene Ideen |
-| **Wir** | Der gemeinsame Plan. Beim Gastgeber der Überblick: Zusammen, Wollen mit dir, Ohne dich, Pro Person, Deine Haken; Einladen, Weiteres Gerät, Auflösen. Bei den Eingeladenen: Du und Tobi, Tobi hat Bock auf, Deine Haken. Ohne Plan die eigene Bock-Liste |
+| **Programm** | Vier Ansichten, der gewählte Tag gilt in allen: **Liste** – Woche für Woche, oben die Tagesleiste (sieben Tage mit der Zahl der Termine und Punkten, wer Bock hat; ein Tipp springt hin), eingeklappt „Diese Woche“ (Highlights und Infos), dann Tag für Tag nach Uhrzeit (Eingeplantes oben am Tag), was gerade läuft, Hinweise; **Monat** – das Blatt mit der Zahl der Termine je Tag und Punkten, wer Bock hat; **Woche** – 7 bis 24 Uhr mit den belegten Zeiten des Gastgebers und Chips für Haken, Treffer und Eingeplantes; **Tag** – Zeitstreifen und alle Termine. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler und Eingeplantes |
+| **Karte** | OpenStreetMap, ein Marker je Ort (nahe zu Haufen zusammengefasst), oben der Zeitraum (Heute bis Alles) und derselbe Filter wie im Programm, dazu „Nur mit Bock“ und „Orte aus Ideen zeigen“ |
+| **Ideen** | Alles ohne Termin: Eingeplantes, „Wollen wir mal“ (Ideen mit Bock), „Tut dir gut“, eigene Ideen, der Katalog nach Kategorien; Filter nach Wirkung und Rahmen |
+| **Wir** | Der gemeinsame Plan: oben die Leute, eine Zeile Stand und – beim Gastgeber – „Einladen“. Beim Gastgeber der Überblick: Zusammen, Wollen mit dir, Ohne dich, Pro Person, Deine Haken. Bei den Eingeladenen: Du und Tobi, Tobi hat Bock auf, Deine Haken. Leere Abschnitte stehen nicht da. Ohne Plan die eigene Bock-Liste und der Weg in einen Plan |
+| **Einstellungen** | Der Reiter ganz rechts, immer da (Adresse `#einstellungen`): **Reiter unten** (Programm, Karte, Ideen, Wir je an oder aus), **Mein Standort**, **Mitteilungen** (nur der Gastgeber), **Gemeinsamer Plan** (Abgleich, Name ändern, Weiteres Gerät, So geht's, Verlassen bzw. Auflösen), **App** (Installieren, Stand des Programms und des Katalogs, Hinweise zu den Daten) |
 
-Jede Karte ist zugeklappt kurz – Uhrzeit, Titel, Ort, was beim Entscheiden
-hilft (Preis, „♫ Dein Künstler“, NEU, wer Bock hat) und der Knopf **Bock**
-(wer eingeladen ist, wählt zwischen **Mit Tobi** und **Allein/mit
-anderen**). Ein Tipp auf den Titel klappt den Rest auf: Beschreibung,
-Region, drinnen/draußen, Anreise, dazu **WhatsApp** (fertige Nachricht:
-Titel, Datum und Uhrzeit, Ort, Beschreibung, Preis, Anreise, Link),
-**Kalender** (auf dem iPhone eine .ics-Datei für den Kalender des Geräts,
-sonst ein ausgefüllter Termin in Google Kalender) und die **Quelle**.
-Highlights, Filter und Standort stecken genauso hinter einem Knopf, unter „Wir“ alles
-außer Einladen hinter **Mehr**. Konzerte der eigenen Künstler tragen
-„♫ Dein Künstler“, der Filter „♫ Meine Künstler“ zeigt nur sie.
+**Reiter unten:** Programm, Karte, Ideen und Wir lassen sich einzeln ausblenden; Einstellungen bleibt immer, und einer der vier bleibt an (sein Schalter sagt dann „Einer bleibt immer an“). Die Wahl bleibt auf dem Gerät (ein Stand von vorher: alle an). Die App öffnet mit dem ersten Reiter, der an ist – der hat als einziger keine `#`-Adresse. Ausgeblendetes bleibt erreichbar: über `#programm`, `#karte`, `#ideen`, `#wir`, einen Einladungs- oder Gerätelink, eine Mitteilung oder einen Sprung aus einer Karte; unten ist dann kein Reiter markiert. Der Punkt für neue Haken gehört zu „Wir“ – ist der Reiter aus, gibt es ihn nicht. Mit fünf Reitern ist die Schrift der Leiste etwas kleiner (11 px, unter 375 px Breite 10,5 px), damit „Einstellungen“ ganz dasteht.
+
+**Wo finde ich was?**
+
+| Ich will … | Da |
+| --- | --- |
+| filtern (Art, Region, Umkreis, Kategorie, kostenlos, Mo–Fr ab 15:30 …) | Knopf **Filter** oben in Programm, Karte und Ideen – das Blatt von unten; was gewählt ist, steht als Chip daneben (✕ nimmt es weg, ab zwei Chips „Alle zeigen“) |
+| nur Online & TV sehen – oder gerade nicht | Filter → **Art**: Alles · Vor Ort · Online & TV |
+| auswählen, welche Reiter unten stehen | Einstellungen → **Reiter unten** |
+| meinen Standort oder eine Adresse festlegen | Einstellungen → **Mein Standort** (im Filter: „Standort festlegen“ springt dorthin) |
+| Umkreis, Reihenfolge nach Entfernung | Filter → **Wo** bzw. **Reihenfolge am Tag** (erst mit Standort) |
+| Leute einladen | **Wir** → Einladen |
+| meinen Namen ändern, den Plan auf ein zweites Gerät, verlassen/auflösen | Einstellungen → **Gemeinsamer Plan** |
+| Push-Mitteilungen an oder aus | Einstellungen → **Mitteilungen** (Gastgeber) |
+| die App installieren, sehen, wie aktuell das Programm ist | Einstellungen → **App** |
+
+Jede Karte ist zugeklappt kurz – Uhrzeit, Titel, Ort (bei Online & TV „📺“
+und der Sender), was beim Entscheiden hilft (Preis, „♫ Dein Künstler“, Neu,
+wer Bock hat) und der Knopf **Bock** (wer eingeladen ist, wählt zwischen
+**Mit Tobi** und **Allein/mit anderen**). Ein Tipp auf den Titel klappt den
+Rest auf: Beschreibung, Region, drinnen/draußen, Anreise, dazu **WhatsApp**
+(fertige Nachricht: Titel, Datum und Uhrzeit, Ort, Beschreibung, Preis,
+Anreise, Link), **Kalender** (auf dem iPhone eine .ics-Datei für den
+Kalender des Geräts, sonst ein ausgefüllter Termin in Google Kalender) und
+die **Quelle**. Konzerte der eigenen Künstler tragen „♫ Dein Künstler“, der
+Filter „♫ Meine Künstler“ zeigt nur sie.
 
 ## Die beiden Zeitregeln
 
@@ -48,34 +64,39 @@ Kategorie (Konzert 2:15, Bühne 2:30, Comedy 2:15, Film 2:10 …). Märkte, Fest
 und Ausstellungen sind zum Kommen und Gehen – dort reicht ein Beginn bis
 20:30. Wie viele Termine die Regel an einem Abend ausblendet, steht beim Tag.
 **Für Konzerte der eigenen Künstler (`kuenstler: true`) gilt sie nicht.**
+**Online & TV** schaut man zu Hause – dort zählt der **Beginn**: Was
+spätestens um 21:30 anfängt, bleibt (Anstoß 21:00 ja, eine Partie um 22:00
+vor einem Arbeitstag nein); der Tag sagt „1 Online-Termin, der erst nach
+21:30 beginnt“.
 
 Gerechnet wird in `js/zeit.js` und `js/filter.js`, geprüft in
 `tests/test-programm.mjs`.
 
 ## Standort und Entfernung
 
-Im Programm steht neben „Filter“ der Knopf **📍 Standort**. Darin wählt man
-einen Bezugspunkt: **Mein Standort** (der Browser fragt einmal um Erlaubnis)
+In den Einstellungen unter **Mein Standort** wählt man einen
+Bezugspunkt: **Mein Standort** (der Browser fragt einmal um Erlaubnis)
 oder eine eingetippte **Adresse oder Ort** – gesucht wird erst auf „Suchen“
 oder Enter, bei OpenStreetMap (Nominatim, nur Deutschland, Hamburg und
 Umgebung zuerst); bei mehreren Treffern tippt man den richtigen an. Dann:
 
 - An jeder Karte steht die Entfernung gleich hinter dem Ort („Thalia ·
   300 m · Bühne“), bei Ideen die zum nächsten ihrer Orte („ab 800 m“).
-- **Umkreis** (alle · 2 · 5 · 10 · 25 · 50 km) blendet Fernes aus – in der
-  Liste, in Monat, Woche und Tag und auf der Karte; was keine Koordinaten
-  hat, fällt dann mit weg. Der Knopf zeigt ihn („📍 Wandsbek Markt · 5 km“),
-  die Kalenderansichten und die Karte sagen „nur bis 5 km um …“, und „Alle
-  zeigen“ nimmt ihn zurück.
-- **Reihenfolge am Tag: Entfernung** stellt das Nächste nach oben (Eingeplantes
-  bleibt oben), auch unter „Läuft gerade“ und in der Tagesansicht.
+- **Umkreis** (im Filter unter „Wo“: alle · 2 · 5 · 10 · 25 · 50 km) blendet
+  Fernes aus – in der Liste, in Monat, Woche und Tag und auf der Karte; was
+  keine Koordinaten hat, fällt dann mit weg, Online & TV bleibt. Er steht
+  als Chip „bis 5 km“ neben dem Filter-Knopf; ✕ nimmt ihn zurück.
+- **Reihenfolge am Tag: Entfernung** (im Filter) stellt das Nächste nach oben
+  (Eingeplantes bleibt oben, Online & TV steht hinten), auch unter „Läuft
+  gerade“ und in der Tagesansicht.
 - Auf der Karte steht der Bezugspunkt als dunkler Punkt („Du“ bzw. der Name
   der Adresse), mit Umkreis als gestrichelter Kreis.
 
 Entfernungen sind Luftlinie. Der Bezugspunkt liegt nur im Speicher des Geräts
 (`standort` in `freizeit.stand.v1`) und geht nie an den Server des
 gemeinsamen Plans; zu OpenStreetMap geht nur eine eingetippte Adresse.
-„Löschen“ nimmt Bezugspunkt, Umkreis und Reihenfolge zurück. Rechnen und
+„Löschen“ (in den Einstellungen) nimmt Bezugspunkt, Umkreis und Reihenfolge
+zurück. Rechnen und
 Suchen tut `js/standort.js`, geprüft in `tests/test-standort.mjs`.
 
 ## Ideen
@@ -92,7 +113,8 @@ Kategorie, eine **Wirkung** und einen Rahmen:
 - Rahmen: Zuhause / Hamburg / Ausflug, drinnen / draußen, Dauer, mit wem,
   kostenlos, Saison (außerhalb der Saison erst auf Wunsch sichtbar).
 
-Gefiltert wird mit Schaltern; mehrere Wirkungen müssen alle zutreffen. Bei
+Gefiltert wird im Filter-Blatt (Wirkung, Wo, Rahmen, „auch außerhalb der
+Saison“); mehrere Wirkungen müssen alle zutreffen. Bei
 Ideen mit Ort stehen die Orte mit Link, Preis und Zeiten dabei, auf der
 Karte als gestrichelte Marker.
 
@@ -152,7 +174,7 @@ alle; die eigenen Haken bleiben auf dem Gerät.
 
 **Schlüssel des Gastgebers:** Beim Starten würfelt die App einen Schlüssel
 (24 Zeichen); der Server behält nur dessen Hash und zeigt alles nur, wer ihn
-mitbringt. **Weiteres Gerät** gibt einen Link `#geraet=<code>.<kennung>[.<schlüssel>]`:
+mitbringt. **Weiteres Gerät** (Einstellungen → Gemeinsamer Plan) gibt einen Link `#geraet=<code>.<kennung>[.<schlüssel>]`:
 Auf einem zweiten Gerät geöffnet (auf dem iPhone in der App unter „Ich habe
 einen Code“ eingefügt) ist man dort dieselbe Person, der Gastgeber samt
 Schlüssel. Der Link ist nur für einen selbst. Ohne ihn tritt ein zweites
@@ -184,8 +206,9 @@ Geburtstage), rechnet seine Arbeitszeit Mo–Fr dazu und ruft das Werkzeug
 mit seinem Zugang als Gastgeber auf. `--sql` gibt stattdessen die
 SQL-Anweisung für einen Lauf mit Datenbankzugang aus.
 
-**Bescheid sagen (Push):** Unter „Wir“ schaltet der Gastgeber mit „🔔
-Bescheid sagen“ Push-Mitteilungen ein – auch bei geschlossener App: „Kim
+**Bescheid sagen (Push):** In den Einstellungen unter „Mitteilungen“
+schaltet der Gastgeber mit „🔔 Bescheid sagen“ Push-Mitteilungen ein – auch
+bei geschlossener App: „Kim
 ist dabei“, „Kim hat Bock – mit dir: Theater früh · Di 3.11., 19:00 Uhr“,
 „Kim ist doch nicht dabei“ (ein zurückgenommenes „mit dir“), „Kim hat den
 Plan verlassen“; mehrere Haken derselben Person kurz nacheinander werden
@@ -337,9 +360,10 @@ nach ein bis zwei Minuten steht die neue Datei unter
 | `ende` | Ende `HH:MM`, bekannt oder geschätzt (Film: Laufzeit + ca. 15 Min. Werbung) |
 | `dauer` | Dauer in Minuten, wenn kein `ende` |
 | `ganztags` | ganztägig (Messe, Markt über den Tag); steht oben im Tag |
-| `geo` | `[Breite, Länge]` für die Karte – bei mindestens 80 % der Termine |
-| `region` | `HH` Hamburg · `LUE` Lübeck & Ostsee · `LG` Lüneburg & Heide · `STD` Stade & Altes Land · `HB` Hohwachter Bucht & Kiel · `WIS` Wismar · `HAN` Hannover · `WEI` Weitere Ziele |
-| `kategorie` | z. B. Konzert, Bühne, Comedy, Kino, Party, Sport, Führung, Erlebnis, Food, Markt, Fest & Saisonal, Ausstellung |
+| `geo` | `[Breite, Länge]` für die Karte – bei mindestens 80 % der Termine vor Ort |
+| `region` | `HH` Hamburg · `AHR` Ahrensburg · `LUE` Lübeck & Ostsee · `LG` Lüneburg & Heide · `STD` Stade & Altes Land · `HB` Hohwachter Bucht & Kiel · `WIS` Wismar · `HAN` Hannover · `WEI` Weitere Ziele · `ONL` Online & TV |
+| `online` | `true` bei Online & TV (immer zusammen mit Region `ONL`): Live-Events zum Zuschauen – `ort` ist dann der Sender („DAZN“, „Prime Video“, „ZDF“, „YouTube · FIDE“), ohne `geo` und `anreise`. Für die 21:30-Regel zählt der Beginn |
+| `kategorie` | z. B. Konzert, Bühne, Comedy, Kino, Party, Sport, Schach, Führung, Erlebnis, Food, Markt, Fest & Saisonal, Ausstellung, Lesung |
 | `draussen` | `drinnen`, `draußen` oder `beides` |
 | `kostenlos` | `true`, wenn der Eintritt frei ist |
 | `hohwacht` | `true`, wenn er sich mit einem Besuch in Hohwacht verbinden lässt (Region `HB` zählt automatisch) |
@@ -447,7 +471,9 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `supabase/functions/freizeit-push/` | die Edge Function: offene Nachrichten holen, verschlüsseln, an die Push-Dienste schicken |
 | `werkzeug/push-buendeln.mjs` | die Function als eine Datei fürs Dashboard |
 | `js/config.js` | Adresse und öffentlicher Schlüssel des Servers |
-| `js/ansicht-*.js` | die vier Reiter – `ansicht-programm.js` die Liste, `ansicht-kalender.js` Monat, Woche und Tag |
+| `js/ansicht-*.js` | die Seiten – `ansicht-programm.js` die Liste, `ansicht-kalender.js` Monat, Woche und Tag (und den Kopf mit Ansicht und Blättern), `ansicht-landkarte.js`, `ansicht-ideen.js`, `ansicht-wir.js`, `ansicht-einstellungen.js` die Einstellungen |
+| `js/ansicht-filter.js` | der Filter: Leiste mit Knopf und Chips, die Gruppen im Blatt – für Programm, Karte und Ideen |
+| `js/blatt.js` | das Blatt von unten: Dialog, Escape, Tipp daneben, Fokus hinein und zurück, der Rest der Seite inert |
 | `supabase/gemeinsam.sql` | Tabellen und Funktionen für den gemeinsamen Plan |
 
 ## Tests
@@ -459,20 +485,24 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 
 | Test | prüft |
 | --- | --- |
-| `test-programm.mjs` | Wochen, beide Zeitregeln, Filter, Laufendes, Konzerte der eigenen Künstler |
+| `test-programm.mjs` | Wochen, der Kopf (Blättern, Filter, Tagesleiste, „Diese Woche“, erster Termin ohne Scrollen), beide Zeitregeln, Filter, Laufendes, Konzerte der eigenen Künstler |
+| `test-filter.mjs` | das Filter-Blatt: Dialog, Wahl gilt sofort, Chips mit ✕, „Alle zeigen“, Zurücksetzen, Escape, Tipp daneben, Fokus, weniger Bewegung, dasselbe in Woche, Tag und Karte, das Blatt der Ideen, nichts scrollt quer |
+| `test-einstellungen.mjs` | der Reiter Einstellungen (kein ⚙, kein „Zurück“), die Abschnitte je Rolle, Stand der Daten, Installieren, Hinweise zu den Daten, Name ändern, Weiteres Gerät |
+| `test-reiter.mjs` | Reiter unten: an und aus (auch mit der Tastatur), der letzte bleibt, Neuladen, Start-Reiter, Ausgeblendetes über `#…`, Einladung und „Zu „Wir““, der Punkt nur an „Wir“, fünf Beschriftungen bei 360 und 390 px ganz lesbar ohne Querscrollen, alte und kaputte Stände |
+| `test-online.mjs` | Online & TV: Sender statt Ort, 21:30 nach Beginn, Filter „Art“, Umkreis und Entfernung, Monat und Tag, WhatsApp und Kalender, Schnappschuss, Landkarte |
 | `test-kalender.mjs` | Monat, Woche und Tag: Zahlen, Bock-Punkte, Chips, Blättern, „Heute“, Monate nach dem Programm |
-| `test-landkarte.mjs` | Marker, Zeiträume, Liste am Marker, Haken aus der Karte |
+| `test-landkarte.mjs` | Marker, Zeitraum, „Nur mit Bock“, Online & TV gezählt statt gezeigt, Liste am Marker, Haken aus der Karte |
 | `test-wir.mjs` | der gemeinsame Plan: Tobi lädt ein, Kim (iPhone) und Jo wählen mit/ohne Tobi und sehen einander nicht, Tobis Überblick, offline, weiteres Gerät, Herausnehmen, Verlassen, Auflösen, ein Plan aus der ersten Fassung, fremder Text |
 | `test-ideen.mjs` | Katalog, Filter nach Wirkung, Saison, Bock, Einplanen (Liste, Monat), Wie war's? und „Tut dir gut“, eigene Ideen im Plan, Einplanen mit/ohne Gastgeber, fremder Text, Ideen auf der Karte |
 | `test-teilen.mjs` | WhatsApp, Google Kalender, .ics – auch für Eingeplantes |
 | `test-offline.mjs` | Offline-Vorrat, App ohne Netz |
-| `test-daten.mjs` | `daten/programm.json`, `daten/ideen.json` und `daten/orte.json` |
+| `test-daten.mjs` | `daten/programm.json` (auch Online & TV: `online` mit `ONL`, ohne `geo`), `daten/ideen.json` und `daten/orte.json` – mit `FREIZEIT_DATEN=<ordner>` einen anderen Ordner, etwa einen zusammengeführten Lauf vor dem Kopieren |
 | `test-zeiten.mjs` | Zeiten des Gastgebers: an den Karten (frei/verplant), in Woche und Tag als Blöcke, nirgends als Eintrag |
 | `test-zeiten-rechnen.mjs` | Blöcke je Woche: Zeitzone, Mitternacht, Wochenwechsel, Zeitumstellung |
 | `test-zeiten-senden.mjs` | das Werkzeug gegen einen nachgebauten Server |
 | `test-sql.mjs` | `supabase/gemeinsam.sql` in PGlite: über der ersten Fassung, Rollen und was wer sieht, Schlüssel, Funktionen, Rechte, Grenzen, Push (Abos, was gemeldet wird, Abholen, VAPID-Paar) |
-| `test-push.mjs` | Push in der App: anschalten, was der Server sammelt, ausschalten, ohne Erlaubnis, iPhone im Browser |
-| `test-standort.mjs` | Standort und Adresse als Bezugspunkt: Entfernung an den Karten, Umkreis in allen Ansichten und auf der Karte, Reihenfolge nach Nähe, Ideen, Löschen, Neuladen, nichts davon zum Server |
+| `test-push.mjs` | Push in der App (Einstellungen → Mitteilungen): anschalten, was der Server sammelt, ausschalten, ohne Erlaubnis, iPhone im Browser |
+| `test-standort.mjs` | Standort und Adresse als Bezugspunkt (Einstellungen): Entfernung an den Karten, Umkreis und Reihenfolge im Filter für alle Ansichten und die Karte, Ideen, Löschen, Neuladen, nichts davon zum Server |
 | `test-push-senden.mjs` | die Edge Function in Node: VAPID-Token, Verschlüsselung (ein nachgebautes Gerät liest sie), Texte, ein Durchlauf |
 
 Die Browsertests laufen gegen feste Testdaten und einen nachgebauten Server

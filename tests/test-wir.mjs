@@ -22,7 +22,7 @@ const warte = (x, t, ms = 6000) => x.page.waitForFunction((s) => document.queryS
   .then(() => true).catch(() => false);
 /** Bis nichts mehr zum Server muss. */
 const leer = (x) => x.page.waitForFunction(() => !JSON.parse(localStorage.getItem('freizeit.stand.v1')).warteschlange.length, null, { timeout: 6000 });
-/** „Jetzt abgleichen“ – und warten, bis es durch ist. */
+/** „Jetzt abgleichen“ (in den Einstellungen) – warten, bis es durch ist, und zurück nach „Wir“. */
 async function synchron(x) {
   const vorher = (await x.gespeichert()).gemeinsam?.abgeholt;
   await x.aktion('abgleichen');
@@ -31,6 +31,7 @@ async function synchron(x) {
     return !st.gemeinsam || st.gemeinsam.abgeholt !== v || st.gemeinsam.raus;
   }, vorher, { timeout: 6000 }).catch(() => {});
   await x.page.waitForTimeout(150);
+  await x.reiter('wir');
 }
 const karteAm = (x, tag, titel) => x.page.locator(`#tag-${tag} .karte`, { hasText: titel });
 const personZeile = (x, name) => x.page.locator('.person-zeile').filter({ has: x.page.locator('summary .person', { hasText: new RegExp(`^${name}$`) }) });
@@ -60,6 +61,9 @@ check((await A.page.locator('#einladungstext').inputValue()) === wa, 'der Text s
 check(!link.includes(tobi.schluessel) && !wa.includes(tobi.schluessel), 'der Schlüssel steht weder im Link noch in der Nachricht');
 await A.page.click('[data-aktion="einladen"]');
 check(await A.page.locator('#einladungslink').count() === 0 && (await A.page.locator('.banner').innerText()).includes('Noch ist niemand dabei'), 'zugeklappt, allein im Plan: ein Hinweis zum Einladen');
+check(await A.page.locator('#ansicht .knopf.haupt').count() === 1 && await A.page.locator('#ansicht details.menue, #ansicht .push-zeile, #ansicht [data-aktion="abgleichen"]').count() === 0
+  && (await A.page.locator('.syncstatus').innerText()).startsWith('Du bist Gastgeber'),
+'oben unter „Wir“ nur die Leute, eine Zeile Stand und „Einladen“ – kein Menü, kein Push, kein Abgleich mehr');
 
 // Tobi hakt im Programm an.
 await A.reiter('programm');
@@ -94,15 +98,22 @@ check((await hilfe.innerText()).includes('Weiteres Gerät'), '… im Safari-Brow
 await hilfe.locator('[data-aktion="hilfe-weg"]').click();
 check(await B.page.locator('#hilfe-karte').count() === 0 && (await B.gespeichert()).hilfeWeg === true, '„Alles klar“ – die Erklärung ist weg und bleibt weg');
 await B.aktion('hilfe');
-check(await B.page.locator('#hilfe-karte').count() === 1, '„So geht\'s“ holt sie zurück');
+check(await B.page.locator('#e-plan #hilfe-karte').count() === 1, '„So geht\'s“ in den Einstellungen holt sie zurück');
 await B.aktion('hilfe');
+check(await B.page.locator('#hilfe-karte').count() === 0, '… und klappt sie wieder zu');
+await B.reiter('wir');
 check(await B.page.locator('#wir-seine .karte', { hasText: 'Theater früh' }).count() === 1
-  && (await B.page.locator('#wir-seine .abschnitt-titel').innerText()) === 'Tobi hat Bock auf', 'unter „Tobi hat Bock auf“: Tobis Haken');
+  && (await B.page.locator('#wir-seine .abschnitt-titel').innerText()).startsWith('Tobi hat Bock auf')
+  && (await B.page.locator('#wir-seine .abschnitt-zahl').innerText()) === '2', 'unter „Tobi hat Bock auf“ (2): Tobis Haken – Theater und Konzert');
+check(await B.page.locator('#ansicht .knopf.haupt').count() === 0 && await B.page.locator('#wir-deine').count() === 0,
+  'bei Kim oben kein Knopf, und ein leerer Abschnitt „Deine Haken“ steht gar nicht da');
 check(!JSON.stringify(kim.stand).includes(tobi.ich.id), 'Tobis echte Kennung kommt bei Kim nie an');
 
 // Kim wählt: Theater mit Tobi, das Konzert allein/mit anderen, Nachtmarkt erst mit, dann ohne.
+await B.einstellungen();
+check((await B.page.locator('#e-app .install-weg').innerText()).includes('Zum Home-Bildschirm') && await B.page.locator('.hinweis-install').count() === 0,
+  'im Safari-Browser: wie die App auf den Home-Bildschirm kommt, steht in den Einstellungen unter „App“ – kein Banner mehr');
 await B.reiter('programm');
-check(await B.page.locator('.hinweis-install').count() === 1, 'im Safari-Browser: Hinweis, wie die App auf den Home-Bildschirm kommt');
 const theaterB = karteAm(B, DI, 'Theater früh');
 check(await theaterB.locator('[data-bock]').count() === 2 && (await theaterB.locator('[data-mitwem="gastgeber"]').innerText()) === 'Mit Tobi'
   && (await theaterB.locator('[data-mitwem="andere"]').innerText()) === 'Allein/mit anderen', 'Kim hat zwei Knöpfe: „Mit Tobi“ und „Allein/mit anderen“');
@@ -166,6 +177,7 @@ check(await markt.count() === 1 && (await markt.locator('.wer').innerText()).inc
 await A.aktion('hilfe');
 check((await A.page.locator('#hilfe-karte h3').innerText()) === "So funktioniert's für deine Leute", 'Tobi sieht unter „So geht\'s“, wie es für seine Leute läuft');
 await A.aktion('hilfe');
+await A.reiter('wir');
 const kimZeile = personZeile(A, 'Kim');
 check((await kimZeile.locator('summary').innerText()).includes('1 mit dir · 2 ohne dich'), 'pro Person: Kim – 1 mit dir, 2 ohne dich');
 await kimZeile.locator('summary').click();
@@ -286,11 +298,12 @@ check(await B.page.locator('.karte', { hasText: 'Workshop mittags' }).count() ==
 // --- Tobi löst den Plan auf (auf dem zweiten Gerät)
 await D.reiter('wir');
 await D.aktion('verlassen');
-check((await D.page.locator('[data-aktion="verlassen"]').first().textContent()) === 'Plan auflösen' && (await D.page.locator('.einladung').innerText()).includes('Wirklich auflösen?'),
-  'der Gastgeber verlässt nicht, er löst auf – mit Nachfrage');
+check((await D.page.locator('[data-aktion="verlassen"]').first().textContent()) === 'Plan auflösen' && (await D.page.locator('#e-plan .einstellung-feld').innerText()).includes('Wirklich auflösen?'),
+  'der Gastgeber verlässt nicht, er löst auf – in den Einstellungen, mit Nachfrage');
 await D.page.click('[data-aktion="verlassen-ja"]');
 await warte(D, 'Gemeinsam planen');
-check(server.raeume.size === 0, 'aufgelöst: beim Server ist der Raum weg');
+check(server.raeume.size === 0 && await D.page.locator('.reiterleiste [data-reiter="wir"]').getAttribute('aria-current') === 'page',
+  'aufgelöst: beim Server ist der Raum weg, die App zeigt „Wir“ zum Neuanfangen');
 await synchron(C);
 check(await warte(C, 'Der Plan ist aufgelöst') && (await text(C)).includes('Tobi hat den gemeinsamen Plan aufgelöst'), 'Jo erfährt es: Tobi hat den Plan aufgelöst');
 await C.page.click('[data-aktion="vergessen"]');

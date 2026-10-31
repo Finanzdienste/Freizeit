@@ -21,7 +21,7 @@
  * Datei zu müssen.
  */
 
-const VERSION = 'v15';
+const VERSION = 'v17';
 const CACHE = `freizeit-${VERSION}`;
 
 const SHELL = [
@@ -48,6 +48,9 @@ const SHELL = [
   './js/zeiten-rechnen.js',
   './js/push.js',
   './js/standort.js',
+  './js/blatt.js',
+  './js/ansicht-filter.js',
+  './js/ansicht-einstellungen.js',
   './vendor/leaflet/leaflet.js',
   './vendor/leaflet/leaflet.css',
   './vendor/leaflet/leaflet.markercluster.js',

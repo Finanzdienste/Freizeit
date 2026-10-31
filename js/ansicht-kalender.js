@@ -21,22 +21,37 @@ import {
   monatsRaster, monatVon, monatPlus, monatJahr, datumMitTag, montag, plusTage, kalenderwoche, wochentagKurz, tagMonat,
   beginn, ende, zeitAm, uhrzeit, jetztMinuten,
 } from './zeit.js';
-import { termineAm, laufendZwischen, letzterTag, filterAn, filterFuer, umkreisAn } from './filter.js';
-import { knopfName } from './standort.js';
+import {
+  termineAm, laufendZwischen, letzterTag, filterFuer, spaetText,
+} from './filter.js';
 import { karte, eintragTermin, merkeEintrag } from './karte.js';
 import { meinBock } from './speicher.js';
 import { andere, treffer as istTreffer, rolle, gastgeberName } from './gemeinsam.js';
 import { geplante } from './ideen.js';
 import { belegtAm, bekannt } from './zeiten.js';
+import { filterLeiste, chipsProgramm } from './ansicht-filter.js';
 
 const WOCHENTAGE = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'];
 export const ANSICHTEN = [['liste', 'Liste'], ['monat', 'Monat'], ['woche', 'Woche'], ['tag', 'Tag']];
 
-/** Die Schalter Liste · Monat · Woche · Tag und der Knopf „Heute“. */
-export function ansichtSchalter(ansicht, heuteSchon) {
-  return `<div class="kal-schalter" role="tablist" aria-label="Ansicht">
-    ${ANSICHTEN.map(([k, t]) => `<button type="button" role="tab" class="schalter" data-kal-ansicht="${k}" aria-selected="${k === ansicht}" aria-pressed="${k === ansicht}">${t}</button>`).join('')}
-    <button type="button" class="knopf klein" data-aktion="kal-heute"${heuteSchon ? ' disabled' : ''}>Heute</button>
+/** Die vier Ansichten als ein Schalter: Liste · Monat · Woche · Tag. */
+export function ansichtSchalter(ansicht) {
+  return `<div class="ansicht-wahl" role="group" aria-label="Ansicht">
+    ${ANSICHTEN.map(([k, t]) => `<button type="button" class="segment" data-kal-ansicht="${k}" aria-pressed="${k === ansicht}">${t}</button>`).join('')}
+  </div>`;
+}
+
+/**
+ * Blättern: ‹ Titel › – und „Heute“, wenn man nicht schon dort ist. Für alle
+ * vier Ansichten gleich; `zurueck` und `vor` sind { aktion, datum?, aus }.
+ */
+export function navZeile({ titel, zurueck, vor, heuteSchon, klein = false }) {
+  const pfeil = (z, zeichen, label) => `<button type="button" class="pfeil" data-aktion="${z.aktion}"${z.datum !== undefined ? ` data-datum="${esc(z.datum)}"` : ''} aria-label="${label}"${z.aus ? ' disabled' : ''}>${zeichen}</button>`;
+  return `<div class="blaettern">
+    ${pfeil(zurueck, '‹', 'Zurück')}
+    <h2 class="monatstitel${klein ? ' klein' : ''}">${esc(titel)}</h2>
+    ${pfeil(vor, '›', 'Weiter')}
+    ${heuteSchon ? '' : '<button type="button" class="knopf klein heute-knopf" data-aktion="kal-heute">Heute</button>'}
   </div>`;
 }
 const VON = 7 * 60;
@@ -59,8 +74,8 @@ export function tagesBereich(p, heute) {
   return { erster: `${monatVon(heute)}-01`, letzter: d.toISOString().slice(0, 10) };
 }
 
-/** Wer an einem Tag Bock hat: ich (0) und die anderen nach ihrer Nummer. */
-function punkte(eintraege) {
+/** Wer an einem Tag Bock hat: ich (0) und die anderen nach ihrer Nummer. Auch für die Tagesleiste der Liste. */
+export function punkte(eintraege) {
   const wer = new Set();
   let treffer = false;
   for (const x of eintraege) {
@@ -75,8 +90,12 @@ function punkte(eintraege) {
 
 /** Alle Einträge eines Tages, wie das Programm sie zeigt, dazu Eingeplantes. */
 function tagesEintraege(p, d, f, plaene) {
-  const { tag, liste, spaet } = termineAm(p, d, f);
-  return { tag, spaet, eintraege: [...plaene.filter((e) => e.datum === d), ...liste.map((e) => eintragTermin(e, tag, p.tage))] };
+  const {
+    tag, liste, spaet, spaetOnline,
+  } = termineAm(p, d, f);
+  return {
+    tag, spaet, spaetOnline, eintraege: [...plaene.filter((e) => e.datum === d), ...liste.map((e) => eintragTermin(e, tag, p.tage))],
+  };
 }
 
 /** Was im Kalender als Chip zählt: eigene Haken, Haken der anderen, Eingeplantes. */
@@ -185,7 +204,9 @@ function monatsAnsicht(p, st, heute, monat, plaene) {
 
 function tagesAnsicht(p, st, tag, plaene) {
   const f = filterFuer(st);
-  const { tag: t, spaet, eintraege } = tagesEintraege(p, tag, f, plaene);
+  const {
+    tag: t, spaet, spaetOnline, eintraege,
+  } = tagesEintraege(p, tag, f, plaene);
   const laufend = laufendZwischen(p, tag, tag, f);
   const wichtig = eintraege.filter(zaehlt);
   const marker = wichtig.map((e) => ({ e, s: spanne(e) })).filter((x) => x.s)
@@ -204,7 +225,7 @@ function tagesAnsicht(p, st, tag, plaene) {
     <div class="tag-info">
       ${zeitText ? `<div>${zeitText}</div>` : ''}
       ${t.wetter ? `<div><b>Wetter:</b> ${esc(t.wetter)}</div>` : ''}
-      ${spaet ? `<div>Ausgeblendet: ${anzahl(spaet, 'Termin', 'Termine')}, die erst nach 21:30 enden</div>` : ''}
+      ${spaet ? `<div>${spaetText(spaet, spaetOnline)}</div>` : ''}
       ${laufend.length ? `<div>Außerdem laufen ${anzahl(laufend.length, 'Angebot', 'Angebote')} – <button type="button" class="textknopf" data-zu-woche="${montag(tag)}">im Programm ansehen</button></div>` : ''}
     </div>
     ${eintraege.length ? eintraege.map((e) => karte(e, { zeitSpalte: true })).join('')
@@ -212,17 +233,23 @@ function tagesAnsicht(p, st, tag, plaene) {
   </section>`;
 }
 
+/** Die Woche als Titel: „KW 45 · 2.11. – 8.11.“ – in der Liste und in der Ansicht Woche. */
+export const wochenTitel = (mo) => `KW ${kalenderwoche(mo)} · ${tagMonat(mo)} – ${tagMonat(plusTage(mo, 6))}`;
+
 /**
- * „Filter aus dem Programm sind aktiv“ – mit dem Umkreis, wenn er gilt.
- * Auch für die Karte (ansicht-landkarte.js).
+ * Wie viele Termine die Ansicht nach den Filtern zeigt – für den Knopf unten
+ * im Filter-Blatt („48 Termine zeigen“): im Monat alle seine Tage, in der
+ * Woche ihre sieben, sonst der Tag.
  */
-export function filterHinweis(st) {
+export function kalenderZahl(p, st, heute, ui) {
+  if (!p) return 0;
+  const { erster, letzter } = tagesBereich(p, heute);
+  const datum = ui.datum && ui.datum >= erster && ui.datum <= letzter ? ui.datum : heute;
+  let tage = [datum];
+  if (ui.ansicht === 'woche') tage = Array.from({ length: 7 }, (_, i) => plusTage(montag(datum), i));
+  if (ui.ansicht === 'monat') tage = monatsRaster(monatVon(datum)).filter((d) => monatVon(d) === monatVon(datum));
   const f = filterFuer(st);
-  if (!filterAn(f)) return '';
-  // „um deinen Standort“ bzw. „um Wandsbek Markt“ – den Umkreis gibt es nur mit Bezugspunkt.
-  const wo = () => (st.standort.art === 'geraet' ? 'deinen Standort' : esc(knopfName(st.standort.name, 28)));
-  const um = umkreisAn(f) ? ` – nur bis ${f.umkreis} km um ${wo()}` : '';
-  return `<p class="fein">Filter aus dem Programm sind aktiv${um}. <button type="button" class="textknopf" data-aktion="filter-weg">Alle zeigen</button></p>`;
+  return tage.reduce((n, d) => n + termineAm(p, d, f).liste.length, 0);
 }
 
 /**
@@ -240,27 +267,31 @@ export function kalenderAnsicht(p, st, heute, ui) {
   let titel;
   let zurueck;
   let vor;
+  let heuteSchon;
   if (ansicht === 'monat') {
     titel = monatJahr(`${monat}-01`);
     zurueck = monat > monatVon(erster) ? `${monatPlus(monat, -1)}-01` : '';
     const naechster = `${monatPlus(monat, 1)}-01`;
     vor = naechster <= letzter ? naechster : '';
+    heuteSchon = monat === monatVon(heute);
   } else if (ansicht === 'woche') {
-    titel = `KW ${kalenderwoche(mo)} · ${tagMonat(mo)} – ${tagMonat(plusTage(mo, 6))}`;
+    titel = wochenTitel(mo);
     zurueck = plusTage(mo, -7) >= montag(erster) ? plusTage(mo, -7) : '';
     vor = plusTage(mo, 7) <= letzter ? plusTage(mo, 7) : '';
+    heuteSchon = mo === montag(heute);
   } else {
     titel = datumMitTag(datum) + (datum === heute ? ' · heute' : '');
     zurueck = plusTage(datum, -1) >= erster ? plusTage(datum, -1) : '';
     vor = plusTage(datum, 1) <= letzter ? plusTage(datum, 1) : '';
+    heuteSchon = datum === heute;
   }
-  const kopf = `<header class="woche-kopf kal-kopf">
-    <div class="blaettern">
-      <button type="button" class="pfeil" data-aktion="kal-zurueck" data-datum="${esc(zurueck)}" aria-label="Zurück"${zurueck ? '' : ' disabled'}>‹</button>
-      <h2 class="monatstitel${ansicht === 'monat' ? '' : ' klein'}">${esc(titel)}</h2>
-      <button type="button" class="pfeil" data-aktion="kal-vor" data-datum="${esc(vor)}" aria-label="Weiter"${vor ? '' : ' disabled'}>›</button>
-    </div>
-    ${filterHinweis(st)}
+  const kopf = `<header class="kal-kopf">
+    ${navZeile({
+    titel, heuteSchon, klein: ansicht !== 'monat',
+    zurueck: { aktion: 'kal-zurueck', datum: zurueck, aus: !zurueck },
+    vor: { aktion: 'kal-vor', datum: vor, aus: !vor },
+  })}
+    ${filterLeiste(chipsProgramm(st))}
   </header>`;
 
   if (ansicht === 'woche') return `${kopf}${wochenAnsicht(p, st, heute, mo, plaene)}`;

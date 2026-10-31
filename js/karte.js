@@ -9,7 +9,7 @@
  * baut ideen.js; gezeichnet werden Eingeplantes hier, Ideen in ansicht-ideen.js.
  */
 import {
-  esc, kostenlos, preisSagtWas, REGIONEN, DRAUSSEN, sichererLink,
+  esc, kostenlos, preisSagtWas, REGIONEN, DRAUSSEN, sichererLink, istOnline,
 } from './text.js';
 import { zeitAm, ende, uhrzeit, offen, abendVorArbeitstag, wochentagKurz, tagMonat } from './zeit.js';
 import { whatsappLink, kalenderZiel } from './teilen.js';
@@ -77,9 +77,11 @@ const basis = (e) => ({
   imdb: e.imdb || '',
   kategorie: e.kategorie || '',
   region: e.region || '',
+  // Online & TV: `ort` ist der Sender, es gibt keinen Ort und keine Entfernung.
+  online: istOnline(e),
   draussen: e.draussen || '',
   hohwacht: Boolean(e.hohwacht) || e.region === 'HB',
-  geo: e.geo || null,
+  geo: istOnline(e) ? null : (e.geo || null),
   kuenstler: Boolean(e.kuenstler),
   neu: Boolean(e.neu),
   ausverkauft: Boolean(e.ausverkauft),
@@ -184,14 +186,17 @@ export function karte(eintrag, o = {}) {
   const uhr = zeitUnten
     ? [eintrag.zeit + (o.zeitText && /\d$/.test(eintrag.zeit || '') ? ' Uhr' : ''), o.zeitText ? eintrag.endeText : ''].filter(Boolean).join(', ')
     : '';
-  // Mit Bezugspunkt steht die Entfernung (Luftlinie) gleich hinter dem Ort.
-  const km = entfernung(bezugVon(aktuell()), eintrag.geo);
-  const unterzeile = [eintrag.ort, km === null ? '' : entfernungText(km), uhr, eintrag.kategorie].filter(Boolean).join(' · ');
+  // Mit Bezugspunkt steht die Entfernung (Luftlinie) gleich hinter dem Ort;
+  // Online & TV zeigt statt des Orts den Sender.
+  const online = istOnline(eintrag);
+  const km = online ? null : entfernung(bezugVon(aktuell()), eintrag.geo);
+  const wo = online ? `📺 ${eintrag.ort || 'Online'}` : eintrag.ort;
+  const unterzeile = [wo, km === null ? '' : entfernungText(km), uhr, eintrag.kategorie].filter(Boolean).join(' · ');
   // Zugeklappt nur, was beim Entscheiden hilft; der Rest nach dem Aufklappen.
   const wichtig = [
     eintrag.quelle === 'plan' ? marke('Eingeplant', 'plan') : '',
     eintrag.kuenstler ? marke('♫ Dein Künstler', 'kuenstler') : '',
-    eintrag.neu ? marke('NEU', 'neu') : '',
+    eintrag.neu ? marke('Neu', 'neu') : '',
     eintrag.ausverkauft ? marke('ausverkauft', 'warn') : '',
     eintrag.vorverkauf ? marke(`Vorverkauf ${eintrag.vorverkauf}`) : '',
     eintrag.tipp ? marke('passt zu dir') : '',

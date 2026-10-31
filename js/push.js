@@ -14,7 +14,7 @@
  */
 import { aktuell, speichern } from './speicher.js';
 import { pushMelden } from './gemeinsam.js';
-import { istApple } from './teilen.js';
+import { istApple, alsApp } from './teilen.js';
 import { SERVER } from './config.js';
 
 /** Die Edge Function – GET gibt ihren öffentlichen Schlüssel: { oeffentlich }. */
@@ -33,8 +33,6 @@ async function oeffentlicherSchluessel() {
     clearTimeout(uhr);
   }
 }
-
-const alsApp = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
 
 const bytes = (b64url) => {
   const t = b64url.replace(/-/g, '+').replace(/_/g, '/');

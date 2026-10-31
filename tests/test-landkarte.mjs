@@ -1,11 +1,14 @@
 /*
- * Reiter „Karte“: Marker je Ort, Zeiträume, die Liste am Marker mit
+ * Reiter „Karte“: Marker je Ort, der Zeitraum, das Filter-Blatt mit der
+ * Gruppe „Karte“ (nur mit Bock, Orte aus Ideen), die Liste am Marker mit
  * Bock-Knopf, und dass ein Haken den Marker umfärbt, ohne die Liste zu
  * schließen. Die Kacheln liefert hilfe.mjs als leeres Bild.
  */
 import { oeffne, MO, DI } from './hilfe.mjs';
 
-const { page, check, reiter, ende } = await oeffne({ tag: MO, zeit: '10:00' });
+const {
+  page, check, reiter, imFilter, gespeichert, ende,
+} = await oeffne({ tag: MO, zeit: '10:00' });
 await reiter('karte');
 await page.waitForSelector('.leaflet-container .leaflet-marker-icon', { timeout: 10000 });
 
@@ -15,24 +18,40 @@ const modul = (fn, arg) => page.evaluate(async ({ f, a }) => {
 }, { f: fn, a: arg });
 const fuss = () => page.locator('#karte-fuss').innerText();
 const raum = async (r) => {
-  await page.click(`[data-raum="${r}"]`);
+  await page.selectOption('#k-raum', r);
   await page.waitForTimeout(200);
+};
+/** „Nur mit Bock“ im Filter-Blatt an- oder ausmachen – eine offene Liste blendet Leaflet dabei in 200 ms aus. */
+const nurBock = async () => {
+  await imFilter(() => page.click('#blatt [data-aktion="karte-bock"]'));
+  await page.waitForTimeout(250);
 };
 
 check(await page.evaluate(() => Boolean(window.L && window.L.markerClusterGroup)), 'Leaflet und das Zusammenfassen sind geladen');
-check(await page.locator('[data-raum="woche"]').getAttribute('aria-pressed') === 'true', 'voreingestellt: diese Woche');
+check(await page.locator('#k-raum').inputValue() === 'woche' && await page.locator('#k-raum option').count() === 5, 'der Zeitraum ist eine Auswahl – voreingestellt: diese Woche');
+check(await page.locator('.karte-kopf [data-aktion="filter-auf"]').count() === 1 && await page.locator('.karte-kopf .filterchip').count() === 0,
+  'daneben der Filter-Knopf, noch ohne Chips');
 const woche = await modul('markerZahl');
 check(woche >= 10, `diese Woche: ${woche} Orte auf der Karte`);
 check((await fuss()).includes('1 ohne Ortsangabe'), 'die Stadtrallye ohne Ort wird gezählt, nicht gezeigt');
 
 await raum('heute');
 check(await modul('markerZahl') === 2 && (await fuss()).startsWith('2 Einträge an 2 Orten'), 'heute: Lesung und Ausstellung, zwei Orte');
-await raum('bock');
-check(await modul('markerZahl') === 0, 'mit Bock: noch nichts');
+await nurBock();
+check(await modul('markerZahl') === 0, 'nur mit Bock: noch nichts');
+check(await page.locator('.karte-kopf .filterchip[data-chip="karte-bock"]').count() === 1 && (await gespeichert()).karteBock === true, '„nur mit Bock“ steht als Chip da und bleibt gespeichert');
+await page.click('.karte-kopf .filterchip[data-chip="karte-bock"]');
+await page.waitForTimeout(200);
+check(await modul('markerZahl') === 2 && (await gespeichert()).karteBock === false, '✕ am Chip: wieder alles im Zeitraum');
 await raum('alles');
 const alles = await modul('markerZahl');
 check(alles >= woche + 1, `alles: mehr Orte als diese Woche (${alles}), mit dem Konzert im Januar`);
-check(await page.locator('[data-aktion="karte-ideen"]').getAttribute('aria-pressed') === 'false', 'die Ideen sind auf der Karte erst einmal aus');
+check((await fuss()).includes('3 online, nur im Programm'), 'Online & TV steht nicht auf der Karte – die Zeile darunter zählt es');
+await page.click('.karte-kopf [data-aktion="filter-auf"]');
+check(await page.locator('#blatt [data-aktion="karte-ideen"]').getAttribute('aria-pressed') === 'false' && await page.locator('#blatt [data-aktion="reihenfolge"]').count() === 0
+  && /^\d+ Einträge zeigen$/.test((await page.locator('#blatt .blatt-fuss .knopf.haupt').innerText()).trim()),
+'im Blatt der Karte: die Gruppe „Karte“ (Ideen erst einmal aus), keine Reihenfolge, unten „… Einträge zeigen“');
+await page.click('#blatt .blatt-x');
 
 // Die Liste am Marker und der Bock-Knopf darin.
 await raum('woche');
@@ -45,8 +64,8 @@ await pop.locator('[data-bock]').click();
 check(await pop.locator('[data-bock]').getAttribute('aria-pressed') === 'true', 'Bock aus der Liste heraus – der Knopf zeigt es');
 check(await page.locator('.leaflet-popup').count() === 1, 'die Liste bleibt dabei offen');
 check(await page.locator('.leaflet-marker-icon .pin.ich').count() >= 1, 'der Marker trägt jetzt deine Farbe');
-await raum('bock');
-check(await modul('markerZahl') === 1, 'mit Bock: genau der eine Ort');
+await nurBock();
+check(await modul('markerZahl') === 1, 'nur mit Bock: genau der eine Ort');
 
 // Von der Karte ins Programm.
 await modul('markerOeffnen', 'Thalia');

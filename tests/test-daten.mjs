@@ -10,7 +10,9 @@
  * Das Format steht in README.md. Geprüft wird vor allem, was die App sonst
  * still falsch zeigen würde: Tage außerhalb des Zeitraums, Uhrzeiten, mit
  * denen die Zeitregeln nicht rechnen können, doppelte Kennungen (Bock-Haken
- * hängen daran), fehlende Links und Orte für die Karte.
+ * hängen daran), fehlende Links und Orte für die Karte. Online & TV (Region
+ * ONL, `online: true`) hat keinen Ort: kein geo, keine Anreise – und zählt
+ * bei der Quote für die Karte nicht mit.
  */
 import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
@@ -18,9 +20,10 @@ import { fileURLToPath } from 'node:url';
 import { programmBereinigen } from '../js/daten.js';
 import { ideenBereinigen, KATEGORIEN, WIRKUNG, WO, DAUER } from '../js/ideen.js';
 import { beginn, plusTage, wochentag } from '../js/zeit.js';
-import { REGIONEN, DRAUSSEN } from '../js/text.js';
+import { REGIONEN, DRAUSSEN, istOnline } from '../js/text.js';
 
-const ORDNER = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'daten');
+// FREIZEIT_DATEN: ein anderer Ordner – etwa um einen zusammengeführten Lauf vor dem Kopieren nach daten/ zu prüfen.
+const ORDNER = process.env.FREIZEIT_DATEN || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'daten');
 
 let fails = 0;
 let oks = 0;
@@ -102,12 +105,16 @@ if (p) {
   alle(termine.filter((e) => e.kuenstler), (e) => e.kategorie === 'Konzert', 'termine: Konzerte der eigenen Künstler haben die Kategorie Konzert');
   alle(termine, (e) => e.draussen === undefined || Object.hasOwn(DRAUSSEN, e.draussen), 'termine: draussen ist drinnen, draußen oder beides');
   alle(termine, (e) => LINK.test(e.link || ''), 'termine: Link mit http(s)');
-  alle(termine, (e) => ['ganztags', 'kostenlos', 'hohwacht', 'kuenstler', 'neu', 'ausverkauft', 'tipp'].every((f) => jaNein(e[f])),
-    'termine: ganztags, kostenlos, hohwacht, kuenstler, neu, ausverkauft, tipp sind true/false');
+  alle(termine, (e) => ['ganztags', 'kostenlos', 'hohwacht', 'kuenstler', 'neu', 'ausverkauft', 'tipp', 'online'].every((f) => jaNein(e[f])),
+    'termine: ganztags, kostenlos, hohwacht, kuenstler, neu, ausverkauft, tipp, online sind true/false');
+  // Online & TV: beides gehört zusammen, und ohne Ort gibt es weder Koordinaten noch Anreise.
+  alle(termine.filter(istOnline), (e) => e.online === true && e.region === 'ONL', 'termine: Online & TV hat online: true und Region ONL – immer beides');
+  alle(termine.filter(istOnline), (e) => e.geo === undefined && e.anreise === undefined && text(e.ort), 'termine: Online & TV ohne geo und anreise, in ort der Sender');
   alle(termine, (e) => e.imdb === undefined || text(String(e.imdb)), 'termine: imdb ist ein Platz');
   alle(termine, (e) => e.geo === undefined || geoOk(e.geo), 'termine: geo ist [Breite, Länge] in Deutschland');
-  const mitGeo = termine.filter((e) => e.geo).length;
-  check(!termine.length || mitGeo >= termine.length * 0.8, `termine: mindestens 80 % mit Ort für die Karte (${mitGeo} von ${termine.length})`);
+  const vorOrt = termine.filter((e) => !istOnline(e));
+  const mitGeo = vorOrt.filter((e) => e.geo).length;
+  check(!vorOrt.length || mitGeo >= vorOrt.length * 0.8, `termine: mindestens 80 % der Termine vor Ort mit Ort für die Karte (${mitGeo} von ${vorOrt.length}; Online & TV zählt nicht)`);
 
   const laufend = istListe(p.laufend) ? p.laufend : [];
   alle(laufend, (e) => KENNUNG.test(e.id || ''), 'laufend: id klein, mit Bindestrichen');

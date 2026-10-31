@@ -75,7 +75,7 @@ const geo = (dy, dx) => [Number((HH[0] + dy).toFixed(5)), Number((HH[1] + dx).to
 /**
  * Ein Programm über zwei Wochen, Mo 2.11. bis So 15.11.2026, ohne Feiertage,
  * dazu ein Konzert im Januar. Jeder Termin prüft eine Regel – der Name sagt,
- * welche.
+ * welche. Online & TV steht nur in der zweiten Woche (test-online.mjs).
  */
 export function testProgramm(mehr = {}) {
   return {
@@ -101,6 +101,10 @@ export function testProgramm(mehr = {}) {
       { id: 'mein-konzert', daten: [DI], zeit: '20:00', titel: 'Keane', ort: 'Sporthalle', geo: geo(0.04, 0.03), region: 'HH', kategorie: 'Konzert', kuenstler: true, beschreibung: 'Tour 2026.', link: 'https://example.org/keane' },
       { id: 'ohne-ort', daten: [MO], zeit: '15:00', titel: 'Stadtrallye ohne Ort', ort: 'irgendwo', region: 'HH', kategorie: 'Erlebnis', link: 'https://example.org/rallye' },
       { id: 'zweite-woche', daten: [DI2], zeit: '18:30', titel: 'Lesung zweite Woche', ort: 'Literaturhaus', geo: geo(0.01, 0.02), region: 'HH', kategorie: 'Bühne', link: 'https://example.org/lesung2' },
+      // Online & TV (zweite Woche): ohne Ort, der Sender steht in `ort`; für die 21:30-Regel zählt der Beginn.
+      { id: 'cl-dazn', daten: [DI2], zeit: '21:00', dauer: 115, titel: 'Champions League: Bayern – Paris', ort: 'DAZN', online: true, region: 'ONL', kategorie: 'Sport', preis: 'im DAZN-Abo', draussen: 'drinnen', link: 'https://example.org/cl' },
+      { id: 'schach-partie', daten: [MI2, FR2], zeit: '22:00', dauer: 300, titel: 'Schach-WM, Partie 5', ort: 'YouTube · FIDE', online: true, region: 'ONL', kategorie: 'Schach', kostenlos: true, draussen: 'drinnen', link: 'https://example.org/schach' },
+      { id: 'laenderspiel', daten: [SA2], zeit: '20:45', dauer: 115, titel: 'Länderspiel: Deutschland – Frankreich', ort: 'ZDF', online: true, region: 'ONL', kategorie: 'Sport', kostenlos: true, draussen: 'drinnen', link: 'https://example.org/laenderspiel' },
       { id: 'twod', daten: [FERN], zeit: '19:30', titel: 'The War On Drugs', ort: 'Barclays Arena', geo: [53.5893, 9.8991], region: 'HH', kategorie: 'Konzert', kuenstler: true, neu: true, vorverkauf: 'ab Fr 6.11.', link: 'https://example.org/twod' },
     ],
     laufend: [
@@ -430,19 +434,37 @@ export async function oeffne({
     await bereit();
   };
   /**
-   * Einen Knopf antippen, der in einem zugeklappten Abschnitt stecken kann
-   * (Filter, „Mehr Filter“, das Menü „Mehr“ unter „Wir“): ist er nicht zu
-   * sehen, erst den Abschnitt aufklappen – so, wie es ein Mensch täte.
+   * Einen Knopf antippen, der in einem zugeklappten Abschnitt stecken kann:
+   * ist er nicht zu sehen, erst den Abschnitt aufklappen – so, wie es ein
+   * Mensch täte.
    */
   const tippen = async (selektor) => {
     const knopf = page.locator(selektor).first();
     if (!(await knopf.isVisible())) await knopf.locator('xpath=ancestor::details[1]/summary').click();
     await knopf.click();
   };
-  /** Ein Knopf unter „Wir“ – vorn oder im Menü „Mehr“. */
-  const aktion = (name) => tippen(`[data-aktion="${name}"]`);
-  /** Ein Filter-Schalter im Programm (data-filter) oder bei den Ideen (data-ifilter). */
-  const filter = (name) => tippen(`[data-filter="${name}"], [data-ifilter="${name}"]`);
+  /** Die Einstellungen öffnen (der Reiter ganz rechts – er ist immer da). */
+  const einstellungen = async () => {
+    await page.click('.reiterleiste [data-reiter="einstellungen"]');
+    await page.waitForSelector('#ansicht .seiten-titel');
+  };
+  /** Ein Knopf auf der Seite – steht er dort nicht, dann in den Einstellungen (Abgleich, Name, Gerät, So geht's, Verlassen …). */
+  const aktion = async (name) => {
+    if (!(await page.locator(`#ansicht [data-aktion="${name}"]`).count())) await einstellungen();
+    await tippen(`#ansicht [data-aktion="${name}"]`);
+  };
+  /** Das Filter-Blatt des Reiters öffnen, darin etwas tun und es wieder schließen (✕). */
+  const imFilter = async (tun) => {
+    await page.click('#ansicht [data-aktion="filter-auf"]');
+    await page.locator('#blatt.offen').waitFor();
+    await tun();
+    await page.click('#blatt .blatt-x');
+    await page.locator('#blatt').waitFor({ state: 'detached' });
+  };
+  /** Ein Filter-Schalter im Blatt: Programm und Karte (data-filter) oder Ideen (data-ifilter). */
+  const filter = (name) => imFilter(() => page.click(`#blatt [data-filter="${name}"], #blatt [data-ifilter="${name}"]`));
+  /** Eine Auswahl im Filter-Blatt, etwa die Region: waehle('#f-region', 'HB'). */
+  const waehle = (selektor, wert) => imFilter(() => page.selectOption(`#blatt ${selektor}`, wert));
   /** Ins Programm, in eine seiner Ansichten: liste, monat, woche, tag. */
   const ansicht = async (name) => {
     await reiter('programm');
@@ -466,7 +488,7 @@ export async function oeffne({
   };
 
   return {
-    browser, ctx, page, check, fehler, uhr, datenTauschen, reiter, ansicht, tippen, aktion, filter, titelAm, gespeichert, abgeglichen, ende, daten, server,
-    stats: () => ({ oks, fails }),
+    browser, ctx, page, check, fehler, uhr, datenTauschen, reiter, ansicht, tippen, aktion, einstellungen, imFilter, filter, waehle, titelAm,
+    gespeichert, abgeglichen, ende, daten, server, stats: () => ({ oks, fails }),
   };
 }

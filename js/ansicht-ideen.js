@@ -2,11 +2,12 @@
  * Reiter „Ideen“: alles ohne festen Termin – zum Stöbern, Bock-Haken,
  * Einplanen und Abhaken.
  *
- * Oben steht, was gerade zählt: Eingeplantes (mit „Wie war's?“, sobald der
- * Tag vorbei ist), Ideen mit Bock („Wollen wir mal“) und „Tut dir gut“ – was
- * du nach dem Machen am besten bewertet hast und wobei die Zeit verflog.
- * Darunter die Filter nach Wirkung und Rahmen und der Katalog nach
- * Kategorien, eingeklappt, bis man filtert oder eine aufmacht.
+ * Ganz oben die Filterleiste (Wirkung, wo, Rahmen, Saison – im Blatt, wie im
+ * Programm) und „+ Eigene Idee“. Dann, was gerade zählt: Eingeplantes (mit
+ * „Wie war's?“, sobald der Tag vorbei ist), Ideen mit Bock („Wollen wir
+ * mal“) und „Tut dir gut“ – was du nach dem Machen am besten bewertet hast
+ * und wobei die Zeit verflog. Darunter der Katalog nach Kategorien,
+ * eingeklappt, bis man filtert oder eine aufmacht.
  *
  * Eine Idee kann mehrmals auf der Seite stehen (etwa unter „Wollen wir mal“
  * und in ihrer Kategorie). Deshalb trägt jeder Knopf seinen Bereich mit, und
@@ -21,13 +22,13 @@ import {
   geplante, eigeneIdeen, ideenMitBock, bilanz, tutGut, vorZeit,
 } from './ideen.js';
 import {
-  karte, merkeEintrag, bockKnopf, werZeile, wannKurz, kopfzeile, istAuf, aufklappbar,
+  karte, merkeEintrag, bockKnopf, werZeile, wannKurz, kopfzeile, istAuf,
 } from './karte.js';
 import { meinBock, aktuell } from './speicher.js';
 import { treffer, rolle, gastgeberName } from './gemeinsam.js';
 import { bezugVon, entfernung, entfernungText } from './standort.js';
+import { filterLeiste, chipsIdeen } from './ansicht-filter.js';
 
-const EXTRA = [['drinnen', 'drinnen'], ['draussen', 'draußen'], ['kostenlos', 'kostenlos'], ['kurz', 'bis 2 Std.'], ['zuZweit', 'zu zweit']];
 const MIT_TEXT = { allein: 'allein', 'zu zweit': 'zu zweit', gruppe: 'in der Gruppe' };
 const mitText = (mit) => (mit.length === 3 ? 'allein oder gemeinsam' : mit.map((m) => MIT_TEXT[m]).join(' oder '));
 
@@ -198,18 +199,19 @@ function neuForm(st, ui) {
   </div>`;
 }
 
-/** Die Wirkung steht immer da – sie ist der Sinn des Katalogs; Rahmen und Schalter sind eingeklappt. */
-function filterLeiste(f, zahl, saisonWeg, ui) {
-  const an = ideenFilterAn(f);
-  const mehr = (f.wo ? 1 : 0) + EXTRA.filter(([k]) => f[k]).length;
-  const inhalt = `<div class="filterzeile">${[['', 'Überall'], ...Object.entries(WO)].map(([k, t]) => `<button type="button" class="schalter" data-ifilter="wo:${k}" aria-pressed="${f.wo === k}">${t}</button>`).join('')}</div>
-    <div class="filterzeile">${EXTRA.map(([k, t]) => `<button type="button" class="schalter" data-ifilter="x:${k}" aria-pressed="${Boolean(f[k])}">${t}</button>`).join('')}</div>`;
-  return `<div class="filter ideen-filter" id="ideen-filter">
-    <div class="filterzeile">${Object.entries(WIRKUNG).map(([k, t]) => `<button type="button" class="schalter${k === 'flow' ? ' flow' : ''}" data-ifilter="w:${k}" aria-pressed="${f.wirkung.includes(k)}">${esc(t)}</button>`).join('')}</div>
-    ${aufklappbar('ideen-filter', 'Mehr Filter', inhalt, { zahl: mehr, klasse: 'filter-klapp' })}
-    <div class="zaehler" id="ideen-zaehler">${anzahl(zahl, 'Idee', 'Ideen')}${an ? ' · <button type="button" class="textknopf" data-aktion="ideen-filter-weg">Filter zurücksetzen</button>' : ''}${saisonWeg ? ` · ${saisonWeg} außerhalb der Saison <button type="button" class="textknopf" data-aktion="saison-alle">zeigen</button>` : (ui.saisonAlle ? ' · <button type="button" class="textknopf" data-aktion="saison-alle">nur, was jetzt Saison hat</button>' : '')}</div>
-    ${f.wirkung.includes('flow') ? '<p class="fein">⚡ Flow: fordert dich genau richtig, mit klarem Ziel – die Zeit verfliegt.</p>' : ''}
-  </div>`;
+/** Was der Katalog nach den Filtern zeigt: Ideen in Saison (oder alle), eigene, und wie viele die Saison ausblendet. */
+function katalog(alle, st, heute, ui) {
+  const f = st.ideenFilter;
+  const passend = alle.filter((x) => passtIdee(x, f));
+  const zeigen = ui.saisonAlle ? passend : passend.filter((x) => inSaison(x, Number(heute.slice(5, 7))));
+  const eigene = eigeneIdeen(st).filter((x) => passtIdee(x, f));
+  return { zeigen, eigene, saisonWeg: passend.length - zeigen.length };
+}
+
+/** Wie viele Ideen der Katalog zeigt – für den Knopf unten im Filter-Blatt. */
+export function ideenZahl(alle, st, heute, ui) {
+  const k = katalog(alle, st, heute, ui);
+  return k.zeigen.length + k.eigene.length;
 }
 
 /**
@@ -219,16 +221,16 @@ function filterLeiste(f, zahl, saisonWeg, ui) {
  */
 export function ideenAnsicht(alle, geladen, st, heute, ui) {
   const f = st.ideenFilter;
-  const monat = Number(heute.slice(5, 7));
   const ctx = { heute, ui, bil: bilanz(st.verlauf) };
   const eigene = eigeneIdeen(st);
   const filterAktiv = ideenFilterAn(f);
+  const { zeigen, eigene: eigeneZeigen, saisonWeg } = katalog(alle, st, heute, ui);
 
   const meldung = ui.meldung ? `<div class="meldung" role="status"><span>${esc(ui.meldung.text)}</span><span class="meldung-knoepfe">${ui.meldung.rueckgaengig ? '<button type="button" class="knopf klein" data-aktion="rueckgaengig">Rückgängig</button>' : ''}<button type="button" class="textknopf" data-aktion="meldung-weg" aria-label="Hinweis schließen">✕</button></span></div>` : '';
-  const kopf = `<header class="woche-kopf">
-    <div class="zeile-kopf"><h2 class="abschnitt-titel">Ideen</h2>
-      <button type="button" class="knopf" data-aktion="idee-neu" aria-expanded="${Boolean(ui.neu)}">+ Eigene Idee</button></div>
-    <p class="fein">Alles ohne festen Termin – für freie Abende und Wochenenden. Was ihr einplant, steht im Programm.</p>
+  const neuKnopf = `<button type="button" class="knopf" data-aktion="idee-neu" aria-expanded="${Boolean(ui.neu)}">+ Eigene Idee</button>`;
+  const kopf = `<header class="ideen-kopf">
+    ${filterLeiste(chipsIdeen(f, ui.saisonAlle), { rechts: neuKnopf, weg: 'ideen-filter-weg' })}
+    ${saisonWeg ? `<p class="zaehler" id="ideen-zaehler">${anzahl(saisonWeg, 'Idee', 'Ideen')} außerhalb der Saison ausgeblendet</p>` : ''}
     ${ui.neu ? neuForm(st, ui) : ''}
     ${meldung}
     ${geladen ? '' : '<div class="banner">Der Ideen-Katalog ließ sich nicht laden – eigene und eingeplante Ideen stehen trotzdem hier.</div>'}
@@ -239,8 +241,9 @@ export function ideenAnsicht(alle, geladen, st, heute, ui) {
   const kommend = plaene.filter((e) => e.datum >= heute);
   const offen = plaene.filter((e) => e.datum < heute && e.datum >= plusTage(heute, -14) && meinBock(e.schluessel)
     && !st.verlauf.some((v) => v.plan === e.schluessel));
+  const zahl = (n) => `<span class="abschnitt-zahl">${n}</span>`;
   const eingeplant = kommend.length || offen.length ? `<section class="abschnitt" id="abschnitt-geplant">
-    <h2 class="abschnitt-titel">Eingeplant</h2>
+    <h2 class="abschnitt-titel">Eingeplant${zahl(kommend.length + offen.length)}</h2>
     ${offen.map((e) => frageKarte(e, ctx)).join('')}
     ${kommend.map((e) => karte(e, { zeitSpalte: true, zeitText: wannKurz(e) })).join('')}
   </section>` : '';
@@ -249,8 +252,8 @@ export function ideenAnsicht(alle, geladen, st, heute, ui) {
   const rang = (x) => (treffer(x.schluessel) ? 0 : (meinBock(x.schluessel) ? 1 : 2));
   const wollen = ideenMitBock(alle, st).sort((a, b) => rang(a) - rang(b) || a.titel.localeCompare(b.titel, 'de'));
   const wollenHtml = wollen.length ? `<section class="abschnitt" id="abschnitt-wollen">
-    <h2 class="abschnitt-titel">Wollen wir mal</h2>
-    <p class="fein">${st.gemeinsam ? 'Ideen mit Bock – oben, worauf ihr zusammen Bock habt.' : 'Ideen, auf die du Bock hast.'}</p>
+    <h2 class="abschnitt-titel">Wollen wir mal${zahl(wollen.length)}</h2>
+    ${st.gemeinsam ? '<p class="fein">Oben, worauf ihr zusammen Bock habt.</p>' : ''}
     ${wollen.map((x) => ideeKarte(x, ctx, 'wollen')).join('')}
   </section>` : '';
 
@@ -264,13 +267,8 @@ export function ideenAnsicht(alle, geladen, st, heute, ui) {
     ${gut.map((x) => ideeKarte(x, ctx, 'gut')).join('')}
   </section>` : '';
 
-  // Katalog: Filter, Saison, Kategorien.
-  const passend = alle.filter((x) => passtIdee(x, f));
-  const zeigen = ui.saisonAlle ? passend : passend.filter((x) => inSaison(x, monat));
-  const saisonWeg = passend.length - zeigen.length;
-  const eigeneZeigen = eigene.filter((x) => passtIdee(x, f));
   const eigeneHtml = eigeneZeigen.length ? `<section class="abschnitt" id="abschnitt-eigene">
-    <h2 class="abschnitt-titel">Eigene Ideen</h2>
+    <h2 class="abschnitt-titel">Eigene Ideen${zahl(eigeneZeigen.length)}</h2>
     <p class="fein">Eine eigene Idee bleibt, solange jemand Bock darauf hat.</p>
     ${eigeneZeigen.map((x) => ideeKarte(x, ctx, 'eigene')).join('')}
   </section>` : '';
@@ -289,10 +287,9 @@ export function ideenAnsicht(alle, geladen, st, heute, ui) {
     ${eingeplant}
     ${wollenHtml}
     ${gutHtml}
-    <section class="abschnitt" id="abschnitt-katalog">
-      <h2 class="abschnitt-titel">Alle Ideen</h2>
-      ${filterLeiste(f, zeigen.length + eigeneZeigen.length, saisonWeg, ui)}
-    </section>
     ${eigeneHtml}
-    <div class="kategorien">${kategorien || (geladen ? '<div class="leer-klein">Keine Idee passt zu diesen Filtern.</div>' : '')}</div>`;
+    <section class="abschnitt" id="abschnitt-katalog">
+      <h2 class="abschnitt-titel">Alle Ideen${zahl(zeigen.length)}</h2>
+      <div class="kategorien">${kategorien || (geladen ? '<div class="leer-klein">Keine Idee passt zu diesen Filtern. <button type="button" class="textknopf" data-aktion="ideen-filter-weg">Alle zeigen</button></div>' : '')}</div>
+    </section>`;
 }

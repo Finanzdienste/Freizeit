@@ -1,15 +1,20 @@
 /*
- * Reiter „Wir“: der gemeinsame Plan – einrichten, und was die anderen wollen.
+ * Reiter „Wir“: der gemeinsame Plan – wer dabei ist und was die anderen wollen.
  *
  * Ohne Plan steht hier die eigene Bock-Liste und der Weg in einen Plan:
  * selbst einen starten (dann ist man Gastgeber) oder mit Code bzw. Link
  * beitreten.
  *
+ * Im Plan oben nur die Leute, eine Zeile Stand und – beim Gastgeber – der
+ * Knopf „Einladen“. Name, weiteres Gerät, Abgleich, „So geht's“, Verlassen
+ * und die Mitteilungen stehen in den Einstellungen (ansicht-einstellungen.js).
+ *
  * Der Gastgeber sieht hier seinen Überblick: wo ihr zusammen Bock habt, was
  * jemand mit ihm machen will, was die anderen ohne ihn vorhaben, und das
  * alles noch einmal je Person. Wer eingeladen ist, sieht, worauf der
  * Gastgeber Bock hat, und seine eigenen Haken – von den anderen nichts.
- * Jeder Eintrag steht dabei nur einmal, im ersten Abschnitt, der passt.
+ * Jeder Eintrag steht dabei nur einmal, im ersten Abschnitt, der passt; ein
+ * leerer Abschnitt steht gar nicht da.
  *
  * Ein Haken trägt einen Schnappschuss seines Eintrags mit sich; fällt der
  * Eintrag aus den Daten (vorbei, neuer Montagslauf), steht er trotzdem
@@ -26,15 +31,11 @@ import { karte, alleEintraege, wannKurz } from './karte.js';
 import { montag, wochentagKurz, tagMonat } from './zeit.js';
 import { meinBock } from './speicher.js';
 import {
-  andere, hakenDerAnderen, syncStatus, einladungsLink, zugangsLink, zugangLesen, person, rolle, gastgeberName, mitWem,
+  andere, hakenDerAnderen, syncStatus, einladungsLink, zugangLesen, person, rolle, gastgeberName, mitWem,
 } from './gemeinsam.js';
-import { istApple } from './teilen.js';
-import { pushAn, pushHindernis } from './push.js';
+import { istApple, alsApp } from './teilen.js';
 import { zeitenWochen, belegung } from './zeiten.js';
 import { planAusSchnappschuss, ideeAusSchnappschuss } from './ideen.js';
-
-/** Läuft die App vom Home-Bildschirm (und nicht im Browser)? */
-export const alsApp = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
 
 /** Wann ist ein Eintrag vorbei? Termine am Tag danach, Laufendes nach dem letzten Tag. */
 export const vorbei = (e, heute) => (e.datum ? e.datum < heute : Boolean(e.bis) && e.bis < heute);
@@ -73,8 +74,9 @@ ${link}
 iPhone: Link in Safari öffnen → Teilen → „Zum Home-Bildschirm“, dann in der App unter „Wir“ den Code eingeben: ${code}`;
 }
 
-function abschnitt(id, titel, text, inhalt) {
-  return `<section class="abschnitt" id="${id}"><h2 class="abschnitt-titel">${esc(titel)}</h2>${text ? `<p class="fein">${text}</p>` : ''}${inhalt}</section>`;
+/** Ein Abschnitt; `zahl` steht klein hinter dem Titel. */
+function abschnitt(id, titel, text, inhalt, zahl = 0) {
+  return `<section class="abschnitt" id="${id}"><h2 class="abschnitt-titel">${esc(titel)}${zahl ? `<span class="abschnitt-zahl">${zahl}</span>` : ''}</h2>${text ? `<p class="fein">${text}</p>` : ''}${inhalt}</section>`;
 }
 
 function ideenZeile(n) {
@@ -175,10 +177,11 @@ function zeitenHinweis(heute) {
 }
 
 /**
- * „So funktioniert's“: Eingeladene sehen die Karte nach dem Beitreten, bis
- * sie „Alles klar“ tippen; danach (und für den Gastgeber) über „So geht's“.
+ * „So funktioniert's“: Eingeladene sehen die Karte nach dem Beitreten hier,
+ * bis sie „Alles klar“ tippen; danach (und für den Gastgeber) in den
+ * Einstellungen unter „So geht's“.
  */
-function hilfeKarte(st) {
+export function hilfeKarte() {
   const gastgeber = rolle() === 'gastgeber';
   const n = esc(gastgeberName() || 'dem Gastgeber');
   const punkte = gastgeber ? [
@@ -194,7 +197,7 @@ function hilfeKarte(st) {
     `<b>Wann hat ${n} Zeit?</b> An jedem Termin steht es dabei, und in den Ansichten Woche und Tag sind belegte Zeiten grau – ohne zu verraten, was ${n} da macht.`,
     `<b>Wer sieht was:</b> Deine Haken sieht nur ${n}. Die anderen Eingeladenen sehen nichts von dir – und du nichts von ihnen.`,
     ...(alsApp() ? [] : [istApple()
-      ? '<b>Als App aufs iPhone:</b> Teilen → „Zum Home-Bildschirm“. Die App dort kennt diesen Plan nicht – tipp vorher unter „Wir“ auf „Weiteres Gerät“, kopier den Link und füg ihn in der App unter „Ich habe einen Code“ ein.'
+      ? '<b>Als App aufs iPhone:</b> Teilen → „Zum Home-Bildschirm“. Die App dort kennt diesen Plan nicht – tipp vorher in den Einstellungen (⚙ oben rechts) auf „Weiteres Gerät“, kopier den Link und füg ihn in der App unter „Ich habe einen Code“ ein.'
       : '<b>Als App:</b> im Browser-Menü „App installieren“ bzw. „Zum Startbildschirm“ – dann ist Freizeit ein Symbol wie jede andere App.']),
   ];
   return `<section class="einrichten hilfe" id="hilfe-karte">
@@ -213,7 +216,7 @@ function rausKarte(st, ui) {
       ? 'Du hast den Plan auf einem anderen Gerät aufgelöst.'
       : `${name} hat den gemeinsamen Plan aufgelöst.`],
     weg: ['Du bist nicht mehr dabei', `Du bist nicht mehr im Plan von ${name} – herausgenommen, oder auf einem anderen Gerät gegangen.`],
-    schluessel: ['Hier fehlt dein Schlüssel', 'Du bist Gastgeber dieses Plans, aber auf diesem Gerät fehlt dein Schlüssel. Öffne auf dem Gerät, auf dem du den Plan gestartet hast, unter „Wir“ → „Weiteres Gerät“ den Link – dann hier.'],
+    schluessel: ['Hier fehlt dein Schlüssel', 'Du bist Gastgeber dieses Plans, aber auf diesem Gerät fehlt dein Schlüssel. Öffne auf dem Gerät, auf dem du den Plan gestartet hast, in den Einstellungen „Weiteres Gerät“ und den Link dort – dann hier.'],
   }[g.raus] || ['Nicht mehr im Plan', ''];
   return `<section class="einrichten" id="raus-karte">
     <h3>${esc(titel)}</h3>
@@ -226,10 +229,13 @@ function rausKarte(st, ui) {
   </section>`;
 }
 
+/**
+ * Oben: die Leute, eine Zeile Stand („Du bist Gastgeber · abgeglichen
+ * 10:02 Uhr“) und – nur beim Gastgeber – „Einladen“ mit dem Link darunter.
+ */
 function kopf(st, ui) {
   const g = st.gemeinsam;
   const gastgeber = rolle() === 'gastgeber';
-  const name = gastgeberName();
   const s = syncStatus();
   const leute = g.stand.personen.length ? g.stand.personen : [g.ich];
   const andereLeute = leute.filter((x) => x.id !== g.ich.id);
@@ -240,38 +246,18 @@ function kopf(st, ui) {
   const zeit = s.zuletzt ? new Date(s.zuletzt).toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }) : '';
   const warten = st.warteschlange.length;
   const zeile = [
+    gastgeber ? 'Du bist Gastgeber' : `Du planst mit ${gastgeberName() || 'dem Gastgeber'}`,
     s.laeuft ? 'gleicht ab …' : (zeit ? `abgeglichen ${zeit} Uhr` : ''),
     s.offline ? 'gerade offline' : '',
-    warten ? `${anzahl(warten, 'Änderung wartet', 'Änderungen warten')}` : '',
-  ].filter(Boolean).join(' · ');
-  const wer = gastgeber
-    ? `Du bist Gastgeber${andereLeute.length ? ` – ${anzahl(andereLeute.length, 'Person', 'Leute')} dabei` : ''}. Alle Haken siehst nur du.`
-    : `Du planst mit ${esc(name || 'dem Gastgeber')}: Ihr seht gegenseitig eure Haken – sonst niemand.`;
+    warten ? anzahl(warten, 'Änderung wartet', 'Änderungen warten') : '',
+  ].filter(Boolean).map(esc).join(' · ');
   const link = einladungsLink(g.code);
   const waText = einladungsText(g.ich.name, link, g.code);
-  const knopf = (aktion, text, offen, klasse = 'knopf') => `<button type="button" class="${klasse}" data-aktion="${aktion}" aria-expanded="${Boolean(offen)}">${text}</button>`;
-  // Ein Knopf vorn, der Rest im Menü „Mehr“.
-  const menue = `<details class="menue">
-      <summary class="knopf" aria-label="Mehr">Mehr</summary>
-      <div class="menue-liste">
-        <button type="button" data-aktion="abgleichen">Jetzt abgleichen</button>
-        ${gastgeber ? knopf('hilfe', 'So geht\'s', ui.hilfe, '') : ''}
-        ${knopf('umbenennen', 'Name ändern', ui.umbenennen, '')}
-        ${knopf('geraet', 'Weiteres Gerät', ui.geraet, '')}
-        ${knopf('verlassen', gastgeber ? 'Plan auflösen' : 'Plan verlassen', ui.verlassen, 'warn-text')}
-      </div>
-    </details>`;
-  return `<header class="woche-kopf">
-    <h2 class="abschnitt-titel">Wir</h2>
-    <p class="fein">${wer}</p>
+  return `<header class="wir-kopf">
     <div class="leute">${chips}</div>
-    <div class="fein syncstatus">${[zeile ? esc(zeile) : '', s.fehler ? `<span class="warn-text">${esc(s.fehler)}</span>` : ''].filter(Boolean).join(' · ')}</div>
+    <p class="fein syncstatus">${zeile}${s.fehler ? ` · <span class="warn-text">${esc(s.fehler)}</span>` : ''}</p>
     ${ui.fehler ? `<div class="fehlerbox" role="alert">${esc(ui.fehler)}</div>` : ''}
-    <div class="aktionen">
-      ${gastgeber ? knopf('einladen', 'Einladen', ui.einladen, 'knopf haupt') : knopf('hilfe', 'So geht\'s', ui.hilfe)}
-      ${menue}
-    </div>
-    ${gastgeber ? pushZeile() : ''}
+    ${gastgeber ? `<div class="aktionen"><button type="button" class="knopf haupt" data-aktion="einladen" aria-expanded="${Boolean(ui.einladen)}">Einladen</button></div>` : ''}
     ${gastgeber && ui.einladen ? `<div class="einladung">
       <p>Schick diesen Link an deine Leute – einzeln oder in eine Gruppe. Jeder gibt seinen Namen ein und hakt an, worauf er Bock hat: mit dir oder allein/mit anderen.</p>
       <input class="eingabe" id="einladungslink" readonly value="${esc(link)}">
@@ -285,43 +271,8 @@ function kopf(st, ui) {
       </details>
       <p class="fein">Code zum Abschreiben: <code class="code">${esc(g.code)}</code> – wer ihn hat, kann eintreten. Alle Haken siehst trotzdem nur du.</p>
     </div>` : ''}
-    ${ui.umbenennen ? `<div class="einladung">
-      <label class="feld-label">Dein Name<input id="wir-neuname" class="eingabe" maxlength="30" value="${esc(g.ich.name)}"></label>
-      <button type="button" class="knopf haupt" data-aktion="name-speichern">Speichern</button>
-    </div>` : ''}
-    ${ui.geraet ? `<div class="einladung">
-      <p>Öffne diesen Link auf deinem anderen Gerät – oder füg ihn dort in der App unter „Wir“ bei „Ich habe einen Code“ ein. Dann bist du dort dieselbe Person${gastgeber ? ', auch als Gastgeber' : ''}.</p>
-      <input class="eingabe" id="geraetlink" readonly value="${esc(zugangsLink(g))}">
-      <div class="aktionen"><button type="button" class="knopf" data-aktion="code-kopieren" data-code="${esc(zugangsLink(g))}" data-feld="#geraetlink">Link kopieren</button></div>
-      <p class="fein warn-text">Nur für dich: Wer diesen Link hat, ist im Plan du${gastgeber ? ' – und sieht alle Haken' : ''}.</p>
-    </div>` : ''}
-    ${ui.verlassen ? `<div class="einladung">
-      <p>${gastgeber
-    ? `Wirklich auflösen? Der Plan ist dann für alle weg${andereLeute.length ? ` – ${anzahl(andereLeute.length, 'Person', 'Leute')} mit allen ihren Haken` : ''}. Deine eigenen Haken bleiben hier auf dem Gerät.`
-    : 'Wirklich verlassen? Deine Haken verschwinden dann für die anderen; hier auf dem Gerät bleiben sie.'}</p>
-      <button type="button" class="knopf warnknopf" data-aktion="verlassen-ja">${gastgeber ? 'Ja, auflösen' : 'Ja, verlassen'}</button>
-      <button type="button" class="knopf" data-aktion="verlassen">Abbrechen</button>
-    </div>` : ''}
   </header>
   ${gastgeber && !andereLeute.length && !ui.einladen ? '<div class="banner">Noch ist niemand dabei. Tipp auf „Einladen“ und schick den Link an deine Leute.</div>' : ''}`;
-}
-
-/**
- * Push für den Gastgeber (push.js): an, ausschaltbar – oder der Knopf zum
- * Anschalten. Steht etwas im Weg, steht das da statt des Knopfs; ein
- * Browser, der es gar nicht kann, bekommt keine Zeile.
- */
-function pushZeile() {
-  if (pushAn()) {
-    return `<div class="push-zeile fein" data-push="an">🔔 Du bekommst Bescheid, wenn jemand dazukommt oder anhakt.
-      <button type="button" class="textknopf" data-aktion="push-aus">Ausschalten</button></div>`;
-  }
-  const h = pushHindernis();
-  if (h.grund === 'browser') return '';
-  if (h.grund) return `<div class="push-zeile fein" data-push="${esc(h.grund)}">🔔 ${esc(h.text)}</div>`;
-  return `<div class="push-zeile" data-push="aus">
-      <button type="button" class="knopf" data-aktion="push-an">🔔 Bescheid sagen</button>
-      <span class="fein">wenn jemand dazukommt oder anhakt – auch bei geschlossener App</span></div>`;
 }
 
 /** Je Person: wie viel mit dir, wie viel ohne dich, die Liste – und herausnehmen. */
@@ -352,7 +303,7 @@ function proPerson(st, nachSchluessel, heute, ui) {
       ${frage}
     </details>`;
   }).join('');
-  return abschnitt('wir-personen', 'Pro Person', 'Was jeder angehakt hat, noch einmal einzeln.', zeilen);
+  return abschnitt('wir-personen', 'Pro Person', '', zeilen, leute.length);
 }
 
 function gastgeberUeberblick(alle, st, heute, ui) {
@@ -367,17 +318,17 @@ function gastgeberUeberblick(alle, st, heute, ui) {
   const ohne = sortiert(offen.filter((i) => !i.ich && !i.mit.length && i.ohne.length).map((i) => i.e), wieViele);
   const deine = offen.filter((i) => i.ich && !i.mit.length);
   const deineTermine = sortiert(deine.filter((i) => i.e.quelle !== 'idee').map((i) => i.e));
+  const deineIdeen = deine.length - deineTermine.length;
   const leute = st.gemeinsam.stand.personen.length - 1;
   const nichts = leute > 0 && !zusammen.length && !wollen.length && !ohne.length
     ? '<div class="leer-klein">Noch hat keiner etwas angehakt. Sobald jemand Bock auf etwas hat, steht es hier.</div>' : '';
   return `${nichts}
-    ${zusammen.length ? abschnitt('wir-zusammen', 'Zusammen', 'Hier wollt ihr zusammen hin – du und wer mit dir will.', karten(zusammen)) : ''}
-    ${wollen.length ? abschnitt('wir-mit-dir', 'Wollen mit dir', 'Jemand will das mit dir machen. Tipp auf „Bock“, wenn du auch willst.', karten(wollen)) : ''}
-    ${ohne.length ? abschnitt('wir-ohne-dich', 'Ohne dich', 'Was deine Leute allein oder mit anderen vorhaben.', karten(ohne)) : ''}
+    ${zusammen.length ? abschnitt('wir-zusammen', 'Zusammen', '', karten(zusammen), zusammen.length) : ''}
+    ${wollen.length ? abschnitt('wir-mit-dir', 'Wollen mit dir', 'Tipp auf „Bock“, wenn du auch willst.', karten(wollen), wollen.length) : ''}
+    ${ohne.length ? abschnitt('wir-ohne-dich', 'Ohne dich', '', karten(ohne), ohne.length) : ''}
     ${proPerson(st, new Map(alle.map((e) => [e.schluessel, e])), heute, ui)}
-    ${abschnitt('wir-deine', 'Deine Haken', deineTermine.length ? 'Worauf du Bock hast und noch keiner mit dir.' : '',
-    `${deineTermine.length ? karten(deineTermine) : '<div class="leer-klein">Was du anhakst und noch keiner mit dir will, steht hier.</div>'}
-      ${ideenZeile(deine.length - deineTermine.length)}`)}`;
+    ${deineTermine.length || deineIdeen ? abschnitt('wir-deine', 'Deine Haken', deineTermine.length ? 'Noch keiner mit dir.' : '',
+    `${karten(deineTermine)}${ideenZeile(deineIdeen)}`, deineTermine.length) : ''}`;
 }
 
 function mitgliedAnsicht(alle, st, heute) {
@@ -389,12 +340,14 @@ function mitgliedAnsicht(alle, st, heute) {
   const seine = sortiert(offen.filter((i) => !i.ich && i.er).map((i) => i.e));
   const deine = offen.filter((i) => i.ich && !(i.wie === 'gastgeber' && i.er));
   const deineTermine = sortiert(deine.filter((i) => i.e.quelle !== 'idee').map((i) => i.e));
+  const deineIdeen = deine.length - deineTermine.length;
   const n = esc(name);
-  return `${zusammen.length ? abschnitt('wir-zusammen', `Du und ${name}`, 'Hier wollt ihr beide hin.', karten(zusammen)) : ''}
-    ${seine.length ? abschnitt('wir-seine', `${name} hat Bock auf`, `Tipp auf „Mit ${n}“, wenn du dabei bist – oder auf „Allein/mit anderen“.`, karten(seine)) : ''}
-    ${abschnitt('wir-deine', 'Deine Haken', deineTermine.length ? `Mit ${n} oder allein/mit anderen – wie du es angetippt hast.` : '',
-    `${deineTermine.length ? karten(deineTermine) : `<div class="leer-klein">Noch keine Haken. Tippe bei einem Termin auf „Mit ${n}“ oder „Allein/mit anderen“.</div>`}
-      ${ideenZeile(deine.length - deineTermine.length)}`)}`;
+  const leer = !zusammen.length && !seine.length && !deine.length
+    ? `<div class="leer-klein">Noch keine Haken. Tippe bei einem Termin auf „Mit ${n}“ oder „Allein/mit anderen“.</div>` : '';
+  return `${zusammen.length ? abschnitt('wir-zusammen', `Du und ${name}`, '', karten(zusammen), zusammen.length) : ''}
+    ${seine.length ? abschnitt('wir-seine', `${name} hat Bock auf`, `Tipp auf „Mit ${n}“, wenn du dabei bist.`, karten(seine), seine.length) : ''}
+    ${deineTermine.length || deineIdeen ? abschnitt('wir-deine', 'Deine Haken', '', `${karten(deineTermine)}${ideenZeile(deineIdeen)}`, deineTermine.length) : ''}
+    ${leer}`;
 }
 
 export function wirAnsicht(p, ideen, st, heute, ui = {}) {
@@ -409,16 +362,16 @@ export function wirAnsicht(p, ideen, st, heute, ui = {}) {
     const ideenZahl = eigene.filter((e) => e.quelle === 'idee').length;
     // Wer gerade eingeladen ist, soll erst einmal nur eintreten.
     const eingeladen = !g && Boolean(st.einladung);
-    return `<header class="woche-kopf"><h2 class="abschnitt-titel">Wir</h2>
-      ${g || eingeladen ? '' : '<p class="fein">Lade deine Leute ein: Jeder hakt an, worauf er Bock hat – mit dir oder allein/mit anderen. Du siehst alles, die anderen deine Haken und ihre eigenen.</p>'}</header>
+    return `${g || eingeladen ? '' : '<p class="fein wir-einleitung">Lade deine Leute ein: Jeder hakt an, worauf er Bock hat – mit dir oder allein/mit anderen. Du siehst alles, die anderen deine Haken und ihre eigenen.</p>'}
       ${zugang}
       ${g ? rausKarte(st, ui) : einrichten(st, ui)}
       ${eingeladen && !kommend.length && !ideenZahl ? '' : abschnitt('wir-deine', 'Deine Bock-Liste', '', `${kommend.length ? karten(kommend) : '<div class="leer-klein">Noch keine Haken. Tippe bei einem Termin auf „Bock“.</div>'}
-        ${ideenZeile(ideenZahl)}`)}
+        ${ideenZeile(ideenZahl)}`, kommend.length)}
       ${vorbeiListe(alt, ui)}`;
   }
 
-  const hilfe = ui.hilfe || (rolle() === 'mitglied' && !st.hilfeWeg) ? hilfeKarte(st) : '';
+  // Eingeladene sehen „So funktioniert's“ nach dem Beitreten hier, bis sie „Alles klar“ tippen.
+  const hilfe = rolle() === 'mitglied' && !st.hilfeWeg ? hilfeKarte() : '';
   return `${kopf(st, ui)}
     ${zugang}
     ${hilfe}

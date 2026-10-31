@@ -12,7 +12,9 @@ import { oeffne, fakeServer, MO, SA, SO2 } from './hilfe.mjs';
 
 const server = fakeServer();
 const A = await oeffne({ tag: MO, zeit: '10:00', server });
-const { page, check, reiter, uhr, gespeichert, filter } = A;
+const {
+  page, check, reiter, uhr, gespeichert, filter, imFilter,
+} = A;
 const kat = (k) => page.locator(`details.kategorie[data-kat="${k}"]`);
 const karteIn = (p, bereich, titel) => p.locator(`${bereich} .karte`, { hasText: titel });
 const sichtbar = () => page.$$eval('details.kategorie .karte h3', (hs) => hs.map((h) => h.textContent).sort());
@@ -22,7 +24,9 @@ const gleich = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 await reiter('ideen');
 check(await page.locator('[data-reiter="ideen"]').getAttribute('aria-current') === 'page', 'der Reiter Ideen ist offen');
 const zaehler = await page.locator('#ideen-zaehler').innerText();
-check(zaehler.startsWith('7 Ideen') && zaehler.includes('1 außerhalb der Saison'), `sieben Ideen, das Tretboot hat im November keine Saison (${zaehler})`);
+const katalogZahl = await page.locator('#abschnitt-katalog .abschnitt-zahl').innerText();
+check(katalogZahl === '7' && zaehler === '1 Idee außerhalb der Saison ausgeblendet',
+  `sieben Ideen (die Zahl steht nur bei „Alle Ideen“), oben nur: das Tretboot hat im November keine Saison (${katalogZahl} | ${zaehler})`);
 check(await page.locator('details.kategorie').count() === 7 && await page.locator('details.kategorie[open]').count() === 0,
   'sieben Kategorien mit Ideen, alle eingeklappt');
 check((await kat('natur').locator('summary').innerText()).includes('Elbstrand'), 'der Elbstrand aus „Geht immer“ steht bei Natur & Draußen');
@@ -38,15 +42,22 @@ await filter('x:zuZweit');
 check(gleich(await sichtbar(), ['Bügelperlen']), 'Flow, Zuhause und zu zweit: nur die Bügelperlen');
 const f = (await gespeichert()).ideenFilter;
 check(f.wirkung.includes('flow') && f.wo === 'zuhause' && f.zuZweit === true, 'die Filter stehen im Speicher');
+check(JSON.stringify(await page.$$eval('.ideen-kopf .filterchip', (cs) => cs.map((c) => c.dataset.chip))) === JSON.stringify(['w:flow', 'wo:zuhause', 'x:zuZweit'])
+  && await page.locator('.ideen-kopf [data-aktion="filter-auf"] .zahl-marke').innerText() === '3', 'oben drei Chips, der Filter-Knopf zählt 3');
+await page.click('.ideen-kopf .filterchip[data-chip="wo:zuhause"]');
+check(gleich(await sichtbar(), ['Bügelperlen', 'Tischtennis im Park']) && !(await gespeichert()).ideenFilter.wo, '✕ an „Zuhause“: nur dieser Filter geht – Tischtennis ist wieder da');
 await page.click('[data-aktion="ideen-filter-weg"]');
-check(await page.locator('details.kategorie[open]').count() === 0, '„Filter zurücksetzen“ klappt die Kategorien wieder ein');
+check(await page.locator('details.kategorie[open]').count() === 0 && await page.locator('.ideen-kopf .filterchip').count() === 0,
+  '„Alle zeigen“ nimmt alle Filter zurück und klappt die Kategorien wieder ein');
 
 // --- Saison
-await page.click('[data-aktion="saison-alle"]');
-check((await kat('sport').locator('.kat-zahl').innerText()) === '2', 'außerhalb der Saison zeigen: das Tretboot ist da');
+await imFilter(() => page.click('#blatt [data-aktion="saison-alle"]'));
+check((await kat('sport').locator('.kat-zahl').innerText()) === '2', 'außerhalb der Saison zeigen (im Blatt): das Tretboot ist da');
+check(await page.locator('.filterchip[data-chip="saison"]').count() === 1 && await page.locator('#ideen-zaehler').count() === 0,
+  '… als Chip, und der Saison-Hinweis oben ist weg');
 await kat('sport').locator('summary').click();
 check((await karteIn(page, 'details[data-kat="sport"]', 'Tretboot').innerText()).includes('Saison Apr–Sep'), '… mit seiner Saison');
-await page.click('[data-aktion="saison-alle"]');
+await page.click('.filterchip[data-chip="saison"]');
 check((await kat('sport').locator('.kat-zahl').innerText()) === '1', 'und wieder nur, was jetzt Saison hat');
 
 // --- Bock
@@ -192,8 +203,8 @@ const kimsPlaene = [...[...server.raeume.values()][0].bock.values()].filter((b) 
 const wie = (idee) => kimsPlaene.find((b) => b.eintrag.endsWith(idee))?.daten.mitwem;
 check(kimsPlaene.length === 3 && wie('i:sauna') === 'gastgeber' && wie('i:tischtennis') === 'gastgeber' && wie('i:buegelperlen') === 'andere',
   'beim Server: Kims Haken auf die Pläne, jeweils mit „mit wem“');
-await reiter('wir');
 await A.aktion('abgleichen');
+await reiter('wir');
 await page.waitForFunction(() => document.querySelector('#ansicht').innerText.includes('Bügelperlen'), null, { timeout: 6000 }).catch(() => {});
 check(await karteIn(page, '#wir-mit-dir', 'Tischtennis').count() === 1 && await karteIn(page, '#wir-ohne-dich', 'Bügelperlen').count() === 1,
   'Tobi sieht beide Pläne in „Wir“: Tischtennis „Wollen mit dir“, Bügelperlen „Ohne dich“');
@@ -208,8 +219,8 @@ raum.bock.set('pzzzzzzzzzzzzzz|e:boese', {
   person: 'pzzzzzzzzzzzzzz', eintrag: 'e:boese', geaendert: new Date().toISOString(),
   daten: { titel: '<img src=x onerror=alert(1)>', beschreibung: '<script>alert(2)</script>', link: 'javascript:alert(3)', wirkung: ['flow', '<b>x</b>'], urheber: '<i>M</i>' },
 });
-await reiter('wir');
 await A.aktion('abgleichen');
+await reiter('wir');
 await page.waitForFunction(() => document.querySelector('#ansicht').innerText.includes('Mallory'), null, { timeout: 6000 });
 await reiter('ideen');
 const boese = karteIn(page, '#abschnitt-eigene', '<img');
@@ -231,7 +242,7 @@ await reiter('karte');
 await page.waitForSelector('.leaflet-container');
 await page.waitForTimeout(300);
 const vorher = await modul('markerZahl');
-await page.click('[data-aktion="karte-ideen"]');
+await imFilter(() => page.click('#blatt [data-aktion="karte-ideen"]'));
 await page.waitForTimeout(300);
 const nachher = await modul('markerZahl');
 check(nachher >= vorher + 4 && (await page.locator('#karte-fuss').innerText()).includes('aus den Ideen'), `mit „Ideen“ kommen ihre Orte dazu (${vorher} → ${nachher})`);

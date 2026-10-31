@@ -19,14 +19,18 @@
 <header class="kopf">
   <div class="kopf-in">
     <h1 class="marke-app"><img src="icon.svg" alt="">Freizeit</h1>
-    <span class="stand" id="stand"></span>
   </div>
 </header>
 
 <main id="ansicht" class="ansicht" tabindex="-1"></main>
 
+<!-- Das Filter-Blatt (js/blatt.js) – außerhalb von main, damit es beim Neuzeichnen stehen bleibt. -->
+<div id="blatt-ort"></div>
+
 <!-- Die Reiter stehen fest im HTML, damit die App auch mit einem Skript aus
-     einem älteren Zwischenspeicher eine Navigation hat. -->
+     einem älteren Zwischenspeicher eine Navigation hat. Welche davon zu sehen
+     sind, stellt man unter Einstellungen ein (js/app.js setzt hidden);
+     Einstellungen selbst ist immer da. -->
 <nav class="reiterleiste" aria-label="Bereiche">
   <button type="button" class="reiter" data-reiter="programm" aria-current="page">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>
@@ -43,6 +47,10 @@
   <button type="button" class="reiter" data-reiter="wir">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>
     <span>Wir</span><span class="punkt" id="wir-neu" hidden title="neue Haken"></span>
+  </button>
+  <button type="button" class="reiter" data-reiter="einstellungen">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.2 12.9L21.6 14.2L20.3 17.2L17.8 16.5A7.3 7.3 0 0 1 16.5 17.8L17.2 20.3L14.2 21.6L12.9 19.2A7.3 7.3 0 0 1 11.1 19.2L9.8 21.6L6.8 20.3L7.5 17.8A7.3 7.3 0 0 1 6.2 16.5L3.7 17.2L2.4 14.2L4.8 12.9A7.3 7.3 0 0 1 4.8 11.1L2.4 9.8L3.7 6.8L6.2 7.5A7.3 7.3 0 0 1 7.5 6.2L6.8 3.7L9.8 2.4L11.1 4.8A7.3 7.3 0 0 1 12.9 4.8L14.2 2.4L17.2 3.7L16.5 6.2A7.3 7.3 0 0 1 17.8 7.5L20.3 6.8L21.6 9.8L19.2 11.1A7.3 7.3 0 0 1 19.2 12.9Z"/><circle cx="12" cy="12" r="3.2"/></svg>
+    <span>Einstellungen</span>
   </button>
 </nav>
 

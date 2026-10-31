@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "stand": "2026-10-31T12:12",
+  "stand": "2026-10-31T12:30",
   "von": "2026-10-26",
   "bis": "2026-11-29",
   "infos": [
@@ -14082,6 +14082,58 @@
       "link": "https://ahrensburg-portal.de/ahrensburg-krimilesung-am-29-11-2026/",
       "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 7 Min. Fußweg · Auto: ca. 20 Min.",
       "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "serie-a-ac-mailand-inter-mailaender-derby-dazn",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "20:45",
+      "dauer": 115,
+      "online": true,
+      "titel": "Serie A: AC Mailand – Inter (Mailänder Derby)",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Das Derby della Madonnina im San Siro. DAZN zeigt es ohne Abo – es reicht eine kostenlose Registrierung.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.dazn.com/de-DE/news/fussball/ac-milan-vs-inter-mailand-live-kostenlos-auf-dazn-kein-abo-noetig-serie-a/nktgdxd6mv2k1s0fas3vko7u3"
+    },
+    {
+      "id": "boxen-canelo-alvarez-christian-mbilli-wbc-wm",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "16:00",
+      "dauer": 420,
+      "online": true,
+      "titel": "Boxen: Canelo Álvarez – Christian Mbilli (WBC-WM Supermittelgewicht)",
+      "ort": "DAZN (Pay-per-View)",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Kampfabend in Riad; Canelo verteidigt seinen WBC-Titel gegen den ungeschlagenen Mbilli. Die Übertragung beginnt um 16 Uhr, der Hauptkampf erst spät am Abend.",
+      "preis": "DAZN Pay-per-View 19,99 € zusätzlich zum Abo",
+      "draussen": "drinnen",
+      "link": "https://www.dazn.com/de-DE/news/boxen/wer-zeigt-uebertraegt-boxkampf-canelo-vs-mbilli-im-tv-und-live-stream/tt7ld4s769dk1r50n3vc5lb27",
+      "unsicher": "Ringwalk-Zeit des Hauptkampfs nicht bekannt, Ende geschätzt"
+    },
+    {
+      "id": "formel-1-grosser-preis-von-mexiko-sky-sport-f1-wow",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "21:00",
+      "dauer": 120,
+      "online": true,
+      "titel": "Formel 1: Großer Preis von Mexiko",
+      "ort": "Sky Sport F1 / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Kimi Antonelli fehlen nur noch 2 Punkte zum WM-Titel – er kann in Mexiko-Stadt Weltmeister werden.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.formula1.com/en/racing/2026/mexico"
     }
   ],
   "laufend": [

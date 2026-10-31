@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "stand": "2026-10-28T13:55",
+  "stand": "2026-10-31T12:12",
   "von": "2026-10-26",
   "bis": "2026-11-29",
   "infos": [
@@ -12765,6 +12765,1323 @@
       "draussen": "drinnen",
       "link": "https://www.kulturwerk-rahlstedt.de/events/kuenstliche-intelligenz-fluch-oder-segen/",
       "unsicher": "Kopfzeile des KulturWerk-Kalenders nennt 18:00 Uhr, Beschreibung und hamburg-tourism 19:30 Uhr (Einlass 19 Uhr); Ende geschätzt"
+    },
+    {
+      "id": "champions-league-galatasaray-vfb-stuttgart-dazn",
+      "daten": [
+        "2026-11-03"
+      ],
+      "zeit": "18:45",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: Galatasaray – VfB Stuttgart",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "4. Spieltag der Ligaphase: Der VfB (6., 7 Punkte) muss in Istanbul bei Galatasaray (23., 3 Punkte) ran. Das Spiel läuft am Dienstag auch in der kostenlosen DAZN-Konferenz.",
+      "preis": "im DAZN-Abo (in der Gratis-Konferenz kostenlos, DAZN-Registrierung genügt)",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049614--galatasaray-vs-stuttgart/"
+    },
+    {
+      "id": "champions-league-atletico-madrid-fc-bayern-prime-video",
+      "daten": [
+        "2026-11-03"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: Atlético Madrid – FC Bayern",
+      "ort": "Prime Video",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "4. Spieltag: Bayern (14., 5 Punkte, zuletzt zwei Remis) gastiert im Metropolitano bei Atlético (16., 4 Punkte). Das Dienstags-Topspiel läuft exklusiv bei Prime Video, nicht in der DAZN-Konferenz.",
+      "preis": "mit Prime",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049608--atleti-vs-bayern-munchen/"
+    },
+    {
+      "id": "champions-league-fc-barcelona-aston-villa-dazn",
+      "daten": [
+        "2026-11-03"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: FC Barcelona – Aston Villa",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Spitzenspiel am Dienstag: Barça (8., 6 Punkte) empfängt den Tabellenzweiten Aston Villa (9 Punkte, 12:3 Tore). Auch in der kostenlosen DAZN-Konferenz.",
+      "preis": "im DAZN-Abo (in der Gratis-Konferenz kostenlos, DAZN-Registrierung genügt)",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049607--barcelona-vs-aston-villa/"
+    },
+    {
+      "id": "champions-league-fc-villarreal-paris-saint-germain-dazn",
+      "daten": [
+        "2026-11-03"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: FC Villarreal – Paris Saint-Germain",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Tabellenführer PSG (9 Punkte, 14:5 Tore) beim FC Villarreal (19., 3 Punkte). Auch in der kostenlosen DAZN-Konferenz.",
+      "preis": "im DAZN-Abo (in der Gratis-Konferenz kostenlos, DAZN-Registrierung genügt)",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049612--villarreal-vs-paris/"
+    },
+    {
+      "id": "champions-league-dazn-gratis-konferenz-am-dienstag-dazn",
+      "daten": [
+        "2026-11-03"
+      ],
+      "zeit": "18:45",
+      "dauer": 250,
+      "online": true,
+      "titel": "Champions League: DAZN-Gratis-Konferenz am Dienstag",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "DAZN zeigt die Dienstags-Konferenz des 4. Spieltags kostenlos: ab 18:45 Galatasaray – Stuttgart und Schachtar – Sporting, ab 21 Uhr u. a. Barcelona – Aston Villa, Villarreal – PSG, Man United – AS Rom und Feyenoord – Inter. Nicht dabei: Atlético – Bayern (Prime Video).",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.dazn.com/de-DE/news/fussball/kostenlose-champions-league-konferenz-teams-spiele-uhrzeiten-uebertragung/fo1jg1rj478i1vf8q4i1r6m5w",
+      "unsicher": "kostenloses DAZN-Konto nötig; Vorberichte ab 18:00; Ende geschätzt"
+    },
+    {
+      "id": "champions-league-borussia-dortmund-real-betis-dazn",
+      "daten": [
+        "2026-11-04"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: Borussia Dortmund – Real Betis",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "4. Spieltag: Der BVB (13., 6 Punkte) empfängt Real Betis, das alle drei Spiele gewonnen hat (5., 9 Punkte).",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049616--b-dortmund-vs-real-betis/"
+    },
+    {
+      "id": "champions-league-rb-leipzig-manchester-city-dazn",
+      "daten": [
+        "2026-11-04"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: RB Leipzig – Manchester City",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "4. Spieltag: Leipzig steht nach zwei 1:4-Niederlagen mit nur 3 Punkten unter Druck und empfängt Manchester City (10., 6 Punkte).",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049619--leipzig-vs-man-city/"
+    },
+    {
+      "id": "champions-league-fenerbahce-fc-liverpool-dazn",
+      "daten": [
+        "2026-11-04"
+      ],
+      "zeit": "18:45",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: Fenerbahçe – FC Liverpool",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Das größte Frühspiel am Mittwoch: Liverpool (3., drei Siege, 9 Punkte) muss nach Istanbul zu Fenerbahçe (31., 2 Punkte).",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049620--fenerbahce-vs-liverpool/"
+    },
+    {
+      "id": "champions-league-dazn-konferenz-am-mittwoch-dazn",
+      "daten": [
+        "2026-11-04"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: DAZN-Konferenz am Mittwoch",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Die 21-Uhr-Spiele des 4. Spieltags in einer Konferenz, u. a. Dortmund – Betis, Leipzig – Manchester City und Slavia Prag – Arsenal; Vorberichte ab 20:15. Anders als am Dienstag nicht gratis.",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://dazngroup.com/press-room/kostenlose-champions-league-konferenz-dazn-november-2026/"
+    },
+    {
+      "id": "champions-league-fc-arsenal-borussia-dortmund-prime-video",
+      "daten": [
+        "2026-11-24"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: FC Arsenal – Borussia Dortmund",
+      "ort": "Prime Video",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "5. Spieltag: Der BVB muss ins Emirates Stadium zum FC Arsenal, der nach drei Spieltagen ungeschlagen war (7., 7 Punkte). Das Dienstags-Topspiel läuft exklusiv bei Prime Video.",
+      "preis": "mit Prime",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049627--arsenal-vs-b-dortmund/"
+    },
+    {
+      "id": "champions-league-rb-leipzig-rc-lens-dazn",
+      "daten": [
+        "2026-11-24"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: RB Leipzig – RC Lens",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "5. Spieltag: Leipzig empfängt den RC Lens – beide hatten nach drei Spieltagen erst 3 Punkte und brauchen Zählbares für die K.-o.-Runde.",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049630--leipzig-vs-lens/"
+    },
+    {
+      "id": "champions-league-manchester-city-ssc-neapel-dazn",
+      "daten": [
+        "2026-11-24"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: Manchester City – SSC Neapel",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Großes Dienstagsspiel des 5. Spieltags: Manchester City empfängt die SSC Neapel im Etihad Stadium.",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049626--man-city-vs-napoli/"
+    },
+    {
+      "id": "champions-league-real-madrid-psv-eindhoven-dazn",
+      "daten": [
+        "2026-11-24"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: Real Madrid – PSV Eindhoven",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "5. Spieltag: Real Madrid (nach drei Spieltagen mit 9 Punkten Vierter) empfängt im Bernabéu die PSV Eindhoven.",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049625--real-madrid-vs-psv/"
+    },
+    {
+      "id": "champions-league-inter-mailand-vfb-stuttgart-dazn",
+      "daten": [
+        "2026-11-25"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: Inter Mailand – VfB Stuttgart",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "5. Spieltag: Der VfB gastiert im San Siro bei Inter Mailand, das nach drei Spieltagen nur 3 Punkte hatte.",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049635--inter-vs-stuttgart/"
+    },
+    {
+      "id": "champions-league-osc-lille-fc-bayern-dazn",
+      "daten": [
+        "2026-11-25"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: OSC Lille – FC Bayern",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "5. Spieltag: Bayern beim OSC Lille, der nach drei Spieltagen noch ohne Punkt war (35.).",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049639--lille-vs-bayern-munchen/"
+    },
+    {
+      "id": "champions-league-paris-saint-germain-as-rom-dazn",
+      "daten": [
+        "2026-11-25"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: Paris Saint-Germain – AS Rom",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "5. Spieltag: PSG, nach drei Spieltagen Tabellenführer, empfängt die AS Rom im Prinzenpark.",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049634--paris-vs-roma/"
+    },
+    {
+      "id": "champions-league-club-bruegge-fc-liverpool-dazn",
+      "daten": [
+        "2026-11-25"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Champions League: Club Brügge – FC Liverpool",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "5. Spieltag: Liverpool beim Club Brügge – nach drei Spieltagen standen beide in den Top 12 (Liverpool 3., Brügge 11.).",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://de.uefa.com/uefachampionsleague/match/2049638--club-brugge-vs-liverpool/"
+    },
+    {
+      "id": "laenderspiel-serbien-deutschland-rtl",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "20:45",
+      "dauer": 115,
+      "online": true,
+      "titel": "Länderspiel: Serbien – Deutschland",
+      "ort": "RTL",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Nations League, Liga A, Gruppe 2 (5. Spieltag) in Belgrad – wegen einer UEFA-Strafe gegen Serbien unter Ausschluss der Öffentlichkeit. Deutschland ist mit 5 Punkten Dritter, drei hinter den Niederlanden und Griechenland (je 8); nur die ersten zwei kommen ins Viertelfinale.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://datencenter.dfb.de/datencenter/uefa-nations-league-division-a-2640/2026-27/gruppe-2/serbien-deutschland-2416031"
+    },
+    {
+      "id": "laenderspiel-deutschland-niederlande-ard",
+      "daten": [
+        "2026-11-16"
+      ],
+      "zeit": "20:45",
+      "dauer": 115,
+      "online": true,
+      "titel": "Länderspiel: Deutschland – Niederlande",
+      "ort": "ARD",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Letzter Nations-League-Gruppenspieltag im Berliner Olympiastadion gegen die Niederlande, die vor dem 5. Spieltag mit 8 Punkten vorn lagen – womöglich ein Endspiel ums Viertelfinale.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://datencenter.dfb.de/datencenter/uefa-nations-league-division-a-2640/2026-27/gruppe-2/deutschland-niederlande-2416032"
+    },
+    {
+      "id": "schach-wm-partie-1-gukesh-sindarov-fide-livestream-chess-com",
+      "daten": [
+        "2026-11-24"
+      ],
+      "zeit": "15:00",
+      "dauer": 300,
+      "online": true,
+      "titel": "Schach-WM, Partie 1: Gukesh – Sindarov",
+      "ort": "FIDE-Livestream / chess.com",
+      "region": "ONL",
+      "kategorie": "Schach",
+      "beschreibung": "Auftakt des WM-Kampfs in Genf (Fondation Martin Bodmer, Cologny): Weltmeister Gukesh D (Indien) gegen Herausforderer Javokhir Sindarov (Usbekistan), beide 20 – das jüngste WM-Duell der Geschichte. 14 klassische Partien, 7,5 Punkte reichen zum Titel.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://worldchampionship.fide.com",
+      "unsicher": "Dauer geschätzt (120 Min. für 40 Züge, dann 30 Min., ab Zug 41 +30 s); Farben werden erst am 22.11. ausgelost; Stream-Kanäle und deutscher Kommentar noch nicht verkündet"
+    },
+    {
+      "id": "schach-wm-partie-2-gukesh-sindarov-fide-livestream-chess-com",
+      "daten": [
+        "2026-11-25"
+      ],
+      "zeit": "15:00",
+      "dauer": 300,
+      "online": true,
+      "titel": "Schach-WM, Partie 2: Gukesh – Sindarov",
+      "ort": "FIDE-Livestream / chess.com",
+      "region": "ONL",
+      "kategorie": "Schach",
+      "beschreibung": "Zweite Partie des WM-Kampfs in Genf, mit gewechselten Farben. Vor dem Match lag Sindarov im klassischen Direktvergleich mit zwei Siegen und einem Remis vorn.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://worldchampionship.fide.com",
+      "unsicher": "Dauer geschätzt; Farben werden erst am 22.11. ausgelost; Stream-Kanäle und deutscher Kommentar noch nicht verkündet"
+    },
+    {
+      "id": "schach-wm-partie-3-gukesh-sindarov-fide-livestream-chess-com",
+      "daten": [
+        "2026-11-26"
+      ],
+      "zeit": "15:00",
+      "dauer": 300,
+      "online": true,
+      "titel": "Schach-WM, Partie 3: Gukesh – Sindarov",
+      "ort": "FIDE-Livestream / chess.com",
+      "region": "ONL",
+      "kategorie": "Schach",
+      "beschreibung": "Dritte von 14 Partien im WM-Match in Genf; am Freitag folgt der erste Ruhetag.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://worldchampionship.fide.com",
+      "unsicher": "Dauer geschätzt; Farben werden erst am 22.11. ausgelost; Stream-Kanäle und deutscher Kommentar noch nicht verkündet"
+    },
+    {
+      "id": "schach-wm-partie-4-gukesh-sindarov-fide-livestream-chess-com",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "15:00",
+      "dauer": 300,
+      "online": true,
+      "titel": "Schach-WM, Partie 4: Gukesh – Sindarov",
+      "ort": "FIDE-Livestream / chess.com",
+      "region": "ONL",
+      "kategorie": "Schach",
+      "beschreibung": "Vierte Partie nach dem ersten Ruhetag – die erste WM-Partie am Wochenende.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://worldchampionship.fide.com",
+      "unsicher": "Dauer geschätzt; Farben werden erst am 22.11. ausgelost; Stream-Kanäle und deutscher Kommentar noch nicht verkündet"
+    },
+    {
+      "id": "schach-wm-partie-5-gukesh-sindarov-fide-livestream-chess-com",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "15:00",
+      "dauer": 300,
+      "online": true,
+      "titel": "Schach-WM, Partie 5: Gukesh – Sindarov",
+      "ort": "FIDE-Livestream / chess.com",
+      "region": "ONL",
+      "kategorie": "Schach",
+      "beschreibung": "Fünfte Partie; Partie 6 folgt am Montag, danach ist wieder Ruhetag. Das Match geht bis höchstens 11.12. (Partie 14).",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://worldchampionship.fide.com",
+      "unsicher": "Dauer geschätzt; Farben werden erst am 22.11. ausgelost; Stream-Kanäle und deutscher Kommentar noch nicht verkündet"
+    },
+    {
+      "id": "letzter-tag-sonderausstellung-wesentliches-lars-moeller-im",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "11:00–17:00",
+      "ende": "17:00",
+      "titel": "Letzter Tag: Sonderausstellung „Wesentliches“ – Lars Möller im Schloss",
+      "ort": "Schloss Ahrensburg",
+      "geo": [
+        53.68018,
+        10.24037
+      ],
+      "region": "AHR",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Am Reformationstag ist das Schloss geöffnet – letzte Gelegenheit für die Bilder des Norddeutschen Realisten Lars Möller (Landschaften, Wasser, Himmel, Stillleben in Öl und Aquarell) im Kabinett im 2. Stock; danach bleibt das 2. OG bis Mai 2027 zu.",
+      "preis": "Museumseintritt 9 €, erm. 6 €",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/wesentliches/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 15–20 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Kein Aufzug ins 2. OG; ob die Ausstellung im normalen Museumseintritt enthalten ist, steht nicht ausdrücklich da"
+    },
+    {
+      "id": "plattdeutsche-komoedie-alibi-fruend-in-freunde-auf-zeit",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "15:00",
+      "ende": "17:15",
+      "titel": "Plattdeutsche Komödie: „Alibi-Fründ*in – Freunde auf Zeit“",
+      "ort": "Alfred-Rust-Saal, Ahrensburg",
+      "geo": [
+        53.6706,
+        10.21093
+      ],
+      "region": "AHR",
+      "kategorie": "Bühne",
+      "beschreibung": "Niederdeutsche Fassung von Folke Brabands „Rent a Friend“: Single Sarah bucht für den Besuch ihres Vaters einen Schein-Verlobten – und bekommt statt George-Clooney-Double einen jungen Skater, der kräftig improvisieren muss.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/alibi-fruendin/",
+      "anreise": "DT: U1 (Richtung Großhansdorf) bis Ahrensburg West, ca. 10–15 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Nur aus dem Veranstaltungskalender der Metropolregion (= Stadtkalender); Preis fehlt, ausrichtende Bühne (Ahrensburg/Gastspiel Itzehoe) nicht eindeutig; Ende geschätzt"
+    },
+    {
+      "id": "die-raeuber-frei-nach-schiller-theater-im-pferdestall",
+      "daten": [
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "16:00",
+      "ende": "18:15",
+      "titel": "„Die Räuber“ frei nach Schiller – Theater im Pferdestall",
+      "ort": "Pferdestall, Ammersbek",
+      "geo": [
+        53.6916,
+        10.16592
+      ],
+      "region": "AHR",
+      "kategorie": "Bühne",
+      "beschreibung": "Die Theatergruppe des Ammersbeker Kulturkreises dreht Schiller um: Zwei Schwestern kämpfen um Mutterliebe und Erbe, die verstoßene Karla schließt sich einer Räuberinnenbande an.",
+      "preis": "14 €, erm./Mitglieder 10 €",
+      "draussen": "drinnen",
+      "link": "https://www.ammersbeker-kulturkreis.de/die-r%C3%A4uber/",
+      "anreise": "DT: U1 (Richtung Ohlstedt) bis Hoisbüttel, ca. 10 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "basketball-atsv-damen-rist-wedel-1-regionalliga-nord",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "17:00",
+      "ende": "18:45",
+      "titel": "Basketball: ATSV-Damen – RIST Wedel (1. Regionalliga Nord)",
+      "ort": "Stormarnschule (Museumsturnhalle), Ahrensburg",
+      "geo": [
+        53.66864,
+        10.2405
+      ],
+      "region": "AHR",
+      "kategorie": "Sport",
+      "beschreibung": "Halloween-Heimspiel der 1. Damen des Ahrensburger TSV gegen RIST Wedel – Eintritt frei, in den Pausen darf man nach Möglichkeit selbst auf den Korb werfen.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/basketball-an-halloween-atsv-damen-empfangen-rist-wedel/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 5 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Nur aus dem Veranstaltungskalender der Metropolregion; Ende geschätzt"
+    },
+    {
+      "id": "halloween-kirche-in-der-schlosskirche-schlosskirche",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "17:00–21:00",
+      "ende": "21:00",
+      "titel": "Halloween-Kirche in der Schloßkirche",
+      "ort": "Schloßkirche Ahrensburg",
+      "geo": [
+        53.67721,
+        10.24001
+      ],
+      "region": "AHR",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Am Reformationstag laden Kirchengemeinde und Evangelische Jugend zum Halloween-Abend in die Renaissance-Schloßkirche gegenüber dem Schloss ein – mit Essen und Getränken.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://ahrensburg-portal.de/ahrensburg-halloween-in-der-kirche-am-31-10-2026-17-uhr/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 12 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Programm im Einzelnen nicht beschrieben (Mitveranstalter: Ev. Jugend)"
+    },
+    {
+      "id": "mark-lyndon-sherlock-holmes-strikes-again-englische-lesung",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "15:30",
+      "ende": "17:30",
+      "titel": "Mark Lyndon: „Sherlock Holmes Strikes Again“ – englische Lesung mit Tea Time",
+      "ort": "Kultavida, Ahrensburg",
+      "geo": [
+        53.67392,
+        10.23873
+      ],
+      "region": "AHR",
+      "kategorie": "Lesung",
+      "beschreibung": "Englischsprachige Sherlock-Holmes-Lesung mit Tea Time auf der kleinen Kulturbühne Kultavida (max. 40 Plätze) in der Innenstadt.",
+      "preis": "23 €",
+      "draussen": "drinnen",
+      "link": "https://ahrensburg-portal.de/ahrensburg-lesung-sherlock-holmes-am-01-11-2026/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 7 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "dvorak-stabat-mater-kantorei-st-johannes-ahrensburger",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "18:00",
+      "ende": "19:30",
+      "titel": "Dvořák: Stabat Mater – Kantorei St. Johannes & Ahrensburger Kammerorchester",
+      "ort": "St. Johannes, Ahrensburg",
+      "geo": [
+        53.67501,
+        10.2217
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Dvořáks großes Oratorium über Trauer und Trost, entstanden nach dem Tod seiner Kinder – mit Kantorei, Kammerorchester und vier Solisten unter Edzard Burchards.",
+      "preis": "18 €, erm. günstiger, Kinder/Jugendliche frei",
+      "draussen": "drinnen",
+      "link": "https://www.kirche-ahrensburg.de/termine/1472376-stabat-mater",
+      "anreise": "DT: U1 (Richtung Großhansdorf) bis Ahrensburg West oder Regionalzug (RB81/RE8) bis Ahrensburg, jeweils ca. 15 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "vortrag-die-wundersamen-farben-von-wasser-und-eis",
+      "daten": [
+        "2026-11-02"
+      ],
+      "zeit": "19:30",
+      "ende": "21:00",
+      "titel": "Vortrag: „Die wundersamen Farben von Wasser und Eis“",
+      "ort": "Stormarnschule (Museumsturnhalle), Ahrensburg",
+      "geo": [
+        53.66864,
+        10.2405
+      ],
+      "region": "AHR",
+      "kategorie": "Lesung",
+      "beschreibung": "Prof. Dr. Holger Kersten erklärt für die Universitäts-Gesellschaft Ahrensburg-Großhansdorf, warum das Meer mal blau, grau, grün oder braun aussieht und wie Regentropfen und Eiskristalle Regenbögen und Halos erzeugen.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/die-wundersamen-farben-von-wasser-und-eis/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 5 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Eintritt nicht angegeben; nur aus dem Veranstaltungskalender der Metropolregion; Ende geschätzt"
+    },
+    {
+      "id": "zeitfragen-kuenstliche-intelligenz-und-demokratie-marstall",
+      "daten": [
+        "2026-11-05"
+      ],
+      "zeit": "19:30",
+      "ende": "21:00",
+      "titel": "Zeitfragen: „Künstliche Intelligenz und Demokratie“",
+      "ort": "Marstall, Ahrensburg",
+      "geo": [
+        53.68113,
+        10.24234
+      ],
+      "region": "AHR",
+      "kategorie": "Lesung",
+      "beschreibung": "Gesprächsabend in der Reithalle: Was bleibt vom Menschen, wenn Chatbots, Avatare und Roboter übernehmen, und wie behält die Demokratie die Kontrolle über Tech-Macht? Tobias Krüger (Hello.Beta Impact) im Gespräch mit Kreisschülersprechern, Moderation Jasna Makdissi.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.marstall-ahrensburg.de/programm/view/zeitfragen-was-uns-bewegt-3",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 15–20 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "irland-fotovortrag-lesung-live-musik-mit-helge-stroemer-und",
+      "daten": [
+        "2026-11-05"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "„Irland“ – Fotovortrag, Lesung & Live-Musik mit Helge Stroemer und Ulrike Buth",
+      "ort": "Kultavida, Ahrensburg",
+      "geo": [
+        53.67392,
+        10.23873
+      ],
+      "region": "AHR",
+      "kategorie": "Lesung",
+      "beschreibung": "Reiseabend über die grüne Insel: Fotos, Texte aus der irischen Literatur und Folk mit Gitarre, Fiddle und Gesang.",
+      "preis": "17 €",
+      "draussen": "drinnen",
+      "link": "https://ahrensburg-portal.de/ahrensburg-lesung-irland-am-05-11-2026/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 7 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "marstall-theater-top-dogs-von-urs-widmer-marstall-ahrensburg",
+      "daten": [
+        "2026-11-06",
+        "2026-11-07"
+      ],
+      "zeit": "20:00",
+      "zeiten": {
+        "2026-11-07": "19:00"
+      },
+      "dauer": 120,
+      "titel": "Marstall Theater: „Top Dogs“ von Urs Widmer",
+      "ort": "Marstall, Ahrensburg",
+      "geo": [
+        53.68113,
+        10.24234
+      ],
+      "region": "AHR",
+      "kategorie": "Bühne",
+      "beschreibung": "Das Ahrensburger Marstall-Theater spielt die bissige Komödie über entlassene Top-Manager in einem Outplacement-Center – schnell, witzig und eine Abrechnung mit Leistungskult und Selbstwert durch Erfolg.",
+      "preis": "VVK 14 €, AK 16 €",
+      "draussen": "drinnen",
+      "link": "https://www.marstall-ahrensburg.de/programm/view/marstall-theater-zeigt-top-dogs-2",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 15–20 Min. Fußweg · Auto: ca. 20 Min."
+    },
+    {
+      "id": "modellbahnausstellung-der-lgb-freunde-nord-mit-modellbahn",
+      "daten": [
+        "2026-11-07",
+        "2026-11-08"
+      ],
+      "zeit": "11:00–17:00",
+      "ende": "17:00",
+      "ganztags": true,
+      "titel": "Modellbahnausstellung der LGB-Freunde Nord mit Modellbahn-Flohmarkt",
+      "ort": "Pferdestall, Ammersbek",
+      "geo": [
+        53.6916,
+        10.16592
+      ],
+      "region": "AHR",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Digitale Gartenbahn-Anlage (LGB, Spur G) mit vielen Zügen und Dampfloks, dazu ein Flohmarkt für LGB, H0 und N.",
+      "preis": "3 €, Kinder/Jugendliche frei",
+      "draussen": "drinnen",
+      "link": "https://www.ammersbeker-kulturkreis.de/modellbahnausstellung-2026/",
+      "anreise": "DT: U1 (Richtung Ohlstedt) bis Hoisbüttel, ca. 10 Min. Fußweg · Auto: ca. 20 Min."
+    },
+    {
+      "id": "gospelkonzert-soulful-gospel-choir-beside-you-kreuzkirche",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "18:00",
+      "ende": "19:30",
+      "titel": "Gospelkonzert: Soulful Gospel Choir & Beside You",
+      "ort": "Kreuzkirche, Ahrensburg",
+      "geo": [
+        53.66416,
+        10.23833
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Der Soulful Gospel Choir singt zusammen mit dem Gastchor Beside You in der Kreuzkirche – Eintritt frei.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://ahrensburg-portal.de/ahrensburg-gospelkonzert-am-07-11-2026/",
+      "anreise": "DT: U1 (Richtung Großhansdorf) bis Ahrensburg Ost, ca. 7 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "delian-quartett-byrd-schostakowitsch-beethovens-serioso",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "19:30",
+      "ende": "21:15",
+      "titel": "Delian Quartett: Byrd, Schostakowitsch & Beethovens „Serioso“",
+      "ort": "Eduard-Söring-Saal, Ahrensburg",
+      "geo": [
+        53.66864,
+        10.2405
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Abo-Konzert von Theater und Musik in Ahrensburg: Das international gefragte Streichquartett spielt Schostakowitschs 3. Quartett und Beethovens f-Moll-Quartett op. 95, eingerahmt von Byrd-Bearbeitungen.",
+      "preis": "VVK 23,60–34,60 € (inkl. Gebühren), AK 24–35 €",
+      "draussen": "drinnen",
+      "link": "https://theater-und-musik-in-ahrensburg.de/programm/view/263",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 5 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt (mit Pause)"
+    },
+    {
+      "id": "ohnsorg-theater-altes-land-nach-doerte-hansen-kleines",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Ohnsorg Theater: „Altes Land“ nach Dörte Hansen",
+      "ort": "Kleines Theater Bargteheide",
+      "geo": [
+        53.72802,
+        10.25911
+      ],
+      "region": "AHR",
+      "kategorie": "Bühne",
+      "beschreibung": "Hochdeutsche Tournee-Fassung des Bestsellers: Ein Bauernhaus im Alten Land wird über Generationen zur Zuflucht – von der Flucht aus Ostpreußen bis zu den Ottensen-Müden von heute; berührend und humorvoll.",
+      "preis": "VVK 38 €, erm. 36 €; AK 40 €",
+      "draussen": "drinnen",
+      "link": "https://www.kleines-theater-bargteheide.de/veranstaltungen/altes-land-ohnsorg-theater/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bis Bargteheide (ca. 30 Min. ab Hbf), dann ca. 10 Min. Fußweg · Auto: ca. 25–30 Min."
+    },
+    {
+      "id": "bach-goldberg-variationen-henrike-brueggen-klavier-matinee",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "11:00",
+      "ende": "12:30",
+      "titel": "Bach: Goldberg-Variationen – Henrike Brüggen (Klavier-Matinee)",
+      "ort": "Kleines Theater Bargteheide",
+      "geo": [
+        53.72802,
+        10.25911
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Sonntagsmatinee von à la carte Kammermusik: Die Pianistin Henrike Brüggen spielt Bachs 30 Goldberg-Variationen – „jede Variation eine eigene Welt“.",
+      "draussen": "drinnen",
+      "link": "https://www.kleines-theater-bargteheide.de/veranstaltungen/a-la-carte-kammermusik-e-v-8/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bis Bargteheide (ca. 30 Min. ab Hbf), dann ca. 10 Min. Fußweg · Auto: ca. 25–30 Min.",
+      "unsicher": "Preis nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "das-literarische-cafe-neues-vom-buchmarkt-marstall",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "15:30",
+      "ende": "17:00",
+      "titel": "Das Literarische Café: „Neues vom Buchmarkt“",
+      "ort": "Marstall, Ahrensburg",
+      "geo": [
+        53.68113,
+        10.24234
+      ],
+      "region": "AHR",
+      "kategorie": "Lesung",
+      "beschreibung": "Fünf Leute aus dem Team stellen je drei empfehlenswerte Bücher vor – vier Minuten pro Buch, nach Stoppuhr. Gute Gelegenheit für Lesetipps zum Winter.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.marstall-ahrensburg.de/programm/view/das-literarische-cafe-17",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 15–20 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "vortrag-ernst-haeckels-kunstformen-der-natur-schlosskirche",
+      "daten": [
+        "2026-11-10"
+      ],
+      "zeit": "19:00",
+      "ende": "20:30",
+      "titel": "Vortrag: Ernst Haeckels „Kunstformen der Natur“",
+      "ort": "Schloßkirche Ahrensburg",
+      "geo": [
+        53.67721,
+        10.24001
+      ],
+      "region": "AHR",
+      "kategorie": "Lesung",
+      "beschreibung": "Lichtbildervortrag von Dr. Andreas Cante in der Reihe „Kunst und Natur“ des Kunstforums Schloßkirche – über Haeckels berühmte Bildtafeln zwischen Naturforschung und Jugendstil.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.kulturlotse.de/event/ernst-haeckels-kunstformen-der-natur-7470327558746865213",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 12 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Nur aus Veranstaltungskalendern (Kulturlotse, Metropolregion); Ende geschätzt"
+    },
+    {
+      "id": "wohnzimmerkonzert-lisa-richards-folk-blues-chansons",
+      "daten": [
+        "2026-11-12"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "Wohnzimmerkonzert: Lisa Richards – Folk, Blues & Chansons",
+      "ort": "Kultavida, Ahrensburg",
+      "geo": [
+        53.67392,
+        10.23873
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Lisa Richards mit Stimme und Gitarre: folkige Lieder mit Blues-Nuancen und Geschichten aus dem Alltag, ganz nah auf der kleinen Bühne.",
+      "preis": "ab 22,50 €",
+      "draussen": "drinnen",
+      "link": "https://ahrensburg-portal.de/ahrensburg-wohnzimmerkonzert-am-12-11-2026/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 7 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "brettspiele-fuer-erwachsene-eric-kandel-gymnasium-ahrensburg",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "17:00",
+      "ende": "22:00",
+      "titel": "Brettspiele für Erwachsene",
+      "ort": "Eric-Kandel-Gymnasium, Ahrensburg",
+      "geo": [
+        53.67995,
+        10.21873
+      ],
+      "region": "AHR",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Offener Spieleabend für Erwachsene mit Thomas Patzner und Dr. Marcus Rehbein (Ahrensburg spielt) – Eintritt frei, wer mag, bringt etwas fürs Buffet mit.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://ahrensburg-portal.de/ahrensburg-brettspiele/",
+      "anreise": "DT: Regionalzug (RB81/RE8/RE80) bis Ahrensburg, dann Bus oder ca. 20 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende nicht angegeben (geschätzt)"
+    },
+    {
+      "id": "wohnzimmerkonzert-klangraum-modern-jazz-kultavida-ahrensburg",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "Wohnzimmerkonzert: Klangraum – Modern Jazz",
+      "ort": "Kultavida, Ahrensburg",
+      "geo": [
+        53.67392,
+        10.23873
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Vierköpfige Band (Moritz Christiansen, David Herzog, Vimbs Mavimbs, Sebastian Gietz) mit Eigenkompositionen, die skandinavische, südafrikanische und Hamburger Einflüsse verbinden.",
+      "preis": "ab 18 €",
+      "draussen": "drinnen",
+      "link": "https://ahrensburg-portal.de/ahrensburg-wohnzimmerkonzert-am-13-11-2026/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 7 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "birdland-bigband-xmas-special-feat-cleo-kleines-theater",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "20:00",
+      "ende": "22:15",
+      "titel": "Birdland Bigband XMAS Special feat. CLEO",
+      "ort": "Kleines Theater Bargteheide",
+      "geo": [
+        53.72802,
+        10.25911
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Die 17-köpfige Hausbigband des Hamburger Jazzclubs Birdland bringt ihr jährliches Weihnachts-Special erstmals nach Bargteheide – und hat zum ersten Mal einen Gast dabei: die Sängerin CLEO.",
+      "preis": "VVK 29 €, erm. 27 €; AK 31 €",
+      "draussen": "drinnen",
+      "link": "https://www.kleines-theater-bargteheide.de/veranstaltungen/birdland-bigband-xmas-special/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bis Bargteheide (ca. 30 Min. ab Hbf), dann ca. 10 Min. Fußweg · Auto: ca. 25–30 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "gefuehrte-wanderung-durch-den-beimoorwald-wanderfreunde",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "10:30",
+      "ende": "13:30",
+      "titel": "Geführte Wanderung durch den Beimoorwald (Wanderfreunde Stormarn)",
+      "ort": "U-Bahnhof Großhansdorf (Treffpunkt)",
+      "geo": [
+        53.67459,
+        10.29343
+      ],
+      "region": "AHR",
+      "kategorie": "Führung",
+      "beschreibung": "Rund 9 km durch den herbstlichen Beimoorwald bei Großhansdorf mit den Wanderfreunden Stormarn; Rucksackverpflegung mitbringen.",
+      "preis": "3 € (Mitglieder frei)",
+      "draussen": "draußen",
+      "link": "https://ahrensburg-portal.de/grosshansdorf-wanderung-durch-den-beimoorwald-am-14-11-2026/",
+      "anreise": "DT: U1 (Richtung Großhansdorf) bis Endhaltestelle Großhansdorf · Auto: ca. 25 Min.",
+      "unsicher": "Anmeldung bis 13.11. telefonisch nötig (Nummer im Link); Ende geschätzt"
+    },
+    {
+      "id": "malte-viefs-kammer-winter-schlosskirche-ahrensburg",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "18:00",
+      "ende": "19:30",
+      "titel": "Malte Viefs Kammer: „Winter“",
+      "ort": "Schloßkirche Ahrensburg",
+      "geo": [
+        53.67721,
+        10.24001
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Gitarre, Cello und Geige: Malte Vief, Matthias Hübner und Thomas Fleck mischen Kontrapunkt und Barock-Harmonik mit Pop-Melodien und Rock-Energie – stimmungsvolle Instrumentalmusik in der Renaissance-Kirche.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.kirche-ahrensburg.de/termine/1476564-konzert-mit-malte-viefs-kammer",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 12 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Eintritt frei, um Spende wird gebeten; Ende geschätzt"
+    },
+    {
+      "id": "achtsam-morden-durch-bewusste-ernaehrung-krimikomoedie-mit",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "19:30",
+      "ende": "21:45",
+      "titel": "„Achtsam morden durch bewusste Ernährung“ – Krimikomödie mit Martin Lindow",
+      "ort": "Alfred-Rust-Saal, Ahrensburg",
+      "geo": [
+        53.6706,
+        10.21093
+      ],
+      "region": "AHR",
+      "kategorie": "Bühne",
+      "beschreibung": "Tournee-Theater (Eurostudio Landgraf) nach Karsten Dusses Bestseller: Anwalt Björn Diemel ist innerlich ausgeglichen, körperlich aber aus der Form – und das wird zum Problem, als jemand seine Tochter entführen will. Mit Martin Lindow, Stephan Bürgi und Lore Richter.",
+      "preis": "VVK 24,70–32,40 € (inkl. Gebühren), AK 25–33 €",
+      "draussen": "drinnen",
+      "link": "https://theater-und-musik-in-ahrensburg.de/programm/view/270",
+      "anreise": "DT: U1 (Richtung Großhansdorf) bis Ahrensburg West, ca. 10–15 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "karl-jenkins-the-armed-man-a-mass-for-peace-schlosskirche",
+      "daten": [
+        "2026-11-15"
+      ],
+      "zeit": "18:00",
+      "ende": "19:15",
+      "titel": "Karl Jenkins: „The Armed Man – A Mass for Peace“",
+      "ort": "Schloßkirche Ahrensburg",
+      "geo": [
+        53.67721,
+        10.24001
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Am Volkstrauertag: Jenkins’ packende Friedensmesse für Chor und Orchester – mit Kantorei der Schloßkirche, Ahrensburger Kammerorchester, Anna Maria Torkel (Alt) und Cem Çetinkaya (Cello), Leitung Anna Somogyi.",
+      "preis": "20 €, erm. 15 €; Schüler/Studierende 18 € bzw. 13 €",
+      "draussen": "drinnen",
+      "link": "https://www.kirche-ahrensburg.de/termine/1476500-karl-jenkins-the-armed-man-a-mass-for-peace",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 12 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "falco-spitz-nimbus-glaub-doch-was-ich-will-mentalmagie",
+      "daten": [
+        "2026-11-19"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "Falco Spitz: „Nimbus – Glaub doch was ich will!“ – Mentalmagie-Kabarett",
+      "ort": "Kultavida, Ahrensburg",
+      "geo": [
+        53.67392,
+        10.23873
+      ],
+      "region": "AHR",
+      "kategorie": "Comedy",
+      "beschreibung": "Mentalmagisches Kabarett, das Mythen, Aberglauben und Verschwörungstheorien mit Humor und Zauberkunst auseinandernimmt.",
+      "preis": "ab 22 €",
+      "draussen": "drinnen",
+      "link": "https://ahrensburg-portal.de/ahrensburg-kabarett-am-19-11-2026/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 7 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "baff-immer-noch-kinder-a-cappella-pop-marstall-ahrensburg",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "baff!: „Immer noch Kinder“ – A-cappella-Pop",
+      "ort": "Marstall, Ahrensburg",
+      "geo": [
+        53.68113,
+        10.24234
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Das Vokalquartett baff! singt Pop ganz ohne Instrumente – das neue Programm dreht sich ums Erwachsenwerden, hoffnungsvoll und melancholisch, mit Mitmach-Momenten fürs Publikum.",
+      "preis": "VVK 20 €, AK 22 €",
+      "draussen": "drinnen",
+      "link": "https://www.marstall-ahrensburg.de/programm/view/baff-immer-noch-kinder",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 15–20 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "theater-hoisdorf-komoedie-theater-theater-waldreitersaal",
+      "daten": [
+        "2026-11-20",
+        "2026-11-21"
+      ],
+      "zeit": "20:00",
+      "ende": "22:15",
+      "titel": "Theater Hoisdorf: Komödie „Theater, Theater!“",
+      "ort": "Waldreitersaal, Großhansdorf",
+      "geo": [
+        53.65324,
+        10.28197
+      ],
+      "region": "AHR",
+      "kategorie": "Bühne",
+      "beschreibung": "Die Theatergruppe des TuS Hoisdorf startet mit ihrer neuen Komödie im Waldreitersaal in die Saison – weitere Vorstellungen folgen im Januar und März.",
+      "preis": "15 € zzgl. VVK-Gebühr",
+      "draussen": "drinnen",
+      "link": "https://ahrensburg-portal.de/grosshansdorf-komoedie-20-11-2026-bis-13-03-2027/",
+      "anreise": "DT: U1 (Richtung Großhansdorf) bis Kiekut, 2 Min. Fußweg · Auto: ca. 25 Min.",
+      "unsicher": "Inhalt nicht beschrieben; nur aus dem Ahrensburg-Portal (Text des Theaters); Ende geschätzt"
+    },
+    {
+      "id": "musica-pro-defunctis-musik-zum-ewigkeitssonntag-st-johannes",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "18:00",
+      "ende": "19:15",
+      "titel": "musica pro defunctis – Musik zum Ewigkeitssonntag",
+      "ort": "St. Johannes, Ahrensburg",
+      "geo": [
+        53.67501,
+        10.2217
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Klagende und tröstliche Alte Musik u. a. von Schütz und Telemann – mit Lea Völzer (Sopran), Tuuli Korte (Violine, Sopran) und Leon Kopecny (Orgel) von der Musikhochschule Bremen.",
+      "preis": "12 €, erm. günstiger, Kinder/Jugendliche frei (Abendkasse)",
+      "draussen": "drinnen",
+      "link": "https://www.kirche-ahrensburg.de/termine/1472377-musica-pro-defunctis",
+      "anreise": "DT: U1 (Richtung Großhansdorf) bis Ahrensburg West oder Regionalzug (RB81/RE8) bis Ahrensburg, jeweils ca. 15 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "jaimi-faulkner-americana-songwriter-soul-marstall-ahrensburg",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "20:00",
+      "ende": "22:15",
+      "titel": "Jaimi Faulkner – Americana & Songwriter-Soul",
+      "ort": "Marstall, Ahrensburg",
+      "geo": [
+        53.68113,
+        10.24234
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Der australische Sänger und Gitarrist mischt Americana, Rock und Songwriter-Soul – bekannt für seine „Saitenakrobatik“; im Gepäck das Album „Half of It“ (2025).",
+      "preis": "VVK 20 €, AK 22 €",
+      "draussen": "drinnen",
+      "link": "https://www.marstall-ahrensburg.de/programm/view/jaimi-faulkner",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 15–20 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt; nur begrenzte Zahl Sitzplätze"
+    },
+    {
+      "id": "einav-yarden-klavierabend-scarlatti-bonis-chopin-schubert",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "20:00",
+      "ende": "21:45",
+      "titel": "Einav Yarden – Klavierabend (Scarlatti, Bonis, Chopin, Schubert)",
+      "ort": "Eduard-Söring-Saal, Ahrensburg",
+      "geo": [
+        53.66864,
+        10.2405
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Abo-Konzert von Theater und Musik in Ahrensburg: Die Berliner Pianistin (Schülerin von Leon Fleisher) spielt Scarlatti-Sonaten, Mel Bonis, Chopins 3. Ballade und Barcarolle sowie Schuberts große A-Dur-Sonate D 959.",
+      "preis": "VVK 23,60–34,60 € (inkl. Gebühren), AK 24–35 €",
+      "draussen": "drinnen",
+      "link": "https://theater-und-musik-in-ahrensburg.de/programm/view/264",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 5 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt (mit Pause) – dürfte nach 21:30 liegen"
+    },
+    {
+      "id": "vortrag-wachstum-regt-sich-naturprozesse-in-der-kunst-von",
+      "daten": [
+        "2026-11-24"
+      ],
+      "zeit": "19:00",
+      "ende": "20:30",
+      "titel": "Vortrag „Wachstum regt sich“: Naturprozesse in der Kunst von Klee bis Kirkeby",
+      "ort": "Schloßkirche Ahrensburg",
+      "geo": [
+        53.67721,
+        10.24001
+      ],
+      "region": "AHR",
+      "kategorie": "Lesung",
+      "beschreibung": "Lichtbildervortrag von Dr. Ulrike Müller-Heckmann in der Reihe „Kunst und Natur“ des Kunstforums Schloßkirche – wie Künstler von Paul Klee bis Per Kirkeby Wachstum und Naturprozesse ins Bild setzen.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/wachstum-regt-sich/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 12 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Eintritt nicht angegeben (andere Vorträge der Reihe kostenlos); nur aus dem Veranstaltungskalender der Metropolregion; Ende geschätzt"
+    },
+    {
+      "id": "late-night-shopping-mit-laternenumzug-in-der-innenstadt",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "09:00–21:00",
+      "ende": "21:00",
+      "titel": "Late Night Shopping mit Laternenumzug in der Innenstadt",
+      "ort": "Innenstadt Ahrensburg (Rondeel)",
+      "geo": [
+        53.6731,
+        10.23917
+      ],
+      "region": "AHR",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Die weihnachtlich beleuchtete Innenstadt hat bis 21 Uhr geöffnet – mit dem beliebten Laternenumzug, Aktionen für Groß und Klein sowie Rabatten in den Geschäften (Ahrensburger Stadtforum).",
+      "kostenlos": true,
+      "draussen": "beides",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/late-night-shopping-5/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 7 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Uhrzeit und Route des Laternenumzugs 2026 nicht gefunden (2024: 17:30 Uhr ab Rathausplatz bis Rondeel, mit Walking Acts und Fackelshows)"
+    },
+    {
+      "id": "wohnzimmerkonzert-frink-zum-mond-kultavida-ahrensburg",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "Wohnzimmerkonzert: FRINK – „Zum Mond“",
+      "ort": "Kultavida, Ahrensburg",
+      "geo": [
+        53.67392,
+        10.23873
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Zwei Gitarren, zwei Stimmen: deutschsprachige Songs zwischen Singer-Songwriter, Folk-Rock und Liedermacher.",
+      "preis": "ab 17 €",
+      "draussen": "drinnen",
+      "link": "https://ahrensburg-portal.de/ahrensburg-wohnzimmerkonzert-am-27-11-2026/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 7 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "remise-live-lennon-von-seht-marstall-ahrensburg",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Remise Live: Lennon von Seht",
+      "ort": "Marstall, Ahrensburg",
+      "geo": [
+        53.68113,
+        10.24234
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Liedermacher aus Neumünster („das bodenständige Nordlicht“) in der kleinen Remise des Marstalls: Lieder über Momentaufnahmen des Lebens, mal zum Schmunzeln, mal zum Nachdenken.",
+      "preis": "VVK 13 €, AK 15 €",
+      "draussen": "drinnen",
+      "link": "https://www.marstall-ahrensburg.de/programm/view/remise-live-mit-lennon-von-seht",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 15–20 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "gefuehrte-wanderung-zum-ammersbeker-weihnachtsmarkt",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "10:30",
+      "ende": "14:30",
+      "titel": "Geführte Wanderung zum Ammersbeker Weihnachtsmarkt (Wanderfreunde Stormarn)",
+      "ort": "Bahnhof Ahrensburg (Treffpunkt)",
+      "geo": [
+        53.66907,
+        10.23611
+      ],
+      "region": "AHR",
+      "kategorie": "Führung",
+      "beschreibung": "Rund 15 km vom Bahnhof Ahrensburg bis zum Weihnachtsmarkt am Pferdestall in Ammersbek; Rucksackverpflegung mitbringen.",
+      "preis": "3 € (Mitglieder frei)",
+      "draussen": "draußen",
+      "link": "https://ahrensburg-portal.de/ahrensburg-wanderung-nach-ammersbek-am-28-11-2026/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg – Treffpunkt am Bahnhof; zurück ab Ammersbek mit der U1 ab Hoisbüttel",
+      "unsicher": "Anmeldung bis 27.11. telefonisch nötig (Nummer im Link); Route und Ende nicht angegeben (geschätzt)"
+    },
+    {
+      "id": "ammersbeker-weihnachtsmarkt-am-pferdestall-pferdestall",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "14:30–19:00",
+      "ende": "19:00",
+      "ganztags": true,
+      "titel": "Ammersbeker Weihnachtsmarkt am Pferdestall",
+      "ort": "Pferdestall, Ammersbek",
+      "geo": [
+        53.6916,
+        10.16592
+      ],
+      "region": "AHR",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Kleiner Dorf-Weihnachtsmarkt des Ammersbeker Bürgervereins am Dorfgemeinschaftshaus auf dem Gutshof Hoisbüttel – Eintritt frei.",
+      "kostenlos": true,
+      "draussen": "beides",
+      "link": "https://ahrensburg-portal.de/ammersbek-weihnachtsmarkt-am-28-11-2026/",
+      "anreise": "DT: U1 (Richtung Ohlstedt) bis Hoisbüttel, ca. 10 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Programm nicht angegeben"
+    },
+    {
+      "id": "wohnzimmerkonzert-susa-berivan-pop-new-folk-chanson-jazz",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "Wohnzimmerkonzert: Susa Berivan – Pop, New Folk, Chanson & Jazz",
+      "ort": "Kultavida, Ahrensburg",
+      "geo": [
+        53.67392,
+        10.23873
+      ],
+      "region": "AHR",
+      "kategorie": "Konzert",
+      "beschreibung": "Balladen und Uptempo-Songs zwischen Psychedelic Pop, New Folk, Chanson und Jazz im Wohnzimmer-Format.",
+      "preis": "ab 20 €",
+      "draussen": "drinnen",
+      "link": "https://ahrensburg-portal.de/ahrensburg-wohnzimmerkonzert-am-28-11-2026/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 7 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "kuenstlerinnengespraech-zu-generate-decouple-galerie-im",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "15:00",
+      "ende": "16:00",
+      "titel": "Künstlerinnengespräch zu „Generate & Decouple“ (Galerie im Advent)",
+      "ort": "Galerie im Marstall, Ahrensburg",
+      "geo": [
+        53.68113,
+        10.24234
+      ],
+      "region": "AHR",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Gespräch mit Susanne Gabler, Anne Nitzpan und Saskia Senge über ihre Arbeiten zu Individualität und Intelligenz im Zeitalter der Algorithmen – im Rahmen der „Galerie im Advent“.",
+      "draussen": "drinnen",
+      "link": "https://www.galerie-im-marstall.de/ausstellungen/aktuell/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 15–20 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Eintritt und Dauer nicht angegeben; weiteres Programm der „Galerie im Advent“ nicht gefunden"
+    },
+    {
+      "id": "krimi-lesung-weihnachten-fliedersuppe-und-mord-moerderische",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "18:00",
+      "ende": "19:30",
+      "titel": "Krimi-Lesung „Weihnachten, Fliedersuppe und Mord“ – Mörderische Schwestern",
+      "ort": "Kultavida, Ahrensburg",
+      "geo": [
+        53.67392,
+        10.23873
+      ],
+      "region": "AHR",
+      "kategorie": "Lesung",
+      "beschreibung": "Alex Roller und Elisabeth Grimm (Mörderische Schwestern e. V.) lesen im Duett weihnachtliche Krimis – jede Autorin liest eine festgelegte Zeit, dann bricht die Lesung ab.",
+      "preis": "ab 15 €",
+      "draussen": "drinnen",
+      "link": "https://ahrensburg-portal.de/ahrensburg-krimilesung-am-29-11-2026/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 7 Min. Fußweg · Auto: ca. 20 Min.",
+      "unsicher": "Ende geschätzt"
     }
   ],
   "laufend": [
@@ -14439,6 +15756,135 @@
       "kostenlos": true,
       "draussen": "draußen",
       "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/wochenmarkt-am-quarree-wandsbek/"
+    },
+    {
+      "id": "schloss-ahrensburg-schlossmuseum-winteroeffnung-schloss",
+      "von": "2026-10-31",
+      "bis": "2026-11-29",
+      "zeit": "ab 1.11. Mi, Sa, So 11–17 Uhr (Sa 31.10. Feiertag 11–17 Uhr)",
+      "titel": "Schloss Ahrensburg – Schlossmuseum (Winteröffnung)",
+      "ort": "Schloss Ahrensburg",
+      "geo": [
+        53.68018,
+        10.24037
+      ],
+      "region": "AHR",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Das weiße Renaissance-Schloss von 1595 mit eingerichteten Wohnräumen des Adels aus mehreren Jahrhunderten; kostenloser Audioguide. Der Schlosspark ist im Winter zu denselben Zeiten offen.",
+      "preis": "9 €, erm. 6 €",
+      "draussen": "drinnen",
+      "link": "https://www.schloss-ahrensburg.de/de/infos",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 15–20 Min. Fußweg · Auto: ca. 20 Min."
+    },
+    {
+      "id": "galerie-im-marstall-generate-decouple-susanne-gabler-anne",
+      "von": "2026-10-04",
+      "bis": "2026-12-06",
+      "zeit": "Mi, Sa, So 11–17 Uhr",
+      "titel": "Galerie im Marstall: „Generate & Decouple“ – Susanne Gabler, Anne Nitzpan, Saskia Senge",
+      "ort": "Galerie im Marstall, Ahrensburg",
+      "geo": [
+        53.68113,
+        10.24234
+      ],
+      "region": "AHR",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Drei Künstlerinnen fragen nach Autonomie, Identität und künstlerischem Handeln in Zeiten algorithmischer Prozesse – Jahresthema „Individualität + Intelligenz“ der Stiftungen der Sparkasse Holstein.",
+      "draussen": "drinnen",
+      "link": "https://www.galerie-im-marstall.de/ausstellungen/aktuell/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 15–20 Min. Fußweg · Auto: ca. 20 Min."
+    },
+    {
+      "id": "ausstellung-ohne-karte-beate-riedl-andreas-peters-dana",
+      "von": "2026-11-07",
+      "bis": "2026-12-23",
+      "zeit": "Mo + Do 10–18, Mi + Fr 10–16, Sa 10–13 Uhr (Di geschlossen)",
+      "titel": "Ausstellung „Ohne Karte“ – Beate Riedl, Andreas Peters, Dana Zimmermann",
+      "ort": "Stadtbücherei Ahrensburg",
+      "geo": [
+        53.6739,
+        10.23618
+      ],
+      "region": "AHR",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Drei Ahrensburger Künstler über den Umgang mit dem Ungeplanten: Skizzenbuch-Motive auf großen Leinwänden, unbearbeitete Mikrofotografien organischer Strukturen, die wie Landschaften und Weltraumbilder wirken, und frei wachsende Malerei.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/ohne-karte/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 7 Min. Fußweg · Auto: ca. 20 Min."
+    },
+    {
+      "id": "fotoausstellung-ahrensburger-tunneltal-michael-kukulenz",
+      "von": "2026-11-02",
+      "bis": "2026-12-31",
+      "zeit": "Mo–Fr 10–17 Uhr",
+      "titel": "Fotoausstellung „Ahrensburger Tunneltal“ – Michael Kukulenz",
+      "ort": "Haus der VHS, Ahrensburg",
+      "geo": [
+        53.66901,
+        10.2336
+      ],
+      "region": "AHR",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Fotos von Landschaft, Pflanzen und Tieren des Ahrensburger Tunneltals (Stellmoor) – der Verein Stellmoor-Ahrensburger Tunneltal will für Natur, Geologie und Archäologie des Tals begeistern.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/ahrensburger-tunneltal-1/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 2 Min. Fußweg · Auto: ca. 20 Min."
+    },
+    {
+      "id": "kunstausstellung-perspektiven-regina-brock-in-der",
+      "von": "2026-10-31",
+      "bis": "2026-12-01",
+      "zeit": "Mo–Sa ab 12 Uhr (Öffnungszeiten der Weinlounge, So zu)",
+      "titel": "Kunstausstellung „Perspektiven“ – Regina Brock in der Weinlounge",
+      "ort": "Weinlounge Ahrensburg",
+      "geo": [
+        53.67224,
+        10.23994
+      ],
+      "region": "AHR",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Zur Neueröffnung der Weinlounge (ehemals Wein Ahrens) zeigt die Glinder Malerin Regina Brock großformatige abstrakte Bilder der letzten zehn Jahre, teils mit Bitumen, Verdünner und Paraffin gearbeitet – Kunst zu Wein und Essen.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/kunstausstellung-perspektiven/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 6 Min. Fußweg · Auto: ca. 20 Min."
+    },
+    {
+      "id": "wochenmarkt-ahrensburg-rathausplatz-rathausplatz-ahrensburg",
+      "von": "2026-11-04",
+      "bis": "2026-11-28",
+      "zeit": "Mi + Sa 7:30–13 Uhr",
+      "titel": "Wochenmarkt Ahrensburg (Rathausplatz)",
+      "ort": "Rathausplatz, Ahrensburg",
+      "geo": [
+        53.67358,
+        10.23642
+      ],
+      "region": "AHR",
+      "kategorie": "Markt",
+      "beschreibung": "Rund 40 Stände mitten in der Innenstadt: Obst und Gemüse, Fisch und Fleisch, Käse, Backwaren, Tee, Gewürze und Pflanzen, dazu Bio- und Regionalprodukte.",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.ahrensburg.de/B%C3%BCrger-Stadt/Wochenmarkt/",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 6 Min. Fußweg · Auto: ca. 20 Min."
+    },
+    {
+      "id": "adventsmarkt-auf-dem-rondeel-rondeel-ahrensburg",
+      "von": "2026-11-25",
+      "bis": "2026-12-30",
+      "zeit": "täglich ca. 12–20 Uhr, Advents-Samstage ab 10 Uhr (Zeiten Stand 2025)",
+      "titel": "Adventsmarkt auf dem Rondeel",
+      "ort": "Rondeel, Ahrensburg",
+      "geo": [
+        53.6731,
+        10.23917
+      ],
+      "region": "AHR",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Kleiner, traditionsreicher Weihnachtsmarkt (seit 1998) mitten in der Innenstadt: geschmückte Holzhütten mit Glühwein und warmem Essen, dazu ein historisches Kinderkarussell; getragen vom Bürgerverein und Ehrenamtlichen.",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://freizeitmonster.de/aktivitaeten/veranstaltungen/adventsmarkt-auf-dem-rondeel-2026-323481",
+      "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 6 Min. Fußweg · Auto: ca. 20 Min."
     }
   ],
   "immer": [

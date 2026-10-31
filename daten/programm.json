@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "stand": "2026-10-31T12:30",
+  "stand": "2026-10-31T13:17",
   "von": "2026-10-26",
   "bis": "2026-11-29",
   "infos": [
@@ -14134,6 +14134,962 @@
       "preis": "im Sky- bzw. WOW-Abo",
       "draussen": "drinnen",
       "link": "https://www.formula1.com/en/racing/2026/mexico"
+    },
+    {
+      "id": "bundesliga-fc-bayern-borussia-dortmund-der-klassiker-sky-wow",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "18:30",
+      "dauer": 115,
+      "online": true,
+      "titel": "Bundesliga: FC Bayern – Borussia Dortmund (Der Klassiker)",
+      "ort": "Sky / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Der Klassiker am 8. Spieltag ist zugleich das Spitzenspiel: Tabellenführer Bayern und der BVB gehen beide mit 17 Punkten in den Spieltag. Das Samstagabend-Topspiel läuft exklusiv bei Sky, nicht im Free-TV.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/8/fc-bayern-muenchen-vs-borussia-dortmund/news"
+    },
+    {
+      "id": "bundesliga-eintracht-frankfurt-hamburger-sv-dazn",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "17:30",
+      "dauer": 115,
+      "online": true,
+      "titel": "Bundesliga: Eintracht Frankfurt – Hamburger SV",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "8. Spieltag, Wiedersehen nach fünf Tagen: Am Dienstag warf die Eintracht den HSV mit 3:1 im Volksparkstadion aus dem DFB-Pokal. In der Liga liegen beide dicht beieinander (HSV 11. mit 9, Frankfurt 14. mit 8 Punkten).",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/8/eintracht-frankfurt-vs-hamburger-sv/news"
+    },
+    {
+      "id": "premier-league-fc-liverpool-fc-arsenal-sky-wow",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "17:30",
+      "dauer": 115,
+      "online": true,
+      "titel": "Premier League: FC Liverpool – FC Arsenal",
+      "ort": "Sky / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Spitzenspiel am 9. Spieltag: Arsenal (vor dem Spieltag 2., 21 Punkte, punktgleich mit Man City) an der Anfield Road beim Vierten Liverpool (15 Punkte). Sky zeigt es auf Sky Sport Premier League und Top Event – zeitgleich mit Frankfurt – HSV.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.sportschau.de/live-und-ergebnisse/fussball/england-premier-league/ma12153406/liverpool-fc_arsenal-fc/blitztabelle"
+    },
+    {
+      "id": "bundesliga-vfb-stuttgart-sv-werder-bremen-sky-wow",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "18:30",
+      "dauer": 115,
+      "online": true,
+      "titel": "Bundesliga: VfB Stuttgart – SV Werder Bremen",
+      "ort": "Sky / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Topspiel am Samstagabend des 9. Spieltags: Werder (6., 12 Punkte) beim VfB, der mit 6 Punkten bisher im Tabellenkeller steckt (Stand vor dem 8. Spieltag).",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/9/vfb-stuttgart-vs-sv-werder-bremen/news"
+    },
+    {
+      "id": "2-bundesliga-1-fc-magdeburg-fc-st-pauli-sky-wow",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "13:30",
+      "dauer": 115,
+      "online": true,
+      "titel": "2. Bundesliga: 1. FC Magdeburg – FC St. Pauli",
+      "ort": "Sky / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "11. Spieltag: St. Pauli (8., 12 Punkte) beim Tabellenfünften Magdeburg (16 Punkte, Stand 30.10.). Sky zeigt alle Spiele der 2. Bundesliga live.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/11/1-fc-magdeburg-vs-fc-st-pauli/news"
+    },
+    {
+      "id": "bundesliga-1-fc-koeln-bayer-04-leverkusen-rheinderby-dazn",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "15:30",
+      "dauer": 115,
+      "online": true,
+      "titel": "Bundesliga: 1. FC Köln – Bayer 04 Leverkusen (Rheinderby)",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Rheinderby am Sonntagnachmittag des 9. Spieltags: Köln (12., 8 Punkte) gegen Leverkusen (4., 13 Punkte, Stand vor dem 8. Spieltag).",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/9/1-fc-koeln-vs-bayer-04-leverkusen/news"
+    },
+    {
+      "id": "serie-a-inter-mailand-como-dazn",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "18:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Serie A: Inter Mailand – Como",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "11. Spieltag: Tabellenführer Inter (25 Punkte, punktgleich mit Lazio) empfängt Como, den Vierten mit 20 Punkten (Stand nach dem 9. Spieltag).",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.sportschau.de/live-und-ergebnisse/fussball/italien-serie-a/ma12131128/inter-mailand_como-1907/info"
+    },
+    {
+      "id": "laliga-atletico-madrid-fc-barcelona-dazn",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "21:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "LaLiga: Atlético Madrid – FC Barcelona",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Gipfeltreffen am 12. Spieltag: Spitzenreiter Barça (27 Punkte) beim Zweiten Atlético (25 Punkte) im Metropolitano, Real Madrid lauert mit 24 Punkten.",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.sportschau.de/live-und-ergebnisse/fussball/spanien-primera-division/ma12188122/atletico-madrid_fc-barcelona/blitztabelle"
+    },
+    {
+      "id": "bundesliga-fc-schalke-04-vfb-stuttgart-sky-wow",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "18:30",
+      "dauer": 115,
+      "online": true,
+      "titel": "Bundesliga: FC Schalke 04 – VfB Stuttgart",
+      "ort": "Sky / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Topspiel am Samstagabend des 10. Spieltags, des ersten nach der Länderspielpause: Traditionsduell zweier Teams, die bisher hinter den Erwartungen liegen (vor dem 8. Spieltag beide mit 6 Punkten).",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/10/fc-schalke-04-vs-vfb-stuttgart/news"
+    },
+    {
+      "id": "bundesliga-sv-werder-bremen-hamburger-sv-nordderby-dazn",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "17:30",
+      "dauer": 115,
+      "online": true,
+      "titel": "Bundesliga: SV Werder Bremen – Hamburger SV (Nordderby)",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Nordderby am 10. Spieltag im Weserstadion: Werder (6., 12 Punkte) gegen den HSV (11., 9 Punkte, Stand vor dem 8. Spieltag).",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/10/sv-werder-bremen-vs-hamburger-sv/news"
+    },
+    {
+      "id": "premier-league-fc-liverpool-manchester-united-sky-wow",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "17:30",
+      "dauer": 115,
+      "online": true,
+      "titel": "Premier League: FC Liverpool – Manchester United",
+      "ort": "Sky / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Nordwest-Derby am 11. Spieltag, dem ersten nach der Länderspielpause; United steckte zuletzt auf Platz 16 fest (Stand 30.10.). Zeitgleich läuft das Nordderby Werder – HSV.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.sportschau.de/live-und-ergebnisse/fussball/england-premier-league/ma12153466/liverpool-fc_manchester-united/blitztabelle",
+      "unsicher": "Sky-Sendeplan für den 11. Spieltag noch nicht veröffentlicht (Sky zeigt 2026/27 über 280 der 380 Spiele live)"
+    },
+    {
+      "id": "serie-a-atalanta-bergamo-inter-mailand-dazn",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "20:45",
+      "dauer": 115,
+      "online": true,
+      "titel": "Serie A: Atalanta Bergamo – Inter Mailand",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "12. Spieltag: Spitzenreiter Inter muss nach Bergamo, wo Atalanta in dieser Saison bisher hinterherläuft (12., Stand nach dem 9. Spieltag).",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.sportschau.de/live-und-ergebnisse/fussball/italien-serie-a/ma12131143/atalanta_inter-mailand/blitztabelle"
+    },
+    {
+      "id": "2-bundesliga-dynamo-dresden-fc-st-pauli-sky-wow",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "13:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "2. Bundesliga: Dynamo Dresden – FC St. Pauli",
+      "ort": "Sky / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "13. Spieltag: St. Pauli zu Gast bei Dynamo Dresden (15., 8 Punkte, Stand 30.10.). Live bei Sky als Einzelspiel und in der Samstagskonferenz um 13 Uhr.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/13/sg-dynamo-dresden-vs-fc-st-pauli/news"
+    },
+    {
+      "id": "bundesliga-vfb-stuttgart-eintracht-frankfurt-sky-wow",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "18:30",
+      "dauer": 115,
+      "online": true,
+      "titel": "Bundesliga: VfB Stuttgart – Eintracht Frankfurt",
+      "ort": "Sky / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Topspiel am Samstagabend des 11. Spieltags, ein paar Stunden nach HSV – Bayern: Der VfB empfängt die Eintracht, beide hängen bisher im unteren Tabellendrittel (vor dem 8. Spieltag 15. bzw. 14.).",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/11/vfb-stuttgart-vs-eintracht-frankfurt/news"
+    },
+    {
+      "id": "premier-league-fc-everton-fc-liverpool-merseyside-derby-sky",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "13:00",
+      "dauer": 115,
+      "online": true,
+      "titel": "Premier League: FC Everton – FC Liverpool (Merseyside-Derby)",
+      "ort": "Sky / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Merseyside-Derby am 12. Spieltag: Everton (11., 10 Punkte) gegen Liverpool (4., 15 Punkte, Stand 30.10.).",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.sportschau.de/live-und-ergebnisse/fussball/england-premier-league/ma12153487/everton-fc_liverpool-fc/blitztabelle",
+      "unsicher": "Sky-Sendeplan für den 12. Spieltag noch nicht veröffentlicht (Sky zeigt 2026/27 über 280 der 380 Spiele live)"
+    },
+    {
+      "id": "premier-league-fc-arsenal-manchester-city-sky-wow",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "17:30",
+      "dauer": 115,
+      "online": true,
+      "titel": "Premier League: FC Arsenal – Manchester City",
+      "ort": "Sky / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Gipfeltreffen am 12. Spieltag: Vor dem 9. Spieltag lagen Man City und Arsenal mit je 21 Punkten gemeinsam an der Spitze.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.sportschau.de/live-und-ergebnisse/fussball/england-premier-league/ma12153478/arsenal-fc_manchester-city/blitztabelle",
+      "unsicher": "Sky-Sendeplan für den 12. Spieltag noch nicht veröffentlicht (Sky zeigt 2026/27 über 280 der 380 Spiele live)"
+    },
+    {
+      "id": "bundesliga-borussia-dortmund-bayer-04-leverkusen-dazn",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "19:30",
+      "dauer": 115,
+      "online": true,
+      "titel": "Bundesliga: Borussia Dortmund – Bayer 04 Leverkusen",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Spitzenspiel zum Abschluss des 11. Spieltags am Sonntagabend: der BVB (2., 17 Punkte) gegen Leverkusen (4., 13 Punkte, Stand vor dem 8. Spieltag).",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/11/borussia-dortmund-vs-bayer-04-leverkusen/news"
+    },
+    {
+      "id": "formel-1-grosser-preis-von-sao-paulo-sky-sport-f1-wow",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "18:00",
+      "dauer": 120,
+      "online": true,
+      "titel": "Formel 1: Großer Preis von São Paulo",
+      "ort": "Sky Sport F1 / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Viertletzter WM-Lauf in Interlagos (14 Uhr Ortszeit). Antonelli (Mercedes) fehlten nach Austin nur noch 2 Punkte zum Titel – ist er nach Mexiko noch nicht Weltmeister, kann er es hier werden.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.formula1.com/en/racing/2026/brazil"
+    },
+    {
+      "id": "formel-1-grosser-preis-von-las-vegas-rtl-sky-sport-f1-wow",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "05:00",
+      "dauer": 120,
+      "online": true,
+      "titel": "Formel 1: Großer Preis von Las Vegas",
+      "ort": "RTL / Sky Sport F1 / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Nachtrennen auf dem Strip – Start Samstag 20 Uhr Ortszeit, bei uns Sonntag früh um 5. Eines der wenigen Rennen, die RTL 2026 live im Free-TV zeigt.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.formula1.com/en/racing/2026/las-vegas"
+    },
+    {
+      "id": "formel-1-grosser-preis-von-katar-sky-sport-f1-wow",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "17:00",
+      "dauer": 120,
+      "online": true,
+      "titel": "Formel 1: Großer Preis von Katar",
+      "ort": "Sky Sport F1 / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Vorletzter WM-Lauf, unter Flutlicht in Lusail (19 Uhr Ortszeit). Live nur bei Sky bzw. WOW, nicht bei RTL.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.formula1.com/en/racing/2026/qatar"
+    },
+    {
+      "id": "motogp-grosser-preis-von-malaysia-sky-sport-wow",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "08:00",
+      "dauer": 60,
+      "online": true,
+      "titel": "MotoGP: Großer Preis von Malaysia",
+      "ort": "Sky Sport / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Viertletzter WM-Lauf in Sepang (15 Uhr Ortszeit). Marc Márquez reiste mit 10 Punkten Vorsprung auf Jorge Martín an, der sich in Australien den rechten Unterarm gebrochen hat – das Rennen in Phillip Island fiel dann aus.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.crash.net/motogp/news/1108536/1/2026-malaysian-motogp-sepang-start-times-and-how-watch"
+    },
+    {
+      "id": "motogp-grosser-preis-von-katar-sky-sport-wow",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "17:00",
+      "dauer": 60,
+      "online": true,
+      "titel": "MotoGP: Großer Preis von Katar",
+      "ort": "Sky Sport / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Nachtrennen in Lusail, wegen der Lage im Nahen Osten von April in den November verlegt – drittletzter WM-Lauf im Titelkampf Márquez gegen Martín.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://tickets.motogp.com/de/21111-qatar/",
+      "unsicher": "Austragung nicht endgültig gesichert (Dorna/IRTA halten am Termin fest, viele Fahrer sind dagegen); offizieller Zeitplan noch nicht veröffentlicht, Startzeit geschätzt"
+    },
+    {
+      "id": "motogp-grosser-preis-von-portugal-sky-sport-wow-evtl-df1",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "14:00",
+      "dauer": 60,
+      "online": true,
+      "titel": "MotoGP: Großer Preis von Portugal",
+      "ort": "Sky Sport / WOW, evtl. DF1",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Vorletzter WM-Lauf auf der Berg-und-Tal-Strecke von Portimão, wegen der Katar-Verlegung eine Woche später als geplant.",
+      "preis": "im Sky- bzw. WOW-Abo (bei DF1 kostenlos, falls übertragen)",
+      "draussen": "drinnen",
+      "link": "https://tickets.motogp.com/de/53277-portugal/",
+      "unsicher": "Zeitplan noch nicht offiziell (2025 Start 13 Uhr Ortszeit = 14 Uhr MEZ, eine Vorschau nennt 15 Uhr MEZ); DF1 hatte Portugal im Januar fürs Free-TV angekündigt, damals für den 15.11. – für den neuen Termin nicht bestätigt"
+    },
+    {
+      "id": "motogp-grosser-preis-von-valencia-sprint-sky-sport-wow-evtl",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "15:00",
+      "dauer": 30,
+      "online": true,
+      "titel": "MotoGP: Großer Preis von Valencia, Sprint",
+      "ort": "Sky Sport / WOW, evtl. DF1",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Sprint über die halbe Distanz am Samstag des Saisonfinales – die vorletzten WM-Punkte des Jahres.",
+      "preis": "im Sky- bzw. WOW-Abo (bei DF1 kostenlos, falls übertragen)",
+      "draussen": "drinnen",
+      "link": "https://www.motorsport-magazin.com/motogp/ergebnisse/2026/valencia-gp-9871.html",
+      "unsicher": "DF1 hatte das Finale im Januar fürs Free-TV angekündigt, damals für den 21./22.11. – für den neuen Termin nicht bestätigt"
+    },
+    {
+      "id": "motogp-grosser-preis-von-valencia-saisonfinale-sky-sport",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "14:00",
+      "dauer": 60,
+      "online": true,
+      "titel": "MotoGP: Großer Preis von Valencia (Saisonfinale)",
+      "ort": "Sky Sport / WOW, evtl. DF1",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Letztes Rennen der Saison auf dem Circuit Ricardo Tormo. Vor Sepang führte Márquez mit 365 Punkten knapp vor Martín (355).",
+      "preis": "im Sky- bzw. WOW-Abo (bei DF1 kostenlos, falls übertragen)",
+      "draussen": "drinnen",
+      "link": "https://www.motorsport-magazin.com/motogp/ergebnisse/2026/valencia-gp-9871.html",
+      "unsicher": "DF1 hatte das Finale im Januar fürs Free-TV angekündigt, damals für den 22.11. – für den neuen Termin nicht bestätigt"
+    },
+    {
+      "id": "nfl-buffalo-bills-baltimore-ravens-rtl",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "19:00",
+      "dauer": 210,
+      "online": true,
+      "titel": "NFL: Buffalo Bills – Baltimore Ravens",
+      "ort": "RTL",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Woche 8: Die Bills (5-1) empfangen die Ravens (4-3) – das Free-TV-Spiel am frühen Sonntagabend.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.sportschau.de/live-und-ergebnisse/football/usa-nfl/ma12087911/buffalo-bills_baltimore-ravens/blitztabelle"
+    },
+    {
+      "id": "nfl-sonntagsspiel-bei-rtl-woche-9-rtl",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "19:00",
+      "dauer": 210,
+      "online": true,
+      "titel": "NFL: Sonntagsspiel bei RTL (Woche 9)",
+      "ort": "RTL",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "RTL zeigt sonntags um 19 Uhr ein Spiel live und kostenlos – an diesem Sonntag nach dem Madrid Game.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://ran.joyn.de/sports/american-football/nfl/nfl202627-live-uebertragung-im-free-tv-stream-und-ticker-wer-zeigt-die-partien-der-aktuellen-saison-173951",
+      "unsicher": "Welches Spiel RTL um 19 Uhr zeigt, wird erst in der Spielwoche bekanntgegeben"
+    },
+    {
+      "id": "nfl-detroit-lions-new-england-patriots-munich-game-rtl",
+      "daten": [
+        "2026-11-15"
+      ],
+      "zeit": "15:30",
+      "dauer": 210,
+      "online": true,
+      "titel": "NFL: Detroit Lions – New England Patriots (Munich Game)",
+      "ort": "RTL",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Drittes NFL-Gastspiel in der Allianz Arena, Gastgeber sind die Detroit Lions. RTL überträgt live im Free-TV.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.nfl.com/international/games/munich/"
+    },
+    {
+      "id": "nfl-sonntagsspiel-bei-rtl-woche-10-rtl",
+      "daten": [
+        "2026-11-15"
+      ],
+      "zeit": "19:00",
+      "dauer": 210,
+      "online": true,
+      "titel": "NFL: Sonntagsspiel bei RTL (Woche 10)",
+      "ort": "RTL",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Nach dem Munich Game zeigt RTL wie jeden Sonntag um 19 Uhr ein weiteres Spiel live und kostenlos.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://ran.joyn.de/sports/american-football/nfl/nfl202627-live-uebertragung-im-free-tv-stream-und-ticker-wer-zeigt-die-partien-der-aktuellen-saison-173951",
+      "unsicher": "Welches Spiel RTL um 19 Uhr zeigt, wird erst in der Spielwoche bekanntgegeben"
+    },
+    {
+      "id": "nfl-sonntagsspiel-bei-rtl-woche-11-rtl",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "19:00",
+      "dauer": 210,
+      "online": true,
+      "titel": "NFL: Sonntagsspiel bei RTL (Woche 11)",
+      "ort": "RTL",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "RTL zeigt sonntags um 19 Uhr ein Spiel live und kostenlos.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://ran.joyn.de/sports/american-football/nfl/nfl202627-live-uebertragung-im-free-tv-stream-und-ticker-wer-zeigt-die-partien-der-aktuellen-saison-173951",
+      "unsicher": "Welches Spiel RTL um 19 Uhr zeigt, wird erst in der Spielwoche bekanntgegeben"
+    },
+    {
+      "id": "nfl-detroit-lions-chicago-bears-thanksgiving-rtl-oder-sky",
+      "daten": [
+        "2026-11-26"
+      ],
+      "zeit": "19:00",
+      "dauer": 210,
+      "online": true,
+      "titel": "NFL: Detroit Lions – Chicago Bears (Thanksgiving)",
+      "ort": "RTL oder Sky (noch offen)",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Das traditionelle Thanksgiving-Heimspiel der Lions im Ford Field, diesmal gegen den Divisionsrivalen aus Chicago – das erste der drei Feiertagsspiele.",
+      "preis": "je nach Sender: bei RTL kostenlos, bei Sky im Abo",
+      "draussen": "drinnen",
+      "link": "https://www.sportschau.de/live-und-ergebnisse/football/usa-nfl/ma12087170/detroit-lions_chicago-bears/info",
+      "unsicher": "Deutscher Sender für die Thanksgiving-Spiele noch nicht verkündet"
+    },
+    {
+      "id": "nfl-sonntagsspiel-bei-rtl-woche-12-rtl",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "19:00",
+      "dauer": 210,
+      "online": true,
+      "titel": "NFL: Sonntagsspiel bei RTL (Woche 12)",
+      "ort": "RTL",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Das Sonntagsspiel nach Thanksgiving: RTL zeigt um 19 Uhr ein Spiel live und kostenlos.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://ran.joyn.de/sports/american-football/nfl/nfl202627-live-uebertragung-im-free-tv-stream-und-ticker-wer-zeigt-die-partien-der-aktuellen-saison-173951",
+      "unsicher": "Welches Spiel RTL um 19 Uhr zeigt, wird erst in der Spielwoche bekanntgegeben"
+    },
+    {
+      "id": "atp-finals-gruppenspiele-mit-alexander-zverev-sky-sport",
+      "daten": [
+        "2026-11-15",
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20"
+      ],
+      "zeit": "18:00",
+      "dauer": 180,
+      "online": true,
+      "titel": "ATP Finals: Gruppenspiele mit Alexander Zverev",
+      "ort": "Sky Sport Tennis / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Saisonfinale der acht Besten in der Inalpi Arena in Turin. Zverev – 2026 Sieger bei French Open und US Open und zum Jahresende die neue Nummer eins – spielt in der Gruppe dreimal; Jannik Sinner fehlt verletzt.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.nittoatpfinals.com/en/news/zverev-nitto-atp-finals-2026-qualification",
+      "unsicher": "Zverev-Spiel noch nicht angesetzt: Er spielt an 3 der 6 Tage, entweder in der Tagessession (ab 11:30) oder in der Abendsession (ab 18:00), das Einzel jeweils nach dem Doppel; Ansetzung erst nach der Auslosung bzw. am Vortag"
+    },
+    {
+      "id": "atp-finals-halbfinale-tagessession-sky-sport-tennis-wow",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "12:00",
+      "dauer": 180,
+      "online": true,
+      "titel": "ATP Finals: Halbfinale (Tagessession)",
+      "ort": "Sky Sport Tennis / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Das erste Einzel-Halbfinale, nach dem Doppel-Halbfinale. Ob Zverev dabei ist, entscheidet sich in der Gruppenphase.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://tickets.nittoatpfinals.com/en/schedule",
+      "unsicher": "Paarung erst nach der Gruppenphase; Beginn des Einzels hängt vom Doppel ab"
+    },
+    {
+      "id": "atp-finals-halbfinale-abendsession-sky-sport-tennis-wow",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "18:00",
+      "dauer": 180,
+      "online": true,
+      "titel": "ATP Finals: Halbfinale (Abendsession)",
+      "ort": "Sky Sport Tennis / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Das zweite Einzel-Halbfinale am Samstagabend, wieder nach einem Doppel-Halbfinale.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://tickets.nittoatpfinals.com/en/schedule",
+      "unsicher": "Paarung erst nach der Gruppenphase; Beginn des Einzels hängt vom Doppel ab"
+    },
+    {
+      "id": "atp-finals-finale-sky-sport-tennis-wow",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "15:00",
+      "dauer": 300,
+      "online": true,
+      "titel": "ATP Finals: Finale",
+      "ort": "Sky Sport Tennis / WOW",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Finaltag in Turin: ab 15 Uhr zuerst das Doppel-Finale, danach das Einzel-Finale und die Siegerehrung.",
+      "preis": "im Sky- bzw. WOW-Abo",
+      "draussen": "drinnen",
+      "link": "https://tickets.nittoatpfinals.com/en/schedule",
+      "unsicher": "Finalisten erst nach den Halbfinals; Beginn des Einzel-Finales hängt vom Doppel-Finale ab"
+    },
+    {
+      "id": "darts-grand-slam-of-darts-viertelfinals-teil-1-dazn-sport1",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "20:00",
+      "dauer": 210,
+      "online": true,
+      "titel": "Darts: Grand Slam of Darts, Viertelfinals (Teil 1)",
+      "ort": "DAZN / Sport1",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Die ersten beiden Viertelfinals (Best of 31 Legs) in Wolverhampton. Der Grand Slam ist 2026 erstmals auf 48 Spieler in 16 Dreiergruppen aufgestockt; Titelverteidiger ist Luke Littler.",
+      "preis": "im DAZN-Abo (Sport1 zeigt den Grand Slam auch im Free-TV, Sendezeiten noch offen)",
+      "draussen": "drinnen",
+      "link": "https://www.dartn.de/grand_slam_of_darts/",
+      "unsicher": "Paarungen erst nach dem Achtelfinale (18./19.11.); Sport1-Sendezeiten noch nicht veröffentlicht"
+    },
+    {
+      "id": "darts-grand-slam-of-darts-viertelfinals-teil-2-dazn-sport1",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "20:00",
+      "dauer": 210,
+      "online": true,
+      "titel": "Darts: Grand Slam of Darts, Viertelfinals (Teil 2)",
+      "ort": "DAZN / Sport1",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Die beiden anderen Viertelfinals (Best of 31 Legs) am Samstagabend in Wolverhampton – danach stehen die vier Halbfinalisten fest.",
+      "preis": "im DAZN-Abo (Sport1 zeigt den Grand Slam auch im Free-TV, Sendezeiten noch offen)",
+      "draussen": "drinnen",
+      "link": "https://www.dartn.de/grand_slam_of_darts/",
+      "unsicher": "Paarungen erst nach dem Achtelfinale; Sport1-Sendezeiten noch nicht veröffentlicht"
+    },
+    {
+      "id": "darts-grand-slam-of-darts-halbfinals-dazn-sport1",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "14:00",
+      "dauer": 210,
+      "online": true,
+      "titel": "Darts: Grand Slam of Darts, Halbfinals",
+      "ort": "DAZN / Sport1",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Beide Halbfinals (Best of 31 Legs) am Finaltag in der Nachmittagssession; das Finale folgt am Abend.",
+      "preis": "im DAZN-Abo (Sport1 zeigt den Grand Slam auch im Free-TV, Sendezeiten noch offen)",
+      "draussen": "drinnen",
+      "link": "https://www.dartn.de/grand_slam_of_darts/",
+      "unsicher": "Beginn laut dartn.de und Ticketpartner 14:00 (13 Uhr Ortszeit), goal.com nennt 12 Uhr Ortszeit (13:00 bei uns); Sport1-Sendezeiten offen"
+    },
+    {
+      "id": "darts-grand-slam-of-darts-finale-dazn-sport1",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "20:00",
+      "dauer": 165,
+      "online": true,
+      "titel": "Darts: Grand Slam of Darts, Finale",
+      "ort": "DAZN / Sport1",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Das Finale um die Eric-Bristow-Trophy (Best of 31 Legs); der Sieger bekommt 200.000 Pfund. 2025 gewann Luke Littler 16:11 gegen Luke Humphries.",
+      "preis": "im DAZN-Abo (Sport1 zeigt den Grand Slam auch im Free-TV, Sendezeiten noch offen)",
+      "draussen": "drinnen",
+      "link": "https://www.dartn.de/grand_slam_of_darts/",
+      "unsicher": "Die Abendsession beginnt um 20:00, das Match selbst nach dem Vorprogramm (2025 gegen 20:30); Sport1-Sendezeiten offen"
+    },
+    {
+      "id": "darts-players-championship-finals-finaltag-dazn",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "20:00",
+      "dauer": 210,
+      "online": true,
+      "titel": "Darts: Players Championship Finals, Finaltag",
+      "ort": "DAZN",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Abendsession in Minehead mit den Halbfinals und dem Finale (Viertelfinals schon ab 13:45). Zum Auftakt spielt der Deutsche Jan Schmidt (22) gegen Cam Crabtree das Finale der PDC-Jugend-WM; Titelverteidiger bei den Players Championship Finals ist Luke Littler.",
+      "preis": "im DAZN-Abo",
+      "draussen": "drinnen",
+      "link": "https://www.dartn.de/players_championship_finals/",
+      "unsicher": "Free-TV nicht angekündigt; das Finale selbst beginnt erst gegen Ende des Abends, genaue Zeit offen"
+    },
+    {
+      "id": "boxen-agit-kabayel-nelson-hysa-wbc-wm-schwergewicht-dazn",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "20:00",
+      "dauer": 240,
+      "online": true,
+      "titel": "Boxen: Agit Kabayel – Nelson Hysa (WBC-WM Schwergewicht)",
+      "ort": "DAZN (Pay-per-View)",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Kabayels erste Titelverteidigung als WBC-Weltmeister im Schwergewicht vor über 50.000 Zuschauern in der Merkur Spiel-Arena Düsseldorf. Gegner ist der ungeschlagene Albaner Nelson Hysa (42); Kabayel ist in 27 Profikämpfen unbesiegt.",
+      "preis": "DAZN Pay-per-View (Preis noch nicht veröffentlicht)",
+      "draussen": "drinnen",
+      "link": "https://www.dazn.com/de-DE/news/boxen/gegner-endlich-fix-agit-kabayel-kaempft-im-november-im-stadion/8gjsspubsvj61ao0ecr2759ug",
+      "unsicher": "Sendebeginn, Ringwalk-Zeit und PPV-Preis noch nicht veröffentlicht; Zeit geschätzt nach Kabayels letztem DAZN-Kampfabend (Hauptkarte 20 Uhr, Ringwalk gegen 23 Uhr)"
+    },
+    {
+      "id": "biathlon-einzel-der-maenner-20-km-kontiolahti-ard-zdf",
+      "daten": [
+        "2026-11-26"
+      ],
+      "zeit": "16:15",
+      "dauer": 100,
+      "online": true,
+      "titel": "Biathlon: Einzel der Männer (20 km), Kontiolahti",
+      "ort": "ARD/ZDF · Eurosport",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Auftakt in den Biathlon-Weltcup 2026/27 im finnischen Kontiolahti. Anders als in den Vorjahren beginnt der Winter mit einem normalen Weltcup-Wochenende statt eines Doppelwochenendes.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.biathlonworld.com/de/venue/KON",
+      "unsicher": "Ob ARD oder ZDF überträgt, ist noch nicht veröffentlicht (die beiden wechseln sich ab); Startzeit laut IBU, der Veranstalter nennt 16:10"
+    },
+    {
+      "id": "biathlon-einzel-der-frauen-15-km-kontiolahti-ard-zdf",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "16:15",
+      "dauer": 95,
+      "online": true,
+      "titel": "Biathlon: Einzel der Frauen (15 km), Kontiolahti",
+      "ort": "ARD/ZDF · Eurosport",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Das erste Frauenrennen der Saison: das klassische Einzel mit vier Schießeinlagen, bei dem jeder Fehler eine Strafminute kostet.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.biathlonworld.com/de/venue/KON",
+      "unsicher": "Ob ARD oder ZDF überträgt, ist noch nicht veröffentlicht; Startzeit laut IBU, der Veranstalter nennt 16:10"
+    },
+    {
+      "id": "biathlon-single-mixed-staffel-kontiolahti-ard-zdf-eurosport",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "13:10",
+      "dauer": 45,
+      "online": true,
+      "titel": "Biathlon: Single-Mixed-Staffel, Kontiolahti",
+      "ort": "ARD/ZDF · Eurosport",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Die kurze Staffel mit je einer Frau und einem Mann pro Nation, die sich abwechseln – der erste Teamwettbewerb des Winters.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.biathlonworld.com/de/venue/KON",
+      "unsicher": "Ob ARD oder ZDF überträgt, ist noch nicht veröffentlicht"
+    },
+    {
+      "id": "biathlon-mixed-staffel-kontiolahti-ard-zdf-eurosport",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "15:15",
+      "dauer": 75,
+      "online": true,
+      "titel": "Biathlon: Mixed-Staffel, Kontiolahti",
+      "ort": "ARD/ZDF · Eurosport",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Die Mixed-Staffel mit je zwei Frauen und zwei Männern pro Nation zum Abschluss des Samstags.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.biathlonworld.com/de/venue/KON",
+      "unsicher": "Ob ARD oder ZDF überträgt, ist noch nicht veröffentlicht"
+    },
+    {
+      "id": "biathlon-sprint-der-maenner-10-km-kontiolahti-ard-zdf",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "13:00",
+      "dauer": 80,
+      "online": true,
+      "titel": "Biathlon: Sprint der Männer (10 km), Kontiolahti",
+      "ort": "ARD/ZDF · Eurosport",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Sprint mit zwei Schießeinlagen und Strafrunden – das letzte Männerrennen des Auftaktwochenendes, bevor der Weltcup in Hochfilzen weitergeht.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.biathlonworld.com/de/venue/KON",
+      "unsicher": "Ob ARD oder ZDF überträgt, ist noch nicht veröffentlicht"
+    },
+    {
+      "id": "biathlon-sprint-der-frauen-7-5-km-kontiolahti-ard-zdf",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "16:15",
+      "dauer": 75,
+      "online": true,
+      "titel": "Biathlon: Sprint der Frauen (7,5 km), Kontiolahti",
+      "ort": "ARD/ZDF · Eurosport",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Der Sprint der Frauen schließt das Auftaktwochenende ab; eine Woche später geht es in Hochfilzen weiter.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.biathlonworld.com/de/venue/KON",
+      "unsicher": "Ob ARD oder ZDF überträgt, ist noch nicht veröffentlicht; Startzeit laut IBU, die Veranstalterseite nennt abweichend 17:55 Ortszeit (16:55)"
+    },
+    {
+      "id": "e-sport-valorant-game-changers-championship-finale-twitch",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "19:00",
+      "dauer": 270,
+      "online": true,
+      "titel": "E-Sport: Valorant Game Changers Championship, Finale",
+      "ort": "Twitch · valorant / YouTube · ValorantEsports",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Weltfinale der Frauen-Szene im Valorant in der Riot Games Arena São Paulo (Best of 5): Gentle Mates GC aus Frankreich gegen den Sieger des Lower-Bracket-Finals Shopify Rebellion Gold – KRÜ Blaze. Beginn 15 Uhr Ortszeit.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://valorantesports.com/news/game-changers-championship-2026-live-audience-and-ticket-sale-information",
+      "unsicher": "Riot nennt den Show-Beginn 15 Uhr Ortszeit (19:00 bei uns), die Serie selbst kann etwas später starten; zweiter Finalist erst nach dem 31.10."
+    },
+    {
+      "id": "e-sport-league-of-legends-wm-1-halbfinale-twitch-riotgames",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "23:00",
+      "dauer": 240,
+      "online": true,
+      "titel": "E-Sport: League-of-Legends-WM, 1. Halbfinale",
+      "ort": "Twitch · riotgames / YouTube · lolesports",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Erstes WM-Halbfinale (Best of 5) im Credit Union of Texas Event Center in Allen (Texas), 16 Uhr Ortszeit. Die Paarung ergibt sich aus den Viertelfinals vom 3. bis 6.11.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://lolesports.com/en-US/news/worlds-2026-venue-event-policies",
+      "unsicher": "Paarung noch offen (Viertelfinal-Auslosung am 31.10.)"
+    },
+    {
+      "id": "e-sport-iem-beijing-counter-strike-2-finale-twitch-eslcs",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "08:30",
+      "dauer": 240,
+      "online": true,
+      "titel": "E-Sport: IEM Beijing (Counter-Strike 2), Finale",
+      "ort": "Twitch · eslcs / YouTube · ESL Counter-Strike",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Finale des ersten IEM in Peking nach sieben Jahren (ESL Pro Tour Masters, 1,25 Mio. $) im Best of 5, 15:30 Uhr Ortszeit. Im Feld u. a. MOUZ, Natus Vincere, G2, FaZe, FURIA und The MongolZ.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://pro.eslgaming.com/tour/cs/beijing/",
+      "unsicher": "ESL nennt 15:30 ohne Zeitzone (Ortszeit angenommen, Peking ist 7 Std. voraus); Stream-Kanäle für das Event noch nicht ausdrücklich bestätigt"
+    },
+    {
+      "id": "e-sport-league-of-legends-wm-finale-twitch-riotgames",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "20:00",
+      "dauer": 300,
+      "online": true,
+      "titel": "E-Sport: League-of-Legends-WM, Finale",
+      "ort": "Twitch · riotgames / YouTube · lolesports",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Das WM-Finale (Best of 5) im Barclays Center in Brooklyn (New York), 14 Uhr Ortszeit. Wer spielt, entscheidet sich in den Halbfinals am 7. und 8.11.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://lolesports.com/en-US/news/worlds-2026-venue-event-policies",
+      "unsicher": "Finalisten noch offen"
+    },
+    {
+      "id": "e-sport-blast-rivals-hongkong-counter-strike-2-finale",
+      "daten": [
+        "2026-11-15"
+      ],
+      "zeit": "08:00",
+      "dauer": 240,
+      "online": true,
+      "titel": "E-Sport: BLAST Rivals Hongkong (Counter-Strike 2), Finale",
+      "ort": "Twitch · blastpremier / YouTube · BLASTPremier",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "Finale der BLAST Premier Rivals in der AsiaWorld-Arena Hongkong (1 Mio. $, Best of 5). Dabei sind acht Topteams, u. a. Vitality, Spirit, MOUZ, Falcons, G2 und Titelverteidiger FURIA.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://blast.tv/cs/tournaments/rivals-2026-season-2/match",
+      "unsicher": "BLAST-Spielplan nennt 07:00 ohne Zeitzone – als UTC gelesen (15 Uhr Ortszeit, 08:00 bei uns), kurz vorher prüfen; Stream-Kanäle für Hongkong noch nicht bestätigt"
+    },
+    {
+      "id": "nfl-atlanta-falcons-cincinnati-bengals-madrid-game-rtl",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "15:30",
+      "dauer": 210,
+      "online": true,
+      "titel": "NFL: Atlanta Falcons – Cincinnati Bengals (Madrid Game)",
+      "ort": "RTL",
+      "region": "ONL",
+      "kategorie": "Sport",
+      "beschreibung": "NFL-Gastspiel im Estadio Santiago Bernabéu in Madrid, Gastgeber sind die Falcons. RTL zeigt es live im Free-TV.",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://ran.joyn.de/sports/american-football/nfl/cincinnati-bengals-at-atlanta-falcons-live-im-free-tv-stream-und-ticker-infos-zum-nfl-international-game2026-in-madrid-183528"
     }
   ],
   "laufend": [

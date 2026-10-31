@@ -243,14 +243,16 @@ a.tagzelle:hover { background: var(--flaeche); }
 .vorbei-liste .karte { opacity: .7; }
 .datenfehler { font-size: 13px; color: var(--leise); }
 
-/* Reiterleiste unten: zwei bis fünf Reiter (Einstellungen → Reiter unten), alle gleich breit */
+/* Reiterleiste unten: zwei bis fünf Reiter (Einstellungen → Reiter unten), alle gleich breit –
+   außer die Beschriftung braucht mehr (breite Systemschrift): Dann bekommt der Reiter genau so viel
+   und die anderen teilen sich den Rest. */
 .reiterleiste {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; display: flex; justify-content: center;
   background: var(--flaeche); border-top: 1px solid var(--linie);
   padding: 0 env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
 }
 .reiter {
-  position: relative; flex: 1 1 0; min-width: 0; max-width: 220px; height: var(--leiste); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  position: relative; flex: 1 1 0; min-width: max-content; max-width: 220px; height: var(--leiste); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
   padding: 0 1px; border: 0; background: transparent; color: var(--leise); font-size: 12px; white-space: nowrap; cursor: pointer;
 }
 .reiter[hidden] { display: none; }

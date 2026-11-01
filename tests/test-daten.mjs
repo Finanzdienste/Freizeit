@@ -183,6 +183,8 @@ if (existsSync(path.join(ORDNER, 'filme.json'))) {
     alle(filme, (f) => istListe(f.genre) && f.genre.length > 0 && f.genre.every(text), 'filme: mindestens ein Genre');
     alle(filme, (f) => text(f.beschreibung) && f.beschreibung.length >= 30 && f.beschreibung.length <= 200, 'filme: Beschreibung mit 30–200 Zeichen');
     alle(filme, (f) => f.laenge === undefined || (Number.isInteger(f.laenge) && f.laenge > 30 && f.laenge < 600), 'filme: Länge in Minuten');
+    alle(filme, (f) => (f.wertung === undefined || (typeof f.wertung === 'number' && f.wertung >= 1 && f.wertung <= 10))
+      && (f.stimmen === undefined || Number.isInteger(f.stimmen)) && (f.schluessel === undefined || /^f:[a-z0-9-]{3,90}$/.test(f.schluessel)), 'filme: Bewertung 1–10, Stimmen, Schlüssel f:…');
     const ids = filme.map((f) => f.imdb).filter((x) => x !== undefined);
     check(ids.every((x) => /^tt\d{6,10}$/.test(x)) && new Set(ids).size === ids.length, 'filme: IMDb-IDs gültig und einmalig');
     const fehler = [];

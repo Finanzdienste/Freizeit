@@ -4,7 +4,10 @@
  * „Was immer geht“. Jeder sagt je Film, ob er Bock hat; Eingeladene sagen
  * „Mit Tobi gucken“ (Bock mit dem Gastgeber).
  *
- * Schlüssel: f:<IMDb-ID>, ohne ID f:<original>-<jahr>. Poster und Szenenbilder
+ * Schlüssel: f:<IMDb-ID>, ohne ID f:<original>-<jahr>; steht in der Datei ein
+ * „schluessel“, gilt der (so bleiben Haken, wenn ein Film später seine ID
+ * bekommt). Bewertung und Stimmen frischt der Montagslauf wöchentlich auf
+ * (werkzeug/filme-aktualisieren.mjs). Poster und Szenenbilder
  * stehen bewusst nicht in der App – darauf sind fast immer Schauspieler zu
  * sehen; Bilder gibt es über den Link zu IMDb.
  */
@@ -36,6 +39,9 @@ export function filmeBereinigen(roh, fehler = []) {
       genre: Array.isArray(f.genre) ? f.genre.filter((g) => typeof g === 'string' && g) : [],
       regie: text(f.regie),
       imdb: /^tt\d{6,10}$/.test(f.imdb || '') ? f.imdb : '',
+      schluessel: /^f:[a-z0-9-]{3,90}$/.test(f.schluessel || '') ? f.schluessel : '',
+      wertung: typeof f.wertung === 'number' && f.wertung >= 1 && f.wertung <= 10 ? f.wertung : null,
+      stimmen: Number.isInteger(f.stimmen) && f.stimmen > 0 ? f.stimmen : null,
       beschreibung: text(f.beschreibung),
     }))
     .sort((a, b) => a.platz - b.platz);
@@ -47,12 +53,14 @@ export function filmEintrag(f) {
   const suche = encodeURIComponent(`${f.original || f.titel} ${f.jahr}`);
   return {
     quelle: 'film',
-    schluessel: f.imdb ? `f:${f.imdb}` : `f:${slug(`${f.original || f.titel}-${f.jahr}`)}`,
+    schluessel: f.schluessel || (f.imdb ? `f:${f.imdb}` : `f:${slug(`${f.original || f.titel}-${f.jahr}`)}`),
     titel: f.titel,
     original: f.original && f.original !== f.titel ? f.original : '',
     jahr: f.jahr,
     platz: f.platz,
     laenge: f.laenge,
+    wertung: f.wertung,
+    stimmen: f.stimmen,
     genre: f.genre,
     regie: f.regie,
     beschreibung: f.beschreibung,
@@ -64,6 +72,9 @@ export function filmEintrag(f) {
 }
 
 export const filmEintraege = (d) => (d ? d.filme.map(filmEintrag) : []);
+
+/** 9.3 → „★ 9,3“ */
+export const wertungText = (w) => (w ? `★ ${w.toFixed(1).replace('.', ',')}` : '');
 
 /** 142 → „2 Std. 22 Min.“ */
 export function laengeText(min) {

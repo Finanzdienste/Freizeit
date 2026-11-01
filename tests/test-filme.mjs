@@ -32,6 +32,8 @@ check((await karte(page, 'Der Pate').locator('.film-platz').innerText()).endsWit
   && (await karte(page, 'Der Pate').locator('.unter').innerText()) === 'The Godfather · 1972 · 2 Std. 55 Min. · Krimi, Drama',
 'links der Platz, darunter Original, Jahr, Länge und Genre');
 check((await karte(page, 'Inception').locator('.unter').innerText()).startsWith('2010 · '), 'ist der Titel schon das Original, steht er nicht doppelt');
+check((await karte(page, 'Die Verurteilten').locator('.unter').innerText()).startsWith('★ 9,3 · The Shawshank Redemption · 1994'), 'mit Bewertung vorn: „★ 9,3“');
+check((await page.locator('.filme-titelblock .fein').innerText()) === 'Stand 29.9.2025 · jede Woche frisch von IMDb', 'oben der Stand der Liste');
 check(await page.locator('.reiterleiste [data-reiter="programm"][aria-current="page"]').count() === 1, 'unten bleibt „Programm“ markiert');
 check(await page.locator('[data-aktion="filme-nur"][data-wert="andere"]').count() === 0, 'ohne Plan gibt es nur „Alle“ und „Mit Bock“');
 

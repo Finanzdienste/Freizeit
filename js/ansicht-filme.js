@@ -16,7 +16,7 @@ import {
 import { meinBock } from './speicher.js';
 import { andere, rolle, gastgeberName } from './gemeinsam.js';
 import {
-  laengeText, genres, filmeFiltern, filmeZahl,
+  laengeText, wertungText, genres, filmeFiltern, filmeZahl,
 } from './filme.js';
 
 const datumText = (iso) => (/^\d{4}-\d{2}-\d{2}$/.test(iso || '') ? `${Number(iso.slice(8))}.${Number(iso.slice(5, 7))}.${iso.slice(0, 4)}` : '');
@@ -28,7 +28,7 @@ export const filmAnker = (schluessel) => `film-${schluessel.replace(/[^a-z0-9-]/
 function filmKarte(f) {
   merkeEintrag(f);
   const wer = werZeile(f);
-  const unter = [f.original, String(f.jahr), laengeText(f.laenge), f.genre.join(', ')].filter(Boolean).join(' · ');
+  const unter = [wertungText(f.wertung), f.original, String(f.jahr), laengeText(f.laenge), f.genre.join(', ')].filter(Boolean).join(' · ');
   const klassen = ['karte', 'film', istAuf(f.schluessel) ? 'auf' : '', wer.treffer ? 'treffer' : ''].filter(Boolean).join(' ');
   return `<article class="${klassen}" id="${filmAnker(f.schluessel)}">
     <div class="film-platz${f.platz <= 10 ? ' top' : ''}"><span class="sr">Platz </span>${f.platz}</div>
@@ -105,7 +105,7 @@ export function filmeAnsicht(filme, info, st, ui) {
       ${zurueck}
       <div class="filme-titelblock">
         <h2 id="filme-titel">IMDb Top 250</h2>
-        <p class="fein">${info.stand ? `Stand ${datumText(info.stand)}` : 'Die besten Filme laut IMDb'} · Bilder über den Link zu IMDb</p>
+        <p class="fein">${info.stand ? `Stand ${datumText(info.stand)} · jede Woche frisch von IMDb` : 'Die besten Filme laut IMDb'}</p>
       </div>
     </header>
     <p class="fein filme-hinweis">${hinweis}</p>

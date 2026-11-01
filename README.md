@@ -156,25 +156,44 @@ als Zeile mit Sprung zur Liste. Poster und Szenenbilder stehen bewusst nicht
 in der App – darauf sind fast immer Schauspieler zu sehen; Bilder gibt es
 über den Link zu IMDb. Schlüssel: `f:<IMDb-ID>`, ohne ID `f:<original>-<jahr>`.
 
-Die Liste `daten/filme.json` ist von Hand gepflegt (Stand steht in der Datei):
+Die Liste `daten/filme.json` hält der Montagslauf aktuell: `node
+werkzeug/filme-aktualisieren.mjs` lädt IMDbs offizielle Daten
+(datasets.imdbws.com, für den privaten, nicht kommerziellen Gebrauch, täglich
+neu) und frischt Bewertung und Stimmen auf. Den Chart selbst gibt es dort
+nicht – er gewichtet zusätzlich „Stammwähler“ –, deshalb bleibt die bisherige
+Liste der Anker:
+
+- Wer drin ist, bleibt drin, solange er ein Kinofilm mit mindestens 25 000
+  Stimmen und einer Bewertung ab 7,8 ist.
+- Neu kommt, wer im laufenden oder letzten Jahr erschienen ist und nach der
+  Gewichtung, die IMDb früher offenlegte (WR = v/(v+m)·R + m/(v+m)·C mit
+  m = 25 000, C = 7,0), unter den besten 200 steht – an der Stelle dieses
+  Rangs. Was dadurch über Platz 250 rutscht, fällt heraus.
+- Neue Filme bekommen deutschen Titel (IMDb, Region DE) und Regie; die
+  Beschreibung (1–2 eigene Sätze) schreibt der Lauf.
+
+Die Reihenfolge stammt aus dem offiziellen Chart vom 29.9.2025 (`basis`). Mit
+einer neuen Kopie des Charts (gespeicherte Seite von imdb.com/chart/top) lässt
+sie sich jederzeit neu verankern.
 
 ```json
 {
   "version": 1,
-  "stand": "2025-09-29",
-  "quelle": "IMDb Top 250, Stand 29.9.2025 (über 250.took.nl)",
+  "stand": "2026-11-01",
+  "basis": "2025-09-29",
+  "quelle": "IMDb Top 250: Reihenfolge des offiziellen Charts …, jede Woche aufgefrischt",
   "filme": [
     { "platz": 1, "titel": "Die Verurteilten", "original": "The Shawshank Redemption", "jahr": 1994,
       "laenge": 142, "genre": ["Drama"], "regie": "Frank Darabont", "imdb": "tt0111161",
+      "wertung": 9.3, "stimmen": 3259821,
       "beschreibung": "1–2 eigene Sätze, 30–200 Zeichen" }
   ]
 }
 ```
 
-`laenge` (Minuten), `regie` und `imdb` dürfen fehlen. IMDb selbst lässt sich
-nicht automatisch abrufen; eine neue Liste kommt über den Browser (Claude in
-Chrome) oder als gespeicherte Seite von imdb.com/chart/top. Beim Erneuern die
-IMDb-IDs behalten – an den Schlüsseln hängen die Haken.
+`laenge` (Minuten), `regie`, `wertung` und `stimmen` dürfen fehlen.
+`schluessel` (etwa `f:12th-fail-2023`) steht nur bei Filmen, die ihre IMDb-ID
+erst später bekamen – an den Schlüsseln hängen die Haken, also nie ändern.
 
 ## Gemeinsam planen
 
@@ -504,6 +523,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `js/zeiten.js` | die belegten Zeiten des Gastgebers: lesen, prüfen, die Zeile an der Karte |
 | `js/zeiten-rechnen.js` | aus Kalenderterminen belegte Blöcke je Woche (Browser und Node) |
 | `werkzeug/zeiten-senden.mjs` | schickt die Zeiten an den Plan – für eine geplante Aufgabe |
+| `werkzeug/filme-aktualisieren.mjs` | IMDb Top 250 aus IMDbs offiziellen Daten auffrischen – im Montagslauf |
 | `js/push.js` | Push-Mitteilungen für den Gastgeber: Abo holen, beim Server an- und abmelden |
 | `js/standort.js` | Bezugspunkt für Entfernungen: Gerätestandort, Adresssuche (Nominatim), Luftlinie, „3,2 km“ |
 | `supabase/functions/freizeit-push/` | die Edge Function: offene Nachrichten holen, verschlüsseln, an die Push-Dienste schicken |

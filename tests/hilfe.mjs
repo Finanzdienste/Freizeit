@@ -126,7 +126,7 @@ export function testFilme() {
     quelle: 'Testliste',
     filme: [
       {
-        platz: 1, titel: 'Die Verurteilten', original: 'The Shawshank Redemption', jahr: 1994, laenge: 142, genre: ['Drama'], regie: 'Frank Darabont', imdb: 'tt0111161', beschreibung: 'Ein Banker übersteht Jahrzehnte im Gefängnis.',
+        platz: 1, titel: 'Die Verurteilten', original: 'The Shawshank Redemption', jahr: 1994, laenge: 142, genre: ['Drama'], regie: 'Frank Darabont', imdb: 'tt0111161', wertung: 9.3, stimmen: 3200000, beschreibung: 'Ein Banker übersteht Jahrzehnte im Gefängnis.',
       },
       {
         platz: 2, titel: 'Der Pate', original: 'The Godfather', jahr: 1972, laenge: 175, genre: ['Krimi', 'Drama'], regie: 'Francis Ford Coppola', imdb: 'tt0068646', beschreibung: 'Eine Mafiafamilie und ihr Erbe.',

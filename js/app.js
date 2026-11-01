@@ -21,7 +21,9 @@ import {
   INHALTS_REITER, regionenPruefen,
 } from './speicher.js';
 import { ladeAlles } from './daten.js';
-import { heute, wochentagKurz, tagMonat } from './zeit.js';
+import {
+  heute, wochentagKurz, tagMonat, jetzt, schonVorbei,
+} from './zeit.js';
 import { anzahl } from './text.js';
 import { SCHALTER } from './filter.js';
 import { programmAnsicht, programmZahl, ANSICHTEN } from './ansicht-programm.js';
@@ -40,7 +42,7 @@ import {
   blattOeffnen, blattSchliessen, blattAuffrischen, blattArt,
 } from './blatt.js';
 import {
-  alleIdeen, planEintrag, neueIdee, BEWERTUNG,
+  alleIdeen, planEintrag, neueIdee, BEWERTUNG, geplante,
 } from './ideen.js';
 import {
   eintragZu, vergessen as karteVergessen, bockKnopf, aufklappen, abschnittUmschalten,
@@ -213,6 +215,30 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
     springeZu = '';
     if (ziel) ziel.scrollIntoView({ block: 'start', behavior: 'instant' });
   }
+  zeitMarkeZuletzt = zeitMarke();
+}
+
+// --- Die Zeit läuft: Was vorbei ist, verschwindet auch, während die App offen bleibt
+
+let zeitMarkeZuletzt = '';
+/** Woran man merkt, dass seit dem letzten Zeichnen etwas vorbei ist: der Tag und wie viel heute schon zu Ende ist. */
+function zeitMarke() {
+  const j = jetzt();
+  const p = daten.programm;
+  const termine = p ? p.termine.filter((e) => e.daten.includes(j.datum) && schonVorbei(e, j.datum, j)).length : 0;
+  const plaene = geplante().filter((e) => e.datum === j.datum && schonVorbei(e, j.datum, j)).length;
+  return `${j.datum}|${termine}|${plaene}`;
+}
+
+/** Ist inzwischen etwas vorbei (oder ein neuer Tag)? Dann neu zeichnen – nicht, solange jemand tippt, ein Formular oder ein Blatt offen ist. */
+function zeitAuffrischen() {
+  if (!geladen || document.visibilityState !== 'visible' || zeitMarke() === zeitMarkeZuletzt) return;
+  if (ideenFormularOffen() || wirEingabeOffen() || blattArt() || uiFilme.offen) return;
+  if (reiter === 'karte') {
+    // Die Karte nur auffrischen, nicht neu aufbauen – Ausschnitt und Zoom bleiben.
+    landkarteZeichnen(daten.programm, aktuell(), heute(), raum, ideenListe);
+    zeitMarkeZuletzt = zeitMarke();
+  } else if (reiter === 'programm' || reiter === 'wir') zeichnen({ behalteScroll: true });
 }
 
 function wechseln(neu) {
@@ -1046,11 +1072,15 @@ window.addEventListener('appinstalled', () => {
 });
 
 document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible') abgleichJetzt();
+  if (document.visibilityState !== 'visible') return;
+  zeitAuffrischen();
+  abgleichJetzt();
 });
 window.addEventListener('online', () => abgleichJetzt());
 setInterval(() => {
-  if (document.visibilityState === 'visible') abgleichJetzt();
+  if (document.visibilityState !== 'visible') return;
+  zeitAuffrischen();
+  abgleichJetzt();
 }, 60000);
 
 // Offline-Betrieb, nur über http(s). Nach einer neuen Fassung einmal neu

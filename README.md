@@ -16,7 +16,7 @@ Vier Reiter unten – welche davon dort stehen, wählt man unter Einstellungen �
 
 | Reiter | Inhalt |
 | --- | --- |
-| **Programm** | Drei Ansichten, der gewählte Tag gilt in allen; blättern mit ‹ ›, „Heute“ oder Wischen. **Tag** (Vorgabe) – oben die Tagesleiste (die sieben Tage der Woche mit der Zahl der Termine und Punkten, wer Bock hat; ein Tipp wählt den Tag), dann Wetter, Feiertag, Tipp und 21:30-Hinweis, „Deine Zeit“ (Zeitstreifen 7–24 Uhr: belegt schraffiert, Haken als Marker), Eingeplantes und alle Termine nach Tageszeit (Den ganzen Tag, Vormittag, Nachmittag, Abend), zuletzt „Läuft heute“; **Woche** – eine Karte je Tag mit Wetter, kleinem Zeitstreifen, Zahl der Termine, Haken, Eingeplantem und Konzerten der eigenen Künstler, dem Tipp; dazu „Diese Woche“ (Highlights, Gut zu wissen), „Läuft diese Woche“ und die Hinweise; **Monat** – das Blatt mit Zahlen, Bock-Punkten, ♫ und Feiertagen, ein Tipp wählt den Tag (darunter seine Karte), ein zweiter öffnet ihn; dazu die Konzerte der eigenen Künstler im Monat. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler und Eingeplantes. Ganz unten, in allen drei Ansichten: **Was immer geht** – alles ohne Termin: Eingeplantes, „Wollen wir mal“ (Ideen mit Bock), „Tut dir gut“, eigene Ideen, der Katalog nach Kategorien; mit eigenem Filter (Wirkung, Rahmen) |
+| **Programm** | Drei Ansichten, der gewählte Tag gilt in allen; blättern mit ‹ ›, „Heute“ oder Wischen. **Tag** (Vorgabe) – oben die Tagesleiste (die sieben Tage der Woche mit der Zahl der Termine und Punkten, wer Bock hat; ein Tipp wählt den Tag), dann Wetter, Feiertag, Tipp und 21:30-Hinweis, „Deine Zeit“ (Zeitstreifen 7–24 Uhr: belegt schraffiert, Haken als Marker), Eingeplantes und alle Termine nach Tageszeit (Den ganzen Tag, Vormittag, Nachmittag, Abend), zuletzt „Läuft heute“; **Woche** – eine Karte je Tag mit Wetter, kleinem Zeitstreifen, Zahl der Termine, Haken, Eingeplantem und Konzerten der eigenen Künstler, dem Tipp; dazu „Diese Woche“ (Highlights, Gut zu wissen), „Läuft diese Woche“ und die Hinweise; **Monat** – das Blatt mit Zahlen, Bock-Punkten, ♫ und Feiertagen, ein Tipp wählt den Tag (darunter seine Karte), ein zweiter öffnet ihn; dazu die Konzerte der eigenen Künstler im Monat. Vergangenes steht nirgends: Es geht ab heute los, und heute fehlt, was schon zu Ende ist. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler und Eingeplantes. Ganz unten, in allen drei Ansichten: **Was immer geht** – alles ohne Termin: Eingeplantes, „Wollen wir mal“ (Ideen mit Bock), „Tut dir gut“, eigene Ideen, der Katalog nach Kategorien; mit eigenem Filter (Wirkung, Rahmen) |
 | **Karte** | OpenStreetMap, ein Marker je Ort (nahe zu Haufen zusammengefasst), oben der Zeitraum (Heute bis Alles) und derselbe Filter wie im Programm, dazu „Nur mit Bock“ und „Orte aus Ideen zeigen“ |
 | **Wir** | Der gemeinsame Plan: oben die Leute, eine Zeile Stand und – beim Gastgeber – „Einladen“. Beim Gastgeber der Überblick: Zusammen, Wollen mit dir, Ohne dich, Pro Person, Deine Haken. Bei den Eingeladenen: Du und Tobi, Tobi hat Bock auf, Deine Haken. Leere Abschnitte stehen nicht da. Ohne Plan die eigene Bock-Liste und der Weg in einen Plan |
 | **Einstellungen** | Der Reiter ganz rechts, immer da (Adresse `#einstellungen`): **Reiter unten** (Programm, Karte, Wir je an oder aus), **Mein Standort**, **Mitteilungen** (nur der Gastgeber), **Gemeinsamer Plan** (Abgleich, Name ändern, Weiteres Gerät, So geht's, Verlassen bzw. Auflösen), **App** (Installieren, Stand des Programms und des Katalogs, Hinweise zu den Daten) |
@@ -70,6 +70,17 @@ und Ausstellungen sind zum Kommen und Gehen – dort reicht ein Beginn bis
 spätestens um 21:30 anfängt, bleibt (Anstoß 21:00 ja, eine Partie um 22:00
 vor einem Arbeitstag nein); der Tag sagt „1 Online-Termin, der erst nach
 21:30 beginnt“.
+
+**Vorbei** ist auch immer an: Vergangenes steht nicht da. Das Programm
+beginnt heute – zurückblättern geht nicht, in Tagesleiste und Monat stehen
+die Tage davor blass, ohne Zahl und nicht wählbar, die Woche beginnt mit
+heute, „Läuft diese Woche“ ebenso. Heute fehlt, was schon zu Ende ist: um
+15 Uhr nichts, was um 13 Uhr endete. Das Ende kommt wie bei 21:30 aus `ende`,
+einem Zeitraum oder dem Richtwert; Ganztägiges, Termine ohne Uhrzeit und
+alles zum Kommen und Gehen ohne festes Ende bleiben bis Mitternacht. Das gilt
+auch für Eingeplantes (danach fragt „Was immer geht“ gleich „Wie war's?“),
+die Karte und „Wir“ (dort unter „Vorbei“). Bleibt die App offen, räumt sie
+jede Minute und beim Zurückholen nach vorn auf.
 
 Gerechnet wird in `js/zeit.js` und `js/filter.js`, geprüft in
 `tests/test-programm.mjs`.
@@ -551,7 +562,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 
 | Test | prüft |
 | --- | --- |
-| `test-programm.mjs` | Tag und Woche: der Kopf (Ansichten, Blättern, Filter, Tagesleiste, erster Termin ohne Scrollen), Gliederung nach Tageszeit, beide Zeitregeln, „Läuft heute“, Tageskarten der Woche mit „Diese Woche“, Laufendem und Hinweisen, Filter, Wischen, vergangene Tage, Feiertag, ein alter Stand „Liste“ |
+| `test-programm.mjs` | Tag und Woche: der Kopf (Ansichten, Blättern, Filter, Tagesleiste, erster Termin ohne Scrollen), Gliederung nach Tageszeit, beide Zeitregeln, „Läuft heute“, Tageskarten der Woche mit „Diese Woche“, Laufendem und Hinweisen, Filter, Wischen, Vergangenes (keine Tage vor heute, heute ohne Beendetes – auch bei offener App), Feiertag, ein alter Stand „Liste“ |
 | `test-filter.mjs` | das Filter-Blatt: Dialog, Wahl gilt sofort, Chips mit ✕, „Alle zeigen“, Zurücksetzen, Escape, Tipp daneben, Fokus, weniger Bewegung, dasselbe in Woche, Monat und Karte, das Blatt von „Was immer geht“, nichts scrollt quer |
 | `test-einstellungen.mjs` | der Reiter Einstellungen (kein ⚙, kein „Zurück“), die Abschnitte je Rolle, Stand der Daten, Installieren, Hinweise zu den Daten, Name ändern, Weiteres Gerät |
 | `test-reiter.mjs` | Reiter unten: an und aus (auch mit der Tastatur), der letzte bleibt, Neuladen, Start-Reiter, Ausgeblendetes über `#…`, Einladung und „Zu „Wir““, der Punkt nur an „Wir“, `#ideen` führt zu „Was immer geht“, vier Beschriftungen bei 360 und 390 px ganz lesbar ohne Querscrollen, alte und kaputte Stände |

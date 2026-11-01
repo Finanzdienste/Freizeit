@@ -24,11 +24,15 @@
  * Wischen), Filter mit Chips und Zähler. Überall dieselbe Auswahl: Filter und
  * 21:30-Regel (filter.js). Nach dem Programm reichen Konzerte der eigenen
  * Künstler und Eingeplantes Monate weiter – Tage dort zeigen nur das.
+ *
+ * Vergangenes steht nicht da: Es geht erst ab heute los (die Tage davor sind
+ * in Tagesleiste und Monat blass und ohne Zahl, die Woche beginnt mit heute),
+ * und heute fehlt, was schon zu Ende ist (schonVorbei in zeit.js).
  */
 import { esc, anzahl } from './text.js';
 import {
   monatsRaster, monatVon, monatPlus, monatJahr, datumMitTag, montag, plusTage, kalenderwoche, wochentag, wochentagKurz, tagMonat,
-  beginn, ende, zeitAm, uhrzeit, jetztMinuten, werktag,
+  beginn, ende, zeitAm, uhrzeit, jetztMinuten, werktag, schonVorbei,
 } from './zeit.js';
 import {
   termineAm, laufendZwischen, letzterTag, filterFuer, spaetText, umkreisAn,
@@ -52,13 +56,13 @@ const VON = 7 * 60;
 const BIS = 24 * 60;
 const TAG = 24 * 60;
 
-/** Der erste und der letzte Tag, durch den man blättern kann: vom Ersten dieses Monats bis zum Ende des Monats mit dem letzten Termin oder Plan. */
+/** Der erste und der letzte Tag, durch den man blättern kann: von heute – Vergangenes zeigt die App nicht – bis zum Ende des Monats mit dem letzten Termin oder Plan. */
 export function tagesBereich(p, heute) {
   const bis = p ? letzterTag(p, geplante().map((e) => e.datum)) : heute;
   const letzterMonat = monatVon(bis > heute ? bis : heute);
   const d = new Date(`${letzterMonat}-01T12:00:00Z`);
   d.setUTCMonth(d.getUTCMonth() + 1, 0);
-  return { erster: `${monatVon(heute)}-01`, letzter: d.toISOString().slice(0, 10) };
+  return { erster: heute, letzter: d.toISOString().slice(0, 10) };
 }
 
 /** Der gewählte Tag – liegt er außerhalb, dann heute. */
@@ -75,13 +79,13 @@ const tagTitel = (d, heute) => `${wochentag(d)}, ${tagMonat(d)}${d.slice(0, 4) =
 
 // --- Was an einem Tag steht
 
-/** Termine (nach Filtern und 21:30-Regel) und Eingeplantes eines Tages. */
+/** Termine (nach Filtern und 21:30-Regel) und Eingeplantes eines Tages – heute ohne das, was schon vorbei ist. */
 function tagDaten(p, d, f, plaene) {
   const {
     tag, liste, spaet, spaetOnline,
   } = termineAm(p, d, f);
   const termine = liste.map((e) => eintragTermin(e, tag, p.tage));
-  const geplant = plaene.filter((e) => e.datum === d);
+  const geplant = plaene.filter((e) => e.datum === d && !schonVorbei(e, d));
   return {
     tag, termine, geplant, spaet, spaetOnline, alle: [...geplant, ...termine],
   };
@@ -226,16 +230,21 @@ function tagesteil(e) {
 
 const teilKopf = (titel, n) => `<h3 class="tagesteil"><span>${esc(titel)}</span><span class="tt-zahl">${n}</span></h3>`;
 
-/** Die sieben Tage der Woche wie eine Abfahrtstafel – klebt oben, ein Tipp wählt den Tag. */
+/** Die sieben Tage der Woche wie eine Abfahrtstafel – klebt oben, ein Tipp wählt den Tag. Vergangene Tage stehen blass da, ohne Zahl. */
 function tagesleiste(p, st, heute, datum, plaene) {
   const f = filterFuer(st);
   const { erster, letzter } = tagesBereich(p, heute);
   const mo = montag(datum);
   return `<nav class="tagleiste" aria-label="Tage der Woche">${Array.from({ length: 7 }, (_, i) => plusTage(mo, i)).map((d) => {
+    if (d < heute) {
+      return `<button type="button" class="tagzelle vorbei" data-tag="${d}" aria-label="${esc(datumMitTag(d))}: vorbei" disabled>
+      <span class="tz-wt">${wochentagKurz(d)}</span><span class="tz-nr">${Number(d.slice(8))}</span><span class="tz-unter"></span>
+    </button>`;
+    }
     const td = tagDaten(p, d, f, plaene);
     const zahl = td.alle.length;
     const { wer } = punkte(td.alle);
-    const klassen = ['tagzelle', d === heute ? 'ist-heute' : '', d === datum ? 'gewaehlt' : '', d < heute ? 'vorbei' : ''].filter(Boolean).join(' ');
+    const klassen = ['tagzelle', d === heute ? 'ist-heute' : '', d === datum ? 'gewaehlt' : ''].filter(Boolean).join(' ');
     return `<button type="button" class="${klassen}" data-tag="${d}" aria-pressed="${d === datum}" aria-label="${esc(datumMitTag(d))}: ${anzahl(zahl, 'Termin', 'Termine')}${wer.length ? ', mit Bock' : ''}"${d < erster || d > letzter ? ' disabled' : ''}>
       <span class="tz-wt">${wochentagKurz(d)}</span><span class="tz-nr">${Number(d.slice(8))}</span>
       <span class="tz-unter"><span class="tz-zahl">${zahl || '–'}</span>${wer.slice(0, 3).map((x) => `<i class="pkt ${x}"></i>`).join('')}</span>
@@ -278,7 +287,7 @@ function tagAnsicht(p, st, heute, d, plaene, ctx = {}) {
   // Die Hülle begrenzt die klebende Tagesleiste: Bei „Was immer geht“ scrollt sie mit weg.
   return `<div class="tag-huelle">
     ${tagesleiste(p, st, heute, d, plaene)}
-    <section class="tag${d < heute ? ' vorbei' : ''}" id="tag-${d}" aria-label="${esc(datumMitTag(d))}">
+    <section class="tag" id="tag-${d}" aria-label="${esc(datumMitTag(d))}">
       ${ctx.meldung && ctx.meldung.ort === 'programm' && ctx.meldung.tag === d ? meldungBox(ctx.meldung) : ''}
       ${fakten ? `<dl class="tag-info">${fakten}</dl>` : ''}
       ${zeit}
@@ -313,7 +322,7 @@ function tagKarte(p, d, f, plaene, heute, { vorschau = false } = {}) {
     ? 'noch kein Programm'
     : `${anzahl(td.termine.length, 'Termin', 'Termine')}${wichtig.length ? ` · ${wichtig.length} mit Bock` : ''}`;
   const wetter = wetterKurz(tag.wetter);
-  const klassen = ['wtag', d === heute ? 'heute' : '', d < heute ? 'vorbei' : '', ohneProgramm ? 'ohne' : '', vorschau ? 'vorschau' : ''].filter(Boolean).join(' ');
+  const klassen = ['wtag', d === heute ? 'heute' : '', ohneProgramm ? 'ohne' : '', vorschau ? 'vorschau' : ''].filter(Boolean).join(' ');
   return `<button type="button" class="${klassen}" data-tag="${d}">
     <span class="wt-datum"><span class="wt-wt">${wochentagKurz(d)}</span><span class="wt-nr">${Number(d.slice(8))}</span>${vorschau ? `<span class="wt-monat">${esc(monatJahr(d).split(' ')[0].slice(0, 3))}</span>` : ''}</span>
     <span class="wt-inhalt">
@@ -329,7 +338,8 @@ function tagKarte(p, d, f, plaene, heute, { vorschau = false } = {}) {
 
 function wocheAnsicht(p, st, heute, mo, plaene, ctx = {}) {
   const f = filterFuer(st);
-  const tage = Array.from({ length: 7 }, (_, i) => plusTage(mo, i));
+  // In dieser Woche erst ab heute – was vorbei ist, braucht keine Karte.
+  const tage = Array.from({ length: 7 }, (_, i) => plusTage(mo, i)).filter((d) => d >= heute);
   const dieseWoche = mo === montag(heute);
   const zeiten = tage.some((d) => bekannt(d));
   const n = esc(gastgeberName() || 'der Gastgeber');
@@ -340,7 +350,7 @@ function wocheAnsicht(p, st, heute, mo, plaene, ctx = {}) {
   ${mo > p.bis ? '<div class="banner">Für diese Woche gibt es noch kein Programm – hier stehen nur Konzerte deiner Künstler und was ihr eingeplant habt. Es kommt mit dem Montagslauf, sobald die Woche in den nächsten fünf Wochen liegt.</div>' : ''}
   <div class="wochen-liste">${tage.map((d) => tagKarte(p, d, f, plaene, heute)).join('')}</div>
   ${legende}
-  ${laufendKasten(laufendZwischen(p, mo, plusTage(mo, 6), f), 'Läuft diese Woche', { heute, tag: plusTage(mo, 5), ctx })}
+  ${laufendKasten(laufendZwischen(p, mo < heute ? heute : mo, plusTage(mo, 6), f), 'Läuft diese Woche', { heute, tag: plusTage(mo, 5), ctx })}
   ${dieseWoche ? hinweiseKasten(p) : ''}`;
 }
 
@@ -349,11 +359,14 @@ function wocheAnsicht(p, st, heute, mo, plaene, ctx = {}) {
 function monatAnsicht(p, st, heute, monat, datum, plaene) {
   const f = filterFuer(st);
   const felder = monatsRaster(monat).map((d) => {
+    if (d < heute) {
+      return `<button type="button" class="feld vorbei${monatVon(d) === monat ? '' : ' fremd'}" data-waehle="${d}" aria-label="${esc(datumMitTag(d))}: vorbei" disabled><span class="nr">${Number(d.slice(8))}</span></button>`;
+    }
     const td = tagDaten(p, d, f, plaene);
     const { wer, treffer } = punkte(td.alle);
     const n = td.termine.length;
     const kuenstler = td.termine.some((e) => e.kuenstler);
-    const klassen = ['feld', monatVon(d) === monat ? '' : 'fremd', d < heute ? 'vorbei' : '', d === heute ? 'heute' : '', d > p.bis ? 'ohne' : '',
+    const klassen = ['feld', monatVon(d) === monat ? '' : 'fremd', d === heute ? 'heute' : '', d > p.bis ? 'ohne' : '',
       treffer ? 'treffer' : '', td.tag.feiertag ? 'feiertag' : '', d === datum ? 'gewaehlt' : ''].filter(Boolean).join(' ');
     return `<button type="button" class="${klassen}" data-waehle="${d}" aria-pressed="${d === datum}" aria-label="${esc(datumMitTag(d))}: ${anzahl(n, 'Termin', 'Termine')}${kuenstler ? ', Konzert deiner Künstler' : ''}${wer.length ? ', mit Bock' : ''}${td.tag.feiertag ? ', Feiertag' : ''}">
       <span class="nr">${Number(d.slice(8))}</span>${n ? `<span class="zahl">${n}</span>` : ''}
@@ -362,11 +375,11 @@ function monatAnsicht(p, st, heute, monat, datum, plaene) {
   }).join('');
 
   const konzerte = p.termine.filter((e) => e.kuenstler)
-    .flatMap((e) => e.daten.filter((d) => monatVon(d) === monat).map((d) => ({ e, d })))
+    .flatMap((e) => e.daten.filter((d) => monatVon(d) === monat && d >= heute && !schonVorbei(e, d)).map((d) => ({ e, d })))
     .sort((a, b) => a.d.localeCompare(b.d) || String(a.e.zeit).localeCompare(String(b.e.zeit)));
   const konzertListe = konzerte.length ? `<section class="abschnitt-klein" id="monat-konzerte">
       <h3 class="tagesteil"><span>Deine Konzerte</span><span class="tt-zahl">${konzerte.length}</span></h3>
-      ${konzerte.map(({ e, d }) => `<button type="button" class="konzert-zeile${d < heute ? ' vorbei' : ''}" data-tag="${d}">
+      ${konzerte.map(({ e, d }) => `<button type="button" class="konzert-zeile" data-tag="${d}">
         <span class="kz-datum">${wochentagKurz(d)} ${tagMonat(d)}</span><span class="kz-titel">♫ ${esc(e.titel)}</span><span class="kz-ort">${esc([e.ort, zeitAm(e, d)].filter(Boolean).join(' · '))}</span>
       </button>`).join('')}
     </section>` : '';
@@ -429,7 +442,7 @@ export function programmZahl(p, st, heute, ui) {
   if (ui.ansicht === 'woche') tage = Array.from({ length: 7 }, (_, i) => plusTage(montag(datum), i));
   if (ui.ansicht === 'monat') tage = monatsRaster(monatVon(datum)).filter((d) => monatVon(d) === monatVon(datum));
   const f = filterFuer(st);
-  return tage.reduce((n, d) => n + termineAm(p, d, f).liste.length, 0);
+  return tage.filter((d) => d >= heute).reduce((n, d) => n + termineAm(p, d, f).liste.length, 0);
 }
 
 /**
@@ -452,7 +465,7 @@ export function programmAnsicht(p, st, heute, ui) {
   const zahl = programmZahl(p, st, heute, { ansicht, datum });
   let laufend = [];
   if (ansicht === 'tag') laufend = laufendZwischen(p, datum, datum, f);
-  if (ansicht === 'woche') laufend = laufendZwischen(p, montag(datum), plusTage(montag(datum), 6), f);
+  if (ansicht === 'woche') laufend = laufendZwischen(p, montag(datum) < heute ? heute : montag(datum), plusTage(montag(datum), 6), f);
   const zaehler = `${anzahl(zahl, 'Termin', 'Termine')}${laufend.length ? ` · <button type="button" class="textknopf" data-aktion="zu-laufend">${laufend.length} laufend</button>` : ''}`;
 
   const kopf = `<header class="prog-kopf">

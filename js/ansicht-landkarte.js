@@ -25,7 +25,7 @@
  * stehen bleibt.
  */
 import { esc, anzahl, istOnline } from './text.js';
-import { plusTage, montag } from './zeit.js';
+import { plusTage, montag, schonVorbei } from './zeit.js';
 import { termineAm, laufendZwischen, letzterTag, filterFuer, umkreisAn } from './filter.js';
 import { filterLeiste, chipsProgramm } from './ansicht-filter.js';
 import { knopfName } from './standort.js';
@@ -103,7 +103,7 @@ export function eintraegeFuerKarte(p, st, heute, raum, ideen = []) {
     for (const e of termine) liste.push(eintragTermin(e, tag, p.tage));
   }
   for (const e of laufendZwischen(p, von, bis, f)) liste.push(eintragLaufend(e));
-  for (const e of plaene) if (e.datum >= von && e.datum <= bis) liste.push(e);
+  for (const e of plaene) if (e.datum >= von && e.datum <= bis && !schonVorbei(e, e.datum)) liste.push(e);
   if (st.karteIdeen || st.karteBock) {
     for (const x of ideen) for (const o of x.orte) if (o.geo) liste.push({ ...x, ort: o.name, geo: o.geo, link: o.link || x.link });
   }

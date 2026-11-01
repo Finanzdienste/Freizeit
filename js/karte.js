@@ -11,7 +11,9 @@
 import {
   esc, kostenlos, preisSagtWas, REGIONEN, DRAUSSEN, sichererLink, istOnline,
 } from './text.js';
-import { zeitAm, ende, uhrzeit, offen, abendVorArbeitstag, wochentagKurz, tagMonat } from './zeit.js';
+import {
+  zeitAm, ende, uhrzeit, offen, abendVorArbeitstag, wochentagKurz, tagMonat, vorbeiAb,
+} from './zeit.js';
 import { whatsappLink, kalenderZiel } from './teilen.js';
 import { WO } from './ideen.js';
 import { zeitZeile } from './zeiten.js';
@@ -103,6 +105,8 @@ export function eintragTermin(e, tag, tage) {
     ganztags: Boolean(e.ganztags),
     endeMin: i ? i.ende : null,
     endeText: zeigeEnde ? `bis ${i.art === 'bekannt' ? '' : 'ca. '}${uhrzeit(i.ende)}` : '',
+    // Ab wann er an dem Tag vorbei ist (zeit.js) – „Wir“ räumt ihn dann weg.
+    vorbeiAb: vorbeiAb(e, tag.datum),
   };
 }
 

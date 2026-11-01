@@ -10,7 +10,9 @@
  * der Beginn statt des Endes.
  */
 import { kostenlos, istOnline } from './text.js';
-import { werktag, nachFeierabend, endetRechtzeitig, beginntRechtzeitig, sortierung } from './zeit.js';
+import {
+  werktag, nachFeierabend, endetRechtzeitig, beginntRechtzeitig, sortierung, schonVorbei, jetzt,
+} from './zeit.js';
 import { bezugVon, entfernung } from './standort.js';
 
 export { istOnline };
@@ -81,12 +83,13 @@ export const tagVon = (p, iso) => p.tage.find((t) => t.datum === iso) || { datum
  * Was an einem Tag steht – und wie viele die 21:30-Regel weggenommen hat
  * (spaet), davon wie viele Online & TV (spaetOnline). Vor Ort zählt das
  * Ende, online der Beginn; für Konzerte der eigenen Künstler gilt die Regel
- * nicht. Sortiert nach Uhrzeit (Ganztägiges zuerst) – oder, mit
- * nachEntfernung, das Nächste zuerst.
+ * nicht. Was heute schon zu Ende ist, fehlt ganz (schonVorbei, `j`: jetzt).
+ * Sortiert nach Uhrzeit (Ganztägiges zuerst) – oder, mit nachEntfernung, das
+ * Nächste zuerst.
  */
-export function termineAm(p, iso, f) {
+export function termineAm(p, iso, f, j = jetzt()) {
   const tag = tagVon(p, iso);
-  const basis = p.termine.filter((e) => e.daten.includes(iso) && passt(e, f)
+  const basis = p.termine.filter((e) => e.daten.includes(iso) && passt(e, f) && !schonVorbei(e, iso, j)
     && (!f.feierabend || !werktag(tag) || nachFeierabend(e, iso)));
   const rechtzeitig = (e) => e.kuenstler || (istOnline(e) ? beginntRechtzeitig(e, tag, p.tage) : endetRechtzeitig(e, tag, p.tage));
   const liste = basis.filter(rechtzeitig)

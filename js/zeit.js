@@ -10,6 +10,8 @@
  *                    Büro muss, will um zehn zu Hause sein. Für Online & TV
  *                    zählt der Beginn (spätestens 21:30) – da ist man schon
  *                    zu Hause.
+ *   vorbei           immer an: Was heute schon zu Ende ist, steht nicht mehr
+ *                    da (schonVorbei) – um 15 Uhr nichts, was um 13 Uhr endete.
  *
  * Alle Tage sind ISO-Daten („2026-10-28“). Gerechnet wird mittags, damit die
  * Umstellung auf Winterzeit kein Datum verschiebt.
@@ -175,6 +177,29 @@ export function ende(e, iso) {
   if (b === null) return null;
   const start = b + (/Einlass/i.test(`${z} ${e.titel || ''}`) ? 45 : 0);
   return { ende: start + dauer(e), art: 'geschaetzt' };
+}
+
+/**
+ * Ab welcher Minute ein Termin an diesem Tag vorbei ist: das bekannte Ende,
+ * das Ende eines Zeitraums („10:00–17:00“), sonst das geschätzte. null, wenn
+ * er bis Mitternacht bleibt – ganztägig, ohne Uhrzeit, oder zum Kommen und
+ * Gehen („ab 22 Uhr“, ein Markt) ohne festes Ende.
+ */
+export function vorbeiAb(e, iso) {
+  if (e.ganztags) return null;
+  const i = ende(e, iso);
+  if (!i || (i.art === 'geschaetzt' && offen(e, iso))) return null;
+  return i.ende;
+}
+
+/** Jetzt: der Tag und die Minute. */
+export const jetzt = () => ({ datum: heute(), minuten: jetztMinuten() });
+
+/** Ist der Termin heute schon zu Ende? An anderen Tagen nie – vergangene Tage zeigt die App gar nicht erst. */
+export function schonVorbei(e, iso, j = jetzt()) {
+  if (iso !== j.datum) return false;
+  const ab = vorbeiAb(e, iso);
+  return ab !== null && ab <= j.minuten;
 }
 
 /** Die 21:30-Regel: Darf der Termin an diesem Tag stehen? */

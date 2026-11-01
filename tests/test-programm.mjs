@@ -129,11 +129,8 @@ await page.click(`.tagleiste [data-tag="${FR}"]`);
 check(await page.locator(`#tag-${FR}`).count() === 1 && await page.locator(`.tagleiste [data-tag="${FR}"]`).getAttribute('aria-pressed') === 'true',
   'ein Tipp in der Tagesleiste wählt den Tag');
 await page.click('[data-aktion="kal-heute"]');
-check(await page.locator(`#tag-${MO}`).count() === 1, '„Heute“ springt zurück');
-await page.click('[data-aktion="kal-zurueck"]');
-check((await titel()).startsWith('Sonntag, 1.11.') && await page.locator('[data-aktion="kal-zurueck"]').isDisabled()
-  && (await page.locator('#tag-2026-11-01 .leer-klein').innerText()) === 'Keine Termine.', 'zurück bis zum Monatsersten – ein Tag ohne Programm sagt es');
-await page.click('[data-aktion="kal-heute"]');
+check(await page.locator(`#tag-${MO}`).count() === 1 && await page.locator('[data-aktion="kal-zurueck"]').isDisabled(),
+  '„Heute“ springt zurück – weiter zurück geht es nicht, Vergangenes steht nicht da');
 
 // --- Wischen (auf einem Gerät mit Touch)
 const T = await oeffne({ tag: MO, zeit: '10:00', browser: A.browser, touch: true });
@@ -185,13 +182,41 @@ check((await page.locator('.banner').innerText()).includes('noch kein Programm')
 await page.click('[data-aktion="kal-heute"]');
 check((await titel()).startsWith('KW 45'), '„Heute“ bringt zurück in KW 45');
 
-// --- Vergangene Tage
+// --- Vergangenes steht nicht da: keine vergangenen Tage, heute nichts, was schon zu Ende ist
 await uhr(MI, '18:00');
-check(await gedrueckt('woche') === 'true' && await page.locator('.wtag.vorbei').count() === 2 && await page.locator('.wtag.heute').getAttribute('data-tag') === MI,
-  'Mi: in der Woche sind Mo und Di vergangen (blass), Mittwoch ist heute');
-await page.click(`.wtag[data-tag="${MO}"]`);
-check(await page.locator(`#tag-${MO}.vorbei`).count() === 1 && await page.locator('.tagleiste .tagzelle.vorbei').count() === 2,
-  'ein vergangener Tag lässt sich ansehen – als vergangen markiert');
+check(await gedrueckt('woche') === 'true' && JSON.stringify(await page.$$eval('.wtag', (ws) => ws.map((w) => w.dataset.tag))) === JSON.stringify([MI, DO, FR, SA, SO])
+  && await page.locator('.wtag.heute').getAttribute('data-tag') === MI && await page.locator('[data-aktion="kal-zurueck"]').isDisabled(),
+'Mi: die Woche beginnt mit heute – Mo und Di sind vorbei und stehen nicht mehr da, zurück geht es nicht');
+await datenTauschen(testProgramm({
+  laufend: [...testProgramm().laufend, {
+    id: 'bis-dienstag', von: '2026-10-25', bis: DI, zeit: 'täglich 10–18', titel: 'Schon zu Ende', ort: 'Kunsthalle', geo: [53.5513, 10.0024], region: 'HH', kategorie: 'Ausstellung', draussen: 'drinnen', link: 'https://example.org/zu',
+  }],
+}));
+check((await page.locator('#zaehler').innerText()).endsWith('1 laufend') && await page.locator('#abschnitt-laufend .karte', { hasText: 'Schon zu Ende' }).count() === 0,
+  '„Läuft diese Woche“ zählt ab heute: was Dienstag endete, fehlt');
+await datenTauschen(testProgramm());
+await page.click(`.wtag[data-tag="${MI}"]`);
+check(await page.locator('.tagleiste .tagzelle.vorbei:disabled').count() === 2 && await page.locator(`.tagleiste [data-tag="${MO}"] .tz-zahl`).count() === 0
+  && (await page.locator(`.tagleiste [data-tag="${MO}"]`).getAttribute('aria-label')).endsWith('vorbei'), 'in der Tagesleiste: Mo und Di blass, ohne Zahl, nicht wählbar');
+await ansicht('monat');
+check(await page.locator(`.feld[data-waehle="${DI}"]:disabled .zahl`).count() === 0 && await page.locator(`.feld[data-waehle="${DI}"]`).isDisabled()
+  && !(await page.locator(`.feld[data-waehle="${MI}"]`).isDisabled()), 'im Monat: Tage vor heute ohne Zahl und nicht wählbar');
+check((await titelAm(MI)).includes('Nachtmarkt'), 'Mi 18:00: der Nachtmarkt (18–22 Uhr) läuft gerade – er steht da');
+await uhr(MI, '22:05');
+check(!(await titelAm(MI)).includes('Nachtmarkt'), 'Mi 22:05: der Nachtmarkt ist zu Ende und weg');
+const zahlen = async () => [parseInt(await page.locator('#zaehler').innerText(), 10), Number(await page.locator(`.tagleiste [data-tag="${DI}"] .tz-zahl`).innerText())];
+await uhr(DI, '14:00');
+check((await titelAm(DI)).includes('Workshop mittags'), 'Di 14:00: der Workshop ab 12:30 (ca. 2½ Std.) läuft noch');
+const [vorher, leisteVorher] = await zahlen();
+// Die App bleibt offen, die Zeit vergeht: Kommt sie wieder nach vorn (oder schlägt die Minute), räumt sie auf.
+await page.evaluate(() => {
+  window.__uhrVor(90);
+  document.dispatchEvent(new window.Event('visibilitychange'));
+});
+await page.locator(`#tag-${DI} .karte`, { hasText: 'Workshop mittags' }).waitFor({ state: 'detached' });
+const [nachher, leisteNachher] = await zahlen();
+check(nachher === vorher - 1 && leisteNachher === leisteVorher - 1,
+  `Di 15:30 bei offener App: der Workshop ist vorbei – weg aus Liste, Zähler und Tagesleiste (${vorher} → ${nachher}), ohne Neuladen`);
 
 // --- Feiertag: Freitag frei, also gilt Donnerstagabend keine 21:30-Grenze
 await datenTauschen(testProgramm({ tage: testProgramm().tage.map((t) => (t.datum === FR ? { ...t, feiertag: true } : t)) }));

@@ -305,7 +305,7 @@ select { padding: 7px 8px; border: 1px solid var(--linie); border-radius: 8px; b
 .feld .punkte { display: flex; gap: 2px; }
 .feld .pkt { width: 7px; height: 7px; }
 .feld.fremd { opacity: .38; }
-.feld.vorbei { background: transparent; }
+.feld.vorbei { background: transparent; cursor: default; }
 .feld.vorbei .nr { color: var(--leise); }
 .feld.ohne:not(.vorbei) { background: transparent; border-style: dashed; }
 .feld.feiertag .nr { color: var(--warn); }
@@ -322,7 +322,6 @@ select { padding: 7px 8px; border: 1px solid var(--linie); border-radius: 8px; b
   width: 100%; padding: 9px 2px; border: 0; border-bottom: 1px solid var(--linie); background: none; color: var(--tinte); text-align: left; cursor: pointer;
 }
 .konzert-zeile:hover { background: var(--flaeche); }
-.konzert-zeile.vorbei { opacity: .55; }
 .kz-datum { grid-area: datum; font-family: var(--mono); font-size: 13px; color: var(--leise); padding-top: 1px; }
 .kz-titel { grid-area: titel; font-weight: 700; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .kz-ort { grid-area: ort; font-size: 13px; color: var(--leise); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -503,7 +502,6 @@ textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
 }
 .wtag:hover { border-color: var(--leise); }
 .wtag.heute { border-color: var(--akzent); box-shadow: inset 3px 0 0 var(--akzent); }
-.wtag.vorbei { opacity: .55; }
 .wt-datum { display: grid; justify-items: center; padding-top: 1px; }
 .wt-wt { font-size: 12px; font-weight: 700; color: var(--leise); line-height: 1.2; }
 .wt-nr { font-family: var(--mono); font-size: 26px; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }

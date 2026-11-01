@@ -17,7 +17,7 @@
  * zum Knopf – so muss zwischendurch nichts neu gezeichnet werden.
  */
 import { esc, anzahl, DRAUSSEN } from './text.js';
-import { plusTage, wochentag } from './zeit.js';
+import { plusTage, wochentag, schonVorbei } from './zeit.js';
 import {
   KATEGORIEN, WIRKUNG, WO, DAUER, BEWERTUNG, passtIdee, ideenFilterAn, inSaison, saisonText,
   geplante, eigeneIdeen, ideenMitBock, bilanz, tutGut, vorZeit,
@@ -268,10 +268,11 @@ export function wasImmerGeht(alle, geladen, st, heute, ui, tuer = '') {
     ${geladen ? '' : '<div class="banner">Der Ideen-Katalog ließ sich nicht laden – eigene und eingeplante Ideen stehen trotzdem hier.</div>'}
   </header>`;
 
-  // Eingeplant: was kommt, und was vorbei ist und noch auf „Wie war's?“ wartet.
+  // Eingeplant: was kommt, und was vorbei ist (auch heute schon) und noch auf „Wie war's?“ wartet.
   const plaene = geplante(st);
-  const kommend = plaene.filter((e) => e.datum >= heute);
-  const offen = plaene.filter((e) => e.datum < heute && e.datum >= plusTage(heute, -14) && meinBock(e.schluessel)
+  const war = (e) => e.datum < heute || schonVorbei(e, e.datum);
+  const kommend = plaene.filter((e) => e.datum >= heute && !war(e));
+  const offen = plaene.filter((e) => war(e) && e.datum >= plusTage(heute, -14) && meinBock(e.schluessel)
     && !st.verlauf.some((v) => v.plan === e.schluessel));
   const eingeplant = kommend.length || offen.length
     ? unter('abschnitt-geplant', 'Eingeplant', kommend.length + offen.length, `${offen.map((e) => frageKarte(e, ctx)).join('')}

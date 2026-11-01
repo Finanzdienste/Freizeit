@@ -46,8 +46,10 @@ export function uhrStellen() {
   // Eine stehende Uhr hielte Leaflets Animationen an (Kacheln blieben
   // unsichtbar, Verschieben endete nie).
   const start = Echt.now();
-  const fest = new Echt(`${tag}T${zeit || '12:00'}:00`).getTime();
+  let fest = new Echt(`${tag}T${zeit || '12:00'}:00`).getTime();
   const jetzt = () => fest + (Echt.now() - start);
+  // Die Uhr ohne Neuladen vorstellen – so wie die Zeit bei offener App vergeht.
+  window.__uhrVor = (minuten) => { fest += minuten * 60000; };
   function Mock(...args) {
     if (!(this instanceof Mock)) return new Echt(jetzt()).toString();
     return args.length === 0 ? new Echt(jetzt()) : new Echt(...args);

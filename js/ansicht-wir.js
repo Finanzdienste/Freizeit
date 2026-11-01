@@ -28,7 +28,9 @@
  */
 import { esc, anzahl, sichererLink } from './text.js';
 import { karte, alleEintraege, wannKurz } from './karte.js';
-import { montag, wochentagKurz, tagMonat } from './zeit.js';
+import {
+  montag, wochentagKurz, tagMonat, vorbeiAb, jetztMinuten,
+} from './zeit.js';
 import { meinBock } from './speicher.js';
 import {
   andere, hakenDerAnderen, syncStatus, einladungsLink, zugangLesen, person, rolle, gastgeberName, mitWem,
@@ -37,8 +39,16 @@ import { istApple, alsApp } from './teilen.js';
 import { zeitenWochen, belegung } from './zeiten.js';
 import { planAusSchnappschuss, ideeAusSchnappschuss } from './ideen.js';
 
-/** Wann ist ein Eintrag vorbei? Termine am Tag danach, Laufendes nach dem letzten Tag. */
-export const vorbei = (e, heute) => (e.datum ? e.datum < heute : Boolean(e.bis) && e.bis < heute);
+/** Ist ein Termin heute schon zu Ende? Eingeplantes rechnet selbst, Termine wissen es aus den Daten (vorbeiAb). */
+const heuteVorbei = (e) => {
+  const ab = e.quelle === 'plan' ? vorbeiAb(e, e.datum) : e.vorbeiAb;
+  return typeof ab === 'number' && ab <= jetztMinuten();
+};
+
+/** Wann ist ein Eintrag vorbei? Termine an einem Tag vor heute oder heute nach ihrem Ende, Laufendes nach dem letzten Tag. */
+export const vorbei = (e, heute) => (e.datum
+  ? e.datum < heute || (e.datum === heute && heuteVorbei(e))
+  : Boolean(e.bis) && e.bis < heute);
 
 /** Nach Tag und Uhrzeit; Ideen (ohne Tag) danach – die mit den meisten Leuten zuerst. */
 function sortiert(liste, zahl = () => 0) {

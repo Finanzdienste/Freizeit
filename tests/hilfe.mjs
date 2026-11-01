@@ -118,6 +118,29 @@ export function testProgramm(mehr = {}) {
   };
 }
 
+/** Vier Filme für die IMDb Top 250 (daten/filme.json) – einer ohne IMDb-ID. */
+export function testFilme() {
+  return {
+    version: 1,
+    stand: '2025-09-29',
+    quelle: 'Testliste',
+    filme: [
+      {
+        platz: 1, titel: 'Die Verurteilten', original: 'The Shawshank Redemption', jahr: 1994, laenge: 142, genre: ['Drama'], regie: 'Frank Darabont', imdb: 'tt0111161', beschreibung: 'Ein Banker übersteht Jahrzehnte im Gefängnis.',
+      },
+      {
+        platz: 2, titel: 'Der Pate', original: 'The Godfather', jahr: 1972, laenge: 175, genre: ['Krimi', 'Drama'], regie: 'Francis Ford Coppola', imdb: 'tt0068646', beschreibung: 'Eine Mafiafamilie und ihr Erbe.',
+      },
+      {
+        platz: 3, titel: 'Inception', original: 'Inception', jahr: 2010, laenge: 148, genre: ['Action', 'Science-Fiction'], regie: 'Christopher Nolan', imdb: 'tt1375666', beschreibung: 'Ein Coup in fremden Träumen.',
+      },
+      {
+        platz: 4, titel: '12th Fail', jahr: 2023, laenge: 147, genre: ['Biografie', 'Drama'], regie: 'Vidhu Vinod Chopra', beschreibung: 'Ein Junge gibt nicht auf.',
+      },
+    ],
+  };
+}
+
 /**
  * Ein kleiner Ideen-Katalog: je Kategorie eine Idee mit dem, was die Tests
  * brauchen – Flow, Zuhause, zu zweit, Orte für die Karte, eine Idee
@@ -367,7 +390,7 @@ export function fakeServer() {
  * @param {boolean} [o.touch]         ein Gerät mit Touch (Wischen im Programm)
  */
 export async function oeffne({
-  tag = MO, zeit = '10:00', programm = testProgramm(), ideen = testIdeen(), stand = null, server = fakeServer(), ua = '', hash = '',
+  tag = MO, zeit = '10:00', programm = testProgramm(), ideen = testIdeen(), filme = testFilme(), stand = null, server = fakeServer(), ua = '', hash = '',
   viewport = { width: 390, height: 844 }, browser: geteilt = null, scale = 1, push = '', touch = false,
 } = {}) {
   const browser = geteilt || await chromium.launch();
@@ -378,7 +401,7 @@ export async function oeffne({
   });
   await ctx.addInitScript(uhrStellen);
   if (push) await ctx.addInitScript(pushAttrappe, push);
-  const daten = { programm, ideen };
+  const daten = { programm, ideen, filme };
   await ctx.route('**/daten/programm.json', (route) => {
     if (daten.programm === null || daten.programm === undefined) return route.fulfill({ status: 404, body: 'fehlt' });
     return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(daten.programm) });
@@ -386,6 +409,10 @@ export async function oeffne({
   await ctx.route('**/daten/ideen.json', (route) => {
     if (daten.ideen === null || daten.ideen === undefined) return route.fulfill({ status: 404, body: 'fehlt' });
     return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(daten.ideen) });
+  });
+  await ctx.route('**/daten/filme.json', (route) => {
+    if (daten.filme === null || daten.filme === undefined) return route.fulfill({ status: 404, body: 'fehlt' });
+    return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(daten.filme) });
   });
   await ctx.route(SUPABASE, (route) => server.route(route));
   await ctx.route(FUNKTION, (route) => server.route(route));

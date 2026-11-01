@@ -623,3 +623,34 @@ body.blatt-auf { overflow: hidden; }
 .standort-treffer { display: grid; gap: 6px; }
 .treffer-knopf { text-align: left; padding: 8px 10px; border: 1px solid var(--linie); border-radius: 8px; background: var(--flaeche); cursor: pointer; font-size: 14px; }
 .treffer-knopf:hover, .treffer-knopf:focus-visible { background: var(--akzent-weich); }
+
+/* IMDb Top 250 (ansicht-filme.js): die Tür unten bei „Was immer geht“ und die eigene Seite.
+   Der Platz steht links wie die Uhrzeit im Programm – in Festbreitenschrift, die ersten zehn in Teal. */
+.filme-tuer {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 4px 14px; width: 100%; margin: 4px 0 10px;
+  padding: 12px 14px; border: 1px solid var(--linie); border-left: 4px solid var(--akzent); border-radius: 10px;
+  background: var(--flaeche); color: var(--tinte); font: inherit; text-align: left; cursor: pointer;
+}
+.filme-tuer:hover { background: var(--akzent-weich); }
+.ft-zahl { font: 800 27px/1 var(--mono); color: var(--akzent); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.ft-text { display: grid; gap: 1px; min-width: 0; }
+.ft-titel { font-weight: 800; font-size: 16.5px; }
+.ft-unter { font-size: 13px; color: var(--leise); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ft-bock { font-size: 12.5px; font-weight: 700; color: var(--akzent); }
+.ft-pfeil { color: var(--leise); font-size: 22px; line-height: 1; }
+.filme-kopf { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+.filme-titelblock { min-width: 0; }
+.filme-titelblock h2, .filme-kopf > h2 { font-size: 22px; font-weight: 800; line-height: 1.2; }
+.filme-hinweis { margin: 8px 0 0; }
+.filme-werkzeug {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; display: grid; gap: 8px;
+  margin: 10px -16px 0; padding: 8px 16px 10px; background: var(--bg); border-bottom: 1px solid var(--linie);
+}
+.filme-zeile { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.filme-zeile .segmente { flex: 1 1 auto; }
+.filme-genre { flex: 0 1 auto; max-width: 100%; padding: 7px 8px; border: 1px solid var(--linie); border-radius: 10px; background: var(--flaeche); color: var(--tinte); font-size: 14px; }
+#filme-zahl { margin-top: 8px; }
+.karte.film { grid-template-columns: 2.4rem 1fr; }
+.film-platz { font: 700 19px/1.25 var(--mono); color: var(--leise); text-align: right; font-variant-numeric: tabular-nums; padding-top: 1px; }
+.film-platz.top { color: var(--akzent); }
+.film-regie { margin-top: 4px; font-size: 13px; color: var(--leise); }

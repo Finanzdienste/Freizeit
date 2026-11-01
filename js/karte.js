@@ -146,6 +146,7 @@ export function werZeile(eintrag) {
 
 /** Kurz: wann. Für die Spalte links, wenn sie ein Datum statt der Uhrzeit zeigt. */
 export function wannKurz(eintrag) {
+  if (eintrag.quelle === 'film') return 'Film';
   if (eintrag.datum) return `${wochentagKurz(eintrag.datum)} ${tagMonat(eintrag.datum)}`;
   if (eintrag.von && eintrag.bis) return `${tagMonat(eintrag.von)}–${tagMonat(eintrag.bis)}`;
   return 'jederzeit';
@@ -155,7 +156,8 @@ export function wannKurz(eintrag) {
  * Der Bock-Knopf – auf der Karte, bei den Ideen und in der Landkarte. Wer
  * eingeladen ist, wählt zwischen zwei Knöpfen: mit dem Gastgeber oder
  * allein bzw. mit anderen. Die Hülle trägt den Schlüssel, damit app.js nach
- * einem Tipp alle Knöpfe desselben Eintrags neu zeichnen kann.
+ * einem Tipp alle Knöpfe desselben Eintrags neu zeichnen kann. Bei Filmen
+ * (IMDb Top 250) gibt es für Eingeladene nur „Mit … gucken“.
  */
 export function bockKnopf(eintrag) {
   const k = esc(eintrag.schluessel);
@@ -165,7 +167,9 @@ export function bockKnopf(eintrag) {
   }
   const wie = an ? mitWem(aktuell().bock[eintrag.schluessel]) : '';
   const knopf = (mitwem, text) => `<button type="button" class="knopf bock" data-bock="${k}" data-mitwem="${mitwem}" aria-pressed="${wie === mitwem}">${text}${wie === mitwem ? ' ✓' : ''}</button>`;
-  return `<span class="bock-feld wahl" data-bock-feld="${k}" role="group" aria-label="Bock">${knopf('gastgeber', `Mit ${esc(gastgeberName() || 'Gastgeber')}`)}${knopf('andere', 'Allein/mit anderen')}</span>`;
+  const gastgeber = esc(gastgeberName() || 'Gastgeber');
+  if (eintrag.quelle === 'film') return `<span class="bock-feld" data-bock-feld="${k}">${knopf('gastgeber', `Mit ${gastgeber} gucken`)}</span>`;
+  return `<span class="bock-feld wahl" data-bock-feld="${k}" role="group" aria-label="Bock">${knopf('gastgeber', `Mit ${gastgeber}`)}${knopf('andere', 'Allein/mit anderen')}</span>`;
 }
 
 /**

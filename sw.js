@@ -21,7 +21,7 @@
  * Datei zu müssen.
  */
 
-const VERSION = 'v19';
+const VERSION = 'v20';
 const CACHE = `freizeit-${VERSION}`;
 
 const SHELL = [
@@ -50,6 +50,8 @@ const SHELL = [
   './js/blatt.js',
   './js/ansicht-filter.js',
   './js/ansicht-einstellungen.js',
+  './js/filme.js',
+  './js/ansicht-filme.js',
   './vendor/leaflet/leaflet.js',
   './vendor/leaflet/leaflet.css',
   './vendor/leaflet/leaflet.markercluster.js',

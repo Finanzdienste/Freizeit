@@ -220,8 +220,9 @@ export function ideenZahl(alle, st, heute, ui) {
  * @param {object[]} alle       Ideen aus dem Katalog (und Ausflugsziele aus dem Programm)
  * @param {boolean} geladen     ob der Katalog geladen werden konnte
  * @param {object} ui           neu, planen, bewerten, offen (Set), saisonAlle, meldung, fehler
+ * @param {string} tuer         die Tür zur IMDb Top 250 (ansicht-filme.js), steht vor den Kategorien
  */
-export function wasImmerGeht(alle, geladen, st, heute, ui) {
+export function wasImmerGeht(alle, geladen, st, heute, ui, tuer = '') {
   const f = st.ideenFilter;
   const ctx = { heute, ui, bil: bilanz(st.verlauf) };
   const eigene = eigeneIdeen(st);
@@ -297,6 +298,7 @@ export function wasImmerGeht(alle, geladen, st, heute, ui) {
     ${eigeneHtml}
     <section class="immer-teil" id="abschnitt-katalog">
       ${oben ? `<h3 class="tagesteil"><span>Alle Ideen</span>${zahl(zeigen.length)}</h3>` : ''}
+      ${tuer}
       <div class="kategorien">${kategorien || (geladen ? '<div class="leer-klein">Keine Idee passt zu diesen Filtern. <button type="button" class="textknopf" data-aktion="ideen-filter-weg">Alle zeigen</button></div>' : '')}</div>
     </section>
   </section>`;

@@ -142,6 +142,40 @@ Schlüssel der Bock-Haken: `i:<id>` Idee aus dem Katalog (dieselben
 Kennungen wie früher „Geht immer“), `e:<zufall>` eigene Idee,
 `p:<tag>:<Schlüssel der Idee>` eingeplant.
 
+### IMDb Top 250
+
+Vor den Kategorien steht die Tür zur **IMDb Top 250** – eine eigene Seite im
+Programm (`#filme`): alle 250 Filme nach Platz mit deutschem Titel, Original,
+Jahr, Länge und Genre, aufgeklappt eine kurze Beschreibung, Regie und der
+Link zu IMDb. Oben Suche (Titel, Original, Regie, Jahr, Genre), Genre und die
+Auswahl Alle · Mit Bock · im Plan „Mit dir“ (Gastgeber) bzw. „Tobi will“.
+Jeder sagt je Film Bock; Eingeladene haben nur „Mit Tobi gucken“ (Bock mit
+dem Gastgeber), Tobi sieht unter „Mit dir“ und in „Wir“ unter „Wollen mit
+dir“, wer welchen Film mit ihm sehen will. In „Wir“ stehen eigene Film-Haken
+als Zeile mit Sprung zur Liste. Poster und Szenenbilder stehen bewusst nicht
+in der App – darauf sind fast immer Schauspieler zu sehen; Bilder gibt es
+über den Link zu IMDb. Schlüssel: `f:<IMDb-ID>`, ohne ID `f:<original>-<jahr>`.
+
+Die Liste `daten/filme.json` ist von Hand gepflegt (Stand steht in der Datei):
+
+```json
+{
+  "version": 1,
+  "stand": "2025-09-29",
+  "quelle": "IMDb Top 250, Stand 29.9.2025 (über 250.took.nl)",
+  "filme": [
+    { "platz": 1, "titel": "Die Verurteilten", "original": "The Shawshank Redemption", "jahr": 1994,
+      "laenge": 142, "genre": ["Drama"], "regie": "Frank Darabont", "imdb": "tt0111161",
+      "beschreibung": "1–2 eigene Sätze, 30–200 Zeichen" }
+  ]
+}
+```
+
+`laenge` (Minuten), `regie` und `imdb` dürfen fehlen. IMDb selbst lässt sich
+nicht automatisch abrufen; eine neue Liste kommt über den Browser (Claude in
+Chrome) oder als gespeicherte Seite von imdb.com/chart/top. Beim Erneuern die
+IMDb-IDs behalten – an den Schlüsseln hängen die Haken.
+
 ## Gemeinsam planen
 
 Einer lädt ein – der **Gastgeber**, gedacht ist Tobi –, die anderen kommen
@@ -475,7 +509,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `supabase/functions/freizeit-push/` | die Edge Function: offene Nachrichten holen, verschlüsseln, an die Push-Dienste schicken |
 | `werkzeug/push-buendeln.mjs` | die Function als eine Datei fürs Dashboard |
 | `js/config.js` | Adresse und öffentlicher Schlüssel des Servers |
-| `js/ansicht-*.js` | die Seiten – `ansicht-programm.js` das Programm mit Tag, Woche und Monat (und dem Kopf mit Ansicht, Blättern und Filter), `ansicht-ideen.js` „Was immer geht“ darunter, `ansicht-landkarte.js`, `ansicht-wir.js`, `ansicht-einstellungen.js` die Einstellungen |
+| `js/ansicht-*.js` | die Seiten – `ansicht-programm.js` das Programm mit Tag, Woche und Monat (und dem Kopf mit Ansicht, Blättern und Filter), `ansicht-ideen.js` „Was immer geht“ darunter, `ansicht-filme.js` die IMDb Top 250 (Daten: `js/filme.js`), `ansicht-landkarte.js`, `ansicht-wir.js`, `ansicht-einstellungen.js` die Einstellungen |
 | `js/ansicht-filter.js` | der Filter: Leiste mit Knopf und Chips, die Gruppen im Blatt – für Termine (Programm, Karte) und „Was immer geht“ |
 | `js/blatt.js` | das Blatt von unten: Dialog, Escape, Tipp daneben, Fokus hinein und zurück, der Rest der Seite inert |
 | `supabase/gemeinsam.sql` | Tabellen und Funktionen für den gemeinsamen Plan |
@@ -497,10 +531,11 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `test-kalender.mjs` | Monat (Zahlen, Bock-Punkte, ♫, wählen und öffnen, Konzerte im Monat), ein Haken im Zeitstreifen, im Monat und in der Woche, Filter in allen Ansichten, Monate nach dem Programm |
 | `test-landkarte.mjs` | Marker, Zeitraum, „Nur mit Bock“, Online & TV gezählt statt gezeigt, Liste am Marker, Haken aus der Karte |
 | `test-wir.mjs` | der gemeinsame Plan: Tobi lädt ein, Kim (iPhone) und Jo wählen mit/ohne Tobi und sehen einander nicht, Tobis Überblick, offline, weiteres Gerät, Herausnehmen, Verlassen, Auflösen, ein Plan aus der ersten Fassung, fremder Text |
+| `test-filme.mjs` | IMDb Top 250: die Tür, die Seite `#filme`, Suche, Genre, Auswahl, Aufklappen, Bock – allein und im Plan („Mit Tobi gucken“, „Mit dir“), die Zeile in „Wir“ und zurück |
 | `test-ideen.mjs` | „Was immer geht“: Katalog, eigener Filter nach Wirkung, Saison, Bock, Einplanen (Tag, Monat), Wie war's? und „Tut dir gut“, eigene Ideen im Plan, Einplanen mit/ohne Gastgeber, fremder Text, Ideen auf der Karte und der Sprung zurück |
 | `test-teilen.mjs` | WhatsApp, Google Kalender, .ics – auch für Eingeplantes |
 | `test-offline.mjs` | Offline-Vorrat, App ohne Netz |
-| `test-daten.mjs` | `daten/programm.json` (auch Online & TV: `online` mit `ONL`, ohne `geo`), `daten/ideen.json` und `daten/orte.json` – mit `FREIZEIT_DATEN=<ordner>` einen anderen Ordner, etwa einen zusammengeführten Lauf vor dem Kopieren |
+| `test-daten.mjs` | `daten/programm.json` (auch Online & TV: `online` mit `ONL`, ohne `geo`), `daten/ideen.json`, `daten/filme.json` und `daten/orte.json` – mit `FREIZEIT_DATEN=<ordner>` einen anderen Ordner, etwa einen zusammengeführten Lauf vor dem Kopieren |
 | `test-zeiten.mjs` | Zeiten des Gastgebers: an den Karten (frei/verplant), in Woche und Tag als schraffierte Blöcke mit Satz, nirgends als Eintrag |
 | `test-zeiten-rechnen.mjs` | Blöcke je Woche: Zeitzone, Mitternacht, Wochenwechsel, Zeitumstellung |
 | `test-zeiten-senden.mjs` | das Werkzeug gegen einen nachgebauten Server |

@@ -1,0 +1,3626 @@
+{
+ "version": 1,
+ "stand": "2025-09-29",
+ "quelle": "IMDb Top 250, Stand 29.9.2025 (über 250.took.nl)",
+ "filme": [
+  {
+   "platz": 1,
+   "titel": "Die Verurteilten",
+   "original": "The Shawshank Redemption",
+   "jahr": 1994,
+   "laenge": 142,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Frank Darabont",
+   "imdb": "tt0111161",
+   "beschreibung": "Ein unschuldig verurteilter Banker übersteht Jahrzehnte im Gefängnis Shawshank – mit Geduld, Würde und einer ungewöhnlichen Freundschaft."
+  },
+  {
+   "platz": 2,
+   "titel": "Der Pate",
+   "original": "The Godfather",
+   "jahr": 1972,
+   "laenge": 175,
+   "genre": [
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Francis Ford Coppola",
+   "imdb": "tt0068646",
+   "beschreibung": "Der alternde Mafiaboss Vito Corleone will sein Reich übergeben – ausgerechnet an den Sohn, der mit dem Familiengeschäft nichts zu tun haben wollte."
+  },
+  {
+   "platz": 3,
+   "titel": "The Dark Knight",
+   "original": "The Dark Knight",
+   "jahr": 2008,
+   "laenge": 152,
+   "genre": [
+    "Action",
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Christopher Nolan",
+   "imdb": "tt0468569",
+   "beschreibung": "Batman, Gordon und Harvey Dent gegen den Joker, der Gotham ins Chaos stürzen will – düster, spannend, mit einem legendären Bösewicht."
+  },
+  {
+   "platz": 4,
+   "titel": "Der Pate – Teil II",
+   "original": "The Godfather: Part II",
+   "jahr": 1974,
+   "laenge": 202,
+   "genre": [
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Francis Ford Coppola",
+   "imdb": "tt0071562",
+   "beschreibung": "Michael Corleone baut die Macht der Familie aus, während in Rückblenden der Aufstieg des jungen Vito in New York erzählt wird."
+  },
+  {
+   "platz": 5,
+   "titel": "Die zwölf Geschworenen",
+   "original": "12 Angry Men",
+   "jahr": 1957,
+   "laenge": 96,
+   "genre": [
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Sidney Lumet",
+   "imdb": "tt0050083",
+   "beschreibung": "Zwölf Männer in einem Raum entscheiden über ein Todesurteil – und einer zweifelt. Ein Kammerspiel, das ganz ohne Action fesselt."
+  },
+  {
+   "platz": 6,
+   "titel": "Der Herr der Ringe: Die Rückkehr des Königs",
+   "original": "The Lord of the Rings: The Return of the King",
+   "jahr": 2003,
+   "laenge": 201,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Drama"
+   ],
+   "regie": "Peter Jackson",
+   "imdb": "tt0167260",
+   "beschreibung": "Das große Finale: Frodo und Sam kämpfen sich zum Schicksalsberg, während Mittelerde zur letzten Schlacht antritt."
+  },
+  {
+   "platz": 7,
+   "titel": "Schindlers Liste",
+   "original": "Schindler's List",
+   "jahr": 1993,
+   "laenge": 195,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Geschichte"
+   ],
+   "regie": "Steven Spielberg",
+   "imdb": "tt0108052",
+   "beschreibung": "Der Industrielle Oskar Schindler rettet im Zweiten Weltkrieg über tausend Juden vor dem Holocaust – in Schwarz-Weiß, schwer und bewegend."
+  },
+  {
+   "platz": 8,
+   "titel": "Der Herr der Ringe: Die Gefährten",
+   "original": "The Lord of the Rings: The Fellowship of the Ring",
+   "jahr": 2001,
+   "laenge": 178,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Drama"
+   ],
+   "regie": "Peter Jackson",
+   "imdb": "tt0120737",
+   "beschreibung": "Der Hobbit Frodo erbt einen gefährlichen Ring und bricht mit acht Gefährten auf, um ihn zu zerstören – der Beginn der Reise."
+  },
+  {
+   "platz": 9,
+   "titel": "Pulp Fiction",
+   "original": "Pulp Fiction",
+   "jahr": 1994,
+   "laenge": 154,
+   "genre": [
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Quentin Tarantino",
+   "imdb": "tt0110912",
+   "beschreibung": "Gangster, ein Boxer und ein Koffer voller Geheimnisse: Tarantinos verschachtelte Episoden voller Dialoge, Gewalt und schwarzem Humor."
+  },
+  {
+   "platz": 10,
+   "titel": "Zwei glorreiche Halunken",
+   "original": "Il Buono, il brutto, il cattivo.",
+   "jahr": 1966,
+   "laenge": 178,
+   "genre": [
+    "Abenteuer",
+    "Western"
+   ],
+   "regie": "Sergio Leone",
+   "imdb": "tt0060196",
+   "beschreibung": "Drei Revolverhelden jagen im amerikanischen Bürgerkrieg einem vergrabenen Goldschatz hinterher – der Western-Klassiker mit Morricones Musik."
+  },
+  {
+   "platz": 11,
+   "titel": "Forrest Gump",
+   "original": "Forrest Gump",
+   "jahr": 1994,
+   "laenge": 142,
+   "genre": [
+    "Drama",
+    "Romanze"
+   ],
+   "regie": "Robert Zemeckis",
+   "imdb": "tt0109830",
+   "beschreibung": "Ein gutherziger Mann mit schlichtem Gemüt stolpert durch drei Jahrzehnte US-Geschichte – und verliert seine Jugendliebe nie aus dem Kopf."
+  },
+  {
+   "platz": 12,
+   "titel": "Der Herr der Ringe: Die zwei Türme",
+   "original": "The Lord of the Rings: The Two Towers",
+   "jahr": 2002,
+   "laenge": 179,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Drama"
+   ],
+   "regie": "Peter Jackson",
+   "imdb": "tt0167261",
+   "beschreibung": "Die Gefährten sind getrennt: Frodo und Sam folgen Gollum Richtung Mordor, die anderen verteidigen Helms Klamm gegen Sarumans Heer."
+  },
+  {
+   "platz": 13,
+   "titel": "Fight Club",
+   "original": "Fight Club",
+   "jahr": 1999,
+   "laenge": 139,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "David Fincher",
+   "imdb": "tt0137523",
+   "beschreibung": "Ein schlafloser Angestellter gründet mit dem charismatischen Tyler Durden einen Untergrund-Boxclub, der bald außer Kontrolle gerät."
+  },
+  {
+   "platz": 14,
+   "titel": "Inception",
+   "original": "Inception",
+   "jahr": 2010,
+   "laenge": 148,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Science-Fiction"
+   ],
+   "regie": "Christopher Nolan",
+   "imdb": "tt1375666",
+   "beschreibung": "Ein Dieb, der Geheimnisse aus Träumen stiehlt, soll diesmal einen Gedanken einpflanzen – ein Coup über mehrere Traumebenen."
+  },
+  {
+   "platz": 15,
+   "titel": "Das Imperium schlägt zurück",
+   "original": "Star Wars: Episode V - The Empire Strikes Back",
+   "jahr": 1980,
+   "laenge": 124,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Fantasy"
+   ],
+   "regie": "Irvin Kershner",
+   "imdb": "tt0080684",
+   "beschreibung": "Die Rebellen fliehen vor dem Imperium, Luke lernt bei Yoda – und Darth Vader hat eine Überraschung parat."
+  },
+  {
+   "platz": 16,
+   "titel": "Matrix",
+   "original": "The Matrix",
+   "jahr": 1999,
+   "laenge": 136,
+   "genre": [
+    "Action",
+    "Science-Fiction"
+   ],
+   "regie": "Lana Wachowski, Lilly Wachowski",
+   "imdb": "tt0133093",
+   "beschreibung": "Ein Hacker erfährt, dass die Welt eine Simulation ist, und schließt sich dem Widerstand gegen die Maschinen an."
+  },
+  {
+   "platz": 17,
+   "titel": "GoodFellas – Drei Jahrzehnte in der Mafia",
+   "original": "Goodfellas",
+   "jahr": 1990,
+   "laenge": 145,
+   "genre": [
+    "Biografie",
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Martin Scorsese",
+   "imdb": "tt0099685",
+   "beschreibung": "Aufstieg und Fall des Gangsters Henry Hill, erzählt mit Tempo, toller Musik und Scorseses Blick auf den Mafia-Alltag."
+  },
+  {
+   "platz": 18,
+   "titel": "Interstellar",
+   "original": "Interstellar",
+   "jahr": 2014,
+   "laenge": 169,
+   "genre": [
+    "Abenteuer",
+    "Drama",
+    "Science-Fiction"
+   ],
+   "regie": "Christopher Nolan",
+   "imdb": "tt0816692",
+   "beschreibung": "Die Erde stirbt, also reist eine Crew durch ein Wurmloch zu fernen Planeten – ein Weltraumepos über Zeit, Liebe und Physik."
+  },
+  {
+   "platz": 19,
+   "titel": "Einer flog über das Kuckucksnest",
+   "original": "One Flew Over the Cuckoo's Nest",
+   "jahr": 1975,
+   "laenge": 133,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Milos Forman",
+   "imdb": "tt0073486",
+   "beschreibung": "Ein Kleinkrimineller lässt sich in eine Psychiatrie einweisen und legt sich dort mit der strengen Oberschwester an."
+  },
+  {
+   "platz": 20,
+   "titel": "Sieben",
+   "original": "Se7en",
+   "jahr": 1995,
+   "laenge": 127,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "David Fincher",
+   "imdb": "tt0114369",
+   "beschreibung": "Zwei Polizisten jagen einen Serienmörder, der nach den sieben Todsünden tötet – finster, verregnet und mit einem berüchtigten Ende."
+  },
+  {
+   "platz": 21,
+   "titel": "Ist das Leben nicht schön?",
+   "original": "It's a Wonderful Life",
+   "jahr": 1946,
+   "laenge": 130,
+   "genre": [
+    "Drama",
+    "Familie",
+    "Fantasy"
+   ],
+   "regie": "Frank Capra",
+   "imdb": "tt0038650",
+   "beschreibung": "An Heiligabend will ein verzweifelter Mann aufgeben – bis ihm ein Engel zeigt, wie seine Stadt ohne ihn aussähe. Der Weihnachtsklassiker."
+  },
+  {
+   "platz": 22,
+   "titel": "Das Schweigen der Lämmer",
+   "original": "The Silence of the Lambs",
+   "jahr": 1991,
+   "laenge": 118,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Thriller"
+   ],
+   "regie": "Jonathan Demme",
+   "imdb": "tt0102926",
+   "beschreibung": "Eine junge FBI-Agentin sucht Rat beim inhaftierten Psychiater und Kannibalen Hannibal Lecter, um einen Serienmörder zu fassen."
+  },
+  {
+   "platz": 23,
+   "titel": "Die sieben Samurai",
+   "original": "Shichinin no samurai",
+   "jahr": 1954,
+   "laenge": 207,
+   "genre": [
+    "Action",
+    "Drama"
+   ],
+   "regie": "Akira Kurosawa",
+   "imdb": "tt0047478",
+   "beschreibung": "Ein Bauerndorf heuert sieben herrenlose Samurai gegen Banditen an – Kurosawas Meisterwerk und Vorbild für unzählige Actionfilme."
+  },
+  {
+   "platz": 24,
+   "titel": "Der Soldat James Ryan",
+   "original": "Saving Private Ryan",
+   "jahr": 1998,
+   "laenge": 169,
+   "genre": [
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Steven Spielberg",
+   "imdb": "tt0120815",
+   "beschreibung": "Nach der Landung in der Normandie soll ein Trupp einen einzelnen Soldaten finden und nach Hause schicken – mit einer der härtesten Kriegsszenen des Kinos."
+  },
+  {
+   "platz": 25,
+   "titel": "The Green Mile",
+   "original": "The Green Mile",
+   "jahr": 1999,
+   "laenge": 189,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Fantasy"
+   ],
+   "regie": "Frank Darabont",
+   "imdb": "tt0120689",
+   "beschreibung": "Ein Wärter im Todestrakt der 1930er Jahre merkt, dass ein riesiger, sanfter Häftling eine wundersame Gabe hat."
+  },
+  {
+   "platz": 26,
+   "titel": "City of God",
+   "original": "Cidade de Deus",
+   "jahr": 2002,
+   "laenge": 130,
+   "genre": [
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Fernando Meirelles, Kátia Lund",
+   "imdb": "tt0317248",
+   "beschreibung": "Zwei Jungen wachsen in einer Favela von Rio auf – der eine wird Fotograf, der andere Drogenboss. Rasant und wuchtig erzählt."
+  },
+  {
+   "platz": 27,
+   "titel": "Das Leben ist schön",
+   "original": "La Vita è bella",
+   "jahr": 1997,
+   "laenge": 116,
+   "genre": [
+    "Komödie",
+    "Drama",
+    "Romanze"
+   ],
+   "regie": "Roberto Benigni",
+   "imdb": "tt0118799",
+   "beschreibung": "Ein italienischer Vater macht seinem Sohn im KZ weis, alles sei nur ein Spiel – eine Tragikomödie zwischen Lachen und Weinen."
+  },
+  {
+   "platz": 28,
+   "titel": "Terminator 2 – Tag der Abrechnung",
+   "original": "Terminator 2: Judgment Day",
+   "jahr": 1991,
+   "laenge": 137,
+   "genre": [
+    "Action",
+    "Science-Fiction"
+   ],
+   "regie": "James Cameron",
+   "imdb": "tt0103064",
+   "beschreibung": "Ein umprogrammierter Terminator soll den jungen John Connor vor einer neuen Killermaschine aus flüssigem Metall schützen."
+  },
+  {
+   "platz": 29,
+   "titel": "Krieg der Sterne",
+   "original": "Star Wars",
+   "jahr": 1977,
+   "laenge": 121,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Fantasy"
+   ],
+   "regie": "George Lucas",
+   "imdb": "tt0076759",
+   "beschreibung": "Ein Farmjunge, eine Prinzessin, ein Schmuggler und zwei Droiden gegen das Imperium – hier begann alles."
+  },
+  {
+   "platz": 30,
+   "titel": "Zurück in die Zukunft",
+   "original": "Back to the Future",
+   "jahr": 1985,
+   "laenge": 116,
+   "genre": [
+    "Abenteuer",
+    "Komödie",
+    "Science-Fiction"
+   ],
+   "regie": "Robert Zemeckis",
+   "imdb": "tt0088763",
+   "beschreibung": "Marty McFly landet mit einem DeLorean im Jahr 1955 und muss dafür sorgen, dass sich seine Eltern ineinander verlieben."
+  },
+  {
+   "platz": 31,
+   "titel": "Chihiros Reise ins Zauberland",
+   "original": "Sen to Chihiro no kamikakushi",
+   "jahr": 2001,
+   "laenge": 125,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Familie"
+   ],
+   "regie": "Hayao Miyazaki",
+   "imdb": "tt0245429",
+   "beschreibung": "Ein Mädchen gerät in eine Geisterwelt, arbeitet in einem Badehaus für Götter und will ihre verzauberten Eltern retten – Ghibli-Magie."
+  },
+  {
+   "platz": 32,
+   "titel": "Der Pianist",
+   "original": "The Pianist",
+   "jahr": 2002,
+   "laenge": 150,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Musik"
+   ],
+   "regie": "Roman Polanski",
+   "imdb": "tt0253474",
+   "beschreibung": "Ein jüdischer Pianist überlebt das Warschauer Ghetto und versteckt sich in der zerstörten Stadt – nach einer wahren Geschichte."
+  },
+  {
+   "platz": 33,
+   "titel": "Gladiator",
+   "original": "Gladiator",
+   "jahr": 2000,
+   "laenge": 155,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Drama"
+   ],
+   "regie": "Ridley Scott",
+   "imdb": "tt0172495",
+   "beschreibung": "Ein verratener römischer General wird zum Sklaven und kämpft sich als Gladiator bis in die Arena des Kaisers."
+  },
+  {
+   "platz": 34,
+   "titel": "Parasite",
+   "original": "Gisaengchung",
+   "jahr": 2019,
+   "laenge": 132,
+   "genre": [
+    "Drama",
+    "Thriller"
+   ],
+   "regie": "Bong Joon Ho",
+   "imdb": "tt6751668",
+   "beschreibung": "Eine arme Familie schleicht sich nach und nach bei einer reichen ein – eine bissige Satire, die plötzlich kippt. Oscar als bester Film."
+  },
+  {
+   "platz": 35,
+   "titel": "Psycho",
+   "original": "Psycho",
+   "jahr": 1960,
+   "laenge": 109,
+   "genre": [
+    "Horror",
+    "Mystery",
+    "Thriller"
+   ],
+   "regie": "Alfred Hitchcock",
+   "imdb": "tt0054215",
+   "beschreibung": "Eine Sekretärin auf der Flucht übernachtet im abgelegenen Bates Motel – Hitchcocks Schocker mit der berühmtesten Duschszene."
+  },
+  {
+   "platz": 36,
+   "titel": "Der König der Löwen",
+   "original": "The Lion King",
+   "jahr": 1994,
+   "laenge": 88,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Drama"
+   ],
+   "regie": "Roger Allers, Rob Minkoff",
+   "imdb": "tt0110357",
+   "beschreibung": "Der junge Löwe Simba flieht nach dem Tod seines Vaters und muss erwachsen werden, um sein Königreich zurückzuholen."
+  },
+  {
+   "platz": 37,
+   "titel": "Die letzten Glühwürmchen",
+   "original": "Hotaru no haka",
+   "jahr": 1988,
+   "laenge": 89,
+   "genre": [
+    "Animation",
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Isao Takahata",
+   "imdb": "tt0095327",
+   "beschreibung": "Zwei Geschwister kämpfen im Japan des Zweiten Weltkriegs ums Überleben – einer der traurigsten Animationsfilme überhaupt."
+  },
+  {
+   "platz": 38,
+   "titel": "Departed – Unter Feinden",
+   "original": "The Departed",
+   "jahr": 2006,
+   "laenge": 151,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Thriller"
+   ],
+   "regie": "Martin Scorsese",
+   "imdb": "tt0407887",
+   "beschreibung": "Ein Polizist undercover bei der Mafia, ein Spitzel der Mafia bei der Polizei – beide suchen den Verräter. Scorseses Boston-Thriller."
+  },
+  {
+   "platz": 39,
+   "titel": "Whiplash",
+   "original": "Whiplash",
+   "jahr": 2014,
+   "laenge": 106,
+   "genre": [
+    "Drama",
+    "Musik"
+   ],
+   "regie": "Damien Chazelle",
+   "imdb": "tt2582802",
+   "beschreibung": "Ein junger Schlagzeuger will der Beste werden und gerät an einen gnadenlosen Musiklehrer – packend wie ein Actionfilm."
+  },
+  {
+   "platz": 40,
+   "titel": "Harakiri",
+   "original": "Seppuku",
+   "jahr": 1962,
+   "laenge": 133,
+   "genre": [
+    "Action",
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "Masaki Kobayashi",
+   "imdb": "tt0056058",
+   "beschreibung": "Ein verarmter Samurai bittet an einem Fürstenhof darum, rituellen Selbstmord begehen zu dürfen – und erzählt dabei seine Geschichte."
+  },
+  {
+   "platz": 41,
+   "titel": "Prestige – Die Meister der Magie",
+   "original": "The Prestige",
+   "jahr": 2006,
+   "laenge": 130,
+   "genre": [
+    "Drama",
+    "Mystery",
+    "Science-Fiction"
+   ],
+   "regie": "Christopher Nolan",
+   "imdb": "tt0482571",
+   "beschreibung": "Zwei rivalisierende Zauberkünstler im London um 1900 überbieten sich mit Tricks – bis die Besessenheit gefährlich wird."
+  },
+  {
+   "platz": 42,
+   "titel": "American History X",
+   "original": "American History X",
+   "jahr": 1998,
+   "laenge": 119,
+   "genre": [
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Tony Kaye",
+   "imdb": "tt0120586",
+   "beschreibung": "Ein ehemaliger Neonazi kommt aus dem Gefängnis und will seinen jüngeren Bruder vor demselben Weg bewahren."
+  },
+  {
+   "platz": 43,
+   "titel": "Léon – Der Profi",
+   "original": "Léon",
+   "jahr": 1994,
+   "laenge": 110,
+   "genre": [
+    "Action",
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Luc Besson",
+   "imdb": "tt0110413",
+   "beschreibung": "Ein einsamer Auftragskiller nimmt ein zwölfjähriges Mädchen auf, dessen Familie von einem korrupten Polizisten ermordet wurde."
+  },
+  {
+   "platz": 44,
+   "titel": "Spider-Man: Across the Spider-Verse",
+   "original": "Spider-Man: Across the Spider-Verse",
+   "jahr": 2023,
+   "laenge": 140,
+   "genre": [
+    "Animation",
+    "Action",
+    "Abenteuer"
+   ],
+   "regie": "Joaquim Dos Santos, Kemp Powers, Justin K. Thompson",
+   "imdb": "tt9362722",
+   "beschreibung": "Miles Morales reist durchs Multiversum und trifft auf eine ganze Gesellschaft von Spider-Leuten – eines der wildesten Animationsabenteuer."
+  },
+  {
+   "platz": 45,
+   "titel": "Casablanca",
+   "original": "Casablanca",
+   "jahr": 1942,
+   "laenge": 102,
+   "genre": [
+    "Drama",
+    "Romanze",
+    "Krieg"
+   ],
+   "regie": "Michael Curtiz",
+   "imdb": "tt0034583",
+   "beschreibung": "Im Marokko des Zweiten Weltkriegs taucht die frühere Liebe eines Barbesitzers mit ihrem Mann auf – und braucht ausgerechnet seine Hilfe."
+  },
+  {
+   "platz": 46,
+   "titel": "Cinema Paradiso",
+   "original": "Nuovo cinema Paradiso",
+   "jahr": 1988,
+   "laenge": 155,
+   "genre": [
+    "Drama",
+    "Romanze"
+   ],
+   "regie": "Giuseppe Tornatore",
+   "imdb": "tt0095765",
+   "beschreibung": "Ein Filmregisseur erinnert sich an seine Kindheit im Dorfkino auf Sizilien und an den Vorführer, der sein Freund wurde."
+  },
+  {
+   "platz": 47,
+   "titel": "Ziemlich beste Freunde",
+   "original": "Intouchables",
+   "jahr": 2011,
+   "laenge": 112,
+   "genre": [
+    "Biografie",
+    "Komödie",
+    "Drama"
+   ],
+   "regie": "Olivier Nakache, Éric Toledano",
+   "imdb": "tt1675434",
+   "beschreibung": "Ein querschnittsgelähmter Millionär stellt einen jungen Mann aus der Banlieue als Pfleger ein – warmherzig und sehr lustig."
+  },
+  {
+   "platz": 48,
+   "titel": "Die üblichen Verdächtigen",
+   "original": "The Usual Suspects",
+   "jahr": 1995,
+   "laenge": 106,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "Bryan Singer",
+   "imdb": "tt0114814",
+   "beschreibung": "Fünf Gauner, ein großer Coup und der mysteriöse Keyser Söze – ein Krimi mit einer der bekanntesten Wendungen."
+  },
+  {
+   "platz": 49,
+   "titel": "Alien – Das unheimliche Wesen aus einer fremden Welt",
+   "original": "Alien",
+   "jahr": 1979,
+   "laenge": 117,
+   "genre": [
+    "Horror",
+    "Science-Fiction"
+   ],
+   "regie": "Ridley Scott",
+   "imdb": "tt0078748",
+   "beschreibung": "Die Crew eines Raumfrachters holt einen außerirdischen Organismus an Bord – Science-Fiction-Horror in Reinform."
+  },
+  {
+   "platz": 50,
+   "titel": "Moderne Zeiten",
+   "original": "Modern Times",
+   "jahr": 1936,
+   "laenge": 87,
+   "genre": [
+    "Komödie",
+    "Drama",
+    "Romanze"
+   ],
+   "regie": "Charles Chaplin",
+   "imdb": "tt0027977",
+   "beschreibung": "Charlie Chaplins Tramp kämpft sich durch Fließband, Arbeitslosigkeit und Gefängnis – stumme Komik mit viel Herz."
+  },
+  {
+   "platz": 51,
+   "titel": "Das Fenster zum Hof",
+   "original": "Rear Window",
+   "jahr": 1954,
+   "laenge": 112,
+   "genre": [
+    "Mystery",
+    "Thriller"
+   ],
+   "regie": "Alfred Hitchcock",
+   "imdb": "tt0047396",
+   "beschreibung": "Ein Fotograf mit Gipsbein beobachtet aus Langeweile die Nachbarn – und glaubt, einen Mord gesehen zu haben. Hitchcock pur."
+  },
+  {
+   "platz": 52,
+   "titel": "Django Unchained",
+   "original": "Django Unchained",
+   "jahr": 2012,
+   "laenge": 165,
+   "genre": [
+    "Drama",
+    "Western"
+   ],
+   "regie": "Quentin Tarantino",
+   "imdb": "tt1853728",
+   "beschreibung": "Ein befreiter Sklave zieht mit einem deutschen Kopfgeldjäger los, um seine Frau von einem Plantagenbesitzer zu befreien."
+  },
+  {
+   "platz": 53,
+   "titel": "Spiel mir das Lied vom Tod",
+   "original": "C'era una volta il West",
+   "jahr": 1968,
+   "laenge": 165,
+   "genre": [
+    "Western"
+   ],
+   "regie": "Sergio Leone",
+   "imdb": "tt0064116",
+   "beschreibung": "Ein wortkarger Mann mit Mundharmonika, eine Witwe und der Bau einer Eisenbahn im Wilden Westen – Leones epischer Western."
+  },
+  {
+   "platz": 54,
+   "titel": "Lichter der Großstadt",
+   "original": "City Lights",
+   "jahr": 1931,
+   "laenge": 87,
+   "genre": [
+    "Komödie",
+    "Drama",
+    "Romanze"
+   ],
+   "regie": "Charles Chaplin",
+   "imdb": "tt0021749",
+   "beschreibung": "Der Tramp verliebt sich in ein blindes Blumenmädchen und versucht alles, um ihr eine Augenoperation zu bezahlen."
+  },
+  {
+   "platz": 55,
+   "titel": "Apocalypse Now",
+   "original": "Apocalypse Now",
+   "jahr": 1979,
+   "laenge": 147,
+   "genre": [
+    "Drama",
+    "Mystery",
+    "Krieg"
+   ],
+   "regie": "Francis Ford Coppola",
+   "imdb": "tt0078788",
+   "beschreibung": "Ein Offizier soll im Vietnamkrieg einen abtrünnigen Colonel tief im Dschungel töten – eine Reise in den Wahnsinn."
+  },
+  {
+   "platz": 56,
+   "titel": "WALL·E – Der Letzte räumt die Erde auf",
+   "original": "WALL·E",
+   "jahr": 2008,
+   "laenge": 98,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Familie"
+   ],
+   "regie": "Andrew Stanton",
+   "imdb": "tt0910970",
+   "beschreibung": "Ein kleiner Aufräumroboter auf der verlassenen Erde verliebt sich in eine Roboterin – fast ohne Worte erzählt."
+  },
+  {
+   "platz": 57,
+   "titel": "Memento",
+   "original": "Memento",
+   "jahr": 2000,
+   "laenge": 113,
+   "genre": [
+    "Mystery",
+    "Thriller"
+   ],
+   "regie": "Christopher Nolan",
+   "imdb": "tt0209144",
+   "beschreibung": "Ein Mann ohne Kurzzeitgedächtnis sucht den Mörder seiner Frau – rückwärts erzählt, mit Notizen und Tattoos als Gedächtnis."
+  },
+  {
+   "platz": 58,
+   "titel": "Dune: Part Two",
+   "original": "Dune: Part Two",
+   "jahr": 2024,
+   "laenge": 166,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Science-Fiction"
+   ],
+   "regie": "Denis Villeneuve",
+   "imdb": "tt15239678",
+   "beschreibung": "Paul Atreides schließt sich den Fremen an und führt sie gegen die Harkonnen – ein gewaltiges Wüstenepos fürs große Bild."
+  },
+  {
+   "platz": 59,
+   "titel": "Jäger des verlorenen Schatzes",
+   "original": "Raiders of the Lost Ark",
+   "jahr": 1981,
+   "laenge": 115,
+   "genre": [
+    "Action",
+    "Abenteuer"
+   ],
+   "regie": "Steven Spielberg",
+   "imdb": "tt0082971",
+   "beschreibung": "Archäologe Indiana Jones jagt den Nazis die Bundeslade ab – der Abenteuerfilm schlechthin."
+  },
+  {
+   "platz": 60,
+   "titel": "Avengers: Infinity War",
+   "original": "Avengers: Infinity War",
+   "jahr": 2018,
+   "laenge": 149,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Science-Fiction"
+   ],
+   "regie": "Anthony Russo, Joe Russo",
+   "imdb": "tt4154756",
+   "beschreibung": "Die Avengers und ihre Verbündeten stellen sich Thanos, der die Infinity-Steine sammelt, um das halbe Universum auszulöschen."
+  },
+  {
+   "platz": 61,
+   "titel": "Das Leben der Anderen",
+   "original": "Das Leben der Anderen",
+   "jahr": 2006,
+   "laenge": 137,
+   "genre": [
+    "Drama",
+    "Mystery",
+    "Thriller"
+   ],
+   "regie": "Florian Henckel von Donnersmarck",
+   "imdb": "tt0405094",
+   "beschreibung": "Ein Stasi-Hauptmann überwacht 1984 ein Künstlerpaar in Ost-Berlin – und beginnt, sich auf ihre Seite zu schlagen."
+  },
+  {
+   "platz": 62,
+   "titel": "Boulevard der Dämmerung",
+   "original": "Sunset Blvd.",
+   "jahr": 1950,
+   "laenge": 110,
+   "genre": [
+    "Drama",
+    "Film noir"
+   ],
+   "regie": "Billy Wilder",
+   "imdb": "tt0043014",
+   "beschreibung": "Ein erfolgloser Drehbuchautor gerät in die Villa eines vergessenen Stummfilmstars, der von seinem Comeback träumt."
+  },
+  {
+   "platz": 63,
+   "titel": "Spider-Man: A New Universe",
+   "original": "Spider-Man: Into the Spider-Verse",
+   "jahr": 2018,
+   "laenge": 117,
+   "genre": [
+    "Animation",
+    "Action",
+    "Abenteuer"
+   ],
+   "regie": "Bob Persichetti, Peter Ramsey, Rodney Rothman",
+   "imdb": "tt4633694",
+   "beschreibung": "Teenager Miles Morales wird zu Spider-Man und trifft Spider-Leute aus anderen Dimensionen – Animation wie ein lebendiger Comic."
+  },
+  {
+   "platz": 64,
+   "titel": "Zeugin der Anklage",
+   "original": "Witness for the Prosecution",
+   "jahr": 1957,
+   "laenge": 116,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "Billy Wilder",
+   "imdb": "tt0051201",
+   "beschreibung": "Ein alter Starverteidiger übernimmt einen scheinbar aussichtslosen Mordfall – Gerichtskrimi nach Agatha Christie mit Pointe."
+  },
+  {
+   "platz": 65,
+   "titel": "Wege zum Ruhm",
+   "original": "Paths of Glory",
+   "jahr": 1957,
+   "laenge": 88,
+   "genre": [
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Stanley Kubrick",
+   "imdb": "tt0050825",
+   "beschreibung": "Im Ersten Weltkrieg verteidigt ein Oberst drei Soldaten, die nach einem sinnlosen Angriff als Feiglinge hingerichtet werden sollen."
+  },
+  {
+   "platz": 66,
+   "titel": "Shining",
+   "original": "The Shining",
+   "jahr": 1980,
+   "laenge": 146,
+   "genre": [
+    "Drama",
+    "Horror"
+   ],
+   "regie": "Stanley Kubrick",
+   "imdb": "tt0081505",
+   "beschreibung": "Ein Schriftsteller hütet mit Frau und Sohn den Winter über ein leeres Berghotel – und verliert langsam den Verstand."
+  },
+  {
+   "platz": 67,
+   "titel": "Der große Diktator",
+   "original": "The Great Dictator",
+   "jahr": 1940,
+   "laenge": 125,
+   "genre": [
+    "Komödie",
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Charles Chaplin",
+   "imdb": "tt0032553",
+   "beschreibung": "Chaplin spielt einen jüdischen Friseur und den Diktator Hynkel – eine mutige Satire auf Hitler aus dem Jahr 1940."
+  },
+  {
+   "platz": 68,
+   "titel": "Inglourious Basterds",
+   "original": "Inglourious Basterds",
+   "jahr": 2009,
+   "laenge": 153,
+   "genre": [
+    "Abenteuer",
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Quentin Tarantino",
+   "imdb": "tt0361748",
+   "beschreibung": "Eine jüdisch-amerikanische Spezialeinheit und eine junge Kinobesitzerin planen im besetzten Frankreich das Ende der Nazi-Führung."
+  },
+  {
+   "platz": 69,
+   "titel": "Aliens – Die Rückkehr",
+   "original": "Aliens",
+   "jahr": 1986,
+   "laenge": 137,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Science-Fiction"
+   ],
+   "regie": "James Cameron",
+   "imdb": "tt0090605",
+   "beschreibung": "Ripley kehrt mit Marines zum Planeten der Aliens zurück, wo eine Kolonie verstummt ist – diesmal mehr Action als Horror."
+  },
+  {
+   "platz": 70,
+   "titel": "12th Fail",
+   "original": "12th Fail",
+   "jahr": 2023,
+   "laenge": 147,
+   "genre": [
+    "Biografie",
+    "Drama"
+   ],
+   "regie": "Vidhu Vinod Chopra",
+   "beschreibung": "Ein Junge aus armen Verhältnissen will Polizeioffizier im indischen Staatsdienst werden und tritt nach jedem Scheitern wieder zur härtesten Prüfung des Landes an."
+  },
+  {
+   "platz": 71,
+   "titel": "The Dark Knight Rises",
+   "original": "The Dark Knight Rises",
+   "jahr": 2012,
+   "laenge": 164,
+   "genre": [
+    "Action",
+    "Drama"
+   ],
+   "regie": "Christopher Nolan",
+   "imdb": "tt1345836",
+   "beschreibung": "Acht Jahre nach dem Joker tritt Batman gegen den Terroristen Bane an, der Gotham vom Rest der Welt abschneidet."
+  },
+  {
+   "platz": 72,
+   "titel": "Coco – Lebendiger als das Leben!",
+   "original": "Coco",
+   "jahr": 2017,
+   "laenge": 105,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Komödie"
+   ],
+   "regie": "Lee Unkrich, Adrian Molina",
+   "imdb": "tt2380307",
+   "beschreibung": "Ein Junge, der Musiker werden will, landet am Día de los Muertos im Reich der Toten – farbenfroh und rührend."
+  },
+  {
+   "platz": 73,
+   "titel": "Amadeus",
+   "original": "Amadeus",
+   "jahr": 1984,
+   "laenge": 160,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Musik"
+   ],
+   "regie": "Milos Forman",
+   "imdb": "tt0086879",
+   "beschreibung": "Der Hofkomponist Salieri erzählt, wie ihn das Genie des jungen Mozart zerfressen hat – opulent und voller Musik."
+  },
+  {
+   "platz": 74,
+   "titel": "Avengers: Endgame",
+   "original": "Avengers: Endgame",
+   "jahr": 2019,
+   "laenge": 181,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Drama"
+   ],
+   "regie": "Anthony Russo, Joe Russo",
+   "imdb": "tt4154796",
+   "beschreibung": "Nach Thanos' Triumph versuchen die übrigen Avengers, das Geschehene rückgängig zu machen – das große Finale."
+  },
+  {
+   "platz": 75,
+   "titel": "Zwischen Himmel und Hölle",
+   "original": "Tengoku to jigoku",
+   "jahr": 1963,
+   "laenge": 143,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "Akira Kurosawa",
+   "imdb": "tt0057565",
+   "beschreibung": "Ein Industrieller soll für ein entführtes Kind zahlen, das gar nicht seins ist – Kurosawas spannender Entführungskrimi."
+  },
+  {
+   "platz": 76,
+   "titel": "Good Will Hunting",
+   "original": "Good Will Hunting",
+   "jahr": 1997,
+   "laenge": 126,
+   "genre": [
+    "Drama",
+    "Romanze"
+   ],
+   "regie": "Gus Van Sant",
+   "imdb": "tt0119217",
+   "beschreibung": "Ein Hausmeister am MIT ist ein mathematisches Genie, steht sich aber selbst im Weg – bis er einen Therapeuten findet."
+  },
+  {
+   "platz": 77,
+   "titel": "Toy Story",
+   "original": "Toy Story",
+   "jahr": 1995,
+   "laenge": 81,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Komödie"
+   ],
+   "regie": "John Lasseter",
+   "imdb": "tt0114709",
+   "beschreibung": "Cowboypuppe Woody fürchtet um seinen Platz als Lieblingsspielzeug, als der Astronaut Buzz Lightyear einzieht."
+  },
+  {
+   "platz": 78,
+   "titel": "Oldboy",
+   "original": "Oldeuboi",
+   "jahr": 2003,
+   "laenge": 120,
+   "genre": [
+    "Action",
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "Park Chan-wook",
+   "imdb": "tt0364569",
+   "beschreibung": "Ein Mann wird 15 Jahre lang grundlos eingesperrt, plötzlich freigelassen – und hat fünf Tage, um herauszufinden, warum."
+  },
+  {
+   "platz": 79,
+   "titel": "Dr. Seltsam oder: Wie ich lernte, die Bombe zu lieben",
+   "original": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+   "jahr": 1964,
+   "laenge": 95,
+   "genre": [
+    "Komödie",
+    "Krieg"
+   ],
+   "regie": "Stanley Kubrick",
+   "imdb": "tt0057012",
+   "beschreibung": "Ein durchgeknallter General schickt Atombomber Richtung Sowjetunion – Kubricks bitterböse Satire auf den Kalten Krieg."
+  },
+  {
+   "platz": 80,
+   "titel": "Das Boot",
+   "original": "Das Boot",
+   "jahr": 1981,
+   "laenge": 149,
+   "genre": [
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Wolfgang Petersen",
+   "imdb": "tt0082096",
+   "beschreibung": "Die Besatzung eines deutschen U-Boots im Atlantik 1941 zwischen Enge, Langeweile und Todesangst – Wolfgang Petersens Klassiker."
+  },
+  {
+   "platz": 81,
+   "titel": "Braveheart",
+   "original": "Braveheart",
+   "jahr": 1995,
+   "laenge": 178,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Geschichte"
+   ],
+   "regie": "Mel Gibson",
+   "imdb": "tt0112573",
+   "beschreibung": "Der Schotte William Wallace führt im 13. Jahrhundert einen Aufstand gegen den englischen König an."
+  },
+  {
+   "platz": 82,
+   "titel": "Your Name.",
+   "original": "Kimi no na wa",
+   "jahr": 2016,
+   "laenge": 106,
+   "genre": [
+    "Animation",
+    "Drama",
+    "Fantasy"
+   ],
+   "regie": "Makoto Shinkai",
+   "imdb": "tt5311514",
+   "beschreibung": "Ein Junge aus Tokio und ein Mädchen vom Land tauschen im Schlaf die Körper – und suchen einander. Ein wunderschöner Anime."
+  },
+  {
+   "platz": 83,
+   "titel": "Prinzessin Mononoke",
+   "original": "Mononoke-hime",
+   "jahr": 1997,
+   "laenge": 134,
+   "genre": [
+    "Animation",
+    "Action",
+    "Abenteuer"
+   ],
+   "regie": "Hayao Miyazaki",
+   "imdb": "tt0119698",
+   "beschreibung": "Ein junger Krieger gerät zwischen eine Eisenhütte und die Götter des Waldes – Ghibli-Epos über Mensch und Natur."
+  },
+  {
+   "platz": 84,
+   "titel": "American Beauty",
+   "original": "American Beauty",
+   "jahr": 1999,
+   "laenge": 122,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Sam Mendes",
+   "imdb": "tt0169547",
+   "beschreibung": "Ein Familienvater in der Midlife-Crisis wirft sein Vorstadtleben über den Haufen – schwarze Komödie mit Tiefgang."
+  },
+  {
+   "platz": 85,
+   "titel": "3 Idiots",
+   "original": "3 Idiots",
+   "jahr": 2009,
+   "laenge": 170,
+   "genre": [
+    "Komödie",
+    "Drama"
+   ],
+   "regie": "Rajkumar Hirani",
+   "imdb": "tt1187043",
+   "beschreibung": "Zwei Freunde suchen ihren früheren Studienkollegen, der an der Elite-Uni alles anders machte – Bollywood-Komödie mit Herz."
+  },
+  {
+   "platz": 86,
+   "titel": "Joker",
+   "original": "Joker",
+   "jahr": 2019,
+   "laenge": 122,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Thriller"
+   ],
+   "regie": "Todd Phillips",
+   "imdb": "tt7286456",
+   "beschreibung": "Ein gescheiterter Komiker in Gotham wird immer weiter an den Rand gedrängt und verwandelt sich in den Joker – düstere Charakterstudie."
+  },
+  {
+   "platz": 87,
+   "titel": "Capernaum – Stadt der Hoffnung",
+   "original": "Capharnaüm",
+   "jahr": 2018,
+   "laenge": 126,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Nadine Labaki",
+   "imdb": "tt8267604",
+   "beschreibung": "Ein zwölfjähriger Junge aus den Slums von Beirut verklagt seine Eltern, weil sie ihn auf die Welt gebracht haben."
+  },
+  {
+   "platz": 88,
+   "titel": "Es war einmal in Amerika",
+   "original": "Once Upon a Time in America",
+   "jahr": 1984,
+   "laenge": 229,
+   "genre": [
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Sergio Leone",
+   "imdb": "tt0087843",
+   "beschreibung": "Jugendfreunde aus dem jüdischen Viertel von New York werden zu Gangstern – Leones Epos über fünf Jahrzehnte."
+  },
+  {
+   "platz": 89,
+   "titel": "Du sollst mein Glücksstern sein",
+   "original": "Singin' in the Rain",
+   "jahr": 1952,
+   "laenge": 103,
+   "genre": [
+    "Komödie",
+    "Musical",
+    "Romanze"
+   ],
+   "regie": "Stanley Donen, Gene Kelly",
+   "imdb": "tt0045152",
+   "beschreibung": "Hollywood stellt auf Tonfilm um, und ein Stummfilmstar muss plötzlich singen und tanzen – für viele das beste Musical überhaupt."
+  },
+  {
+   "platz": 90,
+   "titel": "Requiem for a Dream",
+   "original": "Requiem for a Dream",
+   "jahr": 2000,
+   "laenge": 102,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Darren Aronofsky",
+   "imdb": "tt0180093",
+   "beschreibung": "Vier Menschen in Brooklyn jagen ihren Träumen hinterher und versinken in der Sucht – schwer zu ertragen, aber eindrucksvoll."
+  },
+  {
+   "platz": 91,
+   "titel": "Komm und sieh",
+   "original": "Idi i smotri",
+   "jahr": 1985,
+   "laenge": 142,
+   "genre": [
+    "Drama",
+    "Thriller",
+    "Krieg"
+   ],
+   "regie": "Elem Klimov",
+   "imdb": "tt0091251",
+   "beschreibung": "Ein Junge schließt sich 1943 den Partisanen in Weißrussland an und erlebt die Grausamkeit des Krieges – einer der härtesten Antikriegsfilme."
+  },
+  {
+   "platz": 92,
+   "titel": "Die Rückkehr der Jedi-Ritter",
+   "original": "Star Wars: Episode VI - Return of the Jedi",
+   "jahr": 1983,
+   "laenge": 131,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Fantasy"
+   ],
+   "regie": "Richard Marquand",
+   "imdb": "tt0086190",
+   "beschreibung": "Luke stellt sich Darth Vader und dem Imperator, während die Rebellen den neuen Todesstern angreifen."
+  },
+  {
+   "platz": 93,
+   "titel": "Toy Story 3",
+   "original": "Toy Story 3",
+   "jahr": 2010,
+   "laenge": 103,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Komödie"
+   ],
+   "regie": "Lee Unkrich",
+   "imdb": "tt0435761",
+   "beschreibung": "Andy geht aufs College, und Woody, Buzz und die Bande landen in einer Kita – mit überraschend viel Gefühl."
+  },
+  {
+   "platz": 94,
+   "titel": "Die Jagd",
+   "original": "Jagten",
+   "jahr": 2012,
+   "laenge": 115,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Thomas Vinterberg",
+   "imdb": "tt2106476",
+   "beschreibung": "Ein Kindergärtner in einem dänischen Dorf wird fälschlich des Missbrauchs beschuldigt – und die Gemeinschaft wendet sich gegen ihn."
+  },
+  {
+   "platz": 95,
+   "titel": "Ikiru – Einmal wirklich leben",
+   "original": "Ikiru",
+   "jahr": 1952,
+   "laenge": 143,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Akira Kurosawa",
+   "imdb": "tt0044741",
+   "beschreibung": "Ein Beamter erfährt, dass er Krebs hat, und will in der verbleibenden Zeit noch etwas Sinnvolles schaffen."
+  },
+  {
+   "platz": 96,
+   "titel": "Vergiss mein nicht!",
+   "original": "Eternal Sunshine of the Spotless Mind",
+   "jahr": 2004,
+   "laenge": 108,
+   "genre": [
+    "Drama",
+    "Romanze",
+    "Science-Fiction"
+   ],
+   "regie": "Michel Gondry",
+   "imdb": "tt0338013",
+   "beschreibung": "Nach der Trennung lässt ein Mann seine Ex aus dem Gedächtnis löschen – und will mittendrin doch alles festhalten."
+  },
+  {
+   "platz": 97,
+   "titel": "Die Frau die singt – Incendies",
+   "original": "Incendies",
+   "jahr": 2010,
+   "laenge": 131,
+   "genre": [
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "Denis Villeneuve",
+   "imdb": "tt1255953",
+   "beschreibung": "Zwillinge reisen nach dem Tod ihrer Mutter in den Nahen Osten, um ihr Geheimnis zu lüften – erschütternd."
+  },
+  {
+   "platz": 98,
+   "titel": "One Battle After Another",
+   "original": "One Battle After Another",
+   "jahr": 2025,
+   "laenge": 161,
+   "genre": [
+    "Action",
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Paul Thomas Anderson",
+   "beschreibung": "Ein abgetauchter Ex-Revolutionär muss Jahre später seine Tochter vor einem alten Widersacher retten – Paul Thomas Andersons Action-Satire."
+  },
+  {
+   "platz": 99,
+   "titel": "Das Appartement",
+   "original": "The Apartment",
+   "jahr": 1960,
+   "laenge": 125,
+   "genre": [
+    "Komödie",
+    "Drama",
+    "Romanze"
+   ],
+   "regie": "Billy Wilder",
+   "imdb": "tt0053604",
+   "beschreibung": "Ein kleiner Angestellter verleiht seine Wohnung an Vorgesetzte für Affären – bis er sich in die Freundin seines Chefs verliebt."
+  },
+  {
+   "platz": 100,
+   "titel": "Lawrence von Arabien",
+   "original": "Lawrence of Arabia",
+   "jahr": 1962,
+   "laenge": 218,
+   "genre": [
+    "Abenteuer",
+    "Biografie",
+    "Drama"
+   ],
+   "regie": "David Lean",
+   "imdb": "tt0056172",
+   "beschreibung": "Der britische Offizier T. E. Lawrence vereint im Ersten Weltkrieg arabische Stämme gegen die Osmanen – Wüstenepos in Überlänge."
+  },
+  {
+   "platz": 101,
+   "titel": "2001: Odyssee im Weltraum",
+   "original": "2001: A Space Odyssey",
+   "jahr": 1968,
+   "laenge": 149,
+   "genre": [
+    "Abenteuer",
+    "Science-Fiction"
+   ],
+   "regie": "Stanley Kubrick",
+   "imdb": "tt0062622",
+   "beschreibung": "Von den Urmenschen bis zum Jupiter: Kubricks rätselhafte Reise durch die Menschheitsgeschichte, mit dem Bordcomputer HAL."
+  },
+  {
+   "platz": 102,
+   "titel": "Reservoir Dogs – Wilde Hunde",
+   "original": "Reservoir Dogs",
+   "jahr": 1992,
+   "laenge": 99,
+   "genre": [
+    "Krimi",
+    "Thriller"
+   ],
+   "regie": "Quentin Tarantino",
+   "imdb": "tt0105236",
+   "beschreibung": "Nach einem missglückten Juwelenraub treffen sich die Gangster in einer Lagerhalle – und vermuten einen Verräter unter sich."
+  },
+  {
+   "platz": 103,
+   "titel": "Scarface",
+   "original": "Scarface",
+   "jahr": 1983,
+   "laenge": 170,
+   "genre": [
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Brian De Palma",
+   "imdb": "tt0086250",
+   "beschreibung": "Der kubanische Flüchtling Tony Montana steigt in Miami zum Kokainkönig auf – und stürzt tief."
+  },
+  {
+   "platz": 104,
+   "titel": "Heat",
+   "original": "Heat",
+   "jahr": 1995,
+   "laenge": 170,
+   "genre": [
+    "Action",
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Michael Mann",
+   "imdb": "tt0113277",
+   "beschreibung": "Ein Profi-Einbrecher und ein besessener Polizist belauern sich in Los Angeles – mit einer der besten Schießereien des Kinos."
+  },
+  {
+   "platz": 105,
+   "titel": "Frau ohne Gewissen",
+   "original": "Double Indemnity",
+   "jahr": 1944,
+   "laenge": 107,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Film noir"
+   ],
+   "regie": "Billy Wilder",
+   "imdb": "tt0036775",
+   "beschreibung": "Ein Versicherungsvertreter lässt sich von einer verführerischen Frau zu einem Mord überreden – der Urtyp des Film noir."
+  },
+  {
+   "platz": 106,
+   "titel": "Der unsichtbare Dritte",
+   "original": "North by Northwest",
+   "jahr": 1959,
+   "laenge": 136,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Mystery"
+   ],
+   "regie": "Alfred Hitchcock",
+   "imdb": "tt0053125",
+   "beschreibung": "Ein Werbemann wird mit einem Agenten verwechselt und quer durch die USA gejagt – Hitchcocks elegantes Verfolgungsabenteuer."
+  },
+  {
+   "platz": 107,
+   "titel": "Oben",
+   "original": "Up",
+   "jahr": 2009,
+   "laenge": 96,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Komödie"
+   ],
+   "regie": "Pete Docter, Bob Peterson",
+   "imdb": "tt1049413",
+   "beschreibung": "Ein grummeliger Witwer lässt sein Haus an Luftballons nach Südamerika schweben – mit einem blinden Passagier."
+  },
+  {
+   "platz": 108,
+   "titel": "M – Eine Stadt sucht einen Mörder",
+   "original": "M",
+   "jahr": 1931,
+   "laenge": 99,
+   "genre": [
+    "Krimi",
+    "Mystery",
+    "Thriller"
+   ],
+   "regie": "Fritz Lang",
+   "imdb": "tt0022100",
+   "beschreibung": "Im Berlin der frühen 1930er jagen Polizei und Unterwelt gemeinsam einen Kindermörder – Fritz Langs erster Tonfilm."
+  },
+  {
+   "platz": 109,
+   "titel": "Citizen Kane",
+   "original": "Citizen Kane",
+   "jahr": 1941,
+   "laenge": 119,
+   "genre": [
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "Orson Welles",
+   "imdb": "tt0033467",
+   "beschreibung": "Ein Reporter will das letzte Wort eines verstorbenen Zeitungsmagnaten entschlüsseln: „Rosebud“ – Kinogeschichte von 1941."
+  },
+  {
+   "platz": 110,
+   "titel": "Full Metal Jacket",
+   "original": "Full Metal Jacket",
+   "jahr": 1987,
+   "laenge": 116,
+   "genre": [
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Stanley Kubrick",
+   "imdb": "tt0093058",
+   "beschreibung": "Rekruten werden von einem brüllenden Ausbilder gedrillt und dann in den Vietnamkrieg geschickt – Kubrick in zwei Teilen."
+  },
+  {
+   "platz": 111,
+   "titel": "Vertigo – Aus dem Reich der Toten",
+   "original": "Vertigo",
+   "jahr": 1958,
+   "laenge": 128,
+   "genre": [
+    "Mystery",
+    "Romanze",
+    "Thriller"
+   ],
+   "regie": "Alfred Hitchcock",
+   "imdb": "tt0052357",
+   "beschreibung": "Ein Ex-Polizist mit Höhenangst soll eine Frau beschatten, die von einer Toten besessen scheint – Hitchcocks Film über Obsession."
+  },
+  {
+   "platz": 112,
+   "titel": "Die fabelhafte Welt der Amélie",
+   "original": "Le fabuleux destin d'Amélie Poulain",
+   "jahr": 2001,
+   "laenge": 122,
+   "genre": [
+    "Komödie",
+    "Romanze"
+   ],
+   "regie": "Jean-Pierre Jeunet",
+   "imdb": "tt0211915",
+   "beschreibung": "Eine schüchterne Kellnerin in Montmartre beschließt, heimlich das Leben der Menschen um sie herum zu verbessern."
+  },
+  {
+   "platz": 113,
+   "titel": "Taare Zameen Par – Ein Stern auf Erden",
+   "original": "Taare Zameen Par",
+   "jahr": 2007,
+   "laenge": 165,
+   "genre": [
+    "Drama",
+    "Familie"
+   ],
+   "regie": "Aamir Khan, Amole Gupte",
+   "imdb": "tt0986264",
+   "beschreibung": "Ein Kunstlehrer erkennt, dass ein vermeintlich fauler Junge Legastheniker ist – Bollywood-Drama zum Mitfühlen."
+  },
+  {
+   "platz": 114,
+   "titel": "Nader und Simin – Eine Trennung",
+   "original": "Jodaeiye Nader az Simin",
+   "jahr": 2011,
+   "laenge": 123,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Asghar Farhadi",
+   "imdb": "tt1832382",
+   "beschreibung": "Ein Paar in Teheran trennt sich, und ein Streit mit einer Pflegekraft wächst zu einem moralischen Dilemma."
+  },
+  {
+   "platz": 115,
+   "titel": "Wer die Nachtigall stört",
+   "original": "To Kill a Mockingbird",
+   "jahr": 1962,
+   "laenge": 129,
+   "genre": [
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Robert Mulligan",
+   "imdb": "tt0056592",
+   "beschreibung": "Ein Anwalt im Süden der USA der 1930er Jahre verteidigt einen zu Unrecht angeklagten Schwarzen – erzählt aus Sicht seiner Tochter."
+  },
+  {
+   "platz": 116,
+   "titel": "Stirb langsam",
+   "original": "Die Hard",
+   "jahr": 1988,
+   "laenge": 132,
+   "genre": [
+    "Action",
+    "Thriller"
+   ],
+   "regie": "John McTiernan",
+   "imdb": "tt0095016",
+   "beschreibung": "Ein New Yorker Polizist kämpft an Heiligabend allein gegen Terroristen in einem Hochhaus – der Actionklassiker."
+  },
+  {
+   "platz": 117,
+   "titel": "Der Clou",
+   "original": "The Sting",
+   "jahr": 1973,
+   "laenge": 129,
+   "genre": [
+    "Komödie",
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "George Roy Hill",
+   "imdb": "tt0070735",
+   "beschreibung": "Zwei Trickbetrüger ziehen im Chicago der 1930er einen Gangsterboss mit einem raffinierten Schwindel über den Tisch."
+  },
+  {
+   "platz": 118,
+   "titel": "Indiana Jones und der letzte Kreuzzug",
+   "original": "Indiana Jones and the Last Crusade",
+   "jahr": 1989,
+   "laenge": 127,
+   "genre": [
+    "Action",
+    "Abenteuer"
+   ],
+   "regie": "Steven Spielberg",
+   "imdb": "tt0097576",
+   "beschreibung": "Indy sucht mit seinem Vater nach dem Heiligen Gral – und wieder sind die Nazis hinter ihm her."
+  },
+  {
+   "platz": 119,
+   "titel": "Uhrwerk Orange",
+   "original": "A Clockwork Orange",
+   "jahr": 1971,
+   "laenge": 136,
+   "genre": [
+    "Krimi",
+    "Science-Fiction"
+   ],
+   "regie": "Stanley Kubrick",
+   "imdb": "tt0066921",
+   "beschreibung": "Ein brutaler Jugendlicher wird einer Umerziehungstherapie unterzogen – Kubricks verstörende Gesellschaftssatire."
+  },
+  {
+   "platz": 120,
+   "titel": "Metropolis",
+   "original": "Metropolis",
+   "jahr": 1927,
+   "laenge": 153,
+   "genre": [
+    "Drama",
+    "Science-Fiction"
+   ],
+   "regie": "Fritz Lang",
+   "imdb": "tt0017136",
+   "beschreibung": "In einer Zukunftsstadt leben die Reichen oben und die Arbeiter unten – Fritz Langs Stummfilm-Meilenstein von 1927."
+  },
+  {
+   "platz": 121,
+   "titel": "Snatch – Schweine und Diamanten",
+   "original": "Snatch.",
+   "jahr": 2000,
+   "laenge": 102,
+   "genre": [
+    "Komödie",
+    "Krimi"
+   ],
+   "regie": "Guy Ritchie",
+   "imdb": "tt0208092",
+   "beschreibung": "Ein gestohlener Diamant, illegale Boxkämpfe und lauter schräge Gauner in London – Guy Ritchies Chaos-Komödie."
+  },
+  {
+   "platz": 122,
+   "titel": "1917",
+   "original": "1917",
+   "jahr": 2019,
+   "laenge": 119,
+   "genre": [
+    "Action",
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Sam Mendes",
+   "imdb": "tt8579674",
+   "beschreibung": "Zwei britische Soldaten müssen im Ersten Weltkrieg eine Nachricht durch Feindesland bringen – wie in einer einzigen Einstellung gedreht."
+  },
+  {
+   "platz": 123,
+   "titel": "Oppenheimer",
+   "original": "Oppenheimer",
+   "jahr": 2023,
+   "laenge": 180,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Geschichte"
+   ],
+   "regie": "Christopher Nolan",
+   "imdb": "tt15398776",
+   "beschreibung": "Der Physiker, der die Atombombe mitentwickelte, und was danach mit ihm geschah – Christopher Nolans dreistündiges Biopic."
+  },
+  {
+   "platz": 124,
+   "titel": "L.A. Confidential",
+   "original": "L.A. Confidential",
+   "jahr": 1997,
+   "laenge": 138,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "Curtis Hanson",
+   "imdb": "tt0119488",
+   "beschreibung": "Drei sehr unterschiedliche Polizisten stoßen im Los Angeles der 1950er auf ein Netz aus Korruption."
+  },
+  {
+   "platz": 125,
+   "titel": "Der Untergang",
+   "original": "Der Untergang",
+   "jahr": 2004,
+   "laenge": 156,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Geschichte"
+   ],
+   "regie": "Oliver Hirschbiegel",
+   "imdb": "tt0363163",
+   "beschreibung": "Die letzten Tage im Führerbunker 1945, erzählt aus Sicht von Hitlers Sekretärin – Bruno Ganz in seiner bekanntesten Rolle."
+  },
+  {
+   "platz": 126,
+   "titel": "Fahrraddiebe",
+   "original": "Ladri di biciclette",
+   "jahr": 1948,
+   "laenge": 89,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Vittorio De Sica",
+   "imdb": "tt0040522",
+   "beschreibung": "Im Rom der Nachkriegszeit wird einem Arbeiter das Fahrrad gestohlen, das er für seinen Job braucht – ein Klassiker des Neorealismus."
+  },
+  {
+   "platz": 127,
+   "titel": "Dangal",
+   "original": "Dangal",
+   "jahr": 2016,
+   "laenge": 161,
+   "genre": [
+    "Action",
+    "Biografie",
+    "Drama"
+   ],
+   "regie": "Nitesh Tiwari",
+   "imdb": "tt5074352",
+   "beschreibung": "Ein früherer Ringer trainiert seine Töchter gegen alle Widerstände zu Weltklasse-Ringerinnen – nach einer wahren Geschichte."
+  },
+  {
+   "platz": 128,
+   "titel": "The Wolf of Wall Street",
+   "original": "The Wolf of Wall Street",
+   "jahr": 2013,
+   "laenge": 180,
+   "genre": [
+    "Biografie",
+    "Komödie",
+    "Krimi"
+   ],
+   "regie": "Martin Scorsese",
+   "imdb": "tt0993846",
+   "beschreibung": "Der Börsenmakler Jordan Belfort wird mit Betrug steinreich und feiert exzessiv – Scorseses wilde Satire."
+  },
+  {
+   "platz": 129,
+   "titel": "Green Book – Eine besondere Freundschaft",
+   "original": "Green Book",
+   "jahr": 2018,
+   "laenge": 130,
+   "genre": [
+    "Biografie",
+    "Komödie",
+    "Drama"
+   ],
+   "regie": "Peter Farrelly",
+   "imdb": "tt6966692",
+   "beschreibung": "Ein italoamerikanischer Türsteher fährt 1962 einen schwarzen Pianisten auf Tournee durch die Südstaaten."
+  },
+  {
+   "platz": 130,
+   "titel": "Die Truman Show",
+   "original": "The Truman Show",
+   "jahr": 1998,
+   "laenge": 103,
+   "genre": [
+    "Komödie",
+    "Drama"
+   ],
+   "regie": "Peter Weir",
+   "imdb": "tt0120382",
+   "beschreibung": "Truman lebt ein ganz normales Leben – ohne zu wissen, dass er der Star einer rund um die Uhr gesendeten Fernsehshow ist."
+  },
+  {
+   "platz": 131,
+   "titel": "Hamilton",
+   "original": "Hamilton",
+   "jahr": 2020,
+   "laenge": 160,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Geschichte"
+   ],
+   "regie": "Thomas Kail",
+   "imdb": "tt8503618",
+   "beschreibung": "Die Aufzeichnung des Broadway-Hits: die Geschichte des US-Gründervaters Alexander Hamilton als Hip-Hop-Musical."
+  },
+  {
+   "platz": 132,
+   "titel": "Batman Begins",
+   "original": "Batman Begins",
+   "jahr": 2005,
+   "laenge": 140,
+   "genre": [
+    "Action",
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Christopher Nolan",
+   "imdb": "tt0372784",
+   "beschreibung": "Bruce Wayne kehrt nach Gotham zurück und wird zu Batman – Christopher Nolans Neustart der Fledermaus."
+  },
+  {
+   "platz": 133,
+   "titel": "Taxi Driver",
+   "original": "Taxi Driver",
+   "jahr": 1976,
+   "laenge": 114,
+   "genre": [
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Martin Scorsese",
+   "imdb": "tt0075314",
+   "beschreibung": "Ein schlafloser Vietnam-Veteran fährt nachts Taxi durch New York und steigert sich in einen Rachefeldzug hinein."
+  },
+  {
+   "platz": 134,
+   "titel": "Für ein paar Dollar mehr",
+   "original": "Per qualche dollaro in più",
+   "jahr": 1965,
+   "laenge": 132,
+   "genre": [
+    "Western"
+   ],
+   "regie": "Sergio Leone",
+   "imdb": "tt0059578",
+   "beschreibung": "Zwei Kopfgeldjäger tun sich zusammen, um einen gefürchteten Banditen zu fassen – Leones zweiter Dollar-Western."
+  },
+  {
+   "platz": 135,
+   "titel": "Das Urteil von Nürnberg",
+   "original": "Judgment at Nuremberg",
+   "jahr": 1961,
+   "laenge": 179,
+   "genre": [
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Stanley Kramer",
+   "imdb": "tt0055031",
+   "beschreibung": "Ein amerikanischer Richter leitet 1948 den Prozess gegen vier NS-Juristen – Gerichtsdrama über Schuld und Gehorsam."
+  },
+  {
+   "platz": 136,
+   "titel": "Shutter Island",
+   "original": "Shutter Island",
+   "jahr": 2010,
+   "laenge": 138,
+   "genre": [
+    "Mystery",
+    "Thriller"
+   ],
+   "regie": "Martin Scorsese",
+   "imdb": "tt1130884",
+   "beschreibung": "Zwei US-Marshals suchen in einer Anstalt auf einer Insel nach einer verschwundenen Patientin – und nichts ist, wie es scheint."
+  },
+  {
+   "platz": 137,
+   "titel": "Hababam Sınıfı Sınıfta Kaldı",
+   "original": "Hababam sinifi sinifta kaldi",
+   "jahr": 1976,
+   "genre": [
+    "Komödie",
+    "Drama"
+   ],
+   "regie": "Ertem Eğilmez",
+   "beschreibung": "Die chaotischste Klasse eines Istanbuler Internats treibt ihre Lehrer wieder zur Verzweiflung – ein türkischer Komödienklassiker."
+  },
+  {
+   "platz": 138,
+   "titel": "Manche mögen's heiß",
+   "original": "Some Like It Hot",
+   "jahr": 1959,
+   "laenge": 121,
+   "genre": [
+    "Komödie",
+    "Musik",
+    "Romanze"
+   ],
+   "regie": "Billy Wilder",
+   "imdb": "tt0053291",
+   "beschreibung": "Zwei Musiker werden Zeugen eines Mafiamords und tauchen als Frauen verkleidet in einer Damenkapelle unter."
+  },
+  {
+   "platz": 139,
+   "titel": "Jurassic Park",
+   "original": "Jurassic Park",
+   "jahr": 1993,
+   "laenge": 127,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Science-Fiction"
+   ],
+   "regie": "Steven Spielberg",
+   "imdb": "tt0107290",
+   "beschreibung": "In einem Freizeitpark mit geklonten Dinosauriern fällt der Strom aus – Spielbergs Abenteuer mit den Sauriern."
+  },
+  {
+   "platz": 140,
+   "titel": "Der Vagabund und das Kind",
+   "original": "The Kid",
+   "jahr": 1921,
+   "laenge": 68,
+   "genre": [
+    "Komödie",
+    "Drama",
+    "Familie"
+   ],
+   "regie": "Charles Chaplin",
+   "imdb": "tt0012349",
+   "beschreibung": "Chaplins Tramp findet ein ausgesetztes Baby und zieht es groß – sein erster langer Film, komisch und rührend."
+  },
+  {
+   "platz": 141,
+   "titel": "The Father",
+   "original": "The Father",
+   "jahr": 2020,
+   "laenge": 97,
+   "genre": [
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "Florian Zeller",
+   "imdb": "tt10272386",
+   "beschreibung": "Ein alter Mann mit Demenz versteht die Welt um sich nicht mehr – erzählt aus seiner Sicht, mit Anthony Hopkins."
+  },
+  {
+   "platz": 142,
+   "titel": "There Will Be Blood",
+   "original": "There Will Be Blood",
+   "jahr": 2007,
+   "laenge": 158,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Paul Thomas Anderson",
+   "imdb": "tt0469494",
+   "beschreibung": "Ein skrupelloser Ölsucher kommt im Kalifornien um 1900 zu Reichtum – und gerät mit einem jungen Prediger aneinander."
+  },
+  {
+   "platz": 143,
+   "titel": "Alles über Eva",
+   "original": "All About Eve",
+   "jahr": 1950,
+   "laenge": 138,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Joseph L. Mankiewicz",
+   "imdb": "tt0042192",
+   "beschreibung": "Eine junge Bewunderin schleicht sich ins Leben einer gefeierten Broadway-Diva – scharfzüngig und elegant."
+  },
+  {
+   "platz": 144,
+   "titel": "The Sixth Sense",
+   "original": "The Sixth Sense",
+   "jahr": 1999,
+   "laenge": 107,
+   "genre": [
+    "Drama",
+    "Mystery",
+    "Thriller"
+   ],
+   "regie": "M. Night Shyamalan",
+   "imdb": "tt0167404",
+   "beschreibung": "Ein Kinderpsychologe behandelt einen Jungen, der behauptet, tote Menschen zu sehen."
+  },
+  {
+   "platz": 145,
+   "titel": "Ran",
+   "original": "Ran",
+   "jahr": 1985,
+   "laenge": 162,
+   "genre": [
+    "Action",
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Akira Kurosawa",
+   "imdb": "tt0089881",
+   "beschreibung": "Ein alter Fürst teilt sein Reich unter seinen drei Söhnen auf – Kurosawas „König Lear“ im feudalen Japan."
+  },
+  {
+   "platz": 146,
+   "titel": "Casino",
+   "original": "Casino",
+   "jahr": 1995,
+   "laenge": 178,
+   "genre": [
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Martin Scorsese",
+   "imdb": "tt0112641",
+   "beschreibung": "Ein Buchmacher leitet für die Mafia ein Casino in Las Vegas – bis Gier, Gewalt und Liebe alles zerstören."
+  },
+  {
+   "platz": 147,
+   "titel": "No Country for Old Men",
+   "original": "No Country for Old Men",
+   "jahr": 2007,
+   "laenge": 122,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Thriller"
+   ],
+   "regie": "Ethan Coen, Joel Coen",
+   "imdb": "tt0477348",
+   "beschreibung": "Ein Jäger findet Drogengeld in der Wüste und wird von einem eiskalten Killer verfolgt – die Coen-Brüder in Bestform."
+  },
+  {
+   "platz": 148,
+   "titel": "Top Gun: Maverick",
+   "original": "Top Gun: Maverick",
+   "jahr": 2022,
+   "laenge": 130,
+   "genre": [
+    "Action",
+    "Drama"
+   ],
+   "regie": "Joseph Kosinski",
+   "imdb": "tt1745960",
+   "beschreibung": "Pilot Maverick soll eine junge Elite-Staffel für eine fast unmögliche Mission ausbilden – Flugszenen fürs große Kino."
+  },
+  {
+   "platz": 149,
+   "titel": "Das Ding aus einer anderen Welt",
+   "original": "The Thing",
+   "jahr": 1982,
+   "laenge": 109,
+   "genre": [
+    "Horror",
+    "Mystery",
+    "Science-Fiction"
+   ],
+   "regie": "John Carpenter",
+   "imdb": "tt0084787",
+   "beschreibung": "Forscher in der Antarktis stoßen auf ein Wesen, das jedes Lebewesen nachahmen kann – paranoider Horror-Klassiker."
+  },
+  {
+   "platz": 150,
+   "titel": "Erbarmungslos",
+   "original": "Unforgiven",
+   "jahr": 1992,
+   "laenge": 130,
+   "genre": [
+    "Drama",
+    "Western"
+   ],
+   "regie": "Clint Eastwood",
+   "imdb": "tt0105695",
+   "beschreibung": "Ein alternder Revolverheld nimmt einen letzten Kopfgeldauftrag an – Clint Eastwoods Abgesang auf den Western."
+  },
+  {
+   "platz": 151,
+   "titel": "Pans Labyrinth",
+   "original": "El Laberinto del fauno",
+   "jahr": 2006,
+   "laenge": 118,
+   "genre": [
+    "Drama",
+    "Fantasy",
+    "Krieg"
+   ],
+   "regie": "Guillermo del Toro",
+   "imdb": "tt0457430",
+   "beschreibung": "Im Spanien von 1944 flüchtet ein Mädchen vor seinem grausamen Stiefvater in eine düstere Märchenwelt."
+  },
+  {
+   "platz": 152,
+   "titel": "Kill Bill: Volume 1",
+   "original": "Kill Bill: Vol. 1",
+   "jahr": 2003,
+   "laenge": 111,
+   "genre": [
+    "Action",
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Quentin Tarantino",
+   "imdb": "tt0266697",
+   "beschreibung": "Eine Auftragsmörderin erwacht aus dem Koma und rächt sich an ihren früheren Kollegen – Tarantinos Martial-Arts-Rausch."
+  },
+  {
+   "platz": 153,
+   "titel": "Prisoners",
+   "original": "Prisoners",
+   "jahr": 2013,
+   "laenge": 153,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "Denis Villeneuve",
+   "imdb": "tt1392214",
+   "beschreibung": "Als zwei Mädchen verschwinden, nimmt ein verzweifelter Vater die Sache selbst in die Hand – ein düsterer Thriller."
+  },
+  {
+   "platz": 154,
+   "titel": "A Beautiful Mind – Genie und Wahnsinn",
+   "original": "A Beautiful Mind",
+   "jahr": 2001,
+   "laenge": 135,
+   "genre": [
+    "Biografie",
+    "Drama"
+   ],
+   "regie": "Ron Howard",
+   "imdb": "tt0268978",
+   "beschreibung": "Der Mathematiker John Nash revolutioniert die Spieltheorie und kämpft mit einer Schizophrenie."
+  },
+  {
+   "platz": 155,
+   "titel": "Der Schatz der Sierra Madre",
+   "original": "The Treasure of the Sierra Madre",
+   "jahr": 1948,
+   "laenge": 126,
+   "genre": [
+    "Abenteuer",
+    "Drama",
+    "Western"
+   ],
+   "regie": "John Huston",
+   "imdb": "tt0040897",
+   "beschreibung": "Drei Glücksritter suchen in Mexiko nach Gold – und das Misstrauen untereinander wächst mit jedem Fund."
+  },
+  {
+   "platz": 156,
+   "titel": "Findet Nemo",
+   "original": "Finding Nemo",
+   "jahr": 2003,
+   "laenge": 100,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Komödie"
+   ],
+   "regie": "Andrew Stanton, Lee Unkrich",
+   "imdb": "tt0266543",
+   "beschreibung": "Clownfisch Marlin durchquert den Ozean, um seinen entführten Sohn zu finden – mit der vergesslichen Dorie an seiner Seite."
+  },
+  {
+   "platz": 157,
+   "titel": "Das wandelnde Schloss",
+   "original": "Hauru no ugoku shiro",
+   "jahr": 2004,
+   "laenge": 119,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Familie"
+   ],
+   "regie": "Hayao Miyazaki",
+   "imdb": "tt0347149",
+   "beschreibung": "Eine junge Hutmacherin wird in eine alte Frau verwandelt und findet Zuflucht im wandelnden Schloss des Zauberers Howl."
+  },
+  {
+   "platz": 158,
+   "titel": "Yojimbo – Der Leibwächter",
+   "original": "Yojimbo",
+   "jahr": 1961,
+   "laenge": 110,
+   "genre": [
+    "Action",
+    "Drama",
+    "Thriller"
+   ],
+   "regie": "Akira Kurosawa",
+   "imdb": "tt0055630",
+   "beschreibung": "Ein herrenloser Samurai spielt in einer Stadt zwei verfeindete Banden gegeneinander aus – Vorlage für „Für eine Handvoll Dollar“."
+  },
+  {
+   "platz": 159,
+   "titel": "Die besten Jahre",
+   "original": "La Meglio gioventù",
+   "jahr": 2003,
+   "laenge": 366,
+   "genre": [
+    "Drama",
+    "Romanze"
+   ],
+   "regie": "Marco Tullio Giordana",
+   "beschreibung": "Zwei Brüder aus Rom und ihre Familie durch vier Jahrzehnte italienischer Geschichte – ursprünglich fürs Fernsehen, gut sechs Stunden lang."
+  },
+  {
+   "platz": 160,
+   "titel": "Gesprengte Ketten",
+   "original": "The Great Escape",
+   "jahr": 1963,
+   "laenge": 172,
+   "genre": [
+    "Abenteuer",
+    "Drama",
+    "Geschichte"
+   ],
+   "regie": "John Sturges",
+   "imdb": "tt0057115",
+   "beschreibung": "Alliierte Kriegsgefangene planen den Massenausbruch aus einem deutschen Lager – mit Steve McQueen auf dem Motorrad."
+  },
+  {
+   "platz": 161,
+   "titel": "Die Ritter der Kokosnuss",
+   "original": "Monty Python and the Holy Grail",
+   "jahr": 1975,
+   "laenge": 91,
+   "genre": [
+    "Abenteuer",
+    "Komödie",
+    "Fantasy"
+   ],
+   "regie": "Terry Gilliam, Terry Jones",
+   "imdb": "tt0071853",
+   "beschreibung": "König Artus und seine Ritter suchen den Heiligen Gral – Monty Pythons absurder Klassiker, ohne Pferde, aber mit Kokosnüssen."
+  },
+  {
+   "platz": 162,
+   "titel": "Der Elefantenmensch",
+   "original": "The Elephant Man",
+   "jahr": 1980,
+   "laenge": 124,
+   "genre": [
+    "Biografie",
+    "Drama"
+   ],
+   "regie": "David Lynch",
+   "imdb": "tt0080678",
+   "beschreibung": "Im viktorianischen London nimmt sich ein Arzt eines schwer entstellten Mannes an, der als Jahrmarktsattraktion ausgestellt wurde."
+  },
+  {
+   "platz": 163,
+   "titel": "Klaus",
+   "original": "Klaus",
+   "jahr": 2019,
+   "laenge": 96,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Komödie"
+   ],
+   "regie": "Sergio Pablos, Carlos Martínez López",
+   "imdb": "tt4729430",
+   "beschreibung": "Ein fauler Postbote wird in ein abgelegenes Inseldorf versetzt und freundet sich mit einem einsamen Spielzeugmacher an – ein Weihnachtsfilm."
+  },
+  {
+   "platz": 164,
+   "titel": "Bei Anruf Mord",
+   "original": "Dial M for Murder",
+   "jahr": 1954,
+   "laenge": 105,
+   "genre": [
+    "Krimi",
+    "Thriller"
+   ],
+   "regie": "Alfred Hitchcock",
+   "imdb": "tt0046912",
+   "beschreibung": "Ein Ex-Tennisprofi plant den perfekten Mord an seiner reichen Frau – doch etwas geht schief. Ein Hitchcock-Krimi."
+  },
+  {
+   "platz": 165,
+   "titel": "Vom Winde verweht",
+   "original": "Gone with the Wind",
+   "jahr": 1939,
+   "laenge": 238,
+   "genre": [
+    "Drama",
+    "Romanze",
+    "Krieg"
+   ],
+   "regie": "Victor Fleming, George Cukor, Sam Wood",
+   "imdb": "tt0031381",
+   "beschreibung": "Die eigensinnige Scarlett O'Hara im amerikanischen Bürgerkrieg und danach – das große Melodram, fast vier Stunden lang."
+  },
+  {
+   "platz": 166,
+   "titel": "In ihren Augen",
+   "original": "El secreto de sus ojos",
+   "jahr": 2009,
+   "laenge": 129,
+   "genre": [
+    "Drama",
+    "Mystery",
+    "Romanze"
+   ],
+   "regie": "Juan José Campanella",
+   "imdb": "tt1305806",
+   "beschreibung": "Ein pensionierter Justizbeamter schreibt einen Roman über einen ungelösten Mordfall, der ihn nie losgelassen hat."
+  },
+  {
+   "platz": 167,
+   "titel": "Chinatown",
+   "original": "Chinatown",
+   "jahr": 1974,
+   "laenge": 130,
+   "genre": [
+    "Drama",
+    "Mystery",
+    "Thriller"
+   ],
+   "regie": "Roman Polanski",
+   "imdb": "tt0071315",
+   "beschreibung": "Ein Privatdetektiv im Los Angeles der 1930er stößt bei einem Ehebruchfall auf einen Skandal um Wasserrechte – Neo-Noir."
+  },
+  {
+   "platz": 168,
+   "titel": "Bube, Dame, König, grAS",
+   "original": "Lock, Stock and Two Smoking Barrels",
+   "jahr": 1998,
+   "laenge": 107,
+   "genre": [
+    "Action",
+    "Komödie",
+    "Krimi"
+   ],
+   "regie": "Guy Ritchie",
+   "imdb": "tt0120735",
+   "beschreibung": "Vier Kumpel aus London verschulden sich bei einem Gangster und geraten in ein Chaos aus Gaunern und Waffen."
+  },
+  {
+   "platz": 169,
+   "titel": "V wie Vendetta",
+   "original": "V for Vendetta",
+   "jahr": 2005,
+   "laenge": 132,
+   "genre": [
+    "Action",
+    "Drama",
+    "Science-Fiction"
+   ],
+   "regie": "James McTeigue",
+   "imdb": "tt0434409",
+   "beschreibung": "In einem totalitären Großbritannien kämpft ein maskierter Rächer gegen das Regime – mit einer jungen Frau an seiner Seite."
+  },
+  {
+   "platz": 170,
+   "titel": "Rashomon – Das Lustwäldchen",
+   "original": "Rashômon",
+   "jahr": 1950,
+   "laenge": 88,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "Akira Kurosawa",
+   "imdb": "tt0042876",
+   "beschreibung": "Ein Verbrechen im Wald, vier Zeugen, vier Versionen – Kurosawas Klassiker über die Wahrheit."
+  },
+  {
+   "platz": 171,
+   "titel": "Alles steht Kopf",
+   "original": "Inside Out",
+   "jahr": 2015,
+   "laenge": 95,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Komödie"
+   ],
+   "regie": "Pete Docter, Ronnie Del Carmen",
+   "imdb": "tt2096673",
+   "beschreibung": "Freude, Kummer, Wut, Angst und Ekel steuern ein Mädchen durch einen schwierigen Umzug – Pixar von seiner klügsten Seite."
+  },
+  {
+   "platz": 172,
+   "titel": "Three Billboards Outside Ebbing, Missouri",
+   "original": "Three Billboards Outside Ebbing, Missouri",
+   "jahr": 2017,
+   "laenge": 115,
+   "genre": [
+    "Komödie",
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Martin McDonagh",
+   "imdb": "tt5027774",
+   "beschreibung": "Eine wütende Mutter mietet drei Werbetafeln, um die Polizei an den ungelösten Mord an ihrer Tochter zu erinnern."
+  },
+  {
+   "platz": 173,
+   "titel": "Catch Me If You Can",
+   "original": "Catch Me If You Can",
+   "jahr": 2002,
+   "laenge": 141,
+   "genre": [
+    "Biografie",
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Steven Spielberg",
+   "imdb": "tt0264464",
+   "beschreibung": "Ein junger Hochstapler gibt sich als Pilot, Arzt und Anwalt aus, ein FBI-Agent ist ihm auf den Fersen – nach einer wahren Geschichte."
+  },
+  {
+   "platz": 174,
+   "titel": "Trainspotting – Neue Helden",
+   "original": "Trainspotting",
+   "jahr": 1996,
+   "laenge": 93,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Danny Boyle",
+   "imdb": "tt0117951",
+   "beschreibung": "Eine Clique junger Junkies in Edinburgh zwischen Rausch, Absturz und Ausstiegsplänen – laut, schnell und schwarzhumorig."
+  },
+  {
+   "platz": 175,
+   "titel": "Die Brücke am Kwai",
+   "original": "The Bridge on the River Kwai",
+   "jahr": 1957,
+   "laenge": 161,
+   "genre": [
+    "Abenteuer",
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "David Lean",
+   "imdb": "tt0050212",
+   "beschreibung": "Britische Kriegsgefangene sollen für die Japaner eine Eisenbahnbrücke bauen – und ihr Oberst macht daraus eine Ehrensache."
+  },
+  {
+   "platz": 176,
+   "titel": "Wie ein wilder Stier",
+   "original": "Raging Bull",
+   "jahr": 1980,
+   "laenge": 129,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Sport"
+   ],
+   "regie": "Martin Scorsese",
+   "imdb": "tt0081398",
+   "beschreibung": "Aufstieg und Selbstzerstörung des Boxers Jake LaMotta – in Schwarz-Weiß, mit Robert De Niro."
+  },
+  {
+   "platz": 177,
+   "titel": "Harry Potter und die Heiligtümer des Todes – Teil 2",
+   "original": "Harry Potter and the Deathly Hallows: Part 2",
+   "jahr": 2011,
+   "laenge": 130,
+   "genre": [
+    "Abenteuer",
+    "Familie",
+    "Fantasy"
+   ],
+   "regie": "David Yates",
+   "imdb": "tt1201607",
+   "beschreibung": "Die Entscheidungsschlacht um Hogwarts: Harry stellt sich Voldemort – das Finale der Reihe."
+  },
+  {
+   "platz": 178,
+   "titel": "Fargo",
+   "original": "Fargo",
+   "jahr": 1996,
+   "laenge": 98,
+   "genre": [
+    "Krimi",
+    "Thriller"
+   ],
+   "regie": "Joel Coen, Ethan Coen",
+   "imdb": "tt0116282",
+   "beschreibung": "Ein Autoverkäufer lässt seine eigene Frau entführen, und eine hochschwangere Polizistin ermittelt – ein Coen-Krimi im Schnee."
+  },
+  {
+   "platz": 179,
+   "titel": "Demon Slayer: Kimetsu no Yaiba – Infinity Castle",
+   "original": "Gekijô-ban Kimetsu no Yaiba Mugen Jô-hen",
+   "jahr": 2025,
+   "laenge": 155,
+   "genre": [
+    "Animation",
+    "Action",
+    "Fantasy"
+   ],
+   "regie": "Haruo Sotozaki",
+   "beschreibung": "Tanjiro und die Dämonenjäger werden ins Unendlichkeitsschloss gezogen – der Auftakt zum großen Finale des Animes."
+  },
+  {
+   "platz": 180,
+   "titel": "Der wilde Roboter",
+   "original": "The Wild Robot",
+   "jahr": 2024,
+   "laenge": 102,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Familie"
+   ],
+   "regie": "Chris Sanders",
+   "beschreibung": "Ein Roboter strandet auf einer wilden Insel und zieht ein verwaistes Gänseküken groß – ein berührender Animationsfilm."
+  },
+  {
+   "platz": 181,
+   "titel": "Warrior",
+   "original": "Warrior",
+   "jahr": 2011,
+   "laenge": 140,
+   "genre": [
+    "Action",
+    "Drama",
+    "Sport"
+   ],
+   "regie": "Gavin O'Connor",
+   "imdb": "tt1291584",
+   "beschreibung": "Zwei entfremdete Brüder treten im selben Mixed-Martial-Arts-Turnier an – ein Sportdrama mit viel Wucht."
+  },
+  {
+   "platz": 182,
+   "titel": "Der Club der toten Dichter",
+   "original": "Dead Poets Society",
+   "jahr": 1989,
+   "laenge": 128,
+   "genre": [
+    "Komödie",
+    "Drama"
+   ],
+   "regie": "Peter Weir",
+   "imdb": "tt0097165",
+   "beschreibung": "Ein unkonventioneller Englischlehrer begeistert die Schüler eines strengen Internats für Poesie – „Carpe diem“."
+  },
+  {
+   "platz": 183,
+   "titel": "Million Dollar Baby",
+   "original": "Million Dollar Baby",
+   "jahr": 2004,
+   "laenge": 132,
+   "genre": [
+    "Drama",
+    "Sport"
+   ],
+   "regie": "Clint Eastwood",
+   "imdb": "tt0405159",
+   "beschreibung": "Eine entschlossene Kellnerin überredet einen alten Boxtrainer, sie zu trainieren – mehr Drama, als man erwartet."
+  },
+  {
+   "platz": 184,
+   "titel": "Ben Hur",
+   "original": "Ben-Hur",
+   "jahr": 1959,
+   "laenge": 212,
+   "genre": [
+    "Abenteuer",
+    "Drama"
+   ],
+   "regie": "William Wyler",
+   "imdb": "tt0052618",
+   "beschreibung": "Ein jüdischer Prinz wird von seinem römischen Jugendfreund verraten und sinnt auf Rache – mit dem berühmten Wagenrennen."
+  },
+  {
+   "platz": 185,
+   "titel": "Gran Torino",
+   "original": "Gran Torino",
+   "jahr": 2008,
+   "laenge": 116,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Clint Eastwood",
+   "imdb": "tt1205489",
+   "beschreibung": "Ein verbitterter Korea-Veteran freundet sich widerwillig mit seinen Nachbarn aus einer Hmong-Familie an."
+  },
+  {
+   "platz": 186,
+   "titel": "Mad Max: Fury Road",
+   "original": "Mad Max: Fury Road",
+   "jahr": 2015,
+   "laenge": 120,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Science-Fiction"
+   ],
+   "regie": "George Miller",
+   "imdb": "tt1392190",
+   "beschreibung": "In einer Wüsten-Endzeit fliehen Max und Furiosa mit einem Tanklaster vor einem Tyrannen – zwei Stunden Vollgas."
+  },
+  {
+   "platz": 187,
+   "titel": "Barry Lyndon",
+   "original": "Barry Lyndon",
+   "jahr": 1975,
+   "laenge": 185,
+   "genre": [
+    "Abenteuer",
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Stanley Kubrick",
+   "imdb": "tt0072684",
+   "beschreibung": "Ein irischer Glücksritter will im 18. Jahrhundert in die englische Aristokratie aufsteigen – teils bei Kerzenlicht gedreht."
+  },
+  {
+   "platz": 188,
+   "titel": "Mein Nachbar Totoro",
+   "original": "Tonari no Totoro",
+   "jahr": 1988,
+   "laenge": 86,
+   "genre": [
+    "Animation",
+    "Komödie",
+    "Familie"
+   ],
+   "regie": "Hayao Miyazaki",
+   "imdb": "tt0096283",
+   "beschreibung": "Zwei Schwestern ziehen aufs Land und entdecken im Wald den sanften Geist Totoro – Ghibli für jedes Alter."
+  },
+  {
+   "platz": 189,
+   "titel": "Kinder des Himmels",
+   "original": "Bacheha-Ye aseman",
+   "jahr": 1997,
+   "laenge": 89,
+   "genre": [
+    "Drama",
+    "Familie",
+    "Sport"
+   ],
+   "regie": "Majid Majidi",
+   "imdb": "tt0118849",
+   "beschreibung": "Ein Junge in Teheran verliert die Schuhe seiner Schwester, und die beiden teilen sich heimlich ein Paar."
+  },
+  {
+   "platz": 190,
+   "titel": "Hacksaw Ridge – Die Entscheidung",
+   "original": "Hacksaw Ridge",
+   "jahr": 2016,
+   "laenge": 139,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Geschichte"
+   ],
+   "regie": "Mel Gibson",
+   "imdb": "tt2119532",
+   "beschreibung": "Ein Sanitäter verweigert im Zweiten Weltkrieg die Waffe und rettet auf Okinawa Dutzende Kameraden – nach einer wahren Geschichte."
+  },
+  {
+   "platz": 191,
+   "titel": "Grand Budapest Hotel",
+   "original": "The Grand Budapest Hotel",
+   "jahr": 2014,
+   "laenge": 99,
+   "genre": [
+    "Abenteuer",
+    "Komödie",
+    "Krimi"
+   ],
+   "regie": "Wes Anderson",
+   "imdb": "tt2278388",
+   "beschreibung": "Ein legendärer Concierge und sein Lehrling geraten in einen Kunstraub und einen Erbstreit – Wes Anderson in Bestform."
+  },
+  {
+   "platz": 192,
+   "titel": "12 Years a Slave",
+   "original": "12 Years a Slave",
+   "jahr": 2013,
+   "laenge": 134,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Geschichte"
+   ],
+   "regie": "Steve McQueen",
+   "imdb": "tt2024544",
+   "beschreibung": "Ein freier Schwarzer aus New York wird 1841 entführt und als Sklave verkauft – nach einer wahren Geschichte."
+  },
+  {
+   "platz": 193,
+   "titel": "Before Sunrise",
+   "original": "Before Sunrise",
+   "jahr": 1995,
+   "laenge": 101,
+   "genre": [
+    "Drama",
+    "Romanze"
+   ],
+   "regie": "Richard Linklater",
+   "imdb": "tt0112471",
+   "beschreibung": "Ein Amerikaner und eine Französin lernen sich im Zug kennen und verbringen eine Nacht in Wien – nur Gespräche, und es wirkt."
+  },
+  {
+   "platz": 194,
+   "titel": "Blade Runner",
+   "original": "Blade Runner",
+   "jahr": 1982,
+   "laenge": 117,
+   "genre": [
+    "Action",
+    "Drama",
+    "Science-Fiction"
+   ],
+   "regie": "Ridley Scott",
+   "imdb": "tt0083658",
+   "beschreibung": "Im Los Angeles von 2019 jagt ein Blade Runner künstliche Menschen, die auf der Erde untergetaucht sind – Neo-Noir-Science-Fiction."
+  },
+  {
+   "platz": 195,
+   "titel": "Spider-Man: No Way Home",
+   "original": "Spider-Man: No Way Home",
+   "jahr": 2021,
+   "laenge": 148,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Fantasy"
+   ],
+   "regie": "Jon Watts",
+   "imdb": "tt10872600",
+   "beschreibung": "Peters Identität ist aufgeflogen, ein Zauber soll helfen – und öffnet das Multiversum für alte Bekannte."
+  },
+  {
+   "platz": 196,
+   "titel": "Memories of Murder",
+   "original": "Salinui chueok",
+   "jahr": 2003,
+   "laenge": 132,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "Bong Joon Ho",
+   "imdb": "tt0353969",
+   "beschreibung": "Zwei Polizisten jagen in den 1980ern einen Serienmörder in Südkorea – Bong Joon-hos Krimi nach wahren Fällen."
+  },
+  {
+   "platz": 197,
+   "titel": "Ratatouille",
+   "original": "Ratatouille",
+   "jahr": 2007,
+   "laenge": 111,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Komödie"
+   ],
+   "regie": "Brad Bird, Jan Pinkava",
+   "imdb": "tt0382932",
+   "beschreibung": "Eine Ratte mit feiner Nase träumt davon, in Paris Koch zu werden – und tut sich mit einem tollpatschigen Küchenjungen zusammen."
+  },
+  {
+   "platz": 198,
+   "titel": "Gone Girl – Das perfekte Opfer",
+   "original": "Gone Girl",
+   "jahr": 2014,
+   "laenge": 149,
+   "genre": [
+    "Drama",
+    "Mystery",
+    "Thriller"
+   ],
+   "regie": "David Fincher",
+   "imdb": "tt2267998",
+   "beschreibung": "Am fünften Hochzeitstag verschwindet eine Frau spurlos – und ihr Mann gerät unter Verdacht. David Finchers Psychothriller."
+  },
+  {
+   "platz": 199,
+   "titel": "Drachenzähmen leicht gemacht",
+   "original": "How to Train Your Dragon",
+   "jahr": 2010,
+   "laenge": 98,
+   "genre": [
+    "Animation",
+    "Action",
+    "Abenteuer"
+   ],
+   "regie": "Dean DeBlois, Chris Sanders",
+   "imdb": "tt0892769",
+   "beschreibung": "Ein schmächtiger Wikingerjunge freundet sich mit einem verletzten Drachen an, statt ihn zu töten."
+  },
+  {
+   "platz": 200,
+   "titel": "Die Monster AG",
+   "original": "Monsters, Inc.",
+   "jahr": 2001,
+   "laenge": 92,
+   "genre": [
+    "Animation",
+    "Abenteuer",
+    "Komödie"
+   ],
+   "regie": "Pete Docter, David Silverman, Lee Unkrich",
+   "imdb": "tt0198781",
+   "beschreibung": "In der Monsterwelt erschrecken Sulley und Mike Kinder, um Energie zu gewinnen – bis ein kleines Mädchen in ihre Welt gerät."
+  },
+  {
+   "platz": 201,
+   "titel": "Der weiße Hai",
+   "original": "Jaws",
+   "jahr": 1975,
+   "laenge": 124,
+   "genre": [
+    "Abenteuer",
+    "Thriller"
+   ],
+   "regie": "Steven Spielberg",
+   "imdb": "tt0073195",
+   "beschreibung": "Ein Weißer Hai terrorisiert einen Badeort, und drei Männer fahren hinaus, um ihn zu jagen – Spielbergs Durchbruch."
+  },
+  {
+   "platz": 202,
+   "titel": "Im Namen des Vaters",
+   "original": "In the Name of the Father",
+   "jahr": 1993,
+   "laenge": 133,
+   "genre": [
+    "Biografie",
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Jim Sheridan",
+   "imdb": "tt0107207",
+   "beschreibung": "Ein junger Nordire wird für einen IRA-Anschlag verurteilt, den er nicht begangen hat – nach einer wahren Geschichte."
+  },
+  {
+   "platz": 203,
+   "titel": "Wild Tales – Jeder dreht mal durch!",
+   "original": "Relatos salvajes",
+   "jahr": 2014,
+   "laenge": 122,
+   "genre": [
+    "Komödie",
+    "Drama",
+    "Thriller"
+   ],
+   "regie": "Damián Szifron",
+   "imdb": "tt3011894",
+   "beschreibung": "Sechs Episoden über Menschen, die die Beherrschung verlieren – eine schwarze Komödie aus Argentinien."
+  },
+  {
+   "platz": 204,
+   "titel": "Le Mans 66 – Gegen jede Chance",
+   "original": "Ford v Ferrari",
+   "jahr": 2019,
+   "laenge": 152,
+   "genre": [
+    "Action",
+    "Biografie",
+    "Drama"
+   ],
+   "regie": "James Mangold",
+   "imdb": "tt1950186",
+   "beschreibung": "Ein Autobauer und ein Rennfahrer sollen für Ford die Ferraris in Le Mans schlagen – Motorsport-Drama nach wahren Ereignissen."
+  },
+  {
+   "platz": 205,
+   "titel": "Goldrausch",
+   "original": "The Gold Rush",
+   "jahr": 1925,
+   "laenge": 95,
+   "genre": [
+    "Abenteuer",
+    "Komödie",
+    "Drama"
+   ],
+   "regie": "Charles Chaplin",
+   "imdb": "tt0015864",
+   "beschreibung": "Chaplins Tramp sucht in Alaska nach Gold und isst vor Hunger seinen Schuh – mit dem berühmten Brötchentanz."
+  },
+  {
+   "platz": 206,
+   "titel": "Sherlock, Jr.",
+   "original": "Sherlock Jr.",
+   "jahr": 1924,
+   "laenge": 45,
+   "genre": [
+    "Action",
+    "Komödie",
+    "Romanze"
+   ],
+   "regie": "Buster Keaton",
+   "imdb": "tt0015324",
+   "beschreibung": "Ein Filmvorführer träumt sich in die Leinwand hinein und wird zum Meisterdetektiv – Buster Keatons verblüffende Stummfilmtricks."
+  },
+  {
+   "platz": 207,
+   "titel": "Mary & Max – oder: Schrumpfen Schafe, wenn es regnet?",
+   "original": "Mary and Max",
+   "jahr": 2009,
+   "laenge": 92,
+   "genre": [
+    "Animation",
+    "Komödie",
+    "Drama"
+   ],
+   "regie": "Adam Elliot",
+   "imdb": "tt0978762",
+   "beschreibung": "Ein Mädchen aus Melbourne und ein Mann mit Asperger in New York schreiben sich jahrelang Briefe – Knetanimation für Erwachsene."
+  },
+  {
+   "platz": 208,
+   "titel": "Die durch die Hölle gehen",
+   "original": "The Deer Hunter",
+   "jahr": 1978,
+   "laenge": 183,
+   "genre": [
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Michael Cimino",
+   "imdb": "tt0077416",
+   "beschreibung": "Drei Freunde aus einer Stahlarbeiterstadt ziehen in den Vietnamkrieg – und kommen verändert oder gar nicht zurück."
+  },
+  {
+   "platz": 209,
+   "titel": "Der General",
+   "original": "The General",
+   "jahr": 1926,
+   "laenge": 67,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Komödie"
+   ],
+   "regie": "Clyde Bruckman, Buster Keaton",
+   "imdb": "tt0017925",
+   "beschreibung": "Ein Lokführer jagt im Bürgerkrieg seiner gestohlenen Lokomotive hinterher – Buster Keatons Stummfilm-Actionkomödie."
+  },
+  {
+   "platz": 210,
+   "titel": "Lohn der Angst",
+   "original": "Le Salaire de la peur",
+   "jahr": 1953,
+   "laenge": 131,
+   "genre": [
+    "Abenteuer",
+    "Drama",
+    "Thriller"
+   ],
+   "regie": "Henri-Georges Clouzot",
+   "imdb": "tt0046268",
+   "beschreibung": "Vier Männer sollen zwei Lastwagen voller Nitroglyzerin über holprige Pisten fahren – Spannung pur."
+  },
+  {
+   "platz": 211,
+   "titel": "Mr. Smith geht nach Washington",
+   "original": "Mr. Smith Goes to Washington",
+   "jahr": 1939,
+   "laenge": 129,
+   "genre": [
+    "Komödie",
+    "Drama"
+   ],
+   "regie": "Frank Capra",
+   "imdb": "tt0031679",
+   "beschreibung": "Ein naiver Pfadfinderleiter wird Senator und legt sich mit der Korruption im Kongress an."
+  },
+  {
+   "platz": 212,
+   "titel": "Logan – The Wolverine",
+   "original": "Logan",
+   "jahr": 2017,
+   "laenge": 137,
+   "genre": [
+    "Action",
+    "Drama",
+    "Science-Fiction"
+   ],
+   "regie": "James Mangold",
+   "imdb": "tt3315342",
+   "beschreibung": "Ein gealterter Wolverine soll ein Mädchen mit ähnlichen Kräften in Sicherheit bringen – ein harter, melancholischer Abschied."
+  },
+  {
+   "platz": 213,
+   "titel": "Die Faust im Nacken",
+   "original": "On the Waterfront",
+   "jahr": 1954,
+   "laenge": 108,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Thriller"
+   ],
+   "regie": "Elia Kazan",
+   "imdb": "tt0047296",
+   "beschreibung": "Ein Ex-Boxer arbeitet im Hafen für einen korrupten Gewerkschaftsboss und entscheidet sich, gegen ihn auszusagen – mit Marlon Brando."
+  },
+  {
+   "platz": 214,
+   "titel": "Rocky",
+   "original": "Rocky",
+   "jahr": 1976,
+   "laenge": 120,
+   "genre": [
+    "Drama",
+    "Sport"
+   ],
+   "regie": "John G. Avildsen",
+   "imdb": "tt0075148",
+   "beschreibung": "Ein unbekannter Boxer aus Philadelphia bekommt die Chance, gegen den Weltmeister anzutreten – und trainiert wie besessen."
+  },
+  {
+   "platz": 215,
+   "titel": "Wilde Erdbeeren",
+   "original": "Smultronstället",
+   "jahr": 1957,
+   "laenge": 91,
+   "genre": [
+    "Drama",
+    "Romanze"
+   ],
+   "regie": "Ingmar Bergman",
+   "imdb": "tt0050986",
+   "beschreibung": "Ein alter Professor fährt zu seiner Ehrung und blickt unterwegs auf sein Leben zurück – Ingmar Bergmans Roadmovie."
+  },
+  {
+   "platz": 216,
+   "titel": "Die Reise nach Tokyo",
+   "original": "Tôkyô monogatari",
+   "jahr": 1953,
+   "laenge": 136,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Yasujirô Ozu",
+   "imdb": "tt0046438",
+   "beschreibung": "Ein altes Ehepaar besucht seine erwachsenen Kinder in Tokio, die kaum Zeit für sie haben – leise und bewegend."
+  },
+  {
+   "platz": 217,
+   "titel": "Der dritte Mann",
+   "original": "The Third Man",
+   "jahr": 1949,
+   "laenge": 93,
+   "genre": [
+    "Film noir",
+    "Mystery",
+    "Thriller"
+   ],
+   "regie": "Carol Reed",
+   "imdb": "tt0041959",
+   "beschreibung": "Ein Schriftsteller sucht im zerbombten Wien nach der Wahrheit über den Tod seines Freundes Harry Lime – mit Zitherklängen."
+  },
+  {
+   "platz": 218,
+   "titel": "Fluch der Karibik",
+   "original": "Pirates of the Caribbean: The Curse of the Black Pearl",
+   "jahr": 2003,
+   "laenge": 143,
+   "genre": [
+    "Action",
+    "Abenteuer",
+    "Fantasy"
+   ],
+   "regie": "Gore Verbinski",
+   "imdb": "tt0325980",
+   "beschreibung": "Captain Jack Sparrow hilft einem Schmied, die von verfluchten Piraten entführte Tochter des Gouverneurs zu retten."
+  },
+  {
+   "platz": 219,
+   "titel": "Spotlight",
+   "original": "Spotlight",
+   "jahr": 2015,
+   "laenge": 129,
+   "genre": [
+    "Biografie",
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Tom McCarthy",
+   "imdb": "tt1895587",
+   "beschreibung": "Reporter des Boston Globe decken den massenhaften Kindesmissbrauch in der katholischen Kirche auf – Oscar als bester Film."
+  },
+  {
+   "platz": 220,
+   "titel": "Maharaja",
+   "original": "Maharaja",
+   "jahr": 2024,
+   "laenge": 141,
+   "genre": [
+    "Action",
+    "Krimi",
+    "Thriller"
+   ],
+   "regie": "Nithilan Saminathan",
+   "beschreibung": "Ein Friseur meldet der Polizei den Diebstahl einer Mülltonne – und hinter der seltsamen Anzeige steckt viel mehr. Ein tamilischer Thriller."
+  },
+  {
+   "platz": 221,
+   "titel": "Terminator",
+   "original": "The Terminator",
+   "jahr": 1984,
+   "laenge": 107,
+   "genre": [
+    "Action",
+    "Science-Fiction"
+   ],
+   "regie": "James Cameron",
+   "imdb": "tt0088247",
+   "beschreibung": "Ein Cyborg aus der Zukunft soll eine Kellnerin töten, ein Soldat soll sie schützen – der Film, der Arnold Schwarzenegger berühmt machte."
+  },
+  {
+   "platz": 222,
+   "titel": "Hass – La Haine",
+   "original": "La Haine",
+   "jahr": 1995,
+   "laenge": 98,
+   "genre": [
+    "Krimi",
+    "Drama"
+   ],
+   "regie": "Mathieu Kassovitz",
+   "imdb": "tt0113247",
+   "beschreibung": "24 Stunden mit drei Freunden aus einer Pariser Banlieue nach einer Nacht voller Krawalle – in Schwarz-Weiß."
+  },
+  {
+   "platz": 223,
+   "titel": "The Big Lebowski",
+   "original": "The Big Lebowski",
+   "jahr": 1998,
+   "laenge": 117,
+   "genre": [
+    "Komödie",
+    "Krimi"
+   ],
+   "regie": "Joel Coen, Ethan Coen",
+   "imdb": "tt0118715",
+   "beschreibung": "Der Dude, Kiffer und Bowlingfan, wird mit einem Millionär verwechselt – und schlittert in einen absurden Entführungsfall."
+  },
+  {
+   "platz": 224,
+   "titel": "Jai Bhim",
+   "original": "Jai Bhim",
+   "jahr": 2021,
+   "laenge": 164,
+   "genre": [
+    "Krimi",
+    "Drama",
+    "Mystery"
+   ],
+   "regie": "T.J. Gnanavel",
+   "imdb": "tt15097216",
+   "beschreibung": "Ein Anwalt kämpft für eine Frau aus einer ausgegrenzten Stammesgemeinschaft, deren Mann in Polizeigewahrsam verschwunden ist – nach wahren Ereignissen."
+  },
+  {
+   "platz": 225,
+   "titel": "Das siebente Siegel",
+   "original": "Det Sjunde inseglet",
+   "jahr": 1957,
+   "laenge": 96,
+   "genre": [
+    "Drama",
+    "Fantasy"
+   ],
+   "regie": "Ingmar Bergman",
+   "imdb": "tt0050976",
+   "beschreibung": "Ein Ritter kehrt von den Kreuzzügen zurück und spielt mit dem Tod Schach um sein Leben – Bergmans Klassiker."
+  },
+  {
+   "platz": 226,
+   "titel": "Raum",
+   "original": "Room",
+   "jahr": 2015,
+   "laenge": 118,
+   "genre": [
+    "Drama",
+    "Thriller"
+   ],
+   "regie": "Lenny Abrahamson",
+   "imdb": "tt3170832",
+   "beschreibung": "Eine Mutter und ihr fünfjähriger Sohn leben eingesperrt in einem einzigen Raum – und wagen die Flucht in die Welt draußen."
+  },
+  {
+   "platz": 227,
+   "titel": "Hotel Ruanda",
+   "original": "Hotel Rwanda",
+   "jahr": 2004,
+   "laenge": 121,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Geschichte"
+   ],
+   "regie": "Terry George",
+   "imdb": "tt0395169",
+   "beschreibung": "Ein Hotelmanager versteckt während des Völkermords in Ruanda über tausend Flüchtlinge – nach einer wahren Geschichte."
+  },
+  {
+   "platz": 228,
+   "titel": "Platoon",
+   "original": "Platoon",
+   "jahr": 1986,
+   "laenge": 120,
+   "genre": [
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Oliver Stone",
+   "imdb": "tt0091763",
+   "beschreibung": "Ein junger Freiwilliger erlebt den Vietnamkrieg zwischen zwei Sergeants, die unterschiedlicher nicht sein könnten."
+  },
+  {
+   "platz": 229,
+   "titel": "Die besten Jahre unseres Lebens",
+   "original": "The Best Years of Our Lives",
+   "jahr": 1946,
+   "laenge": 170,
+   "genre": [
+    "Drama",
+    "Romanze",
+    "Krieg"
+   ],
+   "regie": "William Wyler",
+   "imdb": "tt0036868",
+   "beschreibung": "Drei Veteranen kehren aus dem Zweiten Weltkrieg in ihre Kleinstadt zurück und finden nur schwer ins zivile Leben."
+  },
+  {
+   "platz": 230,
+   "titel": "Meine Lieder – meine Träume",
+   "original": "The Sound of Music",
+   "jahr": 1965,
+   "laenge": 172,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Familie"
+   ],
+   "regie": "Robert Wise",
+   "imdb": "tt0059742",
+   "beschreibung": "Eine junge Novizin wird Kindermädchen bei einer Kapitänsfamilie in Salzburg – ein Musical voller Ohrwürmer."
+  },
+  {
+   "platz": 231,
+   "titel": "Before Sunset",
+   "original": "Before Sunset",
+   "jahr": 2004,
+   "laenge": 80,
+   "genre": [
+    "Drama",
+    "Romanze"
+   ],
+   "regie": "Richard Linklater",
+   "imdb": "tt0381681",
+   "beschreibung": "Neun Jahre nach ihrer Nacht in Wien treffen sich Jesse und Céline in Paris wieder – für einen einzigen Nachmittag."
+  },
+  {
+   "platz": 232,
+   "titel": "Die Unglaublichen – The Incredibles",
+   "original": "The Incredibles",
+   "jahr": 2004,
+   "laenge": 115,
+   "genre": [
+    "Animation",
+    "Action",
+    "Abenteuer"
+   ],
+   "regie": "Brad Bird",
+   "imdb": "tt0317705",
+   "beschreibung": "Eine Superheldenfamilie muss aus dem Ruhestand zurück, um die Welt zu retten – Pixar im Agentenfilm-Stil."
+  },
+  {
+   "platz": 233,
+   "titel": "Der Exorzist",
+   "original": "The Exorcist",
+   "jahr": 1973,
+   "laenge": 122,
+   "genre": [
+    "Horror"
+   ],
+   "regie": "William Friedkin",
+   "imdb": "tt0070047",
+   "beschreibung": "Ein zwölfjähriges Mädchen ist von einem Dämon besessen, und zwei Priester versuchen einen Exorzismus – ein Horror-Meilenstein."
+  },
+  {
+   "platz": 234,
+   "titel": "Hachiko – Eine wunderbare Freundschaft",
+   "original": "Hachi: A Dog's Tale",
+   "jahr": 2009,
+   "laenge": 93,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Familie"
+   ],
+   "regie": "Lasse Hallström",
+   "imdb": "tt1028532",
+   "beschreibung": "Ein Akita-Hund wartet jeden Tag am Bahnhof auf sein Herrchen – nach einer wahren Geschichte, Taschentücher bereithalten."
+  },
+  {
+   "platz": 235,
+   "titel": "A Silent Voice",
+   "original": "Koe no katachi",
+   "jahr": 2016,
+   "laenge": 130,
+   "genre": [
+    "Animation",
+    "Drama",
+    "Romanze"
+   ],
+   "regie": "Naoko Yamada",
+   "beschreibung": "Ein Junge, der eine gehörlose Mitschülerin gemobbt hat, sucht Jahre später Vergebung – ein feinfühliger Anime über Schuld."
+  },
+  {
+   "platz": 236,
+   "titel": "Rush – Alles für den Sieg",
+   "original": "Rush",
+   "jahr": 2013,
+   "laenge": 123,
+   "genre": [
+    "Action",
+    "Biografie",
+    "Drama"
+   ],
+   "regie": "Ron Howard",
+   "imdb": "tt1979320",
+   "beschreibung": "Die Rivalität zwischen Niki Lauda und James Hunt in der Formel-1-Saison 1976 – rasant erzählt."
+  },
+  {
+   "platz": 237,
+   "titel": "Der Zauberer von Oz",
+   "original": "The Wizard of Oz",
+   "jahr": 1939,
+   "laenge": 102,
+   "genre": [
+    "Abenteuer",
+    "Familie",
+    "Fantasy"
+   ],
+   "regie": "Victor Fleming, George Cukor, Mervyn LeRoy",
+   "imdb": "tt0032138",
+   "beschreibung": "Ein Wirbelsturm trägt Dorothy ins Zauberland Oz, wo sie mit Vogelscheuche, Blechmann und Löwe den Zauberer sucht."
+  },
+  {
+   "platz": 238,
+   "titel": "Die Passion der Jungfrau von Orléans",
+   "original": "La Passion de Jeanne d'Arc",
+   "jahr": 1928,
+   "laenge": 114,
+   "genre": [
+    "Biografie",
+    "Drama",
+    "Geschichte"
+   ],
+   "regie": "Carl Theodor Dreyer",
+   "imdb": "tt0019254",
+   "beschreibung": "Der Prozess gegen Jeanne d'Arc, fast nur in Gesichtern erzählt – ein Stummfilm von 1928, der unter die Haut geht."
+  },
+  {
+   "platz": 239,
+   "titel": "Stand by Me – Das Geheimnis eines Sommers",
+   "original": "Stand by Me",
+   "jahr": 1986,
+   "laenge": 89,
+   "genre": [
+    "Abenteuer",
+    "Drama"
+   ],
+   "regie": "Rob Reiner",
+   "imdb": "tt0092005",
+   "beschreibung": "Vier Jungs machen sich 1959 auf die Suche nach einer Leiche im Wald – über Freundschaft und das Ende der Kindheit."
+  },
+  {
+   "platz": 240,
+   "titel": "Der Gigant aus dem All",
+   "original": "The Iron Giant",
+   "jahr": 1999,
+   "laenge": 86,
+   "genre": [
+    "Animation",
+    "Action",
+    "Abenteuer"
+   ],
+   "regie": "Brad Bird",
+   "imdb": "tt0129167",
+   "beschreibung": "Ein Junge freundet sich im Amerika der 1950er mit einem riesigen Roboter an, den das Militär jagt."
+  },
+  {
+   "platz": 241,
+   "titel": "Babam ve Oğlum",
+   "original": "Babam Ve Oglum",
+   "jahr": 2005,
+   "laenge": 112,
+   "genre": [
+    "Drama",
+    "Familie"
+   ],
+   "regie": "Çagan Irmak",
+   "imdb": "tt0476735",
+   "beschreibung": "Ein Sohn kehrt nach Jahren mit seinem Jungen auf den Hof der Familie zurück und muss sich mit seinem Vater aussöhnen – türkisches Familiendrama."
+  },
+  {
+   "platz": 242,
+   "titel": "Die Taschendiebin",
+   "original": "Ah-ga-ssi",
+   "jahr": 2016,
+   "laenge": 145,
+   "genre": [
+    "Drama",
+    "Romanze",
+    "Thriller"
+   ],
+   "regie": "Park Chan-wook",
+   "imdb": "tt4016934",
+   "beschreibung": "Im Korea der 1930er soll eine Taschendiebin eine reiche Erbin um ihr Vermögen bringen – ein raffinierter Thriller voller Wendungen."
+  },
+  {
+   "platz": 243,
+   "titel": "Network",
+   "original": "Network",
+   "jahr": 1976,
+   "laenge": 121,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Sidney Lumet",
+   "imdb": "tt0074958",
+   "beschreibung": "Ein TV-Moderator rastet live aus, und der Sender macht daraus Quote – eine prophetische Satire auf das Fernsehen."
+  },
+  {
+   "platz": 244,
+   "titel": "Schlacht um Algier",
+   "original": "La battaglia di Algeri",
+   "jahr": 1966,
+   "laenge": 121,
+   "genre": [
+    "Drama",
+    "Krieg"
+   ],
+   "regie": "Gillo Pontecorvo",
+   "imdb": "tt0058946",
+   "beschreibung": "Der Unabhängigkeitskampf in Algier gegen die französische Kolonialmacht, gedreht wie eine Dokumentation."
+  },
+  {
+   "platz": 245,
+   "titel": "Demon Slayer: Mugen Train",
+   "original": "Kimetsu no Yaiba: Mugen Ressha-Hen",
+   "jahr": 2020,
+   "laenge": 117,
+   "genre": [
+    "Animation",
+    "Action",
+    "Fantasy"
+   ],
+   "regie": "Haruo Sotozaki",
+   "beschreibung": "Tanjiro und seine Gefährten steigen in einen Zug, in dem Menschen spurlos verschwinden – ein Anime-Kinohit."
+  },
+  {
+   "platz": 246,
+   "titel": "Früchte des Zorns",
+   "original": "The Grapes of Wrath",
+   "jahr": 1940,
+   "laenge": 129,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "John Ford",
+   "imdb": "tt0032551",
+   "beschreibung": "Eine Farmerfamilie aus Oklahoma zieht während der Wirtschaftskrise auf der Suche nach Arbeit nach Kalifornien."
+  },
+  {
+   "platz": 247,
+   "titel": "Sein oder Nichtsein",
+   "original": "To Be or Not to Be",
+   "jahr": 1942,
+   "laenge": 99,
+   "genre": [
+    "Komödie",
+    "Romanze",
+    "Krieg"
+   ],
+   "regie": "Ernst Lubitsch",
+   "imdb": "tt0035446",
+   "beschreibung": "Eine Schauspieltruppe im besetzten Warschau führt die Nazis an der Nase herum – Ernst Lubitschs mutige Komödie."
+  },
+  {
+   "platz": 248,
+   "titel": "Gangs of Wasseypur",
+   "original": "Gangs of Wasseypur",
+   "jahr": 2012,
+   "genre": [
+    "Action",
+    "Komödie",
+    "Krimi"
+   ],
+   "regie": "Anurag Kashyap",
+   "beschreibung": "Eine Familienfehde um Kohle und Macht über drei Generationen in einer indischen Bergbaustadt – ein epischer Gangsterfilm."
+  },
+  {
+   "platz": 249,
+   "titel": "The Help",
+   "original": "The Help",
+   "jahr": 2011,
+   "laenge": 146,
+   "genre": [
+    "Drama"
+   ],
+   "regie": "Tate Taylor",
+   "imdb": "tt1454029",
+   "beschreibung": "Eine junge Journalistin schreibt in den 1960ern in Mississippi die Erfahrungen schwarzer Hausmädchen auf."
+  },
+  {
+   "platz": 250,
+   "titel": "Into the Wild",
+   "original": "Into the Wild",
+   "jahr": 2007,
+   "laenge": 148,
+   "genre": [
+    "Abenteuer",
+    "Biografie",
+    "Drama"
+   ],
+   "regie": "Sean Penn",
+   "imdb": "tt0758758",
+   "beschreibung": "Ein junger Uni-Absolvent verschenkt sein Geld und zieht allein in die Wildnis Alaskas – nach einer wahren Geschichte."
+  }
+ ]
+}

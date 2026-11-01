@@ -29,6 +29,8 @@ import {
   landkarteGeruest, landkarteZeichnen, landkarteAuffrischen, karteKopf, kartenZahl, ZEITRAEUME,
 } from './ansicht-landkarte.js';
 import { wasImmerGeht, ideeAnker, ideenZahl } from './ansicht-ideen.js';
+import { filmeAnsicht, filmeTuer, filmListeNeu } from './ansicht-filme.js';
+import { filmEintraege } from './filme.js';
 import { wirAnsicht, vorbei } from './ansicht-wir.js';
 import { einstellungenAnsicht } from './ansicht-einstellungen.js';
 import { programmBlatt, ideenBlatt } from './ansicht-filter.js';
@@ -82,6 +84,12 @@ const ui = {
 const uiIdeen = {
   neu: false, planen: '', bewerten: '', offen: new Set(), saisonAlle: false, meldung: null, fehler: '',
 };
+// IMDb Top 250 (ansicht-filme.js): eine eigene Seite im Programm (#filme) – Suche, Genre, Auswahl
+let filmListe = [];
+let filmInfo = { stand: '', quelle: '' };
+const uiFilme = {
+  offen: false, suche: '', genre: '', nur: 'alle',
+};
 let installEreignis = null;
 
 /**
@@ -90,6 +98,9 @@ let installEreignis = null;
  */
 function adresseLesen() {
   const h = decodeURIComponent(location.hash.slice(1));
+  // #filme ist die IMDb Top 250 im Programm; jede andere Adresse schließt sie.
+  uiFilme.offen = h === 'filme';
+  if (uiFilme.offen) return 'programm';
   const einladung = h.match(/^einladung=([a-z0-9-]+)$/i);
   const zugang = /^geraet=/i.test(h) ? zugangLesen(h) : null;
   if (einladung || zugang) {
@@ -124,7 +135,8 @@ const startReiter = () => sichtbareReiter()[0];
 
 /** Der Reiter steht in der Adresse, damit Neuladen ihn behält – ohne neuen Eintrag im Verlauf. Der Start-Reiter braucht keinen. */
 function adresseSetzen(r) {
-  history.replaceState(null, '', r === startReiter() ? location.pathname + location.search : `#${r}`);
+  if (r === 'programm' && uiFilme.offen) history.replaceState(history.state, '', '#filme');
+  else history.replaceState(null, '', r === startReiter() ? location.pathname + location.search : `#${r}`);
 }
 
 function leisteAktualisieren() {
@@ -172,8 +184,9 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
     });
   } else if (!geladen) html = '<div class="leer"><p>Lädt …</p></div>';
   else if (reiter === 'karte') html = landkarteGeruest(st, raum);
-  else if (reiter === 'wir') html = wirAnsicht(daten.programm, ideenListe, st, h, ui);
-  else html = programmAnsicht(daten.programm, st, h, prog) + wasImmerGeht(ideenListe, Boolean(daten.ideen), st, h, uiIdeen);
+  else if (reiter === 'wir') html = wirAnsicht(daten.programm, [...ideenListe, ...filmListe], st, h, ui);
+  else if (uiFilme.offen) html = filmeAnsicht(filmListe, filmInfo, st, uiFilme);
+  else html = programmAnsicht(daten.programm, st, h, prog) + wasImmerGeht(ideenListe, Boolean(daten.ideen), st, h, uiIdeen, filmeTuer(filmListe));
   $('#ansicht').innerHTML = html;
   if (geladen && reiter === 'karte') landkarteZeichnen(daten.programm, st, h, raum, ideenListe);
   if (reiter === 'wir' && st.gemeinsam) {
@@ -189,13 +202,14 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
     const wieder = document.querySelector(`#ansicht ${fokus}`);
     if (wieder) wieder.focus({ preventScroll: true });
   }
-  if (nachOben) window.scrollTo(0, 0);
-  else if (behalteScroll) window.scrollTo(0, y);
+  // Ohne Gleiten: Nach einem Seitenwechsel steht man sofort oben (das sanfte Scrollen aus dem CSS gilt nur für Sprünge).
+  if (nachOben) window.scrollTo({ top: 0, behavior: 'instant' });
+  else if (behalteScroll) window.scrollTo({ top: y, behavior: 'instant' });
   // Ein Sprung (#ideen, zu einer Idee, zu „Wollen wir mal“) – fehlt das Ziel, dann „Was immer geht“.
   if (springeZu && geladen && reiter === 'programm') {
     const ziel = document.getElementById(springeZu) || document.getElementById('was-immer-geht');
     springeZu = '';
-    if (ziel) ziel.scrollIntoView({ block: 'start' });
+    if (ziel) ziel.scrollIntoView({ block: 'start', behavior: 'instant' });
   }
 }
 
@@ -471,6 +485,39 @@ function aktion(name, z) {
       abschnittUmschalten('laufend', true);
       zeichnen({ behalteScroll: true });
       $('#abschnitt-laufend')?.scrollIntoView({ block: 'start' });
+      break;
+    case 'filme-auf':
+      uiFilme.offen = true;
+      history.pushState({ filme: true }, '', '#filme');
+      zeichnen({ nachOben: true });
+      break;
+    case 'filme-zu':
+      // Zurück dorthin, wo die Tür steht. War die Seite mit „Zurück“ erreichbar, dann so (Wischgeste, Zurück-Taste).
+      springeZu = 'was-immer-geht';
+      if (history.state && history.state.filme) history.back();
+      else {
+        uiFilme.offen = false;
+        adresseSetzen('programm');
+        zeichnen();
+      }
+      break;
+    case 'filme-nur':
+      uiFilme.nur = z.dataset.wert || 'alle';
+      zeichnen({ behalteScroll: true });
+      break;
+    case 'filme-alle':
+      Object.assign(uiFilme, { suche: '', genre: '', nur: 'alle' });
+      zeichnen({ behalteScroll: true });
+      break;
+    case 'zu-filme':
+      // Aus „Wir“: die Filme mit Bock.
+      Object.assign(uiFilme, {
+        offen: true, nur: 'bock', suche: '', genre: '',
+      });
+      if (reiter === 'programm') {
+        adresseSetzen('programm');
+        zeichnen({ nachOben: true });
+      } else wechseln('programm');
       break;
     case 'zu-ideen':
       // Aus „Wir“: ins Programm, nach unten zu „Was immer geht“.
@@ -810,6 +857,8 @@ document.addEventListener('click', (ev) => {
     return;
   }
   if (z.dataset.reiter) {
+    // Ein Reiter (auch „Programm“ selbst) schließt die Filmliste.
+    uiFilme.offen = false;
     if (z.dataset.kalWechsel) ansichtWechseln(z.dataset.kalWechsel);
     wechseln(z.dataset.reiter);
   } else if (z.dataset.bock) {
@@ -855,6 +904,11 @@ document.addEventListener('click', (ev) => {
 
 document.addEventListener('change', (ev) => {
   const st = aktuell();
+  if (ev.target.id === 'filme-genre') {
+    uiFilme.genre = ev.target.value;
+    filmListeAktualisieren();
+    return;
+  }
   if (ev.target.id === 'f-region') st.filter.region = ev.target.value;
   else if (ev.target.id === 'f-kategorie') st.filter.kategorie = ev.target.value;
   else if (ev.target.id === 'k-raum') {
@@ -906,10 +960,25 @@ document.addEventListener('click', (ev) => {
 
 // #programm, #karte, #wir und #einstellungen öffnen die Seite direkt; #ideen führt zu „Was immer geht“.
 window.addEventListener('hashchange', () => {
+  const filmeVorher = uiFilme.offen;
   const r = adresseLesen();
   if (r && r !== reiter) wechseln(r);
-  else if (r === 'wir' || springeZu) zeichnen();
+  else if (r === 'wir' || springeZu || uiFilme.offen !== filmeVorher) zeichnen({ nachOben: uiFilme.offen });
   einladungPruefen();
+});
+
+/** Suche und Genre der Filme: nur die Liste neu, damit das Suchfeld den Fokus behält. */
+function filmListeAktualisieren() {
+  const { html, zahl } = filmListeNeu(filmListe, uiFilme);
+  const liste = $('#filmliste');
+  const zaehler = $('#filme-zahl');
+  if (liste) liste.innerHTML = html;
+  if (zaehler) zaehler.textContent = zahl;
+}
+document.addEventListener('input', (ev) => {
+  if (ev.target.id !== 'filme-suche') return;
+  uiFilme.suche = ev.target.value;
+  filmListeAktualisieren();
 });
 
 // Wischen im Programm blättert – Tag, Woche oder Monat, wie ‹ und ›. Nur bei
@@ -981,6 +1050,8 @@ zeichnen();
 ladeAlles().then((d) => {
   daten = d;
   ideenListe = alleIdeen(d.ideen || [], d.programm);
+  filmListe = filmEintraege(d.filme);
+  filmInfo = { stand: d.filme ? d.filme.stand : '', quelle: d.filme ? d.filme.quelle : '' };
   geladen = true;
   zeichnen();
   abgleichJetzt();

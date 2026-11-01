@@ -21,6 +21,7 @@ import { programmBereinigen } from '../js/daten.js';
 import { ideenBereinigen, KATEGORIEN, WIRKUNG, WO, DAUER } from '../js/ideen.js';
 import { beginn, plusTage, wochentag } from '../js/zeit.js';
 import { REGIONEN, DRAUSSEN, istOnline } from '../js/text.js';
+import { filmeBereinigen } from '../js/filme.js';
 
 // FREIZEIT_DATEN: ein anderer Ordner – etwa um einen zusammengeführten Lauf vor dem Kopieren nach daten/ zu prüfen.
 const ORDNER = process.env.FREIZEIT_DATEN || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'daten');
@@ -168,6 +169,26 @@ if (id) {
   const fehler = [];
   const sauber = ideenBereinigen(id, fehler);
   check(!fehler.length && sauber && sauber.length === ideen.length, `die App übernimmt alle Ideen${fehler.length ? `: ${fehler.slice(0, 3).join(' | ')}` : ''}`);
+}
+
+// Die IMDb Top 250 (von Hand aktualisiert, siehe README).
+if (existsSync(path.join(ORDNER, 'filme.json'))) {
+  const fd = lies('filme.json');
+  if (fd) {
+    const filme = istListe(fd.filme) ? fd.filme : [];
+    check(fd.version === 1 && /^\d{4}-\d{2}-\d{2}$/.test(fd.stand || '') && text(fd.quelle) && filme.length === 250,
+      `filme.json: version 1, stand, quelle und 250 Filme (${filme.length})`);
+    check(filme.every((f, i) => f && f.platz === i + 1), 'filme.json: Platz 1 bis 250 der Reihe nach');
+    alle(filme, (f) => text(f.titel) && Number.isInteger(f.jahr) && f.jahr >= 1900 && f.jahr <= 2030, 'filme: Titel und Jahr');
+    alle(filme, (f) => istListe(f.genre) && f.genre.length > 0 && f.genre.every(text), 'filme: mindestens ein Genre');
+    alle(filme, (f) => text(f.beschreibung) && f.beschreibung.length >= 30 && f.beschreibung.length <= 200, 'filme: Beschreibung mit 30–200 Zeichen');
+    alle(filme, (f) => f.laenge === undefined || (Number.isInteger(f.laenge) && f.laenge > 30 && f.laenge < 600), 'filme: Länge in Minuten');
+    const ids = filme.map((f) => f.imdb).filter((x) => x !== undefined);
+    check(ids.every((x) => /^tt\d{6,10}$/.test(x)) && new Set(ids).size === ids.length, 'filme: IMDb-IDs gültig und einmalig');
+    const fehler = [];
+    const sauber = filmeBereinigen(fd, fehler);
+    check(!fehler.length && sauber && sauber.filme.length === filme.length, 'die App übernimmt alle Filme');
+  }
 }
 
 // Die Ortsliste des Laufs (nur seine Hilfe – die App liest sie nicht).

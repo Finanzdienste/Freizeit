@@ -9,6 +9,7 @@
  */
 import { sichererLink } from './text.js';
 import { ideenBereinigen } from './ideen.js';
+import { filmeBereinigen } from './filme.js';
 
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -65,15 +66,17 @@ export function programmBereinigen(roh, fehler = []) {
 export async function ladeAlles() {
   const fehler = [];
   let ideenStand = '';
-  const [programm, ideen] = await Promise.all([
+  const [programm, ideen, filme] = await Promise.all([
     holen('daten/programm.json').then((roh) => programmBereinigen(roh, fehler))
       .catch((e) => { fehler.push(`Programm nicht geladen (${e.message})`); return null; }),
     holen('daten/ideen.json').then((roh) => {
       ideenStand = roh && typeof roh.stand === 'string' ? roh.stand : '';
       return ideenBereinigen(roh, fehler);
     }).catch((e) => { fehler.push(`Ideen nicht geladen (${e.message})`); return null; }),
+    // Die Filmliste ist ein Zusatz: Fehlt sie, fehlt nur die Tür bei „Was immer geht“.
+    holen('daten/filme.json').then((roh) => filmeBereinigen(roh, fehler)).catch(() => null),
   ]);
   return {
-    programm, ideen, ideenStand, fehler,
+    programm, ideen, ideenStand, filme, fehler,
   };
 }

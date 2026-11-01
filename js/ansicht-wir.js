@@ -79,8 +79,14 @@ function abschnitt(id, titel, text, inhalt, zahl = 0) {
   return `<section class="abschnitt" id="${id}"><h2 class="abschnitt-titel">${esc(titel)}${zahl ? `<span class="abschnitt-zahl">${zahl}</span>` : ''}</h2>${text ? `<p class="fein">${text}</p>` : ''}${inhalt}</section>`;
 }
 
-function ideenZeile(n) {
-  return n ? `<p class="fein">Außerdem ${anzahl(n, 'Idee', 'Ideen')} mit Bock – im Programm ganz unten bei <button type="button" class="textknopf" data-aktion="zu-ideen">„Was immer geht“</button> unter „Wollen wir mal“.</p>` : '';
+/** Ohne Tag: Ideen und Filme (IMDb Top 250) – sie stehen in „Deine Haken“ nur als Zeile. */
+const ohneTag = (e) => e.quelle === 'idee' || e.quelle === 'film';
+
+function ideenZeile(liste) {
+  const ideen = liste.filter((e) => e.quelle === 'idee').length;
+  const filme = liste.filter((e) => e.quelle === 'film').length;
+  return `${ideen ? `<p class="fein">Außerdem ${anzahl(ideen, 'Idee', 'Ideen')} mit Bock – im Programm ganz unten bei <button type="button" class="textknopf" data-aktion="zu-ideen">„Was immer geht“</button> unter „Wollen wir mal“.</p>` : ''}
+    ${filme ? `<p class="fein">${ideen ? 'Und' : 'Außerdem'} ${anzahl(filme, 'Film', 'Filme')} mit Bock – in der <button type="button" class="textknopf" data-aktion="zu-filme">IMDb Top 250</button>.</p>` : ''}`;
 }
 
 function vorbeiListe(alt, ui) {
@@ -317,8 +323,8 @@ function gastgeberUeberblick(alle, st, heute, ui) {
   const wollen = sortiert(offen.filter((i) => !i.ich && i.mit.length).map((i) => i.e), wieViele);
   const ohne = sortiert(offen.filter((i) => !i.ich && !i.mit.length && i.ohne.length).map((i) => i.e), wieViele);
   const deine = offen.filter((i) => i.ich && !i.mit.length);
-  const deineTermine = sortiert(deine.filter((i) => i.e.quelle !== 'idee').map((i) => i.e));
-  const deineIdeen = deine.length - deineTermine.length;
+  const deineTermine = sortiert(deine.filter((i) => !ohneTag(i.e)).map((i) => i.e));
+  const deineOhneTag = deine.filter((i) => ohneTag(i.e)).map((i) => i.e);
   const leute = st.gemeinsam.stand.personen.length - 1;
   const nichts = leute > 0 && !zusammen.length && !wollen.length && !ohne.length
     ? '<div class="leer-klein">Noch hat keiner etwas angehakt. Sobald jemand Bock auf etwas hat, steht es hier.</div>' : '';
@@ -327,8 +333,8 @@ function gastgeberUeberblick(alle, st, heute, ui) {
     ${wollen.length ? abschnitt('wir-mit-dir', 'Wollen mit dir', 'Tipp auf „Bock“, wenn du auch willst.', karten(wollen), wollen.length) : ''}
     ${ohne.length ? abschnitt('wir-ohne-dich', 'Ohne dich', '', karten(ohne), ohne.length) : ''}
     ${proPerson(st, new Map(alle.map((e) => [e.schluessel, e])), heute, ui)}
-    ${deineTermine.length || deineIdeen ? abschnitt('wir-deine', 'Deine Haken', deineTermine.length ? 'Noch keiner mit dir.' : '',
-    `${karten(deineTermine)}${ideenZeile(deineIdeen)}`, deineTermine.length) : ''}`;
+    ${deineTermine.length || deineOhneTag.length ? abschnitt('wir-deine', 'Deine Haken', deineTermine.length ? 'Noch keiner mit dir.' : '',
+    `${karten(deineTermine)}${ideenZeile(deineOhneTag)}`, deineTermine.length) : ''}`;
 }
 
 function mitgliedAnsicht(alle, st, heute) {
@@ -339,34 +345,34 @@ function mitgliedAnsicht(alle, st, heute) {
   const zusammen = sortiert(offen.filter((i) => i.ich && i.wie === 'gastgeber' && i.er).map((i) => i.e));
   const seine = sortiert(offen.filter((i) => !i.ich && i.er).map((i) => i.e));
   const deine = offen.filter((i) => i.ich && !(i.wie === 'gastgeber' && i.er));
-  const deineTermine = sortiert(deine.filter((i) => i.e.quelle !== 'idee').map((i) => i.e));
-  const deineIdeen = deine.length - deineTermine.length;
+  const deineTermine = sortiert(deine.filter((i) => !ohneTag(i.e)).map((i) => i.e));
+  const deineOhneTag = deine.filter((i) => ohneTag(i.e)).map((i) => i.e);
   const n = esc(name);
   const leer = !zusammen.length && !seine.length && !deine.length
     ? `<div class="leer-klein">Noch keine Haken. Tippe bei einem Termin auf „Mit ${n}“ oder „Allein/mit anderen“.</div>` : '';
   return `${zusammen.length ? abschnitt('wir-zusammen', `Du und ${name}`, '', karten(zusammen), zusammen.length) : ''}
     ${seine.length ? abschnitt('wir-seine', `${name} hat Bock auf`, `Tipp auf „Mit ${n}“, wenn du dabei bist.`, karten(seine), seine.length) : ''}
-    ${deineTermine.length || deineIdeen ? abschnitt('wir-deine', 'Deine Haken', '', `${karten(deineTermine)}${ideenZeile(deineIdeen)}`, deineTermine.length) : ''}
+    ${deineTermine.length || deineOhneTag.length ? abschnitt('wir-deine', 'Deine Haken', '', `${karten(deineTermine)}${ideenZeile(deineOhneTag)}`, deineTermine.length) : ''}
     ${leer}`;
 }
 
 export function wirAnsicht(p, ideen, st, heute, ui = {}) {
   const alle = eintraegeMitHaken(p, ideen, st);
   const eigene = alle.filter((e) => meinBock(e.schluessel));
-  const alt = sortiert(eigene.filter((e) => e.quelle !== 'idee' && vorbei(e, heute)));
+  const alt = sortiert(eigene.filter((e) => !ohneTag(e) && vorbei(e, heute)));
   const zugang = st.zugang ? zugangKarte(st, ui) : '';
   const g = st.gemeinsam;
 
   if (!g || g.raus) {
-    const kommend = sortiert(eigene.filter((e) => e.quelle !== 'idee' && !vorbei(e, heute)));
-    const ideenZahl = eigene.filter((e) => e.quelle === 'idee').length;
+    const kommend = sortiert(eigene.filter((e) => !ohneTag(e) && !vorbei(e, heute)));
+    const ohne = eigene.filter(ohneTag);
     // Wer gerade eingeladen ist, soll erst einmal nur eintreten.
     const eingeladen = !g && Boolean(st.einladung);
     return `${g || eingeladen ? '' : '<p class="fein wir-einleitung">Lade deine Leute ein: Jeder hakt an, worauf er Bock hat – mit dir oder allein/mit anderen. Du siehst alles, die anderen deine Haken und ihre eigenen.</p>'}
       ${zugang}
       ${g ? rausKarte(st, ui) : einrichten(st, ui)}
-      ${eingeladen && !kommend.length && !ideenZahl ? '' : abschnitt('wir-deine', 'Deine Bock-Liste', '', `${kommend.length ? karten(kommend) : '<div class="leer-klein">Noch keine Haken. Tippe bei einem Termin auf „Bock“.</div>'}
-        ${ideenZeile(ideenZahl)}`, kommend.length)}
+      ${eingeladen && !kommend.length && !ohne.length ? '' : abschnitt('wir-deine', 'Deine Bock-Liste', '', `${kommend.length ? karten(kommend) : '<div class="leer-klein">Noch keine Haken. Tippe bei einem Termin auf „Bock“.</div>'}
+        ${ideenZeile(ohne)}`, kommend.length)}
       ${vorbeiListe(alt, ui)}`;
   }
 

@@ -28,7 +28,9 @@ import { programmAnsicht, programmZahl, ANSICHTEN } from './ansicht-programm.js'
 import {
   landkarteGeruest, landkarteZeichnen, landkarteAuffrischen, karteKopf, kartenZahl, ZEITRAEUME,
 } from './ansicht-landkarte.js';
-import { wasImmerGeht, ideeAnker, ideenZahl } from './ansicht-ideen.js';
+import {
+  wasImmerGeht, ideeAnker, ideenZahl, planSpanne,
+} from './ansicht-ideen.js';
 import { filmeAnsicht, filmeTuer, filmListeNeu } from './ansicht-filme.js';
 import { filmEintraege } from './filme.js';
 import { wirAnsicht, vorbei } from './ansicht-wir.js';
@@ -82,7 +84,7 @@ const ui = {
 };
 // „Was immer geht“ (unten im Programm): offene Formulare („bereich|schlüssel“), aufgeklappte Kategorien, letzte Meldung
 const uiIdeen = {
-  neu: false, planen: '', bewerten: '', offen: new Set(), saisonAlle: false, meldung: null, fehler: '',
+  neu: false, planen: '', planFehler: '', bewerten: '', offen: new Set(), saisonAlle: false, meldung: null, fehler: '',
 };
 // IMDb Top 250 (ansicht-filme.js): eine eigene Seite im Programm (#filme) – Suche, Genre, Auswahl
 let filmListe = [];
@@ -186,7 +188,7 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
   else if (reiter === 'karte') html = landkarteGeruest(st, raum);
   else if (reiter === 'wir') html = wirAnsicht(daten.programm, [...ideenListe, ...filmListe], st, h, ui);
   else if (uiFilme.offen) html = filmeAnsicht(filmListe, filmInfo, st, uiFilme);
-  else html = programmAnsicht(daten.programm, st, h, prog) + wasImmerGeht(ideenListe, Boolean(daten.ideen), st, h, uiIdeen, filmeTuer(filmListe));
+  else html = programmAnsicht(daten.programm, st, h, { ...prog, planen: uiIdeen.planen, planFehler: uiIdeen.planFehler, meldung: uiIdeen.meldung }) + wasImmerGeht(ideenListe, Boolean(daten.ideen), st, h, uiIdeen, filmeTuer(filmListe));
   $('#ansicht').innerHTML = html;
   if (geladen && reiter === 'karte') landkarteZeichnen(daten.programm, st, h, raum, ideenListe);
   if (reiter === 'wir' && st.gemeinsam) {
@@ -223,7 +225,7 @@ function wechseln(neu) {
   ui.fehlerOrt = '';
   ui.entfernen = '';
   Object.assign(uiIdeen, {
-    neu: false, planen: '', bewerten: '', meldung: null, fehler: '',
+    neu: false, planen: '', planFehler: '', bewerten: '', meldung: null, fehler: '',
   });
   adresseSetzen(neu);
   zeichnen({ nachOben: true });
@@ -703,8 +705,9 @@ function mitWemIm(z, klasse) {
   return gewaehlt && gewaehlt.value === 'andere' ? 'andere' : 'gastgeber';
 }
 
-function melden(text, rueckgaengig = null) {
-  uiIdeen.meldung = { text, rueckgaengig };
+/** Eine Meldung mit „Rückgängig“; `wo` { ort: 'programm', tag } zeigt sie am Tag im Programm statt bei „Was immer geht“. */
+function melden(text, rueckgaengig = null, wo = {}) {
+  uiIdeen.meldung = { text, rueckgaengig, ...wo };
 }
 
 function ideenAktion(name, z) {
@@ -736,22 +739,41 @@ function ideenAktion(name, z) {
       break;
     }
     case 'planen': {
+      // Eine Idee – oder Laufendes aus dem Programm (data-idee ist dann sein Schlüssel l:…).
       const hier = `${z.dataset.bereich}|${z.dataset.idee}`;
       uiIdeen.planen = uiIdeen.planen === hier ? '' : hier;
+      uiIdeen.planFehler = '';
       uiIdeen.bewerten = '';
       neuZeichnen();
       break;
     }
     case 'plan-speichern': {
-      const idee = eintragZu(z.dataset.idee);
+      const x = eintragZu(z.dataset.idee);
       const datum = imFormular(z, '.plan-datum')?.value || '';
-      if (!idee || !/^\d{4}-\d{2}-\d{2}$/.test(datum) || datum < h) break;
+      if (!x || !/^\d{4}-\d{2}-\d{2}$/.test(datum)) break;
+      const laufend = x.quelle === 'laufend';
+      const { ab, bis } = planSpanne(x, h);
+      if (datum < ab || datum > bis) {
+        // Laufendes geht nur, solange es läuft – das sagt das Formular. Bei Ideen hält der Kalender selbst Vergangenes fern.
+        if (laufend) {
+          uiIdeen.planFehler = `Geht nur zwischen ${wochentagKurz(ab)} ${tagMonat(ab)} und ${wochentagKurz(bis)} ${tagMonat(bis)} – so lange läuft es.`;
+          neuZeichnen();
+        }
+        break;
+      }
       const ort = imFormular(z, '.plan-ort')?.value;
-      const plan = planEintrag(idee, datum, imFormular(z, '.plan-zeit')?.value || '', ort ? Number(ort) : null);
+      const plan = planEintrag(x, datum, imFormular(z, '.plan-zeit')?.value || '', ort ? Number(ort) : null);
       if (!meinBock(plan.schluessel)) bockUmschalten(plan, mitWemIm(z, '.plan-mitwem'));
       uiIdeen.planen = '';
-      melden(`Eingeplant: ${idee.titel}, ${wochentagKurz(datum)} ${tagMonat(datum)} – steht im Programm.`, { bock: plan.schluessel });
-      neuZeichnen();
+      uiIdeen.planFehler = '';
+      if (laufend) {
+        // Gleich zum Tag: Dort steht es jetzt oben unter „Eingeplant“, darüber die Meldung.
+        melden(`Eingeplant: ${x.titel}, ${wochentagKurz(datum)} ${tagMonat(datum)}`, { bock: plan.schluessel }, { ort: 'programm', tag: datum });
+        zuTag(datum);
+      } else {
+        melden(`Eingeplant: ${x.titel}, ${wochentagKurz(datum)} ${tagMonat(datum)} – steht im Programm.`, { bock: plan.schluessel });
+        neuZeichnen();
+      }
       if (st.gemeinsam) abgleichSpaeter();
       break;
     }

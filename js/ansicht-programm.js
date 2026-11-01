@@ -41,6 +41,7 @@ import { andere, treffer as istTreffer, rolle, gastgeberName } from './gemeinsam
 import { geplante } from './ideen.js';
 import { belegtAm, bekannt } from './zeiten.js';
 import { filterLeiste, chipsProgramm } from './ansicht-filter.js';
+import { planenForm, meldungBox } from './ansicht-ideen.js';
 
 /** Die drei Ansichten, vom Tag zum Überblick. */
 export const ANSICHTEN = [['tag', 'Tag'], ['woche', 'Woche'], ['monat', 'Monat']];
@@ -179,11 +180,21 @@ function dieseWocheKasten(p) {
   return kasten('diese-woche', 'Diese Woche', inhalt, { vorschau, id: 'diese-woche' });
 }
 
-/** Was über Tage oder Wochen läuft – als Kasten mit Karten. */
-function laufendKasten(liste, titel) {
+/**
+ * Was über Tage oder Wochen läuft – als Kasten mit Karten. Was noch läuft,
+ * lässt sich für einen Tag einplanen; vorgeschlagen wird `tag` (in der Woche
+ * ihr Samstag).
+ */
+function laufendKasten(liste, titel, { heute, tag = '', ctx = {} }) {
   if (!liste.length) return '';
-  const inhalt = `<p class="fein">Über Tage oder Wochen, mit ihren Zeiten – der Filter „Mo–Fr ab 15:30“ wirkt hier nicht.</p>
-    ${liste.map((e) => karte(eintragLaufend(e))).join('')}`;
+  const k = (e) => {
+    const x = eintragLaufend(e);
+    if (x.bis < heute) return karte(x);
+    const offen = ctx.planen === `laufend|${x.schluessel}`;
+    return karte(x, { planen: { bereich: 'laufend', offen, form: offen ? planenForm(x, 'laufend', heute, { tag, fehler: ctx.planFehler }) : '' } });
+  };
+  const inhalt = `<p class="fein">Über Tage oder Wochen, mit ihren Zeiten – der Filter „Mo–Fr ab 15:30“ wirkt hier nicht. Wenn ihr an einem bestimmten Tag hinwollt: aufklappen, „Einplanen“.</p>
+    ${liste.map(k).join('')}`;
   return kasten('laufend', titel, inhalt, { zahl: liste.length, vorschau: liste.slice(0, 3).map((e) => e.titel).join(' · '), id: 'abschnitt-laufend' });
 }
 
@@ -232,7 +243,7 @@ function tagesleiste(p, st, heute, datum, plaene) {
   }).join('')}</nav>`;
 }
 
-function tagAnsicht(p, st, heute, d, plaene) {
+function tagAnsicht(p, st, heute, d, plaene, ctx = {}) {
   const f = filterFuer(st);
   const td = tagDaten(p, d, f, plaene);
   const { tag } = td;
@@ -268,11 +279,12 @@ function tagAnsicht(p, st, heute, d, plaene) {
   return `<div class="tag-huelle">
     ${tagesleiste(p, st, heute, d, plaene)}
     <section class="tag${d < heute ? ' vorbei' : ''}" id="tag-${d}" aria-label="${esc(datumMitTag(d))}">
+      ${ctx.meldung && ctx.meldung.ort === 'programm' && ctx.meldung.tag === d ? meldungBox(ctx.meldung) : ''}
       ${fakten ? `<dl class="tag-info">${fakten}</dl>` : ''}
       ${zeit}
       ${geplant}${termine}${leer}
     </section>
-    ${laufendKasten(laufendZwischen(p, d, d, f), d === heute ? 'Läuft heute' : 'Läuft an dem Tag')}
+    ${laufendKasten(laufendZwischen(p, d, d, f), d === heute ? 'Läuft heute' : 'Läuft an dem Tag', { heute, tag: d, ctx })}
   </div>`;
 }
 
@@ -315,7 +327,7 @@ function tagKarte(p, d, f, plaene, heute, { vorschau = false } = {}) {
   </button>`;
 }
 
-function wocheAnsicht(p, st, heute, mo, plaene) {
+function wocheAnsicht(p, st, heute, mo, plaene, ctx = {}) {
   const f = filterFuer(st);
   const tage = Array.from({ length: 7 }, (_, i) => plusTage(mo, i));
   const dieseWoche = mo === montag(heute);
@@ -328,7 +340,7 @@ function wocheAnsicht(p, st, heute, mo, plaene) {
   ${mo > p.bis ? '<div class="banner">Für diese Woche gibt es noch kein Programm – hier stehen nur Konzerte deiner Künstler und was ihr eingeplant habt. Es kommt mit dem Montagslauf, sobald die Woche in den nächsten fünf Wochen liegt.</div>' : ''}
   <div class="wochen-liste">${tage.map((d) => tagKarte(p, d, f, plaene, heute)).join('')}</div>
   ${legende}
-  ${laufendKasten(laufendZwischen(p, mo, plusTage(mo, 6), f), 'Läuft diese Woche')}
+  ${laufendKasten(laufendZwischen(p, mo, plusTage(mo, 6), f), 'Läuft diese Woche', { heute, tag: plusTage(mo, 5), ctx })}
   ${dieseWoche ? hinweiseKasten(p) : ''}`;
 }
 
@@ -422,7 +434,8 @@ export function programmZahl(p, st, heute, ui) {
 
 /**
  * Der Reiter Programm ohne „Was immer geht“.
- * @param {object} ui  { ansicht: 'tag'|'woche'|'monat', datum: der gewählte Tag }
+ * @param {object} ui  { ansicht: 'tag'|'woche'|'monat', datum: der gewählte Tag,
+ *                    planen, planFehler, meldung – fürs Einplanen von Laufendem (app.js, uiIdeen) }
  */
 export function programmAnsicht(p, st, heute, ui) {
   const ansicht = ANSICHTEN.some(([k]) => k === ui.ansicht) ? ui.ansicht : 'tag';
@@ -454,7 +467,9 @@ export function programmAnsicht(p, st, heute, ui) {
   </header>
   ${heute > p.bis ? '<div class="banner">Das Programm ist abgelaufen. Das neue kommt montags gegen 7 Uhr.</div>' : ''}`;
 
-  if (ansicht === 'woche') return `${kopf}${wocheAnsicht(p, st, heute, montag(datum), plaene)}`;
+  // Einplanen von Laufendem: welches Formular offen ist, sein Fehler, die Meldung danach.
+  const ctx = { planen: ui.planen || '', planFehler: ui.planFehler || '', meldung: ui.meldung || null };
+  if (ansicht === 'woche') return `${kopf}${wocheAnsicht(p, st, heute, montag(datum), plaene, ctx)}`;
   if (ansicht === 'monat') return `${kopf}${monatAnsicht(p, st, heute, monatVon(datum), datum, plaene)}`;
-  return `${kopf}${tagAnsicht(p, st, heute, datum, plaene)}`;
+  return `${kopf}${tagAnsicht(p, st, heute, datum, plaene, ctx)}`;
 }

@@ -144,12 +144,16 @@ export function neueIdee({ titel, text: notiz = '', wo = 'hamburg', wirkung = []
 }
 
 /**
- * Eine Idee für einen Tag einplanen – ein Eintrag wie ein Termin. Hat die
- * Idee mehrere Orte, sagt `ort` (die Stelle in x.orte), welcher es wird;
- * ohne Wahl bleibt der Ort offen.
+ * Eine Idee – oder etwas, das über Wochen läuft – für einen Tag einplanen:
+ * ein Eintrag wie ein Termin. Hat die Idee mehrere Orte, sagt `ort` (die
+ * Stelle in x.orte), welcher es wird; ohne Wahl bleibt der Ort offen.
+ * Laufendes hat einen Ort; seine Zeiten („täglich 12–22“) stehen vorn in der
+ * Beschreibung, denn der Plan hat nur die eine Uhrzeit, die man wählt.
  */
 export function planEintrag(x, datum, zeit = '', ort = null) {
-  const gewaehlt = Number.isInteger(ort) && x.orte[ort] ? x.orte[ort] : (x.orte.length === 1 ? x.orte[0] : null);
+  const orte = Array.isArray(x.orte) ? x.orte : [{ name: x.ort || '', geo: x.geo || null, link: x.link || '' }].filter((o) => o.name);
+  const gewaehlt = Number.isInteger(ort) && orte[ort] ? orte[ort] : (orte.length === 1 ? orte[0] : null);
+  const zeiten = x.quelle === 'laufend' && x.zeit ? `Zeiten: ${x.zeit.replace(/\.$/, '')}.` : '';
   return {
     quelle: 'plan',
     schluessel: `p:${datum}:${x.schluessel}`,
@@ -160,7 +164,7 @@ export function planEintrag(x, datum, zeit = '', ort = null) {
     ort: gewaehlt ? gewaehlt.name : '',
     geo: gewaehlt ? gewaehlt.geo : null,
     link: (gewaehlt && gewaehlt.link) || x.link || '',
-    beschreibung: x.beschreibung,
+    beschreibung: [zeiten, x.beschreibung].filter(Boolean).join(' '),
     kategorie: x.kategorie,
     region: x.region,
     anreise: x.anreise,

@@ -30,6 +30,7 @@ Vier Reiter unten – welche davon dort stehen, wählt man unter Einstellungen �
 | filtern (Art, Regionen – auch mehrere zugleich –, Umkreis, Kategorie, kostenlos, Mo–Fr ab 15:30 …) | Knopf **Filter** oben im Programm und auf der Karte – das Blatt von unten; was gewählt ist, steht als Chip daneben (✕ nimmt es weg, ab zwei Chips „Alle zeigen“). „Was immer geht“ hat seinen eigenen Filter-Knopf |
 | zwischen Tag, Woche und Monat wechseln, blättern | oben im Programm: **Tag · Woche · Monat**, darunter ‹ › und „Heute“ – oder nach links/rechts wischen |
 | Ideen ohne Termin, eigene Ideen, „Tut dir gut“ | im Programm ganz unten: **Was immer geht** |
+| etwas, das über Wochen läuft (Winterzauber, Ausstellung), für einen Tag einplanen | im Programm „Läuft heute“ bzw. „Läuft diese Woche“: Karte aufklappen → **Einplanen** |
 | nur Online & TV sehen – oder gerade nicht | Filter → **Art**: Alles · Vor Ort · Online & TV |
 | auswählen, welche Reiter unten stehen | Einstellungen → **Reiter unten** |
 | meinen Standort oder eine Adresse festlegen | Einstellungen → **Mein Standort** (im Filter: „Standort festlegen“ springt dorthin) |
@@ -123,7 +124,12 @@ Karte als gestrichelte Marker.
 
 **Einplanen** macht aus einer Idee einen Termin an einem Tag (bei mehreren
 Orten mit Wahl des Orts): Er steht im Programm (in allen Ansichten) und auf der
-Karte, mit WhatsApp- und Kalender-Knopf. Im gemeinsamen Plan sieht ihn, wer
+Karte, mit WhatsApp- und Kalender-Knopf. Dasselbe geht mit Laufendem (unter
+„Läuft heute“ bzw. „Läuft diese Woche“ die Karte aufklappen): Der Tag geht nur,
+solange es läuft, vorgeschlagen ist der Tag, den man ansieht (in der Woche ihr
+Samstag); danach springt das Programm zu dem Tag, oben die Meldung mit
+„Rückgängig“. Die Zeiten des Laufenden („täglich 12–22“) stehen vorn in der
+Beschreibung des Plans. Im gemeinsamen Plan sieht ihn, wer
 die Haken des anderen sieht; plant ein Eingeladener „allein/mit anderen“,
 steht es beim Gastgeber nur in „Wir“ unter „Ohne dich“, nicht in seinem
 Programm.
@@ -436,7 +442,9 @@ nach ein bis zwei Minuten steht die neue Datei unter
 **Laufend** – was über Tage oder Wochen läuft (Ausstellungen, Musicals im
 Dauerbetrieb, Weihnachtsmärkte, Saison im Freizeitpark): `von`, `bis`, `zeit`
 als Text mit den Öffnungs- bzw. Vorstellungszeiten, sonst wie Termine. Steht
-im Programm unter „Läuft gerade“, nicht an jedem Tag einzeln.
+im Programm unter „Läuft heute“ (Tag) bzw. „Läuft diese Woche“, nicht an jedem
+Tag einzeln – lässt sich aber für einen Tag einplanen (Schlüssel des Plans
+`p:<Tag>:l:<id>`).
 
 **Tage:** `feiertag: true` an gesetzlichen Feiertagen (dann gelten weder der
 15:30-Filter noch die 21:30-Regel für den Vorabend). `vorFeiertag: true` am
@@ -552,6 +560,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `test-landkarte.mjs` | Marker, Zeitraum, „Nur mit Bock“, Online & TV gezählt statt gezeigt, Liste am Marker, Haken aus der Karte |
 | `test-wir.mjs` | der gemeinsame Plan: Tobi lädt ein, Kim (iPhone) und Jo wählen mit/ohne Tobi und sehen einander nicht, Tobis Überblick, offline, weiteres Gerät, Herausnehmen, Verlassen, Auflösen, ein Plan aus der ersten Fassung, fremder Text |
 | `test-filme.mjs` | IMDb Top 250: die Tür, die Seite `#filme`, Suche, Genre, Auswahl, Aufklappen, Bock – allein und im Plan („Mit Tobi gucken“, „Mit dir“), die Zeile in „Wir“ und zurück |
+| `test-laufend.mjs` | Laufendes für einen Tag einplanen: „Einplanen“ erst aufgeklappt, Vorschlag (angesehener Tag, in der Woche ihr Samstag), nur solange es läuft, Sprung zum Tag mit Meldung, „Eingeplant“ mit Uhrzeit, Zeiten in der Beschreibung, Kalender, Rückgängig |
 | `test-ideen.mjs` | „Was immer geht“: Katalog, eigener Filter nach Wirkung, Saison, Bock, Einplanen (Tag, Monat), Wie war's? und „Tut dir gut“, eigene Ideen im Plan, Einplanen mit/ohne Gastgeber, fremder Text, Ideen auf der Karte und der Sprung zurück |
 | `test-teilen.mjs` | WhatsApp, Google Kalender, .ics – auch für Eingeplantes |
 | `test-offline.mjs` | Offline-Vorrat, App ohne Netz |

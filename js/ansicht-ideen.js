@@ -36,11 +36,11 @@ const mitText = (mit) => (mit.length === 3 ? 'allein oder gemeinsam' : mit.map((
 /** Anker einer Idee in ihrer Kategorie – für den Sprung aus der Karte oder aus „Wir“. */
 export const ideeAnker = (schluessel) => `idee-${schluessel.replace(/[^a-z0-9-]/gi, '-')}`;
 
-/** Vorschlag fürs Einplanen: der nächste Samstag, am Wochenende heute. */
-function vorschlagTag(heute) {
-  let d = heute;
+/** Vorschlag fürs Einplanen: der nächste Samstag oder Sonntag ab `ab` – gibt es bis `bis` keinen, `ab` selbst. */
+function vorschlagTag(ab, bis = '') {
+  let d = ab;
   while (!/^(Samstag|Sonntag)$/.test(wochentag(d))) d = plusTage(d, 1);
-  return d;
+  return bis && d > bis ? ab : d;
 }
 
 /**
@@ -64,14 +64,29 @@ function wohinPlan() {
   return 'Steht dann im Programm – an dem Tag, in der Woche und im Monat.';
 }
 
-function planenForm(x, bereich, heute) {
+/** Ab wann und bis wann sich etwas einplanen lässt: Ideen ab heute, Laufendes nur, solange es läuft. */
+export const planSpanne = (x, heute) => ({
+  ab: x.von && x.von > heute ? x.von : heute,
+  bis: x.bis || plusTage(heute, 400),
+});
+
+/**
+ * Das Formular „Einplanen“ – für eine Idee oder etwas, das über Wochen läuft
+ * (dann geht der Tag nur von–bis). Vorgeschlagen wird `tag` – der Tag, den man
+ * gerade ansieht –, sonst das nächste Wochenende.
+ */
+export function planenForm(x, bereich, heute, { tag = '', fehler = '' } = {}) {
+  const { ab, bis } = planSpanne(x, heute);
+  const vorschlag = tag && tag >= ab && tag <= bis ? tag : vorschlagTag(ab, bis);
+  const orte = Array.isArray(x.orte) ? x.orte : [];
   return `<div class="formular" data-form="planen">
     <div class="zeile-felder">
-      <label class="feld-label">Tag<input type="date" class="eingabe plan-datum" value="${vorschlagTag(heute)}" min="${heute}" max="${plusTage(heute, 400)}"></label>
+      <label class="feld-label">Tag<input type="date" class="eingabe plan-datum" value="${vorschlag}" min="${ab}" max="${bis}"></label>
       <label class="feld-label">Uhrzeit (optional)<input type="time" class="eingabe plan-zeit"></label>
     </div>
-    ${x.orte.length > 1 ? `<label class="feld-label">Wo<select class="plan-ort"><option value="">noch offen</option>${x.orte.map((o, i) => `<option value="${i}">${esc(o.name)}${o.teil ? ` (${esc(o.teil)})` : ''}</option>`).join('')}</select></label>` : ''}
+    ${orte.length > 1 ? `<label class="feld-label">Wo<select class="plan-ort"><option value="">noch offen</option>${orte.map((o, i) => `<option value="${i}">${esc(o.name)}${o.teil ? ` (${esc(o.teil)})` : ''}</option>`).join('')}</select></label>` : ''}
     ${mitWemWahl(`plan-mitwem-${bereich}-${x.schluessel}`, 'plan-mitwem')}
+    ${fehler ? `<div class="fehlerbox" role="alert">${esc(fehler)}</div>` : ''}
     <p class="fein">${wohinPlan()}</p>
     <div class="aktionen">
       <button type="button" class="knopf haupt" data-aktion="plan-speichern" data-idee="${esc(x.schluessel)}" data-bereich="${bereich}">Einplanen</button>
@@ -215,6 +230,9 @@ export function ideenZahl(alle, st, heute, ui) {
   return k.zeigen.length + k.eigene.length;
 }
 
+/** Eine Meldung mit „Rückgängig“ (wenn es etwas zurückzunehmen gibt) und ✕. */
+export const meldungBox = (m) => `<div class="meldung" role="status"><span>${esc(m.text)}</span><span class="meldung-knoepfe">${m.rueckgaengig ? '<button type="button" class="knopf klein" data-aktion="rueckgaengig">Rückgängig</button>' : ''}<button type="button" class="textknopf" data-aktion="meldung-weg" aria-label="Hinweis schließen">✕</button></span></div>`;
+
 /**
  * Der Abschnitt „Was immer geht“.
  * @param {object[]} alle       Ideen aus dem Katalog (und Ausflugsziele aus dem Programm)
@@ -235,7 +253,8 @@ export function wasImmerGeht(alle, geladen, st, heute, ui, tuer = '') {
     ${inhalt}
   </section>`;
 
-  const meldung = ui.meldung ? `<div class="meldung" role="status"><span>${esc(ui.meldung.text)}</span><span class="meldung-knoepfe">${ui.meldung.rueckgaengig ? '<button type="button" class="knopf klein" data-aktion="rueckgaengig">Rückgängig</button>' : ''}<button type="button" class="textknopf" data-aktion="meldung-weg" aria-label="Hinweis schließen">✕</button></span></div>` : '';
+  // Eine Meldung aus dem Programm (Laufendes eingeplant) steht dort am Tag, nicht hier.
+  const meldung = ui.meldung && ui.meldung.ort !== 'programm' ? meldungBox(ui.meldung) : '';
   const neuKnopf = `<button type="button" class="knopf" data-aktion="idee-neu" aria-expanded="${Boolean(ui.neu)}">+ Eigene Idee</button>`;
   const kopf = `<header class="immer-kopf">
     <h2 class="immer-titel" id="was-immer-geht-titel">Was immer geht<span class="abschnitt-zahl" id="ideen-zahl">${zeigen.length + eigeneZeigen.length}</span></h2>

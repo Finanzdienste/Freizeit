@@ -178,6 +178,8 @@ export function bockKnopf(eintrag) {
  * @param {object} [o]
  * @param {boolean} [o.zeitSpalte]  Uhrzeit links (Tageslisten)
  * @param {string}  [o.zeitText]    statt der Uhrzeit, z. B. „Mi 28.10.“ (Wir-Liste)
+ * @param {object}  [o.planen]      „Einplanen“ anbieten (Laufendes im Programm):
+ *                                  { bereich, offen, form } – offen hält die Karte auf, form ist das Formular
  */
 export function karte(eintrag, o = {}) {
   angezeigt.set(eintrag.schluessel, eintrag);
@@ -217,7 +219,8 @@ export function karte(eintrag, o = {}) {
   ].filter(Boolean).join('');
   const kal = kalenderZiel(eintrag);
   const wer = werZeile(eintrag);
-  const klassen = ['karte', istAuf(eintrag.schluessel) ? 'auf' : '', eintrag.hohwacht ? 'hohwacht' : '', eintrag.kuenstler ? 'kuenstler' : '', wer.treffer ? 'treffer' : '', o.zeitSpalte ? '' : 'ohne-zeit']
+  const plan = o.planen || null;
+  const klassen = ['karte', istAuf(eintrag.schluessel) || (plan && plan.offen) ? 'auf' : '', eintrag.hohwacht ? 'hohwacht' : '', eintrag.kuenstler ? 'kuenstler' : '', wer.treffer ? 'treffer' : '', o.zeitSpalte ? '' : 'ohne-zeit']
     .filter(Boolean).join(' ');
   return `<article class="${klassen}" id="k-${esc(eintrag.schluessel.replace(/[^a-z0-9-]/gi, '-'))}">${zeit}<div class="inhalt">
     ${kopfzeile(eintrag)}
@@ -234,11 +237,13 @@ export function karte(eintrag, o = {}) {
     <div class="aktionen">
       ${bockKnopf(eintrag)}
       <span class="mehr aktionen-mehr">
+        ${plan ? `<button type="button" class="knopf" data-aktion="planen" data-idee="${esc(eintrag.schluessel)}" data-bereich="${esc(plan.bereich)}" aria-expanded="${Boolean(plan.offen)}">Einplanen</button>` : ''}
         <a class="knopf" href="${esc(whatsappLink(eintrag))}" target="_blank" rel="noopener">WhatsApp</a>
         ${kal ? `<a class="knopf" href="${esc(kal.href)}"${kal.datei ? ` download="${esc(kal.datei)}"` : ' target="_blank" rel="noopener"'}>Kalender</a>` : ''}
         ${eintrag.link ? `<a class="quelle" href="${esc(eintrag.link)}" target="_blank" rel="noopener">Quelle</a>` : ''}
       </span>
     </div>
+    ${plan && plan.offen ? plan.form : ''}
   </div></article>`;
 }
 

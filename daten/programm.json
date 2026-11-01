@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "stand": "2026-10-31T13:17",
+  "stand": "2026-11-01T08:22",
   "von": "2026-10-26",
   "bis": "2026-11-29",
   "infos": [
@@ -15090,6 +15090,1876 @@
       "kostenlos": true,
       "draussen": "drinnen",
       "link": "https://ran.joyn.de/sports/american-football/nfl/cincinnati-bengals-at-atlanta-falcons-live-im-free-tv-stream-und-ticker-infos-zum-nfl-international-game2026-in-madrid-183528"
+    },
+    {
+      "id": "wunsch-orgelkonzert-zum-reformationstag-christuskirche",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "19:00",
+      "ende": "20:15",
+      "titel": "Wunsch-Orgelkonzert zum Reformationstag",
+      "ort": "Christuskirche, Pinneberg",
+      "geo": [
+        53.65761,
+        9.79963
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Kantor Florian Stölzel spielt an der Baumhoer-Orgel ein Programm aus Publikumswünschen – von Bach bis Film- und Popmusik.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/wunsch-orgelkonzert-zum-reformationstag/",
+      "anreise": "DT: S3 bis Pinneberg (ab Hbf ca. 30 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 35 Min.",
+      "unsicher": "Eintritt und Dauer nicht angegeben (Kirchenkonzert, vermutlich frei/Spende); Ende geschätzt"
+    },
+    {
+      "id": "omatrick-komoedie-von-charles-lewinsky-theater-wedel",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "„Omatrick“ – Komödie von Charles Lewinsky",
+      "ort": "Theater Wedel",
+      "geo": [
+        53.58185,
+        9.70996
+      ],
+      "region": "PI",
+      "kategorie": "Bühne",
+      "beschreibung": "Das Theater Wedel, eine seit 1965 bestehende Amateurbühne, spielt die Komödie „Omatrick“ des Schweizer Autors Charles Lewinsky.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/omatrick/",
+      "anreise": "DT: S1 ab Wandsbeker Chaussee direkt bis Wedel (ca. 50 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Preis und Dauer nicht angegeben, Ende geschätzt; weitere Spieltermine stehen nicht in der Datenbank (Theater-Website nicht abrufbar)"
+    },
+    {
+      "id": "gregor-gysi-harald-schmidt-ein-voellig-unvorbereiteter",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "15:30",
+      "zeiten": {
+        "2026-11-01": "15:30 + 19:00"
+      },
+      "dauer": 120,
+      "titel": "Gregor Gysi & Harald Schmidt: „Ein völlig unvorbereiteter Abend“",
+      "ort": "Stadttheater Elmshorn",
+      "geo": [
+        53.74791,
+        9.65333
+      ],
+      "region": "PI",
+      "kategorie": "Bühne",
+      "beschreibung": "Der Linken-Politiker und der Late-Night-Veteran plaudern ohne Skript über Politik, Gott und die Welt – zwei Vorstellungen am Sonntag.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/gregor-gysi-und-harald-schmidt/",
+      "anreise": "DT: Regionalbahn (RB61/RB71) ab Hbf bis Elmshorn (ca. 30 Min.), dann ca. 15 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Preis und Dauer nicht angegeben, nicht bei eventim gelistet (Ticketlage unklar, evtl. ausverkauft); Dauer geschätzt"
+    },
+    {
+      "id": "iz-musical-time-jekyll-hyde-theater-itzehoe",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "15:00",
+      "ende": "17:45",
+      "titel": "IZ Musical Time: „Jekyll & Hyde“",
+      "ort": "Theater Itzehoe",
+      "geo": [
+        53.92232,
+        9.51574
+      ],
+      "region": "PI",
+      "kategorie": "Bühne",
+      "beschreibung": "Das Schleswig-Holsteinische Landestheater zeigt Frank Wildhorns Musical nach Stevenson – der Arzt, der mit einem Experiment sein dunkles Ich entfesselt.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/iz-musical-time-jekyll-hyde/",
+      "anreise": "DT: Regionalbahn (RB61) ab Hbf bis Itzehoe (ca. 1 Std.), dann ca. 10 Min. Fußweg · Auto: ca. 50 Min.",
+      "unsicher": "Preis und Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "buecherschnupperabend-mit-annemarie-stoltenberg-drostei",
+      "daten": [
+        "2026-11-04"
+      ],
+      "zeit": "19:00",
+      "ende": "20:45",
+      "titel": "Bücherschnupperabend mit Annemarie Stoltenberg",
+      "ort": "Drostei, Pinneberg",
+      "geo": [
+        53.66091,
+        9.79668
+      ],
+      "region": "PI",
+      "kategorie": "Lesung",
+      "beschreibung": "Die NDR-Literaturkritikerin holt ihre Lieblingsbücher des Herbstes 2026 aus dem „Bücherkoffer“ – Romane und literarische Entdeckungen im barocken Herrenhaus.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/buecherschnupperabend-mit-annemarie-stoltenberg-2/",
+      "anreise": "DT: S3 bis Pinneberg (ab Hbf ca. 30 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 35 Min.",
+      "unsicher": "Preis und Dauer nicht angegeben (Drostei-Website nicht abrufbar); Ende geschätzt"
+    },
+    {
+      "id": "anna-haentjens-im-haus-13-haus-13-elmshorn",
+      "daten": [
+        "2026-11-06"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Anna Haentjens im Haus 13",
+      "ort": "Haus 13, Elmshorn",
+      "geo": [
+        53.75773,
+        9.64728
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Konzertabend der Sängerin Anna Haentjens im kleinen Saal Haus 13 – veranstaltet vom Stadttheater Elmshorn, freie Platzwahl.",
+      "preis": "ca. 33 €, erm. ca. 28 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/anna-haentjens-haus-13-21745175/",
+      "anreise": "DT: Regionalbahn (RB61/RB71) ab Hbf bis Elmshorn (ca. 30 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Programm nicht beschrieben; Ende geschätzt"
+    },
+    {
+      "id": "mord-in-der-haifischbar-st-pauli-mit-the-rattles-theater",
+      "daten": [
+        "2026-11-06"
+      ],
+      "zeit": "19:30",
+      "ende": "22:00",
+      "titel": "„Mord in der Haifischbar St. Pauli“ – mit THE RATTLES",
+      "ort": "Theater Itzehoe",
+      "geo": [
+        53.92232,
+        9.51574
+      ],
+      "region": "PI",
+      "kategorie": "Bühne",
+      "beschreibung": "Krimikomödie des iks-Theaters in zwei Teilen; zwischen den Szenen spielt die Beat-Legende THE RATTLES bekannte St.-Pauli-Songs – Comedy-Theater trifft Rock.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/mord-in-der-haifischbar-st-pauli-1/",
+      "anreise": "DT: Regionalbahn (RB61) ab Hbf bis Itzehoe (ca. 1 Std.), dann ca. 10 Min. Fußweg · Auto: ca. 50 Min.",
+      "unsicher": "Preis nicht angegeben (Tickets u. a. bei eventim); Ende geschätzt"
+    },
+    {
+      "id": "joe-a-tribute-to-cocker-mit-joe-spoonwood-stadttheater",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "„JOE – A Tribute to Cocker“ mit Joe Spoonwood",
+      "ort": "Stadttheater Elmshorn",
+      "geo": [
+        53.74791,
+        9.65333
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Tribute-Konzert mit den großen Joe-Cocker-Hits von „Unchain My Heart“ bis „With a Little Help from My Friends“.",
+      "preis": "ca. 42–46 €, erm. ab ca. 37 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/joe-a-tribute-to-cocker-joe-cocker-tribute-joe-spoonwood-stadttheater-elmshorn-21745122/",
+      "anreise": "DT: Regionalbahn (RB61/RB71) ab Hbf bis Elmshorn (ca. 30 Min.), dann ca. 15 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "the-gregorian-voices-gregorianik-meets-pop-christuskirche",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "The Gregorian Voices: „Gregorianik meets Pop“",
+      "ort": "Christuskirche Schulau, Wedel",
+      "geo": [
+        53.57565,
+        9.71405
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Gregorianischer Choralgesang trifft Popsongs – ein Streifzug vom Mittelalter bis heute im Kirchenraum.",
+      "preis": "28 € (freie Platzwahl)",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/the-gregorian-voices-gregorianik-meets-pop-vom-mittelalter-bis-heute-christuskirche-schulau-21507147/",
+      "anreise": "DT: S1 ab Wandsbeker Chaussee direkt bis Wedel (ca. 50 Min.), dann ca. 15 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "waterloo-the-abba-show-streichquartett-theater-itzehoe",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "19:30",
+      "ende": "22:00",
+      "titel": "Waterloo – The ABBA Show & Streichquartett",
+      "ort": "Theater Itzehoe",
+      "geo": [
+        53.92232,
+        9.51574
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Tribute-Band 4 SWEDES (früher „Abba Review“) spielt die ABBA-Hits mit Choreografie und Kostümen der Zeit, verstärkt durch ein Streichquartett.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/waterloo-the-abba-show-streichquartett-2/",
+      "anreise": "DT: Regionalbahn (RB61) ab Hbf bis Itzehoe (ca. 1 Std.), dann ca. 10 Min. Fußweg · Auto: ca. 50 Min.",
+      "unsicher": "Preis nicht angegeben (Tickets u. a. bei eventim); Ende geschätzt"
+    },
+    {
+      "id": "john-rutter-requiem-magnificat-kantorei-quickborn",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "17:00",
+      "ende": "18:15",
+      "titel": "John Rutter: Requiem & Magnificat – Kantorei Quickborn",
+      "ort": "Marienkirche, Quickborn",
+      "geo": [
+        53.73174,
+        9.89564
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Kantorei Quickborn singt zwei der beliebtesten Chorwerke des Engländers John Rutter – das lichte Requiem und das schwungvolle Magnificat.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/john-rutter-kantorei-quickborn-requiem-magnificat/",
+      "anreise": "DT: S3 bis Eidelstedt, weiter mit der AKN bis Quickborn (ab Hbf ca. 40 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 35 Min.",
+      "unsicher": "Mitwirkende, Preis und Dauer nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "den-frieden-dichten-johann-rist-und-das-treffen-in-telgte",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "17:00",
+      "ende": "18:30",
+      "titel": "„Den Frieden dichten“ – Johann Rist und das Treffen in Telgte",
+      "ort": "Immanuelkirche, Wedel",
+      "geo": [
+        53.58448,
+        9.69791
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Literarisches Konzert nach Günter Grass’ „Das Treffen in Telgte“: Marko Lohmann liest, dazwischen Barockmusik von Schütz, Albert, Crüger u. a. mit Solisten, Cimbrischer Cantorey und Elbipolis Barockorchester – in Rists Wedel.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/den-frieden-dichten-johann-rist-und-das-treffen-in-telgte/",
+      "anreise": "DT: S1 ab Wandsbeker Chaussee direkt bis Wedel (ca. 50 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Preis und Dauer nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "henrik-siebold-liest-inspektor-takeda-und-der-lichte",
+      "daten": [
+        "2026-11-12"
+      ],
+      "zeit": "19:00",
+      "ende": "20:30",
+      "titel": "Henrik Siebold liest „Inspektor Takeda und der lichte Schatten“",
+      "ort": "Drostei, Pinneberg",
+      "geo": [
+        53.66091,
+        9.79668
+      ],
+      "region": "PI",
+      "kategorie": "Lesung",
+      "beschreibung": "Krimilesung aus dem neunten Takeda-Band – der Inspektor liegt im Koma, seine Verlobte und Kollegin Claudia ermittelt; atmosphärisch begleitet von Saxofonist Thomas Nintemann.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/henrik-siebold-liest-aus-inspektor-takeda-und-der-lichte-schatten/",
+      "anreise": "DT: S3 bis Pinneberg (ab Hbf ca. 30 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 35 Min.",
+      "unsicher": "Preis und Dauer nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "heaven-can-wait-chor-stadttheater-elmshorn",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Heaven Can Wait Chor",
+      "ort": "Stadttheater Elmshorn",
+      "geo": [
+        53.74791,
+        9.65333
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Rund drei Dutzend Hamburgerinnen und Hamburger über 70 singen unter Jan-Christof Scheibe Pop- und Hip-Hop-Hits junger Künstler – mit überraschend neuer Bedeutung.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/heaven-can-wait-chor-11/",
+      "anreise": "DT: Regionalbahn (RB61/RB71) ab Hbf bis Elmshorn (ca. 30 Min.), dann ca. 15 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Preis nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "young-voices-7-hannah-stienen-theater-itzehoe",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "Young Voices #7: Hannah Stienen",
+      "ort": "Theater Itzehoe",
+      "geo": [
+        53.92232,
+        9.51574
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Konzert mit Hannah Stienen in der Nachwuchsreihe „Young Voices“, präsentiert von den Freunden des theater itzehoe.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/young-voices-7/",
+      "anreise": "DT: Regionalbahn (RB61) ab Hbf bis Itzehoe (ca. 1 Std.), dann ca. 10 Min. Fußweg · Auto: ca. 50 Min.",
+      "unsicher": "Preis und Programm nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "bernies-dinner-club-winzer-edition-zur-erholung-uetersen",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "19:00",
+      "ende": "23:00",
+      "titel": "Bernies Dinner Club „Winzer-Edition“",
+      "ort": "Zur Erholung, Uetersen",
+      "geo": [
+        53.68725,
+        9.65371
+      ],
+      "region": "PI",
+      "kategorie": "Food",
+      "beschreibung": "Sechs-Gänge-Menü von Küchenchef Bernd Ratjen zu den Bio-Weinen von Gastwinzer Chris Ehrlich (Weingut „Drei Zeilen Wein“, Franken) im Tanzsaal von 1899 – mit Erklärungen zu jedem Pairing.",
+      "preis": "111 € inkl. Aperitif und Wasser",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/bernies-dinner-club-winzer-edition/",
+      "anreise": "DT: S3 bis Pinneberg oder Regionalbahn bis Tornesch, dann Bus nach Uetersen · Auto: ca. 40 Min.",
+      "unsicher": "Einlass 18:30; Ende geschätzt; Weinbegleitung vermutlich extra (nur „Klassisch“-Paket genannt)"
+    },
+    {
+      "id": "janne-mommsen-liest-die-weihnachtsfaehre-buergerhaus",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "19:00",
+      "ende": "20:30",
+      "titel": "Janne Mommsen liest „Die Weihnachtsfähre“",
+      "ort": "Bürgerhaus, Kellinghusen",
+      "geo": [
+        53.94836,
+        9.72056
+      ],
+      "region": "PI",
+      "kategorie": "Lesung",
+      "beschreibung": "Heiligabend läuft die Fähre nach Föhr auf halber Strecke im Watt auf – die bunt gemischten Passagiere müssen sich zusammenraufen. Lesung mit dem nordfriesischen Autor (früher Krankenpfleger, Werftarbeiter und Barpianist).",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/lesung-mit-dem-schriftsteller-janne-mommsen-die-weihnachtsfaehre/",
+      "anreise": "DT: Regionalbahn bis Itzehoe, dann Bus nach Kellinghusen (zusammen ca. 1:30 Std.) · Auto: ca. 55 Min.",
+      "unsicher": "Preis und Veranstalter nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "der-sohn-schauspiel-stadttheater-elmshorn",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "„Der Sohn“ – Schauspiel",
+      "ort": "Stadttheater Elmshorn",
+      "geo": [
+        53.74791,
+        9.65333
+      ],
+      "region": "PI",
+      "kategorie": "Bühne",
+      "beschreibung": "Abendspielplan des Stadttheaters Elmshorn: Gastspiel des Schauspiels „Der Sohn“.",
+      "preis": "ca. 38–46 €, Schüler/Studierende ca. 19 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/der-sohn-stadttheater-elmshorn-stadttheater-elmshorn-21745096/",
+      "anreise": "DT: Regionalbahn (RB61/RB71) ab Hbf bis Elmshorn (ca. 30 Min.), dann ca. 15 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Autor und Ensemble nicht angegeben (vermutlich Florian Zellers Familiendrama); Ende geschätzt"
+    },
+    {
+      "id": "lichterrundgang-durch-glueckstadt-touristinformation",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "16:00",
+      "dauer": 90,
+      "titel": "Lichterrundgang durch Glückstadt",
+      "ort": "Touristinformation, Glückstadt",
+      "geo": [
+        53.78757,
+        9.42476
+      ],
+      "region": "PI",
+      "kategorie": "Führung",
+      "beschreibung": "Romantischer Rundgang in der Dämmerung mit LED-Fackeln: Geschichten zu den historischen Bauten der Festungsstadt, danach gibt es ein warmes Getränk.",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/lichterrundgang-1/",
+      "anreise": "DT: Regionalbahn (RB61) ab Hbf bis Glückstadt (ca. 45 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 55 Min.",
+      "unsicher": "Preis, Dauer und Anmeldung nicht angegeben (Dauer geschätzt)"
+    },
+    {
+      "id": "chorkonzert-in-der-stadtkirche-glueckstadt-stadtkirche",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "18:00",
+      "ende": "19:30",
+      "titel": "Chorkonzert in der Stadtkirche Glückstadt",
+      "ort": "Stadtkirche, Glückstadt",
+      "geo": [
+        53.78789,
+        9.42501
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Chor der Stadtkirche und Kantorei St. Ansgar Elmshorn mit vier Solisten unter Florian Hanssen und Matthias Menzel in der Renaissancekirche am Markt (1618–23).",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/chorkonzert-17/",
+      "anreise": "DT: Regionalbahn (RB61) ab Hbf bis Glückstadt (ca. 45 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 55 Min.",
+      "unsicher": "Programm nicht angegeben; Ende geschätzt; Eintritt frei, Spenden erbeten"
+    },
+    {
+      "id": "die-anderen-heimspiel-2026-punkrock-theater-am-neuendeich",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "19:00",
+      "ende": "23:00",
+      "titel": "Die Anderen – Heimspiel 2026 (Punkrock)",
+      "ort": "Theater am Neuendeich, Glückstadt",
+      "geo": [
+        53.79257,
+        9.42522
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Punkrock-Abend der Glückstädter Reihe „Die Anderen“ mit großer Lichtshow; angekündigt sind Flying Fries und Kapeister.",
+      "preis": "AK 15 €",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/die-anderen-heimspiel-2026/",
+      "anreise": "DT: Regionalbahn (RB61) ab Hbf bis Glückstadt (ca. 45 Min.), dann ca. 15 Min. Fußweg · Auto: ca. 55 Min.",
+      "unsicher": "Einlass 18:30; Line-up uneinheitlich (Untertitel nennt „Godlike & Kapeister“); VVK-Preis und Ende nicht angegeben"
+    },
+    {
+      "id": "staatsorchester-rheinische-philharmonie-schostakowitsch",
+      "daten": [
+        "2026-11-17"
+      ],
+      "zeit": "19:30",
+      "ende": "21:20",
+      "titel": "Staatsorchester Rheinische Philharmonie: Schostakowitsch & Tschaikowsky",
+      "ort": "Theater Itzehoe",
+      "geo": [
+        53.92232,
+        9.51574
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Marzena Diakun dirigiert Skrjabins „Rêverie“, Schostakowitschs 1. Cellokonzert mit István Várdai und Tschaikowskys 5. Sinfonie; Einführung um 19 Uhr.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/staatsorchester-rheinische-philharmonie-2/",
+      "anreise": "DT: Regionalbahn (RB61) ab Hbf bis Itzehoe (ca. 1 Std.), dann ca. 10 Min. Fußweg · Auto: ca. 50 Min.",
+      "unsicher": "Preis nicht angegeben; Ende aus den Werklängen geschätzt (ca. 1:50 Std. inkl. Pause) – knapp an der 21:30-Grenze"
+    },
+    {
+      "id": "musik-und-kulturfest-raum-wort-ton-christuskirche-pinneberg",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "19:00",
+      "ende": "21:30",
+      "titel": "Musik- und Kulturfest „Raum – Wort – Ton“",
+      "ort": "Christuskirche, Pinneberg",
+      "geo": [
+        53.65761,
+        9.79963
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Lokale Künstlerinnen und Künstler stellen sich mit einem bunten Programm aus Musik und Wort im Kirchenraum vor.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/musik-und-kulturfest/",
+      "anreise": "DT: S3 bis Pinneberg (ab Hbf ca. 30 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 35 Min.",
+      "unsicher": "Mitwirkende, Eintritt und Dauer nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "the-italian-tenors-band-stadttheater-elmshorn",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "20:00",
+      "ende": "22:15",
+      "titel": "The Italian Tenors & Band",
+      "ort": "Stadttheater Elmshorn",
+      "geo": [
+        53.74791,
+        9.65333
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Italienische Tenöre mit Band – Belcanto, Canzoni und Pop-Klassiker im Stadttheater.",
+      "preis": "ca. 53–57 €, erm. ab ca. 48 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/the-italian-tenors-stadttheater-elmshorn-21745124/",
+      "anreise": "DT: Regionalbahn (RB61/RB71) ab Hbf bis Elmshorn (ca. 30 Min.), dann ca. 15 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Programm nicht beschrieben; Ende geschätzt"
+    },
+    {
+      "id": "pleiten-pech-tannen-der-weihnachtliche-jahresrueckblick",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "„Pleiten, Pech + Tannen“ – der weihnachtliche Jahresrückblick",
+      "ort": "Rathaus, Rellingen",
+      "geo": [
+        53.65132,
+        9.83035
+      ],
+      "region": "PI",
+      "kategorie": "Comedy",
+      "beschreibung": "Bernard Liebermann und Thierry Gelloz vom Weimarer Kabarett blicken mit Musik, Gags und Improvisation auf ein Jahr zum Vergessen zurück – „Rückschau mit Vorsicht, Vorschau mit Rücksicht“.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/pleiten-pech-tannen-der-weihnachtliche-jahresrueckblick/",
+      "anreise": "DT: S3 bis Thesdorf oder Halstenbek, dann Bus nach Rellingen · Auto: ca. 30 Min.",
+      "unsicher": "Preis nicht angegeben; Ersatzprogramm (der ursprüngliche Act ist erkrankt); Ende geschätzt"
+    },
+    {
+      "id": "escape-dinner-knack-den-geschmack-kantino-elmshorn",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "18:00",
+      "ende": "22:00",
+      "titel": "Escape Dinner „Knack den Geschmack“",
+      "ort": "Kantino, Elmshorn",
+      "geo": [
+        53.76051,
+        9.65399
+      ],
+      "region": "PI",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Rätsel-Dinnershow: Teams knacken beim Drei-Gänge-Menü in drei Runden Codes und geheime Botschaften – die beste Gruppe holt die Champagnerflasche aus dem Tresor.",
+      "preis": "ca. 116 € inkl. 3-Gänge-Menü (Fleisch oder vegetarisch)",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/escape-to-the-dinner-raetsel-dinnershow-kantino-21638794/",
+      "anreise": "DT: Regionalbahn (RB61/RB71) ab Hbf bis Elmshorn (ca. 30 Min.), dann ca. 15–20 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Beginn widersprüchlich: eventim 18:00, Metropolregion-Kalender 19:00; Ende geschätzt"
+    },
+    {
+      "id": "elmshorn-techno-rave-harry-s-haus-am-see-elmshorn",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "19:45",
+      "ende": "01:00",
+      "titel": "Elmshorn Techno Rave",
+      "ort": "Harry’s Haus am See, Elmshorn",
+      "geo": [
+        53.75422,
+        9.66359
+      ],
+      "region": "PI",
+      "kategorie": "Party",
+      "beschreibung": "Techno-Abend mit DJs aus der Hamburger Technoszene im Haus am See.",
+      "preis": "15,90 € (Early Bird vergriffen)",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/elmshorn-techno-rave-djs-aus-hamburger-technoszene-harrys-haus-am-see-22310740/",
+      "anreise": "DT: Regionalbahn (RB61/RB71) ab Hbf bis Elmshorn (ca. 30 Min.), weiter mit Stadtbus oder zu Fuß · Auto: ca. 40 Min.",
+      "unsicher": "Ende und Line-up nicht angegeben; Rückfahrt nachts prüfen"
+    },
+    {
+      "id": "mozart-c-moll-messe-haendel-messiah-totensonntag-st",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "18:00",
+      "ende": "20:15",
+      "titel": "Mozart: c-Moll-Messe – Händel: „Messiah“ (Totensonntag)",
+      "ort": "St.-Laurentii-Kirche, Itzehoe",
+      "geo": [
+        53.9261,
+        9.516
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Großes Chor- und Orchesterkonzert der Innenstadtgemeinde zum Totensonntag mit Mozarts c-Moll-Messe – zugleich Auftakt einer „Messiah“-Trilogie.",
+      "preis": "ca. 21–26 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/mozart-c-moll-messe-haendel-messiah-grosses-chor-und-orchesterkonzert-st-laurentii-kirche-zu-itzehoe-21993507/",
+      "anreise": "DT: Regionalbahn (RB61) ab Hbf bis Itzehoe (ca. 1 Std.), dann ca. 10 Min. Fußweg · Auto: ca. 50 Min.",
+      "unsicher": "Mitwirkende und Umfang (ganze Werke oder Auszüge) nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "sebastian-krumbiegel-kompass-live-juks-schenefeld",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "18:00",
+      "ende": "20:15",
+      "titel": "Sebastian Krumbiegel: „Kompass“ live",
+      "ort": "JUKS, Schenefeld",
+      "geo": [
+        53.59717,
+        9.83763
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Der Sänger der Prinzen spielt Songs seines neuen Albums „Kompass“ und bekannte Lieder – früher Sonntagstermin.",
+      "preis": "ca. 36 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/sebastian-krumbiegel-kompass-tour-2026-juks-22354810/",
+      "anreise": "DT: S3 bis Elbgaustraße, dann Bus nach Schenefeld · Auto: ca. 35 Min.",
+      "unsicher": "Ende geschätzt; Busverbindung nicht geprüft"
+    },
+    {
+      "id": "romy-la-mer-et-la-musique-chansonabend-ueber-romy-schneider",
+      "daten": [
+        "2026-11-24"
+      ],
+      "zeit": "19:30",
+      "ende": "21:15",
+      "titel": "„Romy, la mer et la musique“ – Chansonabend über Romy Schneider",
+      "ort": "Theater Itzehoe",
+      "geo": [
+        53.92232,
+        9.51574
+      ],
+      "region": "PI",
+      "kategorie": "Bühne",
+      "beschreibung": "Jakob Gühring erzählt und singt sich in einem schauspielerischen Chansonabend durch das Leben von Romy Schneider.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/romy-la-mer-et-la-musique/",
+      "anreise": "DT: Regionalbahn (RB61) ab Hbf bis Itzehoe (ca. 1 Std.), dann ca. 10 Min. Fußweg · Auto: ca. 50 Min.",
+      "unsicher": "Preis und Dauer nicht angegeben; Ende geschätzt – könnte nach 21:30 liegen"
+    },
+    {
+      "id": "44-wedeler-weihnachtsmarkt-am-roland-marktplatz-am-roland",
+      "daten": [
+        "2026-11-27",
+        "2026-11-28",
+        "2026-11-29"
+      ],
+      "zeit": "Fr ab 19, Sa ab 13, So ab 11 Uhr",
+      "ende": "21:00",
+      "ganztags": true,
+      "titel": "44. Wedeler Weihnachtsmarkt am Roland",
+      "ort": "Marktplatz am Roland, Wedel",
+      "geo": [
+        53.58384,
+        9.69767
+      ],
+      "region": "PI",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Erstmals dreitägiger Weihnachtsmarkt der Wedeler Vereine am Roland: Glühwein- und Essensstände, Kunsthandwerk, mittelalterliches Händlerlager, Bimmelbahn und Bühnenprogramm mit Chören, Bläsern, Jazz und Swing.",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/44-wedeler-weihnachtsmarkt-am-roland/",
+      "anreise": "DT: S1 ab Wandsbeker Chaussee direkt bis Wedel (ca. 50 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Schließzeiten nicht angegeben (Ende geschätzt)"
+    },
+    {
+      "id": "barmstedter-weihnachtsmarkt-innenstadt-barmstedt",
+      "daten": [
+        "2026-11-27",
+        "2026-11-28",
+        "2026-11-29"
+      ],
+      "zeit": "Fr 14–21, Sa 11–21, So 11–18 Uhr",
+      "ende": "21:00",
+      "ganztags": true,
+      "titel": "Barmstedter Weihnachtsmarkt",
+      "ort": "Innenstadt, Barmstedt",
+      "geo": [
+        53.78866,
+        9.76964
+      ],
+      "region": "PI",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Einer der größeren Weihnachtsmärkte der Region: rund 150 geschmückte Stände rund um die Kirche, Kunsthandwerk, Glühwein, gebrannte Mandeln und Bühnenprogramm auf dem Marktplatz.",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/barmstedter-weihnachtsmarkt-1/",
+      "anreise": "DT: Regionalbahn bis Elmshorn, weiter mit der AKN bis Barmstedt (ab Hbf ca. 1 Std.) · Auto: ca. 45 Min.",
+      "unsicher": "Eintritt nicht angegeben (üblicherweise frei)"
+    },
+    {
+      "id": "kings-of-floyd-dark-side-tour-stadttheater-elmshorn",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Kings of Floyd – „Dark Side Tour“",
+      "ort": "Stadttheater Elmshorn",
+      "geo": [
+        53.74791,
+        9.65333
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Pink-Floyd-Tribute-Show mit den großen Floyd-Klassikern – laut eventim sehr gefragt.",
+      "preis": "ca. 42–46 €, erm. ab ca. 37 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/kings-of-floyd-dark-side-tour-stadttheater-elmshorn-21745126/",
+      "anreise": "DT: Regionalbahn (RB61/RB71) ab Hbf bis Elmshorn (ca. 30 Min.), dann ca. 15 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "orgelkonzert-um-5-nach-12-christuskirche-pinneberg",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "12:05",
+      "ende": "12:35",
+      "titel": "Orgelkonzert um „5 nach 12“",
+      "ort": "Christuskirche, Pinneberg",
+      "geo": [
+        53.65761,
+        9.79963
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "30 Minuten Orgelmusik „für die Seele“ mit Kantor Florian Stölzel zur Mittagszeit.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/orgelkonzert-um-5-nach-12/",
+      "anreise": "DT: S3 bis Pinneberg (ab Hbf ca. 30 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 35 Min.",
+      "unsicher": "Eintritt nicht angegeben (vermutlich frei)"
+    },
+    {
+      "id": "nikolausmarkt-in-der-landdrostei-drostei-pinneberg",
+      "daten": [
+        "2026-11-28",
+        "2026-11-29"
+      ],
+      "zeit": "11:00–18:00",
+      "ende": "18:00",
+      "ganztags": true,
+      "titel": "Nikolausmarkt in der Landdrostei",
+      "ort": "Drostei, Pinneberg",
+      "geo": [
+        53.66091,
+        9.79668
+      ],
+      "region": "PI",
+      "kategorie": "Markt",
+      "beschreibung": "Kunsthandwerkermarkt im barocken Herrenhaus mit über 40 Ständen – Handgemachtes, Holzarbeiten, Keramik und Dekoration, dazu das Café im Gartensaal.",
+      "draussen": "beides",
+      "link": "https://freizeitmonster.de/aktivitaeten/veranstaltungen/nikolausmarkt-in-der-landdrostei-in-pinneberg-2026-323537",
+      "anreise": "DT: S3 bis Pinneberg (ab Hbf ca. 30 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 35 Min.",
+      "unsicher": "Nur laut Freizeitportal freizeitmonster.de, nicht vom Veranstalter bestätigt (drostei.de nicht abrufbar, nicht im Metropolregion-Kalender); Eintritt für Erwachsene nicht angegeben (Kinder bis 16 frei)"
+    },
+    {
+      "id": "weihnachtskonzert-winterzauber-mit-yasmin-reese-heilig",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "17:00",
+      "ende": "18:30",
+      "titel": "Weihnachtskonzert „Winterzauber“ mit Yasmin Reese",
+      "ort": "Heilig-Geist-Kirche, Pinneberg",
+      "geo": [
+        53.6687,
+        9.79005
+      ],
+      "region": "PI",
+      "kategorie": "Konzert",
+      "beschreibung": "Gospelsängerin Yasmin Reese singt am 1. Advent bekannte Weihnachtsmelodien, Gospel-Klassiker und eigene Songs im Kirchenraum.",
+      "preis": "ca. 29 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/weihnachtskonzert-winterzauber-gospelsaengerin-yasmin-reese-ev-luth-heilig-geist-kirche-pinneberg-22290361/",
+      "anreise": "DT: S3 bis Pinneberg (ab Hbf ca. 30 Min.), dann Stadtbus oder Fußweg · Auto: ca. 35 Min.",
+      "unsicher": "Dauer nicht angegeben, Ende geschätzt; Fußweg vom Bahnhof nicht geprüft"
+    },
+    {
+      "id": "walter-sittler-ich-bin-immer-noch-da-hommage-an-dieter",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "Walter Sittler: „Ich bin immer noch da“ – Hommage an Dieter Hildebrandt",
+      "ort": "Stadttheater Elmshorn",
+      "geo": [
+        53.74791,
+        9.65333
+      ],
+      "region": "PI",
+      "kategorie": "Bühne",
+      "beschreibung": "Schauspieler Walter Sittler würdigt den großen Kabarettisten Dieter Hildebrandt – ein Abend mit dessen Texten und Haltung.",
+      "preis": "ca. 39–44 €, erm. ab ca. 35 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/walter-sittler-finale-arrabiata-das-absolut-finale-programm-stadttheater-elmshorn-21745127/",
+      "anreise": "DT: Regionalbahn (RB61/RB71) ab Hbf bis Elmshorn (ca. 30 Min.), dann ca. 15 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Dauer nicht angegeben, Ende geschätzt (Sonntagabend – evtl. knapp vor 21:30); die eventim-Adresse nennt noch einen anderen Programmtitel"
+    },
+    {
+      "id": "halloween-2026-party-in-den-holstenhallen-holstenhallen",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "21:00",
+      "dauer": 300,
+      "titel": "Halloween 2026 – Party in den Holstenhallen",
+      "ort": "Holstenhallen, Neumünster",
+      "geo": [
+        54.0926,
+        9.97666
+      ],
+      "region": "SE",
+      "kategorie": "Party",
+      "beschreibung": "Große Halloween-Party in den Holstenhallen am Abend des Reformationstags.",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/halloween-2026-holstenhallen-neumuenster-holstenhalle-neumuenster-22055416/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), weiter per Bus oder Taxi (Weg nicht geprüft) · Auto: ca. 45 Min.",
+      "unsicher": "Line-up, Preis, Altersgrenze und Ende nicht angegeben, Dauer geschätzt"
+    },
+    {
+      "id": "die-letzte-vorstellung-horror-theater-im-kulturwerk",
+      "daten": [
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "„Die letzte Vorstellung“ – Horror-Theater im Kulturwerk",
+      "ort": "Kulturwerk am See, Norderstedt",
+      "geo": [
+        53.71242,
+        10.01877
+      ],
+      "region": "SE",
+      "kategorie": "Bühne",
+      "beschreibung": "Horrorgeschichte von Antonia Schories und Jonas Meyer, gespielt vom Norderstedter Verein Theater Life: Das alte Kulturwerk gilt nachts als unheimlich – Bühne und Wirklichkeit verschwimmen, und nicht alle im Publikum sind nur Zuschauer. Empfohlen ab 16.",
+      "preis": "12,34 €",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/norderstedt/veranstaltungen/die-letzte-vorstellung-kulturwerk-am-see-norderstedt/",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), weiter per Bus (Verbindung in der HVV-App prüfen) · Auto: ca. 25 Min.",
+      "unsicher": "Dauer nicht angegeben, Ende geschätzt; Amateur-/Jugendtheater"
+    },
+    {
+      "id": "adventsmarkt-im-rathaus-norderstedt-39-ausgabe-rathaus",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "10:00",
+      "ende": "17:00",
+      "titel": "Adventsmarkt im Rathaus Norderstedt (39. Ausgabe)",
+      "ort": "Rathaus Norderstedt",
+      "geo": [
+        53.70791,
+        9.99371
+      ],
+      "region": "SE",
+      "kategorie": "Markt",
+      "beschreibung": "Kunsthandwerker-Adventsmarkt im Rathaus: rund 65 Künstlerinnen, Künstler und Hobbykünstler – darunter viele Neulinge – zeigen und verkaufen ihre handgefertigten Arbeiten.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/adventsmarkt-im-rathaus/",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), ca. 3 Min. Fußweg · Auto: ca. 25 Min.",
+      "unsicher": "Nur aus dem Veranstaltungskalender der Metropolregion (gespeist vom Stadtkalender Norderstedt); Ende und Eintritt nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "fussball-sv-todesfelde-eintracht-norderstedt-regionalliga",
+      "daten": [
+        "2026-11-01"
+      ],
+      "zeit": "14:00",
+      "ende": "15:55",
+      "titel": "Fußball: SV Todesfelde – Eintracht Norderstedt (Regionalliga Nord)",
+      "ort": "Joda Sportpark, Todesfelde",
+      "geo": [
+        53.8982,
+        10.18553
+      ],
+      "region": "SE",
+      "kategorie": "Sport",
+      "beschreibung": "Kreis-Segeberg-Derby in der Regionalliga Nord (16. Spieltag): Der Dorfverein SV Todesfelde empfängt den FC Eintracht Norderstedt.",
+      "draussen": "draußen",
+      "link": "https://www.fotmob.com/teams/145723/overview",
+      "anreise": "DT: kein Bahnanschluss, Busverbindung nicht geprüft · Auto: ca. 45 Min.",
+      "unsicher": "Anstoß nur aus Sportportalen (fotmob, betexplorer: 14 Uhr), nicht beim Verein bestätigt; Eintritt nicht bekannt; Stadionadresse nur als Name"
+    },
+    {
+      "id": "oeffentliche-fuehrung-durch-die-dauerausstellung-museum",
+      "daten": [
+        "2026-11-01",
+        "2026-11-08",
+        "2026-11-15",
+        "2026-11-22",
+        "2026-11-29"
+      ],
+      "zeit": "14:00",
+      "dauer": 60,
+      "titel": "Öffentliche Führung durch die Dauerausstellung – Museum Tuch + Technik",
+      "ort": "Museum Tuch + Technik, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Führung",
+      "beschreibung": "Sonntagsführung durch 2000 Jahre Textilgeschichte – von der Eisenzeit bis zur Industrialisierung, mit großen Maschinen der Tuchherstellung (u. a. ein über 20 m langer Dreikrempelsatz) und einer Maschinenvorführung zum Schluss. Ohne Anmeldung.",
+      "preis": "Führung frei, Museumseintritt 8 €",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/oeffentliche-fuehrung-8-2/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Dauer nicht angegeben, geschätzt"
+    },
+    {
+      "id": "cognito-cagla-turhan-lucian-albu-und-yoko-aoki-posaune",
+      "daten": [
+        "2026-11-03"
+      ],
+      "zeit": "19:30",
+      "ende": "21:00",
+      "titel": "Cognito: Çağla Turhan, Lucian Albu und Yoko Aoki (Posaune, Flöte, Klavier)",
+      "ort": "Kulturwerk am See, Norderstedt",
+      "geo": [
+        53.71242,
+        10.01877
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Kammerkonzert der Reihe „Cognito“ mit jungen Musikerinnen und Musikern – Posaune, Flöte und Klavier; die Posaunistin Çağla Turhan begann ihre Laufbahn am Musikgymnasium in Ankara.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/cognito-konzert-der-jungstudentinnen-der-folkwang-universitaet-der-kuenste-folkwang-junior/",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), weiter per Bus (Verbindung in der HVV-App prüfen) · Auto: ca. 25 Min.",
+      "unsicher": "Programm, Preis und Dauer nicht angegeben, Ende geschätzt; der Kalendereintrag ist teils mit einem älteren Cognito-Konzert vermischt"
+    },
+    {
+      "id": "fraeulein-julie-mit-dominique-horwitz-und-judith-rosmair",
+      "daten": [
+        "2026-11-04"
+      ],
+      "zeit": "20:00",
+      "ende": "21:30",
+      "titel": "„Fräulein Julie“ mit Dominique Horwitz und Judith Rosmair",
+      "ort": "Theater in der Stadthalle, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Bühne",
+      "beschreibung": "Strindbergs naturalistisches Trauerspiel als Gastspiel von Renaissance-Theater Berlin und Euro-Studio Landgraf: Grafentochter Julie und Diener Jean verstricken sich in der Mittsommernacht in ein gefährliches Spiel aus Begehren und Macht.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/fraeulein-julie-2/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Dauer nicht angegeben – Ende 21:30 geschätzt (Einakter, meist ohne Pause); Preis nicht angegeben (Abo-Vorstellung, Karten über das Kulturbüro Neumünster)"
+    },
+    {
+      "id": "verbrechen-hautnah-spurensuche-live-true-crime-podcast-auf",
+      "daten": [
+        "2026-11-06"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "„Verbrechen hautnah: Spurensuche live“ – True-Crime-Podcast auf der Bühne",
+      "ort": "Kulturwerk am See, Norderstedt",
+      "geo": [
+        53.71242,
+        10.01877
+      ],
+      "region": "SE",
+      "kategorie": "Bühne",
+      "beschreibung": "Der True-Crime-Podcast „Verbrechen Hautnah“ geht auf Tour: Das Publikum begleitet die Ermittlungen eines Falls live mitten im Geschehen.",
+      "preis": "ab 29,44 €",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/lisa-eckhart-kaiserin-stasi-die-erste-9/",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), weiter per Bus (Verbindung in der HVV-App prüfen) · Auto: ca. 25 Min.",
+      "unsicher": "Ende geschätzt; Preis aus der Ticketliste von mvp.de"
+    },
+    {
+      "id": "die-insel-von-rebekka-kricheldorf-theater-in-der-stadthalle",
+      "daten": [
+        "2026-11-06"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "„Die Insel“ von Rebekka Kricheldorf",
+      "ort": "Theater in der Stadthalle, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Bühne",
+      "beschreibung": "Schauspiel: Ein Expertenteam soll auf einer abgelegenen Pazifikinsel Laborfleisch vermarkten – und merkt nicht, dass es im Smart House selbst Teil eines Experiments ist; aus Spaß wird zunehmend Bedrohung.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/die-insel/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Ensemble, Preis und Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "historische-stadtfuehrung-durch-die-rolandstadt-bad",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "14:30",
+      "dauer": 90,
+      "titel": "Historische Stadtführung durch die Rolandstadt Bad Bramstedt",
+      "ort": "Rolandstatue, Bad Bramstedt (Treffpunkt)",
+      "geo": [
+        53.91611,
+        9.88471
+      ],
+      "region": "SE",
+      "kategorie": "Führung",
+      "beschreibung": "Stadtführerinnen und Stadtführer in historischer Kleidung zeigen das „Best of Bramstedt“: altes Schlosstorhaus, Roland-Statue und Maria-Magdalenen-Kirche.",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/stadtfuehrung-5/",
+      "anreise": "DT: U1 bis Norderstedt Mitte, weiter mit der AKN A2 bis Bad Bramstedt (ggf. Umstieg), dann ca. 10 Min. Fußweg (geschätzt) · Auto: ca. 45 Min.",
+      "unsicher": "Dauer, Preis und Anmeldung nicht angegeben (Infos beim Tourismusbüro Bad Bramstedt)"
+    },
+    {
+      "id": "hubertusmesse-mit-parforce-und-jagdhornblaesern-maria",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "18:00",
+      "ende": "19:00",
+      "titel": "Hubertusmesse mit Parforce- und Jagdhornbläsern",
+      "ort": "Maria-Magdalenen-Kirche, Bad Bramstedt",
+      "geo": [
+        53.92038,
+        9.88132
+      ],
+      "region": "SE",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Ökumenischer Gottesdienst zum Hubertustag, wesentlich gestaltet von Jägerschaft, Hegering, Parforcehörnern und Jagdhornbläsern – Hornmusik in der Maria-Magdalenen-Kirche am Kirchenbleeck.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/hubertusmesse-14-1/",
+      "anreise": "DT: U1 bis Norderstedt Mitte, weiter mit der AKN A2 bis Bad Bramstedt (ggf. Umstieg), dann ca. 10 Min. Fußweg (geschätzt) · Auto: ca. 45 Min.",
+      "unsicher": "Gottesdienst; Ende geschätzt"
+    },
+    {
+      "id": "malimu-konzert-los-flamenquitos-kulturwerk-am-see",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "Malimu-Konzert: Los Flamenquitos",
+      "ort": "Kulturwerk am See, Norderstedt",
+      "geo": [
+        53.71242,
+        10.01877
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "„Leidenschaft, Rhythmus und pure Lebensfreude“: Die Band Los Flamenquitos steht für mitreißende Live-Musik voller südlicher Wärme und temperamentvoller Energie.",
+      "preis": "ab 23,69 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/los-flamenquitos-malimu-konzert-kulturwerk-am-see-21925110/",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), weiter per Bus (Verbindung in der HVV-App prüfen) · Auto: ca. 25 Min.",
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "solina-cello-ensemble-eine-magische-reise-durch-die-welt",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Solina Cello Ensemble: „Eine magische Reise durch die Welt der Musicals“",
+      "ort": "Bürgerhaus Henstedt-Ulzburg",
+      "geo": [
+        53.79451,
+        9.99008
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Die Cellistinnen Katrin Banhierl und Christina Elsner spielen mit Pianist Michael Gundlach und Saxophonist Dirko Juchem Musical-Hits von „Mamma Mia“ über „Cats“ und „Evita“ bis „Phantom der Oper“ – klassisch-virtuos mit jazzigen Farben.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/solina-cello-ensemble/",
+      "anreise": "DT: U1 bis Norderstedt Mitte, weiter mit der AKN A2 bis Henstedt-Ulzburg (Fußweg nicht geprüft) · Auto: ca. 30 Min.",
+      "unsicher": "Preis und Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "magic-gregorian-night-klang-der-moenche-marienkirche-bad",
+      "daten": [
+        "2026-11-07"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Magic Gregorian Night – Klang der Mönche",
+      "ort": "Marienkirche, Bad Segeberg",
+      "geo": [
+        53.93707,
+        10.3108
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Tournee-Show „Gregorian chants meets pop music“: gregorianischer Mönchsgesang trifft auf Popmusik – in der Marienkirche Bad Segeberg.",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/konzert/magic-gregorian-night-klang-der-moenche-chants-meets-pop-music-bad-segeberg-marienkirche-2026-11-07-tickets-Y2nKHpCnpY",
+      "anreise": "DT: RE ab Hbf bis Bad Oldesloe, weiter mit der Regionalbahn bis Bad Segeberg (zusammen ca. 1 Std., nicht geprüft), dann ca. 10 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Nur aus dem Konzertkalender regioactive (Detailseite nicht abrufbar); Preis und Ende nicht bekannt, Ende geschätzt"
+    },
+    {
+      "id": "6-norderstedter-chorfestival-rathaus-norderstedt",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "15:00",
+      "ende": "17:30",
+      "titel": "6. Norderstedter Chorfestival",
+      "ort": "Rathaus Norderstedt",
+      "geo": [
+        53.70791,
+        9.99371
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Sechste Ausgabe des Chorfestivals der Stadt Norderstedt – ein Sonntagnachmittag mit Chormusik im Rathaus.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/6-norderstedter-chorfestival/",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), ca. 3 Min. Fußweg · Auto: ca. 25 Min.",
+      "unsicher": "Mitwirkende Chöre, Eintritt und Ende nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "balkanfeuer-und-tango-akkordeon-violine-in-der-kreuzkirche",
+      "daten": [
+        "2026-11-08"
+      ],
+      "zeit": "17:00",
+      "ende": "18:30",
+      "titel": "„Balkanfeuer und Tango“ – Akkordeon & Violine in der Kreuzkirche",
+      "ort": "Kreuzkirche, Henstedt-Ulzburg",
+      "geo": [
+        53.78875,
+        9.97893
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Martina Tegtmeyer (Akkordeon) und Jan Baruschke (Violine) reisen durch Gypsy-Musik, osteuropäische Folklore und Tango – vom Csárdás bis zu Astor Piazzolla.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/balkanfeuer-und-tango-ein-musikalisches-feuerwerk-1/",
+      "anreise": "DT: U1 bis Norderstedt Mitte, weiter mit der AKN A2 bis Henstedt-Ulzburg (Fußweg nicht geprüft) · Auto: ca. 30 Min.",
+      "unsicher": "Eintritt und Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "splitter-literarisch-musikalischer-abend-zum-9-november",
+      "daten": [
+        "2026-11-09"
+      ],
+      "zeit": "19:30",
+      "ende": "21:00",
+      "titel": "„Splitter“ – literarisch-musikalischer Abend zum 9. November",
+      "ort": "Kulturwerk am See, Norderstedt",
+      "geo": [
+        53.71242,
+        10.01877
+      ],
+      "region": "SE",
+      "kategorie": "Lesung",
+      "beschreibung": "Literarisch-musikalische Veranstaltung zum Gedenken an die Novemberpogrome 1938 – über Verlust, Erinnerung und Hoffnung.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/kulinarische-weihnachten-im-airport-plaza-advents-brunch/",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), weiter per Bus (Verbindung in der HVV-App prüfen) · Auto: ca. 25 Min.",
+      "unsicher": "Mitwirkende, Eintritt und Ende nicht angegeben (Bildnachweis: Chaverim – Freundschaft mit Israel e. V.); Kalenderseite trägt einen fremden Seitentitel, Inhalt passt"
+    },
+    {
+      "id": "michael-rettig-clovis-michon-klavier-und-cello-theater-in",
+      "daten": [
+        "2026-11-09"
+      ],
+      "zeit": "20:00",
+      "ende": "21:30",
+      "titel": "Michael Rettig & Clovis Michon: Klavier und Cello",
+      "ort": "Theater in der Stadthalle, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "„Bilder der Unendlichkeit“: Zeitgenössische Romantik für Klavier und Violoncello mit Werken und Bearbeitungen von Arvo Pärt, Philip Glass, Max Richter, Silvestrov, Gurdjieff und Bach sowie Eigenkompositionen.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/michael-rettig-clovis-michon/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Dauer nicht angegeben – Ende 21:30 geschätzt, könnte mit Pause später werden; Preis nicht angegeben"
+    },
+    {
+      "id": "musikvortrag-felix-mendelssohn-bartholdy-und-die",
+      "daten": [
+        "2026-11-11"
+      ],
+      "zeit": "19:30",
+      "ende": "21:00",
+      "titel": "Musikvortrag: Felix Mendelssohn Bartholdy und die romantische Sinfonie",
+      "ort": "Kulturwerk am See, Norderstedt",
+      "geo": [
+        53.71242,
+        10.01877
+      ],
+      "region": "SE",
+      "kategorie": "Lesung",
+      "beschreibung": "Malimu-Musikvortrag von Fritz Bultmann über Mendelssohn und die Sinfonie der Romantik.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/raetsel-um-schumanns-ende/",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), weiter per Bus (Verbindung in der HVV-App prüfen) · Auto: ca. 25 Min.",
+      "unsicher": "Eintritt und Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "poetry-slam-deluxe-im-kulturschuppen-kulturschuppen-bad",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "19:00",
+      "ende": "21:15",
+      "titel": "Poetry Slam Deluxe im Kulturschuppen",
+      "ort": "Kulturschuppen, Bad Segeberg",
+      "geo": [
+        53.93693,
+        10.30448
+      ],
+      "region": "SE",
+      "kategorie": "Lesung",
+      "beschreibung": "Erste Ausgabe des Dichterwettstreits in Bad Segeberg: Vier bekannte Slam-Poetinnen und -Poeten treten in zwei Vorrunden und einem Finale mit ernsten und komischen Texten an – das Publikum kürt den Sieg.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/poetry-slam-deluxe/",
+      "anreise": "DT: RE ab Hbf bis Bad Oldesloe, weiter mit der Regionalbahn bis Bad Segeberg (zusammen ca. 1 Std., nicht geprüft), dann ca. 10 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Namen der Poeten, Preis und Ende nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "jimmy-reiter-band-horns-bluesparty-kulturwerk-am-see",
+      "daten": [
+        "2026-11-13"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Jimmy Reiter Band & Horns – Bluesparty",
+      "ort": "Kulturwerk am See, Norderstedt",
+      "geo": [
+        53.71242,
+        10.01877
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Bluesparty des Blueswerk Norderstedt mit der beim German Blues Award ausgezeichneten Jimmy Reiter Band samt Bläsern – laut ORF ein Top-Act des Euro-Blues.",
+      "preis": "37,45 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/jimmy-reiter-band-kulturwerk-am-see-21393193/",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), weiter per Bus (Verbindung in der HVV-App prüfen) · Auto: ca. 25 Min.",
+      "unsicher": "Ende geschätzt; Sitzplätze Kat. 1 laut Eventim zurzeit nicht verfügbar, Tischplätze und Kat. 2 buchbar"
+    },
+    {
+      "id": "chorus-mind-what-the-world-needs-now-kulturwerk-am-see",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "Chorus Mind: „What The World Needs Now“",
+      "ort": "Kulturwerk am See, Norderstedt",
+      "geo": [
+        53.71242,
+        10.01877
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Konzertabend des Norderstedter Pop- und Gospelchors Chorus Mind mit seinem Programm „What The World Needs Now“.",
+      "preis": "16,65–25,45 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/chorus-mind-what-the-world-needs-now-kulturwerk-am-see-22064113/",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), weiter per Bus (Verbindung in der HVV-App prüfen) · Auto: ca. 25 Min.",
+      "unsicher": "Programm im Einzelnen und Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "isabel-varell-die-guten-alten-zeiten-sind-jetzt-theater-in",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "20:00",
+      "ende": "22:15",
+      "titel": "Isabel Varell: „Die guten alten Zeiten sind jetzt“",
+      "ort": "Theater in der Stadthalle, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Bühne",
+      "beschreibung": "Sängerin, Moderatorin und Schauspielerin Isabel Varell erzählt und singt persönlich und humorvoll über Leben, Liebe, Loslassen, Scheitern als Chance und das Älterwerden.",
+      "preis": "18–24 €",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/isabel-varell-1/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Ende geschätzt; Preise aus dem Spielzeitheft 2026/27 (nur freier Verkauf)"
+    },
+    {
+      "id": "kick-me-back-das-mega-techno-revival-festival-holstenhallen",
+      "daten": [
+        "2026-11-14"
+      ],
+      "zeit": "20:00",
+      "dauer": 360,
+      "titel": "Kick Me Back – Das Mega Techno Revival Festival",
+      "ort": "Holstenhallen, Neumünster",
+      "geo": [
+        54.0926,
+        9.97666
+      ],
+      "region": "SE",
+      "kategorie": "Party",
+      "beschreibung": "Indoor-Festival, das den Sound der Techno-, Trance- und Hands-Up-Clubs der späten 90er und frühen 2000er zurückholt – rohe Bässe, euphorische Melodien.",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/kick-me-back-das-mega-techno-revival-festival-holstenhalle-neumuenster-21196468/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), weiter per Bus oder Taxi (Weg nicht geprüft) · Auto: ca. 45 Min.",
+      "unsicher": "Line-up, Preis, Altersgrenze und Ende nicht angegeben, Dauer geschätzt"
+    },
+    {
+      "id": "fuehrung-das-maschinen-1x1-mit-einem-ehemaligen",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "15:00",
+      "dauer": 75,
+      "titel": "Führung „Das Maschinen-1x1“ mit einem ehemaligen Textilarbeiter",
+      "ort": "Museum Tuch + Technik, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Führung",
+      "beschreibung": "Jens Nehlsen, früher selbst Textilarbeiter, führt durch die Stationen einer typischen Neumünsteraner Tuchfabrik – vom Rohstoff Wolle bis zum mechanischen Schützenwebstuhl – und führt Maschinen vor. Treffpunkt Museumskasse, ohne Anmeldung.",
+      "preis": "Museumseintritt 8 €",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/das-maschinen-1x1/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Dauer und ob ein Zuschlag anfällt nicht angegeben"
+    },
+    {
+      "id": "fussball-eintracht-norderstedt-fsv-schoeningen-regionalliga",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "15:30",
+      "ende": "17:25",
+      "titel": "Fußball: Eintracht Norderstedt – FSV Schöningen (Regionalliga Nord)",
+      "ort": "Edmund-Plambeck-Stadion, Norderstedt",
+      "geo": [
+        53.67666,
+        9.97553
+      ],
+      "region": "SE",
+      "kategorie": "Sport",
+      "beschreibung": "Regionalliga-Heimspiel des FC Eintracht Norderstedt (19. Spieltag) gegen den FSV Schöningen.",
+      "draussen": "draußen",
+      "link": "https://www.t-online.de/sport/live-ticker/fussball/regionalliga-nord/sdc_fm-60060/norderstedt-schoeningen-regionalliga-nord-im-liveticker.html",
+      "anreise": "DT: U1 bis Garstedt, ca. 10–15 Min. Fußweg (geschätzt) · Auto: ca. 25 Min.",
+      "unsicher": "Eintrittspreise nicht gefunden"
+    },
+    {
+      "id": "fussball-sv-todesfelde-sv-atlas-delmenhorst-regionalliga",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "15:30",
+      "ende": "17:25",
+      "titel": "Fußball: SV Todesfelde – SV Atlas Delmenhorst (Regionalliga Nord)",
+      "ort": "Joda Sportpark, Todesfelde",
+      "geo": [
+        53.8982,
+        10.18553
+      ],
+      "region": "SE",
+      "kategorie": "Sport",
+      "beschreibung": "Regionalliga-Nord-Heimspiel (19. Spieltag) des Dorfklubs SV Todesfelde aus dem Kreis Segeberg gegen Atlas Delmenhorst.",
+      "draussen": "draußen",
+      "link": "https://www.t-online.de/sport/live-ticker/fussball/regionalliga-nord/sdc_fm-60065/sv-todesfelde-delmenhorst-regionalliga-nord-im-liveticker.html",
+      "anreise": "DT: kein Bahnanschluss, Busverbindung nicht geprüft · Auto: ca. 45 Min.",
+      "unsicher": "betexplorer nennt abweichend So 22.11. 14 Uhr – t-online (Sa 15:30) übernommen; Eintritt nicht bekannt"
+    },
+    {
+      "id": "mozart-messe-c-moll-in-der-marienkirche-marienkirche-bad",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "17:00",
+      "ende": "18:30",
+      "titel": "Mozart: Messe c-Moll in der Marienkirche",
+      "ort": "Marienkirche, Bad Segeberg",
+      "geo": [
+        53.93707,
+        10.3108
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Mozarts c-Moll-Messe als Konzert in der Marienkirche Bad Segeberg.",
+      "draussen": "drinnen",
+      "link": "https://www.regioactive.de/konzert/mozart-messe-c-moll-bad-segeberg-marienkirche-2026-11-21-tickets-d6Rd4XLrtm",
+      "anreise": "DT: RE ab Hbf bis Bad Oldesloe, weiter mit der Regionalbahn bis Bad Segeberg (zusammen ca. 1 Std., nicht geprüft), dann ca. 10 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Nur aus dem Konzertkalender regioactive; Ausführende, Preis und Ende nicht bekannt, Ende geschätzt"
+    },
+    {
+      "id": "ensemble-merlini-konzert-zum-ende-des-kirchenjahres",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "17:00",
+      "ende": "18:30",
+      "titel": "Ensemble Merlini: Konzert zum Ende des Kirchenjahres",
+      "ort": "Kreuzkirche, Henstedt-Ulzburg",
+      "geo": [
+        53.78875,
+        9.97893
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Geistliche Barockmusik über Vergänglichkeit und Hoffnung – Werke von Schein, Rosenmüller, Bruhns, Erlebach u. a., zum Schluss Telemanns Kantate „O selig Vergnügen“ – mit Countertenor Ulf Zastrau, Bass Sönke Tams Freier und Originalinstrumenten (Leitung Petra Bensieck).",
+      "kostenlos": true,
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/konzert-zum-ewigkeitssonntag-mit-dem-ensemble-merlini/",
+      "anreise": "DT: U1 bis Norderstedt Mitte, weiter mit der AKN A2 bis Henstedt-Ulzburg (Fußweg nicht geprüft) · Auto: ca. 30 Min.",
+      "unsicher": "Eintritt frei, Spende erbeten; Seitentitel nennt den Ewigkeitssonntag, Termin laut Seite aber Samstag; Ende geschätzt"
+    },
+    {
+      "id": "impropur-improvisationstheater-kulturwerk-am-see-norderstedt",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "ImproPUR – Improvisationstheater",
+      "ort": "Kulturwerk am See, Norderstedt",
+      "geo": [
+        53.71242,
+        10.01877
+      ],
+      "region": "SE",
+      "kategorie": "Comedy",
+      "beschreibung": "Improtheater-Abend des Norderstedter Theater Pur (Junges Theater Norderstedt e. V.) – alles wird spontan auf der Bühne erfunden.",
+      "preis": "12,34 €, erm. 7,30 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/kulturwerk-am-see-norderstedt-impropur-improvisationstheater-kulturwerk-am-see-21957386/",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), weiter per Bus (Verbindung in der HVV-App prüfen) · Auto: ca. 25 Min.",
+      "unsicher": "Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "gar-nicht-luegen-ist-auch-keine-loesung-comedy-theater",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "„Gar nicht lügen ist auch keine Lösung“ – Comedy-Theater",
+      "ort": "Theater in der Stadthalle, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Comedy",
+      "beschreibung": "Heike Feist und Astrid Kohrs als Dozentinnen Konstanze und Paula im „Volkshochschulkurs“ übers Lügen: von den Zehn Geboten über Doktortitel bis Fake News – und ob Konstanze immer die Wahrheit sagt.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/gar-nicht-luegen-ist-auch-keine-loesung-3/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Preis und Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "nightwash-live-stand-up-comedy-stadthalle-neumuenster",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "NightWash Live – Stand-up-Comedy",
+      "ort": "Stadthalle Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Comedy",
+      "beschreibung": "Das Kult-Comedyformat aus dem Waschsalon auf Tour: bekannte Comedians und Newcomer mit Stand-up am laufenden Band.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/nightwash-live-8-1/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Line-up, Preis und Ende nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "brahms-ein-deutsches-requiem-brahms-ensemble-kiel",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "19:00",
+      "ende": "20:30",
+      "titel": "Brahms: „Ein deutsches Requiem“ – Brahms-Ensemble Kiel",
+      "ort": "Vicelinkirche, Neumünster",
+      "geo": [
+        54.0702,
+        9.98333
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Am Ewigkeitssonntag führt das Brahms-Ensemble Kiel unter Bernhard Emmer Brahms’ Requiem op. 45 in der Fassung mit Klavier auf – mit Chor, Solisten und Harfen-Intermezzi.",
+      "preis": "22,56 €, erm. 18,02 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/j-brahms-requiem-brahms-ensemble-kiel-vicelinkirche-neumuenster-22070354/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg (geschätzt) · Auto: ca. 45 Min.",
+      "unsicher": "Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "u30-poetry-slam-im-theater-neumuenster-theater-in-der",
+      "daten": [
+        "2026-11-23"
+      ],
+      "zeit": "19:00",
+      "dauer": 90,
+      "titel": "U30 Poetry Slam im Theater Neumünster",
+      "ort": "Theater in der Stadthalle, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Lesung",
+      "beschreibung": "Slam auf der Theaterbühne: Poetinnen und Poeten bis 30 Jahre tragen ihre Texte vor, das Publikum entscheidet über den Sieg.",
+      "preis": "5 €",
+      "draussen": "drinnen",
+      "link": "https://www.neumuenster.de/fileadmin/neumuenster.de/media/kultur_und_freizeit/kultur/theater/theaterprogramm_26-27_web.pdf",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Link ist das Spielzeitheft 2026/27 (PDF) der Stadt Neumünster"
+    },
+    {
+      "id": "der-sohn-le-fils-von-florian-zeller-kulturwerk-am-see",
+      "daten": [
+        "2026-11-23"
+      ],
+      "zeit": "19:30",
+      "ende": "21:15",
+      "titel": "„Der Sohn“ (Le Fils) von Florian Zeller",
+      "ort": "Kulturwerk am See, Norderstedt",
+      "geo": [
+        53.71242,
+        10.01877
+      ],
+      "region": "SE",
+      "kategorie": "Bühne",
+      "beschreibung": "Theatergastspiel im Kulturwerk: Florian Zellers Stück „Der Sohn“ (Le Fils) – laut Ticketshop sehr gefragt.",
+      "preis": "28,95–40,95 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/der-sohn-le-fils-kulturwerk-am-see-norderstedt-kulturwerk-am-see-21772137/",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), weiter per Bus (Verbindung in der HVV-App prüfen) · Auto: ca. 25 Min.",
+      "unsicher": "Besetzung und Dauer nicht angegeben, Ende geschätzt (könnte nach 21:30 liegen)"
+    },
+    {
+      "id": "be-fluegelt-ein-konzert-in-wundern-andreas-guestel-julian",
+      "daten": [
+        "2026-11-25"
+      ],
+      "zeit": "19:00",
+      "ende": "21:15",
+      "titel": "Be-Flügelt: „Ein Konzert in Wundern“ – Andreas Güstel & Julian Eilenberger",
+      "ort": "Theater in der Stadthalle, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Klavierabend des Duos Be-Flügelt, der Musik mit persönlichen, lebensbejahenden Geschichten verbindet.",
+      "preis": "22,20–58,50 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/be-fluegelt-tour-ein-konzert-in-wundern-andreas-guestel-julian-eilenberger-theater-in-der-stadthalle-21101257/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "vortrag-was-uebrig-bleibt-klima-klamotten-zur-ausstellung",
+      "daten": [
+        "2026-11-26"
+      ],
+      "zeit": "18:00",
+      "ende": "19:30",
+      "titel": "Vortrag „Was übrig bleibt – Klima & Klamotten“ zur Ausstellung FADENSCHEINIG",
+      "ort": "Museum Tuch + Technik, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Lesung",
+      "beschreibung": "Künstlerin Barbara Otto wirft einen künstlerischen Blick auf unsere Kleidung, Claudia Greifenhahn berichtet von Textilproduktion und Lebensbedingungen in Bangladesch – zu Fast Fashion, fairem Handel und eigenem Konsum.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/was-uebrig-bleibt-klima-klamotten/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Beginn widersprüchlich: Vortragsseite 18 Uhr, Ausstellungsseite 19 Uhr; Anmeldung erbeten (Tel. 04321 5595810); Eintritt nicht angegeben"
+    },
+    {
+      "id": "wahlstedter-weihnachtsdorf-marktplatz-wahlstedt",
+      "daten": [
+        "2026-11-26",
+        "2026-11-27",
+        "2026-11-28",
+        "2026-11-29"
+      ],
+      "zeit": "16:00",
+      "zeiten": {
+        "2026-11-29": "14:00"
+      },
+      "ende": "21:00",
+      "titel": "Wahlstedter Weihnachtsdorf",
+      "ort": "Marktplatz, Wahlstedt",
+      "geo": [
+        53.95302,
+        10.21201
+      ],
+      "region": "SE",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Nostalgisches Weihnachtsdorf mit Sitzhütten, Holzöfen und Feuerkörben, Kunsthandwerk und Winterküche; Fr 17 Uhr wird die Weihnachtstanne mit dem Posaunenchor Bad Segeberg angeleuchtet, Sa 18–21 Uhr Live-Musik.",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/wahlstedter-weihnachtsdorf-5/",
+      "anreise": "DT: umständlich (Bahn bis Bad Segeberg, weiter mit dem Bus; nicht geprüft) · Auto: ca. 45 Min.",
+      "unsicher": "Schlusszeiten nicht angegeben, Ende geschätzt; läuft auch an den folgenden Adventswochenenden (ab Do 3.12.)"
+    },
+    {
+      "id": "advents-markt-im-stadtpark-norderstedt-stadtpark-norderstedt",
+      "daten": [
+        "2026-11-27",
+        "2026-11-28",
+        "2026-11-29"
+      ],
+      "zeit": "Fr 14–21, Sa 11–18 (Kulturwerk-Innenhof bis 20), So 11–18 Uhr",
+      "ende": "21:00",
+      "ganztags": true,
+      "titel": "Advents-Markt im Stadtpark Norderstedt",
+      "ort": "Stadtpark Norderstedt",
+      "geo": [
+        53.71656,
+        10.0174
+      ],
+      "region": "SE",
+      "kategorie": "Markt",
+      "beschreibung": "Rund 70 Stände mit Kunsthandwerk – Schmuck, Keramik, Textilien, Holz, Weihnachtsdeko – rund ums Kulturwerk am See, dazu Glühwein, winterliche Speisen und Musik von Musikverein und Musikschule Norderstedt.",
+      "kostenlos": true,
+      "draussen": "beides",
+      "link": "https://www.festivalsindeutschland.de/festival/advents-markt-stadtpark-norderstedt",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), weiter per Bus (Verbindung in der HVV-App prüfen) · Auto: ca. 25 Min.",
+      "unsicher": "Nur aus Veranstaltungsportalen (festivalsindeutschland, messen.de, freizeitmonster), nicht beim Veranstalter geprüft; Samstagsschluss uneinheitlich (18, 20 oder 21 Uhr)"
+    },
+    {
+      "id": "gospelkonzert-in-der-maria-magdalenen-kirche-maria",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "Gospelkonzert in der Maria-Magdalenen-Kirche",
+      "ort": "Maria-Magdalenen-Kirche, Bad Bramstedt",
+      "geo": [
+        53.92038,
+        9.88132
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Neue und bekannte Gospelsongs, Grooves und afrikanische Klänge unter Leitung von Kirchenmusikdirektor Ulf Lauenroth (mit Chris Merkel, Klavier, und Udo Janssen, Schlagzeug); in der Pause Sekt, O-Saft und Brezeln.",
+      "preis": "10 €, Kinder bis 14 frei",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/gospelkonzert-26/",
+      "anreise": "DT: U1 bis Norderstedt Mitte, weiter mit der AKN A2 bis Bad Bramstedt (ggf. Umstieg), dann ca. 10 Min. Fußweg (geschätzt) · Auto: ca. 45 Min.",
+      "unsicher": "Ende geschätzt; Vorverkauf ab 2.11. (Kirchenbüro, Amt zum Glück, EDEKA Möller)"
+    },
+    {
+      "id": "puccini-la-boheme-theater-in-der-stadthalle-neumuenster",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Puccini: „La Bohème“",
+      "ort": "Theater in der Stadthalle, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Bühne",
+      "beschreibung": "Puccinis Oper über die Liebe des Dichters Rodolfo zur todkranken Mimì im Pariser Künstlermilieu – Gastspiel im Theater Neumünster.",
+      "draussen": "drinnen",
+      "link": "https://www.neumuenster.de/fileadmin/neumuenster.de/media/kultur_und_freizeit/kultur/theater/theaterprogramm_26-27_web.pdf",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Ensemble, Preis und Dauer nicht angegeben, Ende geschätzt; Link ist das Spielzeitheft 2026/27 (PDF)"
+    },
+    {
+      "id": "weihnachtsmannwecken-bad-segeberg-schaltet-die",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "16:30",
+      "ende": "18:00",
+      "titel": "Weihnachtsmannwecken – Bad Segeberg schaltet die Weihnachtsbeleuchtung ein",
+      "ort": "Marktplatz, Bad Segeberg",
+      "geo": [
+        53.93591,
+        10.30964
+      ],
+      "region": "SE",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Alljährlicher Auftakt der Adventszeit in der Innenstadt: Die Freiwillige Feuerwehr rückt mit der Drehleiter an, der Weihnachtsmann wird geweckt und die Weihnachtsbeleuchtung der Stadt eingeschaltet.",
+      "draussen": "draußen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/weihnachtsmannwecken-6/",
+      "anreise": "DT: RE ab Hbf bis Bad Oldesloe, weiter mit der Regionalbahn bis Bad Segeberg (zusammen ca. 1 Std., nicht geprüft), dann ca. 15 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Ende und Eintritt nicht angegeben, Ende geschätzt; eher Familienpublikum"
+    },
+    {
+      "id": "die-zimtschnecken-swingelingeling-buergerhaus-henstedt",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Die Zimtschnecken: „Swingelingeling“",
+      "ort": "Bürgerhaus Henstedt-Ulzburg",
+      "geo": [
+        53.79451,
+        9.99008
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Das Hamburger Damen-Gesangstrio (Victoria Fleer, Anne Weber, Sörin Bergmann) mit einem heiteren, swingenden Weihnachtsprogramm – von Schnee und Weihnachtsmann bis zur Bescherung, jeweils mit humorvollem Dreh.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/die-zimtschnecken-swingelingeling-4/",
+      "anreise": "DT: U1 bis Norderstedt Mitte, weiter mit der AKN A2 bis Henstedt-Ulzburg (Fußweg nicht geprüft) · Auto: ca. 30 Min.",
+      "unsicher": "Preis und Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "bettina-tietjen-tietjen-sucht-das-weite-lesung-rathaus",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "20:00",
+      "ende": "21:45",
+      "titel": "Bettina Tietjen: „Tietjen sucht das Weite“ – Lesung",
+      "ort": "Rathaus Kaltenkirchen (Ratssaal)",
+      "geo": [
+        53.83719,
+        9.96143
+      ],
+      "region": "SE",
+      "kategorie": "Lesung",
+      "beschreibung": "Die NDR-Moderatorin erzählt humorvoll von ihren Campingreisen – Australien, Alpen, Bretagne – mit Einblicken ins Camperleben und einfachen Kochtipps für unterwegs.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/bettina-tietjen-tietjen-sucht-das-weite/",
+      "anreise": "DT: AKN A1 ab Eidelstedt bzw. U1 bis Norderstedt Mitte + AKN A2 bis Kaltenkirchen (ca. 1 Std. ab Wandsbek), dann Fußweg (nicht geprüft) · Auto: ca. 35 Min.",
+      "unsicher": "Preis und Dauer nicht angegeben, Ende geschätzt"
+    },
+    {
+      "id": "henstedter-weihnachtsmarkt-kisdorfer-strasse-12-henstedt",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "11:00–18:00",
+      "ende": "18:00",
+      "titel": "Henstedter Weihnachtsmarkt",
+      "ort": "Kisdorfer Straße 12, Henstedt-Ulzburg",
+      "geo": [
+        53.79,
+        10.00726
+      ],
+      "region": "SE",
+      "kategorie": "Markt",
+      "beschreibung": "Eintägiger Weihnachtsmarkt im Ortsteil Henstedt am ersten Adventssonntag.",
+      "draussen": "draußen",
+      "link": "https://freizeitmonster.de/blog/weihnachtsmaerkte-henstedt-ulzburg",
+      "anreise": "DT: U1 bis Norderstedt Mitte, weiter mit der AKN A2 bis Henstedt-Ulzburg, dann Bus (nicht geprüft) · Auto: ca. 30 Min.",
+      "unsicher": "Nur aus dem Freizeitportal freizeitmonster (Liste 2026), nicht beim Veranstalter geprüft; Programm unbekannt"
+    },
+    {
+      "id": "das-kriminal-dinner-und-raus-bist-du-best-western-hotel",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "17:00",
+      "ende": "21:00",
+      "titel": "Das Kriminal Dinner: „Und raus bist du“",
+      "ort": "Best Western Hotel Prisma, Neumünster",
+      "geo": [
+        54.08976,
+        9.97751
+      ],
+      "region": "SE",
+      "kategorie": "Bühne",
+      "beschreibung": "Krimi-Show zum Mitraten im Hotel: Die Gäste rätseln beim Dinner mit, wer der Täter ist.",
+      "preis": "92,90 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/das-kriminal-dinner-und-raus-bist-du-best-western-hotel-prisma-21487650/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), weiter per Bus oder Taxi (Weg nicht geprüft) · Auto: ca. 45 Min.",
+      "unsicher": "Ende geschätzt; ob ein Menü im Preis enthalten ist, steht nicht auf der Ticketseite"
+    },
+    {
+      "id": "philipp-poisel-adventskonzerte-2026-solo-theater-in-der",
+      "daten": [
+        "2026-11-29"
+      ],
+      "zeit": "19:00",
+      "ende": "21:15",
+      "titel": "Philipp Poisel – Adventskonzerte 2026 (Solo)",
+      "ort": "Theater in der Stadthalle, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Konzert",
+      "beschreibung": "Der Singer-Songwriter spielt seine Advents-Soloabende (mit einem Bandkollegen) in Kirchen, Kinos und Theatern – 2025 waren alle 32 Abende ausverkauft.",
+      "preis": "74,40 €",
+      "draussen": "drinnen",
+      "link": "https://www.eventim.de/event/philipp-poisel-adventskonzerte-2026-solo-theater-in-der-stadthalle-21060347/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "ausverkauft": true,
+      "unsicher": "Eventim: alle Kategorien „zurzeit nicht verfügbar“ (Kontingent erschöpft, Warteliste) – nicht ausdrücklich ausverkauft; Ende geschätzt"
+    },
+    {
+      "id": "das-abschiedsdinner-komoedie-im-buergerhaus-trittau-theater",
+      "daten": [
+        "2026-10-31",
+        "2026-11-01",
+        "2026-11-07",
+        "2026-11-08",
+        "2026-11-14",
+        "2026-11-15"
+      ],
+      "zeit": "19:00",
+      "ende": "21:30",
+      "titel": "„Das Abschiedsdinner“ – Komödie im Bürgerhaus Trittau",
+      "ort": "Theater im Bürgerhaus, Trittau",
+      "geo": [
+        53.60883,
+        10.40837
+      ],
+      "region": "AHR",
+      "kategorie": "Bühne",
+      "beschreibung": "Komödie von Matthieu Delaporte und Alexandre de la Patellière („Der Vorname“): Ein Paar will lästige alte Freunde mit einem letzten, perfekten Abschiedsessen loswerden – der Abend gerät natürlich aus dem Ruder.",
+      "draussen": "drinnen",
+      "link": "https://www.trittau.de/regional/veranstaltungen/das-abschiedsdinner-900006097-27160.html",
+      "anreise": "DT: kein Bahnanschluss, Bus ab Hamburg (Verbindung in der HVV-App prüfen) · Auto: ca. 25 Min.",
+      "unsicher": "Nur aus dem Veranstaltungskalender der Gemeinde Trittau; Preis und Ensemble nicht angegeben"
+    },
+    {
+      "id": "pub-quiz-abend-halloween-special-in-der-wassermuehle",
+      "daten": [
+        "2026-10-31"
+      ],
+      "zeit": "19:00",
+      "ende": "22:00",
+      "titel": "Pub-Quiz-Abend – Halloween Special in der Wassermühle",
+      "ort": "Kulturzentrum Wassermühle, Trittau",
+      "geo": [
+        53.60719,
+        10.41593
+      ],
+      "region": "AHR",
+      "kategorie": "Erlebnis",
+      "beschreibung": "Kneipenquiz zu Halloween im Kulturzentrum in der alten Wassermühle am Mühlenteich.",
+      "draussen": "drinnen",
+      "link": "https://www.trittau.de/regional/veranstaltungen/pub-quiz-abend-halloween-special-900006120-27160.html",
+      "anreise": "DT: kein Bahnanschluss, Bus ab Hamburg (Verbindung in der HVV-App prüfen) · Auto: ca. 25 Min.",
+      "unsicher": "Nur Titel und Beginn im Gemeindekalender; Ende geschätzt, Preis und Anmeldung unbekannt"
     }
   ],
   "laufend": [
@@ -16893,6 +18763,164 @@
       "draussen": "draußen",
       "link": "https://freizeitmonster.de/aktivitaeten/veranstaltungen/adventsmarkt-auf-dem-rondeel-2026-323481",
       "anreise": "DT: RB81 (ab Hbf, Hasselbrook oder Tonndorf) bzw. RE8/RE80 (ab Hbf) bis Ahrensburg, dann ca. 6 Min. Fußweg · Auto: ca. 20 Min."
+    },
+    {
+      "id": "ausstellung-shifting-landscapes-in-der-drostei-drostei",
+      "von": "2026-10-31",
+      "bis": "2026-11-08",
+      "zeit": "Do–So ab 11 Uhr",
+      "titel": "Ausstellung „Shifting Landscapes“ in der Drostei",
+      "ort": "Drostei, Pinneberg",
+      "geo": [
+        53.66091,
+        9.79668
+      ],
+      "region": "PI",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Drei Blicke auf Landschaft: Gemälde aus der NDR-Kunstsammlung (u. a. Overbeck, Janssen, Fußmann, Grass), abstrakte Bilder von Carole Kohler mit AR-Animationen per QR-Code und kreisrunde Satellitenbild-Fotografien von Rafael Cardenas.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/shifting-landscapes/",
+      "anreise": "DT: S3 bis Pinneberg (ab Hbf ca. 30 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 35 Min.",
+      "unsicher": "Schließzeit und Eintritt nicht angegeben; das Ende am 8.11. ergibt sich nur aus der Terminliste"
+    },
+    {
+      "id": "sonderausstellung-ritter-burgen-schoene-fraeulein-im",
+      "von": "2026-10-31",
+      "bis": "2026-12-30",
+      "zeit": "Di–So ab 14 Uhr",
+      "titel": "Sonderausstellung „Ritter, Burgen, schöne Fräulein“ im Detlefsen-Museum",
+      "ort": "Detlefsen-Museum, Glückstadt",
+      "geo": [
+        53.78897,
+        9.42193
+      ],
+      "region": "PI",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Wie Mittelalter-Bilder seit 200 Jahren Spiel und Popkultur prägen – von Holzschwert, Zinnfigur und Burgmodell über Abenteuerromane, Comics und Filme bis zur Fantasy, samt Blick auf Rollenbilder; im Renaissance-Palais am Fleth.",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/ritter-burgen-schoene-fraeulein/",
+      "anreise": "DT: Regionalbahn (RB61) ab Hbf bis Glückstadt (ca. 45 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 55 Min.",
+      "unsicher": "Schließzeit und Eintritt nicht angegeben"
+    },
+    {
+      "id": "pinneberger-weihnachtsdorf-drosteiplatz-pinneberg",
+      "von": "2026-11-25",
+      "bis": "2026-12-23",
+      "zeit": "So–Mi 12–21, Do–Sa 12–22 Uhr",
+      "titel": "Pinneberger Weihnachtsdorf",
+      "ort": "Drosteiplatz, Pinneberg",
+      "geo": [
+        53.66159,
+        9.79663
+      ],
+      "region": "PI",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Hüttendorf mit rund 40 Holzhütten auf dem Drosteiplatz und im Baumhain an der Bismarckstraße: Kunsthandwerk, regionales Essen, Glühwein und eine Kulturbühne.",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.festivalsindeutschland.de/festival/pinneberger-weihnachtsdorf",
+      "anreise": "DT: S3 bis Pinneberg (ab Hbf ca. 30 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 35 Min.",
+      "unsicher": "Zeitraum nur laut Freizeitportalen (festivalsindeutschland.de, freizeitmonster.de), Veranstaltersite fuer-pinneberg.de nicht abrufbar; Öffnungszeiten evtl. Stand Vorjahr"
+    },
+    {
+      "id": "lichtermarkt-elmshorn-alter-markt-elmshorn",
+      "von": "2026-11-25",
+      "bis": "2026-12-24",
+      "zeit": "Mo–Sa 11–21, So 14–20 Uhr (24.12. 10–14 Uhr)",
+      "titel": "Lichtermarkt Elmshorn",
+      "ort": "Alter Markt, Elmshorn",
+      "geo": [
+        53.75277,
+        9.65267
+      ],
+      "region": "PI",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Weihnachtsmarkt rund um St. Nikolai mit Tausenden Lichtern in den Bäumen, Holzbuden mit Kunsthandwerk und regionalen Produkten, Bühnenmusik und nostalgischem Karussell.",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.festivalsindeutschland.de/festival/lichtermarkt-elmshorn",
+      "anreise": "DT: Regionalbahn (RB61/RB71) ab Hbf bis Elmshorn (ca. 30 Min.), dann ca. 10 Min. Fußweg · Auto: ca. 40 Min.",
+      "unsicher": "Start uneinheitlich: festivalsindeutschland.de 25.11., freizeitmonster.de 23.11.; vom Stadtmarketing nicht bestätigt (Seite nicht abrufbar); Öffnungszeiten evtl. Stand Vorjahr"
+    },
+    {
+      "id": "neumuensteraner-weihnachtsmarkt-mit-eisbahn-grossflecken",
+      "von": "2026-11-19",
+      "bis": "2026-12-23",
+      "zeit": "Mo–Mi 11–20:30, Do–Sa 11–21, So 12–20:30 Uhr",
+      "titel": "Neumünsteraner Weihnachtsmarkt mit Eisbahn",
+      "ort": "Großflecken, Neumünster",
+      "geo": [
+        54.07225,
+        9.98626
+      ],
+      "region": "SE",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Weihnachtsmarkt mit Holzbuden, Weihnachtsdorf mit Feuerkörben, Christbaum und einer 375 m² großen Kunsteisbahn (Eisstockschießen, Eisprinzessin-Shows am Wochenende).",
+      "preis": "Markt frei; Eisbahn 4 € für 2 Std., Schlittschuhverleih 3 €",
+      "draussen": "draußen",
+      "link": "https://www.festivalsindeutschland.de/festival/weihnachtsmarkt-eisvergnuegen-neumuenster",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 5–10 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Zeitraum 2026 nur aus Veranstaltungsportal (festivalsindeutschland, „bestätigt“); Öffnungszeiten stimmen mit 2025 überein (bahn.de: 20.11.–23.12.2025); Eröffnungsuhrzeit am 19.11. nicht angegeben"
+    },
+    {
+      "id": "norderstedter-weihnachtsmarkt-wintervergnuegen-rathausallee",
+      "von": "2026-11-18",
+      "bis": "2026-12-23",
+      "zeit": "täglich; Zeiten noch nicht veröffentlicht (laut Portal Mo–Do ca. 14–21 Uhr, Fr–So länger)",
+      "titel": "Norderstedter Weihnachtsmarkt „Wintervergnügen“",
+      "ort": "Rathausallee, Norderstedt",
+      "geo": [
+        53.70661,
+        9.99193
+      ],
+      "region": "SE",
+      "kategorie": "Fest & Saisonal",
+      "beschreibung": "Nachhaltiger Weihnachtsmarkt in Norderstedt-Mitte mit Holzhütten, Bio-Glühwein, Punsch und regionalen/fairen Produkten, Kinderkarussell, Live-Musik an vielen Abenden und After-Work-Glühwein.",
+      "kostenlos": true,
+      "draussen": "draußen",
+      "link": "https://www.festivalsindeutschland.de/festival/wintervergnuegen-norderstedt",
+      "anreise": "DT: U1 bis Norderstedt Mitte (ca. 50 Min. ab Wandsbek Markt), wenige Min. Fußweg · Auto: ca. 25 Min.",
+      "unsicher": "Zeitraum nur aus Portalen (festivalsindeutschland, freizeitmonster), nicht beim Veranstalter geprüft; Öffnungszeiten unklar; Veranstalterangaben widersprüchlich (Bergmann-Gruppe bzw. bjp gmbh)"
+    },
+    {
+      "id": "installation-faeden-der-erinnerung-von-anja-kowalik-museum",
+      "von": "2026-11-01",
+      "bis": "2027-04-11",
+      "zeit": "Di–Fr 9–17, Sa/So 10–17 Uhr (Mo geschlossen)",
+      "titel": "Installation „Fäden der Erinnerung“ von Anja Kowalik",
+      "ort": "Museum Tuch + Technik, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Wachsendes Geflecht aus Schurwolle – gewebt, geknotet, verbunden –, das Kunst mit der Textilgeschichte Neumünsters verknüpft; Bürgerinnen und Bürger haben es mit eigenen Fäden zu einem Erinnerungsraum ergänzt.",
+      "preis": "Museumseintritt 8 €",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/faeden-der-erinnerung/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Schlusszeit 17 Uhr aus dem Museumsflyer (Aug.–Okt.); Kalender nennt auch Sa 31.10., laut Flyer ist das Museum am Reformationstag aber geschlossen"
+    },
+    {
+      "id": "ausstellung-fadenscheinig-fast-fashion-im-fokus-museum-tuch",
+      "von": "2026-11-06",
+      "bis": "2027-04-11",
+      "zeit": "Di–Fr 9–17, Sa/So 10–17 Uhr (Mo geschlossen)",
+      "titel": "Ausstellung „FADENSCHEINIG – Fast Fashion im Fokus“",
+      "ort": "Museum Tuch + Technik, Neumünster",
+      "geo": [
+        54.07169,
+        9.98129
+      ],
+      "region": "SE",
+      "kategorie": "Ausstellung",
+      "beschreibung": "Kunst und Information zu den Folgen von Fast Fashion – Arbeitsbedingungen, Umweltverschmutzung, Textilmüll in Ghana und Chile – mit Web- und Filzarbeiten, Objekten aus alten Schuhen, Fotos und Jeans-Upcycling von Schülerinnen und Schülern.",
+      "preis": "Museumseintritt 8 €",
+      "draussen": "drinnen",
+      "link": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungskalender/fadenscheinig/",
+      "anreise": "DT: RE ab Hbf bis Neumünster (ca. 40 Min.), dann ca. 10–15 Min. Fußweg · Auto: ca. 45 Min.",
+      "unsicher": "Eröffnungstermin/Vernissage nicht angegeben; Schlusszeit 17 Uhr aus dem Museumsflyer"
     }
   ],
   "immer": [

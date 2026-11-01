@@ -11,12 +11,17 @@ export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ZEICHEN[c])
 export const anzahl = (n, eins, viele) => `${n} ${n === 1 ? eins : viele}`;
 
 /**
- * Die Regionen der Termine. ONL ist keine Gegend, sondern „Online & TV“:
- * Live-Events zum Zuschauen (Stream, Fernsehen) – ohne Ort, ohne Anreise.
+ * Die Regionen der Termine. Das Umland reicht so weit, wie man von zuhause
+ * (Wandsbek) in gut einer Stunde mit dem Auto kommt – dazu Hohwacht, Wismar
+ * und Hannover. ONL ist keine Gegend, sondern „Online & TV“: Live-Events zum
+ * Zuschauen (Stream, Fernsehen) – ohne Ort, ohne Anreise.
  */
 export const REGIONEN = {
   HH: 'Hamburg',
-  AHR: 'Ahrensburg',
+  AHR: 'Ahrensburg & Stormarn',
+  SE: 'Norderstedt & Segeberg',
+  PI: 'Pinneberg & Elmshorn',
+  RZ: 'Herzogtum Lauenburg',
   LUE: 'Lübeck & Ostsee',
   LG: 'Lüneburg & Heide',
   STD: 'Stade & Altes Land',

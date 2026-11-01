@@ -32,8 +32,9 @@ const zahlOben = (await page.locator('#zaehler').innerText()).match(/^\d+/)[0];
 check(await fuss() === `${zahlOben} Termine zeigen`, `unten „${zahlOben} Termine zeigen“ – dieselbe Zahl wie oben in der Liste`);
 check(await page.locator('#blatt [data-aktion="blatt-zuruecksetzen"]').isDisabled(), 'ohne Filter ist „Zurücksetzen“ aus');
 const regionen = await page.$$eval('#f-region option', (os) => os.map((o) => o.value));
-check(regionen.includes('AHR') && !regionen.includes('ONL') && (await page.locator('#f-region option[value="AHR"]').innerText()) === 'Ahrensburg',
-  'die Regionen: mit Ahrensburg, ohne „Online & TV“ – das ist eine Art, kein Ort');
+check(regionen.includes('AHR') && !regionen.includes('ONL') && (await page.locator('#f-region option[value="AHR"]').innerText()) === 'Ahrensburg & Stormarn'
+  && ['SE', 'PI', 'RZ'].every((r) => regionen.includes(r)),
+  'die Regionen: mit Ahrensburg & Stormarn und dem Umland bis gut eine Stunde, ohne „Online & TV“ – das ist eine Art, kein Ort');
 check(await querScroll() <= 0, 'mit offenem Blatt scrollt nichts quer (390 px)');
 
 // --- Wahl gilt sofort, der Fokus bleibt

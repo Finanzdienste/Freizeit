@@ -9,7 +9,8 @@
 import { whatsappText, kalenderLink, wannText, icsText } from '../js/teilen.js';
 import { oeffne, IPHONE, DI, SA } from './hilfe.mjs';
 
-const { page, check, ende } = await oeffne({ tag: '2026-11-02' });
+const A = await oeffne({ tag: '2026-11-02' });
+const { page, check, ende } = A;
 
 // --- Bausteine
 const termin = {
@@ -33,6 +34,7 @@ check(kalenderLink({ ...termin, datum: null }) === null, 'ohne Datum kein Kalend
 check(wannText({ von: '2026-11-02', bis: '2026-11-08', zeit: 'täglich 10–18' }) === '2.11.–8.11.2026: täglich 10–18', 'Wochenangebot: Zeitraum und Zeiten');
 
 // --- Knöpfe auf den Karten
+await A.zeigeTag(DI);
 const karte = page.locator(`#tag-${DI} .karte`, { hasText: 'Theater früh' });
 const wa = await karte.locator('a', { hasText: 'WhatsApp' }).getAttribute('href');
 check(wa.startsWith('https://wa.me/?text='), 'WhatsApp-Knopf zeigt auf wa.me');
@@ -43,8 +45,7 @@ const kalKarte = new URL(await karte.locator('a', { hasText: 'Kalender' }).getAt
 check(kalKarte.searchParams.get('dates') === '20261103T190000/20261103T210000', 'Kalender-Knopf der Karte mit geschätztem Ende');
 check(await karte.locator('a', { hasText: 'WhatsApp' }).getAttribute('target') === '_blank', 'Links öffnen außerhalb der App');
 
-// Ideen haben kein Datum: statt Kalender und WhatsApp gibt es „Einplanen“.
-await page.click('[data-reiter="ideen"]');
+// Ideen („Was immer geht“, unten im Programm) haben kein Datum: statt Kalender und WhatsApp gibt es „Einplanen“.
 await page.locator('details[data-kat="natur"] > summary').click();
 const strand = page.locator('details[data-kat="natur"] .karte', { hasText: 'Elbstrand' });
 check(await strand.locator('a', { hasText: 'Kalender' }).count() === 0 && await strand.locator('[data-aktion="planen"]').count() === 1,
@@ -74,6 +75,7 @@ check(icsText({ ...termin, titel: 'A; B, C' }).includes('SUMMARY:A\\; B\\, C'), 
 check(icsText({ ...termin, ganztags: true, datum: SA }).includes('DTSTART;VALUE=DATE:20261107'), '.ics: Ganztägiges als ganzer Tag');
 
 const iphone = await oeffne({ tag: '2026-11-02', ua: IPHONE, browser: page.context().browser() });
+await iphone.zeigeTag(DI);
 const kalIphone = iphone.page.locator(`#tag-${DI} .karte`, { hasText: 'Theater früh' }).locator('a', { hasText: 'Kalender' });
 const href = await kalIphone.getAttribute('href');
 check(href.startsWith('data:text/calendar') && await kalIphone.getAttribute('download') === 'termin.ics', 'auf dem iPhone: der Kalender-Knopf liefert eine .ics-Datei');

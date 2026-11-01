@@ -1,8 +1,8 @@
 # Freizeit
 
 Was in Hamburg und Umgebung los ist – die nächsten gut fünf Wochen, mit den
-Konzerten von Tobis Lieblingskünstlern mittendrin, als Liste, Monat, Woche und Tag und auf der
-Karte –, dazu ein Katalog mit Ideen für alles ohne Termin, sortiert danach,
+Konzerten von Tobis Lieblingskünstlern mittendrin, als Tag, Woche und Monat und auf der
+Karte –, dazu unten im Programm „Was immer geht“: Ideen für alles ohne Termin, sortiert danach,
 was eine Aktivität bringt (Flow, Bewegung, Erholung, Produktiv). Und
 gemeinsam geplant: Tobi schickt seinen Leuten einen Link, jeder hakt an,
 worauf er Bock hat – mit Tobi oder allein/mit anderen –, und Tobi sieht in
@@ -12,23 +12,24 @@ worauf er Bock hat – mit Tobi oder allein/mit anderen –, und Tobi sieht in
 (Android: in Chrome öffnen, Menü ⋮ → „App installieren“; iPhone: in Safari
 öffnen, Teilen → „Zum Home-Bildschirm“).
 
-Fünf Reiter unten – welche davon dort stehen, wählt man unter Einstellungen → **Reiter unten**:
+Vier Reiter unten – welche davon dort stehen, wählt man unter Einstellungen → **Reiter unten**:
 
 | Reiter | Inhalt |
 | --- | --- |
-| **Programm** | Vier Ansichten, der gewählte Tag gilt in allen: **Liste** – Woche für Woche, oben die Tagesleiste (sieben Tage mit der Zahl der Termine und Punkten, wer Bock hat; ein Tipp springt hin), eingeklappt „Diese Woche“ (Highlights und Infos), dann Tag für Tag nach Uhrzeit (Eingeplantes oben am Tag), was gerade läuft, Hinweise; **Monat** – das Blatt mit der Zahl der Termine je Tag und Punkten, wer Bock hat; **Woche** – 7 bis 24 Uhr mit den belegten Zeiten des Gastgebers und Chips für Haken, Treffer und Eingeplantes; **Tag** – Zeitstreifen und alle Termine. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler und Eingeplantes |
+| **Programm** | Drei Ansichten, der gewählte Tag gilt in allen; blättern mit ‹ ›, „Heute“ oder Wischen. **Tag** (Vorgabe) – oben die Tagesleiste (die sieben Tage der Woche mit der Zahl der Termine und Punkten, wer Bock hat; ein Tipp wählt den Tag), dann Wetter, Feiertag, Tipp und 21:30-Hinweis, „Deine Zeit“ (Zeitstreifen 7–24 Uhr: belegt schraffiert, Haken als Marker), Eingeplantes und alle Termine nach Tageszeit (Den ganzen Tag, Vormittag, Nachmittag, Abend), zuletzt „Läuft heute“; **Woche** – eine Karte je Tag mit Wetter, kleinem Zeitstreifen, Zahl der Termine, Haken, Eingeplantem und Konzerten der eigenen Künstler, dem Tipp; dazu „Diese Woche“ (Highlights, Gut zu wissen), „Läuft diese Woche“ und die Hinweise; **Monat** – das Blatt mit Zahlen, Bock-Punkten, ♫ und Feiertagen, ein Tipp wählt den Tag (darunter seine Karte), ein zweiter öffnet ihn; dazu die Konzerte der eigenen Künstler im Monat. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler und Eingeplantes. Ganz unten, in allen drei Ansichten: **Was immer geht** – alles ohne Termin: Eingeplantes, „Wollen wir mal“ (Ideen mit Bock), „Tut dir gut“, eigene Ideen, der Katalog nach Kategorien; mit eigenem Filter (Wirkung, Rahmen) |
 | **Karte** | OpenStreetMap, ein Marker je Ort (nahe zu Haufen zusammengefasst), oben der Zeitraum (Heute bis Alles) und derselbe Filter wie im Programm, dazu „Nur mit Bock“ und „Orte aus Ideen zeigen“ |
-| **Ideen** | Alles ohne Termin: Eingeplantes, „Wollen wir mal“ (Ideen mit Bock), „Tut dir gut“, eigene Ideen, der Katalog nach Kategorien; Filter nach Wirkung und Rahmen |
 | **Wir** | Der gemeinsame Plan: oben die Leute, eine Zeile Stand und – beim Gastgeber – „Einladen“. Beim Gastgeber der Überblick: Zusammen, Wollen mit dir, Ohne dich, Pro Person, Deine Haken. Bei den Eingeladenen: Du und Tobi, Tobi hat Bock auf, Deine Haken. Leere Abschnitte stehen nicht da. Ohne Plan die eigene Bock-Liste und der Weg in einen Plan |
-| **Einstellungen** | Der Reiter ganz rechts, immer da (Adresse `#einstellungen`): **Reiter unten** (Programm, Karte, Ideen, Wir je an oder aus), **Mein Standort**, **Mitteilungen** (nur der Gastgeber), **Gemeinsamer Plan** (Abgleich, Name ändern, Weiteres Gerät, So geht's, Verlassen bzw. Auflösen), **App** (Installieren, Stand des Programms und des Katalogs, Hinweise zu den Daten) |
+| **Einstellungen** | Der Reiter ganz rechts, immer da (Adresse `#einstellungen`): **Reiter unten** (Programm, Karte, Wir je an oder aus), **Mein Standort**, **Mitteilungen** (nur der Gastgeber), **Gemeinsamer Plan** (Abgleich, Name ändern, Weiteres Gerät, So geht's, Verlassen bzw. Auflösen), **App** (Installieren, Stand des Programms und des Katalogs, Hinweise zu den Daten) |
 
-**Reiter unten:** Programm, Karte, Ideen und Wir lassen sich einzeln ausblenden; Einstellungen bleibt immer, und einer der vier bleibt an (sein Schalter sagt dann „Einer bleibt immer an“). Die Wahl bleibt auf dem Gerät (ein Stand von vorher: alle an). Die App öffnet mit dem ersten Reiter, der an ist – der hat als einziger keine `#`-Adresse. Ausgeblendetes bleibt erreichbar: über `#programm`, `#karte`, `#ideen`, `#wir`, einen Einladungs- oder Gerätelink, eine Mitteilung oder einen Sprung aus einer Karte; unten ist dann kein Reiter markiert. Der Punkt für neue Haken gehört zu „Wir“ – ist der Reiter aus, gibt es ihn nicht. Mit fünf Reitern ist die Schrift der Leiste etwas kleiner (11 px, unter 375 px Breite 10,5 px), damit „Einstellungen“ ganz dasteht.
+**Reiter unten:** Programm, Karte und Wir lassen sich einzeln ausblenden; Einstellungen bleibt immer, und einer der drei bleibt an (sein Schalter sagt dann „Einer bleibt immer an“). Die Wahl bleibt auf dem Gerät (ein Stand von vorher: alle an; ein ausgeblendeter Reiter „Ideen“ aus v18 und früher ist ohne Wirkung). Die App öffnet mit dem ersten Reiter, der an ist – der hat als einziger keine `#`-Adresse. Ausgeblendetes bleibt erreichbar: über `#programm`, `#karte`, `#wir`, einen Einladungs- oder Gerätelink, eine Mitteilung oder einen Sprung aus einer Karte; unten ist dann kein Reiter markiert. `#ideen` (alte Lesezeichen) öffnet das Programm bei „Was immer geht“. Der Punkt für neue Haken gehört zu „Wir“ – ist der Reiter aus, gibt es ihn nicht. Jeder Reiter ist mindestens so breit wie seine Beschriftung – auch mit einer breiten Systemschrift steht „Einstellungen“ ganz da.
 
 **Wo finde ich was?**
 
 | Ich will … | Da |
 | --- | --- |
-| filtern (Art, Region, Umkreis, Kategorie, kostenlos, Mo–Fr ab 15:30 …) | Knopf **Filter** oben in Programm, Karte und Ideen – das Blatt von unten; was gewählt ist, steht als Chip daneben (✕ nimmt es weg, ab zwei Chips „Alle zeigen“) |
+| filtern (Art, Region, Umkreis, Kategorie, kostenlos, Mo–Fr ab 15:30 …) | Knopf **Filter** oben im Programm und auf der Karte – das Blatt von unten; was gewählt ist, steht als Chip daneben (✕ nimmt es weg, ab zwei Chips „Alle zeigen“). „Was immer geht“ hat seinen eigenen Filter-Knopf |
+| zwischen Tag, Woche und Monat wechseln, blättern | oben im Programm: **Tag · Woche · Monat**, darunter ‹ › und „Heute“ – oder nach links/rechts wischen |
+| Ideen ohne Termin, eigene Ideen, „Tut dir gut“ | im Programm ganz unten: **Was immer geht** |
 | nur Online & TV sehen – oder gerade nicht | Filter → **Art**: Alles · Vor Ort · Online & TV |
 | auswählen, welche Reiter unten stehen | Einstellungen → **Reiter unten** |
 | meinen Standort oder eine Adresse festlegen | Einstellungen → **Mein Standort** (im Filter: „Standort festlegen“ springt dorthin) |
@@ -83,12 +84,12 @@ Umgebung zuerst); bei mehreren Treffern tippt man den richtigen an. Dann:
 - An jeder Karte steht die Entfernung gleich hinter dem Ort („Thalia ·
   300 m · Bühne“), bei Ideen die zum nächsten ihrer Orte („ab 800 m“).
 - **Umkreis** (im Filter unter „Wo“: alle · 2 · 5 · 10 · 25 · 50 km) blendet
-  Fernes aus – in der Liste, in Monat, Woche und Tag und auf der Karte; was
+  Fernes aus – in Tag, Woche und Monat und auf der Karte; was
   keine Koordinaten hat, fällt dann mit weg, Online & TV bleibt. Er steht
   als Chip „bis 5 km“ neben dem Filter-Knopf; ✕ nimmt ihn zurück.
 - **Reihenfolge am Tag: Entfernung** (im Filter) stellt das Nächste nach oben
-  (Eingeplantes bleibt oben, Online & TV steht hinten), auch unter „Läuft
-  gerade“ und in der Tagesansicht.
+  (Eingeplantes bleibt oben, Online & TV steht hinten; die Gliederung nach
+  Tageszeit entfällt dann), auch unter „Läuft heute“.
 - Auf der Karte steht der Bezugspunkt als dunkler Punkt („Du“ bzw. der Name
   der Adresse), mit Umkreis als gestrichelter Kreis.
 
@@ -99,9 +100,10 @@ gemeinsamen Plans; zu OpenStreetMap geht nur eine eingetippte Adresse.
 zurück. Rechnen und
 Suchen tut `js/standort.js`, geprüft in `tests/test-standort.mjs`.
 
-## Ideen
+## Was immer geht (Ideen)
 
-Der Katalog `daten/ideen.json` ist von Hand gepflegt (rund 150 Ideen, Stand
+Ganz unten im Programm, in Tag, Woche und Monat (bis v18 der eigene Reiter
+„Ideen“). Der Katalog `daten/ideen.json` ist von Hand gepflegt (rund 150 Ideen, Stand
 Oktober 2026) und ändert sich nicht mit dem Montagslauf. Jede Idee hat eine
 Kategorie, eine **Wirkung** und einen Rahmen:
 
@@ -113,8 +115,9 @@ Kategorie, eine **Wirkung** und einen Rahmen:
 - Rahmen: Zuhause / Hamburg / Ausflug, drinnen / draußen, Dauer, mit wem,
   kostenlos, Saison (außerhalb der Saison erst auf Wunsch sichtbar).
 
-Gefiltert wird im Filter-Blatt (Wirkung, Wo, Rahmen, „auch außerhalb der
-Saison“); mehrere Wirkungen müssen alle zutreffen. Bei
+Gefiltert wird mit dem eigenen Filter-Knopf von „Was immer geht“ (Wirkung, Wo, Rahmen, „auch außerhalb der
+Saison“); mehrere Wirkungen müssen alle zutreffen. Diese Filter wirken nur
+auf die Ideen, die der Termine nur auf die Termine. Bei
 Ideen mit Ort stehen die Orte mit Link, Preis und Zeiten dabei, auf der
 Karte als gestrichelte Marker.
 
@@ -185,8 +188,9 @@ anderem.
 keine Titel – reisen als seine Haken `z:<Montag der Woche>` mit
 `{ "z": [[von, bis], …], "stand": "…" }` (Minuten ab Montag 0:00, Berliner
 Zeit). Eingeladene sehen dann an jeder Karte „✓ Tobi hat da Zeit“ oder
-„Tobi ist da schon verplant“ und im Programm (Woche und Tag) die belegten
-Zeiten als graue Blöcke, wie im Terminplanungs-Assistenten; der Gastgeber
+„Tobi ist da schon verplant“ und im Programm (Tag und Woche) die belegten
+Zeiten schraffiert im Zeitstreifen, am Tag mit einem Satz („Tobi ist belegt
+18:00–20:30. Frei ab 20:30.“); der Gastgeber
 sieht dasselbe und an den Karten nur, was sich mit seinem Kalender beißt.
 Für Wochen ohne Zeiten sagt die App nichts. Rechnen
 (Zeitzone, Mitternacht, Wochenwechsel, Zeitumstellung) tut
@@ -388,7 +392,7 @@ Sonntag, wenn der Montag danach ein Feiertag ist.
 **Immer** – Ausflugsziele unabhängig von Terminen schrieben die Läufe bis
 Oktober 2026 als `immer` mit; sie stehen jetzt im Ideen-Katalog (dieselben
 Kennungen). Steht in einer älteren Datei noch ein `immer`, das der Katalog
-nicht kennt, zeigt der Reiter Ideen es trotzdem.
+nicht kennt, zeigt „Was immer geht“ es trotzdem.
 
 ### `daten/ideen.json`
 
@@ -471,8 +475,8 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `supabase/functions/freizeit-push/` | die Edge Function: offene Nachrichten holen, verschlüsseln, an die Push-Dienste schicken |
 | `werkzeug/push-buendeln.mjs` | die Function als eine Datei fürs Dashboard |
 | `js/config.js` | Adresse und öffentlicher Schlüssel des Servers |
-| `js/ansicht-*.js` | die Seiten – `ansicht-programm.js` die Liste, `ansicht-kalender.js` Monat, Woche und Tag (und den Kopf mit Ansicht und Blättern), `ansicht-landkarte.js`, `ansicht-ideen.js`, `ansicht-wir.js`, `ansicht-einstellungen.js` die Einstellungen |
-| `js/ansicht-filter.js` | der Filter: Leiste mit Knopf und Chips, die Gruppen im Blatt – für Programm, Karte und Ideen |
+| `js/ansicht-*.js` | die Seiten – `ansicht-programm.js` das Programm mit Tag, Woche und Monat (und dem Kopf mit Ansicht, Blättern und Filter), `ansicht-ideen.js` „Was immer geht“ darunter, `ansicht-landkarte.js`, `ansicht-wir.js`, `ansicht-einstellungen.js` die Einstellungen |
+| `js/ansicht-filter.js` | der Filter: Leiste mit Knopf und Chips, die Gruppen im Blatt – für Termine (Programm, Karte) und „Was immer geht“ |
 | `js/blatt.js` | das Blatt von unten: Dialog, Escape, Tipp daneben, Fokus hinein und zurück, der Rest der Seite inert |
 | `supabase/gemeinsam.sql` | Tabellen und Funktionen für den gemeinsamen Plan |
 
@@ -485,19 +489,19 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 
 | Test | prüft |
 | --- | --- |
-| `test-programm.mjs` | Wochen, der Kopf (Blättern, Filter, Tagesleiste, „Diese Woche“, erster Termin ohne Scrollen), beide Zeitregeln, Filter, Laufendes, Konzerte der eigenen Künstler |
-| `test-filter.mjs` | das Filter-Blatt: Dialog, Wahl gilt sofort, Chips mit ✕, „Alle zeigen“, Zurücksetzen, Escape, Tipp daneben, Fokus, weniger Bewegung, dasselbe in Woche, Tag und Karte, das Blatt der Ideen, nichts scrollt quer |
+| `test-programm.mjs` | Tag und Woche: der Kopf (Ansichten, Blättern, Filter, Tagesleiste, erster Termin ohne Scrollen), Gliederung nach Tageszeit, beide Zeitregeln, „Läuft heute“, Tageskarten der Woche mit „Diese Woche“, Laufendem und Hinweisen, Filter, Wischen, vergangene Tage, Feiertag, ein alter Stand „Liste“ |
+| `test-filter.mjs` | das Filter-Blatt: Dialog, Wahl gilt sofort, Chips mit ✕, „Alle zeigen“, Zurücksetzen, Escape, Tipp daneben, Fokus, weniger Bewegung, dasselbe in Woche, Monat und Karte, das Blatt von „Was immer geht“, nichts scrollt quer |
 | `test-einstellungen.mjs` | der Reiter Einstellungen (kein ⚙, kein „Zurück“), die Abschnitte je Rolle, Stand der Daten, Installieren, Hinweise zu den Daten, Name ändern, Weiteres Gerät |
-| `test-reiter.mjs` | Reiter unten: an und aus (auch mit der Tastatur), der letzte bleibt, Neuladen, Start-Reiter, Ausgeblendetes über `#…`, Einladung und „Zu „Wir““, der Punkt nur an „Wir“, fünf Beschriftungen bei 360 und 390 px ganz lesbar ohne Querscrollen, alte und kaputte Stände |
+| `test-reiter.mjs` | Reiter unten: an und aus (auch mit der Tastatur), der letzte bleibt, Neuladen, Start-Reiter, Ausgeblendetes über `#…`, Einladung und „Zu „Wir““, der Punkt nur an „Wir“, `#ideen` führt zu „Was immer geht“, vier Beschriftungen bei 360 und 390 px ganz lesbar ohne Querscrollen, alte und kaputte Stände |
 | `test-online.mjs` | Online & TV: Sender statt Ort, 21:30 nach Beginn, Filter „Art“, Umkreis und Entfernung, Monat und Tag, WhatsApp und Kalender, Schnappschuss, Landkarte |
-| `test-kalender.mjs` | Monat, Woche und Tag: Zahlen, Bock-Punkte, Chips, Blättern, „Heute“, Monate nach dem Programm |
+| `test-kalender.mjs` | Monat (Zahlen, Bock-Punkte, ♫, wählen und öffnen, Konzerte im Monat), ein Haken im Zeitstreifen, im Monat und in der Woche, Filter in allen Ansichten, Monate nach dem Programm |
 | `test-landkarte.mjs` | Marker, Zeitraum, „Nur mit Bock“, Online & TV gezählt statt gezeigt, Liste am Marker, Haken aus der Karte |
 | `test-wir.mjs` | der gemeinsame Plan: Tobi lädt ein, Kim (iPhone) und Jo wählen mit/ohne Tobi und sehen einander nicht, Tobis Überblick, offline, weiteres Gerät, Herausnehmen, Verlassen, Auflösen, ein Plan aus der ersten Fassung, fremder Text |
-| `test-ideen.mjs` | Katalog, Filter nach Wirkung, Saison, Bock, Einplanen (Liste, Monat), Wie war's? und „Tut dir gut“, eigene Ideen im Plan, Einplanen mit/ohne Gastgeber, fremder Text, Ideen auf der Karte |
+| `test-ideen.mjs` | „Was immer geht“: Katalog, eigener Filter nach Wirkung, Saison, Bock, Einplanen (Tag, Monat), Wie war's? und „Tut dir gut“, eigene Ideen im Plan, Einplanen mit/ohne Gastgeber, fremder Text, Ideen auf der Karte und der Sprung zurück |
 | `test-teilen.mjs` | WhatsApp, Google Kalender, .ics – auch für Eingeplantes |
 | `test-offline.mjs` | Offline-Vorrat, App ohne Netz |
 | `test-daten.mjs` | `daten/programm.json` (auch Online & TV: `online` mit `ONL`, ohne `geo`), `daten/ideen.json` und `daten/orte.json` – mit `FREIZEIT_DATEN=<ordner>` einen anderen Ordner, etwa einen zusammengeführten Lauf vor dem Kopieren |
-| `test-zeiten.mjs` | Zeiten des Gastgebers: an den Karten (frei/verplant), in Woche und Tag als Blöcke, nirgends als Eintrag |
+| `test-zeiten.mjs` | Zeiten des Gastgebers: an den Karten (frei/verplant), in Woche und Tag als schraffierte Blöcke mit Satz, nirgends als Eintrag |
 | `test-zeiten-rechnen.mjs` | Blöcke je Woche: Zeitzone, Mitternacht, Wochenwechsel, Zeitumstellung |
 | `test-zeiten-senden.mjs` | das Werkzeug gegen einen nachgebauten Server |
 | `test-sql.mjs` | `supabase/gemeinsam.sql` in PGlite: über der ersten Fassung, Rollen und was wer sieht, Schlüssel, Funktionen, Rechte, Grenzen, Push (Abos, was gemeldet wird, Abholen, VAPID-Paar) |

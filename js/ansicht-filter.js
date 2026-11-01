@@ -1,5 +1,5 @@
 /*
- * Filter – in Programm, Karte und Ideen gleich gebaut:
+ * Filter – für die Termine, die Karte und „Was immer geht“ gleich gebaut:
  *
  *   [≡ Filter 2]  [Online & TV ✕] [kostenlos ✕]          135 Termine
  *
@@ -7,9 +7,10 @@
  * sofort. Was gewählt ist, steht als Chip neben dem Knopf und lässt sich mit
  * ✕ einzeln entfernen; ab zwei Chips nimmt „Alle zeigen“ alles zurück.
  *
- * Programm (Liste, Monat, Woche, Tag) und Karte teilen sich die Filter
- * (st.filter) – was man in der einen Ansicht wählt, gilt in allen. Die Karte
- * hat dazu die Gruppe „Karte“, die Ideen haben eigene Filter (st.ideenFilter).
+ * Programm (Tag, Woche, Monat) und Karte teilen sich die Filter (st.filter) –
+ * was man in der einen Ansicht wählt, gilt in allen. Die Karte hat dazu die
+ * Gruppe „Karte“; „Was immer geht“ unten im Programm hat eigene Filter
+ * (st.ideenFilter) mit eigener Leiste (ideen-filter-auf, ichip-weg).
  */
 import { esc, REGIONEN, ORTE } from './text.js';
 import { SCHALTER, ART, kategorien, umkreisAn, filterFuer } from './filter.js';
@@ -56,17 +57,21 @@ export function chipsIdeen(f, saisonAlle) {
  * Die Leiste: oben der Knopf (davor, was der Reiter dort braucht – auf der
  * Karte der Zeitraum –, rechts die Zahl der Treffer oder ein Knopf), darunter
  * die Chips und ab zwei Chips „Alle zeigen“.
- * @param {string} weg  die Aktion für „Alle zeigen“
+ * @param {string} weg         die Aktion für „Alle zeigen“
+ * @param {string} auf         die Aktion des Knopfs (im Programm gibt es zwei Leisten: Termine und „Was immer geht“)
+ * @param {string} chipAktion  die Aktion für ✕ an einem Chip
  */
-export function filterLeiste(chips, { vorn = '', rechts = '', weg = 'filter-weg' } = {}) {
+export function filterLeiste(chips, {
+  vorn = '', rechts = '', weg = 'filter-weg', auf = 'filter-auf', chipAktion = 'chip-weg',
+} = {}) {
   const n = chips.length;
   return `<div class="filterleiste">
     <div class="filterleiste-oben">
       ${vorn}
-      <button type="button" class="knopf filterknopf${n ? ' an' : ''}" data-aktion="filter-auf" aria-haspopup="dialog" aria-expanded="false">${SYMBOL}<span>Filter</span>${n ? `<span class="zahl-marke">${n}</span>` : ''}</button>
+      <button type="button" class="knopf filterknopf${n ? ' an' : ''}" data-aktion="${esc(auf)}" aria-haspopup="dialog" aria-expanded="false">${SYMBOL}<span>Filter</span>${n ? `<span class="zahl-marke">${n}</span>` : ''}</button>
       ${rechts ? `<span class="leiste-rechts">${rechts}</span>` : ''}
     </div>
-    ${n ? `<div class="filterchips">${chips.map(([k, t]) => `<button type="button" class="filterchip" data-aktion="chip-weg" data-chip="${esc(k)}" aria-label="${esc(t)} – Filter entfernen">${esc(t)}<span class="chip-x" aria-hidden="true">✕</span></button>`).join('')}
+    ${n ? `<div class="filterchips">${chips.map(([k, t]) => `<button type="button" class="filterchip" data-aktion="${esc(chipAktion)}" data-chip="${esc(k)}" aria-label="${esc(t)} – Filter entfernen">${esc(t)}<span class="chip-x" aria-hidden="true">✕</span></button>`).join('')}
       ${n > 1 ? `<button type="button" class="textknopf alle-zeigen" data-aktion="${esc(weg)}">Alle zeigen</button>` : ''}</div>` : ''}
   </div>`;
 }

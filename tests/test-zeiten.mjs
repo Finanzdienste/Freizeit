@@ -2,8 +2,8 @@
  * Wann hat der Gastgeber Zeit? Seine belegten Zeiten (Haken z:<Montag>,
  * siehe js/zeiten.js) – an den Karten der Eingeladenen „hat da Zeit“ bzw.
  * „ist da schon verplant“, beim Gastgeber nur, was sich beißt, und im
- * Kalender als dunkle Blöcke (Woche und Tag). Als Eintrag tauchen die Zeiten
- * nirgends auf.
+ * Programm als schraffierte Blöcke im Zeitstreifen (Tag und Woche) mit einem
+ * Satz dazu. Als Eintrag tauchen die Zeiten nirgends auf.
  *
  * Die Zeiten legt der Test direkt in den nachgebauten Server, so wie sie
  * eine geplante Aufgabe oder die App des Gastgebers schreiben würde.
@@ -13,9 +13,13 @@ import { oeffne, fakeServer, MO, DI, FR, SA, MO2, DI2, MI2 } from './hilfe.mjs';
 const server = fakeServer();
 const A = await oeffne({ tag: MO, server });
 const { check } = A;
-const karteAm = (x, tag, titel) => x.page.locator(`#tag-${tag} .karte`, { hasText: titel });
+/** Die Karte an einem Tag im Programm – öffnet dafür den Tag (Ansicht Tag). */
+const karteAm = async (x, tag, titel) => {
+  await x.zeigeTag(tag);
+  return x.page.locator(`#tag-${tag} .karte`, { hasText: titel });
+};
 const hinweis = async (x, tag, titel) => {
-  const k = karteAm(x, tag, titel).locator('.zeit-hinweis');
+  const k = (await karteAm(x, tag, titel)).locator('.zeit-hinweis');
   return (await k.count()) ? k.innerText() : '';
 };
 async function synchron(x) {
@@ -56,36 +60,33 @@ check((await hinweis(B, DI, 'Workshop mittags')) === '✓ Tobi hat da Zeit', 'Di
 check((await hinweis(B, FR, 'Konzert spät')) === '✓ Tobi hat da Zeit', 'Fr 20 Uhr Konzert: frei – belegt war nur bis 17 Uhr');
 check((await hinweis(B, SA, 'Party')) === 'Tobi ist da schon verplant', 'Sa 23 Uhr Party: verplant – der Block geht über Mitternacht');
 check((await hinweis(B, SA, 'Messe')) === '', 'Ganztägiges bekommt keine Zeile');
-await B.page.click('[data-aktion="woche-vor"]');
 check((await hinweis(B, DI2, 'Lesung zweite Woche')) === '✓ Tobi hat da Zeit', 'Woche danach: Di 18:30 Lesung – frei (belegt ist dort nur Mi 19–21)');
 
-// --- Kim: im Kalender – Woche und Tag
+// --- Kim: im Programm – Woche und Tag
 await B.reiter('wir');
 const hinweis2 = B.page.locator('.zeiten-hinweis');
-check(await hinweis2.count() === 1 && (await hinweis2.innerText()).includes('Wann Tobi Zeit hat (Stand Mo 2.11., 07:10 Uhr)'), 'unter „Wir“ ein Hinweis mit dem Stand – die Zeiten selbst stehen im Kalender');
+check(await hinweis2.count() === 1 && (await hinweis2.innerText()).includes('Wann Tobi Zeit hat (Stand Mo 2.11., 07:10 Uhr)'), 'unter „Wir“ ein Hinweis mit dem Stand – die Zeiten selbst stehen im Programm');
 await hinweis2.locator('[data-kal-wechsel="woche"]').click();
 check(await B.page.locator('[data-reiter="programm"]').getAttribute('aria-current') === 'page' && await B.page.locator('[data-kal-ansicht="woche"]').getAttribute('aria-pressed') === 'true',
   'der Hinweis führt ins Programm, Ansicht Woche');
 await B.page.click('[data-aktion="kal-heute"]');
-check((await B.page.locator('.monatstitel').innerText()).startsWith('KW 45'), '„Heute“ holt die laufende Woche – der Tag ist in allen Ansichten derselbe');
-const block = (tag) => B.page.locator(`.wo-spalte[data-wo-tag="${tag}"] .wo-zeit .belegt`);
-check(await block(DI).count() === 1 && (await block(DI).getAttribute('title')) === 'belegt 18:00–20:30', 'Di: ein dunkler Block 18:00–20:30');
-check((await block(FR).getAttribute('title')) === 'belegt 08:00–17:00' && await block(MO).count() === 0, 'Fr 08:00–17:00, Mo frei');
-check((await block(SA).getAttribute('title')) === 'belegt 22:00–24:00', 'Sa: der Block bis Mitternacht – die Nacht danach liegt außerhalb (7–24 Uhr)');
-check((await B.page.locator('.legende').innerText()).includes('Tobi ist belegt'), 'die Legende erklärt die Blöcke');
+check((await B.page.locator('.kal-titel').innerText()).startsWith('KW 45'), '„Heute“ holt die laufende Woche – der Tag ist in allen Ansichten derselbe');
+const bloecke = (tag) => B.page.locator(`.wtag[data-tag="${tag}"] .zs-belegt`);
+check(await bloecke(DI).count() === 1 && await bloecke(FR).count() === 1 && await bloecke(MO).count() === 0 && await bloecke(SA).count() === 1,
+  'in den Tageskarten: Di, Fr und Sa (22–24 Uhr) mit einem belegten Block, Mo frei');
+const breite = (tag) => bloecke(tag).evaluate((el) => [parseFloat(el.style.left), el.style.width]);
+const [diLinks] = await breite(DI);
+check(diLinks > 64.6 && diLinks < 64.8, `Di: der Block beginnt bei 18 Uhr (${diLinks} % von 7–24 Uhr)`);
+check((await B.page.locator('.legende').innerText()).includes('Tobi ist belegt'), 'die Legende erklärt die schraffierten Blöcke');
 await B.page.click('[data-aktion="kal-vor"]');
-check((await B.page.locator(`.wo-spalte[data-wo-tag="${MI2}"] .wo-zeit .belegt`).getAttribute('title')) === 'belegt 19:00–21:00', 'Woche danach: Mi 19–21 belegt (ein kaputter Block fällt weg)');
-await B.page.click(`.wo-spalte[data-wo-tag="${DI2}"] .wo-kopf`);
-check((await B.page.locator('#kal-tag .tag-info').innerText()).includes('Tobi hat den ganzen Tag Zeit.'), 'Tagesansicht Di der zweiten Woche: „Tobi hat den ganzen Tag Zeit.“');
-await B.page.click('[data-aktion="kal-zurueck"]');
-await B.page.click('[data-aktion="kal-zurueck"]');
-await B.page.click('[data-aktion="kal-zurueck"]');
-await B.page.click('[data-aktion="kal-zurueck"]');
-await B.page.click('[data-aktion="kal-zurueck"]');
-await B.page.click('[data-aktion="kal-zurueck"]');
-await B.page.click('[data-aktion="kal-zurueck"]');
-check((await B.page.locator('.monatstitel').innerText()).startsWith('Dienstag, 3.11.') && (await B.page.locator('#kal-tag .tag-info').innerText()).includes('Tobi ist belegt 18:00–20:30.')
-  && await B.page.locator('.tag-streifen .zr-balken .belegt').count() === 1, 'Di 3.11.: „Tobi ist belegt 18:00–20:30.“ und der Block im Zeitstreifen');
+check(await B.page.locator(`.wtag[data-tag="${MI2}"] .zs-belegt`).count() === 1 && await B.page.locator('.wtag .zs-belegt').count() === 1,
+  'Woche danach: nur Mi 19–21 belegt (ein kaputter Block fällt weg)');
+await B.page.click(`.wtag[data-tag="${DI2}"]`);
+check((await B.page.locator(`#tag-${DI2} .deine-zeit`).innerText()).includes('Tobi hat den ganzen Tag Zeit.') && (await B.page.locator(`#tag-${DI2} .dz-titel`).innerText()) === 'Wann Tobi kann',
+  'Tag Di der zweiten Woche: „Wann Tobi kann – Tobi hat den ganzen Tag Zeit.“');
+for (let i = 0; i < 7; i++) await B.page.click('[data-aktion="kal-zurueck"]');
+check((await B.page.locator('.kal-titel').innerText()).startsWith('Dienstag, 3.11.') && (await B.page.locator(`#tag-${DI} .dz-satz`).innerText()) === 'Tobi ist belegt 18:00–20:30. Frei ab 20:30.'
+  && await B.page.locator(`#tag-${DI} .deine-zeit .zs-belegt`).count() === 1, 'Di 3.11.: „Tobi ist belegt 18:00–20:30. Frei ab 20:30.“ und der Block im Zeitstreifen');
 
 // --- Tobi: nur, was sich beißt; keine Einträge aus den Zeiten
 await A.reiter('wir');
@@ -96,8 +97,11 @@ check((await hinweis(A, DI, 'Workshop mittags')) === '', 'wo es passt, sagt die 
 await A.reiter('wir');
 check((await A.page.locator('.zeiten-hinweis').innerText()).startsWith('Deine belegten Zeiten aus dem Kalender'), 'Tobi: unter „Wir“ der Hinweis auf seine Zeiten');
 await A.ansicht('woche');
-check(await A.page.locator(`.wo-spalte[data-wo-tag="${DI}"] .wo-zeit .belegt`).count() === 1 && (await A.page.locator('.legende').innerText()).includes('du bist belegt'),
-  'Tobi sieht im Kalender seine Zeiten, wie die anderen sie sehen');
+check(await A.page.locator(`.wtag[data-tag="${DI}"] .zs-belegt`).count() === 1 && (await A.page.locator('.legende').innerText()).includes('belegt (Kalender)'),
+  'Tobi sieht in der Woche seine Zeiten, wie die anderen sie sehen');
+await A.zeigeTag(DI);
+check((await A.page.locator(`#tag-${DI} .dz-satz`).innerText()) === 'Belegt 18:00–20:30. Frei ab 20:30.' && (await A.page.locator(`#tag-${DI} .dz-titel`).innerText()) === 'Deine Zeit',
+  '… und am Tag „Deine Zeit: Belegt 18:00–20:30. Frei ab 20:30.“');
 const st = await A.gespeichert();
 check(!Object.keys(st.bock).some((k) => k.startsWith('z:')), 'die Zeiten landen nicht in Tobis eigenen Haken');
 check(!(await A.page.locator('#ansicht').innerText()).includes('Eintrag') && !(await B.page.locator('#ansicht').innerText()).includes('Eintrag'),

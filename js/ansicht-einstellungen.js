@@ -3,8 +3,8 @@
  * man einmal einstellt und dann in Ruhe lässt – an einem Ort, statt verstreut
  * über die Reiter.
  *
- *   Reiter unten       Programm, Karte, Ideen, Wir einzeln an oder aus;
- *                      Einstellungen ist immer da, einer der vier bleibt an
+ *   Reiter unten       Programm, Karte, Wir einzeln an oder aus;
+ *                      Einstellungen ist immer da, einer der drei bleibt an
  *   Mein Standort      Bezugspunkt für Entfernungen: das Gerät oder eine
  *                      Adresse (standort.js). Umkreis und Reihenfolge stehen
  *                      im Filter.
@@ -24,9 +24,7 @@ import { hilfeKarte } from './ansicht-wir.js';
 import { INHALTS_REITER } from './speicher.js';
 
 /** Wie die Reiter unten heißen – dieselben Wörter wie in der Leiste (index.html). */
-const REITER_NAMEN = {
-  programm: 'Programm', karte: 'Karte', ideen: 'Ideen', wir: 'Wir',
-};
+const REITER_NAMEN = { programm: 'Programm', karte: 'Karte', wir: 'Wir' };
 
 const fehlerBox = (ui, ort) => (ui.fehler && ui.fehlerOrt === ort ? `<div class="fehlerbox" role="alert">${esc(ui.fehler)}</div>` : '');
 
@@ -170,7 +168,7 @@ function appTeil(p, ideenStand, datenFehler, installierbar) {
     ? `<details class="e-zeile datenfehler"><summary>Hinweise zu den Daten (${datenFehler.length})</summary><ul>${datenFehler.map((f) => `<li>${esc(f)}</li>`).join('')}</ul></details>` : '';
   return abschnitt('e-app', 'App', `${installieren}
     <div class="e-zeile" id="stand"><span>Programm</span><span class="fein">${programm}</span></div>
-    ${ideenStand ? `<div class="e-zeile"><span>Ideen-Katalog</span><span class="fein">Stand ${esc(standText(ideenStand))}</span></div>` : ''}
+    ${ideenStand ? `<div class="e-zeile"><span>Ideen („Was immer geht“)</span><span class="fein">Stand ${esc(standText(ideenStand))}</span></div>` : ''}
     ${fehler}`, 'Das neue Programm kommt montags gegen 7 Uhr.');
 }
 

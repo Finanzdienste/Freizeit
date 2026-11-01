@@ -19,8 +19,8 @@ export const SCHLUESSEL = 'freizeit.stand.v1';
 /** Die Wahl „Art“ im Filter: alles, nur vor Ort, nur Online & TV. */
 export const ARTEN = ['', 'vorort', 'online'];
 
-/** Die Reiter unten, die man ausblenden kann – Einstellungen sind immer da. */
-export const INHALTS_REITER = ['programm', 'karte', 'ideen', 'wir'];
+/** Die Reiter unten, die man ausblenden kann – Einstellungen sind immer da. (Bis v18 gab es „ideen“; heute steht das unten im Programm.) */
+export const INHALTS_REITER = ['programm', 'karte', 'wir'];
 
 /** Ausgeblendete Reiter, geprüft: nur bekannte, jeder einmal – und nie alle (dann gilt: alle an). */
 function reiterAusPruefen(roh) {
@@ -53,8 +53,8 @@ const LEER = () => ({
   // Karte: Orte aus den Ideen dazu; nur, worauf jemand Bock hat
   karteIdeen: false,
   karteBock: false,
-  // Programm: zuletzt gewählte Ansicht (liste, monat, woche, tag)
-  programmAnsicht: 'liste',
+  // Programm: zuletzt gewählte Ansicht (tag, woche, monat; ein altes „liste“ öffnet als Tag)
+  programmAnsicht: 'tag',
   // Reiter, die unten nicht stehen sollen (Einstellungen → Reiter unten); leer: alle da
   reiterAus: [],
   // schluessel → Schnappschuss des Eintrags (siehe schnappschuss()) + gesetzt,

@@ -20,7 +20,7 @@ const markiert = () => page.$$eval('.reiterleiste [aria-current]', (bs) => bs.ma
 // --- Wo die Einstellungen sind
 check(await page.locator('.kopf button, .kopf [data-aktion]').count() === 0, 'im Kopf steht nur noch die Marke – kein ⚙');
 check(JSON.stringify(await page.$$eval('.reiterleiste .reiter', (bs) => bs.map((b) => b.textContent.trim())))
-  === JSON.stringify(['Programm', 'Karte', 'Ideen', 'Wir', 'Einstellungen']), 'unten fünf Reiter, „Einstellungen“ ganz rechts');
+  === JSON.stringify(['Programm', 'Karte', 'Wir', 'Einstellungen']), 'unten vier Reiter, „Einstellungen“ ganz rechts');
 check(await page.locator('#ansicht .datenfehler').count() === 0, 'Hinweise zu den Daten stehen nicht mehr im Programm');
 await A.reiter('karte');
 await einstellungenReiter.click();
@@ -31,8 +31,8 @@ check(await page.locator('#ansicht [data-aktion="zurueck"]').count() === 0, 'kei
 check(JSON.stringify(await titel()) === JSON.stringify(['Reiter unten', 'Mein Standort', 'Gemeinsamer Plan', 'App']),
   'ohne Plan: Reiter unten (zuerst), Mein Standort, Gemeinsamer Plan, App – keine Mitteilungen');
 check((await page.locator('#stand').innerText()).includes('Mo 2.11., 07:01 Uhr') && (await page.locator('#stand').innerText()).includes('bis So 15.11.')
-  && (await page.locator('#e-app').innerText()).includes('Ideen-Katalog') && (await page.locator('#e-app').innerText()).includes('Di 27.10.'),
-'unter „App“: Stand des Programms (und bis wann es reicht) und des Ideen-Katalogs');
+  && (await page.locator('#e-app').innerText()).includes('Ideen („Was immer geht“)') && (await page.locator('#e-app').innerText()).includes('Di 27.10.'),
+'unter „App“: Stand des Programms (und bis wann es reicht) und der Ideen');
 check((await page.locator('#e-app .install-weg').innerText()).includes('App installieren'), 'ohne Angebot des Browsers: der Weg übers Browser-Menü');
 check((await page.locator('#e-app .datenfehler summary').innerText()) === 'Hinweise zu den Daten (1)', '… und die Hinweise zu den Daten');
 await A.reiter('karte');

@@ -33,7 +33,11 @@ async function synchron(x) {
   await x.page.waitForTimeout(150);
   await x.reiter('wir');
 }
-const karteAm = (x, tag, titel) => x.page.locator(`#tag-${tag} .karte`, { hasText: titel });
+/** Die Karte an einem Tag im Programm – öffnet dafür den Tag (Ansicht Tag). */
+const karteAm = async (x, tag, titel) => {
+  await x.zeigeTag(tag);
+  return x.page.locator(`#tag-${tag} .karte`, { hasText: titel });
+};
 const personZeile = (x, name) => x.page.locator('.person-zeile').filter({ has: x.page.locator('summary .person', { hasText: new RegExp(`^${name}$`) }) });
 
 // --- Tobi startet den Plan
@@ -67,9 +71,9 @@ check(await A.page.locator('#ansicht .knopf.haupt').count() === 1 && await A.pag
 
 // Tobi hakt im Programm an.
 await A.reiter('programm');
-await karteAm(A, DI, 'Theater früh').locator('[data-bock]').click();
-await karteAm(A, FR, 'Konzert spät').locator('[data-bock]').click();
-check(await karteAm(A, DI, 'Theater früh').locator('[data-bock]').count() === 1, 'der Gastgeber hat einen Knopf „Bock“ wie ohne Plan');
+await (await karteAm(A, DI, 'Theater früh')).locator('[data-bock]').click();
+await (await karteAm(A, FR, 'Konzert spät')).locator('[data-bock]').click();
+check(await (await karteAm(A, DI, 'Theater früh')).locator('[data-bock]').count() === 1, 'der Gastgeber hat einen Knopf „Bock“ wie ohne Plan');
 await leer(A);
 check(haken().length === 2 && haken().every((b) => b.person === tobi.ich.id && b.daten.titel), 'Tobis Haken sind mit Schnappschuss beim Server');
 
@@ -114,21 +118,21 @@ await B.einstellungen();
 check((await B.page.locator('#e-app .install-weg').innerText()).includes('Zum Home-Bildschirm') && await B.page.locator('.hinweis-install').count() === 0,
   'im Safari-Browser: wie die App auf den Home-Bildschirm kommt, steht in den Einstellungen unter „App“ – kein Banner mehr');
 await B.reiter('programm');
-const theaterB = karteAm(B, DI, 'Theater früh');
+const theaterB = await karteAm(B, DI, 'Theater früh');
 check(await theaterB.locator('[data-bock]').count() === 2 && (await theaterB.locator('[data-mitwem="gastgeber"]').innerText()) === 'Mit Tobi'
   && (await theaterB.locator('[data-mitwem="andere"]').innerText()) === 'Allein/mit anderen', 'Kim hat zwei Knöpfe: „Mit Tobi“ und „Allein/mit anderen“');
 check((await theaterB.locator('.wer').innerText()).includes('hat Bock'), '… und sieht an der Karte, dass Tobi Bock hat');
 await theaterB.locator('[data-mitwem="gastgeber"]').click();
-check(await karteAm(B, DI, 'Theater früh').locator('[data-mitwem="gastgeber"]').getAttribute('aria-pressed') === 'true', '„Mit Tobi“ ist gedrückt');
-await karteAm(B, FR, 'Konzert spät').locator('[data-mitwem="andere"]').click();
-await karteAm(B, MI, 'Nachtmarkt').locator('[data-mitwem="gastgeber"]').click();
-await karteAm(B, MI, 'Nachtmarkt').locator('[data-mitwem="andere"]').click();
-const nacht = karteAm(B, MI, 'Nachtmarkt');
+check(await (await karteAm(B, DI, 'Theater früh')).locator('[data-mitwem="gastgeber"]').getAttribute('aria-pressed') === 'true', '„Mit Tobi“ ist gedrückt');
+await (await karteAm(B, FR, 'Konzert spät')).locator('[data-mitwem="andere"]').click();
+await (await karteAm(B, MI, 'Nachtmarkt')).locator('[data-mitwem="gastgeber"]').click();
+await (await karteAm(B, MI, 'Nachtmarkt')).locator('[data-mitwem="andere"]').click();
+const nacht = await karteAm(B, MI, 'Nachtmarkt');
 check(await nacht.locator('[data-mitwem="andere"]').getAttribute('aria-pressed') === 'true'
   && await nacht.locator('[data-mitwem="gastgeber"]').getAttribute('aria-pressed') === 'false', 'umentscheiden: der andere Knopf übernimmt');
-await karteAm(B, DI, 'Workshop mittags').locator('[data-mitwem="gastgeber"]').click();
-await karteAm(B, DI, 'Workshop mittags').locator('[data-mitwem="gastgeber"]').click();
-check(await karteAm(B, DI, 'Workshop mittags').locator('[aria-pressed="true"]').count() === 0, 'dieselbe Wahl noch einmal nimmt den Haken weg');
+await (await karteAm(B, DI, 'Workshop mittags')).locator('[data-mitwem="gastgeber"]').click();
+await (await karteAm(B, DI, 'Workshop mittags')).locator('[data-mitwem="gastgeber"]').click();
+check(await (await karteAm(B, DI, 'Workshop mittags')).locator('[aria-pressed="true"]').count() === 0, 'dieselbe Wahl noch einmal nimmt den Haken weg');
 await leer(B);
 const vonKim = haken().filter((b) => b.person === kim.ich.id);
 const wieKim = (t) => vonKim.find((b) => b.eintrag.startsWith(`t:${t}:`))?.daten?.mitwem;
@@ -149,9 +153,9 @@ await warte(C, 'Jo (du)');
 const jo = (await C.gespeichert()).gemeinsam;
 check(raum().personen.length === 3 && jo.rolle === 'mitglied', 'Jo tritt mit dem Code ein (groß und mit Leerzeichen getippt)');
 await C.reiter('programm');
-await karteAm(C, FR, 'Konzert spät').locator('[data-mitwem="gastgeber"]').click();
-await karteAm(C, MI, 'Nachtmarkt').locator('[data-mitwem="andere"]').click();
-await karteAm(C, SA, 'Party').locator('[data-mitwem="gastgeber"]').click();
+await (await karteAm(C, FR, 'Konzert spät')).locator('[data-mitwem="gastgeber"]').click();
+await (await karteAm(C, MI, 'Nachtmarkt')).locator('[data-mitwem="andere"]').click();
+await (await karteAm(C, SA, 'Party')).locator('[data-mitwem="gastgeber"]').click();
 await leer(C);
 await C.reiter('wir');
 await synchron(C);
@@ -187,10 +191,10 @@ check(await A.page.locator('#wir-zusammen .karte.treffer', { hasText: 'Party' })
   'Tobi sagt Bock zu Jos Party – sie rückt unter „Zusammen“');
 check(await kimZeile.getAttribute('open') !== null, 'was man aufgeklappt hat, bleibt nach dem Neuzeichnen offen');
 await A.reiter('programm');
-check((await karteAm(A, MI, 'Nachtmarkt').locator('.wer').innerText()).includes('ohne dich'), 'auch im Programm steht an der Karte, wer es ohne Tobi macht');
+check((await (await karteAm(A, MI, 'Nachtmarkt')).locator('.wer').innerText()).includes('ohne dich'), 'auch im Programm steht an der Karte, wer es ohne Tobi macht');
 await A.ansicht('monat');
-check(await A.page.locator(`.feld[data-tag="${DI}"].treffer`).count() === 1 && await A.page.locator(`.feld[data-tag="${FR}"].treffer`).count() === 1
-  && await A.page.locator(`.feld[data-tag="${MI}"].treffer`).count() === 0, 'im Kalender: die Tage mit Treffern – der Nachtmarkt ohne Tobi ist keiner');
+check(await A.page.locator(`.feld[data-waehle="${DI}"].treffer`).count() === 1 && await A.page.locator(`.feld[data-waehle="${FR}"].treffer`).count() === 1
+  && await A.page.locator(`.feld[data-waehle="${MI}"].treffer`).count() === 0, 'im Kalender: die Tage mit Treffern – der Nachtmarkt ohne Tobi ist keiner');
 
 // Fremdes darf nichts anrichten – und Tobi kann es herausnehmen.
 const FREMD = 'pzzzzzzzzzzzzzz';
@@ -222,7 +226,7 @@ check(!raum().personen.some((p) => p.id === FREMD) && !haken().some((b) => b.per
 // --- Kim ist offline
 server.offline = true;
 await B.reiter('programm');
-await karteAm(B, DI, 'Workshop mittags').locator('[data-mitwem="gastgeber"]').click();
+await (await karteAm(B, DI, 'Workshop mittags')).locator('[data-mitwem="gastgeber"]').click();
 await B.page.waitForTimeout(1500);
 await B.reiter('wir');
 check((await B.page.locator('.syncstatus').innerText()).includes('1 Änderung wartet'), 'offline: der Haken wartet');

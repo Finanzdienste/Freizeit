@@ -2,8 +2,8 @@
  * Das Filter-Blatt (js/blatt.js, js/ansicht-filter.js): ein Knopf je Reiter,
  * das Blatt von unten als Dialog, Wahl gilt sofort, Chips mit ✕, „Alle
  * zeigen“, Zurücksetzen, Escape, Tipp daneben, der Fokus – und dass nichts
- * quer scrollt. Dieselben Filter in Liste, Monat, Woche, Tag und Karte; die
- * Ideen haben ihr eigenes Blatt.
+ * quer scrollt. Dieselben Filter in Tag, Woche, Monat und Karte; „Was immer
+ * geht“ unten im Programm hat sein eigenes Blatt.
  */
 import { oeffne, MO, DI } from './hilfe.mjs';
 
@@ -29,7 +29,7 @@ check(await page.evaluate(() => ['#ansicht', '.kopf', '.reiterleiste'].every((s)
 check(JSON.stringify(await page.$$eval('#blatt .fgruppe h3', (hs) => hs.map((h) => h.textContent))) === JSON.stringify(['Art', 'Wo', 'Was', 'Wann']),
   'Gruppen: Art, Wo, Was, Wann – ohne Standort keine Reihenfolge');
 const zahlOben = (await page.locator('#zaehler').innerText()).match(/^\d+/)[0];
-check(await fuss() === `${zahlOben} Termine zeigen`, `unten „${zahlOben} Termine zeigen“ – dieselbe Zahl wie oben in der Liste`);
+check(await fuss() === `${zahlOben} Termine zeigen`, `unten „${zahlOben} Termine zeigen“ – dieselbe Zahl wie oben am Tag`);
 check(await page.locator('#blatt [data-aktion="blatt-zuruecksetzen"]').isDisabled(), 'ohne Filter ist „Zurücksetzen“ aus');
 const regionen = await page.$$eval('#f-region option', (os) => os.map((o) => o.value));
 check(regionen.includes('AHR') && !regionen.includes('ONL') && (await page.locator('#f-region option[value="AHR"]').innerText()) === 'Ahrensburg & Stormarn'
@@ -39,8 +39,8 @@ check(await querScroll() <= 0, 'mit offenem Blatt scrollt nichts quer (390 px)')
 
 // --- Wahl gilt sofort, der Fokus bleibt
 await page.click('#blatt [data-filter="kostenlos"]');
-check(JSON.stringify(await titelAm(MO)) === JSON.stringify(['Gratis Lesung']) && await fuss() === '2 Termine zeigen',
-  'kostenlos: die Liste dahinter und die Zahl unten ändern sich sofort');
+check(JSON.stringify(await titelAm(MO)) === JSON.stringify(['Gratis Lesung']) && await fuss() === '1 Termin zeigen',
+  'kostenlos: der Tag dahinter und die Zahl unten ändern sich sofort');
 check(await page.evaluate(() => document.activeElement && document.activeElement.dataset.fokus) === 'Was:kostenlos'
   && await page.locator('#blatt [data-filter="kostenlos"]').getAttribute('aria-pressed') === 'true', 'der Fokus bleibt auf dem Schalter, er steht auf an');
 check(!(await page.locator('#blatt [data-aktion="blatt-zuruecksetzen"]').isDisabled()), 'jetzt geht „Zurücksetzen“');
@@ -86,12 +86,15 @@ check(await page.locator('#blatt [data-filter="kuenstler"]').getAttribute('aria-
   && await page.locator('#blatt [data-aktion="blatt-zuruecksetzen"]').isDisabled(), '„Zurücksetzen“ nimmt alles zurück – im Blatt und dahinter');
 await page.click('#blatt .blatt-x');
 
-// --- Dasselbe Blatt in Woche, Tag – und auf der Karte mit „Karte“
+// --- Dasselbe Blatt in Woche, Monat – und auf der Karte mit „Karte“
 await A.ansicht('woche');
 await A.filter('kostenlos');
-check(await page.locator('.kal-kopf .filterchip[data-chip="kostenlos"]').count() === 1, 'Woche: Filter-Knopf und Chip wie in der Liste');
-await A.ansicht('tag');
-check(await page.locator('.kal-kopf .filterchip[data-chip="kostenlos"]').count() === 1, 'Tag: derselbe Filter gilt');
+check(await page.locator('.prog-kopf .filterchip[data-chip="kostenlos"]').count() === 1, 'Woche: Filter-Knopf und Chip wie am Tag');
+await oeffnen();
+check(await fuss() === '2 Termine zeigen', 'in der Woche zählt das Blatt die Woche: „2 Termine zeigen“ (Lesung, Nachtmarkt)');
+await page.click('#blatt .blatt-x');
+await A.ansicht('monat');
+check(await page.locator('.prog-kopf .filterchip[data-chip="kostenlos"]').count() === 1, 'Monat: derselbe Filter gilt');
 await A.reiter('karte');
 await page.waitForSelector('.leaflet-container');
 await oeffnen();
@@ -101,15 +104,20 @@ await page.click('#blatt .blatt-x');
 check(await page.locator('.karte-kopf .filterchip[data-chip="kostenlos"]').count() === 1 && await querScroll() <= 0, 'auf der Karte der Chip – nichts scrollt quer');
 await page.click('.karte-kopf .filterchip[data-chip="kostenlos"]');
 
-// --- Ideen: eigenes Blatt
-await A.reiter('ideen');
-await oeffnen();
+// --- „Was immer geht“: eigenes Blatt
+await A.reiter('programm');
+await page.click('#ansicht [data-aktion="ideen-filter-auf"]');
+await page.locator('#blatt.offen').waitFor();
 check(JSON.stringify(await page.$$eval('#blatt .fgruppe h3', (hs) => hs.map((h) => h.textContent))) === JSON.stringify(['Wirkung', 'Wo', 'Rahmen', 'Saison'])
-  && /^\d+ Ideen zeigen$/.test(await fuss()), 'Ideen: Wirkung, Wo, Rahmen, Saison – unten „… Ideen zeigen“');
+  && /^\d+ Ideen zeigen$/.test(await fuss()), '„Was immer geht“: Wirkung, Wo, Rahmen, Saison – unten „… Ideen zeigen“');
 await page.click('#blatt [data-ifilter="w:flow"]');
 check(await fuss() === '4 Ideen zeigen', 'Flow: unten „4 Ideen zeigen“');
 await page.keyboard.press('Escape');
-check(await page.locator('.ideen-kopf .filterchip[data-chip="w:flow"]').count() === 1 && await querScroll() <= 0, 'der Chip „⚡ Flow“ oben bei den Ideen');
+check(await page.locator('.immer-kopf .filterchip[data-chip="w:flow"]').count() === 1 && await querScroll() <= 0
+  && await page.evaluate(() => document.activeElement === document.querySelector('#ansicht [data-aktion="ideen-filter-auf"]')),
+'der Chip „⚡ Flow“ bei „Was immer geht“, der Fokus wieder auf seinem Filter-Knopf');
+await page.click('.immer-kopf .filterchip[data-chip="w:flow"]');
+check(await page.locator('.immer-kopf .filterchip').count() === 0 && (await A.gespeichert()).ideenFilter.wirkung.length === 0, '✕ nimmt ihn wieder weg');
 
 // --- Ohne Bewegung, wenn gewünscht
 await page.emulateMedia({ reducedMotion: 'reduce' });

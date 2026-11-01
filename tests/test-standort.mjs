@@ -38,7 +38,11 @@ await ctx.route(SUCHE, (route) => {
 /** Der Abschnitt „Mein Standort“ in den Einstellungen. */
 const feld = () => page.locator('#e-standort');
 const name = () => feld().locator('.standort-name').innerText();
-const unter = (tag, titel) => page.locator(`#tag-${tag} .karte`, { hasText: titel }).locator('.unter').innerText();
+/** Die Zeile unter dem Titel einer Karte – öffnet dafür den Tag. */
+const unter = async (tag, titel) => {
+  await A.zeigeTag(tag);
+  return page.locator(`#tag-${tag} .karte`, { hasText: titel }).locator('.unter').innerText();
+};
 const gespeichert = () => A.gespeichert();
 const warte = (fn, arg) => page.waitForFunction(fn, arg, { timeout: 8000 });
 /** Im Filter-Blatt etwas antippen, etwa den Umkreis. */
@@ -94,7 +98,7 @@ await A.reiter('programm');
 check((await unter(DI, 'Theater früh')) === 'Thalia · 300 m · Bühne' && (await unter(DI, 'Keane')) === 'Sporthalle · 4,9 km · Konzert'
   && (await unter(DI, 'Workshop mittags')) === 'Kochschule · 1,7 km · Food', 'die Entfernung steht hinter dem Ort: 300 m, 1,7 km, 4,9 km');
 check((await unter(MO, 'Stadtrallye ohne Ort')) === 'irgendwo · Erlebnis', 'ohne Koordinaten keine Entfernung');
-check((await page.locator('#abschnitt-laufend .karte', { hasText: 'Ausstellung X' }).locator('.unter').innerText()).includes('Kunsthalle · 500 m'), 'auch an Laufendem');
+check((await page.locator('#abschnitt-laufend .karte', { hasText: 'Ausstellung X' }).locator('.unter').textContent()).includes('Kunsthalle · 500 m'), 'auch an Laufendem');
 
 // --- Reihenfolge
 check(JSON.stringify(await A.titelAm(DI)) === JSON.stringify(['Workshop mittags', 'Theater früh', 'Theaterstück', 'Keane']), 'zuerst nach Uhrzeit');
@@ -129,15 +133,16 @@ await imBlatt('[data-aktion="umkreis"][data-km="2"]');
 
 // --- Monat, Tag
 await A.ansicht('monat');
-check(await page.locator('.kal-kopf .filterchip[data-chip="umkreis"]').count() === 1
-  && (await page.locator(`.feld[data-tag="${DI}"] .zahl`).innerText()) === '3', 'Monat: der Umkreis gilt (Di 3 statt 4) und steht als Chip da');
-await page.click(`.feld[data-tag="${DI}"]`);
-const imTag = await page.$$eval('#kal-tag .karte h3', (hs) => hs.map((h) => h.textContent));
-check(JSON.stringify(imTag) === JSON.stringify(['Theater früh', 'Theaterstück', 'Workshop mittags']), 'Tag: dieselbe Auswahl, nach Nähe');
-await page.click('.kal-kopf .filterchip[data-chip="umkreis"]');
+check(await page.locator('.prog-kopf .filterchip[data-chip="umkreis"]').count() === 1
+  && (await page.locator(`.feld[data-waehle="${DI}"] .zahl`).innerText()) === '3', 'Monat: der Umkreis gilt (Di 3 statt 4) und steht als Chip da');
+await A.zeigeTag(DI);
+const imTag = await page.$$eval(`#tag-${DI} .karte h3`, (hs) => hs.map((h) => h.textContent));
+check(JSON.stringify(imTag) === JSON.stringify(['Theater früh', 'Theaterstück', 'Workshop mittags']) && await page.locator(`#tag-${DI} .tagesteil`).count() === 0,
+  'Tag: dieselbe Auswahl, nach Nähe – ohne Gliederung nach Tageszeit');
+await page.click('.prog-kopf .filterchip[data-chip="umkreis"]');
 st = await gespeichert();
 check(st.filter.umkreis === 0 && st.standort && st.filter.nachEntfernung, '✕ am Chip nimmt den Umkreis weg – Bezugspunkt und Reihenfolge bleiben');
-check((await page.$$eval('#kal-tag .karte h3', (hs) => hs.map((h) => h.textContent))).includes('Keane'), '… Keane ist wieder da');
+check((await page.$$eval(`#tag-${DI} .karte h3`, (hs) => hs.map((h) => h.textContent))).includes('Keane'), '… Keane ist wieder da');
 
 // --- Adresse
 await A.einstellungen();
@@ -169,7 +174,7 @@ check(st.standort.art === 'adresse' && st.standort.name === 'Wandsbek Markt, Wan
   && await page.locator('.treffer-knopf').count() === 0 && await page.locator('#standort-adresse').inputValue() === '',
 'angetippt: die Adresse ist der Bezugspunkt, Auswahl und Feld sind leer');
 check((await name()).includes('Wandsbek Markt, Wandsbek'), 'die Einstellungen nennen die Adresse');
-await A.ansicht('liste');
+await A.ansicht('tag');
 await page.click('#ansicht [data-aktion="filter-auf"]');
 check((await page.locator('#umkreis-name').innerText()) === 'Umkreis um Wandsbek Markt', 'im Blatt nur der erste Teil des Namens');
 await page.click('#blatt .blatt-x');
@@ -206,8 +211,8 @@ await page.waitForTimeout(300);
 check(await page.locator('path.umkreis').count() === 0 && await page.locator('.karte-kopf .filterchip').count() === 0 && await page.locator('.bezug-punkt').count() === 1,
   'Umkreis „alle“ – im Blatt der Karte gewählt: Punkt ohne Kreis, kein Chip');
 
-// --- Ideen: Entfernung zum nächsten Ort
-await A.reiter('ideen');
+// --- „Was immer geht“: Entfernung zum nächsten Ort
+await A.reiter('programm');
 await page.locator('details.kategorie[data-kat="sport"] summary').click();
 await page.locator('details.kategorie[data-kat="entspannen"] summary').click();
 await page.locator('details.kategorie[data-kat="kreativ"] summary').click();
@@ -237,7 +242,7 @@ await page.waitForFunction(() => document.querySelector('#ansicht').innerText.in
 await A.einstellungen();
 await page.click('[data-aktion="standort-geraet"]');
 await gespeichertBis();
-await A.reiter('programm');
+await A.zeigeTag(DI);
 await page.locator(`#tag-${DI} .karte`, { hasText: 'Theater früh' }).locator('[data-bock]').click();
 await A.abgeglichen();
 const gesendet = JSON.stringify(server.aufrufe);

@@ -1,9 +1,10 @@
 /*
- * Reiter „Ideen“: alles ohne festen Termin – zum Stöbern, Bock-Haken,
- * Einplanen und Abhaken.
+ * „Was immer geht“ – ganz unten im Programm, nach Tag, Woche oder Monat:
+ * alles ohne festen Termin, zum Stöbern, Bock-Haken, Einplanen und Abhaken.
+ * (Bis v18 war das der eigene Reiter „Ideen“.)
  *
- * Ganz oben die Filterleiste (Wirkung, wo, Rahmen, Saison – im Blatt, wie im
- * Programm) und „+ Eigene Idee“. Dann, was gerade zählt: Eingeplantes (mit
+ * Oben die eigene Filterleiste (Wirkung, wo, Rahmen, Saison – im Blatt, wie
+ * im Programm) und „+ Eigene Idee“. Dann, was gerade zählt: Eingeplantes (mit
  * „Wie war's?“, sobald der Tag vorbei ist), Ideen mit Bock („Wollen wir
  * mal“) und „Tut dir gut“ – was du nach dem Machen am besten bewertet hast
  * und wobei die Zeit verflog. Darunter der Katalog nach Kategorien,
@@ -32,7 +33,7 @@ import { filterLeiste, chipsIdeen } from './ansicht-filter.js';
 const MIT_TEXT = { allein: 'allein', 'zu zweit': 'zu zweit', gruppe: 'in der Gruppe' };
 const mitText = (mit) => (mit.length === 3 ? 'allein oder gemeinsam' : mit.map((m) => MIT_TEXT[m]).join(' oder '));
 
-/** Anker einer Idee in ihrer Kategorie – für „bei den Ideen“ aus der Karte. */
+/** Anker einer Idee in ihrer Kategorie – für den Sprung aus der Karte oder aus „Wir“. */
 export const ideeAnker = (schluessel) => `idee-${schluessel.replace(/[^a-z0-9-]/gi, '-')}`;
 
 /** Vorschlag fürs Einplanen: der nächste Samstag, am Wochenende heute. */
@@ -60,7 +61,7 @@ function wohinPlan() {
   const r = rolle();
   if (r === 'gastgeber') return 'Steht dann im Programm – deine Leute sehen es und können Bock dazu sagen.';
   if (r === 'mitglied') return `Steht dann in deinem Programm. ${esc(gastgeberName() || 'Der Gastgeber')} sieht es – mit dir oder als Info, je nachdem, was du wählst.`;
-  return 'Steht dann im Programm – in Liste, Monat, Woche und Tag.';
+  return 'Steht dann im Programm – an dem Tag, in der Woche und im Monat.';
 }
 
 function planenForm(x, bereich, heute) {
@@ -215,21 +216,32 @@ export function ideenZahl(alle, st, heute, ui) {
 }
 
 /**
+ * Der Abschnitt „Was immer geht“.
  * @param {object[]} alle       Ideen aus dem Katalog (und Ausflugsziele aus dem Programm)
  * @param {boolean} geladen     ob der Katalog geladen werden konnte
  * @param {object} ui           neu, planen, bewerten, offen (Set), saisonAlle, meldung, fehler
  */
-export function ideenAnsicht(alle, geladen, st, heute, ui) {
+export function wasImmerGeht(alle, geladen, st, heute, ui) {
   const f = st.ideenFilter;
   const ctx = { heute, ui, bil: bilanz(st.verlauf) };
   const eigene = eigeneIdeen(st);
   const filterAktiv = ideenFilterAn(f);
   const { zeigen, eigene: eigeneZeigen, saisonWeg } = katalog(alle, st, heute, ui);
+  const zahl = (n) => `<span class="tt-zahl">${n}</span>`;
+  const unter = (id, titel, n, inhalt, notiz = '') => `<section class="immer-teil" id="${id}">
+    <h3 class="tagesteil"><span>${titel}</span>${n === '' ? '' : zahl(n)}</h3>
+    ${notiz ? `<p class="fein">${notiz}</p>` : ''}
+    ${inhalt}
+  </section>`;
 
   const meldung = ui.meldung ? `<div class="meldung" role="status"><span>${esc(ui.meldung.text)}</span><span class="meldung-knoepfe">${ui.meldung.rueckgaengig ? '<button type="button" class="knopf klein" data-aktion="rueckgaengig">Rückgängig</button>' : ''}<button type="button" class="textknopf" data-aktion="meldung-weg" aria-label="Hinweis schließen">✕</button></span></div>` : '';
   const neuKnopf = `<button type="button" class="knopf" data-aktion="idee-neu" aria-expanded="${Boolean(ui.neu)}">+ Eigene Idee</button>`;
-  const kopf = `<header class="ideen-kopf">
-    ${filterLeiste(chipsIdeen(f, ui.saisonAlle), { rechts: neuKnopf, weg: 'ideen-filter-weg' })}
+  const kopf = `<header class="immer-kopf">
+    <h2 class="immer-titel" id="was-immer-geht-titel">Was immer geht<span class="abschnitt-zahl" id="ideen-zahl">${zeigen.length + eigeneZeigen.length}</span></h2>
+    <p class="fein">Ohne festen Termin – stöbern, Bock sagen, einen Tag einplanen.</p>
+    ${filterLeiste(chipsIdeen(f, ui.saisonAlle), {
+    rechts: neuKnopf, weg: 'ideen-filter-weg', auf: 'ideen-filter-auf', chipAktion: 'ichip-weg',
+  })}
     ${saisonWeg ? `<p class="zaehler" id="ideen-zaehler">${anzahl(saisonWeg, 'Idee', 'Ideen')} außerhalb der Saison ausgeblendet</p>` : ''}
     ${ui.neu ? neuForm(st, ui) : ''}
     ${meldung}
@@ -241,37 +253,30 @@ export function ideenAnsicht(alle, geladen, st, heute, ui) {
   const kommend = plaene.filter((e) => e.datum >= heute);
   const offen = plaene.filter((e) => e.datum < heute && e.datum >= plusTage(heute, -14) && meinBock(e.schluessel)
     && !st.verlauf.some((v) => v.plan === e.schluessel));
-  const zahl = (n) => `<span class="abschnitt-zahl">${n}</span>`;
-  const eingeplant = kommend.length || offen.length ? `<section class="abschnitt" id="abschnitt-geplant">
-    <h2 class="abschnitt-titel">Eingeplant${zahl(kommend.length + offen.length)}</h2>
-    ${offen.map((e) => frageKarte(e, ctx)).join('')}
-    ${kommend.map((e) => karte(e, { zeitSpalte: true, zeitText: wannKurz(e) })).join('')}
-  </section>` : '';
+  const eingeplant = kommend.length || offen.length
+    ? unter('abschnitt-geplant', 'Eingeplant', kommend.length + offen.length, `${offen.map((e) => frageKarte(e, ctx)).join('')}
+      ${kommend.map((e) => karte(e, { zeitSpalte: true, zeitText: wannKurz(e) })).join('')}`)
+    : '';
 
   // Wollen wir mal: Ideen mit Bock – Treffer zuerst.
   const rang = (x) => (treffer(x.schluessel) ? 0 : (meinBock(x.schluessel) ? 1 : 2));
   const wollen = ideenMitBock(alle, st).sort((a, b) => rang(a) - rang(b) || a.titel.localeCompare(b.titel, 'de'));
-  const wollenHtml = wollen.length ? `<section class="abschnitt" id="abschnitt-wollen">
-    <h2 class="abschnitt-titel">Wollen wir mal${zahl(wollen.length)}</h2>
-    ${st.gemeinsam ? '<p class="fein">Oben, worauf ihr zusammen Bock habt.</p>' : ''}
-    ${wollen.map((x) => ideeKarte(x, ctx, 'wollen')).join('')}
-  </section>` : '';
+  const wollenHtml = wollen.length
+    ? unter('abschnitt-wollen', 'Wollen wir mal', wollen.length, wollen.map((x) => ideeKarte(x, ctx, 'wollen')).join(''), st.gemeinsam ? 'Oben, worauf ihr zusammen Bock habt.' : '')
+    : '';
 
   // Tut dir gut: aus „Wie war's?“.
   const nachSchluessel = new Map([...alle, ...eigene].map((x) => [x.schluessel, x]));
   const gut = tutGut(st.verlauf).map((b) => nachSchluessel.get(b.schluessel)).filter(Boolean);
   const flowZahl = st.verlauf.filter((v) => v.flow).length;
-  const gutHtml = st.verlauf.length ? `<section class="abschnitt" id="abschnitt-gut">
-    <h2 class="abschnitt-titel">Tut dir gut</h2>
-    <p class="fein bilanz">Bisher ${st.verlauf.length}× etwas gemacht, ${flowZahl}× davon mit Flow.${gut.length ? ' Am besten fandest du:' : ' Sobald du etwas mit 🙂 oder 😄 bewertest, steht es hier.'}</p>
-    ${gut.map((x) => ideeKarte(x, ctx, 'gut')).join('')}
-  </section>` : '';
+  const gutHtml = st.verlauf.length
+    ? unter('abschnitt-gut', 'Tut dir gut', '', `<p class="fein bilanz">Bisher ${st.verlauf.length}× etwas gemacht, ${flowZahl}× davon mit Flow.${gut.length ? ' Am besten fandest du:' : ' Sobald du etwas mit 🙂 oder 😄 bewertest, steht es hier.'}</p>
+      ${gut.map((x) => ideeKarte(x, ctx, 'gut')).join('')}`)
+    : '';
 
-  const eigeneHtml = eigeneZeigen.length ? `<section class="abschnitt" id="abschnitt-eigene">
-    <h2 class="abschnitt-titel">Eigene Ideen${zahl(eigeneZeigen.length)}</h2>
-    <p class="fein">Eine eigene Idee bleibt, solange jemand Bock darauf hat.</p>
-    ${eigeneZeigen.map((x) => ideeKarte(x, ctx, 'eigene')).join('')}
-  </section>` : '';
+  const eigeneHtml = eigeneZeigen.length
+    ? unter('abschnitt-eigene', 'Eigene Ideen', eigeneZeigen.length, eigeneZeigen.map((x) => ideeKarte(x, ctx, 'eigene')).join(''), 'Eine eigene Idee bleibt, solange jemand Bock darauf hat.')
+    : '';
   const kategorien = KATEGORIEN.map(([k, titel]) => {
     const liste = zeigen.filter((x) => x.kat === k);
     if (!liste.length) return '';
@@ -282,14 +287,17 @@ export function ideenAnsicht(alle, geladen, st, heute, ui) {
       ${liste.map((x) => ideeKarte(x, ctx, 'kat')).join('')}
     </details>`;
   }).join('');
+  const oben = eingeplant || wollenHtml || gutHtml || eigeneHtml;
 
-  return `${kopf}
+  return `<section class="immer" id="was-immer-geht" aria-labelledby="was-immer-geht-titel">
+    ${kopf}
     ${eingeplant}
     ${wollenHtml}
     ${gutHtml}
     ${eigeneHtml}
-    <section class="abschnitt" id="abschnitt-katalog">
-      <h2 class="abschnitt-titel">Alle Ideen${zahl(zeigen.length)}</h2>
+    <section class="immer-teil" id="abschnitt-katalog">
+      ${oben ? `<h3 class="tagesteil"><span>Alle Ideen</span>${zahl(zeigen.length)}</h3>` : ''}
       <div class="kategorien">${kategorien || (geladen ? '<div class="leer-klein">Keine Idee passt zu diesen Filtern. <button type="button" class="textknopf" data-aktion="ideen-filter-weg">Alle zeigen</button></div>' : '')}</div>
-    </section>`;
+    </section>
+  </section>`;
 }

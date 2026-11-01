@@ -18,7 +18,11 @@ const zeile = (x) => x.page.locator('.push-zeile');
 const stand = (x) => zeile(x).getAttribute('data-push');
 const protokoll = (x) => x.page.evaluate(() => window.__push);
 const kurz = () => (raum().nachrichten || []).map((n) => `${n.art}:${n.name}${n.daten ? `:${n.daten.eintrag.split(':')[1]}:${n.daten.mitwem || '-'}` : ''}`);
-const karteAm = (x, tag, titel) => x.page.locator(`#tag-${tag} .karte`, { hasText: titel });
+/** Die Karte an einem Tag im Programm – öffnet dafür den Tag (Ansicht Tag). */
+const karteAm = async (x, tag, titel) => {
+  await x.zeigeTag(tag);
+  return x.page.locator(`#tag-${tag} .karte`, { hasText: titel });
+};
 const bytes = (b64url) => [...Buffer.from(b64url.replace(/-/g, '+').replace(/_/g, '/'), 'base64')];
 
 // --- Tobi startet den Plan: die Zeile mit dem Knopf
@@ -66,29 +70,29 @@ check(await stand(A) === 'an', 'nach dem Neuladen (die Adresse ist #einstellunge
 
 // --- Was der Server jetzt sammelt (wie supabase/gemeinsam.sql)
 await B.reiter('programm');
-await karteAm(B, DI, 'Theater früh').locator('[data-mitwem="gastgeber"]').click();
+await (await karteAm(B, DI, 'Theater früh')).locator('[data-mitwem="gastgeber"]').click();
 await leer(B);
-await karteAm(B, DI, 'Theater früh').locator('[data-mitwem="gastgeber"]').click();
+await (await karteAm(B, DI, 'Theater früh')).locator('[data-mitwem="gastgeber"]').click();
 await leer(B);
 check(JSON.stringify(kurz()) === JSON.stringify(['bock:Kim:theater-frueh:gastgeber', 'aus:Kim:theater-frueh:gastgeber']),
   `Kim hakt „Mit Tobi“ an: bock mit mitwem – der zweite Tipp auf denselben Knopf nimmt es zurück: aus (${kurz().join(' | ')})`);
-await karteAm(B, DI, 'Theater früh').locator('[data-mitwem="gastgeber"]').click();
+await (await karteAm(B, DI, 'Theater früh')).locator('[data-mitwem="gastgeber"]').click();
 await leer(B);
-await karteAm(B, DI, 'Theater früh').locator('[data-mitwem="andere"]').click();
+await (await karteAm(B, DI, 'Theater früh')).locator('[data-mitwem="andere"]').click();
 await leer(B);
-await karteAm(B, SA, 'Party').locator('[data-mitwem="andere"]').click();
+await (await karteAm(B, SA, 'Party')).locator('[data-mitwem="andere"]').click();
 await leer(B);
-await karteAm(B, SA, 'Party').locator('[data-mitwem="andere"]').click();
+await (await karteAm(B, SA, 'Party')).locator('[data-mitwem="andere"]').click();
 await leer(B);
 check(JSON.stringify(kurz().slice(2)) === JSON.stringify(['bock:Kim:theater-frueh:gastgeber', 'bock:Kim:theater-frueh:andere', 'bock:Kim:party:andere']),
   `wieder anhaken, zu „Allein/mit anderen“ wechseln, Party ohne Tobi – ein zurückgenommenes „ohne dich“ meldet nichts (${kurz().join(' | ')})`);
-await karteAm(B, DI, 'Theater früh').locator('[data-mitwem="gastgeber"]').click();
+await (await karteAm(B, DI, 'Theater früh')).locator('[data-mitwem="gastgeber"]').click();
 await leer(B);
-await karteAm(B, DI, 'Theater früh').locator('[data-mitwem="gastgeber"]').click();
+await (await karteAm(B, DI, 'Theater früh')).locator('[data-mitwem="gastgeber"]').click();
 await leer(B);
 check(kurz().slice(-2).join(' | ') === 'bock:Kim:theater-frueh:gastgeber | aus:Kim:theater-frueh:gastgeber', 'ein zurückgenommenes „mit dir“ meldet aus');
 await A.reiter('programm');
-await karteAm(A, DI, 'Theater früh').locator('[data-bock]').click();
+await (await karteAm(A, DI, 'Theater früh')).locator('[data-bock]').click();
 await leer(A);
 check(kurz().length === 7, 'Tobis eigener Haken meldet nichts');
 await B.reiter('wir');

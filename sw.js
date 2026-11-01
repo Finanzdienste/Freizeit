@@ -21,7 +21,7 @@
  * Datei zu müssen.
  */
 
-const VERSION = 'v18';
+const VERSION = 'v19';
 const CACHE = `freizeit-${VERSION}`;
 
 const SHELL = [
@@ -39,7 +39,6 @@ const SHELL = [
   './js/teilen.js',
   './js/karte.js',
   './js/ansicht-programm.js',
-  './js/ansicht-kalender.js',
   './js/ansicht-landkarte.js',
   './js/ansicht-ideen.js',
   './js/ansicht-wir.js',

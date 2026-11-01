@@ -1,9 +1,10 @@
 /*
- * Reiter „Ideen“: Katalog nach Kategorien, Filter nach Wirkung, Saison,
- * Bock, Einplanen (steht dann in Programm und Kalender), „Gemacht“ mit
- * „Wie war's?“ und „Tut dir gut“, eigene Ideen – allein und im gemeinsamen
- * Plan, wo Eingeladene „mit Tobi“ oder ohne ihn einplanen –, fremder Text,
- * und die Ideen auf der Karte.
+ * „Was immer geht“ – die Ideen unten im Programm (bis v18 der Reiter „Ideen“):
+ * Katalog nach Kategorien, eigener Filter nach Wirkung, Saison, Bock,
+ * Einplanen (steht dann am Tag, in Woche und Monat), „Gemacht“ mit „Wie
+ * war's?“ und „Tut dir gut“, eigene Ideen – allein und im gemeinsamen Plan,
+ * wo Eingeladene „mit Tobi“ oder ohne ihn einplanen –, fremder Text, und die
+ * Ideen auf der Karte.
  *
  * Testdaten: testIdeen() in hilfe.mjs (sieben Ideen, das Tretboot hat im
  * November keine Saison), dazu der Elbstrand aus programm.json „immer“.
@@ -21,12 +22,12 @@ const sichtbar = () => page.$$eval('details.kategorie .karte h3', (hs) => hs.map
 const gleich = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
 // --- Katalog
-await reiter('ideen');
-check(await page.locator('[data-reiter="ideen"]').getAttribute('aria-current') === 'page', 'der Reiter Ideen ist offen');
+check(await page.locator('.reiterleiste [data-reiter="ideen"]').count() === 0 && await page.locator('#ansicht #was-immer-geht').count() === 1
+  && (await page.locator('#was-immer-geht-titel').innerText()).startsWith('Was immer geht'), 'kein Reiter Ideen: „Was immer geht“ steht unten im Programm');
 const zaehler = await page.locator('#ideen-zaehler').innerText();
-const katalogZahl = await page.locator('#abschnitt-katalog .abschnitt-zahl').innerText();
+const katalogZahl = await page.locator('#ideen-zahl').innerText();
 check(katalogZahl === '7' && zaehler === '1 Idee außerhalb der Saison ausgeblendet',
-  `sieben Ideen (die Zahl steht nur bei „Alle Ideen“), oben nur: das Tretboot hat im November keine Saison (${katalogZahl} | ${zaehler})`);
+  `sieben Ideen (die Zahl steht an der Überschrift), darunter: das Tretboot hat im November keine Saison (${katalogZahl} | ${zaehler})`);
 check(await page.locator('details.kategorie').count() === 7 && await page.locator('details.kategorie[open]').count() === 0,
   'sieben Kategorien mit Ideen, alle eingeklappt');
 check((await kat('natur').locator('summary').innerText()).includes('Elbstrand'), 'der Elbstrand aus „Geht immer“ steht bei Natur & Draußen');
@@ -42,16 +43,17 @@ await filter('x:zuZweit');
 check(gleich(await sichtbar(), ['Bügelperlen']), 'Flow, Zuhause und zu zweit: nur die Bügelperlen');
 const f = (await gespeichert()).ideenFilter;
 check(f.wirkung.includes('flow') && f.wo === 'zuhause' && f.zuZweit === true, 'die Filter stehen im Speicher');
-check(JSON.stringify(await page.$$eval('.ideen-kopf .filterchip', (cs) => cs.map((c) => c.dataset.chip))) === JSON.stringify(['w:flow', 'wo:zuhause', 'x:zuZweit'])
-  && await page.locator('.ideen-kopf [data-aktion="filter-auf"] .zahl-marke').innerText() === '3', 'oben drei Chips, der Filter-Knopf zählt 3');
-await page.click('.ideen-kopf .filterchip[data-chip="wo:zuhause"]');
+check(JSON.stringify(await page.$$eval('.immer-kopf .filterchip', (cs) => cs.map((c) => c.dataset.chip))) === JSON.stringify(['w:flow', 'wo:zuhause', 'x:zuZweit'])
+  && await page.locator('[data-aktion="ideen-filter-auf"] .zahl-marke').innerText() === '3' && await page.locator('.prog-kopf .filterchip').count() === 0,
+'bei „Was immer geht“ drei Chips, sein Filter-Knopf zählt 3 – die Filter der Termine oben bleiben unberührt');
+await page.click('.immer-kopf .filterchip[data-chip="wo:zuhause"]');
 check(gleich(await sichtbar(), ['Bügelperlen', 'Tischtennis im Park']) && !(await gespeichert()).ideenFilter.wo, '✕ an „Zuhause“: nur dieser Filter geht – Tischtennis ist wieder da');
 await page.click('[data-aktion="ideen-filter-weg"]');
-check(await page.locator('details.kategorie[open]').count() === 0 && await page.locator('.ideen-kopf .filterchip').count() === 0,
+check(await page.locator('details.kategorie[open]').count() === 0 && await page.locator('.immer-kopf .filterchip').count() === 0,
   '„Alle zeigen“ nimmt alle Filter zurück und klappt die Kategorien wieder ein');
 
 // --- Saison
-await imFilter(() => page.click('#blatt [data-aktion="saison-alle"]'));
+await imFilter(() => page.click('#blatt [data-aktion="saison-alle"]'), { ideen: true });
 check((await kat('sport').locator('.kat-zahl').innerText()) === '2', 'außerhalb der Saison zeigen (im Blatt): das Tretboot ist da');
 check(await page.locator('.filterchip[data-chip="saison"]').count() === 1 && await page.locator('#ideen-zaehler').count() === 0,
   '… als Chip, und der Saison-Hinweis oben ist weg');
@@ -87,15 +89,16 @@ const kal = await geplant.locator('a', { hasText: 'Kalender' }).getAttribute('hr
 check(kal.includes('20261107T150000'), 'der Kalender-Knopf trägt Tag und Uhrzeit');
 check((await gespeichert()).bock[`p:${SA}:i:tischtennis`].titel === 'Tischtennis im Park', 'als Haken mit Schnappschuss gespeichert');
 
-await reiter('programm');
-check(await page.locator(`#tag-${SA} .karte`, { hasText: 'Tischtennis' }).locator('.marke.plan').count() === 1, 'im Programm steht es am Samstag');
+await A.zeigeTag(SA);
+check(await page.locator(`#tag-${SA} .karte`, { hasText: 'Tischtennis' }).locator('.marke.plan').count() === 1
+  && (await page.locator(`#tag-${SA} .tagesteil`).first().innerText()).startsWith('Eingeplant'), 'im Programm steht es am Samstag, oben unter „Eingeplant“');
 await A.ansicht('monat');
-check(await page.locator(`.feld[data-tag="${SA}"] .pkt.ich`).count() === 1, 'im Monat ein Punkt am Samstag');
-await page.locator(`.feld[data-tag="${SA}"]`).click();
-check(await page.locator('#kal-tag .karte', { hasText: 'Tischtennis' }).count() === 1, '… und darunter der Plan');
+check(await page.locator(`.feld[data-waehle="${SA}"] .pkt.ich`).count() === 1, 'im Monat ein Punkt am Samstag');
+check(await page.locator(`.feld[data-waehle="${SA}"]`).getAttribute('aria-pressed') === 'true'
+  && await page.locator('.monat-vorschau .wt-eintrag', { hasText: 'Tischtennis' }).count() === 1, '… der Samstag ist noch gewählt, darunter in seiner Karte der Plan');
 
 // --- Gemacht, Wie war's?, Tut dir gut
-await reiter('ideen');
+await reiter('programm');
 await kat('kreativ').locator('summary').click();
 const perlen = karteIn(page, 'details[data-kat="kreativ"]', 'Bügelperlen');
 await perlen.locator('[data-aktion="gemacht"]').click();
@@ -119,7 +122,7 @@ check(await page.locator('#abschnitt-gut .karte').count() === 0 && (await page.l
 
 // --- Nach dem Tag: Wie war's?
 await uhr(SO2);
-check(await page.locator('[data-reiter="ideen"]').getAttribute('aria-current') === 'page', 'nach dem Neuladen wieder im Reiter Ideen');
+check(await page.locator('[data-reiter="programm"]').getAttribute('aria-current') === 'page', 'nach dem Neuladen wieder im Programm');
 const frage = page.locator('#abschnitt-geplant .frage-karte', { hasText: 'Tischtennis' });
 check(await frage.count() === 1, 'nach dem Tag fragt die App: Wie war\'s?');
 await frage.locator('[data-aktion="gemacht"]').click();
@@ -151,7 +154,7 @@ await page.click('[data-aktion="starten"]');
 await page.waitForFunction(() => document.querySelector('#ansicht').innerText.includes('Tobi (du)'));
 await A.abgeglichen();
 const code = (await page.locator('#einladungslink').inputValue()).split('#einladung=')[1];
-await reiter('ideen');
+await reiter('programm');
 await page.click('[data-aktion="idee-neu"]');
 await page.fill('.idee-titel', 'Flohmarkt-Runde');
 await page.click('[data-aktion="idee-speichern"]');
@@ -169,7 +172,7 @@ await B.page.fill('#wir-code', code);
 await B.page.fill('#wir-name-code', 'Kim');
 await B.page.click('[data-aktion="beitreten-code"]');
 await B.page.waitForFunction(() => document.querySelector('#ansicht').innerText.includes('Kim (du)'));
-await B.reiter('ideen');
+await B.reiter('programm');
 const floh = karteIn(B.page, '#abschnitt-wollen', 'Flohmarkt-Runde');
 check(await floh.count() === 1 && (await floh.locator('.wer').innerText()).includes('Tobi'), 'Kim sieht Tobis eigene Idee mit seinem Haken');
 check((await floh.locator('.marke.eigen').innerText()) === 'Eigene Idee von Tobi', '… mit seinem Namen');
@@ -181,10 +184,10 @@ await sauna.locator('[data-mitwem="gastgeber"]').click();
 check(await karteIn(B.page, '#abschnitt-geplant', 'Sauna-Abend').locator('[data-mitwem="gastgeber"]').getAttribute('aria-pressed') === 'true', 'Kim sagt „Mit Tobi“ dazu');
 await B.page.waitForFunction(() => !JSON.parse(localStorage.getItem('freizeit.stand.v1')).warteschlange.length);
 await B.ansicht('monat');
-check(await B.page.locator(`.feld[data-tag="${SO2}"].treffer`).count() === 1, 'im Monat: ihr habt beide Bock');
+check(await B.page.locator(`.feld[data-waehle="${SO2}"].treffer`).count() === 1, 'im Monat: ihr habt beide Bock');
 
 // Kim plant zweimal: Tischtennis mit Tobi, Bügelperlen allein/mit anderen.
-await B.reiter('ideen');
+await B.reiter('programm');
 const planeB = async (k, titel, mitwem) => {
   const d = B.page.locator(`details.kategorie[data-kat="${k}"]`);
   if (await d.getAttribute('open') === null) await d.locator('summary').click();
@@ -208,7 +211,7 @@ await reiter('wir');
 await page.waitForFunction(() => document.querySelector('#ansicht').innerText.includes('Bügelperlen'), null, { timeout: 6000 }).catch(() => {});
 check(await karteIn(page, '#wir-mit-dir', 'Tischtennis').count() === 1 && await karteIn(page, '#wir-ohne-dich', 'Bügelperlen').count() === 1,
   'Tobi sieht beide Pläne in „Wir“: Tischtennis „Wollen mit dir“, Bügelperlen „Ohne dich“');
-await reiter('ideen');
+await reiter('programm');
 check(await karteIn(page, '#abschnitt-geplant', 'Tischtennis').count() === 1 && await karteIn(page, '#abschnitt-geplant', 'Bügelperlen').count() === 0,
   '… in seinem Kalender und unter „Eingeplant“ steht nur, was Kim mit ihm machen will');
 
@@ -222,14 +225,14 @@ raum.bock.set('pzzzzzzzzzzzzzz|e:boese', {
 await A.aktion('abgleichen');
 await reiter('wir');
 await page.waitForFunction(() => document.querySelector('#ansicht').innerText.includes('Mallory'), null, { timeout: 6000 });
-await reiter('ideen');
+await reiter('programm');
 const boese = karteIn(page, '#abschnitt-eigene', '<img');
 check(await boese.count() === 1 && await page.locator('#abschnitt-eigene img, #abschnitt-eigene script').count() === 0, 'ein Titel mit HTML steht als Text da');
 check(await boese.locator('a.quelle').count() === 0 && (await boese.locator('.marke.wirkung').count()) === 1, 'ein javascript:-Link wird kein Link, eine unbekannte Wirkung fällt weg');
 await B.reiter('wir');
 await B.aktion('abgleichen');
 await B.page.waitForTimeout(500);
-await B.reiter('ideen');
+await B.reiter('programm');
 check(await karteIn(B.page, '#abschnitt-eigene', '<img').count() === 0 && !(await B.page.locator('#ansicht').innerText()).includes('Mallory'),
   'Kim sieht weder Mallory noch Mallorys Idee');
 
@@ -251,9 +254,15 @@ check(await modul('markerOeffnen', 'Hammer Park') === true, 'der Marker der Tisc
 const pop = page.locator('.leaflet-popup .pop');
 await pop.waitFor();
 check((await pop.locator('.pop-wann').first().innerText()).startsWith('Idee · Sport & Bewegung'), 'die Liste sagt, dass es eine Idee ist');
+check((await pop.locator('[data-zu-idee]').innerText()) === 'bei „Was immer geht“', 'der Knopf dort heißt „bei „Was immer geht““');
 await pop.locator('[data-zu-idee]').click();
-check(await page.locator('[data-reiter="ideen"]').getAttribute('aria-current') === 'page', '„bei den Ideen“ wechselt den Reiter');
-check(await page.locator('#idee-i-tischtennis').isVisible(), '… und die Idee ist aufgeklappt');
+check(await page.locator('[data-reiter="programm"]').getAttribute('aria-current') === 'page', '… und führt ins Programm');
+await page.waitForFunction(() => {
+  const r = document.querySelector('#idee-i-tischtennis').getBoundingClientRect();
+  return r.top >= 0 && r.top < 400;
+}, null, { timeout: 4000 }).catch(() => {});
+check(await page.locator('#idee-i-tischtennis').isVisible() && await page.evaluate(() => document.querySelector('#idee-i-tischtennis').getBoundingClientRect().top < 400),
+  '… zur Idee: ihre Kategorie ist aufgeklappt, sie steht oben auf dem Schirm');
 
 check(B.fehler.length === 0, `Kim: keine Fehler in der Konsole${B.fehler.length ? `: ${B.fehler.slice(0, 2).join(' | ')}` : ''}`);
 await A.ende();

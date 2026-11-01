@@ -80,7 +80,7 @@ function abschnitt(id, titel, text, inhalt, zahl = 0) {
 }
 
 function ideenZeile(n) {
-  return n ? `<p class="fein">Außerdem ${anzahl(n, 'Idee', 'Ideen')} mit Bock – im Reiter <button type="button" class="textknopf" data-reiter="ideen">Ideen</button> unter „Wollen wir mal“.</p>` : '';
+  return n ? `<p class="fein">Außerdem ${anzahl(n, 'Idee', 'Ideen')} mit Bock – im Programm ganz unten bei <button type="button" class="textknopf" data-aktion="zu-ideen">„Was immer geht“</button> unter „Wollen wir mal“.</p>` : '';
 }
 
 function vorbeiListe(alt, ui) {
@@ -190,11 +190,11 @@ export function hilfeKarte() {
     '<b>Hier unter „Wir“</b> siehst du, was wer will: Zusammen, Wollen mit dir, Ohne dich und pro Person.',
     '<b>Wer sieht was:</b> Alle Haken siehst nur du. Die anderen sehen deine und ihre eigenen, voneinander nichts.',
   ] : [
-    '<b>Programm:</b> was in Hamburg und Umgebung los ist, gut einen Monat im Voraus – als Liste, Monat, Woche oder Tag. <b>Karte:</b> dasselbe nach Ort.',
+    '<b>Programm:</b> was in Hamburg und Umgebung los ist, gut einen Monat im Voraus – als Tag, Woche oder Monat. <b>Karte:</b> dasselbe nach Ort.',
     `<b>Mit ${n}</b> an einem Termin heißt: Das würd ich gern mit dir machen. <b>Allein/mit anderen</b> heißt: Hab ich vor, aber ohne dich. Dieselbe Wahl noch einmal nimmt den Haken weg.`,
-    '<b>Ideen:</b> alles ohne festen Termin, von Tischtennis bis Bügelperlen. Auch da kannst du Bock sagen oder dir einen Tag einplanen.',
+    '<b>Was immer geht</b> (im Programm ganz unten): alles ohne festen Termin, von Tischtennis bis Bügelperlen. Auch da kannst du Bock sagen oder dir einen Tag einplanen.',
     `<b>Wir:</b> Hier siehst du, wo ihr beide Bock habt und worauf ${n} Bock hat.`,
-    `<b>Wann hat ${n} Zeit?</b> An jedem Termin steht es dabei, und in den Ansichten Woche und Tag sind belegte Zeiten grau – ohne zu verraten, was ${n} da macht.`,
+    `<b>Wann hat ${n} Zeit?</b> An jedem Termin steht es dabei, und in den Ansichten Tag und Woche sind belegte Zeiten schraffiert – ohne zu verraten, was ${n} da macht.`,
     `<b>Wer sieht was:</b> Deine Haken sieht nur ${n}. Die anderen Eingeladenen sehen nichts von dir – und du nichts von ihnen.`,
     ...(alsApp() ? [] : [istApple()
       ? '<b>Als App aufs iPhone:</b> Teilen → „Zum Home-Bildschirm“. Die App dort kennt diesen Plan nicht – tipp vorher in den Einstellungen (⚙ oben rechts) auf „Weiteres Gerät“, kopier den Link und füg ihn in der App unter „Ich habe einen Code“ ein.'

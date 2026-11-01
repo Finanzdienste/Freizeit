@@ -162,7 +162,7 @@ function popup(gruppe) {
         <div class="pop-wann">${esc(wann)}${x.kuenstler ? ' · <b>♫ Dein Künstler</b>' : ''}</div>
         <div class="pop-titel">${esc(x.titel)}</div>
         ${x.ort && x.ort !== orte[0] ? `<div class="pop-unter">${esc(x.ort)}</div>` : ''}
-        <div class="pop-aktionen">${bockKnopf(x)}${x.link ? `<a href="${esc(x.link)}" target="_blank" rel="noopener">${idee ? 'Info' : 'Quelle'}</a>` : ''}${x.datum ? `<button type="button" class="textknopf" data-zu-tag="${x.datum}">im Programm</button>` : ''}${idee ? `<button type="button" class="textknopf" data-zu-idee="${esc(x.schluessel)}">bei den Ideen</button>` : ''}</div>
+        <div class="pop-aktionen">${bockKnopf(x)}${x.link ? `<a href="${esc(x.link)}" target="_blank" rel="noopener">${idee ? 'Info' : 'Quelle'}</a>` : ''}${x.datum ? `<button type="button" class="textknopf" data-zu-tag="${x.datum}">im Programm</button>` : ''}${idee ? `<button type="button" class="textknopf" data-zu-idee="${esc(x.schluessel)}">bei „Was immer geht“</button>` : ''}</div>
       </li>`;
   }).join('')}</ul>
   </div>`;

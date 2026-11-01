@@ -364,16 +364,17 @@ export function fakeServer() {
  * @param {string} [o.push]           Push-Attrappe statt des Browsers: 'granted' | 'denied' | 'default'
  *                                    (die Antwort auf die Erlaubnisfrage) oder 'keins' (ein Browser ohne
  *                                    Push); ohne Angabe bleibt der Browser, wie er ist
+ * @param {boolean} [o.touch]         ein Gerät mit Touch (Wischen im Programm)
  */
 export async function oeffne({
   tag = MO, zeit = '10:00', programm = testProgramm(), ideen = testIdeen(), stand = null, server = fakeServer(), ua = '', hash = '',
-  viewport = { width: 390, height: 844 }, browser: geteilt = null, scale = 1, push = '',
+  viewport = { width: 390, height: 844 }, browser: geteilt = null, scale = 1, push = '', touch = false,
 } = {}) {
   const browser = geteilt || await chromium.launch();
   // Ohne Service Worker: Er würde die umgeleiteten Daten am Test vorbei holen.
   // Den Offline-Betrieb prüft test-offline.mjs mit Worker.
   const ctx = await browser.newContext({
-    viewport, deviceScaleFactor: scale, locale: 'de-DE', serviceWorkers: 'block', ...(ua ? { userAgent: ua } : {}),
+    viewport, deviceScaleFactor: scale, locale: 'de-DE', serviceWorkers: 'block', hasTouch: touch, ...(ua ? { userAgent: ua } : {}),
   });
   await ctx.addInitScript(uhrStellen);
   if (push) await ctx.addInitScript(pushAttrappe, push);
@@ -453,26 +454,58 @@ export async function oeffne({
     if (!(await page.locator(`#ansicht [data-aktion="${name}"]`).count())) await einstellungen();
     await tippen(`#ansicht [data-aktion="${name}"]`);
   };
-  /** Das Filter-Blatt des Reiters öffnen, darin etwas tun und es wieder schließen (✕). */
-  const imFilter = async (tun) => {
-    await page.click('#ansicht [data-aktion="filter-auf"]');
+  /**
+   * Ein Filter-Blatt öffnen, darin etwas tun und es wieder schließen (✕): das
+   * der Termine (Programm, Karte) – oder mit { ideen: true } das von „Was
+   * immer geht“ unten im Programm.
+   */
+  const imFilter = async (tun, { ideen = false } = {}) => {
+    await page.click(`#ansicht [data-aktion="${ideen ? 'ideen-filter-auf' : 'filter-auf'}"]`);
     await page.locator('#blatt.offen').waitFor();
     await tun();
     await page.click('#blatt .blatt-x');
     await page.locator('#blatt').waitFor({ state: 'detached' });
   };
-  /** Ein Filter-Schalter im Blatt: Programm und Karte (data-filter) oder Ideen (data-ifilter). */
-  const filter = (name) => imFilter(() => page.click(`#blatt [data-filter="${name}"], #blatt [data-ifilter="${name}"]`));
+  /** Ein Filter-Schalter im Blatt: Termine (data-filter, „kostenlos“) oder „Was immer geht“ (data-ifilter, „w:flow“). */
+  const filter = (name) => (name.includes(':')
+    ? imFilter(() => page.click(`#blatt [data-ifilter="${name}"]`), { ideen: true })
+    : imFilter(() => page.click(`#blatt [data-filter="${name}"]`)));
   /** Eine Auswahl im Filter-Blatt, etwa die Region: waehle('#f-region', 'HB'). */
   const waehle = (selektor, wert) => imFilter(() => page.selectOption(`#blatt ${selektor}`, wert));
-  /** Ins Programm, in eine seiner Ansichten: liste, monat, woche, tag. */
+  /** Ins Programm, in eine seiner Ansichten: tag, woche, monat. */
   const ansicht = async (name) => {
     await reiter('programm');
     await page.click(`[data-kal-ansicht="${name}"]`);
     await bereit();
   };
-  /** Titel der sichtbaren Karten eines Tages im Programm. */
-  const titelAm = (datum) => page.$$eval(`#tag-${datum} .karte h3`, (hs) => hs.map((h) => h.textContent));
+  /**
+   * Im Programm die Ansicht Tag mit diesem Tag öffnen – so, wie es ein Mensch
+   * täte: über die Tagesleiste oder die Karte des Tages in der Woche, sonst
+   * über den Monat (blättern, Feld wählen, „Ganzen Tag ansehen“).
+   */
+  const zeigeTag = async (datum) => {
+    if (await page.locator(`#tag-${datum}`).count()) return;
+    if (!(await page.locator('.reiterleiste [data-reiter="programm"][aria-current="page"]').count())) await reiter('programm');
+    if (await page.locator(`#tag-${datum}`).count()) return;
+    const direkt = page.locator(`#ansicht .tagleiste [data-tag="${datum}"], #ansicht .wtag[data-tag="${datum}"]`);
+    if (await direkt.count()) await direkt.first().click();
+    else {
+      if (!(await page.locator('#ansicht .kalender').count())) await page.click('[data-kal-ansicht="monat"]');
+      const monat = datum.slice(0, 7);
+      for (let i = 0; i < 24 && !(await page.locator(`.kalender[data-monat="${monat}"]`).count()); i++) {
+        const jetzt = await page.locator('.kalender').getAttribute('data-monat');
+        await page.click(`#ansicht [data-aktion="${monat > jetzt ? 'kal-vor' : 'kal-zurueck'}"]`);
+      }
+      await page.click(`.feld[data-waehle="${datum}"]`);
+      if (!(await page.locator(`#tag-${datum}`).count())) await page.click(`.monat-vorschau [data-tag="${datum}"]`);
+    }
+    await page.locator(`#tag-${datum}`).waitFor();
+  };
+  /** Titel der Karten eines Tages im Programm – öffnet dafür den Tag. */
+  const titelAm = async (datum) => {
+    await zeigeTag(datum);
+    return page.$$eval(`#tag-${datum} .karte h3`, (hs) => hs.map((h) => h.textContent));
+  };
   const gespeichert = () => page.evaluate((key) => JSON.parse(localStorage.getItem(key) || 'null'), SCHLUESSEL);
   /** Bis der gemeinsame Plan nichts mehr zu senden hat und abgeholt ist. */
   const abgeglichen = () => page.waitForFunction((key) => {
@@ -488,7 +521,7 @@ export async function oeffne({
   };
 
   return {
-    browser, ctx, page, check, fehler, uhr, datenTauschen, reiter, ansicht, tippen, aktion, einstellungen, imFilter, filter, waehle, titelAm,
+    browser, ctx, page, check, fehler, uhr, datenTauschen, reiter, ansicht, zeigeTag, tippen, aktion, einstellungen, imFilter, filter, waehle, titelAm,
     gespeichert, abgeglichen, ende, daten, server, stats: () => ({ oks, fails }),
   };
 }

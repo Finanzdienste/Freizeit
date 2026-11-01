@@ -1,40 +1,34 @@
 /*
  * Freizeit – was in Hamburg und Umgebung los ist, mit den Konzerten deiner
- * Künstler, als Liste, Monat, Woche und Tag, auf der Karte, Ideen für alles
- * ohne Termin, und gemeinsam mit deinen Leuten.
+ * Künstler, als Tag, Woche und Monat, auf der Karte, mit Ideen für alles ohne
+ * Termin („Was immer geht“), und gemeinsam mit deinen Leuten.
  *
  * Einstieg: Daten laden, Reiter zeichnen, Knöpfe verdrahten, den gemeinsamen
  * Plan abgleichen. Das Programm schreibt ein geplanter Lauf montags früh nach
  * daten/, den Ideen-Katalog pflegt man von Hand; die App selbst ändert
  * beides nie.
  *
- * Wo was ist: unten die Reiter Programm, Karte, Ideen, Wir und Einstellungen;
- * in Programm, Karte und Ideen oben der Knopf „Filter“ mit dem Blatt von unten
- * (blatt.js, ansicht-filter.js); alles Einmalige – welche Reiter unten
- * stehen, Standort, Mitteilungen, der Plan, die App – im Reiter Einstellungen
- * (#einstellungen). Ein ausgeblendeter Reiter bleibt über Links erreichbar;
- * unten ist dann keiner markiert.
+ * Wo was ist: unten die Reiter Programm, Karte, Wir und Einstellungen. Im
+ * Programm oben Tag · Woche · Monat und der Knopf „Filter“ mit dem Blatt von
+ * unten (blatt.js, ansicht-filter.js), ganz unten „Was immer geht“ mit
+ * eigenem Filter; auf der Karte derselbe Filter. Alles Einmalige – welche
+ * Reiter unten stehen, Standort, Mitteilungen, der Plan, die App – steht im
+ * Reiter Einstellungen (#einstellungen). Ein ausgeblendeter Reiter bleibt
+ * über Links erreichbar; unten ist dann keiner markiert.
  */
 import {
   laden, speichern, aktuell, bockUmschalten, bockWeg, meinBock, gemachtSpeichern, gemachtWeg, LEERER_FILTER, LEERER_IDEENFILTER, ARTEN,
   INHALTS_REITER,
 } from './speicher.js';
 import { ladeAlles } from './daten.js';
-import {
-  heute, montag, plusTage, wochentagKurz, tagMonat,
-} from './zeit.js';
+import { heute, wochentagKurz, tagMonat } from './zeit.js';
 import { anzahl } from './text.js';
 import { SCHALTER } from './filter.js';
-import {
-  programmAnsicht, wochenBereich, listenZahl, tagesleisteNeu,
-} from './ansicht-programm.js';
-import {
-  kalenderAnsicht, ansichtSchalter, ANSICHTEN, kalenderZahl,
-} from './ansicht-kalender.js';
+import { programmAnsicht, programmZahl, ANSICHTEN } from './ansicht-programm.js';
 import {
   landkarteGeruest, landkarteZeichnen, landkarteAuffrischen, karteKopf, kartenZahl, ZEITRAEUME,
 } from './ansicht-landkarte.js';
-import { ideenAnsicht, ideeAnker, ideenZahl } from './ansicht-ideen.js';
+import { wasImmerGeht, ideeAnker, ideenZahl } from './ansicht-ideen.js';
 import { wirAnsicht, vorbei } from './ansicht-wir.js';
 import { einstellungenAnsicht } from './ansicht-einstellungen.js';
 import { programmBlatt, ideenBlatt } from './ansicht-filter.js';
@@ -56,10 +50,14 @@ import {
   vergessen as planVergessen, wiederBeitreten, entfernen, neuesterAndererHaken, rolle,
 } from './gemeinsam.js';
 
-// Die Reiter unten: vier mit Inhalt (abschaltbar) und Einstellungen, immer da.
+// Die Reiter unten: drei mit Inhalt (abschaltbar) und Einstellungen, immer da.
 const SEITEN = [...INHALTS_REITER, 'einstellungen'];
-// Adressen aus früheren Fassungen (Lesezeichen) landen sinnvoll.
-const ALTE_REITER = { woche: 'programm', konzerte: 'programm', kalender: 'programm', merkliste: 'wir' };
+// Adressen aus früheren Fassungen (Lesezeichen) landen sinnvoll – #ideen bei „Was immer geht“.
+const ALTE_REITER = {
+  woche: 'programm', konzerte: 'programm', kalender: 'programm', merkliste: 'wir', ideen: 'programm',
+};
+// Nach dem Zeichnen dorthin scrollen (etwa „Was immer geht“ nach #ideen).
+let springeZu = '';
 const $ = (s) => document.querySelector(s);
 
 let daten = {
@@ -68,9 +66,9 @@ let daten = {
 let ideenListe = []; // Katalog und Ausflugsziele aus dem Programm (ideen.js, alleIdeen)
 let geladen = false;
 let reiter = 'programm';
-// Programm: die Ansicht (liste, monat, woche, tag) und der gewählte Tag – die
-// Liste zeigt seine Woche, der Monat seinen Monat.
-const prog = { ansicht: 'liste', datum: '' };
+// Programm: die Ansicht (tag, woche, monat) und der gewählte Tag – die Woche
+// zeigt seine Woche, der Monat seinen Monat.
+const prog = { ansicht: 'tag', datum: '' };
 let raum = 'woche'; // Zeitraum auf der Karte
 // Wir und Einstellungen: offene Felder, die Person, die gleich herausgenommen
 // wird, wer zu einem Einladungslink einlädt, aufgeklappte Abschnitte
@@ -80,7 +78,7 @@ const ui = {
   einladungVon: null, offen: new Set(),
   zeitenWoche: '', // Montag der Woche in „Wann hat … Zeit?“
 };
-// Reiter Ideen: offene Formulare („bereich|schlüssel“), aufgeklappte Kategorien, letzte Meldung
+// „Was immer geht“ (unten im Programm): offene Formulare („bereich|schlüssel“), aufgeklappte Kategorien, letzte Meldung
 const uiIdeen = {
   neu: false, planen: '', bewerten: '', offen: new Set(), saisonAlle: false, meldung: null, fehler: '',
 };
@@ -104,6 +102,7 @@ function adresseLesen() {
     return 'wir';
   }
   if (SEITEN.includes(h)) return h;
+  if (h === 'ideen') springeZu = 'was-immer-geht';
   return ALTE_REITER[h] || null;
 }
 
@@ -138,7 +137,7 @@ function leisteAktualisieren() {
     if (b.dataset.reiter === reiter && !b.hidden) b.setAttribute('aria-current', 'page');
     else b.removeAttribute('aria-current');
   });
-  // Für die Schriftgröße: fünf Reiter brauchen etwas kleinere Beschriftungen.
+  // Wie viele Reiter unten stehen – für Tests und Gestaltung.
   leiste.dataset.anzahl = String(sichtbar.length);
   // Der Punkt gehört zu „Wir“ – ist der Reiter aus, gibt es ihn nicht, auch nicht anderswo.
   const neu = neuesterAndererHaken();
@@ -154,7 +153,7 @@ function fokusSchluessel(el) {
   const ansicht = $('#ansicht');
   if (!el || el === ansicht || !ansicht.contains(el)) return '';
   if (el.id) return `#${CSS.escape(el.id)}`;
-  const teile = ['aktion', 'filter', 'ifilter', 'kalAnsicht', 'reiter', 'chip', 'person', 'idee', 'bereich', 'plan', 'wert', 'km', 'bock', 'mitwem', 'auf', 'tag']
+  const teile = ['aktion', 'filter', 'ifilter', 'kalAnsicht', 'reiter', 'chip', 'person', 'idee', 'bereich', 'plan', 'wert', 'km', 'bock', 'mitwem', 'auf', 'waehle', 'tag']
     .filter((a) => el.dataset && el.dataset[a] !== undefined)
     .map((a) => `[data-${a.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`)}="${CSS.escape(el.dataset[a])}"]`);
   return teile.join('');
@@ -173,13 +172,8 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
     });
   } else if (!geladen) html = '<div class="leer"><p>Lädt …</p></div>';
   else if (reiter === 'karte') html = landkarteGeruest(st, raum);
-  else if (reiter === 'ideen') html = ideenAnsicht(ideenListe, Boolean(daten.ideen), st, h, uiIdeen);
   else if (reiter === 'wir') html = wirAnsicht(daten.programm, ideenListe, st, h, ui);
-  else {
-    const datum = prog.datum || h;
-    html = (daten.programm ? ansichtSchalter(prog.ansicht) : '')
-      + (prog.ansicht === 'liste' ? programmAnsicht(daten.programm, st, h, montag(datum)) : kalenderAnsicht(daten.programm, st, h, prog));
-  }
+  else html = programmAnsicht(daten.programm, st, h, prog) + wasImmerGeht(ideenListe, Boolean(daten.ideen), st, h, uiIdeen);
   $('#ansicht').innerHTML = html;
   if (geladen && reiter === 'karte') landkarteZeichnen(daten.programm, st, h, raum, ideenListe);
   if (reiter === 'wir' && st.gemeinsam) {
@@ -197,6 +191,12 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
   }
   if (nachOben) window.scrollTo(0, 0);
   else if (behalteScroll) window.scrollTo(0, y);
+  // Ein Sprung (#ideen, zu einer Idee, zu „Wollen wir mal“) – fehlt das Ziel, dann „Was immer geht“.
+  if (springeZu && geladen && reiter === 'programm') {
+    const ziel = document.getElementById(springeZu) || document.getElementById('was-immer-geht');
+    springeZu = '';
+    if (ziel) ziel.scrollIntoView({ block: 'start' });
+  }
 }
 
 function wechseln(neu) {
@@ -224,8 +224,8 @@ const fingerabdruck = () => {
   return JSON.stringify([st.gemeinsam && st.gemeinsam.stand, Object.keys(st.bock).sort(), st.warteschlange.length]);
 };
 
-/** Steht gerade ein Formular im Reiter Ideen offen? Dann nicht dazwischen neu zeichnen. */
-const ideenFormularOffen = () => reiter === 'ideen' && Boolean(uiIdeen.neu || uiIdeen.planen || uiIdeen.bewerten);
+/** Steht gerade ein Formular in „Was immer geht“ offen? Dann nicht dazwischen neu zeichnen. */
+const ideenFormularOffen = () => reiter === 'programm' && Boolean(uiIdeen.neu || uiIdeen.planen || uiIdeen.bewerten);
 /** Tippt man gerade in ein Feld? Dann auch nicht – die Eingabe ginge verloren. */
 const wirEingabeOffen = () => Boolean(document.activeElement && document.activeElement.matches('#ansicht input, #ansicht textarea, #ansicht select'));
 
@@ -324,18 +324,20 @@ function wirFeld(name) {
 
 // --- Filter: das Blatt von unten, die Chips, Zurücksetzen
 
-/** Was im Blatt steht – je nach Reiter, mit der Zahl der Treffer für den Knopf unten. */
+/** Was im Blatt steht – Termine (Programm, Karte), mit der Zahl der Treffer für den Knopf unten. */
 function blattBauen() {
   const st = aktuell();
   const h = heute();
-  if (reiter === 'ideen') {
-    return ideenBlatt(st.ideenFilter, uiIdeen.saisonAlle, anzahl(ideenZahl(ideenListe, st, h, uiIdeen), 'Idee', 'Ideen'));
-  }
   if (reiter === 'karte') {
     return programmBlatt(daten.programm, st, { karte: true, zahlText: anzahl(kartenZahl(daten.programm, st, h, raum, ideenListe), 'Eintrag', 'Einträge') });
   }
-  const n = prog.ansicht === 'liste' ? listenZahl(daten.programm, st, h, montag(prog.datum || h)) : kalenderZahl(daten.programm, st, h, prog);
-  return programmBlatt(daten.programm, st, { zahlText: anzahl(n, 'Termin', 'Termine') });
+  return programmBlatt(daten.programm, st, { zahlText: anzahl(programmZahl(daten.programm, st, h, prog), 'Termin', 'Termine') });
+}
+
+/** Das Blatt für „Was immer geht“. */
+function ideenBlattBauen() {
+  const st = aktuell();
+  return ideenBlatt(st.ideenFilter, uiIdeen.saisonAlle, anzahl(ideenZahl(ideenListe, st, heute(), uiIdeen), 'Idee', 'Ideen'));
 }
 
 /** Nach einer Wahl: speichern, die Seite dahinter neu, das Blatt mit. Die Karte bleibt stehen, nur Kopf und Marker kommen neu. */
@@ -351,10 +353,10 @@ function filterGeaendert() {
   }
 }
 
-/** Alle Filter des Reiters zurück – die Reihenfolge am Tag bleibt, sie ist kein Filter. */
-function filterZuruecksetzen() {
+/** Alle Filter zurück – der Termine oder („ideen“) von „Was immer geht“. Die Reihenfolge am Tag bleibt, sie ist kein Filter. */
+function filterZuruecksetzen(art = '') {
   const st = aktuell();
-  if (reiter === 'ideen') {
+  if (art === 'ideen') {
     st.ideenFilter = LEERER_IDEENFILTER();
     uiIdeen.saisonAlle = false;
   } else {
@@ -364,13 +366,13 @@ function filterZuruecksetzen() {
   filterGeaendert();
 }
 
-/** Einen Chip wegnehmen: sein Filter geht zurück. */
-function chipWeg(k) {
+/** Einen Chip wegnehmen: sein Filter geht zurück. `ideen`: ein Chip von „Was immer geht“. */
+function chipWeg(k, ideen = false) {
   const st = aktuell();
   const f = st.filter;
   const fi = st.ideenFilter;
   const [art, rest] = k.includes(':') ? k.split(':') : ['', k];
-  if (reiter === 'ideen') {
+  if (ideen) {
     if (art === 'w') fi.wirkung = fi.wirkung.filter((w) => w !== rest);
     else if (art === 'wo') fi.wo = '';
     else if (art === 'x' && Object.hasOwn(fi, rest)) fi[rest] = false;
@@ -382,7 +384,7 @@ function chipWeg(k) {
   else if (SCHALTER.some(([s]) => s === k)) f[k] = false;
   filterGeaendert();
   // Der Chip ist weg – der Fokus geht auf den Filter-Knopf.
-  const knopf = $('#ansicht [data-aktion="filter-auf"]');
+  const knopf = $(`#ansicht [data-aktion="${ideen ? 'ideen-filter-auf' : 'filter-auf'}"]`);
   if (knopf) knopf.focus({ preventScroll: true });
 }
 
@@ -391,7 +393,7 @@ function aktion(name, z) {
   const h = heute();
   switch (name) {
     case 'reiter-an': {
-      // Einstellungen → Reiter unten: einen der vier ein- oder ausblenden. Der letzte bleibt.
+      // Einstellungen → Reiter unten: einen der drei ein- oder ausblenden. Der letzte bleibt.
       const r = z.dataset.wert;
       if (!INHALTS_REITER.includes(r) || z.getAttribute('aria-disabled') === 'true') break;
       const aus = st.reiterAus.includes(r) ? st.reiterAus.filter((x) => x !== r) : [...st.reiterAus, r];
@@ -402,18 +404,28 @@ function aktion(name, z) {
       break;
     }
     case 'filter-auf':
-      blattOeffnen(reiter, blattBauen, '#ansicht [data-aktion="filter-auf"]');
+      blattOeffnen(reiter === 'karte' ? 'karte' : 'programm', blattBauen, '#ansicht [data-aktion="filter-auf"]');
+      break;
+    case 'ideen-filter-auf':
+      blattOeffnen('ideen', ideenBlattBauen, '#ansicht [data-aktion="ideen-filter-auf"]');
       break;
     case 'blatt-zu':
       blattSchliessen();
       break;
     case 'blatt-zuruecksetzen':
+      filterZuruecksetzen(blattArt());
+      break;
     case 'filter-weg':
-    case 'ideen-filter-weg':
       filterZuruecksetzen();
+      break;
+    case 'ideen-filter-weg':
+      filterZuruecksetzen('ideen');
       break;
     case 'chip-weg':
       chipWeg(z.dataset.chip || '');
+      break;
+    case 'ichip-weg':
+      chipWeg(z.dataset.chip || '', true);
       break;
     case 'art':
       if (ARTEN.includes(z.dataset.wert)) st.filter.art = z.dataset.wert;
@@ -446,27 +458,25 @@ function aktion(name, z) {
       wechseln('einstellungen');
       $('#e-standort')?.scrollIntoView({ block: 'start' });
       break;
-    case 'vergangene':
-      st.vergangeneTage = !st.vergangeneTage;
-      speichern();
-      zeichnen({ behalteScroll: true });
-      break;
-    case 'woche-zurueck':
-    case 'woche-vor': {
-      const { erste, letzte } = wochenBereich(daten.programm, h);
-      const jetzt = montag(prog.datum || h);
-      const neu = plusTage(jetzt < erste ? erste : (jetzt > letzte ? letzte : jetzt), name === 'woche-vor' ? 7 : -7);
-      prog.datum = neu < erste ? erste : (neu > letzte ? letzte : neu);
-      zeichnen({ nachOben: true });
-      break;
-    }
     case 'kal-zurueck':
     case 'kal-vor':
-      if (z.dataset.datum) { prog.datum = z.dataset.datum; zeichnen(); }
+      if (z.dataset.datum) { prog.datum = z.dataset.datum; zeichnen({ nachOben: true }); }
       break;
     case 'kal-heute':
       prog.datum = h;
       zeichnen({ nachOben: true });
+      break;
+    case 'zu-laufend':
+      // „12 laufend“ oben: den Kasten aufklappen und hinscrollen.
+      abschnittUmschalten('laufend', true);
+      zeichnen({ behalteScroll: true });
+      $('#abschnitt-laufend')?.scrollIntoView({ block: 'start' });
+      break;
+    case 'zu-ideen':
+      // Aus „Wir“: ins Programm, nach unten zu „Was immer geht“.
+      springeZu = 'abschnitt-wollen';
+      if (reiter === 'programm') zeichnen({ behalteScroll: true });
+      else wechseln('programm');
       break;
     case 'standort-geraet':
       standortHolen(() => geraetStandort().then((geo) => standortSetzen({ art: 'geraet', name: 'Dein Standort', geo })), 'geraet');
@@ -739,7 +749,7 @@ function ideenAktion(name, z) {
   }
 }
 
-/** Filter im Reiter Ideen: „w:flow“ (Wirkung), „wo:hamburg“, „x:kostenlos“. */
+/** Filter von „Was immer geht“: „w:flow“ (Wirkung), „wo:hamburg“, „x:kostenlos“. */
 function ideenFilterUmschalten(wahl) {
   const f = aktuell().ideenFilter;
   const [art, k] = wahl.split(':');
@@ -749,13 +759,12 @@ function ideenFilterUmschalten(wahl) {
   filterGeaendert();
 }
 
-/** Aus der Karte zu einer Idee: Reiter Ideen, Kategorie auf, hinscrollen. */
+/** Aus der Karte zu einer Idee: ins Programm, „Was immer geht“, Kategorie auf, hinscrollen. */
 function zuIdee(schluessel) {
   const x = ideenListe.find((i) => i.schluessel === schluessel);
   if (x) uiIdeen.offen.add(x.kat);
-  wechseln('ideen');
-  const ziel = document.getElementById(ideeAnker(schluessel));
-  if (ziel) ziel.scrollIntoView({ block: 'start' });
+  springeZu = x ? ideeAnker(schluessel) : 'was-immer-geht';
+  wechseln('programm');
 }
 
 /** Im Programm die Ansicht wechseln – und merken. */
@@ -765,29 +774,31 @@ function ansichtWechseln(ansicht) {
   speichern();
 }
 
-/** Einen Tag in der Tagesansicht öffnen. */
-function zuKalenderTag(tag) {
+/** Einen Tag in der Ansicht Tag öffnen – auch aus einem anderen Reiter (Karte, Wir). */
+function zuTag(tag) {
   prog.datum = tag;
   ansichtWechseln('tag');
+  if (reiter !== 'programm') {
+    blattSchliessen();
+    reiter = 'programm';
+    adresseSetzen('programm');
+  }
   zeichnen({ nachOben: true });
 }
 
-/**
- * In die Liste springen – zu einer Woche (der Montag; ein gewählter Tag in
- * dieser Woche bleibt gewählt) oder zu einem Tag (aus der Karte).
- */
-function zuListe(datum, anker = '') {
-  reiter = 'programm';
-  adresseSetzen('programm');
-  if (!prog.datum || montag(prog.datum) !== montag(datum) || datum !== montag(datum)) prog.datum = datum;
-  ansichtWechseln('liste');
+/** Eine Woche in der Ansicht Woche öffnen. */
+function zuWoche(datum) {
+  prog.datum = datum;
+  ansichtWechseln('woche');
+  if (reiter !== 'programm') {
+    reiter = 'programm';
+    adresseSetzen('programm');
+  }
   zeichnen({ nachOben: true });
-  const ziel = anker ? document.getElementById(anker) : null;
-  if (ziel) ziel.scrollIntoView();
 }
 
 document.addEventListener('click', (ev) => {
-  const z = ev.target.closest('[data-reiter], [data-bock], [data-auf], [data-filter], [data-ifilter], [data-aktion], [data-zu-eintrag], [data-kal-ansicht], [data-tag], [data-zu-woche], [data-zu-tag], [data-zu-idee]');
+  const z = ev.target.closest('[data-reiter], [data-bock], [data-auf], [data-filter], [data-ifilter], [data-aktion], [data-kal-ansicht], [data-waehle], [data-tag], [data-zu-woche], [data-zu-tag], [data-zu-idee]');
   if (!z || z.disabled) return;
   const st = aktuell();
   if (z.dataset.auf !== undefined) {
@@ -809,13 +820,9 @@ document.addEventListener('click', (ev) => {
     document.querySelectorAll('[data-bock-feld]').forEach((feld) => {
       if (feld.dataset.bockFeld === z.dataset.bock) feld.outerHTML = bockKnopf(eintrag);
     });
+    // Die Karte frischt ihre Marker auf; sonst alles neu – Punkte, Zeitstreifen und „Wollen wir mal“ zeigen den Haken.
     if (reiter === 'karte') landkarteAuffrischen();
-    else if ((reiter === 'programm' && prog.ansicht !== 'liste') || reiter === 'wir' || reiter === 'ideen') zeichnen({ behalteScroll: true });
-    else if (reiter === 'programm') {
-      // In der Liste nur die Tagesleiste – ihre Punkte zeigen, wer Bock hat.
-      const leiste = $('#ansicht .tagleiste');
-      if (leiste) leiste.outerHTML = tagesleisteNeu(daten.programm, st, heute(), montag(prog.datum || heute()));
-    }
+    else if (reiter === 'programm' || reiter === 'wir') zeichnen({ behalteScroll: true });
     leisteAktualisieren();
     if (st.gemeinsam) abgleichSpaeter();
   } else if (z.dataset.ifilter !== undefined) {
@@ -825,20 +832,22 @@ document.addEventListener('click', (ev) => {
   } else if (z.dataset.filter) {
     st.filter[z.dataset.filter] = !st.filter[z.dataset.filter];
     filterGeaendert();
-  } else if (z.dataset.zuEintrag) {
-    // Ein Chip in der Wochenansicht: den Tag öffnen und zur Karte scrollen.
-    zuKalenderTag(z.dataset.tag);
-    const ziel = document.getElementById(z.dataset.zuEintrag);
-    if (ziel) ziel.scrollIntoView({ block: 'center' });
   } else if (z.dataset.kalAnsicht) {
     ansichtWechseln(z.dataset.kalAnsicht);
     zeichnen({ nachOben: true });
+  } else if (z.dataset.waehle) {
+    // Im Monat: ein Tipp wählt den Tag (darunter seine Vorschau), ein zweiter öffnet ihn.
+    if (z.dataset.waehle === prog.datum) zuTag(z.dataset.waehle);
+    else {
+      prog.datum = z.dataset.waehle;
+      zeichnen({ behalteScroll: true });
+    }
   } else if (z.dataset.tag) {
-    zuKalenderTag(z.dataset.tag);
+    zuTag(z.dataset.tag);
   } else if (z.dataset.zuWoche) {
-    zuListe(z.dataset.zuWoche);
+    zuWoche(z.dataset.zuWoche);
   } else if (z.dataset.zuTag) {
-    zuListe(z.dataset.zuTag, `tag-${z.dataset.zuTag}`);
+    zuTag(z.dataset.zuTag);
   } else if (z.dataset.aktion) {
     aktion(z.dataset.aktion, z);
   }
@@ -882,7 +891,7 @@ document.addEventListener('keydown', (ev) => {
   }
 });
 
-// Aufgeklappte Kategorien im Reiter Ideen und Abschnitte unter „Wir“ merken,
+// Aufgeklappte Kategorien in „Was immer geht“ und Abschnitte unter „Wir“ merken,
 // damit Neuzeichnen sie offen lässt. Nur, was man selbst antippt – nicht, was
 // ein Filter aufklappt.
 document.addEventListener('click', (ev) => {
@@ -895,13 +904,36 @@ document.addEventListener('click', (ev) => {
   else menge.add(k);
 }, true);
 
-// #programm, #karte, #ideen, #wir und #einstellungen öffnen die Seite direkt; #tag-… sind Anker.
+// #programm, #karte, #wir und #einstellungen öffnen die Seite direkt; #ideen führt zu „Was immer geht“.
 window.addEventListener('hashchange', () => {
   const r = adresseLesen();
   if (r && r !== reiter) wechseln(r);
-  else if (r === 'wir') zeichnen();
+  else if (r === 'wir' || springeZu) zeichnen();
   einladungPruefen();
 });
+
+// Wischen im Programm blättert – Tag, Woche oder Monat, wie ‹ und ›. Nur bei
+// einer klar waagrechten, zügigen Geste; nicht in „Was immer geht“ und nicht
+// in Eingabefeldern.
+let wisch = null;
+document.addEventListener('touchstart', (ev) => {
+  wisch = null;
+  if (reiter !== 'programm' || blattArt() || ev.touches.length !== 1) return;
+  if (ev.target.closest && ev.target.closest('#was-immer-geht, input, textarea, select')) return;
+  const t = ev.touches[0];
+  wisch = { x: t.clientX, y: t.clientY, zeit: Date.now() };
+}, { passive: true });
+document.addEventListener('touchend', (ev) => {
+  if (!wisch) return;
+  const t = ev.changedTouches[0];
+  const dx = t.clientX - wisch.x;
+  const dy = t.clientY - wisch.y;
+  const zuegig = Date.now() - wisch.zeit < 700;
+  wisch = null;
+  if (!zuegig || Math.abs(dx) < 70 || Math.abs(dx) < 2 * Math.abs(dy)) return;
+  const knopf = $(`#ansicht .blaettern [data-aktion="${dx < 0 ? 'kal-vor' : 'kal-zurueck'}"]`);
+  if (knopf && !knopf.disabled) knopf.click();
+}, { passive: true });
 
 // Chrome & Co. bieten „Installieren“ an – der Knopf dafür steht in den Einstellungen.
 window.addEventListener('beforeinstallprompt', (ev) => {
@@ -942,7 +974,8 @@ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
 }
 
 laden();
-prog.ansicht = ANSICHTEN.some(([k]) => k === aktuell().programmAnsicht) ? aktuell().programmAnsicht : 'liste';
+// Ein gespeichertes „liste“ (bis v18) öffnet als Tag.
+prog.ansicht = ANSICHTEN.some(([k]) => k === aktuell().programmAnsicht) ? aktuell().programmAnsicht : 'tag';
 reiter = adresseLesen() || startReiter();
 zeichnen();
 ladeAlles().then((d) => {

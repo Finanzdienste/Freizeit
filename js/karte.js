@@ -51,8 +51,8 @@ export function abschnittUmschalten(name, auf) {
   if (auf) offeneAbschnitte.add(name); else offeneAbschnitte.delete(name);
 }
 /** Ein aufklappbarer Abschnitt; `zahl` steht als Marke an der Zusammenfassung (etwa aktive Filter). */
-export function aufklappbar(name, titel, inhalt, { zahl = 0, klasse = '' } = {}) {
-  return `<details class="aufklappbar${klasse ? ` ${klasse}` : ''}" data-offen="${esc(name)}"${abschnittAuf(name) ? ' open' : ''}>
+export function aufklappbar(name, titel, inhalt, { zahl = 0, klasse = '', id = '' } = {}) {
+  return `<details class="aufklappbar${klasse ? ` ${klasse}` : ''}"${id ? ` id="${esc(id)}"` : ''} data-offen="${esc(name)}"${abschnittAuf(name) ? ' open' : ''}>
     <summary><span>${titel}</span>${zahl ? `<span class="zahl-marke">${zahl}</span>` : ''}</summary>
     <div class="aufklappbar-inhalt">${inhalt}</div>
   </details>`;

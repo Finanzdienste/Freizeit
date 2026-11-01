@@ -269,8 +269,10 @@ export async function landkarteZeichnen(p, st, heute, raum, ideen = []) {
     // Umkreis zeigt die Karte ihn ganz; mit Bezugspunkt liegt der mit im Rahmen.
     const nah = gruppen.filter((g) => g.eintraege.some((x) => x.region === 'HH' || x.region === 'AHR'));
     const rahmen = (nah.length ? nah : gruppen).map((g) => g.geo).concat(f.bezug ? [f.bezug] : []);
-    if (kreis) karteL.fitBounds(kreis.getBounds(), { padding: [16, 16] });
-    else if (rahmen.length) karteL.fitBounds(L.latLngBounds(rahmen), { padding: [24, 24], maxZoom: 14 });
+    // Ohne Zoom-Animation: Wer gleich den Reiter wechselt, entfernt die Karte
+    // mitten im Zoomen – Leaflet stolperte dann 250 ms später über die fehlende Ebene.
+    if (kreis) karteL.fitBounds(kreis.getBounds(), { padding: [16, 16], animate: false });
+    else if (rahmen.length) karteL.fitBounds(L.latLngBounds(rahmen), { padding: [24, 24], maxZoom: 14, animate: false });
     letzterRahmen = rahmenSchluessel;
   }
   const online = eintraege.filter((x) => istOnline(x)).length;

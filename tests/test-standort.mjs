@@ -253,11 +253,12 @@ check(server.aufrufe.some((a) => a.name === 'freizeit_bock') && !gesendet.includ
 const B = await oeffne({ tag: MO, zeit: '10:00', browser: A.browser, stand: { version: 2, filter: { region: 'HH', kostenlos: false, umkreis: 7 }, bock: {}, standort: { art: 'quatsch', geo: [1] } } });
 await B.filter('kostenlos');
 const stB = await B.gespeichert();
-check(B.fehler.length === 0 && (await B.page.locator('.filterchip[data-chip="region"]').innerText()).startsWith('Hamburg')
+check(B.fehler.length === 0 && (await B.page.locator('.filterchip[data-chip="r:HH"]').innerText()).startsWith('Hamburg')
   && await B.page.locator('.filterchip[data-chip="umkreis"]').count() === 0,
 'alter Stand mit kaputtem Bezugspunkt: die App läuft, ohne Bezugspunkt und ohne Umkreis');
-check(stB.filter.region === 'HH' && stB.filter.umkreis === 0 && stB.filter.nachEntfernung === false && stB.standort === null && stB.filter.art === '',
-  '… der Filter behält die Region, ein unerlaubter Umkreis wird 0, die neue Wahl „Art“ steht auf „Alles“');
+check(JSON.stringify(stB.filter.regionen) === '["HH"]' && !('region' in stB.filter) && stB.filter.umkreis === 0 && stB.filter.nachEntfernung === false
+  && stB.standort === null && stB.filter.art === '',
+'… die alte einzelne Region wird zur Liste („regionen“), ein unerlaubter Umkreis wird 0, die neue Wahl „Art“ steht auf „Alles“');
 
 check(A.fehler.length === 0, `keine Fehler in der Konsole${A.fehler.length ? `: ${A.fehler.slice(0, 2).join(' | ')}` : ''}`);
 await A.ende();

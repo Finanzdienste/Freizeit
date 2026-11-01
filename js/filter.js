@@ -52,7 +52,7 @@ const naeher = (a, b, f) => {
 };
 
 /**
- * Art, Region, Kategorie, die Schalter und der Umkreis – ohne Zeitbezug. Im
+ * Art, Regionen (eine davon muss es sein), Kategorie, die Schalter und der Umkreis – ohne Zeitbezug. Im
  * Umkreis fällt weg, was keinen Ort hat; Online & TV bleibt, das schaut man,
  * wo man ist.
  */
@@ -61,7 +61,7 @@ export function passt(e, f) {
   if (f.art === 'online' && !online) return false;
   if (f.art === 'vorort' && online) return false;
   if (umkreisAn(f) && !online && abstand(e, f) > f.umkreis) return false;
-  if (f.region && e.region !== f.region) return false;
+  if (f.regionen && f.regionen.length && !f.regionen.includes(e.region)) return false;
   if (f.kategorie && e.kategorie !== f.kategorie) return false;
   if (f.kostenlos && !kostenlos(e)) return false;
   if (f.drinnen && !f.draussen && e.draussen === 'draußen') return false;
@@ -72,7 +72,7 @@ export function passt(e, f) {
 }
 
 /** Ist irgendein Filter an – auch Art und Umkreis? */
-export const filterAn = (f) => Boolean(f.art || f.region || f.kategorie || SCHALTER.some(([k]) => f[k]) || umkreisAn(f));
+export const filterAn = (f) => Boolean(f.art || (f.regionen && f.regionen.length) || f.kategorie || SCHALTER.some(([k]) => f[k]) || umkreisAn(f));
 
 /** Der Tag aus den Daten – oder ein nackter, wenn die Daten ihn nicht kennen. */
 export const tagVon = (p, iso) => p.tage.find((t) => t.datum === iso) || { datum: iso };

@@ -18,7 +18,7 @@
  */
 import {
   laden, speichern, aktuell, bockUmschalten, bockWeg, meinBock, gemachtSpeichern, gemachtWeg, LEERER_FILTER, LEERER_IDEENFILTER, ARTEN,
-  INHALTS_REITER,
+  INHALTS_REITER, regionenPruefen,
 } from './speicher.js';
 import { ladeAlles } from './daten.js';
 import { heute, wochentagKurz, tagMonat } from './zeit.js';
@@ -391,7 +391,8 @@ function chipWeg(k, ideen = false) {
     else if (art === 'wo') fi.wo = '';
     else if (art === 'x' && Object.hasOwn(fi, rest)) fi[rest] = false;
     else if (k === 'saison') uiIdeen.saisonAlle = false;
-  } else if (k === 'art' || k === 'region' || k === 'kategorie') f[k] = '';
+  } else if (art === 'r') f.regionen = f.regionen.filter((r) => r !== rest);
+  else if (k === 'art' || k === 'kategorie') f[k] = '';
   else if (k === 'umkreis') f.umkreis = 0;
   else if (k === 'karte-bock') st.karteBock = false;
   else if (k === 'karte-ideen') st.karteIdeen = false;
@@ -445,6 +446,14 @@ function aktion(name, z) {
       if (ARTEN.includes(z.dataset.wert)) st.filter.art = z.dataset.wert;
       filterGeaendert();
       break;
+    case 'region': {
+      // „Alle“ nimmt jede Wahl zurück; sonst schaltet ein Tipp die eine Region an oder aus.
+      const r = z.dataset.wert || '';
+      const f = st.filter;
+      f.regionen = !r ? [] : regionenPruefen(f.regionen.includes(r) ? f.regionen.filter((x) => x !== r) : [...f.regionen, r]);
+      filterGeaendert();
+      break;
+    }
     case 'umkreis': {
       const km = Number(z.dataset.km);
       st.filter.umkreis = UMKREISE.includes(km) ? km : 0;
@@ -909,8 +918,7 @@ document.addEventListener('change', (ev) => {
     filmListeAktualisieren();
     return;
   }
-  if (ev.target.id === 'f-region') st.filter.region = ev.target.value;
-  else if (ev.target.id === 'f-kategorie') st.filter.kategorie = ev.target.value;
+  if (ev.target.id === 'f-kategorie') st.filter.kategorie = ev.target.value;
   else if (ev.target.id === 'k-raum') {
     if (ZEITRAEUME.some(([k]) => k === ev.target.value)) raum = ev.target.value;
     landkarteZeichnen(daten.programm, st, heute(), raum, ideenListe);

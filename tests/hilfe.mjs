@@ -497,8 +497,12 @@ export async function oeffne({
   const filter = (name) => (name.includes(':')
     ? imFilter(() => page.click(`#blatt [data-ifilter="${name}"]`), { ideen: true })
     : imFilter(() => page.click(`#blatt [data-filter="${name}"]`)));
-  /** Eine Auswahl im Filter-Blatt, etwa die Region: waehle('#f-region', 'HB'). */
+  /** Eine Auswahl im Filter-Blatt, etwa die Kategorie: waehle('#f-kategorie', 'Bühne'). */
   const waehle = (selektor, wert) => imFilter(() => page.selectOption(`#blatt ${selektor}`, wert));
+  /** Regionen im Filter-Blatt an- oder ausschalten, nacheinander: region('HB'), region('HH', 'HB'); region('') ist „Alle“. */
+  const region = (...ks) => imFilter(async () => {
+    for (const k of ks) await page.click(`#blatt [data-aktion="region"][data-wert="${k}"]`);
+  });
   /** Ins Programm, in eine seiner Ansichten: tag, woche, monat. */
   const ansicht = async (name) => {
     await reiter('programm');
@@ -548,7 +552,7 @@ export async function oeffne({
   };
 
   return {
-    browser, ctx, page, check, fehler, uhr, datenTauschen, reiter, ansicht, zeigeTag, tippen, aktion, einstellungen, imFilter, filter, waehle, titelAm,
+    browser, ctx, page, check, fehler, uhr, datenTauschen, reiter, ansicht, zeigeTag, tippen, aktion, einstellungen, imFilter, filter, waehle, region, titelAm,
     gespeichert, abgeglichen, ende, daten, server, stats: () => ({ oks, fails }),
   };
 }

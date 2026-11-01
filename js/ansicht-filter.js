@@ -33,7 +33,7 @@ export function chipsProgramm(st, { karte = false } = {}) {
   const f = filterFuer(st);
   const c = [];
   if (f.art) c.push(['art', ART.find(([k]) => k === f.art)[1]]);
-  if (f.region) c.push(['region', REGIONEN[f.region] || f.region]);
+  for (const r of f.regionen) c.push([`r:${r}`, REGIONEN[r] || r]);
   if (umkreisAn(f)) c.push(['umkreis', `bis ${f.umkreis} km`]);
   if (f.kategorie) c.push(['kategorie', f.kategorie]);
   for (const [k, t] of SCHALTER) if (f[k]) c.push([k, t]);
@@ -88,6 +88,11 @@ const segmente = (name, liste, wert, attr) => `<div class="segmente" role="group
 const schalter = (name, liste, an, attr) => `<div class="filterzeile">${liste
   .map(([k, t]) => `<button type="button" class="schalter${k === 'hohwacht' ? ' hb' : ''}${k === 'flow' ? ' flow' : ''}" ${attr(k)} data-fokus="${esc(`${name}:${k}`)}" aria-pressed="${Boolean(an(k))}">${esc(t)}</button>`).join('')}</div>`;
 
+/** Die Regionen: „Alle“ oder beliebig viele – jede mit eigenem Schalter. */
+const regionenWahl = (gewaehlt) => `<div class="feld-label" id="regionen-name">Regionen, auch mehrere</div>
+  <div class="filterzeile" role="group" aria-labelledby="regionen-name">${[['', 'Alle'], ...ORTE]
+    .map(([k, t]) => `<button type="button" class="schalter" data-aktion="region" data-wert="${k}" data-fokus="Wo:${k}" aria-pressed="${k ? gewaehlt.includes(k) : !gewaehlt.length}">${esc(t)}</button>`).join('')}</div>`;
+
 const auswahl = (id, label, leer, liste, wert) => `<label class="feld-label">${esc(label)}<select id="${id}">
     <option value=""${wert ? '' : ' selected'}>${esc(leer)}</option>
     ${liste.map(([k, t]) => `<option value="${esc(k)}"${wert === k ? ' selected' : ''}>${esc(t)}</option>`).join('')}
@@ -111,7 +116,7 @@ export function programmBlatt(p, st, { karte = false, zahlText = '' } = {}) {
     ? `<div class="feld-label" id="umkreis-name">Umkreis um ${esc(s.art === 'geraet' ? 'deinen Standort' : knopfName(s.name, 24))}</div>
       ${segmente('Umkreis', UMKREISE.map((km) => [km, km ? `${km} km` : 'alle']), f.umkreis, (km) => `data-aktion="umkreis" data-km="${km}"`)}`
     : '<p class="fein">Den Umkreis gibt es mit Standort. <button type="button" class="textknopf" data-aktion="standort-festlegen">Standort festlegen</button></p>';
-  const wo = gruppe('Wo', `${auswahl('f-region', 'Region', 'Alle Regionen', ORTE, f.region)}${umkreis}`);
+  const wo = gruppe('Wo', `${regionenWahl(f.regionen)}${umkreis}`);
   const was = gruppe('Was', `${auswahl('f-kategorie', 'Kategorie', 'Alle Kategorien', p ? kategorien(p).map((k) => [k, k]) : [], f.kategorie)}
     ${schalter('Was', WAS, (k) => f[k], (k) => `data-filter="${k}"`)}`);
   const wann = gruppe('Wann', schalter('Wann', [['feierabend', 'Mo–Fr ab 15:30']], (k) => f[k], (k) => `data-filter="${k}"`),

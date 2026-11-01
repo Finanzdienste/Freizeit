@@ -27,7 +27,7 @@ Vier Reiter unten – welche davon dort stehen, wählt man unter Einstellungen �
 
 | Ich will … | Da |
 | --- | --- |
-| filtern (Art, Region, Umkreis, Kategorie, kostenlos, Mo–Fr ab 15:30 …) | Knopf **Filter** oben im Programm und auf der Karte – das Blatt von unten; was gewählt ist, steht als Chip daneben (✕ nimmt es weg, ab zwei Chips „Alle zeigen“). „Was immer geht“ hat seinen eigenen Filter-Knopf |
+| filtern (Art, Regionen – auch mehrere zugleich –, Umkreis, Kategorie, kostenlos, Mo–Fr ab 15:30 …) | Knopf **Filter** oben im Programm und auf der Karte – das Blatt von unten; was gewählt ist, steht als Chip daneben (✕ nimmt es weg, ab zwei Chips „Alle zeigen“). „Was immer geht“ hat seinen eigenen Filter-Knopf |
 | zwischen Tag, Woche und Monat wechseln, blättern | oben im Programm: **Tag · Woche · Monat**, darunter ‹ › und „Heute“ – oder nach links/rechts wischen |
 | Ideen ohne Termin, eigene Ideen, „Tut dir gut“ | im Programm ganz unten: **Was immer geht** |
 | nur Online & TV sehen – oder gerade nicht | Filter → **Art**: Alles · Vor Ort · Online & TV |

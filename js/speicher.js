@@ -13,6 +13,7 @@
  */
 
 import { UMKREISE, standortPruefen } from './standort.js';
+import { ORTE } from './text.js';
 
 export const SCHLUESSEL = 'freizeit.stand.v1';
 
@@ -29,12 +30,13 @@ function reiterAusPruefen(roh) {
 }
 
 /**
- * Filter im Programm (und auf der Karte). umkreis (km, 0 = alle) gilt nur
+ * Filter im Programm (und auf der Karte). regionen: keine = alle, sonst jede
+ * gewählte (bis v21 gab es nur eine: region). umkreis (km, 0 = alle) gilt nur
  * mit Bezugspunkt (standort, siehe unten); nachEntfernung ist kein Filter,
  * sondern die Reihenfolge am Tag – Zurücksetzen lässt sie stehen.
  */
 export const LEERER_FILTER = () => ({
-  art: '', region: '', kategorie: '', kostenlos: false, feierabend: false, drinnen: false, draussen: false, hohwacht: false, kuenstler: false,
+  art: '', regionen: [], kategorie: '', kostenlos: false, feierabend: false, drinnen: false, draussen: false, hohwacht: false, kuenstler: false,
   umkreis: 0, nachEntfernung: false,
 });
 
@@ -83,10 +85,15 @@ const LEER = () => ({
   standort: null,
 });
 
+/** Gewählte Regionen: nur bekannte Orte, jeder einmal, in der Reihenfolge der Auswahl im Filter. */
+export const regionenPruefen = (liste) => ORTE.map(([k]) => k).filter((k) => liste.includes(k));
+
 /** Ein gespeicherter Filter mit allen Feldern, der Umkreis eine der erlaubten Weiten. */
 function filterPruefen(roh) {
   const f = { ...LEERER_FILTER(), ...(roh && typeof roh === 'object' ? roh : {}) };
   f.art = ARTEN.includes(f.art) ? f.art : '';
+  f.regionen = regionenPruefen(Array.isArray(f.regionen) && f.regionen.length ? f.regionen : [f.region]);
+  delete f.region;
   f.umkreis = UMKREISE.includes(Number(f.umkreis)) ? Number(f.umkreis) : 0;
   f.nachEntfernung = f.nachEntfernung === true;
   return f;

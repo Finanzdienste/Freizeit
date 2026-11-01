@@ -1,8 +1,8 @@
 /*
  * Das Filter-Blatt (js/blatt.js, js/ansicht-filter.js): ein Knopf je Reiter,
  * das Blatt von unten als Dialog, Wahl gilt sofort, Chips mit ✕, „Alle
- * zeigen“, Zurücksetzen, Escape, Tipp daneben, der Fokus – und dass nichts
- * quer scrollt. Dieselben Filter in Tag, Woche, Monat und Karte; „Was immer
+ * zeigen“, Zurücksetzen, Escape, Tipp daneben, der Fokus, mehrere Regionen
+ * zugleich – und dass nichts quer scrollt. Dieselben Filter in Tag, Woche, Monat und Karte; „Was immer
  * geht“ unten im Programm hat sein eigenes Blatt.
  */
 import { oeffne, MO, DI } from './hilfe.mjs';
@@ -31,10 +31,11 @@ check(JSON.stringify(await page.$$eval('#blatt .fgruppe h3', (hs) => hs.map((h) 
 const zahlOben = (await page.locator('#zaehler').innerText()).match(/^\d+/)[0];
 check(await fuss() === `${zahlOben} Termine zeigen`, `unten „${zahlOben} Termine zeigen“ – dieselbe Zahl wie oben am Tag`);
 check(await page.locator('#blatt [data-aktion="blatt-zuruecksetzen"]').isDisabled(), 'ohne Filter ist „Zurücksetzen“ aus');
-const regionen = await page.$$eval('#f-region option', (os) => os.map((o) => o.value));
-check(regionen.includes('AHR') && !regionen.includes('ONL') && (await page.locator('#f-region option[value="AHR"]').innerText()) === 'Ahrensburg & Stormarn'
-  && ['SE', 'PI', 'RZ'].every((r) => regionen.includes(r)),
-  'die Regionen: mit Ahrensburg & Stormarn und dem Umland bis gut eine Stunde, ohne „Online & TV“ – das ist eine Art, kein Ort');
+const regionKnopf = (k) => page.locator(`#blatt [data-aktion="region"][data-wert="${k}"]`);
+const regionen = await page.$$eval('#blatt [data-aktion="region"]', (bs) => bs.map((b) => b.dataset.wert));
+check(regionen[0] === '' && await regionKnopf('').getAttribute('aria-pressed') === 'true' && (await regionKnopf('AHR').innerText()) === 'Ahrensburg & Stormarn'
+  && !regionen.includes('ONL') && ['SE', 'PI', 'RZ'].every((r) => regionen.includes(r)),
+  'die Regionen als Schalter: vorn „Alle“ (an), dabei Ahrensburg & Stormarn und das Umland bis gut eine Stunde, ohne „Online & TV“ – das ist eine Art, kein Ort');
 check(await querScroll() <= 0, 'mit offenem Blatt scrollt nichts quer (390 px)');
 
 // --- Wahl gilt sofort, der Fokus bleibt
@@ -44,6 +45,18 @@ check(JSON.stringify(await titelAm(MO)) === JSON.stringify(['Gratis Lesung']) &&
 check(await page.evaluate(() => document.activeElement && document.activeElement.dataset.fokus) === 'Was:kostenlos'
   && await page.locator('#blatt [data-filter="kostenlos"]').getAttribute('aria-pressed') === 'true', 'der Fokus bleibt auf dem Schalter, er steht auf an');
 check(!(await page.locator('#blatt [data-aktion="blatt-zuruecksetzen"]').isDisabled()), 'jetzt geht „Zurücksetzen“');
+
+// --- Mehrere Regionen auf einmal; „Alle“ nimmt sie zurück
+await regionKnopf('HH').click();
+await regionKnopf('HB').click();
+check(await regionKnopf('HH').getAttribute('aria-pressed') === 'true' && await regionKnopf('HB').getAttribute('aria-pressed') === 'true'
+  && await regionKnopf('').getAttribute('aria-pressed') === 'false' && await blatt().count() === 1, 'Hamburg und Hohwachter Bucht zugleich an, „Alle“ aus – das Blatt bleibt offen');
+check(await page.evaluate(() => document.activeElement && document.activeElement.dataset.fokus) === 'Wo:HB', '… der Fokus bleibt auf der zuletzt getippten Region');
+await regionKnopf('HB').click();
+check(await regionKnopf('HB').getAttribute('aria-pressed') === 'false' && await regionKnopf('HH').getAttribute('aria-pressed') === 'true', 'noch ein Tipp: die Region ist wieder aus, die andere bleibt');
+await regionKnopf('').click();
+check(await regionKnopf('HH').getAttribute('aria-pressed') === 'false' && await regionKnopf('').getAttribute('aria-pressed') === 'true'
+  && JSON.stringify((await A.gespeichert()).filter.regionen) === '[]', '„Alle“: keine Region mehr gewählt');
 await page.keyboard.press('Tab');
 check(await fokusIm('#blatt'), 'Tab bleibt im Blatt');
 
@@ -132,5 +145,10 @@ for (const r of ['programm', 'wir']) {
 }
 await A.einstellungen();
 check(await querScroll() <= 0, 'Einstellungen: nichts scrollt quer (390 px)');
+
+// --- Gespeicherte Regionen: nur bekannte, jede einmal, in der Reihenfolge des Blatts
+const C = await oeffne({ tag: MO, zeit: '10:00', browser: A.browser, stand: { version: 2, filter: { regionen: ['LUE', 'XX', 'HH', 'HH', 'ONL'] }, bock: {} } });
+check(JSON.stringify(await C.page.$$eval('.filterchip', (cs) => cs.map((c) => c.dataset.chip))) === JSON.stringify(['r:HH', 'r:LUE']) && C.fehler.length === 0,
+  'gespeicherte Regionen: Unbekanntes, Doppeltes und „Online & TV“ fallen weg – Hamburg vor Lübeck wie im Blatt');
 
 await A.ende();

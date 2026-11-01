@@ -17,7 +17,7 @@ import {
 
 const A = await oeffne({ tag: MO, zeit: '10:00' });
 const {
-  page, check, uhr, titelAm, zeigeTag, ansicht, datenTauschen, gespeichert, filter, waehle, reiter, einstellungen, ende,
+  page, check, uhr, titelAm, zeigeTag, ansicht, datenTauschen, gespeichert, filter, region, reiter, einstellungen, ende,
 } = A;
 const titel = async () => (await page.locator('.kal-titel').innerText()).replace(/\s+/g, ' ').trim();
 const gedrueckt = (k) => page.locator(`[data-kal-ansicht="${k}"]`).getAttribute('aria-pressed');
@@ -104,12 +104,21 @@ await filter('kuenstler');
 check(JSON.stringify(await titelAm(DI)) === JSON.stringify(['Keane']) && !(await titelAm(MO)).length, 'Meine Künstler: nur das Konzert von Keane');
 await filter('kuenstler');
 
-await waehle('#f-region', 'HB');
+await region('HB');
 check(JSON.stringify(await titelAm(SA)) === JSON.stringify(['Strandwanderung']), 'Region Hohwachter Bucht: nur die Strandwanderung');
-check((await page.locator('.filterchip[data-chip="region"]').innerText()).includes('Hohwachter Bucht & Kiel'), '… als Chip mit dem Namen der Region');
-await waehle('#f-region', '');
+check((await page.locator('.filterchip[data-chip="r:HB"]').innerText()).includes('Hohwachter Bucht & Kiel'), '… als Chip mit dem Namen der Region');
+await region('HH');
+const zwei = await titelAm(SA);
+check(zwei.includes('Strandwanderung') && zwei.includes('Messe') && JSON.stringify(await page.$$eval('.filterchip', (cs) => cs.map((c) => c.dataset.chip))) === JSON.stringify(['r:HH', 'r:HB']),
+  'dazu Hamburg: beide Regionen zugleich, je ein Chip');
+check(!(await titelAm(DI2)).includes('Champions League: Bayern – Paris'), '… Online & TV ist keine Region und bleibt draußen');
+await page.click('.filterchip[data-chip="r:HB"]');
+check(!(await titelAm(SA)).includes('Strandwanderung') && (await titelAm(SA)).includes('Messe') && JSON.stringify((await gespeichert()).filter.regionen) === '["HH"]',
+  'ein ✕ nimmt nur die eine Region weg');
+await region('');
 const st = await gespeichert();
-check(st && st.version === 2 && st.filter.region === '' && st.filter.kostenlos === false, 'Filter stehen im Speicher');
+check(st && st.version === 2 && JSON.stringify(st.filter.regionen) === '[]' && !('region' in st.filter) && st.filter.kostenlos === false,
+  'Filter stehen im Speicher – „Alle“ leert die Regionen');
 
 // --- Blättern im Tag
 await zeigeTag(MO);

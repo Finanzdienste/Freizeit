@@ -577,17 +577,6 @@
  },
  "stand": "2026-11-04",
  "warten": {
-  "Gänsemarkt, Neustadt": {
-   "bild": "U-Bahnhof Gänsemarkt 1.jpg",
-   "item": "Q822899",
-   "name": "U-Bahnhof Gänsemarkt",
-   "dist": 61,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0 de",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
-    "urheber": "NordNordWest"
-   }
-  },
   "Hamburg-Haus Eimsbüttel": {
    "bild": "Hamburg Haus Eimsbüttel eingang.jpg",
    "item": "Q1572803",

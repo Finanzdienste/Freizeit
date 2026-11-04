@@ -181,6 +181,9 @@ def bester(ort, liste, orte_namen, ausnahmen):
     for k in liste:
         if f'File:{k["bild"]}' in ausnahmen['dateien'] or k['item'] in ausnahmen['objekte']:
             continue
+        # Bahnhöfe und Haltestellen tragen oft den Namen des Platzes daneben – nur nehmen, wenn der Ort selbst einer ist.
+        if any(re.match(r'^(U-|S-)?(Bahnhof|Haltestelle)\b', n) for n in k['namen'][:1]) and 'bahnhof' not in norm(ort):
+            continue
         wert, exakt = max((bewertung(ort, n, orte_namen) for n in k['namen']), default=(0, False))
         if not wert or k['dist'] > (600 if exakt else 400):
             continue

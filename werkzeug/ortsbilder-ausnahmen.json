@@ -3,7 +3,9 @@
   "dateien": {
     "File:Pferdeturm.jpg": "Fans stehen im Vordergrund – nicht der Ort"
   },
-  "objekte": {},
+  "objekte": {
+    "Q822899": "U-Bahnhof Gänsemarkt – Treffer über den Beinamen, zeigt den Bahnsteig statt des Platzes"
+  },
   "orte": {
     "Galerie Hinter dem Rathaus, Wismar": "Treffer ist die Straße, nicht die Galerie"
   }

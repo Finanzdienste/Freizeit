@@ -25,7 +25,9 @@ import {
   heute, wochentagKurz, tagMonat, jetzt, schonVorbei,
 } from './zeit.js';
 import { anzahl } from './text.js';
-import { SCHALTER } from './filter.js';
+import {
+  SCHALTER, passt, termineAm, filterFuer, istOnline,
+} from './filter.js';
 import { programmAnsicht, programmZahl, ANSICHTEN } from './ansicht-programm.js';
 import {
   landkarteGeruest, landkarteZeichnen, landkarteAuffrischen, karteKopf, kartenZahl, ZEITRAEUME,
@@ -33,7 +35,9 @@ import {
 import {
   wasImmerGeht, ideeAnker, ideenZahl, planSpanne,
 } from './ansicht-ideen.js';
-import { filmeAnsicht, filmeTuer, filmListeNeu } from './ansicht-filme.js';
+import {
+  filmeAnsicht, filmeTuer, filmListeNeu, filmAnker,
+} from './ansicht-filme.js';
 import { filmEintraege } from './filme.js';
 import { wirAnsicht, vorbei } from './ansicht-wir.js';
 import { einstellungenAnsicht } from './ansicht-einstellungen.js';
@@ -45,7 +49,7 @@ import {
   alleIdeen, planEintrag, neueIdee, BEWERTUNG, geplante,
 } from './ideen.js';
 import {
-  eintragZu, vergessen as karteVergessen, bockKnopf, aufklappen, abschnittUmschalten,
+  eintragZu, vergessen as karteVergessen, bockKnopf, aufklappen, abschnittUmschalten, istAuf, kennung,
 } from './karte.js';
 import { pushEinschalten, pushAusschalten } from './push.js';
 import {
@@ -209,9 +213,10 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
   // Ohne Gleiten: Nach einem Seitenwechsel steht man sofort oben (das sanfte Scrollen aus dem CSS gilt nur für Sprünge).
   if (nachOben) window.scrollTo({ top: 0, behavior: 'instant' });
   else if (behalteScroll) window.scrollTo({ top: y, behavior: 'instant' });
-  // Ein Sprung (#ideen, zu einer Idee, zu „Wollen wir mal“) – fehlt das Ziel, dann „Was immer geht“.
+  // Ein Sprung (#ideen, zu einer Idee, zu „Wollen wir mal“, zu einer Karte) – fehlt das Ziel, dann „Was immer geht“;
+  // fehlt eine Karte (Filter, 21:30), bleibt man oben am Tag.
   if (springeZu && geladen && reiter === 'programm') {
-    const ziel = document.getElementById(springeZu) || document.getElementById('was-immer-geht');
+    const ziel = document.getElementById(springeZu) || (springeZu.startsWith('k-') ? null : document.getElementById('was-immer-geht'));
     springeZu = '';
     if (ziel) ziel.scrollIntoView({ block: 'start', behavior: 'instant' });
   }
@@ -556,6 +561,9 @@ function aktion(name, z) {
         zeichnen({ nachOben: true });
       } else wechseln('programm');
       break;
+    case 'zum-eintrag':
+      zuEintrag(z.dataset);
+      break;
     case 'zu-ideen':
       // Aus „Wir“: ins Programm, nach unten zu „Was immer geht“.
       springeZu = 'abschnitt-wollen';
@@ -867,8 +875,66 @@ function ideenFilterUmschalten(wahl) {
 function zuIdee(schluessel) {
   const x = ideenListe.find((i) => i.schluessel === schluessel);
   if (x) uiIdeen.offen.add(x.kat);
-  springeZu = x ? ideeAnker(schluessel) : 'was-immer-geht';
+  // Eigene Ideen (e:…) stehen unter „Eigene Ideen“ – fehlt der Anker (Filter), dann „Was immer geht“.
+  springeZu = x || schluessel.startsWith('e:') ? ideeAnker(schluessel) : 'was-immer-geht';
   wechseln('programm');
+}
+
+/**
+ * Aus „Wir“ (Pro Person) zu einem Eintrag: Termine und Eingeplantes an ihren Tag, Laufendes an den
+ * ersten Tag ab heute in seinen Kasten – die Karte jeweils aufgeklappt und im Blick –, Ideen nach
+ * „Was immer geht“, Filme in die Top 250.
+ */
+function zuEintrag({
+  schluessel, quelle, datum, von, titel,
+}) {
+  if (!schluessel) return;
+  if (!istAuf(schluessel)) aufklappen(schluessel);
+  if (quelle === 'idee') {
+    zuIdee(schluessel);
+    return;
+  }
+  if (quelle === 'film') {
+    Object.assign(uiFilme, {
+      offen: true, nur: 'alle', suche: '', genre: '',
+    });
+    springeZu = filmAnker(schluessel);
+    if (reiter === 'programm') {
+      adresseSetzen('programm');
+      zeichnen({ nachOben: true });
+    } else wechseln('programm');
+    return;
+  }
+  const h = heute();
+  const tag = datum && datum >= h ? datum : (von && von > h ? von : h);
+  const ziel = `k-${schluessel.replace(/[^a-z0-9-]/gi, '-')}`;
+  if (quelle === 'laufend') abschnittUmschalten('laufend', true);
+  springeZu = ziel;
+  zuTag(tag);
+  // Steht die Karte dort nicht, sagt oben am Tag ein Hinweis, warum – statt still nichts zu zeigen.
+  if (geladen && !document.getElementById(ziel)) {
+    melden(`„${titel || 'Der Eintrag'}“ ${warumNichtDa(schluessel, quelle, tag)}`, null, { ort: 'programm', tag });
+    zeichnen({ nachOben: true });
+  }
+}
+
+/** Warum eine Karte nach dem Sprung nicht an ihrem Tag steht: nicht mehr im Programm, vorbei, Filter oder 21:30. */
+function warumNichtDa(schluessel, quelle, tag) {
+  const p = daten.programm;
+  const f = filterFuer(aktuell());
+  const nichtMehr = 'steht nicht mehr im Programm – vielleicht verschoben oder abgesagt.';
+  const filter = 'ist gerade ausgeblendet – durch deine Filter oben.';
+  if (quelle === 'laufend') {
+    const e = p.laufend.find((x) => `l:${kennung(x)}` === schluessel);
+    if (!e || e.bis < tag) return nichtMehr;
+    return passt(e, f) ? 'ist hier gerade nicht zu sehen.' : filter;
+  }
+  if (quelle !== 'termin') return 'ist hier gerade nicht zu sehen.';
+  const e = p.termine.find((x) => x.daten.includes(tag) && `t:${kennung(x)}:${tag}` === schluessel);
+  if (!e) return nichtMehr;
+  if (schonVorbei(e, tag)) return 'ist schon vorbei.';
+  if (termineAm(p, tag, { ...LEERER_FILTER(), bezug: f.bezug }).liste.includes(e)) return filter;
+  return `ist ausgeblendet – es ${istOnline(e) ? 'beginnt' : 'endet'} erst nach 21:30.`;
 }
 
 /** Im Programm die Ansicht wechseln – und merken. */

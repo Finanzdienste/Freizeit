@@ -305,7 +305,8 @@ function proPerson(st, nachSchluessel, heute, ui) {
     const wie = new Map(haken.map((h) => [h.e.schluessel, h.wie]));
     const mit = haken.filter((h) => h.wie === 'gastgeber').length;
     const zahlen = haken.length ? `${mit} mit dir · ${haken.length - mit} ohne dich` : 'noch nichts angehakt';
-    const liste = reihe.length ? `<ul class="person-liste">${reihe.map((e) => `<li><span class="wann">${esc(wannKurz(e))}</span><span class="was">${esc(e.titel)}</span><span class="marke ${wie.get(e.schluessel) === 'gastgeber' ? 'mit-dir' : 'rand'}">${wie.get(e.schluessel) === 'gastgeber' ? 'mit dir' : 'ohne dich'}</span></li>`).join('')}</ul>` : '';
+    // Ein Tipp auf eine Zeile springt zum Eintrag: an seinen Tag, nach „Was immer geht“ oder in die Filme (app.js, zuEintrag).
+    const liste = reihe.length ? `<ul class="person-liste">${reihe.map((e) => `<li><button type="button" class="person-eintrag" data-aktion="zum-eintrag" data-schluessel="${esc(e.schluessel)}" data-quelle="${esc(e.quelle || 'termin')}" data-titel="${esc(e.titel)}"${e.datum ? ` data-datum="${esc(e.datum)}"` : ''}${e.von ? ` data-von="${esc(e.von)}"` : ''}><span class="wann">${esc(wannKurz(e))}</span><span class="was">${esc(e.titel)}</span><span class="marke ${wie.get(e.schluessel) === 'gastgeber' ? 'mit-dir' : 'rand'}">${wie.get(e.schluessel) === 'gastgeber' ? 'mit dir' : 'ohne dich'}</span></button></li>`).join('')}</ul>` : '';
     const frage = ui.entfernen === x.id ? `<div class="einladung">
         <p>${esc(x.name)} aus dem Plan nehmen? Die Haken sind dann für dich weg. Über den Link kann ${esc(x.name)} wieder beitreten.</p>
         <div class="aktionen"><button type="button" class="knopf warnknopf" data-aktion="entfernen-ja" data-person="${esc(x.id)}">Ja, herausnehmen</button>

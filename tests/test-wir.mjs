@@ -190,6 +190,29 @@ await party.locator('[data-bock]').click();
 check(await A.page.locator('#wir-zusammen .karte.treffer', { hasText: 'Party' }).count() === 1 && await A.page.locator('#wir-mit-dir').count() === 0,
   'Tobi sagt Bock zu Jos Party – sie rückt unter „Zusammen“');
 check(await kimZeile.getAttribute('open') !== null, 'was man aufgeklappt hat, bleibt nach dem Neuzeichnen offen');
+// Ein Tipp auf einen Haken springt zum Eintrag: an seinen Tag, die Karte aufgeklappt und im Blick.
+await kimZeile.locator('.person-eintrag', { hasText: 'Theater früh' }).click();
+const theaterAmTag = A.page.locator(`#tag-${DI} .karte`, { hasText: 'Theater früh' });
+await theaterAmTag.waitFor({ timeout: 4000 }).catch(() => {});
+const lage = await theaterAmTag.evaluate((el) => ({
+  auf: el.classList.contains('auf'),
+  oben: el.getBoundingClientRect().top,
+  leiste: document.querySelector('.tagleiste')?.getBoundingClientRect().bottom || 0,
+  y: window.scrollY,
+})).catch(() => null);
+check(Boolean(lage) && lage.auf && lage.y > 0 && lage.oben >= lage.leiste - 1 && lage.oben < 844 / 2,
+  `ein Tipp auf „Theater früh“ in Kims Liste: der Dienstag, die Karte aufgeklappt, oben im Blick – nicht unter der Tagesleiste (${JSON.stringify(lage)})`);
+// Blenden die Filter es aus, sagt es ein Hinweis oben am Tag – statt still nichts zu zeigen.
+await A.filter('drinnen');
+await A.reiter('wir');
+if (await kimZeile.getAttribute('open') === null) await kimZeile.locator('summary').click();
+await kimZeile.locator('.person-eintrag', { hasText: 'Nachtmarkt' }).click();
+const hinweisMarkt = A.page.locator(`#tag-${MI} .meldung`);
+await hinweisMarkt.waitFor({ timeout: 4000 }).catch(() => {});
+check((await hinweisMarkt.innerText().catch(() => '')).includes('„Nachtmarkt“ ist gerade ausgeblendet – durch deine Filter')
+  && await A.page.locator(`#tag-${MI} .karte`, { hasText: 'Nachtmarkt' }).count() === 0,
+  'der Nachtmarkt (draußen) bei Filter „drinnen“: sein Mittwoch, oben der Hinweis, dass die Filter ihn ausblenden');
+await A.filter('drinnen');
 await A.reiter('programm');
 check((await (await karteAm(A, MI, 'Nachtmarkt')).locator('.wer').innerText()).includes('ohne dich'), 'auch im Programm steht an der Karte, wer es ohne Tobi macht');
 await A.ansicht('monat');
@@ -217,6 +240,13 @@ await synchron(B);
 check(!(await text(B)).includes('<img') && !(await text(B)).includes('Sonderkonzert'), 'Kim sieht davon nichts');
 const fremd = A.page.locator('.person-zeile', { hasText: '<img' });
 await fremd.locator('summary').click();
+await fremd.locator('.person-eintrag', { hasText: 'Sonderkonzert' }).click();
+const hinweisSonder = A.page.locator('#tag-2026-11-20 .meldung');
+await hinweisSonder.waitFor({ timeout: 4000 }).catch(() => {});
+check((await hinweisSonder.innerText().catch(() => '')).includes('„Sonderkonzert“ steht nicht mehr im Programm'),
+  'ein Haken auf etwas, das nicht (mehr) im Programm steht: sein Tag, oben ein Hinweis');
+await A.reiter('wir');
+if (await fremd.getAttribute('open') === null) await fremd.locator('summary').click();
 await fremd.locator('[data-aktion="entfernen"]').click();
 check((await fremd.locator('.einladung').innerText()).includes('aus dem Plan nehmen?'), 'Herausnehmen fragt erst nach');
 await fremd.locator('[data-aktion="entfernen-ja"]').click();

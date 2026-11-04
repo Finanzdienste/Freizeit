@@ -242,7 +242,10 @@ Der Überblick des Gastgebers in „Wir“ zeigt jeden kommenden Eintrag einmal,
 im ersten passenden Abschnitt: **Zusammen**, **Wollen mit dir** (jemand will
 mit ihm, er hat noch nicht Bock), **Ohne dich** (nur „allein/mit anderen“),
 **Pro Person** (je Person „3 mit dir · 2 ohne dich“ und die Liste, dort auch
-„Aus dem Plan nehmen“) und **Deine Haken**. „Auflösen“ löscht den Plan für
+„Aus dem Plan nehmen“ – ein Tipp auf einen Eintrag der Liste springt zu ihm:
+an seinen Tag, die Karte aufgeklappt; Ideen nach „Was immer geht“, Filme in
+die Top 250; blenden die Filter ihn aus oder steht er nicht mehr im Programm,
+sagt es ein Hinweis oben am Tag) und **Deine Haken**. „Auflösen“ löscht den Plan für
 alle; die eigenen Haken bleiben auf dem Gerät.
 
 **Schlüssel des Gastgebers:** Beim Starten würfelt die App einen Schlüssel

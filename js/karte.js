@@ -64,7 +64,8 @@ export function aufklappbar(name, titel, inhalt, { zahl = 0, klasse = '', id = '
 export const kopfzeile = (eintrag, titel = eintrag.titel) => `<div class="kopfzeile" role="button" tabindex="0" data-auf="${esc(eintrag.schluessel)}" aria-expanded="${istAuf(eintrag.schluessel)}">
       <h3>${esc(titel)}</h3><span class="chevron" aria-hidden="true"></span></div>`;
 
-const kennung = (e) => e.id || `${e.titel}|${e.ort || ''}`.toLowerCase().replace(/\s+/g, '-');
+/** Woran ein Termin oder Laufendes über Datenstände hinweg erkannt wird – Teil der Schlüssel t:… und l:…. */
+export const kennung = (e) => e.id || `${e.titel}|${e.ort || ''}`.toLowerCase().replace(/\s+/g, '-');
 
 /** Gemeinsame Felder aller Einträge. */
 const basis = (e) => ({

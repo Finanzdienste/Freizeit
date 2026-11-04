@@ -151,7 +151,7 @@ export function ideeKarte(x, ctx, bereich) {
   // Ein offenes Formular klappt die Karte mit auf.
   const auf = istAuf(x.schluessel) || ui.planen === hier || ui.bewerten === hier;
   const klassen = ['karte', 'ohne-zeit', 'idee', auf ? 'auf' : '', wer.treffer ? 'treffer' : '', x.wirkung.includes('flow') ? 'flow' : ''].filter(Boolean).join(' ');
-  return `<article class="${klassen}"${bereich === 'kat' ? ` id="${ideeAnker(x.schluessel)}"` : ''}><div class="inhalt">
+  return `<article class="${klassen}"${bereich === 'kat' || bereich === 'eigene' ? ` id="${ideeAnker(x.schluessel)}"` : ''}><div class="inhalt">
     ${kopfzeile(x)}
     ${unter ? `<div class="unter">${esc(unter)}</div>` : ''}
     ${wichtig ? `<div class="marken">${wichtig}</div>` : ''}

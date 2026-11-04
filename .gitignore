@@ -1,3 +1,4 @@
 node_modules/
 # Bildschirmfotos und Browserprofile aus Testläufen
 .testlauf/
+__pycache__/

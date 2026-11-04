@@ -4,9 +4,12 @@
  *
  * Erst die Bausteine direkt (teilen.js hat keine Abhängigkeit zum Browser),
  * dann die Knöpfe auf den Karten: Was darin steht, ist genau das, was der
- * Empfänger liest.
+ * Empfänger liest – mit dem Link in die App statt zur Quelle (wohin er führt,
+ * prüft test-link.mjs).
  */
-import { whatsappText, kalenderLink, wannText, icsText } from '../js/teilen.js';
+import {
+  whatsappText, kalenderLink, wannText, icsText, appLink,
+} from '../js/teilen.js';
 import { oeffne, IPHONE, DI, SA } from './hilfe.mjs';
 
 const A = await oeffne({ tag: '2026-11-02' });
@@ -23,6 +26,20 @@ check(text.startsWith('*Theater früh*\n'), 'Nachricht beginnt mit dem Titel in 
 check(text.includes('📅 Dienstag, 3.11.2026, 19:00 Uhr') && text.includes('📍 Thalia') && text.includes('💶 ab 20 €') && text.endsWith('🔗 https://example.org/theater'),
   'Nachricht enthält Datum, Ort, Preis und Link');
 check(!whatsappText({ ...termin, preis: 'Preis nicht genannt' }).includes('💶'), 'eine Preisangabe ohne Aussage fällt weg');
+
+// Der Link in die App: je Art des Eintrags, Eingeplantes über den Eintrag dahinter.
+const APP = 'https://finanzdienste.github.io/Freizeit/';
+check(appLink({ schluessel: `t:theater-frueh:${DI}` }, APP) === `${APP}#eintrag=t:theater-frueh:${DI}`, 'App-Link zu einem Termin: #eintrag=t:<id>:<tag>, Doppelpunkte lesbar');
+check(appLink({ schluessel: 'l:ausstellung' }, APP) === `${APP}#eintrag=l:ausstellung`, '… zu Laufendem');
+check(appLink({ schluessel: `p:${SA}:l:ausstellung`, quelle: 'plan' }, APP) === `${APP}#eintrag=l:ausstellung&tag=${SA}`, '… eingeplantes Laufendes: mit dem geplanten Tag');
+check(appLink({ schluessel: `p:${SA}:i:elbstrand`, quelle: 'plan' }, APP) === `${APP}#eintrag=i:elbstrand`, '… eingeplante Idee: die Idee');
+check(appLink({ schluessel: `p:${SA}:e:k3x9q`, quelle: 'plan' }, APP) === APP && appLink({ schluessel: 'e:k3x9q' }, APP) === APP,
+  '… eigene Idee (kennt nur, wer sie hat): die App selbst');
+check(appLink({ schluessel: 'f:tt0068646' }, APP) === `${APP}#eintrag=f:tt0068646`, '… zu einem Film');
+check(appLink({ schluessel: 't:a&b c:2026-11-03' }, APP) === `${APP}#eintrag=t:a%26b+c:2026-11-03`, '… Sonderzeichen sicher verpackt');
+check(appLink({ schluessel: 'l:x' }, '') === '', 'ohne Adresse der App kein App-Link');
+const mitApp = whatsappText(termin, { app: `${APP}#eintrag=t:theater-frueh:${DI}` });
+check(mitApp.endsWith(`🔗 ${APP}#eintrag=t:theater-frueh:${DI}`) && !mitApp.includes('example.org'), 'mit App-Link: der Link in die App, nicht zur Quelle');
 const kal = new URL(kalenderLink(termin));
 check(kal.searchParams.get('dates') === '20261103T190000/20261103T210000', 'Kalender: Beginn und Ende');
 check(kal.searchParams.get('ctz') === 'Europe/Berlin' && kal.searchParams.get('text') === 'Theater früh', 'Kalender: Zeitzone und Titel');
@@ -39,8 +56,10 @@ const karte = page.locator(`#tag-${DI} .karte`, { hasText: 'Theater früh' });
 const wa = await karte.locator('a', { hasText: 'WhatsApp' }).getAttribute('href');
 check(wa.startsWith('https://wa.me/?text='), 'WhatsApp-Knopf zeigt auf wa.me');
 const nachricht = decodeURIComponent(wa.split('text=')[1]);
-check(nachricht.includes('*Theater früh*') && nachricht.includes('📅 Dienstag, 3.11.2026, 19:00 Uhr') && nachricht.includes('https://example.org/theater'),
-  'die Nachricht der Karte nennt Titel, Tag, Uhrzeit und Link');
+const basis = new URL('./', page.url()).href;
+check(nachricht.includes('*Theater früh*') && nachricht.includes('📅 Dienstag, 3.11.2026, 19:00 Uhr')
+  && nachricht.endsWith(`🔗 ${basis}#eintrag=t:theater-frueh:${DI}`) && !nachricht.includes('example.org'),
+  'die Nachricht der Karte nennt Titel, Tag, Uhrzeit – und verlinkt den Termin in der App, nicht die Quelle');
 const kalKarte = new URL(await karte.locator('a', { hasText: 'Kalender' }).getAttribute('href'));
 check(kalKarte.searchParams.get('dates') === '20261103T190000/20261103T210000', 'Kalender-Knopf der Karte mit geschätztem Ende');
 check(await karte.locator('a', { hasText: 'WhatsApp' }).getAttribute('target') === '_blank', 'Links öffnen außerhalb der App');
@@ -56,8 +75,8 @@ await page.locator('details[data-kat="natur"] .plan-zeit').fill('14:00');
 await page.locator('details[data-kat="natur"] [data-aktion="plan-speichern"]').click();
 const plan = page.locator('#abschnitt-geplant .karte', { hasText: 'Elbstrand' });
 const waPlan = decodeURIComponent((await plan.locator('a', { hasText: 'WhatsApp' }).getAttribute('href')).split('text=')[1]);
-check(waPlan.includes('*Elbstrand*') && waPlan.includes('📅 Samstag, 7.11.2026, 14:00 Uhr') && waPlan.includes('📍 Övelgönne'),
-  'eingeplant: die Nachricht nennt Tag, Uhrzeit und Ort');
+check(waPlan.includes('*Elbstrand*') && waPlan.includes('📅 Samstag, 7.11.2026, 14:00 Uhr') && waPlan.includes('📍 Övelgönne')
+  && /🔗 \S+#eintrag=i:[a-z0-9-]+$/.test(waPlan), 'eingeplant: die Nachricht nennt Tag, Uhrzeit und Ort – der Link führt zur Idee in der App');
 const kalPlan = new URL(await plan.locator('a', { hasText: 'Kalender' }).getAttribute('href'));
 check(kalPlan.searchParams.get('dates') === '20261107T140000/20261107T160000', 'eingeplant: der Kalender-Knopf mit zwei Stunden ab Beginn');
 

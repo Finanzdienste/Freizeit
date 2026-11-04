@@ -22,7 +22,7 @@ import {
 } from './speicher.js';
 import { ladeAlles } from './daten.js';
 import {
-  heute, wochentagKurz, tagMonat, jetzt, schonVorbei,
+  heute, wochentagKurz, tagMonat, jetzt, schonVorbei, datumMitTag,
 } from './zeit.js';
 import { anzahl } from './text.js';
 import {
@@ -68,6 +68,8 @@ const ALTE_REITER = {
 };
 // Nach dem Zeichnen dorthin scrollen (etwa „Was immer geht“ nach #ideen).
 let springeZu = '';
+/** Ein Link aus einer Nachricht (#eintrag=…, teilen.js appLink) – gefolgt wird ihm, sobald die Daten da sind. */
+let linkZiel = null;
 const $ = (s) => document.querySelector(s);
 
 let daten = {
@@ -109,6 +111,13 @@ function adresseLesen() {
   // #filme ist die IMDb Top 250 im Programm; jede andere Adresse schließt sie.
   uiFilme.offen = h === 'filme';
   if (uiFilme.offen) return 'programm';
+  // #eintrag=t:…:2026-11-07 – ein geteilter Link: zum Eintrag, die Adresse danach wieder schlicht.
+  if (/^#eintrag=/.test(location.hash)) {
+    const z = new URLSearchParams(location.hash.slice(1));
+    linkZiel = { schluessel: z.get('eintrag') || '', tag: z.get('tag') || '' };
+    history.replaceState(null, '', location.pathname + location.search);
+    return 'programm';
+  }
   const einladung = h.match(/^einladung=([a-z0-9-]+)$/i);
   const zugang = /^geraet=/i.test(h) ? zugangLesen(h) : null;
   if (einladung || zugang) {
@@ -913,9 +922,32 @@ function zuEintrag({
   zuTag(tag);
   // Steht die Karte dort nicht, sagt oben am Tag ein Hinweis, warum – statt still nichts zu zeigen.
   if (geladen && !document.getElementById(ziel)) {
-    melden(`„${titel || 'Der Eintrag'}“ ${warumNichtDa(schluessel, quelle, tag)}`, null, { ort: 'programm', tag });
+    const grund = quelle !== 'laufend' && datum && datum < h ? `war am ${datumMitTag(datum)} – das ist vorbei.` : warumNichtDa(schluessel, quelle, tag);
+    melden(`${titel ? `„${titel}“` : 'Der Eintrag aus dem Link'} ${grund}`, null, { ort: 'programm', tag });
     zeichnen({ nachOben: true });
   }
+}
+
+const ISO_TAG = /^\d{4}-\d{2}-\d{2}$/;
+/** Einem geteilten Link folgen (#eintrag=…): wie ein Tipp in „Wir“, Titel und Laufzeit aus den Daten. */
+function linkFolgen() {
+  const { schluessel, tag } = linkZiel;
+  linkZiel = null;
+  const p = daten.programm;
+  if (schluessel.startsWith('t:')) {
+    const datum = schluessel.slice(-10);
+    const e = p && p.termine.find((x) => `t:${kennung(x)}:${datum}` === schluessel);
+    zuEintrag({
+      schluessel, quelle: 'termin', datum: ISO_TAG.test(datum) ? datum : '', titel: e ? e.titel : '',
+    });
+  } else if (schluessel.startsWith('l:')) {
+    const e = p && p.laufend.find((x) => `l:${kennung(x)}` === schluessel);
+    zuEintrag({
+      schluessel, quelle: 'laufend', datum: ISO_TAG.test(tag) ? tag : '', von: e ? e.von : '', titel: e ? e.titel : '',
+    });
+  } else if (/^[ie]:/.test(schluessel)) zuEintrag({ schluessel, quelle: 'idee' });
+  else if (schluessel.startsWith('f:')) zuEintrag({ schluessel, quelle: 'film' });
+  else zeichnen();
 }
 
 /** Warum eine Karte nach dem Sprung nicht an ihrem Tag steht: nicht mehr im Programm, vorbei, Filter oder 21:30. */
@@ -1084,7 +1116,9 @@ document.addEventListener('click', (ev) => {
 window.addEventListener('hashchange', () => {
   const filmeVorher = uiFilme.offen;
   const r = adresseLesen();
-  if (r && r !== reiter) wechseln(r);
+  if (linkZiel) {
+    if (geladen) linkFolgen();
+  } else if (r && r !== reiter) wechseln(r);
   else if (r === 'wir' || springeZu || uiFilme.offen !== filmeVorher) zeichnen({ nachOben: uiFilme.offen });
   einladungPruefen();
 });
@@ -1180,5 +1214,6 @@ ladeAlles().then((d) => {
   filmInfo = { stand: d.filme ? d.filme.stand : '', quelle: d.filme ? d.filme.quelle : '' };
   geladen = true;
   zeichnen();
+  if (linkZiel) linkFolgen();
   abgleichJetzt();
 });

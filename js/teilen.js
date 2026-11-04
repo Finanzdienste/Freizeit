@@ -7,6 +7,12 @@
  *
  * Grundlage ist ein „Eintrag“, wie ihn karte.js aus Termin, Konzert oder
  * Ausflugsziel baut (siehe dort).
+ *
+ * Der Link in der WhatsApp-Nachricht führt in die App, nicht zur Quelle:
+ * #eintrag=t:<id>:<tag> öffnet den Termin an seinem Tag, #eintrag=l:<id>
+ * (bei Eingeplantem &tag=<tag>) das Laufende, #eintrag=i:<id> die Idee unter
+ * „Was immer geht“, #eintrag=f:<imdb> den Film in der Top 250 – jeweils
+ * aufgeklappt (app.js, linkFolgen). Die Quelle steht dort an der Karte.
  */
 import { datumMitTag, tagMonat, datumLang, beginn, plusTage } from './zeit.js';
 import { preisSagtWas, sichererLink, istOnline } from './text.js';
@@ -22,7 +28,27 @@ export function wannText(eintrag) {
   return eintrag.zeit || '';
 }
 
-export function whatsappText(eintrag) {
+/** Die Adresse der App – ohne #… und ?…, auch aus der installierten App; ohne Browser leer. */
+export const appAdresse = () => (typeof location === 'undefined' ? '' : new URL('./', location.href).href);
+
+/**
+ * Der Link in die App zu einem Eintrag. Bei Eingeplantem der Eintrag dahinter (bei Laufendem mit dem
+ * geplanten Tag); eigene Ideen kennt nur, wer sie hat – dann die App selbst. Ohne Adresse leer.
+ */
+export function appLink(eintrag, basis) {
+  if (!basis) return '';
+  let k = String(eintrag.schluessel || '');
+  const plan = k.match(/^p:(\d{4}-\d{2}-\d{2}):(.+)$/);
+  if (plan) [, , k] = plan;
+  if (!/^[tlif]:./.test(k)) return basis;
+  const p = new URLSearchParams({ eintrag: k });
+  if (plan && k.startsWith('l:')) p.set('tag', plan[1]);
+  // Doppelpunkte dürfen im #… stehen – lesbarer als %3A.
+  return `${basis}#${p.toString().replaceAll('%3A', ':')}`;
+}
+
+/** Die Nachricht; `app` ist der Link in die App (appLink) – ohne ihn der Link zur Quelle. */
+export function whatsappText(eintrag, { app = '' } = {}) {
   const zeilen = [`*${eintrag.titel}*`];
   const wann = wannText(eintrag);
   if (wann) zeilen.push(`${eintrag.datum || eintrag.von ? '📅' : '🕒'} ${wann}`);
@@ -32,11 +58,13 @@ export function whatsappText(eintrag) {
   if (preisSagtWas(eintrag.preis)) zeilen.push(`💶 ${eintrag.preis}`);
   if (eintrag.anreise) zeilen.push(`🚆 ${eintrag.anreise}`);
   if (eintrag.unsicher) zeilen.push(`⚠️ Noch nicht sicher: ${eintrag.unsicher}`);
-  if (sichererLink(eintrag.link)) zeilen.push(`🔗 ${eintrag.link}`);
+  const link = app || sichererLink(eintrag.link);
+  if (link) zeilen.push(`🔗 ${link}`);
   return zeilen.join('\n');
 }
 
-export const whatsappLink = (eintrag) => `https://wa.me/?text=${encodeURIComponent(whatsappText(eintrag))}`;
+/** wa.me mit der fertigen Nachricht – der Link darin führt in die App. */
+export const whatsappLink = (eintrag) => `https://wa.me/?text=${encodeURIComponent(whatsappText(eintrag, { app: appLink(eintrag, appAdresse()) }))}`;
 
 const kompakt = (iso) => iso.replaceAll('-', '');
 const hhmm = (t) => `${String(Math.floor(t / 60) % 24).padStart(2, '0')}${String(t % 60).padStart(2, '0')}00`;

@@ -46,7 +46,7 @@ wer Bock hat) und der Knopf **Bock** (wer eingeladen ist, wählt zwischen
 **Mit Tobi** und **Allein/mit anderen**). Ein Tipp auf den Titel klappt den
 Rest auf: Beschreibung, Region, drinnen/draußen, Anreise, dazu **WhatsApp**
 (fertige Nachricht: Titel, Datum und Uhrzeit, Ort, Beschreibung, Preis,
-Anreise, Link), **Kalender** (auf dem iPhone eine .ics-Datei für den
+Anreise – und der Link in die App, nicht zur Quelle; siehe „Geteilte Links“), **Kalender** (auf dem iPhone eine .ics-Datei für den
 Kalender des Geräts, sonst ein ausgefüllter Termin in Google Kalender) und
 die **Quelle**. Konzerte der eigenen Künstler tragen „♫ Dein Künstler“, der
 Filter „♫ Meine Künstler“ zeigt nur sie.
@@ -132,6 +132,15 @@ Saison“); mehrere Wirkungen müssen alle zutreffen. Diese Filter wirken nur
 auf die Ideen, die der Termine nur auf die Termine. Bei
 Ideen mit Ort stehen die Orte mit Link, Preis und Zeiten dabei, auf der
 Karte als gestrichelte Marker.
+
+**Geteilte Links:** Der Link in der WhatsApp-Nachricht öffnet die App beim
+Eintrag – `#eintrag=t:<id>:<tag>` den Termin an seinem Tag, `#eintrag=l:<id>`
+Laufendes (eingeplant mit `&tag=<tag>`: am geplanten Tag), `#eintrag=i:<id>`
+die Idee unter „Was immer geht“, `#eintrag=f:<imdb>` den Film in der Top 250,
+jeweils aufgeklappt; eigene Ideen kennt nur, wer sie hat, dann ist es die App
+selbst. Die Quelle steht dort an der Karte. Fehlt die Karte (vorbei, nicht
+mehr im Programm, Filter, 21:30), sagt es ein Hinweis oben am Tag. Für die
+Vorschau in WhatsApp hat `index.html` Titel, Text und Bild (`og:`).
 
 **Einplanen** macht aus einer Idee einen Termin an einem Tag (bei mehreren
 Orten mit Wahl des Orts): Er steht im Programm (in allen Ansichten) und auf der
@@ -539,7 +548,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `js/daten.js` | Laden und Prüfen von `daten/programm.json`, Laden des Ideen-Katalogs |
 | `js/ideen.js` | Ideen: Katalog prüfen, eigene und eingeplante Ideen, Filter, Saison, „Tut dir gut“ |
 | `js/karte.js` | Einträge bauen und als Karte zeichnen (Bock, wer hat Bock) |
-| `js/teilen.js` | WhatsApp-Nachricht, Google-Kalender-Link, .ics |
+| `js/teilen.js` | WhatsApp-Nachricht mit dem Link in die App, Google-Kalender-Link, .ics |
 | `js/speicher.js` | Filter, eigene Haken mit Schnappschuss, Warteschlange, Verlauf „Wie war's?“ |
 | `js/gemeinsam.js` | der gemeinsame Plan: Code, Schlüssel, Beitreten, weiteres Gerät, Abgleich mit Supabase, Rollen und Treffer |
 | `js/zeiten.js` | die belegten Zeiten des Gastgebers: lesen, prüfen, die Zeile an der Karte |
@@ -574,6 +583,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `test-landkarte.mjs` | Marker, Zeitraum, „Nur mit Bock“, Online & TV gezählt statt gezeigt, Liste am Marker, Haken aus der Karte |
 | `test-wir.mjs` | der gemeinsame Plan: Tobi lädt ein, Kim (iPhone) und Jo wählen mit/ohne Tobi und sehen einander nicht, Tobis Überblick, offline, weiteres Gerät, Herausnehmen, Verlassen, Auflösen, ein Plan aus der ersten Fassung, fremder Text |
 | `test-filme.mjs` | IMDb Top 250: die Tür, die Seite `#filme`, Suche, Genre, Auswahl, Aufklappen, Bock – allein und im Plan („Mit Tobi gucken“, „Mit dir“), die Zeile in „Wir“ und zurück |
+| `test-link.mjs` | Geteilte Links: die WhatsApp-Nachricht verlinkt die App; ein Link öffnet Termin, eingeplantes Laufendes, Idee und Film aufgeklappt im Blick – auch zum ersten Mal und in der offenen App; Hinweise bei Vergangenem, nicht mehr im Programm, 21:30 und Filter |
 | `test-laufend.mjs` | Laufendes für einen Tag einplanen: „Einplanen“ erst aufgeklappt, Vorschlag (angesehener Tag, in der Woche ihr Samstag), nur solange es läuft, Sprung zum Tag mit Meldung, „Eingeplant“ mit Uhrzeit, Zeiten in der Beschreibung, Kalender, Rückgängig |
 | `test-ideen.mjs` | „Was immer geht“: Katalog, eigener Filter nach Wirkung, Saison, Bock, Einplanen (Tag, Monat), Wie war's? und „Tut dir gut“, eigene Ideen im Plan, Einplanen mit/ohne Gastgeber, fremder Text, Ideen auf der Karte und der Sprung zurück |
 | `test-teilen.mjs` | WhatsApp, Google Kalender, .ics – auch für Eingeplantes |

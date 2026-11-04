@@ -32,6 +32,14 @@
   "Europäisches Hansemuseum, Lübeck": "europaeisches-hansemuseum-q14545643",
   "Fabrik, Ottensen": "fabrik-q1390772",
   "Foyer Opernhaus Kiel, Rathausplatz": "opernhaus-kiel-q737243",
+  "Freilichtmuseum am Kiekeberg, Rosengarten-Ehestorf": "freilichtmuseum-am-kiekeberg-q1454529",
+  "GOP Varieté-Theater Hannover": "gop-variete-theater-hannover-q1486334",
+  "Germaniahafen, Kiel": "germaniahafen-q1514147",
+  "Gilde Parkbühne, Hannover": "parkbuehne-hannover-q2052626",
+  "Große Freiheit 36, St. Pauli": "grosse-freiheit-36-q15137841",
+  "Gruenspan, Große Freiheit": "gruenspan-q1550320",
+  "Gut Basthorst": "gut-basthorst-q1556895",
+  "Gut Karlshöhe, Bramfeld": "gut-karlshoehe-q17123453",
   "Schauspielhaus Hannover": "schauspielhaus-hannover-q118288133",
   "Staatsoper Hannover": "staatsoper-hannover-q315705"
  },
@@ -77,6 +85,7 @@
   "EisArena Planten un Blomen, Holstenwall 30": "2026-11-04",
   "Eisbahn Wismar, Alter Hafen": "2026-11-04",
   "Eisland Farmsen": "2026-11-04",
+  "Eisstadion am Pferdeturm, Hannover": "2026-11-04",
   "Eric-Kandel-Gymnasium, Ahrensburg": "2026-11-04",
   "Ernst-August-Platz, Hannover": "2026-11-04",
   "Essigfabrik, Kanalstr. 26–28, Lübeck": "2026-11-04",
@@ -439,6 +448,69 @@
    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
    "urheber": "San Andreas"
   },
+  "freilichtmuseum-am-kiekeberg-q1454529": {
+   "datei": "File:Ines Ausstellung; Kiekeberg 026.jpg",
+   "objekt": "Freilichtmuseum am Kiekeberg",
+   "wikidata": "Q1454529",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AInes_Ausstellung%3B_Kiekeberg_026.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "urheber": "John N."
+  },
+  "germaniahafen-q1514147": {
+   "datei": "File:Germaniahafen Kiel.JPG",
+   "objekt": "Germaniahafen",
+   "wikidata": "Q1514147",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AGermaniahafen_Kiel.JPG",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "urheber": "Helge Høifødt"
+  },
+  "gop-variete-theater-hannover-q1486334": {
+   "datei": "File:GOP Eingang.jpg",
+   "objekt": "GOP Varieté Theater Hannover",
+   "wikidata": "Q1486334",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AGOP_Eingang.jpg",
+   "lizenz": "Public domain",
+   "lizenzLink": "",
+   "urheber": "AxelHH"
+  },
+  "grosse-freiheit-36-q15137841": {
+   "datei": "File:Kaiserkeller, Grosse Freiheit 36.jpg",
+   "objekt": "Große Freiheit 36",
+   "wikidata": "Q15137841",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AKaiserkeller%2C_Grosse_Freiheit_36.jpg",
+   "lizenz": "CC BY 2.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by/2.0",
+   "urheber": "grahamc99"
+  },
+  "gruenspan-q1550320": {
+   "datei": "File:Hh-gruenspan.jpg",
+   "objekt": "Grünspan",
+   "wikidata": "Q1550320",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AHh-gruenspan.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "urheber": "Staro1"
+  },
+  "gut-basthorst-q1556895": {
+   "datei": "File:Herrenhaus Basthorst.JPG",
+   "objekt": "Gut Basthorst",
+   "wikidata": "Q1556895",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AHerrenhaus_Basthorst.JPG",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "urheber": "PodracerHH"
+  },
+  "gut-karlshoehe-q17123453": {
+   "datei": "File:Hamburg Gut Karlshöhe Gutshaus1.jpg",
+   "objekt": "Gut Karlshöhe",
+   "wikidata": "Q17123453",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AHamburg_Gut_Karlsh%C3%B6he_Gutshaus1.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+   "urheber": "An-d"
+  },
   "historisches-museum-hannover-q1614375": {
    "datei": "File:Am hohen Ufer (01).JPG",
    "objekt": "Historisches Museum Hannover",
@@ -465,6 +537,15 @@
    "lizenz": "CC BY-SA 4.0",
    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
    "urheber": "Matthias Süßen"
+  },
+  "parkbuehne-hannover-q2052626": {
+   "datei": "File:Parkbühne Hannover Zelt.jpg",
+   "objekt": "Parkbühne Hannover",
+   "wikidata": "Q2052626",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AParkb%C3%BChne_Hannover_Zelt.jpg",
+   "lizenz": "Public domain",
+   "lizenzLink": "",
+   "urheber": "Axel Hindemith"
   },
   "pumpe-q2118159": {
    "datei": "File:Hassstrasse 22-26 Kiel.jpg",
@@ -496,440 +577,6 @@
  },
  "stand": "2026-11-04",
  "warten": {
-  "Adolf-Jäger-Kampfbahn, Altona": {
-   "bild": "Adolf-Jäger-Kampfbahn - Haupttribüne.jpg",
-   "item": "Q360602",
-   "name": "Adolf-Jäger-Kampfbahn",
-   "dist": 32,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "Elb-Sohn"
-   }
-  },
-  "Altonaer Museum, Museumstraße 23": {
-   "bild": "Altonaer Museum.jpg",
-   "item": "Q126971",
-   "name": "Altonaer Museum",
-   "dist": 29,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "Bahnmoeller"
-   }
-  },
-  "Barclays Arena, Bahrenfeld": {
-   "bild": "Barclaycard-Arena-Hamburg-Aussendarstellung.JPG",
-   "item": "Q265107",
-   "name": "Barclays Arena",
-   "dist": 26,
-   "lizenz": {
-    "lizenz": "CC BY-SA 4.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
-    "urheber": "Franjo targo"
-   }
-  },
-  "Beginenturm (Historisches Museum), Hannover": {
-   "bild": "Am hohen Ufer (01).JPG",
-   "item": "Q1614375",
-   "name": "Historisches Museum Hannover",
-   "dist": 33,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "Hombre at wikivoyage shared"
-   }
-  },
-  "Bibliothek der Helmut-Schmidt-Universität, Jenfeld": {
-   "bild": "HSU-Hauptgebäude.jpg",
-   "item": "Q530991",
-   "name": "Helmut-Schmidt-Universität/Universität der Bundeswehr Hamburg",
-   "dist": 285,
-   "lizenz": false
-  },
-  "Botanischer Sondergarten Wandsbek": {
-   "bild": "Botanischer Sondergarten Wandsbek (1).jpg",
-   "item": "Q3398986",
-   "name": "Botanischer Sondergarten Wandsbek",
-   "dist": 99,
-   "lizenz": {
-    "lizenz": "CC BY-SA 4.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
-    "urheber": "Pauli-Pirat"
-   }
-  },
-  "Bucerius Kunst Forum, Alter Wall": {
-   "bild": "Bucerius Kunst Forum, Alter Wall.jpg",
-   "item": "Q877566",
-   "name": "Bucerius Kunst Forum",
-   "dist": 7,
-   "lizenz": {
-    "lizenz": "CC BY-SA 4.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
-    "urheber": "BuceriusKunstForum"
-   }
-  },
-  "Bucerius Kunst Forum, Alter Wall 12": {
-   "bild": "Bucerius Kunst Forum, Alter Wall.jpg",
-   "item": "Q877566",
-   "name": "Bucerius Kunst Forum",
-   "dist": 7,
-   "lizenz": {
-    "lizenz": "CC BY-SA 4.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
-    "urheber": "BuceriusKunstForum"
-   }
-  },
-  "Bürgerhaus, Mühlenstraße 22, Bad Oldesloe": {
-   "bild": "Bad Oldesloe, Mühlenstraße 22.JPG",
-   "item": "Q58487555",
-   "name": "Mühlenstraße 22",
-   "dist": 2,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "Callisa98"
-   }
-  },
-  "CU-Arena, Neugraben": {
-   "bild": "CU-Arena Hamburg-Neugraben.jpg",
-   "item": "Q115729401",
-   "name": "CU-Arena",
-   "dist": 60,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "Bahnmoeller"
-   }
-  },
-  "Capitol Hannover": {
-   "bild": "Capitol high rise Linden Hanover Germany 02.jpg",
-   "item": "Q1034682",
-   "name": "Capitol-Hochhaus",
-   "dist": 29,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "ChristianSchd"
-   }
-  },
-  "Christuskirche Wandsbek": {
-   "bild": "Hh-christusk-wandsb2.jpg",
-   "item": "Q1087331",
-   "name": "Christuskirche Wandsbek",
-   "dist": 9,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "Staro1"
-   }
-  },
-  "Christuskirche, Pinneberg": {
-   "bild": "Christuskirche Pinneberg.jpg",
-   "item": "Q59502239",
-   "name": "Christuskirche (Pinneberg)",
-   "dist": 32,
-   "lizenz": {
-    "lizenz": "CC BY-SA 2.5",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/2.5",
-    "urheber": "Nihat Halici"
-   }
-  },
-  "Deichtorhallen, Halle für aktuelle Kunst, Deichtorstraße 1–2": {
-   "bild": "DTH Nordhalle.jpg",
-   "item": "Q1183156",
-   "name": "Deichtorhallen",
-   "dist": 88,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "Deichtorhallen Hamburg GmbH"
-   }
-  },
-  "Detlefsen-Museum, Glückstadt": {
-   "bild": "Glückstadt, das Detlefsen-Museum.jpg",
-   "item": "Q76638741",
-   "name": "Detlefsenmuseum",
-   "dist": 5,
-   "lizenz": {
-    "lizenz": "CC BY 3.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by/3.0",
-    "urheber": "Dguendel"
-   }
-  },
-  "Deutsches Schauspielhaus, MalerSaal": {
-   "bild": "Deutsches Schauspielhaus, Kirchenallee, Hamburg.jpg",
-   "item": "Q450777",
-   "name": "Deutsches Schauspielhaus",
-   "dist": 22,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "Liberaler Humanist"
-   }
-  },
-  "Deutsches Schauspielhaus, St. Georg": {
-   "bild": "Deutsches Schauspielhaus, Kirchenallee, Hamburg.jpg",
-   "item": "Q450777",
-   "name": "Deutsches Schauspielhaus",
-   "dist": 22,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "Liberaler Humanist"
-   }
-  },
-  "Die Pumpe, Kiel": {
-   "bild": "Hassstrasse 22-26 Kiel.jpg",
-   "item": "Q2118159",
-   "name": "Pumpe",
-   "dist": 13,
-   "lizenz": {
-    "lizenz": "CC BY-SA 4.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
-    "urheber": "Siegbert Brey"
-   }
-  },
-  "Docks, Spielbudenplatz": {
-   "bild": "MK33808 Docks Hamburg.jpg",
-   "item": "Q1233759",
-   "name": "Docks",
-   "dist": 6,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "Martin Kraft"
-   }
-  },
-  "Drostei, Pinneberg": {
-   "bild": "Pinneberg-drostei.jpg",
-   "item": "Q1260605",
-   "name": "Drostei (Pinneberg)",
-   "dist": 12,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "Staro1"
-   }
-  },
-  "Edmund-Plambeck-Stadion, Norderstedt": {
-   "bild": "Edmund-Plambeck-Stadion.jpg",
-   "item": "Q1285906",
-   "name": "Edmund-Plambeck-Stadion",
-   "dist": 107,
-   "lizenz": false
-  },
-  "Elbphilharmonie, Kleiner Saal": {
-   "bild": "2019-05-10 Elbphilharmonie Hamburg.jpg",
-   "item": "Q673223",
-   "name": "Elbphilharmonie",
-   "dist": 14
-  },
-  "Erlebnis-Zoo Hannover": {
-   "bild": "Hannover Zoo.jpg",
-   "item": "Q220033",
-   "name": "Erlebnis-Zoo Hannover",
-   "dist": 63,
-   "lizenz": {
-    "lizenz": "Public domain",
-    "lizenzLink": "",
-    "urheber": "Joachim Meyer - (WT-shared) HaJo at wts wikivoyage"
-   }
-  },
-  "Erlöserkirche Farmsen": {
-   "bild": "Erlöserkirche von Nordwesten.jpg",
-   "item": "Q1355745",
-   "name": "Erlöserkirche",
-   "dist": 11,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "An-d"
-   }
-  },
-  "Ernst Barlach Haus, Jenischpark, Othmarschen": {
-   "bild": "Hh-ernst-barlach-haus.jpg",
-   "item": "Q871581",
-   "name": "Ernst-Barlach-Haus",
-   "dist": 11,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "The original uploader was Staro1 at German Wikipedia."
-   }
-  },
-  "Ernst Deutsch Theater, Foyer": {
-   "bild": "ErnstDeutschTheatre01.SW.20040501.JPG",
-   "item": "Q51916",
-   "name": "Ernst Deutsch Theater",
-   "dist": 10,
-   "lizenz": {
-    "lizenz": "CC BY-SA 2.5",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/2.5",
-    "urheber": "Seungmin Whang"
-   }
-  },
-  "Ernst Deutsch Theater, LABOR": {
-   "bild": "ErnstDeutschTheatre01.SW.20040501.JPG",
-   "item": "Q51916",
-   "name": "Ernst Deutsch Theater",
-   "dist": 10,
-   "lizenz": {
-    "lizenz": "CC BY-SA 2.5",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/2.5",
-    "urheber": "Seungmin Whang"
-   }
-  },
-  "Ernst Deutsch Theater, Mundsburg": {
-   "bild": "ErnstDeutschTheatre01.SW.20040501.JPG",
-   "item": "Q51916",
-   "name": "Ernst Deutsch Theater",
-   "dist": 10,
-   "lizenz": {
-    "lizenz": "CC BY-SA 2.5",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/2.5",
-    "urheber": "Seungmin Whang"
-   }
-  },
-  "Ernst-August-Platz, Hannover": {
-   "bild": "Hannover-hauptbahnhof.jpg",
-   "item": "Q19279257",
-   "name": "Ernst-August-Platz",
-   "dist": 16,
-   "lizenz": false
-  },
-  "Europäisches Hansemuseum, Lübeck": {
-   "bild": "Europäisches Hansemuseum 2015.jpg",
-   "item": "Q14545643",
-   "name": "Europäisches Hansemuseum",
-   "dist": 11,
-   "lizenz": {
-    "lizenz": "CC BY 4.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by/4.0",
-    "urheber": "BS Hochschulstadtteil 20:27, 11. Jun. 2015 (CEST)"
-   }
-  },
-  "Fabrik, Ottensen": {
-   "bild": "Fabrik-Hamburg-Altona.JPG",
-   "item": "Q1390772",
-   "name": "Fabrik",
-   "dist": 18,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "San Andreas"
-   }
-  },
-  "Foyer Opernhaus Kiel, Rathausplatz": {
-   "bild": "Opernhaus Kiel msu2017-9209.jpg",
-   "item": "Q737243",
-   "name": "Opernhaus Kiel",
-   "dist": 10,
-   "lizenz": {
-    "lizenz": "CC BY-SA 4.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
-    "urheber": "Matthias Süßen"
-   }
-  },
-  "Freilichtmuseum am Kiekeberg, Rosengarten-Ehestorf": {
-   "bild": "Ines Ausstellung; Kiekeberg 026.jpg",
-   "item": "Q1454529",
-   "name": "Freilichtmuseum am Kiekeberg",
-   "dist": 178,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "John N."
-   }
-  },
-  "GOP Varieté-Theater Hannover": {
-   "bild": "GOP Eingang.jpg",
-   "item": "Q1486334",
-   "name": "GOP Varieté Theater Hannover",
-   "dist": 53,
-   "lizenz": {
-    "lizenz": "Public domain",
-    "lizenzLink": "",
-    "urheber": "AxelHH"
-   }
-  },
-  "Galerie Hinter dem Rathaus, Wismar": {
-   "bild": "Hinter dem Rathaus - geo.hlipp.de - 6896.jpg",
-   "item": "Q99695293",
-   "name": "Hinter dem Rathaus",
-   "dist": 3,
-   "lizenz": {
-    "lizenz": "CC BY-SA 2.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/2.0",
-    "urheber": "Sebastian und Kari"
-   }
-  },
-  "Germaniahafen, Kiel": {
-   "bild": "Germaniahafen Kiel.JPG",
-   "item": "Q1514147",
-   "name": "Germaniahafen",
-   "dist": 45,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "Helge Høifødt"
-   }
-  },
-  "Gilde Parkbühne, Hannover": {
-   "bild": "Parkbühne Hannover Zelt.jpg",
-   "item": "Q2052626",
-   "name": "Parkbühne Hannover",
-   "dist": 90,
-   "lizenz": {
-    "lizenz": "Public domain",
-    "lizenzLink": "",
-    "urheber": "Axel Hindemith"
-   }
-  },
-  "Große Freiheit 36, St. Pauli": {
-   "bild": "Kaiserkeller, Grosse Freiheit 36.jpg",
-   "item": "Q15137841",
-   "name": "Große Freiheit 36",
-   "dist": 2,
-   "lizenz": {
-    "lizenz": "CC BY 2.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by/2.0",
-    "urheber": "grahamc99"
-   }
-  },
-  "Gruenspan, Große Freiheit": {
-   "bild": "Hh-gruenspan.jpg",
-   "item": "Q1550320",
-   "name": "Grünspan",
-   "dist": 17,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "Staro1"
-   }
-  },
-  "Gut Basthorst": {
-   "bild": "Herrenhaus Basthorst.JPG",
-   "item": "Q1556895",
-   "name": "Gut Basthorst",
-   "dist": 2,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "PodracerHH"
-   }
-  },
-  "Gut Karlshöhe, Bramfeld": {
-   "bild": "Hamburg Gut Karlshöhe Gutshaus1.jpg",
-   "item": "Q17123453",
-   "name": "Gut Karlshöhe",
-   "dist": 43,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "An-d"
-   }
-  },
   "Gänsemarkt, Neustadt": {
    "bild": "U-Bahnhof Gänsemarkt 1.jpg",
    "item": "Q822899",
@@ -1913,17 +1560,6 @@
     "lizenz": "CC BY-SA 4.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
     "urheber": "Gunnar Klack"
-   }
-  },
-  "Staatsoper Hannover": {
-   "bild": "2022-03-06 Staatsoper Hannover.JPG",
-   "item": "Q315705",
-   "name": "Staatsoper Hannover",
-   "dist": 6,
-   "lizenz": {
-    "lizenz": "CC BY-SA 4.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
-    "urheber": "Bärbel Miemietz"
    }
   },
   "Stade": {

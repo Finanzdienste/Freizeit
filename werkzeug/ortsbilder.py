@@ -326,7 +326,8 @@ def main():
             w['lizenz']['urheber'] = urheber_text(w['lizenz'].get('urheber')) or 'unbekannt'
         if f'File:{w["bild"]}' in ausnahmen['dateien'] or w['item'] in ausnahmen['objekte']:
             w['raus'] = True
-    stand['warten'] = {o: w for o, w in stand['warten'].items() if not w.pop('raus', False) and o not in ausnahmen['orte']}
+    stand['warten'] = {o: w for o, w in stand['warten'].items()
+                       if not w.pop('raus', False) and o not in ausnahmen['orte'] and o not in stand['orte']}
     # Was eine Ausnahme ist, fliegt auch aus dem Bestand.
     for ort, name in list(stand['orte'].items()):
         info = stand['bilder'].get(name, {})
@@ -369,10 +370,10 @@ def main():
     neu = []
     warten = stand.setdefault('warten', {})
     def speichern():
+        # Sortiert schreiben, ohne die Wörterbücher selbst zu ersetzen – `warten` zeigt weiter auf dasselbe.
         stand['stand'] = heute
-        for k in ('orte', 'ohne', 'bilder', 'warten'):
-            stand[k] = dict(sorted(stand[k].items()))
-        aus_datei = {k: v for k, v in stand.items() if k != 'warten' or v}
+        aus_datei = {k: (dict(sorted(v.items())) if k in ('orte', 'ohne', 'bilder', 'warten') else v)
+                     for k, v in stand.items() if k != 'warten' or v}
         ZIEL.write_text(json.dumps(aus_datei, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     suchen = {o: v for o, v in suchen.items() if o not in warten}
     if suchen:

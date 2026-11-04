@@ -90,7 +90,7 @@ export function testProgramm(mehr = {}) {
     tage: tage.map((datum) => ({ datum, wetter: `Wetter am ${datum}` })),
     termine: [
       { id: 'konzert-spaet', daten: [DI, FR], zeit: '20:00', titel: 'Konzert spät', ort: 'Docks', geo: geo(0.004, -0.03), region: 'HH', kategorie: 'Konzert', beschreibung: 'Endet nach Richtwert um 22:15.', draussen: 'drinnen', link: 'https://example.org/konzert' },
-      { id: 'theater-frueh', daten: [DI], zeit: '19:00', titel: 'Theater früh', ort: 'Thalia', geo: geo(0.002, 0.003), region: 'HH', kategorie: 'Bühne', beschreibung: 'Schauspiel, ca. 2 Stunden.', preis: 'ab 20 €', draussen: 'drinnen', link: 'https://example.org/theater' },
+      { id: 'theater-frueh', daten: [DI], zeit: '19:00', titel: 'Theater früh', ort: 'Thalia', geo: geo(0.002, 0.003), region: 'HH', kategorie: 'Bühne', beschreibung: 'Schauspiel, ca. 2 Stunden.', einordnung: 'Ein Klassiker in moderner Fassung – gut für einen ersten Theaterabend, ohne Vorwissen.', preis: 'ab 20 €', draussen: 'drinnen', link: 'https://example.org/theater' },
       { id: 'kino-lang', daten: [MI], zeit: '19:00', ende: '22:30', titel: 'Kino lang', ort: 'Savoy', geo: geo(0.004, 0.01), region: 'HH', kategorie: 'Kino', draussen: 'drinnen', imdb: '12', link: 'https://example.org/kino' },
       { id: 'nachtmarkt', daten: [MI], zeit: '18:00–22:00', titel: 'Nachtmarkt', ort: 'Rindermarkthalle', geo: geo(0.006, -0.025), region: 'HH', kategorie: 'Markt', kostenlos: true, draussen: 'draußen', link: 'https://example.org/markt' },
       { id: 'workshop-mittags', daten: [DI], zeit: '12:30', titel: 'Workshop mittags', ort: 'Kochschule', geo: geo(-0.01, 0.02), region: 'HH', kategorie: 'Food', draussen: 'drinnen', link: 'https://example.org/workshop' },

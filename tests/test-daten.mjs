@@ -112,6 +112,8 @@ if (p) {
   alle(termine.filter(istOnline), (e) => e.online === true && e.region === 'ONL', 'termine: Online & TV hat online: true und Region ONL – immer beides');
   alle(termine.filter(istOnline), (e) => e.geo === undefined && e.anreise === undefined && text(e.ort), 'termine: Online & TV ohne geo und anreise, in ort der Sender');
   alle(termine, (e) => e.imdb === undefined || text(String(e.imdb)), 'termine: imdb ist ein Platz');
+  alle([...termine, ...(istListe(p.laufend) ? p.laufend : [])], (e) => e.einordnung === undefined || (typeof e.einordnung === 'string' && e.einordnung.trim().length >= 40 && e.einordnung.length <= 900),
+    'termine/laufend: einordnung (wenn da) ist ein Text mit 40–900 Zeichen');
   alle(termine, (e) => e.geo === undefined || geoOk(e.geo), 'termine: geo ist [Breite, Länge] in Deutschland');
   const vorOrt = termine.filter((e) => !istOnline(e));
   const mitGeo = vorOrt.filter((e) => e.geo).length;

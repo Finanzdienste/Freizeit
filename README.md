@@ -53,7 +53,9 @@ Filter „♫ Meine Künstler“ zeigt nur sie.
 
 **Bilder:** Vorn an jeder Karte steht ein kleines Bild – ein freies Foto der
 Spielstätte, sonst ein gezeichnetes Motiv der Kategorie (Konzert, Bühne,
-Markt …; Online & TV ohne Kategorie: ein Bildschirm). Aufgeklappt steht das
+Markt …; Online & TV ohne Kategorie: ein Bildschirm). Ideen nehmen das Foto
+ihres ersten Orts mit Foto oder das Motiv ihrer Kategorie, Filme das Motiv
+ihres Genres. Aufgeklappt steht das
 Foto groß da, darunter Ort, Fotograf, Lizenz und der Link zur Datei bei
 Wikimedia Commons; alle Nachweise auch unter Einstellungen → App → „Fotos
 der Orte“. Fotos von Veranstaltern oder Künstlern nimmt die App nie – nur
@@ -180,8 +182,10 @@ Kennungen wie früher „Geht immer“), `e:<zufall>` eigene Idee,
 
 Vor den Kategorien steht die Tür zur **IMDb Top 250** – eine eigene Seite im
 Programm (`#filme`): alle 250 Filme nach Platz mit deutschem Titel, Original,
-Jahr, Länge und Genre, aufgeklappt eine kurze Beschreibung, Regie und der
-Link zu IMDb. Oben Suche (Titel, Original, Regie, Jahr, Genre), Genre und die
+Jahr, Länge und Genre, aufgeklappt eine kurze Beschreibung, Regie, **▶ Trailer**
+(eine YouTube-Suche nach Titel, Jahr und „Trailer“ – nichts eingebettet) und
+der Link zu IMDb. Vorn steht das gezeichnete Motiv des Genres (das Besondere
+vor „Drama“). Oben Suche (Titel, Original, Regie, Jahr, Genre), Genre und die
 Auswahl Alle · Mit Bock · im Plan „Mit dir“ (Gastgeber) bzw. „Tobi will“.
 Jeder sagt je Film Bock; Eingeladene haben nur „Mit Tobi gucken“ (Bock mit
 dem Gastgeber), Tobi sieht unter „Mit dir“ und in „Wir“ unter „Wollen mit
@@ -468,6 +472,7 @@ nach ein bis zwei Minuten steht die neue Datei unter
 | `neu` | in den letzten 7 Tagen angekündigt |
 | `ausverkauft` | `true`, wenn ausverkauft |
 | `vorverkauf` | Vorverkaufsstart als Text, „ab Fr 6.11., 10 Uhr“ |
+| `einordnung` | 2–5 eigene Sätze (40–900 Zeichen), aufgeklappt unter der Beschreibung: worum es geht, was es besonders macht, für wen es passt, Hintergrund (Stück, Künstler, Haus) und Praktisches („früh da sein“). Nur, was die Quellen hergeben – auch bei Laufendem |
 | `tipp` | kein eigener Künstler, passt aber zum Geschmack |
 
 **Laufend** – was über Tage oder Wochen läuft (Ausstellungen, Musicals im
@@ -534,7 +539,7 @@ nicht kennt, zeigt „Was immer geht“ es trotzdem.
 ### Fotos der Orte
 
 `werkzeug/ortsbilder.py` sucht für jeden Ort im Programm (mit Koordinaten,
-nicht Online & TV) bei Wikidata Objekte mit Bild (P18) im Umkreis von 400 m
+nicht Online & TV) und jeden Ort einer Idee bei Wikidata Objekte mit Bild (P18) im Umkreis von 400 m
 (bei genau gleichem Namen 600 m) und nimmt das mit dem passendsten Namen –
 Stadtteile, Straßen und allgemeine Wörter („Theater“, „Halle“) allein zählen
 nicht. Lizenz und Urheber kommen aus Commons; genommen wird nur CC0,

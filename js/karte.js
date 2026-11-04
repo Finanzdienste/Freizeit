@@ -73,6 +73,7 @@ const basis = (e) => ({
   titel: e.titel,
   ort: e.ort || '',
   beschreibung: e.beschreibung || '',
+  einordnung: typeof e.einordnung === 'string' ? e.einordnung.slice(0, 900) : '',
   preis: e.preis || '',
   kostenlos: kostenlos(e),
   anreise: e.anreise || '',
@@ -239,6 +240,7 @@ export function karte(eintrag, o = {}) {
     <div class="mehr">
       ${foto}
       ${eintrag.beschreibung ? `<p>${esc(eintrag.beschreibung)}</p>` : ''}
+      ${eintrag.einordnung ? `<p class="einordnung"><b>Einordnung:</b> ${esc(eintrag.einordnung)}</p>` : ''}
       ${mehr ? `<div class="marken">${mehr}</div>` : ''}
       ${eintrag.unsicher ? `<div class="unsicher">${esc(eintrag.unsicher)}</div>` : ''}
       ${eintrag.anreise ? `<div class="anreise">Anreise: ${esc(eintrag.anreise)}</div>` : ''}

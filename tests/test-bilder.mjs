@@ -5,6 +5,11 @@
  * (Symbole in index.html). Fehlt die Datei, gibt es nur Motive; lädt ein
  * Foto nicht, springt das Motiv ein. Fremder Inhalt in der Datei richtet
  * nichts an. Die Nachweise stehen auch in den Einstellungen.
+ *
+ * Ideen nehmen das Foto ihres ersten Orts mit Foto, sonst das Motiv ihrer
+ * Kategorie; Filme bekommen nie ein Foto, sondern das Motiv ihres Genres und
+ * einen Trailer-Link (YouTube-Suche). Termine zeigen aufgeklappt auch ihre
+ * Einordnung.
  */
 import { oeffne, DI, MI } from './hilfe.mjs';
 
@@ -16,6 +21,7 @@ const ORTSBILDER = {
     Rindermarkthalle: 'kaputt-markthalle-q2',
     Docks: '../../böse',
     Kochschule: 'fremd-q3',
+    'Hammer Park': 'hammer-park-q4',
   },
   bilder: {
     'thalia-theater-q1': {
@@ -30,6 +36,10 @@ const ORTSBILDER = {
       datei: 'File:X.jpg', objekt: '<img src=x onerror=alert(1)>', urheber: '<b>fett</b>', lizenz: 'CC0', lizenzLink: 'javascript:alert(2)', seite: 'https://commons.wikimedia.org/wiki/File:X.jpg',
     },
     '../../böse': { objekt: 'Böse', urheber: 'x', lizenz: 'CC0', seite: 'https://example.org' },
+    'hammer-park-q4': {
+      datei: 'File:Hammer Park.jpg', objekt: 'Hammer Park', wikidata: 'Q4', urheber: 'Parkfreund', lizenz: 'CC BY 4.0',
+      lizenzLink: 'https://creativecommons.org/licenses/by/4.0', seite: 'https://commons.wikimedia.org/wiki/File:Hammer_Park.jpg',
+    },
   },
   ohne: {},
 };
@@ -55,6 +65,8 @@ check((await unter.innerText()).includes('Thalia Theater · Foto: Testfotograf, 
   && (await unter.locator('a', { hasText: 'Wikimedia Commons' }).getAttribute('href')) === 'https://commons.wikimedia.org/wiki/File:Thalia_Theater.jpg',
 'darunter: Ort, Fotograf, Lizenz (verlinkt) und die Dateiseite bei Commons');
 check(await theater.locator('.mehr p').first().innerText() === 'Schauspiel, ca. 2 Stunden.', 'die Beschreibung folgt unter dem Foto');
+check((await theater.locator('.mehr p.einordnung').innerText()).startsWith('Einordnung: Ein Klassiker in moderner Fassung'), '… und darunter die Einordnung');
+check(await karte('Keane').locator('.einordnung').count() === 0, 'ohne Einordnung in den Daten keine leere Zeile');
 
 // --- Ohne Foto: das Motiv der Kategorie
 const konzert = karte('Keane');
@@ -78,6 +90,31 @@ await page.waitForFunction((tag) => !document.querySelector(`#tag-${tag} img.bil
 check(await markt.locator('img.bildchen').count() === 0 && await markt.locator('.bildchen.motiv use').getAttribute('href') === '#m-markt',
   'lädt das Foto nicht (Nachtmarkt): statt eines kaputten Bilds das Motiv „Markt“');
 
+// --- Ideen: das Foto ihres Orts oder das Motiv ihrer Kategorie
+await page.locator('details[data-kat="sport"] > summary').click();
+const tt = page.locator('#idee-i-tischtennis');
+check((await tt.locator('img.bildchen').getAttribute('src')) === 'bilder/orte/hammer-park-q4-klein.webp', 'Idee mit Ort (Tischtennis im Park): das Foto ihres ersten Orts mit Foto');
+await tt.locator('.kopfzeile').click();
+check((await tt.locator('.ortsfoto figcaption').innerText()).startsWith('Hammer Park · Foto: Parkfreund, CC BY 4.0'), '… aufgeklappt groß, mit Nachweis');
+await page.locator('details[data-kat="spiele"] > summary').click();
+check(await page.locator('#idee-i-story-game .bildchen.motiv use').getAttribute('href') === '#m-spiele', 'Idee ohne Ort (Story-Game): das Motiv „Spiele“');
+await page.locator('details[data-kat="kreativ"] > summary').click();
+check(await page.locator('#idee-i-buegelperlen .bildchen.motiv use').getAttribute('href') === '#m-kreativ', '… Bügelperlen: „Kreativ“');
+
+// --- Filme: das Motiv des Genres (das Besondere vor „Drama“) und ein Trailer-Link
+await page.evaluate(() => { location.hash = '#filme'; });
+await page.locator('.filme-seite').waitFor();
+const pate = page.locator('#film-f-tt0068646');
+check(await pate.locator('.bildchen.motiv use').getAttribute('href') === '#m-krimi' && await pate.locator('img').count() === 0, 'Film „Der Pate“ (Krimi, Drama): das Motiv „Krimi“, kein Foto');
+check(await page.locator('#film-f-tt0111161 .bildchen.motiv use').getAttribute('href') === '#m-drama', '„Die Verurteilten“ (nur Drama): „Drama“');
+await pate.locator('.kopfzeile').click();
+const trailer = pate.locator('a', { hasText: 'Trailer' });
+const tUrl = new URL(await trailer.getAttribute('href'));
+check(await trailer.isVisible() && tUrl.origin === 'https://www.youtube.com' && tUrl.pathname === '/results' && tUrl.searchParams.get('search_query') === 'Der Pate 1972 Trailer'
+  && await trailer.getAttribute('target') === '_blank', 'aufgeklappt: „▶ Trailer“ – die YouTube-Suche nach „Der Pate 1972 Trailer“, nichts eingebettet');
+check(await page.locator('.filme-seite iframe').count() === 0, 'kein eingebettetes Video');
+await page.click('[data-aktion="filme-zu"]');
+
 // --- Alle Motive gibt es als Symbol
 const motive = await page.evaluate(async () => {
   const { MOTIV_NAMEN } = await import('./js/bilder.js');
@@ -88,7 +125,7 @@ check(motive.length === 0, `jedes Motiv hat sein Symbol in index.html${motive.le
 // --- Nachweise in den Einstellungen
 await A.reiter('einstellungen');
 const nachweise = page.locator('.bildnachweise');
-check(await nachweise.count() === 1 && (await nachweise.locator('summary').innerText()).startsWith('Fotos der Orte (3)'), 'Einstellungen: „Fotos der Orte (3) – Nachweise“');
+check(await nachweise.count() === 1 && (await nachweise.locator('summary').innerText()).startsWith('Fotos der Orte (4)'), 'Einstellungen: „Fotos der Orte (4) – Nachweise“');
 await nachweise.locator('summary').click();
 const liste = await nachweise.innerText();
 check(liste.includes('Thalia Theater – Foto: Testfotograf, CC BY-SA 4.0, Wikimedia Commons') && liste.includes('<img src=x onerror=alert(1)>')

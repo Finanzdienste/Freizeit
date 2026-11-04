@@ -25,6 +25,7 @@ import {
 import {
   karte, merkeEintrag, bockKnopf, werZeile, wannKurz, kopfzeile, istAuf,
 } from './karte.js';
+import { bildchen, ortsfoto } from './bilder.js';
 import { meinBock, aktuell } from './speicher.js';
 import { treffer, rolle, gastgeberName } from './gemeinsam.js';
 import { bezugVon, entfernung, entfernungText } from './standort.js';
@@ -150,14 +151,17 @@ export function ideeKarte(x, ctx, bereich) {
   const verlauf = b ? `<div class="verlauf">✓ ${b.n}× gemacht · zuletzt ${esc(vorZeit(b.zuletzt, heute))}${schnitt ? ` · ${schnitt}` : ''}${b.flow ? ` · ⚡ ${b.flow}× Flow` : ''}</div>` : '';
   // Ein offenes Formular klappt die Karte mit auf.
   const auf = istAuf(x.schluessel) || ui.planen === hier || ui.bewerten === hier;
-  const klassen = ['karte', 'ohne-zeit', 'idee', auf ? 'auf' : '', wer.treffer ? 'treffer' : '', x.wirkung.includes('flow') ? 'flow' : ''].filter(Boolean).join(' ');
+  const foto = ortsfoto(x);
+  const klassen = ['karte', 'ohne-zeit', 'idee', auf ? 'auf' : '', wer.treffer ? 'treffer' : '', x.wirkung.includes('flow') ? 'flow' : '', foto ? 'mit-foto' : ''].filter(Boolean).join(' ');
   return `<article class="${klassen}"${bereich === 'kat' || bereich === 'eigene' ? ` id="${ideeAnker(x.schluessel)}"` : ''}><div class="inhalt">
+    ${bildchen(x)}
     ${kopfzeile(x)}
     ${unter ? `<div class="unter">${esc(unter)}</div>` : ''}
     ${wichtig ? `<div class="marken">${wichtig}</div>` : ''}
     ${verlauf}
     ${wer.html}
     <div class="mehr">
+      ${foto}
       ${x.beschreibung ? `<p>${esc(x.beschreibung)}</p>` : ''}
       ${mehrMarken ? `<div class="marken">${mehrMarken}</div>` : ''}
       ${x.ziel ? `<div class="ziel"><b>${x.wirkung.includes('flow') ? '⚡ Flow-Ziel' : 'Ziel'}:</b> ${esc(x.ziel)}</div>` : ''}

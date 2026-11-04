@@ -14,6 +14,7 @@ import {
   kopfzeile, werZeile, bockKnopf, istAuf, merkeEintrag,
 } from './karte.js';
 import { meinBock } from './speicher.js';
+import { bildchen } from './bilder.js';
 import { andere, rolle, gastgeberName } from './gemeinsam.js';
 import {
   laengeText, wertungText, genres, filmeFiltern, filmeZahl,
@@ -21,6 +22,9 @@ import {
 
 const datumText = (iso) => (/^\d{4}-\d{2}-\d{2}$/.test(iso || '') ? `${Number(iso.slice(8))}.${Number(iso.slice(5, 7))}.${iso.slice(0, 4)}` : '');
 const andereBock = (k) => andere(k).length > 0;
+
+/** Der Trailer: eine YouTube-Suche nach Titel, Jahr und „Trailer“ – ein Link, nichts eingebettet. */
+export const trailerLink = (f) => `https://www.youtube.com/results?search_query=${encodeURIComponent(`${f.titel} ${f.jahr} Trailer`)}`;
 
 /** Anker eines Films – für Sprünge aus „Wir“. */
 export const filmAnker = (schluessel) => `film-${schluessel.replace(/[^a-z0-9-]/gi, '-')}`;
@@ -33,6 +37,7 @@ function filmKarte(f) {
   return `<article class="${klassen}" id="${filmAnker(f.schluessel)}">
     <div class="film-platz${f.platz <= 10 ? ' top' : ''}"><span class="sr">Platz </span>${f.platz}</div>
     <div class="inhalt">
+      ${bildchen(f)}
       ${kopfzeile(f)}
       <div class="unter">${esc(unter)}</div>
       ${wer.html}
@@ -42,6 +47,7 @@ function filmKarte(f) {
       </div>
       <div class="aktionen">
         ${bockKnopf(f)}
+        <a class="knopf mehr" href="${esc(trailerLink(f))}" target="_blank" rel="noopener">▶ Trailer</a>
         <a class="quelle mehr" href="${esc(f.link)}" target="_blank" rel="noopener">Bei IMDb ansehen</a>
       </div>
     </div>

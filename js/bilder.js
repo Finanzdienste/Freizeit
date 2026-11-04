@@ -11,7 +11,10 @@
  * aufgeklappt das große mit Fotograf und Lizenz darunter; alle Nachweise
  * stehen außerdem in den Einstellungen.
  *
- * Die Motive sind eigene Zeichnungen, als <symbol id="m-…"> in index.html.
+ * Die Motive sind eigene Zeichnungen, als <symbol id="m-…"> in index.html:
+ * je Kategorie eines Termins, je Kategorie einer Idee und je Genre eines Films
+ * (Filme bekommen nie Plakate oder Szenenbilder – nur das Motiv).
+ * Ideen nehmen das Foto ihres ersten Orts, der eins hat.
  */
 import { esc, istOnline, sichererLink } from './text.js';
 
@@ -32,8 +35,26 @@ const MOTIVE = {
   Party: 'party',
   Schach: 'schach',
   'Outdoor & Natur': 'natur',
+  // Kategorien der Ideen (auch an Eingeplantem, das die Kategorie mitnimmt)
+  'Sport & Bewegung': 'sport',
+  'Spiele & Gaming': 'spiele',
+  'Kreativ & Handwerk': 'kreativ',
+  'Kochen & Genuss': 'food',
+  'Natur & Draußen': 'natur',
+  'Kultur & Stadt': 'kultur',
+  Entspannen: 'entspannen',
+  'Lernen & Projekte': 'lernen',
+  Ausflüge: 'ausflug',
 };
-export const MOTIV_NAMEN = [...new Set(Object.values(MOTIVE)), 'online', 'sonst'];
+/** Genre → Motiv, in dieser Reihenfolge: das Besondere vor dem Allgemeinen („Drama“ zuletzt). */
+const GENRES = [
+  ['Animation', 'animation'], ['Western', 'western'], ['Science-Fiction', 'scifi'], ['Horror', 'horror'], ['Krieg', 'krieg'],
+  ['Musical', 'konzert'], ['Musik', 'konzert'], ['Sport', 'sport'], ['Film noir', 'krimi'], ['Fantasy', 'fantasy'],
+  ['Krimi', 'krimi'], ['Mystery', 'mystery'], ['Thriller', 'thriller'], ['Komödie', 'komoedie'], ['Romanze', 'romanze'],
+  ['Biografie', 'biografie'], ['Geschichte', 'geschichte'], ['Abenteuer', 'abenteuer'], ['Action', 'action'],
+  ['Familie', 'familie'], ['Drama', 'drama'],
+];
+export const MOTIV_NAMEN = [...new Set([...Object.values(MOTIVE), ...GENRES.map(([, m]) => m), 'kino', 'online', 'sonst'])];
 
 const PFAD = 'bilder/orte/';
 const NAME = /^[a-z0-9][a-z0-9-]{0,80}$/;
@@ -66,15 +87,23 @@ export function ortsbilderSetzen(roh) {
   }
 }
 
-/** Das Foto zu einem Eintrag (über seinen Ort) – oder null. Online & TV hat keinen Ort. */
+/** Das Foto zu einem Eintrag (über seinen Ort, bei Ideen der erste ihrer Orte mit Foto) – oder null. Filme und Online & TV: nie. */
 export function fotoZu(eintrag) {
-  if (!eintrag || !eintrag.ort || istOnline(eintrag)) return null;
-  const b = bilder.get(orte.get(eintrag.ort));
+  if (!eintrag || eintrag.quelle === 'film' || istOnline(eintrag)) return null;
+  const namen = [eintrag.ort, ...(Array.isArray(eintrag.orte) ? eintrag.orte.map((o) => o && o.name) : [])].filter(Boolean);
+  const name = namen.map((n) => orte.get(n)).find(Boolean);
+  const b = name ? bilder.get(name) : null;
   return b ? { ...b, klein: `${PFAD}${b.name}-klein.webp`, gross: `${PFAD}${b.name}.webp` } : null;
 }
 
-/** Das Motiv zu einem Eintrag: nach Kategorie, sonst Bildschirm (Online & TV) oder Kalender. */
-export const motivZu = (eintrag) => MOTIVE[eintrag && eintrag.kategorie] || (istOnline(eintrag) ? 'online' : 'sonst');
+/** Das Motiv zu einem Eintrag: Filme nach Genre, sonst nach Kategorie; Online & TV ohne Kategorie der Bildschirm, Unbekanntes der Kalender. */
+export function motivZu(eintrag) {
+  if (eintrag && eintrag.quelle === 'film') {
+    const g = Array.isArray(eintrag.genre) ? eintrag.genre : [];
+    return (GENRES.find(([n]) => g.includes(n)) || [null, 'kino'])[1];
+  }
+  return MOTIVE[eintrag && eintrag.kategorie] || (istOnline(eintrag) ? 'online' : 'sonst');
+}
 
 export const motivHtml = (motiv) => `<span class="bildchen motiv m-${motiv}" aria-hidden="true"><svg focusable="false"><use href="#m-${motiv}"/></svg></span>`;
 

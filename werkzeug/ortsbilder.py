@@ -3,7 +3,7 @@
 Ortsfotos für die Karten: freie Fotos der Spielstätten von Wikimedia Commons.
 
 Für jeden Ort aus daten/programm.json (mit Koordinaten, nicht Online & TV)
-sucht das Skript bei Wikidata Objekte im Umkreis (bis 400 m, bei exakt
+und jeden Ort einer Idee aus daten/ideen.json sucht das Skript bei Wikidata Objekte im Umkreis (bis 400 m, bei exakt
 gleichem Namen bis 600 m), die ein Bild haben (P18), und nimmt das mit dem
 passendsten Namen. Lizenz und Urheber kommen aus Commons (extmetadata); nur
 freie Lizenzen, die eine Nennung genügen lassen (CC0, gemeinfrei, CC BY,
@@ -46,6 +46,7 @@ from pathlib import Path
 
 HIER = Path(__file__).resolve().parent.parent
 PROGRAMM = HIER / 'daten' / 'programm.json'
+IDEEN = HIER / 'daten' / 'ideen.json'
 ZIEL = HIER / 'daten' / 'ortsbilder.json'
 AUSNAHMEN = HIER / 'werkzeug' / 'ortsbilder-ausnahmen.json'
 ORDNER = HIER / 'bilder' / 'orte'
@@ -126,6 +127,20 @@ def orte_aus_programm():
     return orte
 
 
+def orte_aus_ideen():
+    """Die Orte der Ideen („Hammer Park“) – mit Koordinaten; der Stadtteil steht in „teil“."""
+    if not IDEEN.exists():
+        return {}, set()
+    orte, teile = {}, set()
+    for x in json.loads(IDEEN.read_text(encoding='utf-8')).get('ideen', []):
+        for o in x.get('orte') or []:
+            g = o.get('geo')
+            if isinstance(o.get('name'), str) and isinstance(g, list) and len(g) == 2:
+                orte.setdefault(o['name'], {'geo': g, 'n': 1})
+                teile |= woerter(o.get('teil') or '')
+    return orte, teile
+
+
 def kandidaten(orte):
     """Wikidata-Objekte mit Bild im Umkreis jedes Orts – in Gruppen zu 12 Orten; scheitert eine, halbiert."""
     namen = list(orte)
@@ -198,11 +213,24 @@ def text(s):
 
 
 def urheber_text(s):
-    """„I, Bahnmoeller“ → „Bahnmoeller“, „User:Matthias Süßen“ → „Matthias Süßen“, ohne „(talk)“."""
-    s = re.sub(r'\s*\((talk|Diskussion|contribs)\)', '', s or '')
-    s = re.sub(r'^(I|Ich)\s*,\s*', '', s.strip())
+    """Den Urheber für „Foto: …“ aufräumen: „I, X“ → „X“, „User:X“ → „X“, ohne vorangestelltes „Foto:“/„©“,
+    ohne angehängte Lizenz, Signatur-Zeitstempel und „/ Wikimedia Commons“ – die Lizenz steht ohnehin daneben."""
+    s = re.sub(r'\s+', ' ', s or '').strip()
+    m = re.match(r'^No machine-readable author provided\. (.+?) assumed', s)
+    if m:
+        s = m.group(1)
+    m = re.match(r'^The original uploader was (.+?) at (German|English) Wikipedia\.?$', s)
+    if m:
+        s = f'{m.group(1)} ({"de" if m.group(2) == "German" else "en"}.wikipedia)'
+    s = re.sub(r'\s*\((talk|Diskussion|contribs)\)', '', s)
+    s = re.sub(r'^(I|Ich)\s*,\s*', '', s)
+    s = re.sub(r'^(Foto|Bild|Photo|Image|Fotograf(in)?)\s*:\s*', '', s, flags=re.I)
+    s = re.sub(r'^©\s*', '', s)
+    s = re.sub(r',?\s*(Lizenz|License|Licence)\s*:.*$', '', s, flags=re.I)
+    s = re.sub(r'\s*/\s*Wikimedia Commons$', '', s)
+    s = re.sub(r'\s*\d{1,2}:\d{2}, \d{1,2}\.? \w+\.? \d{4} \((CES?T|UTC|MES?Z)\)', '', s)
     s = re.sub(r'\b(User|Benutzer|Benutzerin)\s*:\s*', '', s)
-    return s.strip()[:120]
+    return s.strip(' ,;')[:120]
 
 
 def lizenzen(dateien):
@@ -356,8 +384,9 @@ def main():
         print(f'{len(stand["orte"])} Orte mit Foto, {len(stand["bilder"])} Bilder, {len(stand["warten"])} warten', file=sys.stderr)
         return
 
-    orte = orte_aus_programm()
-    orte_namen = set()
+    ideen_orte, ideen_teile = orte_aus_ideen()
+    orte = {**ideen_orte, **orte_aus_programm()}
+    orte_namen = set(ideen_teile)
     for o in orte:
         for t in o.split(',')[1:]:
             orte_namen |= woerter(t)

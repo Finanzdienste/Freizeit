@@ -40,14 +40,24 @@
   "Gruenspan, Große Freiheit": "gruenspan-q1550320",
   "Gut Basthorst": "gut-basthorst-q1556895",
   "Gut Karlshöhe, Bramfeld": "gut-karlshoehe-q17123453",
+  "Hamburg-Haus Eimsbüttel": "hamburg-haus-eimsbuettel-q1572803",
+  "Hamburger Kammerspiele, Rotherbaum": "hamburger-kammerspiele-q2711057",
+  "Hauptkirche St. Michaelis": "hauptkirche-st-michaelis-q674472",
+  "Hauptkirche St. Michaelis (Michel), Neustadt": "hauptkirche-st-michaelis-q674472",
+  "Hauptkirche St. Michaelis, Krypta": "hauptkirche-st-michaelis-q674472",
+  "Hauptkirche St. Petri, Mönckebergstraße": "hauptkirche-st-petri-q535443",
+  "Heilig-Geist-Kirche, Pinneberg": "heilig-geist-kirche-q58401648",
   "Schauspielhaus Hannover": "schauspielhaus-hannover-q118288133",
   "Staatsoper Hannover": "staatsoper-hannover-q315705"
  },
  "ohne": {
+  "A Bailar Hamburg": "2026-11-04",
   "Alfred-Rust-Saal, Ahrensburg": "2026-11-04",
   "Alma Hoppes Lustspielhaus, Eppendorf": "2026-11-04",
+  "Alstervorland parkrun": "2026-11-04",
   "Alter Markt, Elmshorn": "2026-11-04",
   "Alter Rinderschlachthof, Neuer Kamp 30, St. Pauli": "2026-11-04",
+  "Altstadt Lauenburg": "2026-11-04",
   "Altstadt Wismar (Start Thormannspeicher, Alter Hafen)": "2026-11-04",
   "Am Sande und Am Markt, Lüneburg": "2026-11-04",
   "Anleger Falkendamm, Lübeck": "2026-11-04",
@@ -57,6 +67,9 @@
   "Ballhof Eins, Hannover": "2026-11-04",
   "Ballhof Zwei, Hannover": "2026-11-04",
   "Barlach Halle K, Klosterwall": "2026-11-04",
+  "Bartholomäustherme": "2026-11-04",
+  "BattleKart Hamburg-Bergedorf": "2026-11-04",
+  "Beach Hamburg": "2026-11-04",
   "Berenberg-Gossler-Haus, Niendorfer Kirchweg 17": "2026-11-04",
   "Berggarten Herrenhausen, Hannover": "2026-11-04",
   "Berner Gutspark (Start an drei Treffpunkten)": "2026-11-04",
@@ -64,6 +77,10 @@
   "Bezirkssporthalle Wandsbek": "2026-11-04",
   "BiM – Bürgerhaus in Meiendorf": "2026-11-04",
   "Bibliothek der Helmut-Schmidt-Universität, Jenfeld": "2026-11-04",
+  "Billardcafé Trio": "2026-11-04",
+  "Boberger Dünenhaus": "2026-11-04",
+  "Bootsvermietung Dornheim": "2026-11-04",
+  "Boulderwelt Hamburg": "2026-11-04",
   "Brakula": "2026-11-04",
   "Brakula, Bramfeld": "2026-11-04",
   "Buchhandlung Wassermann, Elbchaussee 577, Nienstedten": "2026-11-04",
@@ -71,69 +88,104 @@
   "Bürgerhaus Henstedt-Ulzburg": "2026-11-04",
   "Bürgerhaus, Kellinghusen": "2026-11-04",
   "CBBM, Universität zu Lübeck": "2026-11-04",
+  "CHiPPER SOCIAL St. Pauli": "2026-11-04",
+  "CRAZY miniGOLF im Hammer Park": "2026-11-04",
+  "Café Kö": "2026-11-04",
   "Christuskirche Schulau, Wedel": "2026-11-04",
   "CineStar Stadthalle, Lübeck": "2026-11-04",
   "Comedy Club Hamburg, Talstraße 12, St. Pauli": "2026-11-04",
   "Comödie Lübeck": "2026-11-04",
   "Cumberlandsche Bühne, Hannover": "2026-11-04",
+  "DAV Kletterzentrum Hamburg": "2026-11-04",
   "Das Kittchen, Wismar": "2026-11-04",
+  "Dialoghaus": "2026-11-04",
   "Die Mozart Säle, Rotherbaum": "2026-11-04",
+  "Down Under": "2026-11-04",
   "Drosteiplatz, Pinneberg": "2026-11-04",
+  "Duvenstedter Brook": "2026-11-04",
   "EMPORE Buchholz": "2026-11-04",
   "Edmund-Plambeck-Stadion, Norderstedt": "2026-11-04",
   "Eduard-Söring-Saal, Ahrensburg": "2026-11-04",
+  "Eichtalpark": "2026-11-04",
+  "Eingang Landungsbrücken": "2026-11-04",
+  "EisArena Planten un Blomen": "2026-11-04",
   "EisArena Planten un Blomen, Holstenwall 30": "2026-11-04",
   "Eisbahn Wismar, Alter Hafen": "2026-11-04",
   "Eisland Farmsen": "2026-11-04",
   "Eisstadion am Pferdeturm, Hannover": "2026-11-04",
+  "Elbphilharmonie Plaza": "2026-11-04",
   "Eric-Kandel-Gymnasium, Ahrensburg": "2026-11-04",
   "Ernst-August-Platz, Hannover": "2026-11-04",
+  "EscapeDiem": "2026-11-04",
   "Essigfabrik, Kanalstr. 26–28, Lübeck": "2026-11-04",
+  "FLASHH": "2026-11-04",
+  "Familienbad Rahlstedt": "2026-11-04",
   "Fanny-Mendelssohn-Platz, Eimsbüttel": "2026-11-04",
   "Ferienpark Weissenhäuser Strand": "2026-11-04",
   "Ferienpark Weissenhäuser Strand, Wangels": "2026-11-04",
+  "Festland": "2026-11-04",
+  "Fischbeker Heidehaus": "2026-11-04",
   "Fischmarkt / Große Elbstraße, Altona": "2026-11-04",
   "Fleetinsel, Neustadt": "2026-11-04",
   "Flohschanze, Neuer Kamp 30": "2026-11-04",
   "Flohschanze, Neuer Kamp 30, St. Pauli": "2026-11-04",
+  "Fluchtweg Hamburg – Wandsbek": "2026-11-04",
   "Frank's Sunshine Lounge, Farmsen": "2026-11-04",
   "Freizeitheim Vahrenwald, Hannover": "2026-11-04",
+  "Freundlich + Kompetent": "2026-11-04",
   "Friedenskirche Eilbek": "2026-11-04",
   "Galerie im Marstall, Ahrensburg": "2026-11-04",
   "Gemeindehaus Trinitatiskirche, Rahlstedt": "2026-11-04",
   "Gerichtslaube im Rathaus, Wismar": "2026-11-04",
+  "Gilde Bowling Wandsbek": "2026-11-04",
+  "Gilde-Bowling 44": "2026-11-04",
   "Gleishalle Oberhafen": "2026-11-04",
   "Gleishalle Oberhafen, HafenCity": "2026-11-04",
   "Goertz Möbelmanufaktur, Wismar": "2026-11-04",
   "Großes Haus, Theater Lübeck": "2026-11-04",
   "Großflecken, Neumünster": "2026-11-04",
   "Gunda- und Udo-Scheel-Stiftung, Wismar": "2026-11-04",
+  "Gut Panker": "2026-11-04",
   "Gänsemarkt & St. Petri, Innenstadt": "2026-11-04",
+  "Haake": "2026-11-04",
   "Halle 7, Bahrenfeld": "2026-11-04",
   "Hamburg Messe, Messeplatz": "2026-11-04",
+  "Hamburger Kunsthalle, Glockengießerwall": "2026-11-04",
+  "Hansa-Steg": "2026-11-04",
   "Harburger Rathausplatz": "2026-11-04",
   "Harburger Rathausplatz, Harburg": "2026-11-04",
   "Harry’s Haus am See, Elmshorn": "2026-11-04",
+  "Haupteingang Ohlsdorf": "2026-11-04",
   "Haus 13, Elmshorn": "2026-11-04",
   "Haus der VHS, Ahrensburg": "2026-11-04",
   "Haus des Gastes / Kursaal, Kirchdorf (Insel Poel)": "2026-11-04",
+  "Heiligen-Geist-Hospital, Lübeck": "2026-11-04",
   "Heinrich-Osterwold-Halle, Elbstraße 145a, Lauenburg/Elbe": "2026-11-04",
   "Hochschule Wismar, Haus 7a (Hörsaal)": "2026-11-04",
   "Hochschule Wismar, Haus 7a, Hörsaal, Wismar": "2026-11-04",
+  "HolstenTherme": "2026-11-04",
   "Holstenhallen, Neumünster": "2026-11-04",
+  "Höltigbaum, Eichberg": "2026-11-04",
+  "Hörnbad": "2026-11-04",
   "Indra, Große Freiheit, St. Pauli": "2026-11-04",
   "Innenstadt Ahrensburg (Rondeel)": "2026-11-04",
   "Innenstadt, Barmstedt": "2026-11-04",
+  "Inselpark": "2026-11-04",
   "Istituto Italiano di Cultura, Harvestehude": "2026-11-04",
   "JUKS, Schenefeld": "2026-11-04",
+  "JUMP House Poppenbüttel": "2026-11-04",
   "Joda Sportpark, Todesfelde": "2026-11-04",
+  "KOYA": "2026-11-04",
   "Kammerspiele, Theater Lübeck": "2026-11-04",
   "Kantino, Elmshorn": "2026-11-04",
+  "Kilometer 0 am Café Cliff": "2026-11-04",
   "Kinder- und Jugendhaus St. Josef, Wendum 4, Bad Oldesloe": "2026-11-04",
   "Kinopolis HafenCity, Hamburg": "2026-11-04",
   "Kisdorfer Straße 12, Henstedt-Ulzburg": "2026-11-04",
   "Kleines Theater Bargteheide": "2026-11-04",
+  "Kletterwald Hamburg": "2026-11-04",
   "Knust, Neuer Kamp": "2026-11-04",
+  "Kochschule Hamburg": "2026-11-04",
   "Kolosseum, Lübeck": "2026-11-04",
   "Konzerthaus am Schloss, Kiel": "2026-11-04",
   "Kreismusikschule „Carl Orff“, Wismar (Aula)": "2026-11-04",
@@ -155,10 +207,13 @@
   "KörberForum, Speicherstadt": "2026-11-04",
   "LKH Arena, Lüneburg": "2026-11-04",
   "Lange Reihe 2–4, St. Georg": "2026-11-04",
+  "LaserZone Hamburg": "2026-11-04",
   "Literaturhaus Hannover": "2026-11-04",
   "Logo, Grindelallee": "2026-11-04",
   "Lutherkirche Wellingsbüttel": "2026-11-04",
   "Lüneburg": "2026-11-04",
+  "Mahnmal St. Nikolai": "2026-11-04",
+  "Marine-Ehrenmal": "2026-11-04",
   "Markthalle Wismar, Alter Hafen": "2026-11-04",
   "Marktplatz Volksdorf": "2026-11-04",
   "Marktplatz am Roland, Wedel": "2026-11-04",
@@ -169,15 +224,21 @@
   "Marktplatz, Wahlstedt": "2026-11-04",
   "Martin-Luther-Kirche, Reinbeker Weg 27, Wentorf": "2026-11-04",
   "Max-Kramp-Haus, Duvenstedter Markt 8, Duvenstedt": "2026-11-04",
+  "Mega Kart Norderstedt": "2026-11-04",
   "Mehrzweckhaus, Kamp 31, Hammoor": "2026-11-04",
   "Mehrzweckhaus, Rönnbaum 14, Todendorf": "2026-11-04",
   "Messegelände Hannover, Hallen 2–4": "2026-11-04",
+  "Michel (St. Michaelis)": "2026-11-04",
+  "Minigolf im Stadtpark": "2026-11-04",
   "Mojo Club, Reeperbahn": "2026-11-04",
+  "Moorbek parkrun": "2026-11-04",
   "MuK Konzertsaal, Lübeck": "2026-11-04",
   "NDR Konzerthaus, Großer Sendesaal, Hannover": "2026-11-04",
   "NDR Konzerthaus, Hannover": "2026-11-04",
+  "Nordwandhalle": "2026-11-04",
   "Opernfactory, Tonndorf": "2026-11-04",
   "Orangerie Herrenhausen, Hannover": "2026-11-04",
+  "Ostsee-Therme": "2026-11-04",
   "Ottenser Hauptstraße (Mercado), Ottensen": "2026-11-04",
   "PHOXXI – Haus der Photographie, Deichtorstraße 1–2": "2026-11-04",
   "Parkresidenz Alstertal, Theatersaal": "2026-11-04",
@@ -186,27 +247,42 @@
   "Pferderennbahn Neue Bult, Langenhagen": "2026-11-04",
   "Pferdestall, Ammersbek": "2026-11-04",
   "Piazzetta Ralph Giordano, Barmbek": "2026-11-04",
+  "Planetarium im Stadtpark": "2026-11-04",
+  "Planten un Blomen": "2026-11-04",
+  "Porzellanfräulein": "2026-11-04",
   "Rahlstedter Bahnhofstraße": "2026-11-04",
   "Rathaus Kaltenkirchen (Ratssaal)": "2026-11-04",
   "Rathaus Norderstedt": "2026-11-04",
   "Rathaus, Rellingen": "2026-11-04",
   "Rathausallee, Norderstedt": "2026-11-04",
   "Rathausplatz, Ahrensburg": "2026-11-04",
+  "Retro Spiele Club": "2026-11-04",
+  "Rissen": "2026-11-04",
   "Rondeel, Ahrensburg": "2026-11-04",
   "Rosengarten (Eißendorfer Waldweg)": "2026-11-04",
   "Rosenhof Ahrensburg, Lübecker Straße 3–11, Ahrensburg": "2026-11-04",
   "S-Bahnhof Landwehr (Treffpunkt), Eilbek": "2026-11-04",
   "SCHABBELL – Stadtgeschichtliches Museum, Wismar": "2026-11-04",
+  "SPRUNG.RAUM": "2026-11-04",
+  "Sandbox VR Hamburg": "2026-11-04",
+  "Scharbeutz": "2026-11-04",
+  "Schlemmerschule": "2026-11-04",
+  "Schleuse Holtenau": "2026-11-04",
   "Schmidtchen, Spielbudenplatz": "2026-11-04",
   "Schulstraße 10, Steinhorst": "2026-11-04",
   "Schulungshaus Hamburg Wasser, Wellingsbüttel": "2026-11-04",
+  "Schwarzlichtviertel": "2026-11-04",
   "Schwedische Gustaf-Adolfs-Kirche, Ditmar-Koel-Straße": "2026-11-04",
+  "Seebrücke Hohwacht": "2026-11-04",
   "Serengeti-Park, Hodenhagen": "2026-11-04",
   "Skylight im Hannover Airport, Langenhagen": "2026-11-04",
+  "Songs Karaoke Bar": "2026-11-04",
   "Spielbudenplatz 21–22, St. Pauli": "2026-11-04",
   "Sportpark Hinschenfelde": "2026-11-04",
+  "Sportpark Öjendorf": "2026-11-04",
   "St. Johannes, Ahrensburg": "2026-11-04",
   "St. Michaelis (Michel), Krypta": "2026-11-04",
+  "St. Peter-Ording": "2026-11-04",
   "St.-Georgen-Kirche, Wismar": "2026-11-04",
   "St.-Laurentii-Kirche, Itzehoe": "2026-11-04",
   "St.-Marien-Kirchturm, Wismar": "2026-11-04",
@@ -216,10 +292,14 @@
   "Stadtpark Norderstedt": "2026-11-04",
   "Stadttheater Elmshorn": "2026-11-04",
   "Stage Operettenhaus, Reeperbahn": "2026-11-04",
+  "Start Landungsbrücken": "2026-11-04",
+  "Start S Poppenbüttel": "2026-11-04",
   "Sternenwald, Alter Hafen Wismar": "2026-11-04",
   "Stormarnschule (Museumsturnhalle), Ahrensburg": "2026-11-04",
   "StrandPauli, St. Pauli Hafenstraße 89": "2026-11-04",
   "Studentenclub Block 17, Wismar": "2026-11-04",
+  "Studio Amun": "2026-11-04",
+  "Tanzschule Walter Bartel": "2026-11-04",
   "Thalia Gaußstraße Box, Ottensen": "2026-11-04",
   "Thalia Gaußstraße, Ottensen": "2026-11-04",
   "The Lüb (Theaterrestaurant), Theater Lübeck": "2026-11-04",
@@ -227,26 +307,35 @@
   "Theater am Neuendeich, Glückstadt": "2026-11-04",
   "Theater im Bürgerhaus, Trittau": "2026-11-04",
   "Theater in der Stadthalle, Neumünster": "2026-11-04",
+  "Tierpark Hagenbeck": "2026-11-04",
   "Tourist-Information Hannover": "2026-11-04",
   "Tourist-Information Wismar": "2026-11-04",
+  "Travemünde": "2026-11-04",
   "Treffpunkt Neustädter Hof- und Stadtkirche, Hannover": "2026-11-04",
   "Treffpunkt Rathaus, Wismar": "2026-11-04",
   "Treffpunkt Stadtbahnstation Waterloo, Hannover": "2026-11-04",
   "U-Bahnhof Großhansdorf (Treffpunkt)": "2026-11-04",
+  "U.S. FUN Bowling": "2026-11-04",
   "Uebel & Gefährlich, Feldstraße": "2026-11-04",
   "VHS-Zentrum Ost, Farmsen": "2026-11-04",
   "Vintage Wonderland, Hannover": "2026-11-04",
   "Vorplatz Rindermarkthalle, Neuer Kamp 31, St. Pauli": "2026-11-04",
   "Waldreitersaal, Großhansdorf": "2026-11-04",
+  "Wandsbeker Gehölz": "2026-11-04",
   "Wandsbeker Marktplatz, Wandsbek": "2026-11-04",
   "Warenannahme (Faust-Gelände), Hannover": "2026-11-04",
   "Weihnachtsmarkt an der Marktkirche, Hannover": "2026-11-04",
   "Weinhaus Alte Mühle, Mühlenplatz 2, Bad Oldesloe": "2026-11-04",
   "Weinlounge Ahrensburg": "2026-11-04",
+  "Wildpark Schwarze Berge": "2026-11-04",
   "Wohnungsbaugenossenschaft Gartenstadt Wandsbek (Treffpunkt)": "2026-11-04",
+  "Würfel & Zucker": "2026-11-04",
+  "Zentralbibliothek": "2026-11-04",
   "Zeughaussaal, Wismar": "2026-11-04",
   "Zur Erholung, Uetersen": "2026-11-04",
+  "pause & play": "2026-11-04",
   "unter dem U3-Viadukt, Isestraße, Harvestehude": "2026-11-04",
+  "urban apes Hamburg Ost": "2026-11-04",
   "Überseeboulevard, HafenCity": "2026-11-04"
  },
  "bilder": {
@@ -419,7 +508,7 @@
    "seite": "https://commons.wikimedia.org/wiki/File%3AHh-ernst-barlach-haus.jpg",
    "lizenz": "CC BY-SA 3.0",
    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-   "urheber": "The original uploader was Staro1 at German Wikipedia."
+   "urheber": "Staro1 (de.wikipedia)"
   },
   "ernst-deutsch-theater-q51916": {
    "datei": "File:ErnstDeutschTheatre01.SW.20040501.JPG",
@@ -437,7 +526,7 @@
    "seite": "https://commons.wikimedia.org/wiki/File%3AEurop%C3%A4isches_Hansemuseum_2015.jpg",
    "lizenz": "CC BY 4.0",
    "lizenzLink": "https://creativecommons.org/licenses/by/4.0",
-   "urheber": "BS Hochschulstadtteil 20:27, 11. Jun. 2015 (CEST)"
+   "urheber": "BS Hochschulstadtteil"
   },
   "fabrik-q1390772": {
    "datei": "File:Fabrik-Hamburg-Altona.JPG",
@@ -511,6 +600,51 @@
    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
    "urheber": "An-d"
   },
+  "hamburg-haus-eimsbuettel-q1572803": {
+   "datei": "File:Hamburg Haus Eimsbüttel eingang.jpg",
+   "objekt": "Hamburg-Haus Eimsbüttel",
+   "wikidata": "Q1572803",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AHamburg_Haus_Eimsb%C3%BCttel_eingang.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+   "urheber": "Dirtsc"
+  },
+  "hamburger-kammerspiele-q2711057": {
+   "datei": "File:HamburgerKammerspiele Außenansicht 4c.JPG",
+   "objekt": "Hamburger Kammerspiele",
+   "wikidata": "Q2711057",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AHamburgerKammerspiele_Au%C3%9Fenansicht_4c.JPG",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "urheber": "Martin Petersen"
+  },
+  "hauptkirche-st-michaelis-q674472": {
+   "datei": "File:Sankt-Michaelis-Kirche Hamburg.jpg",
+   "objekt": "Hauptkirche St. Michaelis",
+   "wikidata": "Q674472",
+   "seite": "https://commons.wikimedia.org/wiki/File%3ASankt-Michaelis-Kirche_Hamburg.jpg",
+   "lizenz": "CC BY-SA 3.0 de",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+   "urheber": "Thomas Wolf, www.foto-tw.de"
+  },
+  "hauptkirche-st-petri-q535443": {
+   "datei": "File:Projekt Heißluftballon - Highflyer -IMG-1418.jpg",
+   "objekt": "Hauptkirche St. Petri",
+   "wikidata": "Q535443",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AProjekt_Hei%C3%9Fluftballon_-_Highflyer_-IMG-1418.jpg",
+   "lizenz": "CC BY-SA 3.0 de",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+   "urheber": "Thomas Fries"
+  },
+  "heilig-geist-kirche-q58401648": {
+   "datei": "File:Pinneberg Heilig-Geist-Kirche.jpg",
+   "objekt": "Heilig-Geist-Kirche",
+   "wikidata": "Q58401648",
+   "seite": "https://commons.wikimedia.org/wiki/File%3APinneberg_Heilig-Geist-Kirche.jpg",
+   "lizenz": "CC BY 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by/3.0",
+   "urheber": "Uwe Barghaan"
+  },
   "historisches-museum-hannover-q1614375": {
    "datei": "File:Am hohen Ufer (01).JPG",
    "objekt": "Historisches Museum Hannover",
@@ -577,95 +711,175 @@
  },
  "stand": "2026-11-04",
  "warten": {
-  "Hamburg-Haus Eimsbüttel": {
-   "bild": "Hamburg Haus Eimsbüttel eingang.jpg",
-   "item": "Q1572803",
-   "name": "Hamburg-Haus Eimsbüttel",
-   "dist": 13,
+  "Alsterschwimmhalle": {
+   "bild": "Hohenfelde, Hamburg, Germany - panoramio (41).jpg",
+   "item": "Q2651509",
+   "name": "Alsterschwimmhalle",
+   "dist": 27,
+   "lizenz": {
+    "lizenz": "CC BY 3.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by/3.0",
+    "urheber": "hh oldman"
+   }
+  },
+  "Altonaer Museum": {
+   "bild": "Altonaer Museum.jpg",
+   "item": "Q126971",
+   "name": "Altonaer Museum",
+   "dist": 29
+  },
+  "Aquarium GEOMAR": {
+   "bild": "Geomar and Aquarium IMG 3654 Kiel.JPG",
+   "item": "Q55721657",
+   "name": "Aquarium Kiel",
+   "dist": 42,
    "lizenz": {
     "lizenz": "CC BY-SA 3.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "Dirtsc"
+    "urheber": "Bjoertvedt"
    }
   },
-  "Hamburger Kammerspiele, Rotherbaum": {
-   "bild": "HamburgerKammerspiele Außenansicht 4c.JPG",
-   "item": "Q2711057",
-   "name": "Hamburger Kammerspiele",
-   "dist": 9,
+  "Bremer Marktplatz": {
+   "bild": "RathausDomBuergerschaft-01.jpg",
+   "item": "Q907750",
+   "name": "Ensemble Bremer Marktplatz",
+   "dist": 43,
+   "lizenz": {
+    "lizenz": "CC BY-SA 2.0 de",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en",
+    "urheber": "Jürgen Howaldt"
+   }
+  },
+  "Bucerius Kunst Forum": {
+   "bild": "Bucerius Kunst Forum, Alter Wall.jpg",
+   "item": "Q877566",
+   "name": "Bucerius Kunst Forum",
+   "dist": 7
+  },
+  "Deichtorhallen": {
+   "bild": "DTH Nordhalle.jpg",
+   "item": "Q1183156",
+   "name": "Deichtorhallen",
+   "dist": 98
+  },
+  "Duhnen": {
+   "bild": "Rückfahrt von Neuwerk vor Duhnen.jpg",
+   "item": "Q329034",
+   "name": "Duhnen",
+   "dist": 250,
+   "lizenz": {
+    "lizenz": "CC BY 3.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by/3.0",
+    "urheber": "G. Friedrich"
+   }
+  },
+  "Eckernförde": {
+   "bild": "Eckernförde.Rathausmarkt.463276505 b9a6ed4d5e b.jpg",
+   "item": "Q490453",
+   "name": "Eckernförde",
+   "dist": 336,
+   "lizenz": {
+    "lizenz": "CC BY-SA 2.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/2.0",
+    "urheber": "\"tpfennig\" = Thilo Pfennig. Original uploader was Iiigel at de.wikipedia"
+   }
+  },
+  "Eiszeitmuseum": {
+   "bild": "Eiszeitmuseum-msu-1328.jpg",
+   "item": "Q1321063",
+   "name": "Eiszeitmuseum",
+   "dist": 21,
+   "lizenz": {
+    "lizenz": "CC BY-SA 4.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+    "urheber": "Matthias Süßen"
+   }
+  },
+  "Friedrichsruh": {
+   "bild": "BismarckMuseumFriedrichsruh.jpg",
+   "item": "Q695011",
+   "name": "Friedrichsruh",
+   "dist": 398,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+    "urheber": "Kresspahl"
+   }
+  },
+  "Glückstadt": {
+   "bild": "Luftaufnahmen Nordseekueste 2012-05-by-RaBoe-460.jpg",
+   "item": "Q377277",
+   "name": "Glückstadt",
+   "dist": 391,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0 de",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "urheber": "Ra Boe / Wikipedia"
+   }
+  },
+  "Gänsemarkt, Neustadt": {
+   "bild": "Gänsemarkt.jpg",
+   "item": "Q1558796",
+   "name": "Gänsemarkt",
+   "dist": 168,
+   "lizenz": {
+    "lizenz": "CC BY-SA 4.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+    "urheber": "Bernhard Diener"
+   }
+  },
+  "Hamburg Dungeon": {
+   "bild": "HamburgDungeon2.JPG",
+   "item": "Q882600",
+   "name": "Hamburg Dungeon",
+   "dist": 161,
    "lizenz": {
     "lizenz": "CC BY-SA 3.0",
     "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "Martin Petersen"
+    "urheber": "Gulp"
    }
   },
-  "Hamburger Kunsthalle, Glockengießerwall": {
+  "Hamburger Kunsthalle": {
    "bild": "Hamburger-kunsthalle-alter-treppenaufgang.jpg",
    "item": "Q169542",
    "name": "Hamburger Kunsthalle",
    "dist": 32,
    "lizenz": false
   },
-  "Hauptkirche St. Michaelis": {
-   "bild": "Sankt-Michaelis-Kirche Hamburg.jpg",
-   "item": "Q674472",
-   "name": "Hauptkirche St. Michaelis",
-   "dist": 73,
+  "Hamburger Sternwarte": {
+   "bild": "Bdstern 1.jpg",
+   "item": "Q681942",
+   "name": "Hamburger Sternwarte",
+   "dist": 25,
+   "lizenz": false
+  },
+  "Hammer Park": {
+   "bild": "Hammer Park Magnolien 2020-1.jpg",
+   "item": "Q1573708",
+   "name": "Hammer Park",
+   "dist": 98,
    "lizenz": {
-    "lizenz": "CC BY-SA 3.0 de",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
-    "urheber": "Thomas Wolf, www.foto-tw.de"
+    "lizenz": "CC BY-SA 4.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+    "urheber": "Uwe Rohwedder"
    }
   },
-  "Hauptkirche St. Michaelis (Michel), Neustadt": {
-   "bild": "Sankt-Michaelis-Kirche Hamburg.jpg",
-   "item": "Q674472",
-   "name": "Hauptkirche St. Michaelis",
-   "dist": 73,
+  "Hansa-Park": {
+   "bild": "Hansapark1.jpg",
+   "item": "Q571557",
+   "name": "Hansa-Park",
+   "dist": 93,
    "lizenz": {
-    "lizenz": "CC BY-SA 3.0 de",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
-    "urheber": "Thomas Wolf, www.foto-tw.de"
+    "lizenz": "CC BY 2.5",
+    "lizenzLink": "https://creativecommons.org/licenses/by/2.5",
+    "urheber": "Wolfgang Hägele"
    }
   },
-  "Hauptkirche St. Michaelis, Krypta": {
-   "bild": "Sankt-Michaelis-Kirche Hamburg.jpg",
-   "item": "Q674472",
-   "name": "Hauptkirche St. Michaelis",
-   "dist": 73,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0 de",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
-    "urheber": "Thomas Wolf, www.foto-tw.de"
-   }
-  },
-  "Hauptkirche St. Petri, Mönckebergstraße": {
-   "bild": "Projekt Heißluftballon - Highflyer -IMG-1418.jpg",
-   "item": "Q535443",
-   "name": "Hauptkirche St. Petri",
-   "dist": 24,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0 de",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
-    "urheber": "Foto: © Thomas Fries, Lizenz: cc-by-sa-3.0 de"
-   }
-  },
-  "Heilig-Geist-Kirche, Pinneberg": {
-   "bild": "Pinneberg Heilig-Geist-Kirche.jpg",
-   "item": "Q58401648",
-   "name": "Heilig-Geist-Kirche",
-   "dist": 73,
-   "lizenz": {
-    "lizenz": "CC BY 3.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by/3.0",
-    "urheber": "Uwe Barghaan"
-   }
-  },
-  "Heiligen-Geist-Hospital, Lübeck": {
-   "bild": "Luebeck-Heiligen-Geist-Hospital von Westen gesehen-20100905.jpg",
-   "item": "Q317608",
-   "name": "Heiligen-Geist-Hospital in Lübeck",
-   "dist": 11,
+  "Heide Park": {
+   "bild": "Heide Park Eingang.jpg",
+   "item": "Q702179",
+   "name": "Heide Park",
+   "dist": 44,
    "lizenz": false
   },
   "Heiligen-Geist-Kirche, Wismar": {
@@ -710,6 +924,17 @@
     "lizenz": "CC BY-SA 4.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
     "urheber": "GeorgDerReisende"
+   }
+  },
+  "Hirschpark": {
+   "bild": "Hirschpark Nienstedten (5).jpg",
+   "item": "Q1620492",
+   "name": "Hirschpark",
+   "dist": 199,
+   "lizenz": {
+    "lizenz": "CC BY-SA 4.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+    "urheber": "Pauli-Pirat"
    }
   },
   "Hoghehus, Lübeck": {
@@ -767,6 +992,28 @@
     "urheber": "Hawkeye7"
    }
   },
+  "Jenischpark": {
+   "bild": "Jenischpark Hamburg.jpg",
+   "item": "Q25089266",
+   "name": "Jenischpark",
+   "dist": 268,
+   "lizenz": {
+    "lizenz": "CC BY-SA 4.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+    "urheber": "Alstersegler"
+   }
+  },
+  "Jork": {
+   "bild": "Luftaufnahmen Nordseekueste 2012-05-by-RaBoe-535.jpg",
+   "item": "Q24230952",
+   "name": "Jork",
+   "dist": 136,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0 de",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "urheber": "Ra Boe / Wikipedia"
+   }
+  },
   "Jungfernstieg": {
    "bild": "Jungfernstieg - Hamburg - U-Bahn (13307599274).jpg",
    "item": "Q30890676",
@@ -776,6 +1023,28 @@
     "lizenz": "CC BY-SA 2.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/2.0",
     "urheber": "Ingolf from Berlin , Deutschland"
+   }
+  },
+  "Kaispeicher B": {
+   "bild": "Maritimes Museum Hamburg (2024)-L1005406.jpg",
+   "item": "Q60728819",
+   "name": "Kaispeicher B",
+   "dist": 12,
+   "lizenz": {
+    "lizenz": "CC BY-SA 4.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+    "urheber": "Frank Schulenburg"
+   }
+  },
+  "Kalkberg": {
+   "bild": "Kalkbergarena Winnetou1.jpg",
+   "item": "Q1722351",
+   "name": "Kalkbergstadion",
+   "dist": 52,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0",
+    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "urheber": "Hecki"
    }
   },
   "Kampnagel, k6, Winterhude": {
@@ -820,6 +1089,17 @@
     "lizenz": "CC BY-SA 3.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
     "urheber": "Dirtsc"
+   }
+  },
+  "Kirchwerder": {
+   "bild": "Riepenburger Mühle 2007.jpg",
+   "item": "Q2405",
+   "name": "Kirchwerder",
+   "dist": 150,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+    "urheber": "CWeischer"
    }
   },
   "Kleiner Michel (St. Ansgar), Neustadt": {
@@ -932,6 +1212,17 @@
     "urheber": "Wmeinhart - Wolfgang Meinhart, Hamburg"
    }
   },
+  "Landungsbrücken": {
+   "bild": "2013-06-08 Projekt Heißlufftballon DSCF7556.jpg",
+   "item": "Q458970",
+   "name": "St.-Pauli-Landungsbrücken",
+   "dist": 252,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0 de",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "urheber": "Martina Nolte"
+   }
+  },
   "Landungsbrücken (Anleger St. Pauli)": {
    "bild": "2013-06-08 Projekt Heißlufftballon DSCF7556.jpg",
    "item": "Q458970",
@@ -940,7 +1231,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 3.0 de",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
-    "urheber": "Foto: Martina Nolte, Lizenz: Creative Commons by-sa-3.0 de"
+    "urheber": "Martina Nolte"
    }
   },
   "Lister Meile, Hannover": {
@@ -998,6 +1289,17 @@
     "urheber": "Christian Wolf (www.c-w-design.de)"
    }
   },
+  "MARKK": {
+   "bild": "MuseumFuerVoelkerkunde Hamburg.jpg",
+   "item": "Q675774",
+   "name": "Museum am Rothenbaum – Kulturen und Künste der Welt",
+   "dist": 32,
+   "lizenz": {
+    "lizenz": "Public domain",
+    "lizenzLink": "",
+    "urheber": "Carol.Christiansen"
+   }
+  },
   "MARKK, Rothenbaumchaussee": {
    "bild": "MuseumFuerVoelkerkunde Hamburg.jpg",
    "item": "Q675774",
@@ -1006,7 +1308,7 @@
    "lizenz": {
     "lizenz": "Public domain",
     "lizenzLink": "",
-    "urheber": "Carol.Christiansen 13:04, 15 May 2007 (UTC)"
+    "urheber": "Carol.Christiansen"
    }
   },
   "MARKK, Rothenbaumchaussee 64": {
@@ -1017,7 +1319,7 @@
    "lizenz": {
     "lizenz": "Public domain",
     "lizenzLink": "",
-    "urheber": "Carol.Christiansen 13:04, 15 May 2007 (UTC)"
+    "urheber": "Carol.Christiansen"
    }
   },
   "MERKUR Ostseehalle, Kiel": {
@@ -1138,7 +1440,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 3.0",
     "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "PodracerHH 22:23, 1 July 2006 (UTC)"
+    "urheber": "PodracerHH"
    }
   },
   "Mehr! Theater am Großmarkt, Hammerbrook": {
@@ -1152,6 +1454,17 @@
     "urheber": "Mehr! Entertainment GmbH"
    }
   },
+  "Meßberg": {
+   "bild": "Meßberg (Hamburg-Altstadt).jpg",
+   "item": "Q106605679",
+   "name": "Meßberg",
+   "dist": 30,
+   "lizenz": {
+    "lizenz": "CC BY-SA 4.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+    "urheber": "Bernhard Diener"
+   }
+  },
   "Millerntor-Stadion, St. Pauli": {
    "bild": "Germany Hamburg millerntorstadion.jpg",
    "item": "Q339572",
@@ -1161,6 +1474,17 @@
     "lizenz": "CC BY-SA 3.0 de",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
     "urheber": "Arne Müseler / www.arne-mueseler.com"
+   }
+  },
+  "Miniatur Wunderland": {
+   "bild": "DungeonMiwula.jpg",
+   "item": "Q685524",
+   "name": "Miniatur Wunderland",
+   "dist": 131,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0",
+    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "urheber": "Gulp"
    }
   },
   "Molotow, Nobistor": {
@@ -1196,6 +1520,17 @@
     "urheber": "Wusel007"
    }
   },
+  "Museum der Arbeit": {
+   "bild": "Museum der Arbeit.jpg",
+   "item": "Q1954534",
+   "name": "Museum der Arbeit",
+   "dist": 8,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0 de",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "urheber": "NordNordWest"
+   }
+  },
   "Museum der Arbeit, Barmbek": {
    "bild": "Museum der Arbeit.jpg",
    "item": "Q1954534",
@@ -1216,6 +1551,17 @@
     "lizenz": "CC BY-SA 3.0 de",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
     "urheber": "NordNordWest"
+   }
+  },
+  "Museum für Kunst und Gewerbe": {
+   "bild": "Museum für Kunst und Gewerbe Hamburg, Ostfassade mit Hauptportal.jpg",
+   "item": "Q896052",
+   "name": "Museum für Kunst und Gewerbe Hamburg",
+   "dist": 21,
+   "lizenz": {
+    "lizenz": "CC BY-SA 4.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+    "urheber": "UweRohwedder"
    }
   },
   "Museum für Kunst und Gewerbe, Steintorplatz": {
@@ -1251,6 +1597,17 @@
     "urheber": "Bernd Schwabe in Hannover"
    }
   },
+  "Mölln": {
+   "bild": "Mölln 15.jpg",
+   "item": "Q498036",
+   "name": "Mölln",
+   "dist": 581,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0",
+    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "urheber": "Peng"
+   }
+  },
   "Mönckebergstraße": {
    "bild": "U-Bahnhof Mönckebergstraße.Mai 2022.06.nnw.jpg",
    "item": "Q827247",
@@ -1259,7 +1616,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 3.0 de",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
-    "urheber": "Foto: NordNordWest, Lizenz: Creative Commons by-sa-3.0 de"
+    "urheber": "NordNordWest"
    }
   },
   "Neues Rathaus, Hannover": {
@@ -1314,7 +1671,7 @@
    "lizenz": {
     "lizenz": "Public domain",
     "lizenzLink": "",
-    "urheber": "No machine-readable author provided. Axel Hindemith assumed (based on copyright claims)."
+    "urheber": "Axel Hindemith"
    }
   },
   "Planetarium Hamburg, Stadtpark": {
@@ -1326,6 +1683,17 @@
     "lizenz": "Public domain",
     "lizenzLink": "",
     "urheber": "Pudding4brains"
+   }
+  },
+  "Plön": {
+   "bild": "Schloss Plön msu2017-9890.jpg",
+   "item": "Q314461",
+   "name": "Schloss Plön",
+   "dist": 33,
+   "lizenz": {
+    "lizenz": "CC BY-SA 4.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+    "urheber": "Matthias Süßen"
    }
   },
   "Quarree Wandsbek": {
@@ -1359,6 +1727,17 @@
     "lizenz": "CC BY-SA 4.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
     "urheber": "Diego Delso"
+   }
+  },
+  "Ratzeburg": {
+   "bild": "Ratzeburg Altes Kreishaus 2010-01-25 009.jpg",
+   "item": "Q64828345",
+   "name": "Kreisarchiv Herzogtum Lauenburg",
+   "dist": 38,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+    "urheber": "Niteshift"
    }
   },
   "Rindermarkthalle, Neuer Kamp, St. Pauli": {
@@ -1438,6 +1817,17 @@
     "urheber": "Reinhard Kraasch"
    }
   },
+  "Schloss Schwerin": {
+   "bild": "Schwerin-Schloss-gp.jpg",
+   "item": "Q573656",
+   "name": "Schweriner Schloss",
+   "dist": 58,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+    "urheber": "Kolossos"
+   }
+  },
   "Schloßkirche Ahrensburg": {
    "bild": "Gottesbuden Ahrensburg.JPG",
    "item": "Q2244585",
@@ -1464,7 +1854,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 3.0 de",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
-    "urheber": "Foto: NordNordWest, Lizenz: Creative Commons by-sa-3.0 de"
+    "urheber": "NordNordWest"
    }
   },
   "Schule am Walde (Treffpunkt), Wohldorf-Ohlstedt": {
@@ -1475,7 +1865,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 3.0 de",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
-    "urheber": "Bild: © Ajepbah / Wikimedia Commons"
+    "urheber": "Ajepbah"
    }
   },
   "Seemannskirchen, Ditmar-Koel-Straße": {
@@ -1487,6 +1877,28 @@
     "lizenz": "CC BY-SA 3.0",
     "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
     "urheber": "Staro1"
+   }
+  },
+  "Speicherstadtmuseum": {
+   "bild": "Am Sandtorkai 36 Speicherstadt-Museum.jpg",
+   "item": "Q2308634",
+   "name": "Speicherstadtmuseum",
+   "dist": 4,
+   "lizenz": {
+    "lizenz": "CC BY-SA 4.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+    "urheber": "Pauli-Pirat"
+   }
+  },
+  "Spicy's Gewürzmuseum": {
+   "bild": "Gewürz-Afghanisches Museum 2.JPG",
+   "item": "Q1521070",
+   "name": "Spicy’s Gewürzmuseum",
+   "dist": 80,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0",
+    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "urheber": "Gulp"
    }
   },
   "Spielbudenplatz, St. Pauli": {
@@ -1508,7 +1920,7 @@
    "lizenz": {
     "lizenz": "Public domain",
     "lizenzLink": "",
-    "urheber": "The original uploader was Axel Hindemith at German Wikipedia."
+    "urheber": "Axel Hindemith (de.wikipedia)"
    }
   },
   "St. Johanneskirche, Rudolf-Kinau-Straße 19, Ahrensburg": {
@@ -1528,6 +1940,17 @@
    "name": "St. Pauli Theater",
    "dist": 5,
    "lizenz": false
+  },
+  "St. Petri": {
+   "bild": "Projekt Heißluftballon - Highflyer -IMG-1418.jpg",
+   "item": "Q535443",
+   "name": "Hauptkirche St. Petri",
+   "dist": 24,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0 de",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "urheber": "Thomas Fries"
+   }
   },
   "St. Petri-Kirche, Buxtehude": {
    "bild": "StPetriKircheBuxtehude.jpg",
@@ -1595,6 +2018,17 @@
     "urheber": "Christian der Vierte"
    }
   },
+  "Stadtpark": {
+   "bild": "Stadtpark (Hamburg-Winterhude).Blick vom Planetarium.18mm.30809.ajb.jpg",
+   "item": "Q2472",
+   "name": "Hamburger Stadtpark",
+   "dist": 361,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0 de",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "urheber": "Ajepbah"
+   }
+  },
   "Stage Theater an der Elbe, Steinwerder": {
    "bild": "Lion King Hamburg.jpg",
    "item": "Q835524",
@@ -1609,6 +2043,17 @@
    "dist": 7,
    "lizenz": false
   },
+  "Sternschanzenpark": {
+   "bild": "Schanzenpark im Sommer - Hamburg.jpg",
+   "item": "Q2345940",
+   "name": "Sternschanzenpark",
+   "dist": 155,
+   "lizenz": {
+    "lizenz": "CC BY-SA 4.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+    "urheber": "www.elbpresse.de"
+   }
+  },
   "Swiss Life Hall, Hannover": {
    "bild": "Swisslife Hall Hannover.jpg",
    "item": "Q300212",
@@ -1617,7 +2062,7 @@
    "lizenz": {
     "lizenz": "CC BY 3.0",
     "lizenzLink": "https://creativecommons.org/licenses/by/3.0",
-    "urheber": "Foto: Axel Hindemith"
+    "urheber": "Axel Hindemith"
    }
   },
   "Thalia Theater, Alstertor": {
@@ -1672,7 +2117,7 @@
    "lizenz": {
     "lizenz": "CC BY 3.0",
     "lizenzLink": "https://creativecommons.org/licenses/by/3.0",
-    "urheber": "Photo: Andreas Praefcke"
+    "urheber": "Andreas Praefcke"
    }
   },
   "Theater am Aegi, Hannover": {
@@ -1684,6 +2129,17 @@
     "lizenz": "CC BY-SA 4.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
     "urheber": "Christian A. Schröder (ChristianSchd)"
+   }
+  },
+  "Timmendorfer Strand": {
+   "bild": "Maritim Seebrücke.jpg",
+   "item": "Q127789282",
+   "name": "Maritim Seebrücke Timmendorfer Strand",
+   "dist": 121,
+   "lizenz": {
+    "lizenz": "CC0",
+    "lizenzLink": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "urheber": "P6G47TG"
    }
   },
   "Touristinformation, Glückstadt": {
@@ -1719,6 +2175,17 @@
     "urheber": "wy"
    }
   },
+  "Undeloh": {
+   "bild": "Undeloh - Sankt Magdalenen 12 ies.jpg",
+   "item": "Q598754",
+   "name": "Undeloh",
+   "dist": 466,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+    "urheber": "Frank Vincentz"
+   }
+  },
   "Vicelinkirche Sasel": {
    "bild": "Vicelinkirche, Am Markt 8.jpg",
    "item": "Q2521891",
@@ -1749,7 +2216,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 4.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
-    "urheber": "Foto: Reinhard Kraasch, Lizenz: CC-BY-SA 4.0 DE"
+    "urheber": "Reinhard Kraasch"
    }
   },
   "Wassermühle, Am Mühlenteich 3, Trittau": {
@@ -1760,7 +2227,18 @@
    "lizenz": {
     "lizenz": "CC BY-SA 3.0",
     "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "No machine-readable author provided. UM assumed (based on copyright claims)."
+    "urheber": "UM"
+   }
+  },
+  "Wasserturm": {
+   "bild": "173 2015 07 16 Bei der Ratsmühle 19.jpg",
+   "item": "Q824657",
+   "name": "Wasserturm Lüneburg",
+   "dist": 35,
+   "lizenz": {
+    "lizenz": "CC BY-SA 4.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+    "urheber": "Friedrich Haag"
    }
   },
   "Welt-Erbe-Haus, Wismar": {
@@ -1772,6 +2250,17 @@
     "lizenz": "CC BY-SA 4.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
     "urheber": "Assenmacher"
+   }
+  },
+  "Wohldorfer Wald": {
+   "bild": "Wohldorf Buchenwald Kleinbuche Herbst Nebel 2014.jpg",
+   "item": "Q60666121",
+   "name": "Wohldorfer Wald",
+   "dist": 554,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+    "urheber": "Hans Robert Wolters"
    }
   },
   "Wunderino Arena, Kiel": {
@@ -1838,6 +2327,17 @@
     "lizenz": "CC BY 3.0",
     "lizenzLink": "https://creativecommons.org/licenses/by/3.0",
     "urheber": "Nightflyer"
+   }
+  },
+  "Övelgönne": {
+   "bild": "Elbe.Anleger Neumühlen.wmt.jpg",
+   "item": "Q1794664",
+   "name": "Museumshafen Oevelgönne",
+   "dist": 271,
+   "lizenz": {
+    "lizenz": "CC BY-SA 3.0",
+    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+    "urheber": "Wmeinhart"
    }
   }
  }

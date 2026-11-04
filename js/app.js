@@ -52,6 +52,7 @@ import {
   eintragZu, vergessen as karteVergessen, bockKnopf, aufklappen, abschnittUmschalten, istAuf, kennung,
 } from './karte.js';
 import { pushEinschalten, pushAusschalten } from './push.js';
+import { ortsbilderSetzen, motivHtml } from './bilder.js';
 import {
   geraetStandort, adresseSuchen, standortUi, UMKREISE,
 } from './standort.js';
@@ -1112,6 +1113,17 @@ document.addEventListener('click', (ev) => {
   else menge.add(k);
 }, true);
 
+// Lädt ein Ortsfoto nicht, steht das Motiv da (klein) bzw. fällt das große Foto samt Nachweis weg.
+document.addEventListener('error', (ev) => {
+  const img = ev.target;
+  if (!img || img.tagName !== 'IMG') return;
+  if (img.matches('img.bildchen')) img.outerHTML = motivHtml(img.dataset.motiv || 'sonst');
+  else if (img.closest('.ortsfoto')) {
+    img.closest('.karte')?.classList.remove('mit-foto');
+    img.closest('.ortsfoto').remove();
+  }
+}, true);
+
 // #programm, #karte, #wir und #einstellungen öffnen die Seite direkt; #ideen führt zu „Was immer geht“.
 window.addEventListener('hashchange', () => {
   const filmeVorher = uiFilme.offen;
@@ -1209,6 +1221,7 @@ reiter = adresseLesen() || startReiter();
 zeichnen();
 ladeAlles().then((d) => {
   daten = d;
+  ortsbilderSetzen(d.ortsbilder);
   ideenListe = alleIdeen(d.ideen || [], d.programm);
   filmListe = filmEintraege(d.filme);
   filmInfo = { stand: d.filme ? d.filme.stand : '', quelle: d.filme ? d.filme.quelle : '' };

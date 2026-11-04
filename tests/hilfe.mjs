@@ -392,7 +392,7 @@ export function fakeServer() {
  * @param {boolean} [o.touch]         ein Gerät mit Touch (Wischen im Programm)
  */
 export async function oeffne({
-  tag = MO, zeit = '10:00', programm = testProgramm(), ideen = testIdeen(), filme = testFilme(), stand = null, server = fakeServer(), ua = '', hash = '',
+  tag = MO, zeit = '10:00', programm = testProgramm(), ideen = testIdeen(), filme = testFilme(), ortsbilder = null, stand = null, server = fakeServer(), ua = '', hash = '',
   viewport = { width: 390, height: 844 }, browser: geteilt = null, scale = 1, push = '', touch = false,
 } = {}) {
   const browser = geteilt || await chromium.launch();
@@ -403,7 +403,9 @@ export async function oeffne({
   });
   await ctx.addInitScript(uhrStellen);
   if (push) await ctx.addInitScript(pushAttrappe, push);
-  const daten = { programm, ideen, filme };
+  const daten = {
+    programm, ideen, filme, ortsbilder,
+  };
   await ctx.route('**/daten/programm.json', (route) => {
     if (daten.programm === null || daten.programm === undefined) return route.fulfill({ status: 404, body: 'fehlt' });
     return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(daten.programm) });
@@ -416,6 +418,13 @@ export async function oeffne({
     if (daten.filme === null || daten.filme === undefined) return route.fulfill({ status: 404, body: 'fehlt' });
     return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(daten.filme) });
   });
+  // Fotos der Orte: ohne Angabe gibt es keine (404) – die Karten zeigen Motive. Bilddateien: ein Pixel, „kaputt-“ fehlt.
+  await ctx.route('**/daten/ortsbilder.json', (route) => (daten.ortsbilder
+    ? route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(daten.ortsbilder) })
+    : route.fulfill({ status: 404, body: 'fehlt' })));
+  await ctx.route('**/bilder/orte/**', (route) => (route.request().url().includes('/kaputt-')
+    ? route.fulfill({ status: 404, body: 'fehlt' })
+    : route.fulfill({ status: 200, contentType: 'image/png', body: LEERES_PNG })));
   await ctx.route(SUPABASE, (route) => server.route(route));
   await ctx.route(FUNKTION, (route) => server.route(route));
   await ctx.route('https://tile.openstreetmap.org/**', (route) => route.fulfill({ status: 200, contentType: 'image/png', body: LEERES_PNG }));

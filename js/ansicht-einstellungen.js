@@ -22,6 +22,7 @@ import { syncStatus, zugangsLink, rolle } from './gemeinsam.js';
 import { istApple, alsApp } from './teilen.js';
 import { hilfeKarte } from './ansicht-wir.js';
 import { INHALTS_REITER } from './speicher.js';
+import { bildnachweise } from './bilder.js';
 
 /** Wie die Reiter unten heißen – dieselben Wörter wie in der Leiste (index.html). */
 const REITER_NAMEN = { programm: 'Programm', karte: 'Karte', wir: 'Wir' };
@@ -169,6 +170,7 @@ function appTeil(p, ideenStand, datenFehler, installierbar) {
   return abschnitt('e-app', 'App', `${installieren}
     <div class="e-zeile" id="stand"><span>Programm</span><span class="fein">${programm}</span></div>
     ${ideenStand ? `<div class="e-zeile"><span>Ideen („Was immer geht“)</span><span class="fein">Stand ${esc(standText(ideenStand))}</span></div>` : ''}
+    ${bildnachweise()}
     ${fehler}`, 'Das neue Programm kommt montags gegen 7 Uhr.');
 }
 

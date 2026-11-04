@@ -1,8 +1,37 @@
 {
  "version": 1,
  "orte": {
+  "Abaton, Hamburg-Rotherbaum": "abaton-q305682",
+  "Adolf-Jäger-Kampfbahn, Altona": "adolf-jaeger-kampfbahn-q360602",
+  "Altonaer Museum, Museumstraße 23": "altonaer-museum-q126971",
+  "Barclays Arena, Bahrenfeld": "barclays-arena-q265107",
+  "Beginenturm (Historisches Museum), Hannover": "historisches-museum-hannover-q1614375",
+  "Botanischer Sondergarten Wandsbek": "botanischer-sondergarten-wandsbek-q3398986",
+  "Bucerius Kunst Forum, Alter Wall": "bucerius-kunst-forum-q877566",
+  "Bucerius Kunst Forum, Alter Wall 12": "bucerius-kunst-forum-q877566",
+  "Bürgerhaus, Mühlenstraße 22, Bad Oldesloe": "muehlenstrasse-22-q58487555",
+  "CU-Arena, Neugraben": "cu-arena-q115729401",
+  "Capitol Hannover": "capitol-hochhaus-q1034682",
+  "Christuskirche Wandsbek": "christuskirche-wandsbek-q1087331",
+  "Christuskirche, Pinneberg": "christuskirche-pinneberg-q59502239",
+  "Deichtorhallen, Halle für aktuelle Kunst, Deichtorstraße 1–2": "deichtorhallen-q1183156",
+  "Detlefsen-Museum, Glückstadt": "detlefsenmuseum-q76638741",
+  "Deutsches Schauspielhaus, MalerSaal": "deutsches-schauspielhaus-q450777",
   "Deutsches Schauspielhaus, St. Georg": "deutsches-schauspielhaus-q450777",
+  "Die Pumpe, Kiel": "pumpe-q2118159",
+  "Docks, Spielbudenplatz": "docks-q1233759",
+  "Drostei, Pinneberg": "drostei-pinneberg-q1260605",
   "Elbphilharmonie, Großer Saal": "elbphilharmonie-q673223",
+  "Elbphilharmonie, Kleiner Saal": "elbphilharmonie-q673223",
+  "Erlebnis-Zoo Hannover": "erlebnis-zoo-hannover-q220033",
+  "Erlöserkirche Farmsen": "erloeserkirche-q1355745",
+  "Ernst Barlach Haus, Jenischpark, Othmarschen": "ernst-barlach-haus-q871581",
+  "Ernst Deutsch Theater, Foyer": "ernst-deutsch-theater-q51916",
+  "Ernst Deutsch Theater, LABOR": "ernst-deutsch-theater-q51916",
+  "Ernst Deutsch Theater, Mundsburg": "ernst-deutsch-theater-q51916",
+  "Europäisches Hansemuseum, Lübeck": "europaeisches-hansemuseum-q14545643",
+  "Fabrik, Ottensen": "fabrik-q1390772",
+  "Foyer Opernhaus Kiel, Rathausplatz": "opernhaus-kiel-q737243",
   "Schauspielhaus Hannover": "schauspielhaus-hannover-q118288133",
   "Staatsoper Hannover": "staatsoper-hannover-q315705"
  },
@@ -26,6 +55,7 @@
   "Best Western Hotel Prisma, Neumünster": "2026-11-04",
   "Bezirkssporthalle Wandsbek": "2026-11-04",
   "BiM – Bürgerhaus in Meiendorf": "2026-11-04",
+  "Bibliothek der Helmut-Schmidt-Universität, Jenfeld": "2026-11-04",
   "Brakula": "2026-11-04",
   "Brakula, Bramfeld": "2026-11-04",
   "Buchhandlung Wassermann, Elbchaussee 577, Nienstedten": "2026-11-04",
@@ -42,11 +72,13 @@
   "Die Mozart Säle, Rotherbaum": "2026-11-04",
   "Drosteiplatz, Pinneberg": "2026-11-04",
   "EMPORE Buchholz": "2026-11-04",
+  "Edmund-Plambeck-Stadion, Norderstedt": "2026-11-04",
   "Eduard-Söring-Saal, Ahrensburg": "2026-11-04",
   "EisArena Planten un Blomen, Holstenwall 30": "2026-11-04",
   "Eisbahn Wismar, Alter Hafen": "2026-11-04",
   "Eisland Farmsen": "2026-11-04",
   "Eric-Kandel-Gymnasium, Ahrensburg": "2026-11-04",
+  "Ernst-August-Platz, Hannover": "2026-11-04",
   "Essigfabrik, Kanalstr. 26–28, Lübeck": "2026-11-04",
   "Fanny-Mendelssohn-Platz, Eimsbüttel": "2026-11-04",
   "Ferienpark Weissenhäuser Strand": "2026-11-04",
@@ -209,6 +241,114 @@
   "Überseeboulevard, HafenCity": "2026-11-04"
  },
  "bilder": {
+  "abaton-q305682": {
+   "datei": "File:Kino Abaton in Hamburg-Rotherbaum.jpg",
+   "objekt": "Abaton",
+   "wikidata": "Q305682",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AKino_Abaton_in_Hamburg-Rotherbaum.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+   "urheber": "Minderbinder"
+  },
+  "adolf-jaeger-kampfbahn-q360602": {
+   "datei": "File:Adolf-Jäger-Kampfbahn - Haupttribüne.jpg",
+   "objekt": "Adolf-Jäger-Kampfbahn",
+   "wikidata": "Q360602",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AAdolf-J%C3%A4ger-Kampfbahn_-_Haupttrib%C3%BCne.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "urheber": "Elb-Sohn"
+  },
+  "altonaer-museum-q126971": {
+   "datei": "File:Altonaer Museum.jpg",
+   "objekt": "Altonaer Museum",
+   "wikidata": "Q126971",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AAltonaer_Museum.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "urheber": "Bahnmoeller"
+  },
+  "barclays-arena-q265107": {
+   "datei": "File:Barclaycard-Arena-Hamburg-Aussendarstellung.JPG",
+   "objekt": "Barclays Arena",
+   "wikidata": "Q265107",
+   "seite": "https://commons.wikimedia.org/wiki/File%3ABarclaycard-Arena-Hamburg-Aussendarstellung.JPG",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+   "urheber": "Franjo targo"
+  },
+  "botanischer-sondergarten-wandsbek-q3398986": {
+   "datei": "File:Botanischer Sondergarten Wandsbek (1).jpg",
+   "objekt": "Botanischer Sondergarten Wandsbek",
+   "wikidata": "Q3398986",
+   "seite": "https://commons.wikimedia.org/wiki/File%3ABotanischer_Sondergarten_Wandsbek_%281%29.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+   "urheber": "Pauli-Pirat"
+  },
+  "bucerius-kunst-forum-q877566": {
+   "datei": "File:Bucerius Kunst Forum, Alter Wall.jpg",
+   "objekt": "Bucerius Kunst Forum",
+   "wikidata": "Q877566",
+   "seite": "https://commons.wikimedia.org/wiki/File%3ABucerius_Kunst_Forum%2C_Alter_Wall.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+   "urheber": "BuceriusKunstForum"
+  },
+  "capitol-hochhaus-q1034682": {
+   "datei": "File:Capitol high rise Linden Hanover Germany 02.jpg",
+   "objekt": "Capitol-Hochhaus",
+   "wikidata": "Q1034682",
+   "seite": "https://commons.wikimedia.org/wiki/File%3ACapitol_high_rise_Linden_Hanover_Germany_02.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+   "urheber": "ChristianSchd"
+  },
+  "christuskirche-pinneberg-q59502239": {
+   "datei": "File:Christuskirche Pinneberg.jpg",
+   "objekt": "Christuskirche (Pinneberg)",
+   "wikidata": "Q59502239",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AChristuskirche_Pinneberg.jpg",
+   "lizenz": "CC BY-SA 2.5",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/2.5",
+   "urheber": "Nihat Halici"
+  },
+  "christuskirche-wandsbek-q1087331": {
+   "datei": "File:Hh-christusk-wandsb2.jpg",
+   "objekt": "Christuskirche Wandsbek",
+   "wikidata": "Q1087331",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AHh-christusk-wandsb2.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "urheber": "Staro1"
+  },
+  "cu-arena-q115729401": {
+   "datei": "File:CU-Arena Hamburg-Neugraben.jpg",
+   "objekt": "CU-Arena",
+   "wikidata": "Q115729401",
+   "seite": "https://commons.wikimedia.org/wiki/File%3ACU-Arena_Hamburg-Neugraben.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+   "urheber": "Bahnmoeller"
+  },
+  "deichtorhallen-q1183156": {
+   "datei": "File:DTH Nordhalle.jpg",
+   "objekt": "Deichtorhallen",
+   "wikidata": "Q1183156",
+   "seite": "https://commons.wikimedia.org/wiki/File%3ADTH_Nordhalle.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+   "urheber": "Deichtorhallen Hamburg GmbH"
+  },
+  "detlefsenmuseum-q76638741": {
+   "datei": "File:Glückstadt, das Detlefsen-Museum.jpg",
+   "objekt": "Detlefsenmuseum",
+   "wikidata": "Q76638741",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AGl%C3%BCckstadt%2C_das_Detlefsen-Museum.jpg",
+   "lizenz": "CC BY 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by/3.0",
+   "urheber": "Dguendel"
+  },
   "deutsches-schauspielhaus-q450777": {
    "datei": "File:Deutsches Schauspielhaus, Kirchenallee, Hamburg.jpg",
    "objekt": "Deutsches Schauspielhaus",
@@ -218,6 +358,24 @@
    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
    "urheber": "Liberaler Humanist"
   },
+  "docks-q1233759": {
+   "datei": "File:MK33808 Docks Hamburg.jpg",
+   "objekt": "Docks",
+   "wikidata": "Q1233759",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AMK33808_Docks_Hamburg.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+   "urheber": "Martin Kraft"
+  },
+  "drostei-pinneberg-q1260605": {
+   "datei": "File:Pinneberg-drostei.jpg",
+   "objekt": "Drostei (Pinneberg)",
+   "wikidata": "Q1260605",
+   "seite": "https://commons.wikimedia.org/wiki/File%3APinneberg-drostei.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "urheber": "Staro1"
+  },
   "elbphilharmonie-q673223": {
    "datei": "File:2019-05-10 Elbphilharmonie Hamburg.jpg",
    "objekt": "Elbphilharmonie",
@@ -226,6 +384,96 @@
    "lizenz": "CC BY-SA 4.0",
    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
    "urheber": "Burkhard Mücke"
+  },
+  "erlebnis-zoo-hannover-q220033": {
+   "datei": "File:Hannover Zoo.jpg",
+   "objekt": "Erlebnis-Zoo Hannover",
+   "wikidata": "Q220033",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AHannover_Zoo.jpg",
+   "lizenz": "Public domain",
+   "lizenzLink": "",
+   "urheber": "Joachim Meyer - (WT-shared) HaJo at wts wikivoyage"
+  },
+  "erloeserkirche-q1355745": {
+   "datei": "File:Erlöserkirche von Nordwesten.jpg",
+   "objekt": "Erlöserkirche",
+   "wikidata": "Q1355745",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AErl%C3%B6serkirche_von_Nordwesten.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+   "urheber": "An-d"
+  },
+  "ernst-barlach-haus-q871581": {
+   "datei": "File:Hh-ernst-barlach-haus.jpg",
+   "objekt": "Ernst-Barlach-Haus",
+   "wikidata": "Q871581",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AHh-ernst-barlach-haus.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "urheber": "The original uploader was Staro1 at German Wikipedia."
+  },
+  "ernst-deutsch-theater-q51916": {
+   "datei": "File:ErnstDeutschTheatre01.SW.20040501.JPG",
+   "objekt": "Ernst Deutsch Theater",
+   "wikidata": "Q51916",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AErnstDeutschTheatre01.SW.20040501.JPG",
+   "lizenz": "CC BY-SA 2.5",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/2.5",
+   "urheber": "Seungmin Whang"
+  },
+  "europaeisches-hansemuseum-q14545643": {
+   "datei": "File:Europäisches Hansemuseum 2015.jpg",
+   "objekt": "Europäisches Hansemuseum",
+   "wikidata": "Q14545643",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AEurop%C3%A4isches_Hansemuseum_2015.jpg",
+   "lizenz": "CC BY 4.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by/4.0",
+   "urheber": "BS Hochschulstadtteil 20:27, 11. Jun. 2015 (CEST)"
+  },
+  "fabrik-q1390772": {
+   "datei": "File:Fabrik-Hamburg-Altona.JPG",
+   "objekt": "Fabrik",
+   "wikidata": "Q1390772",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AFabrik-Hamburg-Altona.JPG",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+   "urheber": "San Andreas"
+  },
+  "historisches-museum-hannover-q1614375": {
+   "datei": "File:Am hohen Ufer (01).JPG",
+   "objekt": "Historisches Museum Hannover",
+   "wikidata": "Q1614375",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AAm_hohen_Ufer_%2801%29.JPG",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+   "urheber": "Hombre at wikivoyage shared"
+  },
+  "muehlenstrasse-22-q58487555": {
+   "datei": "File:Bad Oldesloe, Mühlenstraße 22.JPG",
+   "objekt": "Mühlenstraße 22",
+   "wikidata": "Q58487555",
+   "seite": "https://commons.wikimedia.org/wiki/File%3ABad_Oldesloe%2C_M%C3%BChlenstra%C3%9Fe_22.JPG",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+   "urheber": "Callisa98"
+  },
+  "opernhaus-kiel-q737243": {
+   "datei": "File:Opernhaus Kiel msu2017-9209.jpg",
+   "objekt": "Opernhaus Kiel",
+   "wikidata": "Q737243",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AOpernhaus_Kiel_msu2017-9209.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+   "urheber": "Matthias Süßen"
+  },
+  "pumpe-q2118159": {
+   "datei": "File:Hassstrasse 22-26 Kiel.jpg",
+   "objekt": "Pumpe",
+   "wikidata": "Q2118159",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AHassstrasse_22-26_Kiel.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+   "urheber": "Siegbert Brey"
   },
   "schauspielhaus-hannover-q118288133": {
    "datei": "File:Schauspielhaus Theater Hanover Germany.jpg",
@@ -248,17 +496,6 @@
  },
  "stand": "2026-11-04",
  "warten": {
-  "Abaton, Hamburg-Rotherbaum": {
-   "bild": "Kino Abaton in Hamburg-Rotherbaum.jpg",
-   "item": "Q305682",
-   "name": "Abaton",
-   "dist": 14,
-   "lizenz": {
-    "lizenz": "CC BY-SA 4.0",
-    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
-    "urheber": "Minderbinder"
-   }
-  },
   "Adolf-Jäger-Kampfbahn, Altona": {
    "bild": "Adolf-Jäger-Kampfbahn - Haupttribüne.jpg",
    "item": "Q360602",
@@ -278,7 +515,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 3.0",
     "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "I, Bahnmoeller"
+    "urheber": "Bahnmoeller"
    }
   },
   "Barclays Arena, Bahrenfeld": {
@@ -300,7 +537,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 3.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "User: Hombre at wikivoyage shared"
+    "urheber": "Hombre at wikivoyage shared"
    }
   },
   "Bibliothek der Helmut-Schmidt-Universität, Jenfeld": {
@@ -482,17 +719,6 @@
    "dist": 107,
    "lizenz": false
   },
-  "Eisstadion am Pferdeturm, Hannover": {
-   "bild": "Pferdeturm.jpg",
-   "item": "Q743911",
-   "name": "Eisstadion am Pferdeturm",
-   "dist": 18,
-   "lizenz": {
-    "lizenz": "CC BY-SA 3.0",
-    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "Flaxman"
-   }
-  },
   "Elbphilharmonie, Kleiner Saal": {
    "bild": "2019-05-10 Elbphilharmonie Hamburg.jpg",
    "item": "Q673223",
@@ -507,7 +733,7 @@
    "lizenz": {
     "lizenz": "Public domain",
     "lizenzLink": "",
-    "urheber": "Joachim Meyer - User: (WT-shared) HaJo at wts wikivoyage"
+    "urheber": "Joachim Meyer - (WT-shared) HaJo at wts wikivoyage"
    }
   },
   "Erlöserkirche Farmsen": {
@@ -602,7 +828,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 4.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
-    "urheber": "User:Matthias Süßen"
+    "urheber": "Matthias Süßen"
    }
   },
   "Freilichtmuseum am Kiekeberg, Rosengarten-Ehestorf": {
@@ -624,7 +850,7 @@
    "lizenz": {
     "lizenz": "Public domain",
     "lizenzLink": "",
-    "urheber": "Benutzer:AxelHH"
+    "urheber": "AxelHH"
    }
   },
   "Galerie Hinter dem Rathaus, Wismar": {
@@ -968,7 +1194,7 @@
    "lizenz": {
     "lizenz": "CC BY 2.0 de",
     "lizenzLink": "https://creativecommons.org/licenses/by/2.0/de/deed.en",
-    "urheber": "Sebastian Koppehel, User:SKopp"
+    "urheber": "Sebastian Koppehel, SKopp"
    }
   },
   "Komödie Winterhuder Fährhaus": {
@@ -979,7 +1205,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 3.0",
     "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "Benutzer:Staro1"
+    "urheber": "Staro1"
    }
   },
   "Kreuzkirche, Hannover": {
@@ -1067,7 +1293,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 3.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "User:Wmeinhart - Wolfgang Meinhart, Hamburg"
+    "urheber": "Wmeinhart - Wolfgang Meinhart, Hamburg"
    }
   },
   "Landungsbrücken (Anleger St. Pauli)": {
@@ -1221,7 +1447,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 3.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "User:Wmeinhart - Wolfgang Meinhart, Hamburg"
+    "urheber": "Wmeinhart - Wolfgang Meinhart, Hamburg"
    }
   },
   "Markthalle, Klosterwall": {
@@ -1232,7 +1458,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 3.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
-    "urheber": "User:Wmeinhart - Wolfgang Meinhart, Hamburg"
+    "urheber": "Wmeinhart - Wolfgang Meinhart, Hamburg"
    }
   },
   "Marktkirche, Hannover": {
@@ -1441,7 +1667,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 4.0",
     "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
-    "urheber": "User:Matthias Süßen"
+    "urheber": "Matthias Süßen"
    }
   },
   "Pavillon Hannover": {
@@ -1624,7 +1850,7 @@
    "lizenz": {
     "lizenz": "CC BY-SA 3.0",
     "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "urheber": "Benutzer:Staro1"
+    "urheber": "Staro1"
    }
   },
   "Spielbudenplatz, St. Pauli": {

@@ -103,7 +103,8 @@ def holen(url, *, daten=None, kopf=None, versuche=4, pause=1.2):
             return inhalt
         except urllib.error.HTTPError as f:
             if f.code in (429, 502, 503, 504) and i < versuche - 1:
-                warte = 20 * (i + 1)
+                nach = f.headers.get('Retry-After', '') if f.headers else ''
+                warte = int(nach) + 2 if nach.isdigit() and int(nach) <= 120 else 20 * (i + 1)
                 print(f'  … {f.code}, warte {warte} s', file=sys.stderr)
                 time.sleep(warte)
                 continue
@@ -193,6 +194,14 @@ def text(s):
     return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', '', s or ''))).strip()
 
 
+def urheber_text(s):
+    """„I, Bahnmoeller“ → „Bahnmoeller“, „User:Matthias Süßen“ → „Matthias Süßen“, ohne „(talk)“."""
+    s = re.sub(r'\s*\((talk|Diskussion|contribs)\)', '', s or '')
+    s = re.sub(r'^(I|Ich)\s*,\s*', '', s.strip())
+    s = re.sub(r'\b(User|Benutzer|Benutzerin)\s*:\s*', '', s)
+    return s.strip()[:120]
+
+
 def lizenzen(dateien):
     """Lizenz und Urheber aus Commons (extmetadata, je 50 Dateien eine Abfrage – Wikimedia begrenzt die Rate).
     Ergebnis: Datei → {lizenz, lizenzLink, urheber} oder None (nicht frei genug, Persönlichkeitsrechte)."""
@@ -216,8 +225,7 @@ def lizenzen(dateien):
             if wert('NonFree') == 'true' or 'personality' in wert('Restrictions').lower() or not frei:
                 ergebnis[datei] = None
                 continue
-            urheber = wert('Attribution') or wert('Artist')
-            urheber = re.sub(r'\s*\((talk|Diskussion)\)', '', urheber)[:120]
+            urheber = urheber_text(wert('Attribution') or wert('Artist'))
             gemeinfrei = bool(re.match(r'^(CC0|Public domain|PD)', kurz, re.I))
             if not urheber and not gemeinfrei:
                 ergebnis[datei] = None
@@ -248,7 +256,7 @@ def ablegen(datei, name):
     roh = None
     for breite in (960, 500, 330):
         try:
-            roh = holen(bild_url(datei, breite)[0], pause=1, versuche=3)
+            roh = holen(bild_url(datei, breite)[0], pause=4, versuche=6)
         except urllib.error.HTTPError as f:
             print(f'  … {datei} in {breite} px: {f.code}', file=sys.stderr)
             roh = None
@@ -298,6 +306,7 @@ def main():
     a.add_argument('--bogen', help='Ordner für den Kontaktbogen der neu gefundenen Bilder')
     a.add_argument('--aufraeumen', action='store_true', help='Bilddateien löschen, die keinem Ort mehr gehören')
     a.add_argument('--nur-bogen', help='ohne Netz: Kontaktbogen aller zugeordneten Orte in diesen Ordner')
+    a.add_argument('--nur-pflege', action='store_true', help='ohne Netz: nur Ausnahmen anwenden, Urheber aufräumen, speichern')
     arg = a.parse_args()
     if arg.nur_bogen:
         stand = json.loads(ZIEL.read_text(encoding='utf-8'))
@@ -310,6 +319,14 @@ def main():
     ausnahmen = {'orte': aus.get('orte', {}), 'dateien': aus.get('dateien', {}), 'objekte': aus.get('objekte', {})}
     heute = dt.date.today().isoformat()
 
+    for b in stand['bilder'].values():
+        b['urheber'] = urheber_text(b.get('urheber')) or 'unbekannt'
+    for w in stand['warten'].values():
+        if w.get('lizenz'):
+            w['lizenz']['urheber'] = urheber_text(w['lizenz'].get('urheber')) or 'unbekannt'
+        if f'File:{w["bild"]}' in ausnahmen['dateien'] or w['item'] in ausnahmen['objekte']:
+            w['raus'] = True
+    stand['warten'] = {o: w for o, w in stand['warten'].items() if not w.pop('raus', False) and o not in ausnahmen['orte']}
     # Was eine Ausnahme ist, fliegt auch aus dem Bestand.
     for ort, name in list(stand['orte'].items()):
         info = stand['bilder'].get(name, {})
@@ -322,6 +339,18 @@ def main():
                 del stand['bilder'][name]
                 for endung in ('', '-klein'):
                     (ORDNER / f'{name}{endung}.webp').unlink(missing_ok=True)
+        # … und Dateien, die zu keinem Bild gehören (etwa von einem abgebrochenen Lauf)
+        for f in ORDNER.glob('*.webp') if ORDNER.exists() else []:
+            if f.name.removesuffix('.webp').removesuffix('-klein') not in stand['bilder']:
+                f.unlink()
+
+    if arg.nur_pflege:
+        stand['stand'] = heute
+        for k in ('orte', 'ohne', 'bilder', 'warten'):
+            stand[k] = dict(sorted(stand[k].items()))
+        ZIEL.write_text(json.dumps({k: v for k, v in stand.items() if k != 'warten' or v}, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+        print(f'{len(stand["orte"])} Orte mit Foto, {len(stand["bilder"])} Bilder, {len(stand["warten"])} warten', file=sys.stderr)
+        return
 
     orte = orte_aus_programm()
     orte_namen = set()

@@ -15,6 +15,7 @@ import {
   zeitAm, ende, uhrzeit, offen, abendVorArbeitstag, wochentagKurz, tagMonat, vorbeiAb,
 } from './zeit.js';
 import { whatsappLink, kalenderZiel } from './teilen.js';
+import { bildchen, ortsfoto } from './bilder.js';
 import { WO } from './ideen.js';
 import { zeitZeile } from './zeiten.js';
 import { aktuell, meinBock } from './speicher.js';
@@ -225,15 +226,18 @@ export function karte(eintrag, o = {}) {
   const kal = kalenderZiel(eintrag);
   const wer = werZeile(eintrag);
   const plan = o.planen || null;
-  const klassen = ['karte', istAuf(eintrag.schluessel) || (plan && plan.offen) ? 'auf' : '', eintrag.hohwacht ? 'hohwacht' : '', eintrag.kuenstler ? 'kuenstler' : '', wer.treffer ? 'treffer' : '', o.zeitSpalte ? '' : 'ohne-zeit']
+  const foto = ortsfoto(eintrag);
+  const klassen = ['karte', istAuf(eintrag.schluessel) || (plan && plan.offen) ? 'auf' : '', eintrag.hohwacht ? 'hohwacht' : '', eintrag.kuenstler ? 'kuenstler' : '', wer.treffer ? 'treffer' : '', o.zeitSpalte ? '' : 'ohne-zeit', foto ? 'mit-foto' : '']
     .filter(Boolean).join(' ');
   return `<article class="${klassen}" id="k-${esc(eintrag.schluessel.replace(/[^a-z0-9-]/gi, '-'))}">${zeit}<div class="inhalt">
+    ${bildchen(eintrag)}
     ${kopfzeile(eintrag)}
     ${unterzeile ? `<div class="unter">${esc(unterzeile)}</div>` : ''}
     ${wichtig ? `<div class="marken">${wichtig}</div>` : ''}
     ${wer.html}
     ${zeitZeile(eintrag)}
     <div class="mehr">
+      ${foto}
       ${eintrag.beschreibung ? `<p>${esc(eintrag.beschreibung)}</p>` : ''}
       ${mehr ? `<div class="marken">${mehr}</div>` : ''}
       ${eintrag.unsicher ? `<div class="unsicher">${esc(eintrag.unsicher)}</div>` : ''}

@@ -66,7 +66,7 @@ export function programmBereinigen(roh, fehler = []) {
 export async function ladeAlles() {
   const fehler = [];
   let ideenStand = '';
-  const [programm, ideen, filme] = await Promise.all([
+  const [programm, ideen, filme, ortsbilder] = await Promise.all([
     holen('daten/programm.json').then((roh) => programmBereinigen(roh, fehler))
       .catch((e) => { fehler.push(`Programm nicht geladen (${e.message})`); return null; }),
     holen('daten/ideen.json').then((roh) => {
@@ -75,8 +75,10 @@ export async function ladeAlles() {
     }).catch((e) => { fehler.push(`Ideen nicht geladen (${e.message})`); return null; }),
     // Die Filmliste ist ein Zusatz: Fehlt sie, fehlt nur die Tür bei „Was immer geht“.
     holen('daten/filme.json').then((roh) => filmeBereinigen(roh, fehler)).catch(() => null),
+    // Fotos der Orte: ein Zusatz – ohne sie zeigen die Karten Motive (bilder.js prüft den Inhalt).
+    holen('daten/ortsbilder.json').catch(() => null),
   ]);
   return {
-    programm, ideen, ideenStand, filme, fehler,
+    programm, ideen, ideenStand, filme, ortsbilder, fehler,
   };
 }

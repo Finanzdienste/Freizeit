@@ -51,6 +51,14 @@ Kalender des Geräts, sonst ein ausgefüllter Termin in Google Kalender) und
 die **Quelle**. Konzerte der eigenen Künstler tragen „♫ Dein Künstler“, der
 Filter „♫ Meine Künstler“ zeigt nur sie.
 
+**Bilder:** Vorn an jeder Karte steht ein kleines Bild – ein freies Foto der
+Spielstätte, sonst ein gezeichnetes Motiv der Kategorie (Konzert, Bühne,
+Markt …; Online & TV ohne Kategorie: ein Bildschirm). Aufgeklappt steht das
+Foto groß da, darunter Ort, Fotograf, Lizenz und der Link zur Datei bei
+Wikimedia Commons; alle Nachweise auch unter Einstellungen → App → „Fotos
+der Orte“. Fotos von Veranstaltern oder Künstlern nimmt die App nie – nur
+Fotos der Orte mit freier Lizenz (siehe „Fotos der Orte“ unten).
+
 ## Die beiden Zeitregeln
 
 **Mo–Fr ab 15:30** ist ein Filter zum Einschalten: An Werktagen bleibt nur,
@@ -523,6 +531,33 @@ nicht kennt, zeigt „Was immer geht“ es trotzdem.
 | `hohwacht` | `true`, wenn sie zu einem Besuch in Hohwacht passt |
 | `link` · `orte` | Info-Link; Orte mit `name`, `teil` (Stadtteil), `geo`, `link`, `info` |
 
+### Fotos der Orte
+
+`werkzeug/ortsbilder.py` sucht für jeden Ort im Programm (mit Koordinaten,
+nicht Online & TV) bei Wikidata Objekte mit Bild (P18) im Umkreis von 400 m
+(bei genau gleichem Namen 600 m) und nimmt das mit dem passendsten Namen –
+Stadtteile, Straßen und allgemeine Wörter („Theater“, „Halle“) allein zählen
+nicht. Lizenz und Urheber kommen aus Commons; genommen wird nur CC0,
+gemeinfrei, CC BY und CC BY-SA, nichts mit Persönlichkeitsrechten. Das Foto
+liegt verkleinert unter `bilder/orte/` (`<name>-klein.webp` 240 px,
+`<name>.webp` 640 px), die Zuordnung in `daten/ortsbilder.json`:
+
+| Feld | Inhalt |
+|---|---|
+| `orte` | Ort, wie er im Programm steht → Name des Bilds |
+| `bilder` | je Bild: `datei` (Commons), `objekt` (was zu sehen ist), `wikidata`, `urheber`, `lizenz`, `lizenzLink`, `seite` |
+| `ohne` | Orte ohne Treffer, mit Datum – nach 60 Tagen wird neu gesucht |
+| `warten` | gefunden, aber noch nicht geholt (Wikimedia drosselt) – der nächste Lauf macht weiter |
+
+Fehltreffer und Fotos, auf denen Menschen im Mittelpunkt stehen, kommen mit
+Grund in `werkzeug/ortsbilder-ausnahmen.json` und werden nie wieder genommen.
+Vor dem Übernehmen den Kontaktbogen ansehen: `--bogen <ordner>` (neu
+Gefundenes) bzw. `--nur-bogen <ordner>` (alles, ohne Netz); `--nur-pflege`
+wendet nur die Ausnahmen an, `--aufraeumen` löscht Bilder ohne Ort. Von
+geteilten Adressen aus begrenzt Wikimedia die Abfragen stark; die
+GitHub Action `ortsbilder.yml` holt neue Fotos zuverlässig, sobald sich das
+Programm ändert.
+
 ## Aufbau
 
 Wie die Workout-App: kein Bauschritt, ES-Module, eigener Service Worker
@@ -549,12 +584,14 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `js/ideen.js` | Ideen: Katalog prüfen, eigene und eingeplante Ideen, Filter, Saison, „Tut dir gut“ |
 | `js/karte.js` | Einträge bauen und als Karte zeichnen (Bock, wer hat Bock) |
 | `js/teilen.js` | WhatsApp-Nachricht mit dem Link in die App, Google-Kalender-Link, .ics |
+| `js/bilder.js` | Bild an der Karte: Foto des Orts (daten/ortsbilder.json, bilder/orte/) oder Motiv der Kategorie (Symbole in index.html), Nachweise |
 | `js/speicher.js` | Filter, eigene Haken mit Schnappschuss, Warteschlange, Verlauf „Wie war's?“ |
 | `js/gemeinsam.js` | der gemeinsame Plan: Code, Schlüssel, Beitreten, weiteres Gerät, Abgleich mit Supabase, Rollen und Treffer |
 | `js/zeiten.js` | die belegten Zeiten des Gastgebers: lesen, prüfen, die Zeile an der Karte |
 | `js/zeiten-rechnen.js` | aus Kalenderterminen belegte Blöcke je Woche (Browser und Node) |
 | `werkzeug/zeiten-senden.mjs` | schickt die Zeiten an den Plan – für eine geplante Aufgabe |
 | `werkzeug/filme-aktualisieren.mjs` | IMDb Top 250 aus IMDbs offiziellen Daten auffrischen – im Montagslauf |
+| `werkzeug/ortsbilder.py` | freie Fotos der Spielstätten von Wikidata/Commons suchen, prüfen, verkleinert ablegen (Python, Pillow) |
 | `js/push.js` | Push-Mitteilungen für den Gastgeber: Abo holen, beim Server an- und abmelden |
 | `js/standort.js` | Bezugspunkt für Entfernungen: Gerätestandort, Adresssuche (Nominatim), Luftlinie, „3,2 km“ |
 | `supabase/functions/freizeit-push/` | die Edge Function: offene Nachrichten holen, verschlüsseln, an die Push-Dienste schicken |
@@ -583,6 +620,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `test-landkarte.mjs` | Marker, Zeitraum, „Nur mit Bock“, Online & TV gezählt statt gezeigt, Liste am Marker, Haken aus der Karte |
 | `test-wir.mjs` | der gemeinsame Plan: Tobi lädt ein, Kim (iPhone) und Jo wählen mit/ohne Tobi und sehen einander nicht, Tobis Überblick, offline, weiteres Gerät, Herausnehmen, Verlassen, Auflösen, ein Plan aus der ersten Fassung, fremder Text |
 | `test-filme.mjs` | IMDb Top 250: die Tür, die Seite `#filme`, Suche, Genre, Auswahl, Aufklappen, Bock – allein und im Plan („Mit Tobi gucken“, „Mit dir“), die Zeile in „Wir“ und zurück |
+| `test-bilder.mjs` | Bilder an den Karten: Foto klein und groß mit Nachweis, Motiv ohne Foto, Ersatz bei kaputtem Bild, fremder Inhalt in ortsbilder.json, Nachweise in den Einstellungen, ohne Datei nur Motive |
 | `test-link.mjs` | Geteilte Links: die WhatsApp-Nachricht verlinkt die App; ein Link öffnet Termin, eingeplantes Laufendes, Idee und Film aufgeklappt im Blick – auch zum ersten Mal und in der offenen App; Hinweise bei Vergangenem, nicht mehr im Programm, 21:30 und Filter |
 | `test-laufend.mjs` | Laufendes für einen Tag einplanen: „Einplanen“ erst aufgeklappt, Vorschlag (angesehener Tag, in der Woche ihr Samstag), nur solange es läuft, Sprung zum Tag mit Meldung, „Eingeplant“ mit Uhrzeit, Zeiten in der Beschreibung, Kalender, Rückgängig |
 | `test-ideen.mjs` | „Was immer geht“: Katalog, eigener Filter nach Wirkung, Saison, Bock, Einplanen (Tag, Monat), Wie war's? und „Tut dir gut“, eigene Ideen im Plan, Einplanen mit/ohne Gastgeber, fremder Text, Ideen auf der Karte und der Sprung zurück |

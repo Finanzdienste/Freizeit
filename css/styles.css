@@ -218,7 +218,22 @@ select { padding: 7px 8px; border: 1px solid var(--linie); border-radius: 8px; b
 .zeit { font-family: var(--mono); font-size: 13.5px; font-variant-numeric: tabular-nums; padding-top: 2px; }
 .zeit.ganztags { font-family: var(--schrift); font-size: 12.5px; color: var(--akzent); font-weight: 700; }
 .zeit .bis { display: block; font-size: 12px; color: var(--leise); }
-.inhalt { min-width: 0; }
+.inhalt { min-width: 0; display: flow-root; }
+/* Bild vorn an der Karte: Foto des Orts (Wikimedia Commons) oder Motiv der Kategorie (js/bilder.js) */
+.motive { position: absolute; width: 0; height: 0; overflow: hidden; }
+.bildchen { float: left; width: 56px; height: 56px; margin: 1px 12px 4px 0; border-radius: 9px; background: var(--akzent-weich); }
+img.bildchen { object-fit: cover; }
+.bildchen.motiv { display: grid; place-items: center; color: var(--akzent); }
+.bildchen.motiv svg { width: 34px; height: 34px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.karte.auf.mit-foto .bildchen { display: none; }
+.ortsfoto { margin: 10px 0 0; max-width: 560px; }
+.ortsfoto img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px; background: var(--akzent-weich); }
+.ortsfoto figcaption { margin-top: 5px; font-size: 11.5px; line-height: 1.4; color: var(--leise); }
+.ortsfoto figcaption a { color: inherit; }
+.ortsfoto-was { color: var(--tinte); font-weight: 600; }
+.bildnachweise ul { margin: 8px 0 0; padding-left: 18px; font-size: 12.5px; color: var(--leise); }
+.bildnachweise li { margin-bottom: 4px; }
+.bildnachweise a { color: inherit; }
 .inhalt h3 { font-size: 16px; font-weight: 700; line-height: 1.25; }
 .unter { font-size: 13px; color: var(--leise); margin-top: 2px; }
 .inhalt p { margin: 6px 0 0; max-width: 65ch; font-size: 14.5px; }

@@ -28,8 +28,8 @@ check(await page.locator('.kalender .feld').count() === 42 && await page.locator
 check((await feld(DI).locator('.zahl').innerText()) === '4', 'Di: vier Termine – das späte Konzert zählt nicht, Keane schon');
 check(await feld(DI).locator('.f-kuenstler').count() === 1 && await feld(MO).locator('.f-kuenstler').count() === 0, '♫ am Dienstag: ein Konzert deiner Künstler');
 check((await feld(MO).getAttribute('class')).includes('heute') && await feld(MO).getAttribute('aria-pressed') === 'true', 'heute ist markiert und gewählt');
-check(await page.locator('[data-aktion="kal-zurueck"]').isDisabled() && await page.locator('[data-aktion="kal-heute"]').count() === 0,
-  'vor diesen Monat geht es nicht zurück; „Heute“ fehlt, man ist ja schon da');
+check(await page.locator('[data-aktion="kal-zurueck"]').isDisabled() && await page.locator('[data-aktion="kal-heute"]').isDisabled(),
+  'vor diesen Monat geht es nicht zurück; „Heute“ ist ausgegraut, man ist ja schon da');
 check(await page.locator('.prog-kopf [data-aktion="filter-auf"]').count() === 1, 'auch im Monat steht der Filter-Knopf');
 check(await page.locator(`.monat-vorschau .wtag[data-tag="${MO}"]`).count() === 1, 'unter dem Blatt: die Karte des gewählten Tages');
 check(await page.locator('#monat-konzerte .konzert-zeile', { hasText: 'Keane' }).count() === 1, 'darunter „Deine Konzerte“ im Monat: Keane');

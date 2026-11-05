@@ -28,7 +28,7 @@ Vier Reiter unten – welche davon dort stehen, wählt man unter Einstellungen �
 | Ich will … | Da |
 | --- | --- |
 | filtern (Art, Regionen – auch mehrere zugleich –, Umkreis, Kategorie, kostenlos, Mo–Fr ab 15:30 …) | Knopf **Filter** oben im Programm und auf der Karte – das Blatt von unten; was gewählt ist, steht als Chip daneben (✕ nimmt es weg, ab zwei Chips „Alle zeigen“). „Was immer geht“ hat seinen eigenen Filter-Knopf |
-| zwischen Tag, Woche und Monat wechseln, blättern | oben im Programm: **Tag · Woche · Monat**, darunter ‹ › und „Heute“ – oder nach links/rechts wischen |
+| zwischen Tag, Woche und Monat wechseln, blättern | oben im Programm: **Tag · Woche · Monat** und daneben **Heute** (immer an derselben Stelle, ausgegraut, wenn man schon bei heute ist), darunter ‹ › – oder nach links/rechts wischen. Neben den Pfeilen taucht nichts auf, damit man beim schnellen Weitertippen nicht aus Versehen zurückspringt |
 | Ideen ohne Termin, eigene Ideen, „Tut dir gut“ | im Programm ganz unten: **Was immer geht** |
 | etwas, das über Wochen läuft (Winterzauber, Ausstellung), für einen Tag einplanen | im Programm „Läuft heute“ bzw. „Läuft diese Woche“: Karte aufklappen → **Einplanen** |
 | nur Online & TV sehen – oder gerade nicht | Filter → **Art**: Alles · Vor Ort · Online & TV |

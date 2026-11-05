@@ -468,13 +468,17 @@ export function programmAnsicht(p, st, heute, ui) {
   if (ansicht === 'woche') laufend = laufendZwischen(p, montag(datum) < heute ? heute : montag(datum), plusTage(montag(datum), 6), f);
   const zaehler = `${anzahl(zahl, 'Termin', 'Termine')}${laufend.length ? ` · <button type="button" class="textknopf" data-aktion="zu-laufend">${laufend.length} laufend</button>` : ''}`;
 
+  // „Heute“ steht fest oben neben Tag/Woche/Monat – immer da, ausgegraut, wenn man schon bei heute ist.
+  // Neben ‹ › darf nichts auftauchen: Wer oft auf › tippt, träfe es sonst aus Versehen.
   const kopf = `<header class="prog-kopf">
-    ${ansichtSchalter(ansicht)}
+    <div class="ansicht-zeile">
+      ${ansichtSchalter(ansicht)}
+      <button type="button" class="heute-knopf" data-aktion="kal-heute"${nav.heuteSchon ? ' disabled' : ''}>Heute</button>
+    </div>
     <div class="blaettern">
       ${pfeil('kal-zurueck', nav.zurueck, '‹', 'Zurück')}
       <h2 class="kal-titel" data-datum="${datum}">${nav.titel}</h2>
       ${pfeil('kal-vor', nav.vor, '›', 'Weiter')}
-      ${nav.heuteSchon ? '' : '<button type="button" class="knopf klein heute-knopf" data-aktion="kal-heute">Heute</button>'}
     </div>
     ${filterLeiste(chipsProgramm(st), { rechts: `<span class="zaehler" id="zaehler">${zaehler}</span>` })}
   </header>

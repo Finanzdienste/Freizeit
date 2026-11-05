@@ -26,7 +26,8 @@ const gedrueckt = (k) => page.locator(`[data-kal-ansicht="${k}"]`).getAttribute(
 check(JSON.stringify(await page.$$eval('[data-kal-ansicht]', (bs) => bs.map((b) => b.textContent))) === '["Tag","Woche","Monat"]',
   'drei Ansichten: Tag, Woche, Monat – keine Liste mehr');
 check(await gedrueckt('tag') === 'true' && await page.locator(`#tag-${MO}`).count() === 1, 'das Programm öffnet als Tag – heute');
-check((await titel()) === 'Montag, 2.11. heute' && await page.locator('[data-aktion="kal-heute"]').count() === 0, 'Kopf: „Montag, 2.11.“, als heute markiert – ohne Knopf „Heute“');
+check((await titel()) === 'Montag, 2.11. heute' && await page.locator('.ansicht-zeile [data-aktion="kal-heute"]').isDisabled(),
+  'Kopf: „Montag, 2.11.“, als heute markiert – „Heute“ oben neben Tag/Woche/Monat, ausgegraut');
 check(await page.locator('.tagleiste .tagzelle').count() === 7 && await page.locator('.tagleiste .tagzelle.ist-heute.gewaehlt .tz-nr').innerText() === '2',
   'die Tagesleiste: sieben Tage, heute gewählt');
 check(await page.locator(`.tagleiste [data-tag="${DI}"] .tz-zahl`).innerText() === '4', 'Di: vier Termine in der Leiste – dieselbe Auswahl wie am Tag');
@@ -122,9 +123,18 @@ check(st && st.version === 2 && JSON.stringify(st.filter.regionen) === '[]' && !
 
 // --- Blättern im Tag
 await zeigeTag(MO);
+const vorVorher = await page.locator('[data-aktion="kal-vor"]').boundingBox();
 await page.click('[data-aktion="kal-vor"]');
-check((await titel()).startsWith('Dienstag, 3.11.') && await page.locator(`#tag-${DI}`).count() === 1 && await page.locator('[data-aktion="kal-heute"]').count() === 1,
-  '› blättert einen Tag weiter – jetzt mit „Heute“');
+check((await titel()).startsWith('Dienstag, 3.11.') && await page.locator(`#tag-${DI}`).count() === 1 && await page.locator('[data-aktion="kal-heute"]').isEnabled(),
+  '› blättert einen Tag weiter – jetzt lässt sich „Heute“ tippen');
+const vorNachher = await page.locator('[data-aktion="kal-vor"]').boundingBox();
+check(vorVorher && vorNachher && Math.abs(vorVorher.x - vorNachher.x) < 1 && Math.abs(vorVorher.y - vorNachher.y) < 1,
+  '› bleibt, wo es war – neben den Pfeilen taucht nichts auf, das man beim schnellen Tippen erwischt');
+await page.click('[data-aktion="kal-vor"]');
+await page.click('[data-aktion="kal-vor"]');
+check((await titel()).startsWith('Donnerstag, 5.11.'), 'dreimal › hintereinander: drei Tage weiter, ohne aus Versehen „Heute“');
+await page.click('[data-aktion="kal-zurueck"]');
+await page.click('[data-aktion="kal-zurueck"]');
 await page.click(`.tagleiste [data-tag="${FR}"]`);
 check(await page.locator(`#tag-${FR}`).count() === 1 && await page.locator(`.tagleiste [data-tag="${FR}"]`).getAttribute('aria-pressed') === 'true',
   'ein Tipp in der Tagesleiste wählt den Tag');

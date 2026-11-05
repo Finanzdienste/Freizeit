@@ -28,6 +28,7 @@
  * beim Anzeigen durch esc(), Links durch sichererLink().
  */
 import { SERVER } from './config.js';
+import { teilenAdresse } from './teilen.js';
 import { aktuell, speichern } from './speicher.js';
 
 const ALPHABET = 'abcdefghijkmnpqrstuvwxyz23456789';
@@ -456,4 +457,5 @@ export function neuesterAndererHaken() {
 }
 
 /** Der Link, den man verschickt. Der Code steht hinter #, geht also nie an einen Server. */
-export const einladungsLink = (code) => `${location.origin}${location.pathname}#einladung=${code}`;
+/** Der Einladungslink – über die kurze Adresse freizeit-hh.github.io (teilen.js), lokal über die eigene. */
+export const einladungsLink = (code) => `${teilenAdresse()}#einladung=${code}`;

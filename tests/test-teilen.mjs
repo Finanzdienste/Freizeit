@@ -8,7 +8,7 @@
  * prüft test-link.mjs).
  */
 import {
-  whatsappText, kalenderLink, wannText, icsText, appLink,
+  whatsappText, kalenderLink, wannText, icsText, appLink, teilenAdresse,
 } from '../js/teilen.js';
 import { oeffne, IPHONE, DI, SA } from './hilfe.mjs';
 
@@ -38,6 +38,13 @@ check(appLink({ schluessel: `p:${SA}:e:k3x9q`, quelle: 'plan' }, APP) === APP &&
 check(appLink({ schluessel: 'f:tt0068646' }, APP) === `${APP}#eintrag=f:tt0068646`, '… zu einem Film');
 check(appLink({ schluessel: 't:a&b c:2026-11-03' }, APP) === `${APP}#eintrag=t:a%26b+c:2026-11-03`, '… Sonderzeichen sicher verpackt');
 check(appLink({ schluessel: 'l:x' }, '') === '', 'ohne Adresse der App kein App-Link');
+// Geteilte Links laufen über die kurze Adresse – nur, wenn die App unter ihrer echten Adresse läuft.
+check(teilenAdresse('https://finanzdienste.github.io/Freizeit/') === 'https://freizeit-hh.github.io/',
+  'aus der App unter finanzdienste.github.io/Freizeit/ teilt man über freizeit-hh.github.io');
+check(appLink({ schluessel: `t:theater-frueh:${DI}` }, teilenAdresse('https://finanzdienste.github.io/Freizeit/')) === `https://freizeit-hh.github.io/#eintrag=t:theater-frueh:${DI}`,
+  '… der Link: https://freizeit-hh.github.io/#eintrag=t:…');
+check(teilenAdresse('http://127.0.0.1:8099/') === 'http://127.0.0.1:8099/' && teilenAdresse('https://finanzdienste.github.io/Andere/') === 'https://finanzdienste.github.io/Andere/',
+  'lokal oder unter einer anderen Adresse bleibt es die eigene');
 const mitApp = whatsappText(termin, { app: `${APP}#eintrag=t:theater-frueh:${DI}` });
 check(mitApp.endsWith(`🔗 ${APP}#eintrag=t:theater-frueh:${DI}`) && !mitApp.includes('example.org'), 'mit App-Link: der Link in die App, nicht zur Quelle');
 const kal = new URL(kalenderLink(termin));

@@ -8,7 +8,8 @@
  * Grundlage ist ein „Eintrag“, wie ihn karte.js aus Termin, Konzert oder
  * Ausflugsziel baut (siehe dort).
  *
- * Der Link in der WhatsApp-Nachricht führt in die App, nicht zur Quelle:
+ * Der Link in der WhatsApp-Nachricht führt in die App, nicht zur Quelle – über
+ * die kurze Adresse freizeit-hh.github.io, die sofort zur App weiterleitet:
  * #eintrag=t:<id>:<tag> öffnet den Termin an seinem Tag, #eintrag=l:<id>
  * (bei Eingeplantem &tag=<tag>) das Laufende, #eintrag=i:<id> die Idee unter
  * „Was immer geht“, #eintrag=f:<imdb> den Film in der Top 250 – jeweils
@@ -30,6 +31,17 @@ export function wannText(eintrag) {
 
 /** Die Adresse der App – ohne #… und ?…, auch aus der installierten App; ohne Browser leer. */
 export const appAdresse = () => (typeof location === 'undefined' ? '' : new URL('./', location.href).href);
+
+/** Wo die App liegt und unter welcher kurzen Adresse geteilte Links laufen (Repo freizeit-hh/freizeit-hh.github.io). */
+export const APP_ADRESSE = 'https://finanzdienste.github.io/Freizeit/';
+export const TEILEN_ADRESSE = 'https://freizeit-hh.github.io/';
+
+/**
+ * Die Adresse für geteilte Links: läuft die App unter ihrer echten Adresse, die kurze Weiterleitung
+ * freizeit-hh.github.io – sie reicht alles hinter dem # weiter (#eintrag=…, #einladung=…). Sonst (zum
+ * Testen, lokal) die Adresse, unter der die App gerade läuft. `basis` ist appAdresse() oder ein Testwert.
+ */
+export const teilenAdresse = (basis = appAdresse()) => (basis === APP_ADRESSE ? TEILEN_ADRESSE : basis);
 
 /**
  * Der Link in die App zu einem Eintrag. Bei Eingeplantem der Eintrag dahinter (bei Laufendem mit dem
@@ -64,7 +76,7 @@ export function whatsappText(eintrag, { app = '' } = {}) {
 }
 
 /** wa.me mit der fertigen Nachricht – der Link darin führt in die App. */
-export const whatsappLink = (eintrag) => `https://wa.me/?text=${encodeURIComponent(whatsappText(eintrag, { app: appLink(eintrag, appAdresse()) }))}`;
+export const whatsappLink = (eintrag) => `https://wa.me/?text=${encodeURIComponent(whatsappText(eintrag, { app: appLink(eintrag, teilenAdresse()) }))}`;
 
 const kompakt = (iso) => iso.replaceAll('-', '');
 const hhmm = (t) => `${String(Math.floor(t / 60) % 24).padStart(2, '0')}${String(t % 60).padStart(2, '0')}00`;

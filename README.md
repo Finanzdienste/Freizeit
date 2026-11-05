@@ -143,7 +143,12 @@ auf die Ideen, die der Termine nur auf die Termine. Bei
 Ideen mit Ort stehen die Orte mit Link, Preis und Zeiten dabei, auf der
 Karte als gestrichelte Marker.
 
-**Geteilte Links:** Der Link in der WhatsApp-Nachricht öffnet die App beim
+**Geteilte Links:** Geteilt wird über die kurze Adresse
+`https://freizeit-hh.github.io/` (eigenes Repo freizeit-hh/freizeit-hh.github.io):
+sie leitet sofort zur App weiter und reicht alles hinter dem # durch – das gilt
+für WhatsApp-Nachrichten wie für Einladungen (`#einladung=…`); lokal und in
+Tests bleibt es die eigene Adresse (teilen.js `teilenAdresse`). Der Link in der
+WhatsApp-Nachricht öffnet die App beim
 Eintrag – `#eintrag=t:<id>:<tag>` den Termin an seinem Tag, `#eintrag=l:<id>`
 Laufendes (eingeplant mit `&tag=<tag>`: am geplanten Tag), `#eintrag=i:<id>`
 die Idee unter „Was immer geht“, `#eintrag=f:<imdb>` den Film in der Top 250,

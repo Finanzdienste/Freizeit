@@ -121,6 +121,8 @@ await B.reiter('programm');
 const theaterB = await karteAm(B, DI, 'Theater früh');
 check(await theaterB.locator('[data-bock]').count() === 2 && (await theaterB.locator('[data-mitwem="gastgeber"]').innerText()) === 'Mit Tobi'
   && (await theaterB.locator('[data-mitwem="andere"]').innerText()) === 'Allein/mit anderen', 'Kim hat zwei Knöpfe: „Mit Tobi“ und „Allein/mit anderen“');
+check(await theaterB.locator('.abriss [data-bock]').count() === 0 && await theaterB.locator('.aktionen [data-bock]').count() === 2 && await theaterB.locator('.aktionen').isVisible(),
+  '… unten bei den Aktionen, nicht im Abriss – für zwei Knöpfe ist der zu schmal');
 check((await theaterB.locator('.wer').innerText()).includes('hat Bock'), '… und sieht an der Karte, dass Tobi Bock hat');
 await theaterB.locator('[data-mitwem="gastgeber"]').click();
 check(await (await karteAm(B, DI, 'Theater früh')).locator('[data-mitwem="gastgeber"]').getAttribute('aria-pressed') === 'true', '„Mit Tobi“ ist gedrückt');

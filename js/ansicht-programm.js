@@ -228,7 +228,38 @@ function tagesteil(e) {
   return 'abend';
 }
 
-const teilKopf = (titel, n) => `<h3 class="tagesteil"><span>${esc(titel)}</span><span class="tt-zahl">${n}</span></h3>`;
+// data-teil wählt das Zeichen davor (Sonnenaufgang, Sonne, Mond …, styles.css)
+const teilKopf = (titel, n, teil) => `<h3 class="tagesteil" data-teil="${teil}"><span>${esc(titel)}</span><span class="tt-zahl">${n}</span></h3>`;
+
+/** Ein Zeichen fürs Wetter, aus den Worten des Tages – bei Hamburger Wetter im Zweifel die Wolke. */
+const WETTER_ZEICHEN = {
+  gewitter: '<path d="M7.5 15.5H7a4 4 0 0 1-.4-8 5.5 5.5 0 0 1 10.6 1.3 3.4 3.4 0 0 1-.2 6.7"/><path d="M12.5 12l-2.5 4.5h3.5L11 21"/>',
+  schnee: '<path d="M7.5 15.5H7a4 4 0 0 1-.4-8 5.5 5.5 0 0 1 10.6 1.3 3.4 3.4 0 0 1 .3 6.7h-.5"/><path d="M9 18.5h.01M12 20.5h.01M15 18.5h.01M10.5 21.5h.01M13.5 17.5h.01"/>',
+  regen: '<path d="M7.5 15.5H7a4 4 0 0 1-.4-8 5.5 5.5 0 0 1 10.6 1.3 3.4 3.4 0 0 1 .3 6.7h-.5"/><path d="M9 18l-1 2.5M12.5 18l-1 2.5M16 18l-1 2.5"/>',
+  nebel: '<path d="M4 9h16M6 13h12M4 17h16"/>',
+  teils: '<circle cx="8.5" cy="8.5" r="3"/><path d="M8.5 2.8v1.1M3.8 4.9l.8.8M2.8 9.5h1.1M13.2 4.9l-.8.8"/><path d="M9.5 19.5h7.7a3.3 3.3 0 0 0 .3-6.6 4.6 4.6 0 0 0-8.8 1.1 2.8 2.8 0 0 0 .8 5.5z"/>',
+  sonne: '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.8v2.1M12 19.1v2.1M2.8 12h2.1M19.1 12h2.1M5.5 5.5L7 7M17 17l1.5 1.5M5.5 18.5L7 17M17 7l1.5-1.5"/>',
+  wolke: '<path d="M7.5 18.5h9.8a3.7 3.7 0 0 0 .4-7.4 5.7 5.7 0 0 0-10.9 1.5 3 3 0 0 0 .7 5.9z"/>',
+};
+function wetterArt(text) {
+  const t = String(text).toLowerCase();
+  if (/gewitter/.test(t)) return 'gewitter';
+  if (/schnee|graupel/.test(t)) return 'schnee';
+  if (/regen|regn|schauer|niesel/.test(t)) return 'regen';
+  if (/nebel|dunst/.test(t)) return 'nebel';
+  if (/teils|wechsel|aufgelockert|heiter/.test(t)) return 'teils';
+  if (/sonn|klar/.test(t) && !/wolk|bedeckt|grau/.test(t)) return 'sonne';
+  return 'wolke';
+}
+/** Das Wetter vorn im Tag: Zeichen, die Temperaturen groß, dann der Satz. */
+function wetterZeile(text) {
+  const t = text.replace(/^Hamburg\s*:?\s*/i, '');
+  const m = t.match(/^\s*([-−]?\d+°(?:\s*\/\s*[-−]?\d+°)?)[\s,;:–-]*/);
+  const zeichen = `<svg class="wetter-zeichen" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${WETTER_ZEICHEN[wetterArt(t)]}</svg>`;
+  return m
+    ? `${zeichen}<b class="temp">${esc(m[1].replace(/\s+/g, ''))}</b><span>${esc(t.slice(m[0].length))}</span>`
+    : `${zeichen}<span>${esc(t)}</span>`;
+}
 
 /** Die sieben Tage der Woche wie eine Abfahrtstafel – klebt oben, ein Tipp wählt den Tag. Vergangene Tage stehen blass da, ohne Zahl. */
 function tagesleiste(p, st, heute, datum, plaene) {
@@ -258,10 +289,11 @@ function tagAnsicht(p, st, heute, d, plaene, ctx = {}) {
   const { tag } = td;
   const wichtig = td.alle.filter(zaehlt);
   const fakten = [
-    tag.wetter ? `<dt>Wetter</dt><dd>${esc(tag.wetter.replace(/^Hamburg\s*:?\s*/i, ''))}</dd>` : '',
+    // „Wetter“ sagt das Zeichen – das Wort steht nur für Vorleser da.
+    tag.wetter ? `<dt class="sr">Wetter</dt><dd class="wetter">${wetterZeile(tag.wetter)}</dd>` : '',
     tag.wetterOstsee ? `<dt>Ostsee</dt><dd>${esc(tag.wetterOstsee.replace(/^Ostsee\/Kiel\s*:?\s*/i, ''))}</dd>` : '',
     tag.feiertag ? '<dt>Feiertag</dt><dd>gesetzlicher Feiertag</dd>' : '',
-    tag.tipp ? `<dt>Tipp</dt><dd>${esc(tag.tipp)}</dd>` : '',
+    tag.tipp ? `<dt class="tipp-titel">Tipp</dt><dd>${esc(tag.tipp)}</dd>` : '',
     f.feierabend && werktag(tag) ? '<dt>Filter</dt><dd>Mo–Fr ab 15:30: nur, was nach Feierabend noch geht.</dd>' : '',
     td.spaet ? `<dt>21:30</dt><dd>${spaetText(td.spaet, td.spaetOnline)}.</dd>` : '',
   ].join('');
@@ -275,12 +307,12 @@ function tagAnsicht(p, st, heute, d, plaene, ctx = {}) {
 
   const nachEntfernung = Boolean(f.bezug && f.nachEntfernung);
   const k = (e) => karte(e, { zeitSpalte: true });
-  const geplant = td.geplant.length ? `${teilKopf('Eingeplant', td.geplant.length)}${td.geplant.map(k).join('')}` : '';
+  const geplant = td.geplant.length ? `${teilKopf('Eingeplant', td.geplant.length, 'plan')}${td.geplant.map(k).join('')}` : '';
   const termine = nachEntfernung
     ? td.termine.map(k).join('')
     : TEILE.map(([key, titel]) => {
       const liste = td.termine.filter((e) => tagesteil(e) === key);
-      return liste.length ? `${teilKopf(titel, liste.length)}${liste.map(k).join('')}` : '';
+      return liste.length ? `${teilKopf(titel, liste.length, key)}${liste.map(k).join('')}` : '';
     }).join('');
   const leer = td.termine.length || (td.geplant.length && d > p.bis) ? '' : `<div class="leer-klein">${leerText(p, d, st, f)}</div>`;
 
@@ -358,6 +390,9 @@ function wocheAnsicht(p, st, heute, mo, plaene, ctx = {}) {
 
 function monatAnsicht(p, st, heute, monat, datum, plaene) {
   const f = filterFuer(st);
+  // Wie voll ein Tag ist, im Verhältnis zum vollsten des Monats – das Feld färbt sich danach (--dichte).
+  const kommend = monatsRaster(monat).filter((d) => d >= heute && monatVon(d) === monat && d <= p.bis);
+  const meiste = Math.max(1, ...kommend.map((d) => tagDaten(p, d, f, plaene).termine.length));
   const felder = monatsRaster(monat).map((d) => {
     if (d < heute) {
       return `<button type="button" class="feld vorbei${monatVon(d) === monat ? '' : ' fremd'}" data-waehle="${d}" aria-label="${esc(datumMitTag(d))}: vorbei" disabled><span class="nr">${Number(d.slice(8))}</span></button>`;
@@ -368,7 +403,8 @@ function monatAnsicht(p, st, heute, monat, datum, plaene) {
     const kuenstler = td.termine.some((e) => e.kuenstler);
     const klassen = ['feld', monatVon(d) === monat ? '' : 'fremd', d === heute ? 'heute' : '', d > p.bis ? 'ohne' : '',
       treffer ? 'treffer' : '', td.tag.feiertag ? 'feiertag' : '', d === datum ? 'gewaehlt' : ''].filter(Boolean).join(' ');
-    return `<button type="button" class="${klassen}" data-waehle="${d}" aria-pressed="${d === datum}" aria-label="${esc(datumMitTag(d))}: ${anzahl(n, 'Termin', 'Termine')}${kuenstler ? ', Konzert deiner Künstler' : ''}${wer.length ? ', mit Bock' : ''}${td.tag.feiertag ? ', Feiertag' : ''}">
+    const dichte = n && d <= p.bis ? ` style="--dichte:${Math.min(1, n / meiste).toFixed(2)}"` : '';
+    return `<button type="button" class="${klassen}" data-waehle="${d}" aria-pressed="${d === datum}"${dichte} aria-label="${esc(datumMitTag(d))}: ${anzahl(n, 'Termin', 'Termine')}${kuenstler ? ', Konzert deiner Künstler' : ''}${wer.length ? ', mit Bock' : ''}${td.tag.feiertag ? ', Feiertag' : ''}">
       <span class="nr">${Number(d.slice(8))}</span>${n ? `<span class="zahl">${n}</span>` : ''}
       <span class="f-unten">${kuenstler ? '<span class="f-kuenstler">♫</span>' : ''}${wer.length ? `<span class="punkte">${wer.map((w) => `<i class="pkt ${w}"></i>`).join('')}</span>` : ''}</span>
     </button>`;
@@ -378,7 +414,7 @@ function monatAnsicht(p, st, heute, monat, datum, plaene) {
     .flatMap((e) => e.daten.filter((d) => monatVon(d) === monat && d >= heute && !schonVorbei(e, d)).map((d) => ({ e, d })))
     .sort((a, b) => a.d.localeCompare(b.d) || String(a.e.zeit).localeCompare(String(b.e.zeit)));
   const konzertListe = konzerte.length ? `<section class="abschnitt-klein" id="monat-konzerte">
-      <h3 class="tagesteil"><span>Deine Konzerte</span><span class="tt-zahl">${konzerte.length}</span></h3>
+      <h3 class="tagesteil" data-teil="konzerte"><span>Deine Konzerte</span><span class="tt-zahl">${konzerte.length}</span></h3>
       ${konzerte.map(({ e, d }) => `<button type="button" class="konzert-zeile" data-tag="${d}">
         <span class="kz-datum">${wochentagKurz(d)} ${tagMonat(d)}</span><span class="kz-titel">♫ ${esc(e.titel)}</span><span class="kz-ort">${esc([e.ort, zeitAm(e, d)].filter(Boolean).join(' · '))}</span>
       </button>`).join('')}

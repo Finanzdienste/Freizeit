@@ -1,104 +1,203 @@
 /*
- * Freizeit – Gestaltung.
+ * Freizeit – Gestaltung „Hafenlicht“.
  *
- * Fahrplan-Spalte: Tagesblöcke wie Abfahrtstafeln, Uhrzeit links in
- * Festbreitenschrift, Inhalt rechts. Teal für Aktionen, Bernstein für alles,
- * was sich mit einem Besuch in Hohwacht verbinden lässt. Helles und dunkles
- * Farbschema über dieselben Variablen.
+ * Jeder Termin ist ein Ticket: links der Abriss mit der Uhrzeit, an der
+ * Perforation gestanzt, rechts der Inhalt. „Bock“ sitzt im Abriss – wer Bock
+ * hat, dem leuchtet der Abriss im Bernstein der Hafenlaternen. Das ist das
+ * eine laute Element; alles andere bleibt ruhig wie ein Fahrplan.
  *
- * Aufbau jeder Seite: oben eine Werkzeugzeile (Ansicht, blättern, Filter mit
- * Chips), darunter der Inhalt. Filter öffnen ein Blatt von unten; alles
- * Einmalige steht im Reiter Einstellungen. Das eine auffällige Element sind
- * die Tage wie auf einer Abfahrtstafel: die Tagesleiste über dem Tag, die
- * Tageskarten der Woche mit ihrer großen Ziffer, das Monatsblatt.
+ * Farbe ist Information: Teal (die Marke) für Wege und Aktionen, Bernstein
+ * für alles, was deins ist (Bock, Eingeplantes, deine Punkte), Koralle und
+ * die anderen Personenfarben für die anderen. Die Motive der Kategorien tragen
+ * Farben vom Hafen – Elbblau, Backstein, Hapag-Orange, Deichgrün, Patina –,
+ * aber nur dort, klein.
+ *
+ * Schrift: Archivo (SIL OFL, schrift/) – eine variable Grotesk mit
+ * Breitenachse. Schmal und fett für Uhrzeiten, Daten und Überschriften wie auf
+ * einem Plakat, normal breit für den Text; Ziffern tabellarisch.
+ *
+ * Hell („Elbe am Morgen“) und dunkel („Elbe bei Nacht“) über dieselben
+ * Variablen, nach dem System – oder fest gewählt in den Einstellungen
+ * (html[data-schema="hell"|"dunkel"], js/darstellung.js).
  */
+@font-face {
+  font-family: "Archivo";
+  src: url("../schrift/archivo-latin.woff2") format("woff2");
+  font-weight: 100 900; font-stretch: 62% 125%; font-style: normal; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("../schrift/archivo-latin-ext.woff2") format("woff2");
+  font-weight: 100 900; font-stretch: 62% 125%; font-style: normal; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 :root {
-  --bg: #f2f4f5;
+  /* Elbe am Morgen */
+  --bg: #e7ecf0;
   --flaeche: #ffffff;
-  --tinte: #13212b;
-  --leise: #5b6b76;
-  --linie: #d8dfe3;
-  --akzent: #0e6f69;
-  --akzent-weich: #dcefec;
-  --bernstein: #9a6200;
-  --bernstein-weich: #fbefd6;
-  --warn: #a3361f;
-  --warn-weich: #f8e3dd;
-  /* Personen im gemeinsamen Plan: du in Teal, die anderen der Reihe nach */
-  --ich: var(--akzent);
+  --flaeche-2: #f0f3f6;
+  --daumen: #ffffff;
+  --tinte: #0f1d2a;
+  --leise: #546575;
+  --linie: #d3dbe2;
+  --akzent: #0a6b63;
+  --auf-akzent: #ffffff;
+  --akzent-weich: #d6ebe7;
+  /* Hafenlicht: alles, was deins ist */
+  --licht: #ffb230;
+  --licht-tinte: #2a1900;
+  --licht-text: #8f5300;
+  --licht-weich: #fdefd2;
+  --bernstein: var(--licht-text);
+  --bernstein-weich: var(--licht-weich);
+  --see: #1f68a3;
+  --see-weich: #dde9f4;
+  --warn: #ad361e;
+  --warn-weich: #f8e1da;
+  /* Personen im gemeinsamen Plan: du im Hafenlicht, die anderen der Reihe nach */
+  --ich: var(--licht);
+  --auf-ich: var(--licht-tinte);
   --p0: #c4472d;
   --p1: #7451c2;
-  --p2: #a86d00;
+  --p2: #2d8550;
   --p3: #2a72b8;
+  --auf-person: #ffffff;
   --treffer-weich: #fbe4dc;
+  /* Motive der Kategorien */
+  --k-elbe: #1d69a6;
+  --k-backstein: #ad432b;
+  --k-hapag: #b15b12;
+  --k-deich: #2a7b4a;
+  --k-patina: #1d7867;
+  --k-kino: #6447b6;
+  --k-schiefer: #51657a;
   /* hinter dem Filter-Blatt */
-  --schleier: rgba(19, 33, 43, .42);
-  --schrift: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --schleier: rgba(15, 29, 42, .42);
+  --karte-filter: none;
+  --schatten-blatt: 0 -12px 40px rgba(15, 29, 42, .2);
+  --schrift: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --zahl: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --leiste: 64px;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0f171c;
-    --flaeche: #16222a;
-    --tinte: #e6ecef;
-    --leise: #9aabb5;
-    --linie: #2a3943;
-    --akzent: #4fc2b8;
-    --akzent-weich: #163a38;
-    --bernstein: #e9b04e;
-    --bernstein-weich: #3a2d14;
-    --warn: #f08a72;
+  :root:not([data-schema="hell"]) {
+    /* Elbe bei Nacht */
+    --bg: #0a1520;
+    --flaeche: #12202d;
+    --flaeche-2: #192a3a;
+    --daumen: #283d51;
+    --tinte: #e6edf3;
+    --leise: #93a3b3;
+    --linie: #233547;
+    --akzent: #4fcabe;
+    --auf-akzent: #06211f;
+    --akzent-weich: #113837;
+    --licht: #ffb547;
+    --licht-tinte: #231500;
+    --licht-text: #ffc062;
+    --licht-weich: #3a2a10;
+    --see: #7ab8ee;
+    --see-weich: #15283b;
+    --warn: #ff8f78;
     --warn-weich: #3d1f18;
-    --p0: #f08a72;
-    --p1: #b39cf0;
-    --p2: #e9b04e;
-    --p3: #79b4ef;
+    --p0: #ff8f78;
+    --p1: #b9a2f7;
+    --p2: #7fd197;
+    --p3: #7ab8ee;
+    --auf-person: #0d1720;
     --treffer-weich: #3b2420;
-    --schleier: rgba(0, 0, 0, .58);
+    --k-elbe: #72b6ee;
+    --k-backstein: #f0896d;
+    --k-hapag: #f2a25b;
+    --k-deich: #7bcf90;
+    --k-patina: #74cdb9;
+    --k-kino: #b8a1f6;
+    --k-schiefer: #a8b6c5;
+    --schleier: rgba(0, 0, 0, .6);
+    --karte-filter: invert(1) hue-rotate(180deg) brightness(.9) contrast(.88);
+    --schatten-blatt: 0 -12px 40px rgba(0, 0, 0, .5);
     color-scheme: dark;
   }
+}
+:root[data-schema="dunkel"] {
+  --bg: #0a1520;
+  --flaeche: #12202d;
+  --flaeche-2: #192a3a;
+  --daumen: #283d51;
+  --tinte: #e6edf3;
+  --leise: #93a3b3;
+  --linie: #233547;
+  --akzent: #4fcabe;
+  --auf-akzent: #06211f;
+  --akzent-weich: #113837;
+  --licht: #ffb547;
+  --licht-tinte: #231500;
+  --licht-text: #ffc062;
+  --licht-weich: #3a2a10;
+  --see: #7ab8ee;
+  --see-weich: #15283b;
+  --warn: #ff8f78;
+  --warn-weich: #3d1f18;
+  --p0: #ff8f78;
+  --p1: #b9a2f7;
+  --p2: #7fd197;
+  --p3: #7ab8ee;
+  --auf-person: #0d1720;
+  --treffer-weich: #3b2420;
+  --k-elbe: #72b6ee;
+  --k-backstein: #f0896d;
+  --k-hapag: #f2a25b;
+  --k-deich: #7bcf90;
+  --k-patina: #74cdb9;
+  --k-kino: #b8a1f6;
+  --k-schiefer: #a8b6c5;
+  --schleier: rgba(0, 0, 0, .6);
+  --karte-filter: invert(1) hue-rotate(180deg) brightness(.9) contrast(.88);
+  --schatten-blatt: 0 -12px 40px rgba(0, 0, 0, .5);
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
 /* Platz für die klebende Tagesleiste, wenn ein Sprung (Anker, scrollIntoView) unter ihr landet */
-html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 92px); }
+html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 92px); background: var(--bg); }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 body {
   margin: 0;
   background: var(--bg);
   color: var(--tinte);
-  font: 15px/1.5 var(--schrift);
+  font: 400 15px/1.5 var(--schrift);
+  font-kerning: normal;
   padding-bottom: calc(var(--leiste) + env(safe-area-inset-bottom, 0px) + 16px);
   -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
-a { color: var(--akzent); }
-button, select, input { font: inherit; color: inherit; }
+a { color: var(--akzent); text-underline-offset: 3px; }
+button, select, input, textarea { font: inherit; color: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 2px solid var(--akzent); outline-offset: 2px; }
 h1, h2, h3 { margin: 0; line-height: 1.15; text-wrap: balance; }
-/* Nur für Vorleser – etwa die Beschriftung der Zeitraum-Auswahl auf der Karte */
+::selection { background: var(--licht); color: var(--licht-tinte); }
+/* Nur für Vorleser – etwa die Marke oben oder die Beschriftung der Zeitraum-Auswahl auf der Karte */
 .sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
-/* Kopf: nur die Marke */
-.kopf { padding-top: env(safe-area-inset-top, 0px); background: var(--bg); }
-.kopf-in {
-  max-width: 760px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  padding: 10px max(10px, env(safe-area-inset-right, 0px)) 2px max(16px, env(safe-area-inset-left, 0px));
-}
-.marke-app { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; letter-spacing: -0.01em; }
-.marke-app img { width: 30px; height: 30px; border-radius: 7px; }
+/* Kopf: die Marke nur für Vorleser – jede Seite hat ihre eigene große Überschrift */
+.kopf { padding-top: env(safe-area-inset-top, 0px); }
+.kopf-in { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .ansicht {
   max-width: 760px; margin: 0 auto; outline: none;
   padding: 0 max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px));
 }
-.banner { margin-top: 10px; padding: 10px 12px; border-radius: 8px; background: var(--bernstein-weich); color: var(--tinte); font-size: 14px; }
+.banner { margin-top: 12px; padding: 11px 14px; border-radius: 12px; background: var(--licht-weich); color: var(--tinte); font-size: 14px; }
 
-.abschnitt { margin-top: 28px; }
-.abschnitt-titel { font-size: 20px; font-weight: 800; padding-bottom: 6px; border-bottom: 2px solid var(--tinte); margin-bottom: 10px; }
+.abschnitt { margin-top: 30px; }
+.abschnitt-titel { font-size: 22px; font-weight: 800; font-stretch: 85%; letter-spacing: -0.01em; padding-bottom: 6px; margin-bottom: 10px; }
 /* Wie viele Einträge ein Abschnitt hat – klein, in der Schrift der Zeiten */
-.abschnitt-zahl { margin-left: 8px; font-family: var(--mono); font-size: 14px; font-weight: 700; color: var(--akzent); vertical-align: 2px; }
+.abschnitt-zahl { margin-left: 8px; font: 700 14px var(--zahl); font-stretch: 85%; color: var(--akzent); vertical-align: 2px; }
 .monat { font-size: 17px; font-weight: 700; margin: 4px 0 2px; color: var(--leise); }
 .fein { font-size: 13px; color: var(--leise); margin: 4px 0 8px; }
 
@@ -110,23 +209,23 @@ h1, h2, h3 { margin: 0; line-height: 1.15; text-wrap: balance; }
 
 /* Aufklappbares: Abschnitte, „Diese Woche“ */
 .aufklappbar { max-width: 100%; }
-.aufklappbar > summary { list-style: none; display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border: 1px solid var(--linie); border-radius: 999px; background: var(--flaeche); cursor: pointer; font-size: 13.5px; user-select: none; }
+.aufklappbar > summary { list-style: none; display: inline-flex; align-items: center; gap: 7px; padding: 6px 13px; border: 0; border-radius: 999px; background: var(--flaeche); box-shadow: inset 0 0 0 1px var(--linie); cursor: pointer; font-size: 13.5px; user-select: none; }
 .aufklappbar > summary::-webkit-details-marker { display: none; }
-.aufklappbar > summary::after { content: ""; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); opacity: .7; }
+.aufklappbar > summary::after { content: ""; flex: none; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); opacity: .55; transition: transform .2s; }
 .aufklappbar[open] > summary::after { transform: translateY(2px) rotate(-135deg); }
-.aufklappbar[open] > summary { background: var(--akzent-weich); border-color: transparent; }
+.aufklappbar[open] > summary { background: var(--akzent-weich); box-shadow: none; }
 .aufklappbar-inhalt { margin-top: 10px; display: grid; gap: 8px; }
-.zahl-marke { min-width: 18px; padding: 0 5px; border-radius: 9px; background: var(--akzent); color: var(--bg); font-size: 11px; line-height: 18px; font-weight: 700; text-align: center; }
+.zahl-marke { min-width: 18px; padding: 0 5px; border-radius: 9px; background: var(--akzent); color: var(--auf-akzent); font-size: 11px; line-height: 18px; font-weight: 700; text-align: center; }
 
 /* Kästen über die ganze Breite (Diese Woche, Läuft heute, Hinweise): zugeklappt eine Zeile mit Vorschau */
-.aufklappbar.kasten { margin-top: 14px; border: 1px solid var(--linie); border-radius: 12px; background: var(--flaeche); }
-.aufklappbar.kasten > summary { display: flex; width: 100%; padding: 11px 14px; border: 0; border-radius: 12px; background: none; font-size: 14px; gap: 10px; }
+.aufklappbar.kasten { margin-top: 12px; border-radius: 14px; background: var(--flaeche); }
+.aufklappbar.kasten > summary { display: flex; width: 100%; padding: 13px 14px; border-radius: 14px; background: none; box-shadow: none; font-size: 14px; gap: 10px; }
 .aufklappbar.kasten > summary > span:first-child { display: flex; gap: 8px; flex: 1; min-width: 0; align-items: baseline; }
-.aufklappbar.kasten[open] > summary { background: none; border-bottom: 1px solid var(--linie); border-radius: 12px 12px 0 0; }
-.ka-titel { font-weight: 700; flex: none; }
-.ka-zahl { flex: none; font: 700 12.5px var(--mono); color: var(--akzent); }
+.aufklappbar.kasten[open] > summary { background: none; border-bottom: 1px solid var(--linie); border-radius: 14px 14px 0 0; }
+.ka-titel { font-weight: 800; font-stretch: 88%; flex: none; }
+.ka-zahl { flex: none; font: 700 12.5px var(--zahl); font-stretch: 85%; color: var(--akzent); }
 .ka-vorschau { flex: 1; min-width: 0; color: var(--leise); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.kasten > .aufklappbar-inhalt { margin: 0; padding: 6px 14px 12px; gap: 6px; }
+.kasten > .aufklappbar-inhalt { margin: 0; padding: 4px 14px 12px; gap: 6px; }
 .kasten .karte:last-child { border-bottom: 0; }
 .ka-unter { font-size: 13px; font-weight: 700; color: var(--leise); margin-top: 6px; }
 #diese-woche, #abschnitt-laufend, #abschnitt-hinweise { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 12px); }
@@ -134,208 +233,337 @@ h1, h2, h3 { margin: 0; line-height: 1.15; text-wrap: balance; }
 .tag .karte, #abschnitt-laufend .karte { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 96px); }
 
 /* Werkzeugzeile: Ansicht, blättern, Filter */
-.ansicht-wahl, .segmente { display: flex; gap: 2px; padding: 3px; border: 1px solid var(--linie); border-radius: 12px; background: var(--flaeche); }
-.ansicht-wahl { margin-top: 4px; }
-.ansicht-zeile { display: flex; align-items: stretch; gap: 8px; }
-.ansicht-zeile .ansicht-wahl { flex: 1; min-width: 0; }
-.heute-knopf { flex: none; margin-top: 4px; padding: 0 14px; border: 1px solid var(--linie); border-radius: 12px; background: var(--flaeche); color: var(--tinte); font-size: 14.5px; font-weight: 600; cursor: pointer; }
-.heute-knopf:hover:not(:disabled) { background: var(--akzent-weich); }
-.heute-knopf:disabled { color: var(--leise); opacity: .6; cursor: default; }
-.segment { flex: 1 1 0; min-width: 0; padding: 7px 4px; border: 0; border-radius: 9px; background: none; color: var(--tinte); font-size: 14.5px; cursor: pointer; white-space: nowrap; }
-.segment:hover { background: var(--akzent-weich); }
-.segment[aria-pressed="true"] { background: var(--tinte); color: var(--bg); font-weight: 600; }
+.prog-kopf { padding-top: 12px; }
+.ansicht-wahl, .segmente { display: flex; gap: 2px; padding: 3px; border-radius: 12px; background: var(--flaeche-2); box-shadow: inset 0 0 0 1px var(--linie); }
+.ansicht-zeile { display: flex; align-items: center; gap: 8px; }
+.ansicht-zeile .ansicht-wahl { flex: 0 1 auto; min-width: 0; }
+.segment { flex: 1 1 0; min-width: 0; padding: 7px 4px; border: 0; border-radius: 9px; background: none; color: var(--leise); font-size: 14.5px; font-weight: 600; cursor: pointer; white-space: nowrap; transition: background-color .15s, color .15s; }
+.ansicht-wahl .segment { flex: none; padding: 7px 15px; }
+.segment:hover { color: var(--tinte); }
+.segment[aria-pressed="true"] { background: var(--daumen); color: var(--tinte); font-weight: 700; box-shadow: 0 1px 2px rgba(15, 29, 42, .14), 0 0 0 1px var(--linie); }
+.heute-knopf { flex: none; margin-left: auto; padding: 8px 15px; border: 0; border-radius: 12px; background: var(--akzent-weich); color: var(--akzent); font-size: 14.5px; font-weight: 700; cursor: pointer; }
+.heute-knopf:hover:not(:disabled) { background: var(--akzent); color: var(--auf-akzent); }
+.heute-knopf:disabled { background: var(--flaeche-2); color: var(--leise); opacity: .55; cursor: default; }
 
-.blaettern { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
-.kal-titel { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2px 8px; text-align: center; font-size: 17px; font-weight: 800; }
-.kt-heute { font-size: 11.5px; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--akzent); color: var(--bg); }
-.pfeil { flex: none; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--linie); background: var(--flaeche); font-size: 22px; line-height: 1; cursor: pointer; display: grid; place-items: center; padding: 0 0 3px; }
-.pfeil:disabled { opacity: .35; cursor: default; }
+/* Blättern: ‹ und › stehen fest an den Rändern – wer schnell tippt, trifft sie immer an derselben Stelle */
+.blaettern { display: flex; align-items: flex-start; gap: 6px; margin-top: 14px; }
+.kal-titel {
+  flex: 1; min-width: 0; min-height: 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2px 9px; text-align: center;
+  font: 800 clamp(22px, 6.6vw, 28px)/1.08 var(--schrift); font-stretch: 76%; letter-spacing: -0.012em;
+}
+.kt-heute { font: 700 12px/1 var(--schrift); font-stretch: 100%; letter-spacing: .01em; padding: 5px 9px 4px; border-radius: 999px; background: var(--akzent); color: var(--auf-akzent); }
+.pfeil {
+  flex: none; width: 40px; height: 40px; border-radius: 12px; border: 0; background: var(--flaeche); box-shadow: inset 0 0 0 1px var(--linie); color: var(--tinte);
+  font-size: 24px; line-height: 1; cursor: pointer; display: grid; place-items: center; padding: 0 0 3px;
+}
+.pfeil:active:not(:disabled) { background: var(--akzent-weich); }
+.pfeil:disabled { opacity: .3; cursor: default; }
 
 /* oben der Knopf (auf der Karte mit dem Zeitraum davor, rechts Zahl oder Knopf), darunter die Chips */
-.filterleiste { display: grid; gap: 8px; margin-top: 10px; }
+.filterleiste { display: grid; gap: 8px; margin-top: 12px; }
 .filterleiste-oben { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .filterchips { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
-.knopf.filterknopf { display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px 6px 10px; font-size: 14px; font-weight: 600; }
-.filterknopf .symbol { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
-.knopf.filterknopf.an { border-color: var(--akzent); color: var(--akzent); }
-.filterchip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 5px 4px 11px; border: 0; border-radius: 999px; background: var(--akzent-weich); color: var(--tinte); font-size: 13.5px; cursor: pointer; }
+.knopf.filterknopf { display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px 7px 11px; font-size: 14px; font-weight: 700; }
+.filterknopf .symbol { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; }
+.knopf.filterknopf.an { background: var(--akzent-weich); box-shadow: inset 0 0 0 1.5px var(--akzent); color: var(--akzent); }
+.filterchip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 5px 4px 12px; border: 0; border-radius: 999px; background: var(--akzent-weich); color: var(--tinte); font-size: 13.5px; font-weight: 600; cursor: pointer; }
 .chip-x { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--flaeche); color: var(--leise); font-size: 10px; }
 .filterchip:hover .chip-x { color: var(--tinte); }
 .alle-zeigen { font-size: 13.5px; margin-left: 2px; }
 .leiste-rechts { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; }
-.zaehler { font-size: 12.5px; color: var(--leise); margin: 0; }
+.zaehler { font-size: 13px; color: var(--leise); margin: 0; font-variant-numeric: tabular-nums; }
+.zaehler .textknopf { font-weight: 700; text-decoration: none; }
 .filterzeile { display: flex; flex-wrap: wrap; gap: 8px; }
-select { padding: 7px 8px; border: 1px solid var(--linie); border-radius: 8px; background: var(--flaeche); max-width: 100%; min-width: 0; flex: 1 1 140px; }
-.schalter { padding: 6px 12px; border: 1px solid var(--linie); border-radius: 999px; background: var(--flaeche); cursor: pointer; font-size: 14px; }
-.schalter[aria-pressed="true"] { background: var(--tinte); color: var(--bg); border-color: var(--tinte); }
-.schalter.hb[aria-pressed="true"] { background: var(--bernstein); border-color: var(--bernstein); color: var(--bg); }
+select { padding: 8px 10px; border: 0; border-radius: 10px; background: var(--flaeche); box-shadow: inset 0 0 0 1px var(--linie); max-width: 100%; min-width: 0; flex: 1 1 140px; }
+.schalter { padding: 7px 13px; border: 0; border-radius: 999px; background: var(--flaeche); box-shadow: inset 0 0 0 1px var(--linie); cursor: pointer; font-size: 14px; }
+.schalter[aria-pressed="true"] { background: var(--tinte); color: var(--bg); box-shadow: none; font-weight: 600; }
+.schalter.hb[aria-pressed="true"] { background: var(--see); color: var(--bg); }
 
 /* Tagesleiste (Ansicht Tag): die sieben Tage der Woche wie eine Abfahrtstafel – klebt oben, ein Tipp wählt den Tag */
 .tagleiste {
   position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
-  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px;
-  background: var(--bg); border-bottom: 1px solid var(--linie);
-  margin: 10px calc(-1 * max(16px, env(safe-area-inset-right, 0px))) 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px;
+  background: color-mix(in srgb, var(--bg) 96%, transparent); -webkit-backdrop-filter: saturate(1.4) blur(16px); backdrop-filter: saturate(1.4) blur(16px);
+  border-bottom: 1px solid var(--linie);
+  margin: 12px calc(-1 * max(16px, env(safe-area-inset-right, 0px))) 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
   padding: 6px max(10px, env(safe-area-inset-right, 0px)) 6px max(10px, env(safe-area-inset-left, 0px));
 }
-.tagzelle { display: grid; justify-items: center; gap: 1px; padding: 4px 0 3px; border: 0; border-radius: 8px; background: none; color: var(--tinte); cursor: pointer; }
-.tagzelle:hover:not(:disabled) { background: var(--flaeche); }
+.tagzelle { display: grid; justify-items: center; gap: 1px; padding: 5px 0 4px; border: 0; border-radius: 12px; background: none; color: var(--tinte); cursor: pointer; transition: background-color .15s; }
+.tagzelle:hover:not(:disabled):not(.gewaehlt) { background: var(--flaeche); }
 .tagzelle:disabled { opacity: .3; cursor: default; }
-.tz-wt { font-size: 11.5px; color: var(--leise); line-height: 1.2; }
-.tz-nr { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; font-family: var(--mono); font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; }
-.tagzelle.ist-heute .tz-nr { color: var(--akzent); box-shadow: inset 0 0 0 2px var(--akzent); }
-.tagzelle.gewaehlt .tz-nr { background: var(--tinte); color: var(--bg); box-shadow: none; }
-.tagzelle.gewaehlt.ist-heute .tz-nr { background: var(--akzent); }
-.tagzelle.gewaehlt .tz-wt { color: var(--tinte); font-weight: 700; }
+.tz-wt { font-size: 11.5px; font-weight: 600; color: var(--leise); line-height: 1.2; }
+.tz-nr { display: grid; place-items: center; min-width: 30px; height: 26px; font: 800 20px/1 var(--zahl); font-stretch: 78%; font-variant-numeric: tabular-nums; }
+.tagzelle.ist-heute .tz-nr, .tagzelle.ist-heute .tz-wt { color: var(--akzent); }
+.tagzelle.gewaehlt { background: var(--tinte); }
+.tagzelle.gewaehlt .tz-nr, .tagzelle.gewaehlt .tz-wt, .tagzelle.gewaehlt .tz-zahl { color: var(--bg); }
+.tagzelle.gewaehlt.ist-heute { background: var(--akzent); }
+.tagzelle.gewaehlt.ist-heute .tz-nr, .tagzelle.gewaehlt.ist-heute .tz-wt, .tagzelle.gewaehlt.ist-heute .tz-zahl { color: var(--auf-akzent); }
 .tz-unter { display: flex; align-items: center; gap: 2px; min-height: 13px; }
-.tz-zahl { font-size: 11px; line-height: 1; color: var(--leise); font-variant-numeric: tabular-nums; margin-right: 1px; }
-.tz-unter .pkt { width: 6px; height: 6px; }
-.tagzelle.vorbei:not(.gewaehlt) { opacity: .5; }
+.tz-zahl { font-size: 11px; font-weight: 600; line-height: 1; color: var(--leise); font-variant-numeric: tabular-nums; margin-right: 1px; }
+.tz-unter .pkt { width: 6px; height: 6px; box-shadow: 0 0 0 1px var(--bg); }
+.tagzelle.vorbei:not(.gewaehlt) { opacity: .45; }
 
-/* Der Tag: Fakten (Wetter, Feiertag, Tipp, 21:30), Deine Zeit, dann die Karten nach Tageszeit */
+/* Der Tag: Fakten (Wetter, Feiertag, Tipp, 21:30), Deine Zeit, dann die Tickets nach Tageszeit */
 .tag { margin-top: 12px; }
-.tag-info { display: grid; grid-template-columns: 4.4rem minmax(0, 1fr); gap: 5px 10px; margin: 0; padding: 10px 12px; border: 1px solid var(--linie); border-radius: 12px; background: var(--flaeche); font-size: 13.5px; }
-.tag-info dt { color: var(--leise); font-size: 12.5px; font-weight: 600; padding-top: 1px; }
+.tag-info {
+  display: grid; grid-template-columns: 4.2rem minmax(0, 1fr); gap: 8px 12px; margin: 0; padding: 13px 14px;
+  border-radius: 14px; background: var(--flaeche); font-size: 14px; line-height: 1.45;
+}
+.tag-info dt { color: var(--leise); font-size: 12.5px; font-weight: 700; padding-top: 1px; }
 .tag-info dd { margin: 0; min-width: 0; }
-.deine-zeit { margin-top: 12px; }
+/* Das Wetter vorn: ein Zeichen und die Temperaturen groß */
+.tag-info dd.wetter { grid-column: 1 / -1; display: grid; grid-template-columns: 4.2rem minmax(0, 1fr); gap: 0 12px; align-items: center; padding-bottom: 10px; margin-bottom: 2px; border-bottom: 1px solid var(--linie); }
+.tag-info dd.wetter:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; }
+.wetter-zeichen { grid-row: span 2; justify-self: start; width: 40px; height: 40px; color: var(--akzent); fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.wetter .temp { display: block; font: 800 26px/1 var(--zahl); font-stretch: 76%; letter-spacing: -0.01em; }
+.tag-info dt.tipp-titel { color: var(--licht-text); }
+.deine-zeit { margin-top: 12px; padding: 0 2px; }
 .dz-kopf { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; font-size: 13.5px; }
-.dz-titel { font-weight: 700; }
+.dz-titel { font-weight: 800; font-stretch: 88%; }
 .dz-satz { color: var(--leise); }
-.tagesteil { display: flex; align-items: baseline; gap: 8px; margin: 22px 0 0; padding-bottom: 6px; border-bottom: 1px solid var(--linie); font-size: 13.5px; font-weight: 700; color: var(--leise); }
-.tt-zahl { font: 700 12px var(--mono); color: var(--akzent); }
-.tag .tagesteil:first-of-type { margin-top: 18px; }
 
-/* Karte: zugeklappt eine Zeile zum Entscheiden, aufgeklappt alles */
-.karte { display: grid; grid-template-columns: 5.4rem 1fr; gap: 10px; padding: 11px 0; border-bottom: 1px solid var(--linie); }
-.kopfzeile { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; border-radius: 6px; }
-.kopfzeile h3 { flex: 1; }
-.kopfzeile .chevron { flex: 0 0 auto; width: 22px; height: 22px; display: grid; place-items: center; margin-top: 1px; }
-.kopfzeile .chevron::before { content: ""; width: 8px; height: 8px; border-right: 2px solid var(--leise); border-bottom: 2px solid var(--leise); transform: translateY(-2px) rotate(45deg); transition: transform .15s; }
+/* Tageszeiten: ein Zeichen, der Name, die Zahl, dann eine Linie bis zum Rand */
+.tagesteil {
+  --zeichen: var(--z-uhr);
+  display: flex; align-items: center; gap: 8px; margin: 26px 0 2px; padding: 0 2px;
+  font-size: 15px; font-weight: 800; font-stretch: 85%; letter-spacing: .005em; color: var(--tinte);
+}
+.tagesteil[data-teil]::before { content: ""; flex: none; width: 18px; height: 18px; background: var(--akzent); -webkit-mask: var(--zeichen) center / contain no-repeat; mask: var(--zeichen) center / contain no-repeat; }
+.tagesteil::after { content: ""; flex: 1; height: 1px; background: var(--linie); }
+.tagesteil[data-teil="vormittag"] { --zeichen: var(--z-aufgang); }
+.tagesteil[data-teil="nachmittag"] { --zeichen: var(--z-sonne); }
+.tagesteil[data-teil="abend"] { --zeichen: var(--z-mond); }
+.tagesteil[data-teil="plan"] { --zeichen: var(--z-merken); }
+.tagesteil[data-teil="plan"]::before { background: var(--licht-text); }
+.tagesteil[data-teil="konzerte"] { --zeichen: var(--z-note); }
+.tt-zahl { order: 2; font: 700 12px/1 var(--zahl); padding: 4px 8px; border-radius: 999px; background: var(--flaeche); color: var(--leise); font-variant-numeric: tabular-nums; }
+.tagesteil::after { order: 3; }
+.tag .tagesteil:first-of-type { margin-top: 20px; }
+:root {
+  --z-uhr: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='8.5'/%3E%3Cpath d='M12 7.5V12l3 2'/%3E%3C/svg%3E");
+  --z-aufgang: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M3 18h18M6.5 18a5.5 5.5 0 0 1 11 0M12 5.5v3M4.6 10.6l1.9 1.6M19.4 10.6l-1.9 1.6M8.5 21.5h7'/%3E%3C/svg%3E");
+  --z-sonne: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='4.2'/%3E%3Cpath d='M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M5.3 18.7L7 17M17 7l1.7-1.7'/%3E%3C/svg%3E");
+  --z-mond: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M19.5 14.6A8 8 0 1 1 9.4 4.5a6.4 6.4 0 0 0 10.1 10.1z'/%3E%3C/svg%3E");
+  --z-merken: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M7 3.5h10v17l-5-3.7-5 3.7z'/%3E%3C/svg%3E");
+  --z-note: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M9 17.5V6l10-2v11'/%3E%3Ccircle cx='6.5' cy='17.5' r='2.5'/%3E%3Ccircle cx='16.5' cy='15' r='2.5'/%3E%3C/svg%3E");
+  --welle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='8' viewBox='0 0 28 8'%3E%3Cpath d='M0 4q7-6 14 0t14 0' fill='none' stroke='%23000' stroke-width='1.6'/%3E%3C/svg%3E");
+}
+
+/* Karte: zugeklappt das Nötigste zum Entscheiden, aufgeklappt alles.
+   Ohne Uhrzeit (Ideen, Laufendes, Filme) eine ruhige Zeile; mit Uhrzeit ein Ticket (unten). */
+.karte { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--linie); }
+.kopfzeile { display: flex; align-items: flex-start; gap: 8px; cursor: pointer; border-radius: 6px; }
+.kopfzeile h3 { flex: 1; min-width: 0; }
+.kopfzeile .chevron { flex: 0 0 auto; width: 22px; height: 22px; display: grid; place-items: center; margin: 0 -4px 0 0; }
+.kopfzeile .chevron::before { content: ""; width: 7px; height: 7px; border-right: 2px solid var(--leise); border-bottom: 2px solid var(--leise); transform: translateY(-2px) rotate(45deg); transition: transform .2s; opacity: .8; }
 .karte.auf .kopfzeile .chevron::before { transform: translateY(2px) rotate(-135deg); }
 .karte:not(.auf) .mehr { display: none; }
 .karte.auf .mehr { display: block; }
 .karte.auf .aktionen-mehr { display: contents; }
+.karte:not(.auf) .aktionen.nur-mehr { display: none; }
 .mehr > p:first-child { margin-top: 6px; }
+@media (prefers-reduced-motion: no-preference) {
+  .karte.auf > .inhalt > .mehr { animation: aufklappen .26s cubic-bezier(.2, .8, .2, 1); }
+}
+@keyframes aufklappen { from { opacity: 0; transform: translateY(-6px); } }
 @media (prefers-reduced-motion: reduce) { .kopfzeile .chevron::before { transition: none; } }
-.karte.ohne-zeit { grid-template-columns: 1fr; }
-.karte.hohwacht { background: linear-gradient(90deg, var(--bernstein-weich), transparent 75%); margin-inline: -8px; padding-inline: 8px; border-radius: 6px; }
-.zeit { font-family: var(--mono); font-size: 13.5px; font-variant-numeric: tabular-nums; padding-top: 2px; }
-.zeit.ganztags { font-family: var(--schrift); font-size: 12.5px; color: var(--akzent); font-weight: 700; }
-.zeit .bis { display: block; font-size: 12px; color: var(--leise); }
+.karte.ohne-zeit { grid-template-columns: minmax(0, 1fr); }
+.karte.hohwacht:not(.ticket) { background: linear-gradient(90deg, var(--see-weich), transparent 75%); margin-inline: -8px; padding-inline: 8px; border-radius: 8px; }
+.zeit { font: 700 14px/1.25 var(--zahl); font-stretch: 82%; font-variant-numeric: tabular-nums; padding-top: 2px; }
+.zeit.ganztags { font-size: 12.5px; color: var(--akzent); }
+.zeit .bis { display: block; font-size: 12px; font-weight: 600; color: var(--leise); }
 .inhalt { min-width: 0; display: flow-root; }
 /* Bild vorn an der Karte: Foto des Orts (Wikimedia Commons) oder Motiv der Kategorie (js/bilder.js) */
 .motive { position: absolute; width: 0; height: 0; overflow: hidden; }
-.bildchen { float: left; width: 56px; height: 56px; margin: 1px 12px 4px 0; border-radius: 9px; background: var(--akzent-weich); }
-img.bildchen { object-fit: cover; }
-.bildchen.motiv { display: grid; place-items: center; color: var(--akzent); }
-.bildchen.motiv svg { width: 34px; height: 34px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.bildchen { --kat: var(--k-schiefer); float: left; width: 54px; height: 54px; margin: 1px 12px 6px 0; border-radius: 12px; background: color-mix(in srgb, var(--kat) 15%, var(--flaeche)); }
+img.bildchen { object-fit: cover; background: var(--flaeche-2); }
+.bildchen.motiv { display: grid; place-items: center; color: var(--kat); }
+.bildchen.motiv svg { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
+.m-konzert, .m-party, .m-online { --kat: var(--k-elbe); }
+.m-buehne, .m-comedy, .m-lesung, .m-drama, .m-romanze, .m-komoedie { --kat: var(--k-backstein); }
+.m-markt, .m-fest, .m-food { --kat: var(--k-hapag); }
+.m-sport, .m-natur, .m-ausflug, .m-entspannen { --kat: var(--k-deich); }
+.m-ausstellung, .m-fuehrung, .m-kultur, .m-lernen, .m-geschichte, .m-biografie { --kat: var(--k-patina); }
+.m-kino, .m-krimi, .m-thriller, .m-mystery, .m-action, .m-abenteuer, .m-scifi, .m-fantasy, .m-animation, .m-western, .m-krieg, .m-horror { --kat: var(--k-kino); }
 .karte.auf.mit-foto .bildchen { display: none; }
 .ortsfoto { margin: 10px 0 0; max-width: 560px; }
-.ortsfoto img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px; background: var(--akzent-weich); }
+.ortsfoto img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; background: var(--flaeche-2); }
 .ortsfoto figcaption { margin-top: 5px; font-size: 11.5px; line-height: 1.4; color: var(--leise); }
 .ortsfoto figcaption a { color: inherit; }
 .ortsfoto-was { color: var(--tinte); font-weight: 600; }
-.einordnung { padding-left: 10px; border-left: 2px solid var(--akzent); font-size: 14px; }
-.inhalt p.einordnung { margin-top: 8px; }
+.einordnung { padding: 8px 12px; border-radius: 10px; background: var(--akzent-weich); font-size: 14px; }
+.einordnung b { color: var(--akzent); }
+.inhalt p.einordnung { margin-top: 10px; }
 .bildnachweise ul { margin: 8px 0 0; padding-left: 18px; font-size: 12.5px; color: var(--leise); }
 .bildnachweise li { margin-bottom: 4px; }
 .bildnachweise a { color: inherit; }
-.inhalt h3 { font-size: 16px; font-weight: 700; line-height: 1.25; }
-.unter { font-size: 13px; color: var(--leise); margin-top: 2px; }
+.inhalt h3 { font-size: 16.5px; font-weight: 700; font-stretch: 90%; line-height: 1.22; letter-spacing: -0.003em; }
+.unter { font-size: 13px; color: var(--leise); margin-top: 3px; }
 .inhalt p { margin: 6px 0 0; max-width: 65ch; font-size: 14.5px; }
-.marken { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; align-items: center; }
-.marke { font-size: 11.5px; padding: 2px 8px; border-radius: 4px; background: var(--akzent-weich); }
-.marke.rand { background: transparent; border: 1px solid var(--linie); }
-.marke.frei { background: var(--akzent); color: var(--bg); font-weight: 700; }
+.marken { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; align-items: center; }
+.marke { font-size: 11.5px; font-weight: 600; padding: 2px 8px; border-radius: 6px; background: var(--akzent-weich); }
+.marke.rand { background: transparent; box-shadow: inset 0 0 0 1px var(--linie); font-weight: 500; }
+.marke.frei { background: var(--akzent); color: var(--auf-akzent); font-weight: 700; }
 .marke.neu { background: var(--tinte); color: var(--bg); font-weight: 700; }
-.marke.hohwacht { background: var(--bernstein-weich); color: var(--bernstein); font-weight: 700; }
+.marke.hohwacht { background: var(--see-weich); color: var(--see); font-weight: 700; }
 .marke.warn { background: var(--warn-weich); color: var(--warn); font-weight: 700; }
-.preis { font-size: 13.5px; font-weight: 600; }
+.preis { font-size: 13.5px; font-weight: 700; }
 .unsicher { font-size: 13px; color: var(--warn); margin-top: 4px; }
-.anreise { font-size: 13px; color: var(--leise); margin-top: 6px; padding-left: 10px; border-left: 2px solid var(--linie); }
-.aktionen { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin-top: 8px; }
+.anreise { font-size: 13px; color: var(--leise); margin-top: 8px; padding-left: 10px; border-left: 2px solid var(--linie); }
+.aktionen { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin-top: 10px; }
 
-.knopf { display: inline-block; font-size: 13.5px; padding: 5px 12px; border: 1px solid var(--linie); border-radius: 999px; background: var(--flaeche); color: var(--tinte); text-decoration: none; cursor: pointer; }
-.knopf.bock { font-weight: 600; }
-.knopf.bock[aria-pressed="true"] { background: var(--ich); border-color: var(--ich); color: var(--bg); }
+/* Das Ticket: Tageslisten und „Wir“. Links der Abriss (Uhrzeit, Bock), an der Perforation oben und unten gestanzt. */
+.karte.ticket {
+  --abriss: 64px; --stanze: 7px;
+  --stanzen: radial-gradient(circle var(--stanze) at var(--abriss) 0, #0000 calc(var(--stanze) - .5px), #000 var(--stanze)) top / 100% 51% no-repeat,
+    radial-gradient(circle var(--stanze) at var(--abriss) 100%, #0000 calc(var(--stanze) - .5px), #000 var(--stanze)) bottom / 100% 51% no-repeat;
+  grid-template-columns: var(--abriss) minmax(0, 1fr); gap: 0;
+  margin-top: 10px; padding: 0; border: 0; border-radius: 16px; background: var(--flaeche);
+  -webkit-mask: var(--stanzen); mask: var(--stanzen);
+}
+.abriss {
+  position: relative; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 13px 4px 8px; border-radius: 16px 0 0 16px; background: var(--flaeche-2); text-align: center;
+}
+/* die Perforation: Löcher in der Farbe des Grunds */
+.abriss::after {
+  content: ""; position: absolute; top: calc(var(--stanze) + 5px); bottom: calc(var(--stanze) + 5px); right: -2px; width: 4px;
+  background: radial-gradient(circle, var(--bg) 1.5px, transparent 2px) 0 0 / 4px 8px repeat-y;
+}
+.ticket > .inhalt { padding: 12px 12px 12px 14px; }
+.ticket .zeit { padding: 0; font-size: 19px; font-weight: 800; font-stretch: 74%; line-height: 1.02; letter-spacing: -0.01em; overflow-wrap: anywhere; hyphens: auto; }
+.ticket .zeit.datum { font-size: 16px; }
+.ticket .zeit .bis { margin-top: 4px; font-size: 11.5px; font-weight: 700; font-stretch: 84%; line-height: 1.15; letter-spacing: 0; }
+.ticket .zeit.ganztags { font-size: 12.5px; font-weight: 800; font-stretch: 84%; line-height: 1.15; }
+/* Unter „Den ganzen Tag“ sagt die Überschrift schon, was „ganztägig“ im Abriss sagen würde – dort steht nur ein Zeichen. */
+.tag .ticket .zeit.ganztags { width: 24px; height: 24px; overflow: hidden; color: transparent; background: var(--akzent); -webkit-mask: var(--z-uhr) center / contain no-repeat; mask: var(--z-uhr) center / contain no-repeat; }
+.ticket.hohwacht > .inhalt { background: linear-gradient(90deg, var(--see-weich), transparent 70%); border-radius: 0 16px 16px 0; }
+.ticket.treffer { box-shadow: inset 0 0 0 2px var(--p0); }
+.ticket.treffer .abriss { box-shadow: inset 2px 2px 0 var(--p0), inset 0 -2px 0 var(--p0); }
+
+/* Gleich, läuft – nur heute, aus der Uhr des Geräts (js/karte.js, liveText) */
+.live { font: 800 11px/1 var(--zahl); font-stretch: 84%; padding: 4px 7px 3px; border-radius: 999px; background: var(--akzent-weich); color: var(--akzent); white-space: nowrap; }
+.live[hidden] { display: none; }
+.live.laeuft::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 4px; border-radius: 50%; background: currentColor; vertical-align: 1px; }
+@media (prefers-reduced-motion: no-preference) { .live.laeuft::before { animation: puls 1.8s ease-in-out infinite; } }
+@keyframes puls { 50% { opacity: .25; } }
+
+.knopf { display: inline-block; font-size: 13.5px; font-weight: 600; padding: 6px 13px; border: 0; border-radius: 999px; background: var(--flaeche); box-shadow: inset 0 0 0 1px var(--linie); color: var(--tinte); text-decoration: none; cursor: pointer; }
+.knopf:hover { box-shadow: inset 0 0 0 1px var(--leise); }
+/* Bock: das Herz. Im Abriss ohne Rahmen, sonst als Pille; an heißt Bernstein. */
+.knopf.bock { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px 6px 10px; font-weight: 700; }
+.bock .herz { flex: none; width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
+.knopf.bock[aria-pressed="true"] { background: var(--licht); box-shadow: none; color: var(--licht-tinte); }
+.knopf.bock[aria-pressed="true"] .herz { fill: currentColor; }
+.abriss .bock-feld { display: block; margin-top: 2px; }
+.abriss .knopf.bock { display: grid; justify-items: center; gap: 1px; padding: 6px 6px 3px; border-radius: 12px; background: none; box-shadow: none; color: var(--leise); font-size: 11px; font-weight: 800; font-stretch: 88%; }
+.abriss .knopf.bock:hover { color: var(--tinte); }
+.abriss .bock .herz { width: 27px; height: 27px; stroke-width: 1.8; }
+.abriss .knopf.bock[aria-pressed="true"] { background: none; color: var(--licht-tinte); }
+/* Wer Bock hat, dem leuchtet der Abriss */
+.ticket:has(.abriss .bock[aria-pressed="true"]) .abriss { background: var(--licht); color: var(--licht-tinte); }
+.ticket:has(.abriss .bock[aria-pressed="true"]) .zeit,
+.ticket:has(.abriss .bock[aria-pressed="true"]) .zeit .bis { color: var(--licht-tinte); }
+.ticket:has(.abriss .bock[aria-pressed="true"]) .zeit.ganztags { background: var(--licht-tinte); }
+.ticket:has(.abriss .bock[aria-pressed="true"]) .live { background: rgba(35, 21, 0, .14); color: var(--licht-tinte); }
+@media (prefers-reduced-motion: no-preference) {
+  .ticket:has(.bock.frisch[aria-pressed="true"]) .abriss { animation: aufleuchten .55s ease-out; }
+  .bock.frisch[aria-pressed="true"] .herz { animation: herzschlag .5s cubic-bezier(.3, 1.6, .5, 1); }
+}
+@keyframes aufleuchten { from { background: var(--flaeche-2); } 35% { background: #ffd27d; } }
+@keyframes herzschlag { 0% { transform: scale(.6); } 45% { transform: scale(1.28); } 100% { transform: scale(1); } }
 /* Eingeladene wählen: mit dem Gastgeber oder allein/mit anderen – zwei Knöpfe als ein Paar */
 .bock-feld { display: contents; }
 .bock-feld.wahl { display: inline-flex; flex-wrap: wrap; gap: 6px; }
-.quelle { font-size: 13.5px; }
+.quelle { font-size: 13.5px; font-weight: 600; }
 @media (max-width: 520px) {
-  .karte { grid-template-columns: 1fr; gap: 4px; }
-  /* Unter „Den ganzen Tag“ sagt die Überschrift schon, was „ganztägig“ an der Karte sagen würde. */
-  .tag .karte > .zeit.ganztags { display: none; }
+  .karte:not(.ticket):not(.film) { gap: 4px; }
   .zeit { padding-top: 0; }
-  .zeit .bis { display: inline; margin-left: 8px; }
 }
 
-.leer { margin-top: 24px; padding: 18px; border: 1px dashed var(--linie); border-radius: 10px; color: var(--leise); }
-.leer h2 { color: var(--tinte); font-size: 18px; margin-bottom: 6px; }
-.leer-klein { color: var(--leise); font-style: italic; padding: 12px 0; }
+.leer { margin-top: 24px; padding: 20px 18px; border-radius: 14px; background: var(--flaeche); color: var(--leise); }
+.leer h2 { color: var(--tinte); font-size: 19px; font-stretch: 88%; margin-bottom: 6px; }
+.leer-klein { color: var(--leise); padding: 18px 2px; }
 .hinweise { font-size: 13px; color: var(--leise); padding-left: 18px; max-width: 70ch; }
 .hinweise li { margin-bottom: 4px; }
 .vorbei-liste .zeile { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .vorbei-liste .karte { opacity: .7; }
 .datenfehler { font-size: 13px; color: var(--leise); }
 
+/* Beim ersten Laden: Platzhalter in der Form der Seite statt eines leeren Schirms */
+.lade { margin-top: 14px; display: grid; gap: 10px; }
+.lade i { display: block; border-radius: 14px; background: var(--flaeche); }
+.lade .lk { height: 40px; width: 62%; border-radius: 12px; }
+.lade .lt { height: 52px; }
+.lade .lz { height: 92px; border-radius: 16px; }
+@media (prefers-reduced-motion: no-preference) {
+  .lade i { background: linear-gradient(100deg, var(--flaeche) 30%, var(--flaeche-2) 50%, var(--flaeche) 70%) 0 0 / 300% 100%; animation: schimmer 1.3s linear infinite; }
+}
+@keyframes schimmer { to { background-position: -150% 0; } }
+
 /* Reiterleiste unten: zwei bis vier Reiter (Einstellungen → Reiter unten), alle gleich breit –
    außer die Beschriftung braucht mehr (breite Systemschrift): Dann bekommt der Reiter genau so viel
-   und die anderen teilen sich den Rest. */
+   und die anderen teilen sich den Rest. Milchglas über dem Inhalt, der aktive Reiter mit Pille. */
 .reiterleiste {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; display: flex; justify-content: center;
-  background: var(--flaeche); border-top: 1px solid var(--linie);
+  background: color-mix(in srgb, var(--flaeche) 93%, transparent); -webkit-backdrop-filter: saturate(1.5) blur(18px); backdrop-filter: saturate(1.5) blur(18px);
+  border-top: 1px solid var(--linie);
   padding: 0 env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
 }
 .reiter {
-  position: relative; flex: 1 1 0; min-width: max-content; max-width: 220px; height: var(--leiste); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
-  padding: 0 1px; border: 0; background: transparent; color: var(--leise); font-size: 12px; white-space: nowrap; cursor: pointer;
+  position: relative; isolation: isolate; flex: 1 1 0; min-width: max-content; max-width: 220px; height: var(--leiste); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  padding: 0 1px; border: 0; background: transparent; color: var(--leise); font-size: 12px; font-weight: 500; white-space: nowrap; cursor: pointer;
 }
+.reiter::before { content: ""; position: absolute; z-index: -1; top: 8px; left: 50%; width: 58px; height: 30px; margin-left: -29px; border-radius: 15px; background: var(--akzent-weich); opacity: 0; transform: scaleX(.5); }
+@media (prefers-reduced-motion: no-preference) { .reiter::before { transition: opacity .2s, transform .25s cubic-bezier(.2, .8, .2, 1); } }
 .reiter[hidden] { display: none; }
 .reiter svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.reiter[aria-current="page"] { color: var(--akzent); font-weight: 700; }
-.reiter .zahl:not(:empty) { position: absolute; top: 8px; left: calc(50% + 8px); min-width: 18px; padding: 0 5px; border-radius: 9px; background: var(--akzent); color: var(--bg); font-size: 11px; line-height: 18px; font-weight: 700; }
-.reiter .punkt { position: absolute; top: 10px; left: calc(50% + 10px); width: 9px; height: 9px; border-radius: 50%; background: var(--bernstein); }
+.reiter[aria-current="page"] { color: var(--tinte); font-weight: 700; }
+.reiter[aria-current="page"] svg { color: var(--akzent); stroke-width: 2.1; }
+.reiter[aria-current="page"]::before { opacity: 1; transform: none; }
+.reiter .zahl:not(:empty) { position: absolute; top: 6px; left: calc(50% + 10px); min-width: 18px; padding: 0 5px; border-radius: 9px; background: var(--akzent); color: var(--auf-akzent); font-size: 11px; line-height: 18px; font-weight: 700; }
+.reiter .punkt { position: absolute; top: 9px; left: calc(50% + 10px); width: 9px; height: 9px; border-radius: 50%; background: var(--licht); box-shadow: 0 0 0 2px var(--flaeche); }
 
 /* Knöpfe */
-.knopf.klein { font-size: 12.5px; padding: 3px 10px; }
-.knopf.haupt { background: var(--akzent); border-color: var(--akzent); color: var(--bg); font-weight: 700; }
-.knopf.warnknopf { background: var(--warn); border-color: var(--warn); color: var(--bg); font-weight: 700; }
+.knopf.klein { font-size: 12.5px; padding: 4px 11px; }
+.knopf.haupt { background: var(--akzent); box-shadow: none; color: var(--auf-akzent); font-weight: 700; }
+.knopf.haupt:hover { filter: brightness(1.06); }
+.knopf.warnknopf { background: var(--warn); box-shadow: none; color: var(--bg); font-weight: 700; }
 .knopf:disabled { opacity: .55; cursor: default; }
-.textknopf { border: 0; background: none; padding: 0; color: var(--akzent); text-decoration: underline; cursor: pointer; font-size: inherit; }
+.textknopf { border: 0; background: none; padding: 0; color: var(--akzent); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; font-size: inherit; }
 .textknopf:disabled { opacity: .4; cursor: default; text-decoration: none; }
 
 /* Karten: Künstler, Treffer, wer hat Bock */
-.marke.kuenstler { background: var(--akzent); color: var(--bg); font-weight: 700; }
-.karte.treffer { background: linear-gradient(90deg, var(--treffer-weich), transparent 80%); margin-inline: -8px; padding-inline: 8px; border-radius: 6px; }
+.marke.kuenstler { background: var(--akzent); color: var(--auf-akzent); font-weight: 700; }
+.karte.treffer:not(.ticket) { background: linear-gradient(90deg, var(--treffer-weich), transparent 80%); margin-inline: -8px; padding-inline: 8px; border-radius: 8px; }
 .wer { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 8px; font-size: 13px; color: var(--leise); }
-.person { display: inline-block; font-size: 12.5px; font-weight: 700; padding: 1px 9px; border-radius: 999px; color: #fff; background: var(--p0); }
+.person { display: inline-block; font-size: 12.5px; font-weight: 700; padding: 1px 9px; border-radius: 999px; color: var(--auf-person); background: var(--p0); }
 .person.p1 { background: var(--p1); } .person.p2 { background: var(--p2); } .person.p3 { background: var(--p3); }
-.person.ich { background: var(--ich); color: var(--bg); }
-@media (prefers-color-scheme: dark) { .person { color: #10171c; } }
+.person.ich { background: var(--ich); color: var(--auf-ich); }
 
-/* Monat: das Blatt – Ziffer, Zahl der Termine, ♫, Bock-Punkte; ein Tipp wählt den Tag, darunter seine Karte */
+/* Monat: das Blatt – je voller der Tag, desto kräftiger das Teal; Ziffer, Zahl, ♫, Bock-Punkte; ein Tipp wählt den Tag */
 .kalender { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; margin-top: 14px; }
 .kalender .wt { font-size: 12px; text-align: center; color: var(--leise); font-weight: 700; padding-bottom: 2px; }
 .feld {
-  position: relative; aspect-ratio: 1 / 1.08; min-height: 46px; border: 1px solid var(--linie); border-radius: 9px; background: var(--flaeche); color: var(--tinte);
-  display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; padding: 4px 5px; cursor: pointer; text-align: left;
+  position: relative; aspect-ratio: 1 / 1.08; min-height: 46px; border: 0; border-radius: 10px;
+  background: color-mix(in srgb, var(--akzent) calc(var(--dichte, 0) * 34%), var(--flaeche)); color: var(--tinte);
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; padding: 5px 6px; cursor: pointer; text-align: left;
 }
-.feld .nr { font-family: var(--mono); font-size: 14px; font-weight: 700; line-height: 1.1; }
-.feld .zahl { position: absolute; top: 5px; right: 5px; font-size: 10.5px; line-height: 1; color: var(--leise); font-variant-numeric: tabular-nums; }
+.feld .nr { font: 800 17px/1 var(--zahl); font-stretch: 78%; font-variant-numeric: tabular-nums; }
+.feld .zahl { position: absolute; top: 6px; right: 6px; font-size: 10.5px; font-weight: 600; line-height: 1; color: var(--leise); font-variant-numeric: tabular-nums; }
 .f-unten { display: flex; align-items: center; gap: 3px; min-height: 9px; }
 .f-kuenstler { font-size: 11px; line-height: 1; font-weight: 700; color: var(--akzent); }
 .feld .punkte { display: flex; gap: 2px; }
-.feld .pkt { width: 7px; height: 7px; }
+.feld .pkt { width: 7px; height: 7px; box-shadow: 0 0 0 1px var(--flaeche); }
 .feld.fremd { opacity: .38; }
 .feld.vorbei { background: transparent; cursor: default; }
 .feld.vorbei .nr { color: var(--leise); }
-.feld.ohne:not(.vorbei) { background: transparent; border-style: dashed; }
+.feld.ohne:not(.vorbei) { background: transparent; box-shadow: inset 0 0 0 1px var(--linie); }
 .feld.feiertag .nr { color: var(--warn); }
-.feld.heute { border-color: var(--akzent); }
+.feld.heute { box-shadow: inset 0 0 0 2px var(--akzent); }
 .feld.heute .nr { color: var(--akzent); }
-.feld.treffer { background: var(--treffer-weich); border-color: var(--p0); }
-.feld.gewaehlt { outline: 2px solid var(--tinte); outline-offset: 1px; }
+.feld.treffer { box-shadow: inset 0 0 0 2px var(--p0); }
+.feld.gewaehlt { outline: 2.5px solid var(--tinte); outline-offset: 1px; }
 .pkt { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--p0); }
 .pkt.ich { background: var(--ich); } .pkt.p1 { background: var(--p1); } .pkt.p2 { background: var(--p2); } .pkt.p3 { background: var(--p3); }
 .monat-vorschau { margin-top: 12px; }
@@ -345,7 +573,7 @@ img.bildchen { object-fit: cover; }
   width: 100%; padding: 9px 2px; border: 0; border-bottom: 1px solid var(--linie); background: none; color: var(--tinte); text-align: left; cursor: pointer;
 }
 .konzert-zeile:hover { background: var(--flaeche); }
-.kz-datum { grid-area: datum; font-family: var(--mono); font-size: 13px; color: var(--leise); padding-top: 1px; }
+.kz-datum { grid-area: datum; font: 800 14px/1.3 var(--zahl); font-stretch: 80%; color: var(--leise); padding-top: 1px; }
 .kz-titel { grid-area: titel; font-weight: 700; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .kz-ort { grid-area: ort; font-size: 13px; color: var(--leise); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
@@ -357,13 +585,13 @@ img.bildchen { object-fit: cover; }
 .lg-belegt { background: repeating-linear-gradient(135deg, var(--linie) 0 2px, transparent 2px 5px), var(--bg); box-shadow: inset 0 0 0 1px var(--linie); }
 .lg-haken { width: 12px; height: 8px; border-radius: 3px; background: var(--ich); }
 .lg-haken.p0 { background: var(--p0); } .lg-haken.plan { background: var(--bernstein); }
-.lg-feiertag { font-family: var(--mono); font-size: 12px; color: var(--warn); }
+.lg-feiertag { font: 800 12.5px var(--zahl); font-stretch: 80%; color: var(--warn); }
 
 /* Karte (Landkarte): oben Zeitraum und Filter in einer Zeile */
 .karte-kopf { padding-top: 8px; }
 .karte-kopf .filterleiste { margin-top: 0; }
 .raum-wahl select { flex: none; width: auto; padding: 7px 8px; font-weight: 600; border-radius: 999px; }
-.landkarte { margin-top: 10px; height: calc(100dvh - 245px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)); min-height: 340px; border-radius: 10px; border: 1px solid var(--linie); overflow: hidden; background: var(--flaeche); z-index: 0; }
+.landkarte { margin-top: 12px; height: calc(100dvh - 245px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)); min-height: 340px; border-radius: 16px; border: 0; overflow: hidden; background: var(--flaeche); z-index: 0; }
 .karte-fuss { margin-top: 6px; }
 .pin-huelle { background: none; border: 0; }
 .pin {
@@ -373,9 +601,9 @@ img.bildchen { object-fit: cover; }
 .pin.kuenstler { border-width: 3px; }
 .pin.haufen { width: 36px; height: 36px; font-size: 13px; background: var(--akzent-weich); }
 .pin.haufen.ich { background: var(--ich); } .pin.haufen.andere, .pin.haufen.treffer { background: var(--p0); }
-.pin.ich { background: var(--ich); color: var(--bg); border-color: var(--bg); }
-.pin.andere { background: var(--p0); color: #fff; border-color: var(--bg); }
-.pin.treffer { background: var(--p0); color: #fff; border-color: var(--ich); border-width: 3px; }
+.pin.ich { background: var(--ich); color: var(--auf-ich); border-color: var(--bg); }
+.pin.andere { background: var(--p0); color: var(--auf-person); border-color: var(--bg); }
+.pin.treffer { background: var(--p0); color: var(--auf-person); border-color: var(--ich); border-width: 3px; }
 /* Der Bezugspunkt: ein dunkler Punkt mit Schild – kein Ort mit Terminen.
    Fest dunkel, auch im dunklen Schema: Die Kacheln von OpenStreetMap sind immer hell. */
 .bezug-huelle { background: none; border: 0; }
@@ -388,25 +616,23 @@ path.umkreis { stroke: #13212b; fill: #13212b; stroke-dasharray: 6 5; }
 .pop-unter { font-size: 12.5px; color: var(--leise); }
 .leaflet-popup-content { margin: 10px 12px; }
 .pop-liste li { padding: 6px 0; border-top: 1px solid var(--linie); }
-.pop-wann { font-family: var(--mono); font-size: 12px; color: var(--leise); }
+.pop-wann { font: 700 12.5px var(--zahl); font-stretch: 85%; color: var(--leise); }
 .pop-titel { font-weight: 700; }
 .pop-aktionen { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 4px; }
 .pop-aktionen .knopf { font-size: 12.5px; padding: 3px 10px; }
 .leaflet-container { font: inherit; background: var(--bg); }
 .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--flaeche); color: var(--tinte); }
 .leaflet-container a.leaflet-popup-close-button { color: var(--leise); }
-@media (prefers-color-scheme: dark) {
-  .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.88); }
-  .leaflet-control-zoom a, .leaflet-control-attribution { background: var(--flaeche) !important; color: var(--tinte) !important; }
-}
+.leaflet-tile-pane { filter: var(--karte-filter); }
+.leaflet-control-zoom a, .leaflet-control-attribution { background: var(--flaeche) !important; color: var(--tinte) !important; }
 
 /* Wir: einrichten, einladen */
-.einrichten { margin-top: 16px; padding: 14px; border: 1px solid var(--linie); border-radius: 10px; background: var(--flaeche); display: grid; gap: 10px; }
+.einrichten { margin-top: 16px; padding: 16px; border: 0; border-radius: 14px; background: var(--flaeche); display: grid; gap: 10px; }
 .einrichten h3 { font-size: 17px; }
 .einrichten h4 { margin: 4px 0 0; font-size: 14px; }
 .einrichten p { margin: 0; }
 .feld-label { display: grid; gap: 4px; font-size: 13px; color: var(--leise); }
-.eingabe { width: 100%; padding: 9px 10px; border: 1px solid var(--linie); border-radius: 8px; background: var(--bg); color: var(--tinte); font-size: 16px; }
+.eingabe { width: 100%; padding: 10px 12px; border: 1px solid var(--linie); border-radius: 10px; background: var(--bg); color: var(--tinte); font-size: 16px; }
 .eingabe.code, code.code { font-family: var(--mono); letter-spacing: .04em; }
 code.code { background: var(--akzent-weich); padding: 1px 6px; border-radius: 4px; font-size: 14px; }
 .fehlerbox { padding: 9px 12px; border-radius: 8px; background: var(--warn-weich); color: var(--warn); font-size: 14px; margin-top: 8px; }
@@ -416,7 +642,7 @@ code.code { background: var(--akzent-weich); padding: 1px 6px; border-radius: 4p
 .wir-kopf .syncstatus, .wir-kopf .aktionen { margin: 0; }
 .wir-einleitung { margin-top: 12px; }
 .warn-text { color: var(--warn); }
-.einladung { margin-top: 10px; padding: 12px; border: 1px solid var(--linie); border-radius: 10px; background: var(--flaeche); display: grid; gap: 8px; }
+.einladung { margin-top: 10px; padding: 14px; border: 0; border-radius: 14px; background: var(--flaeche); display: grid; gap: 8px; }
 .einladung p { margin: 0; }
 details.vorbei-liste > summary { cursor: pointer; }
 
@@ -425,22 +651,25 @@ details.vorbei-liste > summary { cursor: pointer; }
 #ideen-zaehler { margin-top: 8px; }
 .schalter.flow[aria-pressed="true"] { background: var(--bernstein); border-color: var(--bernstein); color: var(--bg); }
 .kategorien { margin-top: 8px; display: grid; gap: 10px; }
-.kategorie { border: 1px solid var(--linie); border-radius: 10px; background: var(--flaeche); overflow: hidden; }
-.kategorie > summary { cursor: pointer; list-style: none; padding: 12px 14px; display: grid; grid-template-columns: auto 1fr auto; gap: 2px 8px; align-items: baseline; }
+.kategorie { border: 0; border-radius: 14px; background: var(--flaeche); overflow: hidden; }
+.kategorie > summary { cursor: pointer; list-style: none; padding: 12px 14px 12px 12px; display: grid; grid-template-columns: auto auto minmax(0, 1fr) auto; gap: 1px 8px; align-items: center; }
+/* vorn das Motiv der Kategorie, in ihrer Farbe */
+.kategorie > summary .bildchen { grid-column: 1; grid-row: 1 / span 2; float: none; width: 44px; height: 44px; margin: 0 4px 0 0; border-radius: 12px; }
+.kategorie > summary .bildchen.motiv svg { width: 27px; height: 27px; }
 .kategorie > summary::-webkit-details-marker { display: none; }
-.kategorie > summary::after { content: "›"; grid-column: 3; grid-row: 1; justify-self: end; align-self: center; color: var(--leise); font-size: 20px; line-height: 1; transition: transform .15s; }
+.kategorie > summary::after { content: "›"; grid-column: 4; grid-row: 1 / span 2; justify-self: end; align-self: center; color: var(--leise); font-size: 20px; line-height: 1; transition: transform .15s; }
 .kategorie[open] > summary::after { transform: rotate(90deg); }
 .kategorie[open] > summary { border-bottom: 1px solid var(--linie); }
-.kat-titel { grid-column: 1; font-weight: 800; font-size: 16.5px; }
-.kat-zahl { grid-column: 2; grid-row: 1; font-family: var(--mono); font-size: 12.5px; color: var(--akzent); font-weight: 700; }
-.kat-vorschau { grid-column: 1 / -1; font-size: 13px; color: var(--leise); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kat-titel { grid-column: 2; grid-row: 1; align-self: end; font-weight: 800; font-stretch: 86%; font-size: 17px; }
+.kat-zahl { grid-column: 3; grid-row: 1; align-self: end; padding-bottom: 1px; font-family: var(--zahl); font-stretch: 85%; font-size: 13px; color: var(--akzent); font-weight: 700; }
+.kat-vorschau { grid-column: 2 / 4; grid-row: 2; align-self: start; font-size: 13px; color: var(--leise); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .kategorie > .karte { padding-inline: 14px; margin-inline: 0; border-radius: 0; }
 .kategorie > .karte:last-child { border-bottom: 0; }
 .marke.wirkung { background: transparent; border: 1px solid var(--akzent); color: var(--akzent); font-weight: 600; }
 .marke.wirkung.flow { background: var(--bernstein-weich); border-color: var(--bernstein); color: var(--bernstein); }
 .marke.eigen { background: var(--tinte); color: var(--bg); font-weight: 600; }
-.marke.plan { background: var(--ich); color: var(--bg); font-weight: 700; }
-.ziel { margin-top: 8px; font-size: 13.5px; padding: 6px 10px; border-radius: 6px; background: var(--bernstein-weich); max-width: 65ch; }
+.marke.plan { background: var(--ich); color: var(--auf-ich); font-weight: 700; }
+.ziel { margin-top: 8px; font-size: 13.5px; padding: 7px 11px; border-radius: 10px; background: var(--bernstein-weich); max-width: 65ch; }
 .ziel b { color: var(--bernstein); }
 .braucht { margin-top: 6px; font-size: 13px; color: var(--leise); max-width: 65ch; }
 .braucht b { color: var(--tinte); font-weight: 600; }
@@ -450,7 +679,7 @@ details.vorbei-liste > summary { cursor: pointer; }
 .orte .ort-info { color: var(--leise); font-size: 12.5px; }
 .orte .ort-name { font-weight: 600; }
 .verlauf { margin-top: 8px; font-size: 13px; color: var(--akzent); font-weight: 600; }
-.formular { margin-top: 10px; padding: 12px; border: 1px solid var(--linie); border-radius: 10px; background: var(--bg); display: grid; gap: 10px; }
+.formular { margin-top: 10px; padding: 14px; border: 1px solid var(--linie); border-radius: 14px; background: var(--bg); display: grid; gap: 10px; }
 .formular p { margin: 0; }
 .formular select { flex: none; width: 100%; }
 textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
@@ -459,7 +688,7 @@ textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
 .gesichter { display: flex; gap: 8px; }
 .gesicht { position: relative; flex: 1; cursor: pointer; }
 .gesicht input { position: absolute; opacity: 0; pointer-events: none; }
-.gesicht span { display: grid; place-items: center; gap: 4px; padding: 8px 4px; border: 1px solid var(--linie); border-radius: 10px; background: var(--flaeche); font-size: 26px; line-height: 1; }
+.gesicht span { display: grid; place-items: center; gap: 4px; padding: 8px 4px; border: 1px solid var(--linie); border-radius: 12px; background: var(--flaeche); font-size: 26px; line-height: 1; }
 .gesicht small { font-size: 12px; color: var(--leise); }
 .gesicht input:checked + span { border-color: var(--akzent); background: var(--akzent-weich); box-shadow: inset 0 0 0 1px var(--akzent); }
 .gesicht input:focus-visible + span { outline: 2px solid var(--akzent); outline-offset: 2px; }
@@ -467,7 +696,7 @@ textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
 .check input { width: 18px; height: 18px; accent-color: var(--akzent); }
 .checks { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .checks legend { font-size: 13px; color: var(--leise); margin-bottom: 4px; padding: 0; }
-.meldung { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; padding: 10px 12px; border-radius: 8px; background: var(--akzent-weich); font-size: 14px; }
+.meldung { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; padding: 11px 14px; border-radius: 12px; background: var(--akzent-weich); font-size: 14px; }
 .meldung-knoepfe { display: flex; align-items: center; gap: 10px; flex: none; }
 .meldung .textknopf { text-decoration: none; color: var(--leise); font-size: 16px; }
 .frage-karte .zeit { color: var(--leise); }
@@ -476,7 +705,7 @@ textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
 .pin.haufen.idee { background: var(--bernstein-weich); border-color: var(--bernstein); }
 
 /* Wir: je Person (beim Gastgeber) */
-.person-zeile { border-bottom: 1px solid var(--linie); padding: 10px 0; }
+.person-zeile { border-bottom: 1px solid var(--linie); padding: 12px 0; }
 .person-zeile > summary { cursor: pointer; list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
 .person-zeile > summary::-webkit-details-marker { display: none; }
 .person-zeile > summary::after { content: "›"; margin-left: auto; color: var(--leise); font-size: 20px; line-height: 1; transition: transform .15s; }
@@ -491,7 +720,7 @@ textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
 .person-eintrag .was { text-decoration: underline; text-decoration-color: var(--linie); text-underline-offset: 3px; }
 .person-eintrag:hover .was, .person-eintrag:focus-visible .was { text-decoration-color: currentColor; }
 .person-eintrag:focus-visible { outline: 2px solid var(--akzent); outline-offset: 2px; border-radius: 4px; }
-.person-liste .wann { font-family: var(--mono); font-size: 12.5px; color: var(--leise); }
+.person-liste .wann { font: 700 13px var(--zahl); font-stretch: 82%; color: var(--leise); }
 .marke.mit-dir { background: var(--treffer-weich); }
 .mitwem-wahl { margin-top: 2px; }
 
@@ -516,7 +745,7 @@ textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
 .zs-haken.treffer { background: var(--p0); box-shadow: 0 0 0 2px var(--ich); }
 .zs-haken.plan { background: var(--bernstein); }
 .zs-jetzt { width: 2px; margin-left: -1px; background: var(--warn); }
-.zs-skala { display: block; position: relative; height: 14px; margin-top: 3px; font-family: var(--mono); font-size: 10.5px; line-height: 14px; color: var(--leise); }
+.zs-skala { display: block; position: relative; height: 14px; margin-top: 3px; font-family: var(--zahl); font-size: 10.5px; font-weight: 600; line-height: 14px; color: var(--leise); }
 .zs-skala i { position: absolute; transform: translateX(-50%); font-style: normal; }
 .zs-skala i:last-child { transform: translateX(-100%); }
 .zeitstreifen.klein { margin-top: 0; }
@@ -527,17 +756,17 @@ textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
 .wochen-liste { display: grid; gap: 8px; margin-top: 14px; }
 .wtag {
   display: grid; grid-template-columns: 3.2rem minmax(0, 1fr) 12px; gap: 0 12px; align-items: start; width: 100%;
-  padding: 12px 12px 12px 8px; border: 1px solid var(--linie); border-radius: 12px; background: var(--flaeche); color: var(--tinte); text-align: left; cursor: pointer;
+  padding: 13px 12px 13px 8px; border: 0; border-radius: 16px; background: var(--flaeche); color: var(--tinte); text-align: left; cursor: pointer;
 }
-.wtag:hover { border-color: var(--leise); }
-.wtag.heute { border-color: var(--akzent); box-shadow: inset 3px 0 0 var(--akzent); }
+.wtag:hover { box-shadow: inset 0 0 0 1px var(--linie); }
+.wtag.heute { box-shadow: inset 0 0 0 2px var(--akzent); }
 .wt-datum { display: grid; justify-items: center; padding-top: 1px; }
-.wt-wt { font-size: 12px; font-weight: 700; color: var(--leise); line-height: 1.2; }
-.wt-nr { font-family: var(--mono); font-size: 26px; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.wt-wt { font-size: 12px; font-weight: 700; color: var(--leise); line-height: 1.2; margin-bottom: 1px; }
+.wt-nr { font: 800 32px/1 var(--zahl); font-stretch: 74%; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
 .wtag.heute .wt-nr, .wtag.heute .wt-wt { color: var(--akzent); }
 .wt-monat { font-size: 11px; color: var(--leise); }
 .wt-inhalt { display: grid; gap: 7px; min-width: 0; }
-.wt-kopf { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font-size: 13.5px; }
+.wt-kopf { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font-size: 13.5px; font-weight: 600; }
 .wt-wetter { min-width: 0; }
 .wt-feiertag { font-size: 12px; font-weight: 700; color: var(--warn); }
 .wt-heute { font-size: 12px; font-weight: 700; color: var(--akzent); }
@@ -545,8 +774,8 @@ textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
 .wtag.ohne .wt-zahl { font-style: italic; }
 .wt-liste { display: grid; gap: 3px; }
 .wt-eintrag { display: grid; grid-template-columns: 2.9rem minmax(0, 1fr); gap: 6px; align-items: baseline; font-size: 14px; }
-.wt-uhr { font-family: var(--mono); font-size: 12.5px; color: var(--leise); font-variant-numeric: tabular-nums; }
-.wt-titel { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
+.wt-uhr { font: 700 13px var(--zahl); font-stretch: 82%; color: var(--leise); font-variant-numeric: tabular-nums; }
+.wt-titel { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; font-stretch: 94%; }
 .wt-eintrag:not(.kuenstler) .wt-titel::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 6px; border-radius: 50%; vertical-align: 1px; background: var(--ich); }
 .wt-eintrag.p0 .wt-titel::before, .wt-eintrag.treffer .wt-titel::before { background: var(--p0); }
 .wt-eintrag.p1 .wt-titel::before { background: var(--p1); } .wt-eintrag.p2 .wt-titel::before { background: var(--p2); } .wt-eintrag.p3 .wt-titel::before { background: var(--p3); }
@@ -559,8 +788,9 @@ textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
 .wt-pfeil::before { content: ""; display: block; width: 7px; height: 7px; margin-top: 15px; border-right: 2px solid var(--leise); border-bottom: 2px solid var(--leise); transform: rotate(-45deg); }
 
 /* „Was immer geht“: ganz unten im Programm, nach einer kräftigen Linie */
-.immer { margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--tinte); scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 8px); }
-.immer-titel { font-size: 22px; font-weight: 800; }
+.immer { margin-top: 40px; padding-top: 0; border-top: 0; scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 8px); }
+.immer::before { content: ""; display: block; height: 8px; margin: 0 0 22px; background: var(--akzent); opacity: .55; -webkit-mask: var(--welle) 0 0 / 28px 8px repeat-x; mask: var(--welle) 0 0 / 28px 8px repeat-x; }
+.immer-titel { font-size: 28px; font-weight: 800; font-stretch: 76%; letter-spacing: -0.012em; }
 .immer-kopf > .fein { margin: 4px 0 0; }
 .immer-teil { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 8px); }
 .immer .kategorien { margin-top: 12px; }
@@ -571,55 +801,55 @@ body.blatt-auf { overflow: hidden; }
 .blatt {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 41; max-width: 640px; margin: 0 auto;
   max-height: min(88dvh, 760px); display: grid; grid-template-rows: auto minmax(0, 1fr) auto;
-  background: var(--flaeche); color: var(--tinte); border-radius: 16px 16px 0 0; outline: none;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, .22); transform: translateY(100%);
+  background: var(--flaeche); color: var(--tinte); border-radius: 22px 22px 0 0; outline: none;
+  box-shadow: var(--schatten-blatt); transform: translateY(100%);
 }
 .blatt.offen { transform: none; }
 @media (prefers-reduced-motion: no-preference) { .blatt { transition: transform .22s cubic-bezier(.2, .8, .2, 1); } }
 .blatt-kopf { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 16px 4px; }
 /* der Griff oben – nur zum Erkennen, dass es ein Blatt ist */
 .blatt-kopf::before { content: ""; position: absolute; top: 7px; left: 50%; width: 36px; height: 4px; margin-left: -18px; border-radius: 2px; background: var(--linie); }
-.blatt-kopf h2 { font-size: 19px; font-weight: 800; }
-.blatt-x { flex: none; width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 50%; background: var(--bg); color: var(--leise); font-size: 14px; cursor: pointer; }
+.blatt-kopf h2 { font-size: 24px; font-weight: 800; font-stretch: 78%; letter-spacing: -0.01em; }
+.blatt-x { flex: none; width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 50%; background: var(--flaeche-2); color: var(--leise); font-size: 14px; cursor: pointer; }
 .blatt-x:hover { color: var(--tinte); }
 .blatt-inhalt { overflow-y: auto; overscroll-behavior: contain; padding: 0 16px 6px; }
 .blatt-fuss { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--linie); }
 .blatt-fuss .knopf.haupt { padding: 9px 18px; font-size: 15px; }
 .fgruppe { display: grid; gap: 8px; padding: 12px 0 14px; border-bottom: 1px solid var(--linie); }
 .fgruppe:last-child { border-bottom: 0; }
-.fgruppe h3 { font-size: 14.5px; font-weight: 700; }
+.fgruppe h3 { font-size: 15px; font-weight: 800; font-stretch: 88%; }
 .fgruppe .fein { margin: 0; }
 .fgruppe select { flex: none; width: 100%; }
 .fgruppe .feld-label { color: var(--leise); }
-.blatt .segmente { background: var(--bg); }
+.blatt .segmente { background: var(--flaeche-2); }
 .blatt .segment { font-size: 14px; }
 
 /* Einstellungen (Reiter ganz rechts): Abschnitte als Gruppen mit Zeilen */
-.seiten-kopf { padding-top: 8px; }
-.seiten-titel { font-size: 26px; font-weight: 800; letter-spacing: -0.01em; }
+.seiten-kopf { padding-top: 16px; }
+.seiten-titel { font-size: 34px; font-weight: 800; font-stretch: 74%; letter-spacing: -0.015em; line-height: 1.05; }
 .einstellung { margin-top: 24px; }
-.einstellung-titel { margin: 0 0 8px 2px; font-size: 15px; font-weight: 700; color: var(--leise); }
-.e-gruppe { border: 1px solid var(--linie); border-radius: 12px; background: var(--flaeche); overflow: hidden; }
+.einstellung-titel { margin: 0 0 8px 4px; font-size: 15px; font-weight: 800; font-stretch: 88%; color: var(--leise); }
+.e-gruppe { border: 0; border-radius: 14px; background: var(--flaeche); overflow: hidden; }
 .e-zeile { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; padding: 12px 14px; }
 .e-zeile.fein { margin: 0; }
 .e-zeile > .fein { margin: 0; }
 .e-unter { margin: 6px 2px 0; }
 .zeilen-knopf { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 14px; border: 0; background: none; color: var(--tinte); font-size: 15px; text-align: left; cursor: pointer; }
 .zeilen-knopf.warn-text { color: var(--warn); }
-.zeilen-knopf:hover { background: var(--bg); }
+.zeilen-knopf:hover { background: var(--flaeche-2); }
 /* Die Gruppe schneidet ab (overflow) – der Fokusrahmen liegt deshalb innen */
 .zeilen-knopf:focus-visible, .e-gruppe :focus-visible { outline-offset: -3px; }
 .pfeil-rechts::before { content: ""; display: block; width: 7px; height: 7px; border-right: 2px solid var(--leise); border-bottom: 2px solid var(--leise); transform: rotate(-45deg); }
 .zeilen-knopf[aria-expanded="true"] .pfeil-rechts::before { transform: rotate(45deg); }
 /* Schalter (Reiter unten): die ganze Zeile ist der Knopf, rechts der Kippschalter – aus: Umriss, an: Teal */
 .schalter-zeile { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; min-height: 50px; padding: 10px 14px; border: 0; background: none; color: var(--tinte); font-size: 15px; text-align: left; cursor: pointer; }
-.schalter-zeile:hover { background: var(--bg); }
+.schalter-zeile:hover { background: var(--flaeche-2); }
 .schalter-name { display: grid; }
 .schalter-name .fein { margin: 0; font-size: 12.5px; }
 .kippschalter { position: relative; flex: none; width: 42px; height: 26px; border: 2px solid var(--leise); border-radius: 13px; }
 .kippschalter::after { content: ""; position: absolute; top: 50%; left: 4px; width: 12px; height: 12px; margin-top: -6px; border-radius: 50%; background: var(--leise); }
 [aria-checked="true"] > .kippschalter { border-color: var(--akzent); background: var(--akzent); }
-[aria-checked="true"] > .kippschalter::after { left: auto; right: 2px; width: 18px; height: 18px; margin-top: -9px; background: var(--bg); }
+[aria-checked="true"] > .kippschalter::after { left: auto; right: 2px; width: 18px; height: 18px; margin-top: -9px; background: var(--auf-akzent); }
 .schalter-zeile[aria-disabled="true"] { cursor: default; }
 .schalter-zeile[aria-disabled="true"]:hover { background: none; }
 .schalter-zeile[aria-disabled="true"] .kippschalter { opacity: .45; }
@@ -630,7 +860,7 @@ body.blatt-auf { overflow: hidden; }
 }
 /* Linien zwischen den Zeilen einer Gruppe – nach .zeilen-knopf, dessen border: 0 sie sonst schluckt */
 .e-gruppe > :not(:first-child) { border-top: 1px solid var(--linie); }
-.einstellung-feld { display: grid; justify-content: stretch; gap: 8px; background: var(--bg); }
+.einstellung-feld { display: grid; justify-content: stretch; gap: 8px; background: var(--flaeche-2); }
 .einstellung-feld p { margin: 0; }
 .e-zeile .einrichten { margin: 0; padding: 0; border: 0; background: none; }
 .e-zeile.abgleich .fein { flex: 1 1 12rem; }
@@ -648,36 +878,48 @@ body.blatt-auf { overflow: hidden; }
 .standort-suche .eingabe { flex: 1 1 auto; min-width: 0; padding: 6px 10px; }
 .standort-fehler { margin: 0; font-size: 13px; color: var(--warn); }
 .standort-treffer { display: grid; gap: 6px; }
-.treffer-knopf { text-align: left; padding: 8px 10px; border: 1px solid var(--linie); border-radius: 8px; background: var(--flaeche); cursor: pointer; font-size: 14px; }
+.treffer-knopf { text-align: left; padding: 9px 12px; border: 1px solid var(--linie); border-radius: 10px; background: var(--flaeche); cursor: pointer; font-size: 14px; }
 .treffer-knopf:hover, .treffer-knopf:focus-visible { background: var(--akzent-weich); }
 
 /* IMDb Top 250 (ansicht-filme.js): die Tür unten bei „Was immer geht“ und die eigene Seite.
    Der Platz steht links wie die Uhrzeit im Programm – in Festbreitenschrift, die ersten zehn in Teal. */
 .filme-tuer {
   display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 4px 14px; width: 100%; margin: 4px 0 10px;
-  padding: 12px 14px; border: 1px solid var(--linie); border-left: 4px solid var(--akzent); border-radius: 10px;
+  padding: 14px 16px; border: 0; border-radius: 16px;
   background: var(--flaeche); color: var(--tinte); font: inherit; text-align: left; cursor: pointer;
 }
 .filme-tuer:hover { background: var(--akzent-weich); }
-.ft-zahl { font: 800 27px/1 var(--mono); color: var(--akzent); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.ft-zahl { font: 800 36px/1 var(--zahl); font-stretch: 72%; color: var(--akzent); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 .ft-text { display: grid; gap: 1px; min-width: 0; }
-.ft-titel { font-weight: 800; font-size: 16.5px; }
+.ft-titel { font-weight: 800; font-stretch: 88%; font-size: 17px; }
 .ft-unter { font-size: 13px; color: var(--leise); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ft-bock { font-size: 12.5px; font-weight: 700; color: var(--akzent); }
 .ft-pfeil { color: var(--leise); font-size: 22px; line-height: 1; }
 .filme-kopf { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
 .filme-titelblock { min-width: 0; }
-.filme-titelblock h2, .filme-kopf > h2 { font-size: 22px; font-weight: 800; line-height: 1.2; }
+.filme-titelblock h2, .filme-kopf > h2 { font-size: 28px; font-weight: 800; font-stretch: 76%; letter-spacing: -0.012em; line-height: 1.1; }
 .filme-hinweis { margin: 8px 0 0; }
 .filme-werkzeug {
   position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; display: grid; gap: 8px;
-  margin: 10px -16px 0; padding: 8px 16px 10px; background: var(--bg); border-bottom: 1px solid var(--linie);
+  margin: 10px -16px 0; padding: 8px 16px 10px; background: color-mix(in srgb, var(--bg) 94%, transparent); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--linie);
 }
 .filme-zeile { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .filme-zeile .segmente { flex: 1 1 auto; }
-.filme-genre { flex: 0 1 auto; max-width: 100%; padding: 7px 8px; border: 1px solid var(--linie); border-radius: 10px; background: var(--flaeche); color: var(--tinte); font-size: 14px; }
+.filme-genre { flex: 0 1 auto; max-width: 100%; padding: 8px 10px; border: 0; box-shadow: inset 0 0 0 1px var(--linie); border-radius: 12px; background: var(--flaeche); color: var(--tinte); font-size: 14px; }
 #filme-zahl { margin-top: 8px; }
-.karte.film { grid-template-columns: 2.4rem 1fr; }
-.film-platz { font: 700 19px/1.25 var(--mono); color: var(--leise); text-align: right; font-variant-numeric: tabular-nums; padding-top: 1px; }
+.karte.film { grid-template-columns: 2.6rem minmax(0, 1fr); }
+.film-platz { font: 800 21px/1.2 var(--zahl); font-stretch: 76%; color: var(--leise); text-align: right; font-variant-numeric: tabular-nums; padding-top: 1px; }
 .film-platz.top { color: var(--akzent); }
 .film-regie { margin-top: 4px; font-size: 13px; color: var(--leise); }
+
+/* Einstellungen → Darstellung: drei Segmente über die ganze Breite */
+.e-zeile.darstellung-wahl { display: block; }
+.darstellung-wahl .segmente { width: 100%; }
+
+/* Blättern (app.js, blaetternMit): Der neue Tag – die Woche, das Monatsblatt – gleitet aus der Richtung herein, in die es geht. */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-richtung="vor"] #ansicht :is(.tag[id^="tag-"], .wochen-liste, .kalender) { animation: blatt-rein-rechts .26s cubic-bezier(.2, .8, .2, 1); }
+  html[data-richtung="zurueck"] #ansicht :is(.tag[id^="tag-"], .wochen-liste, .kalender) { animation: blatt-rein-links .26s cubic-bezier(.2, .8, .2, 1); }
+}
+@keyframes blatt-rein-rechts { from { opacity: 0; transform: translateX(32px); } }
+@keyframes blatt-rein-links { from { opacity: 0; transform: translateX(-32px); } }

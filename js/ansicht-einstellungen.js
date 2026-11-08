@@ -5,6 +5,8 @@
  *
  *   Reiter unten       Programm, Karte, Wir einzeln an oder aus;
  *                      Einstellungen ist immer da, einer der drei bleibt an
+ *   Darstellung        Automatisch, Hell oder Dunkel (darstellung.js) –
+ *                      gilt für dieses Gerät
  *   Mein Standort      Bezugspunkt für Entfernungen: das Gerät oder eine
  *                      Adresse (standort.js). Umkreis und Reihenfolge stehen
  *                      im Filter.
@@ -23,6 +25,7 @@ import { istApple, alsApp } from './teilen.js';
 import { hilfeKarte } from './ansicht-wir.js';
 import { INHALTS_REITER } from './speicher.js';
 import { bildnachweise } from './bilder.js';
+import { DARSTELLUNGEN, darstellung } from './darstellung.js';
 
 /** Wie die Reiter unten heißen – dieselben Wörter wie in der Leiste (index.html). */
 const REITER_NAMEN = { programm: 'Programm', karte: 'Karte', wir: 'Wir' };
@@ -37,6 +40,14 @@ const abschnitt = (id, titel, inhalt, unter = '') => `<section class="einstellun
     <div class="e-gruppe">${inhalt}</div>
     ${unter ? `<p class="fein e-unter">${unter}</p>` : ''}
   </section>`;
+
+/** Hell, dunkel oder wie das Gerät – drei Segmente wie Tag/Woche/Monat. */
+function darstellungTeil() {
+  const w = darstellung();
+  return abschnitt('e-darstellung', 'Darstellung', `<div class="e-zeile darstellung-wahl">
+      <div class="segmente" role="group" aria-label="Darstellung">${DARSTELLUNGEN.map(([k, t]) => `<button type="button" class="segment" data-aktion="darstellung" data-wert="${k}" aria-pressed="${k === w}">${t}</button>`).join('')}</div>
+    </div>`, 'Automatisch folgt dem Gerät. Gilt nur für dieses Gerät.');
+}
 
 /**
  * Welche Reiter unten stehen: je ein Schalter (die ganze Zeile tippt), in der
@@ -184,6 +195,7 @@ export function einstellungenAnsicht(st, ui, {
     <h1 class="seiten-titel">Einstellungen</h1>
   </header>
   ${reiterTeil(st)}
+  ${darstellungTeil()}
   ${standortTeil(st)}
   ${st.gemeinsam && !st.gemeinsam.raus && rolle() === 'gastgeber' ? mitteilungenTeil(ui) : ''}
   ${planTeil(st, ui)}

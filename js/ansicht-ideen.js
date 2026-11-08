@@ -25,7 +25,9 @@ import {
 import {
   karte, merkeEintrag, bockKnopf, werZeile, wannKurz, kopfzeile, istAuf,
 } from './karte.js';
-import { bildchen, ortsfoto } from './bilder.js';
+import {
+  bildchen, ortsfoto, motivHtml, motivZu,
+} from './bilder.js';
 import { meinBock, aktuell } from './speicher.js';
 import { treffer, rolle, gastgeberName } from './gemeinsam.js';
 import { bezugVon, entfernung, entfernungText } from './standort.js';
@@ -308,7 +310,7 @@ export function wasImmerGeht(alle, geladen, st, heute, ui, tuer = '') {
     const auf = filterAktiv || ui.offen.has(k);
     const vorschau = liste.slice(0, 4).map((x) => x.titel).join(', ') + (liste.length > 4 ? ' …' : '');
     return `<details class="kategorie" data-kat="${k}"${auf ? ' open' : ''}>
-      <summary><span class="kat-titel">${esc(titel)}</span><span class="kat-zahl">${liste.length}</span><span class="kat-vorschau">${esc(vorschau)}</span></summary>
+      <summary>${motivHtml(motivZu({ kategorie: titel }))}<span class="kat-titel">${esc(titel)}</span><span class="kat-zahl">${liste.length}</span><span class="kat-vorschau">${esc(vorschau)}</span></summary>
       ${liste.map((x) => ideeKarte(x, ctx, 'kat')).join('')}
     </details>`;
   }).join('');

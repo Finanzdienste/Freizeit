@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0e6f69">
+<meta name="theme-color" content="#e7ecf0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a1520" media="(prefers-color-scheme: dark)">
 <meta name="description" content="Was in Hamburg und Umgebung los ist – als Tag, Woche und Monat, auf der Karte, mit Ideen für alles ohne Termin und gemeinsam geplant.">
 <!-- Vorschau, wenn ein Link in die App geteilt wird (WhatsApp & Co.) -->
 <meta property="og:type" content="website">
@@ -18,7 +19,10 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="apple-touch-icon" href="icon-180.png">
+<link rel="preload" href="schrift/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/styles.css">
+<!-- Darstellung fest gewählt (Einstellungen)? Vor dem ersten Zeichnen setzen, damit nichts aufblitzt – js/darstellung.js -->
+<script>try{var w=localStorage.getItem('freizeit.darstellung');if(w==='hell'||w==='dunkel'){document.documentElement.dataset.schema=w;var f=w==='dunkel'?'#0a1520':'#e7ecf0';document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.setAttribute('content',f)})}}catch(e){}</script>
 </head>
 <body>
 <!-- Motive für Karten ohne Ortsfoto (js/bilder.js) – eigene Zeichnungen, Linien in currentColor -->

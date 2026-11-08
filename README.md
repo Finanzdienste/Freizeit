@@ -19,7 +19,7 @@ Vier Reiter unten – welche davon dort stehen, wählt man unter Einstellungen �
 | **Programm** | Drei Ansichten, der gewählte Tag gilt in allen; blättern mit ‹ ›, „Heute“ oder Wischen. **Tag** (Vorgabe) – oben die Tagesleiste (die sieben Tage der Woche mit der Zahl der Termine und Punkten, wer Bock hat; ein Tipp wählt den Tag), dann Wetter, Feiertag, Tipp und 21:30-Hinweis, „Deine Zeit“ (Zeitstreifen 7–24 Uhr: belegt schraffiert, Haken als Marker), Eingeplantes und alle Termine nach Tageszeit (Den ganzen Tag, Vormittag, Nachmittag, Abend), zuletzt „Läuft heute“; **Woche** – eine Karte je Tag mit Wetter, kleinem Zeitstreifen, Zahl der Termine, Haken, Eingeplantem und Konzerten der eigenen Künstler, dem Tipp; dazu „Diese Woche“ (Highlights, Gut zu wissen), „Läuft diese Woche“ und die Hinweise; **Monat** – das Blatt mit Zahlen, Bock-Punkten, ♫ und Feiertagen, ein Tipp wählt den Tag (darunter seine Karte), ein zweiter öffnet ihn; dazu die Konzerte der eigenen Künstler im Monat. Vergangenes steht nirgends: Es geht ab heute los, und heute fehlt, was schon zu Ende ist. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler und Eingeplantes. Ganz unten, in allen drei Ansichten: **Was immer geht** – alles ohne Termin: Eingeplantes, „Wollen wir mal“ (Ideen mit Bock), „Tut dir gut“, eigene Ideen, der Katalog nach Kategorien; mit eigenem Filter (Wirkung, Rahmen) |
 | **Karte** | OpenStreetMap, ein Marker je Ort (nahe zu Haufen zusammengefasst), oben der Zeitraum (Heute bis Alles) und derselbe Filter wie im Programm, dazu „Nur mit Bock“ und „Orte aus Ideen zeigen“ |
 | **Wir** | Der gemeinsame Plan: oben die Leute, eine Zeile Stand und – beim Gastgeber – „Einladen“. Beim Gastgeber der Überblick: Zusammen, Wollen mit dir, Ohne dich, Pro Person, Deine Haken. Bei den Eingeladenen: Du und Tobi, Tobi hat Bock auf, Deine Haken. Leere Abschnitte stehen nicht da. Ohne Plan die eigene Bock-Liste und der Weg in einen Plan |
-| **Einstellungen** | Der Reiter ganz rechts, immer da (Adresse `#einstellungen`): **Reiter unten** (Programm, Karte, Wir je an oder aus), **Mein Standort**, **Mitteilungen** (nur der Gastgeber), **Gemeinsamer Plan** (Abgleich, Name ändern, Weiteres Gerät, So geht's, Verlassen bzw. Auflösen), **App** (Installieren, Stand des Programms und des Katalogs, Hinweise zu den Daten) |
+| **Einstellungen** | Der Reiter ganz rechts, immer da (Adresse `#einstellungen`): **Reiter unten** (Programm, Karte, Wir je an oder aus), **Darstellung** (Automatisch, Hell, Dunkel – für dieses Gerät), **Mein Standort**, **Mitteilungen** (nur der Gastgeber), **Gemeinsamer Plan** (Abgleich, Name ändern, Weiteres Gerät, So geht's, Verlassen bzw. Auflösen), **App** (Installieren, Stand des Programms und des Katalogs, Hinweise zu den Daten) |
 
 **Reiter unten:** Programm, Karte und Wir lassen sich einzeln ausblenden; Einstellungen bleibt immer, und einer der drei bleibt an (sein Schalter sagt dann „Einer bleibt immer an“). Die Wahl bleibt auf dem Gerät (ein Stand von vorher: alle an; ein ausgeblendeter Reiter „Ideen“ aus v18 und früher ist ohne Wirkung). Die App öffnet mit dem ersten Reiter, der an ist – der hat als einziger keine `#`-Adresse. Ausgeblendetes bleibt erreichbar: über `#programm`, `#karte`, `#wir`, einen Einladungs- oder Gerätelink, eine Mitteilung oder einen Sprung aus einer Karte; unten ist dann kein Reiter markiert. `#ideen` (alte Lesezeichen) öffnet das Programm bei „Was immer geht“. Der Punkt für neue Haken gehört zu „Wir“ – ist der Reiter aus, gibt es ihn nicht. Jeder Reiter ist mindestens so breit wie seine Beschriftung – auch mit einer breiten Systemschrift steht „Einstellungen“ ganz da.
 
@@ -33,6 +33,7 @@ Vier Reiter unten – welche davon dort stehen, wählt man unter Einstellungen �
 | etwas, das über Wochen läuft (Winterzauber, Ausstellung), für einen Tag einplanen | im Programm „Läuft heute“ bzw. „Läuft diese Woche“: Karte aufklappen → **Einplanen** |
 | nur Online & TV sehen – oder gerade nicht | Filter → **Art**: Alles · Vor Ort · Online & TV |
 | auswählen, welche Reiter unten stehen | Einstellungen → **Reiter unten** |
+| hell oder dunkel – fest statt wie das Gerät | Einstellungen → **Darstellung** |
 | meinen Standort oder eine Adresse festlegen | Einstellungen → **Mein Standort** (im Filter: „Standort festlegen“ springt dorthin) |
 | Umkreis, Reihenfolge nach Entfernung | Filter → **Wo** bzw. **Reihenfolge am Tag** (erst mit Standort) |
 | Leute einladen | **Wir** → Einladen |
@@ -43,7 +44,12 @@ Vier Reiter unten – welche davon dort stehen, wählt man unter Einstellungen �
 Jede Karte ist zugeklappt kurz – Uhrzeit, Titel, Ort (bei Online & TV „📺“
 und der Sender), was beim Entscheiden hilft (Preis, „♫ Dein Künstler“, Neu,
 wer Bock hat) und der Knopf **Bock** (wer eingeladen ist, wählt zwischen
-**Mit Tobi** und **Allein/mit anderen**). Ein Tipp auf den Titel klappt den
+**Mit Tobi** und **Allein/mit anderen**). Im Programm und in „Wir“ ist jede
+Karte ein **Ticket**: links der Abriss mit der Uhrzeit, heute dazu „in 25 Min“
+(bis anderthalb Stunden vorher) oder „läuft“ (bis zum bekannten oder
+geschätzten Ende; beides zählt bei offener App von selbst weiter), darunter das
+Herz **Bock** – wer Bock hat, dem leuchtet der Abriss im Bernstein. Eingeladene
+haben ihre zwei Knöpfe unten an der Karte. Ganztägiges zeigt im Abriss eine Uhr. Ein Tipp auf den Titel klappt den
 Rest auf: Beschreibung, Region, drinnen/draußen, Anreise, dazu **WhatsApp**
 (fertige Nachricht: Titel, Datum und Uhrzeit, Ort, Beschreibung, Preis,
 Anreise – und der Link in die App, nicht zur Quelle; siehe „Geteilte Links“), **Kalender** (auf dem iPhone eine .ics-Datei für den
@@ -568,6 +574,46 @@ geteilten Adressen aus begrenzt Wikimedia die Abfragen stark; die
 GitHub Action `ortsbilder.yml` holt neue Fotos zuverlässig, sobald sich das
 Programm ändert.
 
+## Gestaltung
+
+„Hafenlicht“ (`css/styles.css`, Kommentar oben): Jeder Termin ist ein Ticket –
+links der Abriss mit der Uhrzeit, an der Perforation oben und unten gestanzt
+(eine CSS-Maske, die Löcher zeigen den Grund). Das ist das eine laute Element;
+Kopf, Tagesleiste, Abschnitte und Kästen bleiben ruhig.
+
+- **Farbe ist Information.** Teal (die Marke, wie das Symbol) für Wege und
+  Aktionen und für heute; **Bernstein** (`--licht`, die Laternen am Hafen) für
+  alles, was deins ist: Bock, Eingeplantes, deine Punkte in Monat und Woche,
+  deine Marker auf der Karte. Koralle und die anderen Personenfarben für die
+  anderen, Blau (`--see`) für die Hohwacht-Kombi. Die Motive tragen Farben vom
+  Hafen je Kategorie – Elbblau (Musik, Party, Online), Backstein (Bühne,
+  Lesung, Comedy), Hapag-Orange (Markt, Fest, Essen), Deichgrün (Sport,
+  Natur), Patina (Ausstellung, Führung, Kultur), Kinoviolett (Kino, Filme),
+  Schiefer (der Rest) –, aber nur dort. Im Monat färbt sich jedes Feld nach
+  der Zahl seiner Termine (`--dichte`, im Verhältnis zum vollsten Tag).
+- **Schrift:** Archivo, eine variable Grotesk mit Breiten- und Gewichtsachse
+  (`schrift/`, SIL Open Font License, `schrift/OFL.txt`; Latin im
+  Offline-Vorrat, Latin Extended lädt nur bei Bedarf). Schmal und fett
+  (`font-stretch` 72–80 %) für Uhrzeiten, Daten, Ziffern und große
+  Überschriften, normal breit für den Text; Ziffern tabellarisch. Codes
+  bleiben in Festbreitenschrift.
+- **Hell und dunkel** („Elbe am Morgen“, „Elbe bei Nacht“) über dieselben
+  Variablen – nach dem Gerät oder fest (Einstellungen → Darstellung,
+  `js/darstellung.js`, `localStorage` `freizeit.darstellung`; ein kleines
+  Skript im `<head>` setzt `html[data-schema]` vor dem ersten Zeichnen, damit
+  nichts aufblitzt). Neue Farben gehören als Variable in alle drei Blöcke oben
+  in `styles.css` (hell, dunkel nach System, dunkel fest gewählt).
+- **Bewegung nur als Antwort:** Das Herz schlägt einmal und der Abriss leuchtet
+  auf, wenn man Bock sagt (dazu ein kurzes Vibrieren, wo das Gerät es kann);
+  der neue Tag gleitet beim Blättern aus der Richtung herein; Aufgeklapptes
+  blendet ein; beim Wischen folgt der Tag dem Finger ein Stück; „läuft“ pulsiert.
+  Bei „weniger Bewegung“ steht alles still. Keine View Transitions: Sie
+  schlucken Tipps, solange sie laufen – wer schnell oft auf › tippt, käme
+  nicht voran. Beim ersten Laden stehen Platzhalter in der Form der Seite da.
+- Tagesleiste, Filme-Werkzeug und Reiterleiste sind Milchglas über dem Inhalt;
+  die Marke „Freizeit“ steht nur noch für Vorleser oben – jede Seite hat ihre
+  eigene große Überschrift.
+
 ## Aufbau
 
 Wie die Workout-App: kein Bauschritt, ES-Module, eigener Service Worker
@@ -592,8 +638,10 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `js/filter.js` | Filter, was an einem Tag steht, was gerade läuft |
 | `js/daten.js` | Laden und Prüfen von `daten/programm.json`, Laden des Ideen-Katalogs |
 | `js/ideen.js` | Ideen: Katalog prüfen, eigene und eingeplante Ideen, Filter, Saison, „Tut dir gut“ |
-| `js/karte.js` | Einträge bauen und als Karte zeichnen (Bock, wer hat Bock) |
+| `js/karte.js` | Einträge bauen und als Karte zeichnen – mit Uhrzeit als Ticket mit Abriss (Bock, „in 25 Min“/„läuft“, wer hat Bock) |
 | `js/teilen.js` | WhatsApp-Nachricht mit dem Link in die App, Google-Kalender-Link, .ics |
+| `js/darstellung.js` | Darstellung Automatisch/Hell/Dunkel: merken, `html[data-schema]` und die Farbe der Browserleiste setzen |
+| `schrift/` | Archivo (woff2, Latin und Latin Extended) mit Lizenz |
 | `js/bilder.js` | Bild an der Karte: Foto des Orts (daten/ortsbilder.json, bilder/orte/) oder Motiv der Kategorie (Symbole in index.html), Nachweise |
 | `js/speicher.js` | Filter, eigene Haken mit Schnappschuss, Warteschlange, Verlauf „Wie war's?“ |
 | `js/gemeinsam.js` | der gemeinsame Plan: Code, Schlüssel, Beitreten, weiteres Gerät, Abgleich mit Supabase, Rollen und Treffer |
@@ -630,6 +678,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `test-landkarte.mjs` | Marker, Zeitraum, „Nur mit Bock“, Online & TV gezählt statt gezeigt, Liste am Marker, Haken aus der Karte |
 | `test-wir.mjs` | der gemeinsame Plan: Tobi lädt ein, Kim (iPhone) und Jo wählen mit/ohne Tobi und sehen einander nicht, Tobis Überblick, offline, weiteres Gerät, Herausnehmen, Verlassen, Auflösen, ein Plan aus der ersten Fassung, fremder Text |
 | `test-filme.mjs` | IMDb Top 250: die Tür, die Seite `#filme`, Suche, Genre, Auswahl, Aufklappen, Bock – allein und im Plan („Mit Tobi gucken“, „Mit dir“), die Zeile in „Wir“ und zurück |
+| `test-gestaltung.mjs` | die Gestaltung: Tickets mit Abriss, Umbruch langer Zeiten, „in 30 Min“/„läuft“ (auch bei weiterlaufender Uhr ohne Neuzeichnen), Bock im Abriss leuchtet, Wetter mit Zeichen, Zeichen der Tageszeiten, Monat nach Dichte, Motive der Ideen-Kategorien, die Schrift, Darstellung Automatisch/Hell/Dunkel samt Neuladen |
 | `test-bilder.mjs` | Bilder an den Karten: Foto klein und groß mit Nachweis, Motiv ohne Foto, Ersatz bei kaputtem Bild, fremder Inhalt in ortsbilder.json, Nachweise in den Einstellungen, ohne Datei nur Motive |
 | `test-link.mjs` | Geteilte Links: die WhatsApp-Nachricht verlinkt die App; ein Link öffnet Termin, eingeplantes Laufendes, Idee und Film aufgeklappt im Blick – auch zum ersten Mal und in der offenen App; Hinweise bei Vergangenem, nicht mehr im Programm, 21:30 und Filter |
 | `test-laufend.mjs` | Laufendes für einen Tag einplanen: „Einplanen“ erst aufgeklappt, Vorschlag (angesehener Tag, in der Woche ihr Samstag), nur solange es läuft, Sprung zum Tag mit Meldung, „Eingeplant“ mit Uhrzeit, Zeiten in der Beschreibung, Kalender, Rückgängig |

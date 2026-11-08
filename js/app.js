@@ -49,8 +49,9 @@ import {
   alleIdeen, planEintrag, neueIdee, BEWERTUNG, geplante,
 } from './ideen.js';
 import {
-  eintragZu, vergessen as karteVergessen, bockKnopf, aufklappen, abschnittUmschalten, istAuf, kennung,
+  eintragZu, vergessen as karteVergessen, bockKnopf, aufklappen, abschnittUmschalten, istAuf, kennung, bockFrisch, liveAuffrischen,
 } from './karte.js';
+import { darstellungSetzen, darstellungAnwenden } from './darstellung.js';
 import { pushEinschalten, pushAusschalten } from './push.js';
 import { ortsbilderSetzen, motivHtml } from './bilder.js';
 import {
@@ -189,6 +190,28 @@ function fokusSchluessel(el) {
   return teile.join('');
 }
 
+/** Solange die Daten kommen: Platzhalter in der Form der Seite. */
+const LADEN = `<div class="lade" aria-busy="true"><p class="sr">Lädt …</p>
+  <i class="lk"></i><i class="lt"></i><i class="lz"></i><i class="lz"></i><i class="lz"></i></div>`;
+
+/**
+ * Blättern mit Bewegung: Der neue Tag (die Woche, das Monatsblatt) gleitet aus
+ * der Richtung herein, in die es geht – html[data-richtung], styles.css. Sofort
+ * gezeichnet und nur hereingeblendet, nie abgewartet: Wer schnell oft auf ›
+ * tippt, verliert keinen Tipp (View Transitions schluckten die Tipps während
+ * des Übergangs). Bei „weniger Bewegung“ ohne (CSS); im ferngesteuerten
+ * Browser (Tests) auch ohne, dort zählt der neue Stand sofort.
+ */
+let richtungUhr = 0;
+function blaetternMit(richtung, aendern) {
+  if (!navigator.webdriver) {
+    document.documentElement.dataset.richtung = richtung;
+    clearTimeout(richtungUhr);
+    richtungUhr = setTimeout(() => { delete document.documentElement.dataset.richtung; }, 400);
+  }
+  aendern();
+}
+
 function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
   const st = aktuell();
   const h = heute();
@@ -200,7 +223,7 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
     html = einstellungenAnsicht(st, ui, {
       p: daten.programm, ideenStand: daten.ideenStand, datenFehler: daten.fehler, installierbar: Boolean(installEreignis),
     });
-  } else if (!geladen) html = '<div class="leer"><p>Lädt …</p></div>';
+  } else if (!geladen) html = LADEN;
   else if (reiter === 'karte') html = landkarteGeruest(st, raum);
   else if (reiter === 'wir') html = wirAnsicht(daten.programm, [...ideenListe, ...filmListe], st, h, ui);
   else if (uiFilme.offen) html = filmeAnsicht(filmListe, filmInfo, st, uiFilme);
@@ -526,11 +549,16 @@ function aktion(name, z) {
       break;
     case 'kal-zurueck':
     case 'kal-vor':
-      if (z.dataset.datum) { prog.datum = z.dataset.datum; zeichnen({ nachOben: true }); }
+      if (z.dataset.datum) {
+        blaetternMit(name === 'kal-vor' ? 'vor' : 'zurueck', () => { prog.datum = z.dataset.datum; zeichnen({ nachOben: true }); });
+      }
       break;
     case 'kal-heute':
-      prog.datum = h;
-      zeichnen({ nachOben: true });
+      blaetternMit((prog.datum || h) > h ? 'zurueck' : 'vor', () => { prog.datum = h; zeichnen({ nachOben: true }); });
+      break;
+    case 'darstellung':
+      darstellungSetzen(z.dataset.wert);
+      zeichnen({ behalteScroll: true });
       break;
     case 'zu-laufend':
       // „12 laufend“ oben: den Kasten aufklappen und hinscrollen.
@@ -1021,6 +1049,9 @@ document.addEventListener('click', (ev) => {
     const eintrag = eintragZu(z.dataset.bock);
     if (!eintrag) return;
     bockUmschalten(eintrag, z.dataset.mitwem || '');
+    // Ein kurzes Antippen in der Hand (wo das Gerät es kann), und das Herz schlägt einmal.
+    if (meinBock(eintrag.schluessel) && typeof navigator.vibrate === 'function') navigator.vibrate(12);
+    bockFrisch(eintrag.schluessel);
     // Alle Knöpfe desselben Eintrags neu – auch in der offenen Liste der Karte.
     document.querySelectorAll('[data-bock-feld]').forEach((feld) => {
       if (feld.dataset.bockFeld === z.dataset.bock) feld.outerHTML = bockKnopf(eintrag);
@@ -1028,6 +1059,7 @@ document.addEventListener('click', (ev) => {
     // Die Karte frischt ihre Marker auf; sonst alles neu – Punkte, Zeitstreifen und „Wollen wir mal“ zeigen den Haken.
     if (reiter === 'karte') landkarteAuffrischen();
     else if (reiter === 'programm' || reiter === 'wir') zeichnen({ behalteScroll: true });
+    bockFrisch('');
     leisteAktualisieren();
     if (st.gemeinsam) abgleichSpaeter();
   } else if (z.dataset.ifilter !== undefined) {
@@ -1048,7 +1080,10 @@ document.addEventListener('click', (ev) => {
       zeichnen({ behalteScroll: true });
     }
   } else if (z.dataset.tag) {
-    zuTag(z.dataset.tag);
+    // Aus der Tagesleiste: gleitet wie ‹ ›, in die Richtung des Tags.
+    const ziel = z.dataset.tag;
+    if (reiter === 'programm' && prog.ansicht === 'tag' && prog.datum && ziel !== prog.datum) blaetternMit(ziel > prog.datum ? 'vor' : 'zurueck', () => zuTag(ziel));
+    else zuTag(ziel);
   } else if (z.dataset.zuWoche) {
     zuWoche(z.dataset.zuWoche);
   } else if (z.dataset.zuTag) {
@@ -1152,13 +1187,36 @@ document.addEventListener('input', (ev) => {
 // Wischen im Programm blättert – Tag, Woche oder Monat, wie ‹ und ›. Nur bei
 // einer klar waagrechten, zügigen Geste; nicht in „Was immer geht“ und nicht
 // in Eingabefeldern.
+// Während des Wischens folgt das Blatt dem Finger ein Stück – so sieht man, dass es geht.
 let wisch = null;
+const wischBlatt = () => $('#ansicht .tag[id^="tag-"], #ansicht .wochen-liste, #ansicht .kalender');
+const ruhig = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function blattLoslassen(el) {
+  if (!el || !el.style.transform) return;
+  el.style.transition = 'transform .2s ease-out, opacity .2s ease-out';
+  el.style.transform = '';
+  el.style.opacity = '';
+  setTimeout(() => { el.style.transition = ''; }, 220);
+}
 document.addEventListener('touchstart', (ev) => {
   wisch = null;
   if (reiter !== 'programm' || blattArt() || ev.touches.length !== 1) return;
-  if (ev.target.closest && ev.target.closest('#was-immer-geht, input, textarea, select')) return;
+  if (ev.target.closest && ev.target.closest('#was-immer-geht, input, textarea, select, .leaflet-container')) return;
   const t = ev.touches[0];
-  wisch = { x: t.clientX, y: t.clientY, zeit: Date.now() };
+  wisch = { x: t.clientX, y: t.clientY, zeit: Date.now(), quer: null };
+}, { passive: true });
+document.addEventListener('touchmove', (ev) => {
+  if (!wisch || ruhig()) return;
+  const t = ev.touches[0];
+  const dx = t.clientX - wisch.x;
+  const dy = t.clientY - wisch.y;
+  if (wisch.quer === null && Math.abs(dx) + Math.abs(dy) > 12) wisch.quer = Math.abs(dx) > 2 * Math.abs(dy);
+  if (!wisch.quer) return;
+  const el = wischBlatt();
+  if (!el) return;
+  const weg = Math.max(-56, Math.min(56, dx * 0.35));
+  el.style.transform = `translateX(${weg}px)`;
+  el.style.opacity = String(1 - Math.abs(weg) / 220);
 }, { passive: true });
 document.addEventListener('touchend', (ev) => {
   if (!wisch) return;
@@ -1167,10 +1225,14 @@ document.addEventListener('touchend', (ev) => {
   const dy = t.clientY - wisch.y;
   const zuegig = Date.now() - wisch.zeit < 700;
   wisch = null;
-  if (!zuegig || Math.abs(dx) < 70 || Math.abs(dx) < 2 * Math.abs(dy)) return;
   const knopf = $(`#ansicht .blaettern [data-aktion="${dx < 0 ? 'kal-vor' : 'kal-zurueck'}"]`);
-  if (knopf && !knopf.disabled) knopf.click();
+  if (!zuegig || Math.abs(dx) < 70 || Math.abs(dx) < 2 * Math.abs(dy) || !knopf || knopf.disabled) {
+    blattLoslassen(wischBlatt());
+    return;
+  }
+  knopf.click();
 }, { passive: true });
+document.addEventListener('touchcancel', () => { wisch = null; blattLoslassen(wischBlatt()); }, { passive: true });
 
 // Chrome & Co. bieten „Installieren“ an – der Knopf dafür steht in den Einstellungen.
 window.addEventListener('beforeinstallprompt', (ev) => {
@@ -1186,14 +1248,18 @@ window.addEventListener('appinstalled', () => {
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState !== 'visible') return;
   zeitAuffrischen();
+  liveAuffrischen();
   abgleichJetzt();
 });
 window.addEventListener('online', () => abgleichJetzt());
 setInterval(() => {
   if (document.visibilityState !== 'visible') return;
   zeitAuffrischen();
+  liveAuffrischen();
   abgleichJetzt();
 }, 60000);
+// Bei „Automatisch“ folgt die Farbe der Browserleiste dem Gerät, auch wenn es umschaltet.
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', () => darstellungAnwenden());
 
 // Offline-Betrieb, nur über http(s). Nach einer neuen Fassung einmal neu
 // laden – aber nur, wenn vorher schon der eigene Worker die Seite hatte (beim

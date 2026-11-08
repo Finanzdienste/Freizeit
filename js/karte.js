@@ -12,7 +12,7 @@ import {
   esc, kostenlos, preisSagtWas, REGIONEN, DRAUSSEN, sichererLink, istOnline,
 } from './text.js';
 import {
-  zeitAm, ende, uhrzeit, offen, abendVorArbeitstag, wochentagKurz, tagMonat, vorbeiAb,
+  zeitAm, ende, uhrzeit, offen, abendVorArbeitstag, wochentagKurz, tagMonat, vorbeiAb, beginn, jetzt,
 } from './zeit.js';
 import { whatsappLink, kalenderZiel } from './teilen.js';
 import { bildchen, ortsfoto } from './bilder.js';
@@ -159,6 +159,13 @@ export function wannKurz(eintrag) {
   return 'jederzeit';
 }
 
+/** Das Herz am Bock-Knopf (dasselbe wie am Reiter „Wir“). */
+const HERZ = '<svg class="herz" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20.2s-7.6-4.7-7.6-10.3A4.4 4.4 0 0 1 12 7.3a4.4 4.4 0 0 1 7.6 2.6c0 5.6-7.6 10.3-7.6 10.3z"/></svg>';
+
+/** Der zuletzt getippte Bock: Sein Herz schlägt einmal, wenn die Karte neu gezeichnet ist (app.js setzt und leert). */
+let frisch = '';
+export const bockFrisch = (schluessel = '') => { frisch = schluessel; };
+
 /**
  * Der Bock-Knopf – auf der Karte, bei den Ideen und in der Landkarte. Wer
  * eingeladen ist, wählt zwischen zwei Knöpfen: mit dem Gastgeber oder
@@ -169,14 +176,50 @@ export function wannKurz(eintrag) {
 export function bockKnopf(eintrag) {
   const k = esc(eintrag.schluessel);
   const an = meinBock(eintrag.schluessel);
+  const neu = frisch && frisch === eintrag.schluessel ? ' frisch' : '';
   if (rolle() !== 'mitglied') {
-    return `<span class="bock-feld" data-bock-feld="${k}"><button type="button" class="knopf bock" data-bock="${k}" aria-pressed="${an}">${an ? 'Bock ✓' : 'Bock'}</button></span>`;
+    return `<span class="bock-feld" data-bock-feld="${k}"><button type="button" class="knopf bock${neu}" data-bock="${k}" aria-pressed="${an}">${HERZ}<span>Bock</span></button></span>`;
   }
   const wie = an ? mitWem(aktuell().bock[eintrag.schluessel]) : '';
-  const knopf = (mitwem, text) => `<button type="button" class="knopf bock" data-bock="${k}" data-mitwem="${mitwem}" aria-pressed="${wie === mitwem}">${text}${wie === mitwem ? ' ✓' : ''}</button>`;
+  const knopf = (mitwem, text) => `<button type="button" class="knopf bock${wie === mitwem ? neu : ''}" data-bock="${k}" data-mitwem="${mitwem}" aria-pressed="${wie === mitwem}">${HERZ}<span>${text}${wie === mitwem ? ' ✓' : ''}</span></button>`;
   const gastgeber = esc(gastgeberName() || 'Gastgeber');
   if (eintrag.quelle === 'film') return `<span class="bock-feld" data-bock-feld="${k}">${knopf('gastgeber', `Mit ${gastgeber} gucken`)}</span>`;
   return `<span class="bock-feld wahl" data-bock-feld="${k}" role="group" aria-label="Bock">${knopf('gastgeber', `Mit ${gastgeber}`)}${knopf('andere', 'Allein/mit anderen')}</span>`;
+}
+
+/**
+ * Gleich oder läuft: heute „in 25 Min“ bis anderthalb Stunden vorher, „läuft“
+ * zwischen Beginn und (bekanntem oder geschätztem) Ende – sonst nichts.
+ * b und e in Minuten seit Mitternacht, e darf fehlen (null).
+ */
+export function liveStand(datum, b, e, j = jetzt()) {
+  if (!datum || datum !== j.datum || !Number.isFinite(b)) return null;
+  const t = j.minuten;
+  if (t < b) return b - t <= 90 ? { art: 'bald', text: `in ${b - t} Min` } : null;
+  if (Number.isFinite(e) && t < e) return { art: 'laeuft', text: 'läuft' };
+  return null;
+}
+
+/** Der Hinweis im Abriss – nur an Karten von heute; liveAuffrischen() hält ihn ohne Neuzeichnen aktuell. */
+function liveHtml(eintrag) {
+  const j = jetzt();
+  if (!eintrag.datum || eintrag.datum !== j.datum || eintrag.ganztags) return '';
+  const b = beginn(eintrag.zeit || '');
+  if (b === null) return '';
+  const e = Number.isFinite(eintrag.endeMin) ? eintrag.endeMin : null;
+  const s = liveStand(eintrag.datum, b, e, j);
+  return `<span class="live${s ? ` ${s.art}` : ''}" data-datum="${eintrag.datum}" data-beginn="${b}" data-ende="${e === null ? '' : e}"${s ? '' : ' hidden'}>${s ? s.text : ''}</span>`;
+}
+
+/** Jede Minute (app.js): „in 25 Min“ zählt herunter, „läuft“ kommt und geht. */
+export function liveAuffrischen(wurzel = document) {
+  const j = jetzt();
+  wurzel.querySelectorAll('.live[data-beginn]').forEach((el) => {
+    const s = liveStand(el.dataset.datum, Number(el.dataset.beginn), el.dataset.ende === '' ? null : Number(el.dataset.ende), j);
+    el.hidden = !s;
+    el.className = `live${s ? ` ${s.art}` : ''}`;
+    el.textContent = s ? s.text : '';
+  });
 }
 
 /**
@@ -190,8 +233,14 @@ export function bockKnopf(eintrag) {
  */
 export function karte(eintrag, o = {}) {
   angezeigt.set(eintrag.schluessel, eintrag);
+  // Mit Uhrzeit ist die Karte ein Ticket: links der Abriss mit Zeit, „gleich/läuft“ und – wer nicht eingeladen
+  // ist – dem Bock-Herz. Eingeladene haben zwei Bock-Knöpfe; die stehen unten bei den Aktionen.
+  const imAbriss = Boolean(o.zeitSpalte) && rolle() !== 'mitglied';
+  // Lange Zeiten („10:00–18:00“) brechen nach dem Strich um.
+  const zeitText = o.zeitText ? esc(o.zeitText) : esc(eintrag.ganztags ? 'ganztägig' : (eintrag.zeit || '–')).replace(/([–/])(?=\S)/g, '$1<wbr>');
+  const zeitKlasse = o.zeitText ? ' datum' : (eintrag.ganztags ? ' ganztags' : '');
   const zeit = o.zeitSpalte
-    ? `<div class="zeit${eintrag.ganztags ? ' ganztags' : ''}">${o.zeitText ? esc(o.zeitText) : esc(eintrag.ganztags ? 'ganztägig' : (eintrag.zeit || '–'))}${eintrag.endeText && !o.zeitText ? `<span class="bis">${esc(eintrag.endeText)}</span>` : ''}</div>`
+    ? `<div class="abriss"><div class="zeit${zeitKlasse}">${zeitText}${eintrag.endeText && !o.zeitText ? `<span class="bis">${esc(eintrag.endeText)}</span>` : ''}</div>${o.zeitText ? '' : liveHtml(eintrag)}${imAbriss ? bockKnopf(eintrag) : ''}</div>`
     : '';
   // Die Uhrzeit steht unten, wenn die linke Spalte etwas anderes zeigt oder es
   // keine Spalte gibt – und dann auch das Ende gleich dahinter.
@@ -228,7 +277,7 @@ export function karte(eintrag, o = {}) {
   const wer = werZeile(eintrag);
   const plan = o.planen || null;
   const foto = ortsfoto(eintrag);
-  const klassen = ['karte', istAuf(eintrag.schluessel) || (plan && plan.offen) ? 'auf' : '', eintrag.hohwacht ? 'hohwacht' : '', eintrag.kuenstler ? 'kuenstler' : '', wer.treffer ? 'treffer' : '', o.zeitSpalte ? '' : 'ohne-zeit', foto ? 'mit-foto' : '']
+  const klassen = ['karte', o.zeitSpalte ? 'ticket' : '', istAuf(eintrag.schluessel) || (plan && plan.offen) ? 'auf' : '', eintrag.hohwacht ? 'hohwacht' : '', eintrag.kuenstler ? 'kuenstler' : '', wer.treffer ? 'treffer' : '', o.zeitSpalte ? '' : 'ohne-zeit', foto ? 'mit-foto' : '']
     .filter(Boolean).join(' ');
   return `<article class="${klassen}" id="k-${esc(eintrag.schluessel.replace(/[^a-z0-9-]/gi, '-'))}">${zeit}<div class="inhalt">
     ${bildchen(eintrag)}
@@ -245,8 +294,8 @@ export function karte(eintrag, o = {}) {
       ${eintrag.unsicher ? `<div class="unsicher">${esc(eintrag.unsicher)}</div>` : ''}
       ${eintrag.anreise ? `<div class="anreise">Anreise: ${esc(eintrag.anreise)}</div>` : ''}
     </div>
-    <div class="aktionen">
-      ${bockKnopf(eintrag)}
+    <div class="aktionen${imAbriss ? ' nur-mehr' : ''}">
+      ${imAbriss ? '' : bockKnopf(eintrag)}
       <span class="mehr aktionen-mehr">
         ${plan ? `<button type="button" class="knopf" data-aktion="planen" data-idee="${esc(eintrag.schluessel)}" data-bereich="${esc(plan.bereich)}" aria-expanded="${Boolean(plan.offen)}">Einplanen</button>` : ''}
         <a class="knopf" href="${esc(whatsappLink(eintrag))}" target="_blank" rel="noopener">WhatsApp</a>

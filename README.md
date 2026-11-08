@@ -27,11 +27,12 @@ Vier Reiter unten – welche davon dort stehen, wählt man unter Einstellungen �
 
 | Ich will … | Da |
 | --- | --- |
-| filtern (Art, Regionen – auch mehrere zugleich –, Umkreis, Kategorie, kostenlos, Mo–Fr ab 15:30 …) | Knopf **Filter** oben im Programm und auf der Karte – das Blatt von unten; was gewählt ist, steht als Chip daneben (✕ nimmt es weg, ab zwei Chips „Alle zeigen“). „Was immer geht“ hat seinen eigenen Filter-Knopf |
+| filtern (Art, Regionen – auch mehrere zugleich –, Umkreis, Kategorie, kostenlos, Mo–Fr ab 15:30, Bis 21:30 …) | Knopf **Filter** oben im Programm und auf der Karte – das Blatt von unten; was gewählt ist, steht als Chip daneben (✕ nimmt es weg, ab zwei Chips „Alle zeigen“). „Was immer geht“ hat seinen eigenen Filter-Knopf |
 | zwischen Tag, Woche und Monat wechseln, blättern | oben im Programm: **Tag · Woche · Monat** und daneben **Heute** (immer an derselben Stelle, ausgegraut, wenn man schon bei heute ist), darunter ‹ › – oder nach links/rechts wischen. Neben den Pfeilen taucht nichts auf, damit man beim schnellen Weitertippen nicht aus Versehen zurückspringt |
 | Ideen ohne Termin, eigene Ideen, „Tut dir gut“ | im Programm ganz unten: **Was immer geht** |
 | etwas, das über Wochen läuft (Winterzauber, Ausstellung), für einen Tag einplanen | im Programm „Läuft heute“ bzw. „Läuft diese Woche“: Karte aufklappen → **Einplanen** |
 | nur Online & TV sehen – oder gerade nicht | Filter → **Art**: Alles · Vor Ort · Online & TV |
+| auch sehen, was erst nach 21:30 endet | Filter → **Wann** → „Bis 21:30“ aus – oder beim Tag in der Zeile „21:30“ auf **Zeigen** |
 | auswählen, welche Reiter unten stehen | Einstellungen → **Reiter unten** |
 | hell oder dunkel – fest statt wie das Gerät | Einstellungen → **Darstellung** |
 | meinen Standort oder eine Adresse festlegen | Einstellungen → **Mein Standort** (im Filter: „Standort festlegen“ springt dorthin) |
@@ -74,8 +75,17 @@ was nach Feierabend noch geht – Beginn ab 15:30, ein Zeitraum bis mindestens
 17:00, ein offenes „ab …“, Ganztägiges. Wochenende und Feiertage bleiben
 ungefiltert.
 
-**Bis 21:30** ist immer an: Abends vor einem Arbeitstag (So–Do, außer vor
-einem Feiertag) steht nur, was spätestens um 21:30 endet. Das Ende kommt aus
+**Bis 21:30** ist an, bis man es abstellt: Abends vor einem Arbeitstag (So–Do, außer vor
+einem Feiertag) steht nur, was spätestens um 21:30 endet. Abstellen geht im
+Filter unter **Wann** („Bis 21:30“) oder gleich beim Tag: In der Zeile
+„21:30 – Ausgeblendet: …“ steht **Zeigen**. Dann steht auch Spätes da, mit der
+Marke „endet nach 21:30“ (online „beginnt nach 21:30“), der Tag sagt „Mit
+dabei: …“ samt **Wieder ausblenden**, und oben steht der Chip „auch nach
+21:30“ – ✕ stellt die Regel wieder an, ebenso „Zurücksetzen“ im Blatt;
+„Alle zeigen“ lässt sie aus. Die Wahl gilt wie jeder Filter in Programm und
+Karte und bleibt auf dem Gerät (`auchSpaet` im Filter). Führt ein geteilter
+Link zu einem Termin, den nur die Regel ausblendet, hat der Hinweis einen
+Knopf **Zeigen**, der sie abstellt und hinspringt. Das Ende kommt aus
 `ende`, aus einem Zeitraum in `zeit`, sonst aus `dauer`, einer Dauer in der
 Beschreibung („ca. 2:15 Std.“, „ca. 90 Minuten“) oder einem Richtwert je
 Kategorie (Konzert 2:15, Bühne 2:30, Comedy 2:15, Film 2:10 …). Märkte, Feste

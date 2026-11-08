@@ -1,6 +1,10 @@
 /*
  * Was zu sehen ist: Filter, die 21:30-Regel und was an einem Tag läuft.
  *
+ * Die 21:30-Regel ist an, bis man sie abstellt (f.auchSpaet – im Filter
+ * „Bis 21:30“, beim Tag „Zeigen“); dann steht auch Spätes da, und der Tag
+ * sagt, wie viel davon erst nach 21:30 endet.
+ *
  * Gemeinsam für Programm, Kalender und Karte – alle zeigen dieselbe Auswahl,
  * nur anders angeordnet. Den Filter dafür baut filterFuer(st): der
  * gespeicherte samt Bezugspunkt für Umkreis und Reihenfolge.
@@ -73,8 +77,8 @@ export function passt(e, f) {
   return true;
 }
 
-/** Ist irgendein Filter an – auch Art und Umkreis? */
-export const filterAn = (f) => Boolean(f.art || (f.regionen && f.regionen.length) || f.kategorie || SCHALTER.some(([k]) => f[k]) || umkreisAn(f));
+/** Ist irgendein Filter an – auch Art und Umkreis? Und ist die 21:30-Regel abgestellt (auch das weicht vom Üblichen ab)? */
+export const filterAn = (f) => Boolean(f.art || (f.regionen && f.regionen.length) || f.kategorie || SCHALTER.some(([k]) => f[k]) || umkreisAn(f) || f.auchSpaet);
 
 /** Der Tag aus den Daten – oder ein nackter, wenn die Daten ihn nicht kennen. */
 export const tagVon = (p, iso) => p.tage.find((t) => t.datum === iso) || { datum: iso };
@@ -83,29 +87,35 @@ export const tagVon = (p, iso) => p.tage.find((t) => t.datum === iso) || { datum
  * Was an einem Tag steht – und wie viele die 21:30-Regel weggenommen hat
  * (spaet), davon wie viele Online & TV (spaetOnline). Vor Ort zählt das
  * Ende, online der Beginn; für Konzerte der eigenen Künstler gilt die Regel
- * nicht. Was heute schon zu Ende ist, fehlt ganz (schonVorbei, `j`: jetzt).
- * Sortiert nach Uhrzeit (Ganztägiges zuerst) – oder, mit nachEntfernung, das
- * Nächste zuerst.
+ * nicht. Mit f.auchSpaet bleiben sie stehen – spaet zählt dann, wie viele
+ * davon da sind, `spaete` sind genau die. Was heute schon zu Ende ist, fehlt
+ * ganz (schonVorbei, `j`: jetzt). Sortiert nach Uhrzeit (Ganztägiges zuerst)
+ * – oder, mit nachEntfernung, das Nächste zuerst.
  */
 export function termineAm(p, iso, f, j = jetzt()) {
   const tag = tagVon(p, iso);
   const basis = p.termine.filter((e) => e.daten.includes(iso) && passt(e, f) && !schonVorbei(e, iso, j)
     && (!f.feierabend || !werktag(tag) || nachFeierabend(e, iso)));
   const rechtzeitig = (e) => e.kuenstler || (istOnline(e) ? beginntRechtzeitig(e, tag, p.tage) : endetRechtzeitig(e, tag, p.tage));
-  const liste = basis.filter(rechtzeitig)
+  const liste = basis.filter((e) => f.auchSpaet || rechtzeitig(e))
     .sort((a, b) => naeher(a, b, f) || sortierung(a, iso) - sortierung(b, iso) || a.titel.localeCompare(b.titel, 'de'));
   const weg = basis.filter((e) => !rechtzeitig(e));
-  return { tag, liste, spaet: weg.length, spaetOnline: weg.filter(istOnline).length };
+  return {
+    tag, liste, spaet: weg.length, spaetOnline: weg.filter(istOnline).length, spaete: new Set(weg),
+  };
 }
 
-/** „Ausgeblendet: 1 Termin, der erst nach 21:30 endet“ – und was online erst nach 21:30 beginnt. */
-export function spaetText(spaet, spaetOnline = 0) {
+/**
+ * „Ausgeblendet: 1 Termin, der erst nach 21:30 endet“ – und was online erst
+ * nach 21:30 beginnt. Ist die Regel abgestellt (gezeigt): „Mit dabei: …“.
+ */
+export function spaetText(spaet, spaetOnline = 0, gezeigt = false) {
   const vorOrt = spaet - spaetOnline;
   const teile = [
     vorOrt ? (vorOrt === 1 ? '1 Termin, der erst nach 21:30 endet' : `${vorOrt} Termine, die erst nach 21:30 enden`) : '',
     spaetOnline ? (spaetOnline === 1 ? '1 Online-Termin, der erst nach 21:30 beginnt' : `${spaetOnline} Online-Termine, die erst nach 21:30 beginnen`) : '',
   ].filter(Boolean);
-  return teile.length ? `Ausgeblendet: ${teile.join(' und ')}` : '';
+  return teile.length ? `${gezeigt ? 'Mit dabei' : 'Ausgeblendet'}: ${teile.join(' und ')}` : '';
 }
 
 /** Was über mehrere Wochen läuft und sich mit dem Zeitraum von–bis überschneidet – zuerst, was bald endet (oder was nah ist). */

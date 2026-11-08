@@ -35,7 +35,7 @@ import {
   beginn, ende, zeitAm, uhrzeit, jetztMinuten, werktag, schonVorbei,
 } from './zeit.js';
 import {
-  termineAm, laufendZwischen, letzterTag, filterFuer, spaetText, umkreisAn,
+  termineAm, laufendZwischen, letzterTag, filterFuer, spaetText, umkreisAn, istOnline,
 } from './filter.js';
 import {
   karte, eintragTermin, eintragLaufend, aufklappbar,
@@ -82,9 +82,14 @@ const tagTitel = (d, heute) => `${wochentag(d)}, ${tagMonat(d)}${d.slice(0, 4) =
 /** Termine (nach Filtern und 21:30-Regel) und Eingeplantes eines Tages – heute ohne das, was schon vorbei ist. */
 function tagDaten(p, d, f, plaene) {
   const {
-    tag, liste, spaet, spaetOnline,
+    tag, liste, spaet, spaetOnline, spaete,
   } = termineAm(p, d, f);
-  const termine = liste.map((e) => eintragTermin(e, tag, p.tage));
+  // Ist die 21:30-Regel abgestellt, trägt, was sie sonst ausblenden würde, eine Marke (karte.js).
+  const termine = liste.map((e) => {
+    const x = eintragTermin(e, tag, p.tage);
+    if (spaete.has(e)) x.spaet = istOnline(e) ? 'beginnt nach 21:30' : 'endet nach 21:30';
+    return x;
+  });
   const geplant = plaene.filter((e) => e.datum === d && !schonVorbei(e, d));
   return {
     tag, termine, geplant, spaet, spaetOnline, alle: [...geplant, ...termine],
@@ -295,7 +300,8 @@ function tagAnsicht(p, st, heute, d, plaene, ctx = {}) {
     tag.feiertag ? '<dt>Feiertag</dt><dd>gesetzlicher Feiertag</dd>' : '',
     tag.tipp ? `<dt class="tipp-titel">Tipp</dt><dd>${esc(tag.tipp)}</dd>` : '',
     f.feierabend && werktag(tag) ? '<dt>Filter</dt><dd>Mo–Fr ab 15:30: nur, was nach Feierabend noch geht.</dd>' : '',
-    td.spaet ? `<dt>21:30</dt><dd>${spaetText(td.spaet, td.spaetOnline)}.</dd>` : '',
+    // Die Regel lässt sich gleich hier ab- und wieder anstellen – wie im Filter unter „Wann“.
+    td.spaet ? `<dt>21:30</dt><dd>${spaetText(td.spaet, td.spaetOnline, f.auchSpaet)}. <button type="button" class="textknopf" data-aktion="${f.auchSpaet ? 'spaet-ausblenden' : 'spaet-zeigen'}">${f.auchSpaet ? 'Wieder ausblenden' : 'Zeigen'}</button></dd>` : '',
   ].join('');
   const streifen = zeitstreifen(d, wichtig, heute);
   const satz = zeitSatz(d);

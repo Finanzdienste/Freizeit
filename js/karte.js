@@ -258,6 +258,8 @@ export function karte(eintrag, o = {}) {
   const wichtig = [
     eintrag.quelle === 'plan' ? marke('Eingeplant', 'plan') : '',
     eintrag.kuenstler ? marke('♫ Dein Künstler', 'kuenstler') : '',
+    // nur, wenn die 21:30-Regel abgestellt ist und sie diesen Termin sonst ausblenden würde (ansicht-programm.js)
+    eintrag.spaet ? marke(eintrag.spaet, 'spaet') : '',
     eintrag.neu ? marke('Neu', 'neu') : '',
     eintrag.ausverkauft ? marke('ausverkauft', 'warn') : '',
     eintrag.vorverkauf ? marke(`Vorverkauf ${eintrag.vorverkauf}`) : '',

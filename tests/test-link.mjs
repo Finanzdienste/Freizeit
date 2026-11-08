@@ -65,6 +65,12 @@ check((await hinweis(V, MI)).includes('„Theater früh“ war am Dienstag, 3.11
 await V.ende({ schliessen: false });
 const S = await oeffne({ tag: MO, hash: `eintrag=t:konzert-spaet:${DI}`, browser });
 check((await hinweis(S, DI)).includes('„Konzert spät“ ist ausgeblendet – es endet erst nach 21:30.'), 'endet nach 21:30 vor einem Arbeitstag: der Hinweis sagt es');
+const zeigenKnopf = S.page.locator(`#tag-${DI} .meldung [data-aktion="spaet-zeigen"]`);
+check(await zeigenKnopf.innerText() === 'Zeigen', '… mit dem Knopf „Zeigen“');
+await zeigenKnopf.click();
+check(await imBlick(S.page.locator(`#k-t-konzert-spaet-${DI}`)) && await S.page.locator(`#tag-${DI} .meldung`).count() === 0
+  && await S.page.locator('#ansicht .filterchip', { hasText: 'auch nach 21:30' }).count() === 1,
+'„Zeigen“: die 21:30-Regel ist aus, das Konzert aufgeklappt im Blick, der Hinweis weg');
 await S.ende({ schliessen: false });
 
 // --- In der offenen App, mit Filter: der Hinweis nennt die Filter

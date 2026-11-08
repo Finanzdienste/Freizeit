@@ -433,14 +433,19 @@ function filterGeaendert() {
   }
 }
 
-/** Alle Filter zurück – der Termine oder („ideen“) von „Was immer geht“. Die Reihenfolge am Tag bleibt, sie ist kein Filter. */
-function filterZuruecksetzen(art = '') {
+/**
+ * Alle Filter zurück – der Termine oder („ideen“) von „Was immer geht“. Die
+ * Reihenfolge am Tag bleibt, sie ist kein Filter. „Alle zeigen“ (spaetBehalten)
+ * lässt auch eine abgestellte 21:30-Regel abgestellt – zeigen heißt nicht
+ * wieder ausblenden; „Zurücksetzen“ im Blatt stellt sie wieder an.
+ */
+function filterZuruecksetzen(art = '', { spaetBehalten = false } = {}) {
   const st = aktuell();
   if (art === 'ideen') {
     st.ideenFilter = LEERER_IDEENFILTER();
     uiIdeen.saisonAlle = false;
   } else {
-    st.filter = { ...LEERER_FILTER(), nachEntfernung: st.filter.nachEntfernung };
+    st.filter = { ...LEERER_FILTER(), nachEntfernung: st.filter.nachEntfernung, auchSpaet: spaetBehalten && st.filter.auchSpaet };
     if (reiter === 'karte') Object.assign(st, { karteBock: false, karteIdeen: false });
   }
   filterGeaendert();
@@ -462,6 +467,7 @@ function chipWeg(k, ideen = false) {
   else if (k === 'umkreis') f.umkreis = 0;
   else if (k === 'karte-bock') st.karteBock = false;
   else if (k === 'karte-ideen') st.karteIdeen = false;
+  else if (k === 'auchSpaet') f.auchSpaet = false;
   else if (SCHALTER.some(([s]) => s === k)) f[k] = false;
   filterGeaendert();
   // Der Chip ist weg – der Fokus geht auf den Filter-Knopf.
@@ -497,7 +503,7 @@ function aktion(name, z) {
       filterZuruecksetzen(blattArt());
       break;
     case 'filter-weg':
-      filterZuruecksetzen();
+      filterZuruecksetzen('', { spaetBehalten: true });
       break;
     case 'ideen-filter-weg':
       filterZuruecksetzen('ideen');
@@ -559,6 +565,21 @@ function aktion(name, z) {
     case 'darstellung':
       darstellungSetzen(z.dataset.wert);
       zeichnen({ behalteScroll: true });
+      break;
+    case 'spaet-zeigen': {
+      // Beim Tag, im Hinweis zu einem Link: auch zeigen, was erst nach 21:30 endet – gilt wie der Filter „Bis 21:30“ aus.
+      const ziel = uiIdeen.meldung && uiIdeen.meldung.knopf && uiIdeen.meldung.knopf.aktion === 'spaet-zeigen' ? uiIdeen.meldung.eintrag : null;
+      aktuell().filter.auchSpaet = true;
+      if (ziel) {
+        uiIdeen.meldung = null;
+        speichern();
+        zuEintrag(ziel);
+      } else filterGeaendert();
+      break;
+    }
+    case 'spaet-ausblenden':
+      aktuell().filter.auchSpaet = false;
+      filterGeaendert();
       break;
     case 'zu-laufend':
       // „12 laufend“ oben: den Kasten aufklappen und hinscrollen.
@@ -952,7 +973,18 @@ function zuEintrag({
   // Steht die Karte dort nicht, sagt oben am Tag ein Hinweis, warum – statt still nichts zu zeigen.
   if (geladen && !document.getElementById(ziel)) {
     const grund = quelle !== 'laufend' && datum && datum < h ? `war am ${datumMitTag(datum)} – das ist vorbei.` : warumNichtDa(schluessel, quelle, tag);
-    melden(`${titel ? `„${titel}“` : 'Der Eintrag aus dem Link'} ${grund}`, null, { ort: 'programm', tag });
+    // Nur die 21:30-Regel steht im Weg: ein Knopf stellt sie ab und springt hin.
+    const spaet = /nach 21:30\.$/.test(grund);
+    melden(`${titel ? `„${titel}“` : 'Der Eintrag aus dem Link'} ${grund}`, null, {
+      ort: 'programm',
+      tag,
+      ...(spaet ? {
+        knopf: { aktion: 'spaet-zeigen', text: 'Zeigen' },
+        eintrag: {
+          schluessel, quelle, datum, von, titel,
+        },
+      } : {}),
+    });
     zeichnen({ nachOben: true });
   }
 }

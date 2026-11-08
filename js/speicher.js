@@ -38,6 +38,8 @@ function reiterAusPruefen(roh) {
 export const LEERER_FILTER = () => ({
   art: '', regionen: [], kategorie: '', kostenlos: false, feierabend: false, drinnen: false, draussen: false, hohwacht: false, kuenstler: false,
   umkreis: 0, nachEntfernung: false,
+  // Die 21:30-Regel ist an, bis man sie abstellt: auchSpaet zeigt auch, was erst später endet (filter.js, termineAm).
+  auchSpaet: false,
 });
 
 /** Filter im Reiter Ideen: Wirkungen (alle müssen passen), wo, und Schalter. */
@@ -96,6 +98,7 @@ function filterPruefen(roh) {
   delete f.region;
   f.umkreis = UMKREISE.includes(Number(f.umkreis)) ? Number(f.umkreis) : 0;
   f.nachEntfernung = f.nachEntfernung === true;
+  f.auchSpaet = f.auchSpaet === true;
   return f;
 }
 

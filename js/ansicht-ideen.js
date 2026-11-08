@@ -237,7 +237,7 @@ export function ideenZahl(alle, st, heute, ui) {
 }
 
 /** Eine Meldung mit „Rückgängig“ (wenn es etwas zurückzunehmen gibt) und ✕. */
-export const meldungBox = (m) => `<div class="meldung" role="status"><span>${esc(m.text)}</span><span class="meldung-knoepfe">${m.rueckgaengig ? '<button type="button" class="knopf klein" data-aktion="rueckgaengig">Rückgängig</button>' : ''}<button type="button" class="textknopf" data-aktion="meldung-weg" aria-label="Hinweis schließen">✕</button></span></div>`;
+export const meldungBox = (m) => `<div class="meldung" role="status"><span>${esc(m.text)}</span><span class="meldung-knoepfe">${m.rueckgaengig ? '<button type="button" class="knopf klein" data-aktion="rueckgaengig">Rückgängig</button>' : ''}${m.knopf ? `<button type="button" class="knopf klein" data-aktion="${esc(m.knopf.aktion)}">${esc(m.knopf.text)}</button>` : ''}<button type="button" class="textknopf" data-aktion="meldung-weg" aria-label="Hinweis schließen">✕</button></span></div>`;
 
 /**
  * Der Abschnitt „Was immer geht“.

@@ -407,6 +407,9 @@ img.bildchen { object-fit: cover; background: var(--flaeche-2); }
 .marke.neu { background: var(--tinte); color: var(--bg); font-weight: 700; }
 .marke.hohwacht { background: var(--see-weich); color: var(--see); font-weight: 700; }
 .marke.warn { background: var(--warn-weich); color: var(--warn); font-weight: 700; }
+/* „endet nach 21:30“ – nur, wenn die Regel abgestellt ist: mit Mond */
+.marke.spaet { display: inline-flex; align-items: center; gap: 4px; background: var(--see-weich); color: var(--see); font-weight: 700; }
+.marke.spaet::before { content: ""; width: 11px; height: 11px; background: currentColor; -webkit-mask: var(--z-mond) center / contain no-repeat; mask: var(--z-mond) center / contain no-repeat; }
 .preis { font-size: 13.5px; font-weight: 700; }
 .unsicher { font-size: 13px; color: var(--warn); margin-top: 4px; }
 .anreise { font-size: 13px; color: var(--leise); margin-top: 8px; padding-left: 10px; border-left: 2px solid var(--linie); }

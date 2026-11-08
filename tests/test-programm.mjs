@@ -60,6 +60,43 @@ check((await page.locator(`#tag-${DI} .tag-info`).innerText()).includes('Ausgebl
 const mi = await titelAm(MI);
 check(!mi.includes('Kino lang'), 'Mi: Film mit Ende 22:30 ist ausgeblendet');
 check(mi.includes('Nachtmarkt'), 'Mi: Nachtmarkt 18–22 Uhr bleibt (zum Kommen und Gehen)');
+
+// --- 21:30 abstellen und wieder anstellen: beim Tag, als Chip, im Filter
+await A.zeigeTag(DI);
+const diInfo = () => page.locator(`#tag-${DI} .tag-info`).innerText();
+const zeigen = page.locator(`#tag-${DI} .tag-info [data-aktion="spaet-zeigen"]`);
+check(await zeigen.innerText() === 'Zeigen', 'Di: in der Zeile „21:30“ steht „Zeigen“');
+const chip2130 = page.locator('#ansicht .filterchip', { hasText: 'auch nach 21:30' });
+check(await chip2130.count() === 0 && !(await page.locator('[data-aktion="filter-auf"]').getAttribute('class')).includes(' an'), '… solange die Regel an ist: kein Chip, der Filter-Knopf ruhig');
+await zeigen.click();
+check((await titelAm(DI)).includes('Konzert spät'), '„Zeigen“: das Konzert bis ca. 22:15 steht da');
+const spaetKarte = page.locator(`#tag-${DI} .karte`, { hasText: 'Konzert spät' });
+check(await spaetKarte.locator('.marke.spaet').innerText() === 'endet nach 21:30', '… mit der Marke „endet nach 21:30“');
+check(await page.locator(`#tag-${DI} .karte .marke.spaet`).count() === 1, '… nur an dem, was die Regel sonst ausblendet (nicht an Keane, nicht am Theater)');
+check((await diInfo()).includes('Mit dabei: 1 Termin, der erst nach 21:30 endet') && await page.locator(`#tag-${DI} [data-aktion="spaet-ausblenden"]`).innerText() === 'Wieder ausblenden',
+  'der Tag sagt „Mit dabei: …“ und bietet „Wieder ausblenden“');
+check(await chip2130.count() === 1 && (await page.locator('[data-aktion="filter-auf"]').getAttribute('class')).includes(' an'), 'oben der Chip „auch nach 21:30“, der Filter-Knopf zeigt: etwas weicht ab');
+check((await titelAm(MI)).includes('Kino lang'), 'gilt für alle Tage: Mi steht der Film bis 22:30 da');
+check((await gespeichert()).filter.auchSpaet === true, 'gemerkt wie jeder Filter (auchSpaet)');
+await page.reload({ waitUntil: 'networkidle' });
+check((await titelAm(DI)).includes('Konzert spät'), 'nach dem Neuladen: weiter aus');
+await page.locator(`#tag-${DI} [data-aktion="spaet-ausblenden"]`).click();
+check(!(await titelAm(DI)).includes('Konzert spät') && await chip2130.count() === 0 && (await diInfo()).includes('Ausgeblendet: 1 Termin'), '„Wieder ausblenden“: wie vorher');
+await A.filter('auchSpaet');
+check((await titelAm(DI)).includes('Konzert spät') && await chip2130.count() === 1, 'im Filter unter „Wann“: „Bis 21:30“ aus – das Konzert steht da');
+await page.click('[data-aktion="filter-auf"]');
+const schalter2130 = page.locator('#blatt [data-filter="auchSpaet"]');
+check(await schalter2130.innerText() === 'Bis 21:30' && await schalter2130.getAttribute('aria-pressed') === 'false', '… der Schalter „Bis 21:30“ steht auf aus');
+await page.click('#blatt [data-aktion="blatt-zuruecksetzen"]');
+check(await schalter2130.getAttribute('aria-pressed') === 'true', '„Zurücksetzen“ stellt die Regel wieder an');
+await page.keyboard.press('Escape');
+check(!(await titelAm(DI)).includes('Konzert spät') && await chip2130.count() === 0, '… das Konzert ist wieder weg');
+await A.filter('kostenlos');
+await A.filter('auchSpaet');
+await page.click('#ansicht [data-aktion="filter-weg"]');
+check(await chip2130.count() === 1 && await page.locator('#ansicht .filterchip').count() === 1, '„Alle zeigen“ nimmt „kostenlos“ zurück, lässt „auch nach 21:30“ – zeigen heißt nicht ausblenden');
+await chip2130.click();
+check(!(await titelAm(DI)).includes('Konzert spät') && await chip2130.count() === 0 && (await gespeichert()).filter.auchSpaet === false, 'der Chip ✕: die Regel ist wieder an');
 check(!(await titelAm(DO)).includes('Party'), 'Do: Party um 23 Uhr ist ausgeblendet');
 check((await titelAm(FR)).includes('Konzert spät'), 'Fr: dasselbe Konzert steht drin – kein Arbeitstag danach');
 const stueckFr = page.locator(`#tag-${FR} .karte`, { hasText: 'Theaterstück' });

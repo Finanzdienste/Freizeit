@@ -37,6 +37,7 @@ export function chipsProgramm(st, { karte = false } = {}) {
   if (umkreisAn(f)) c.push(['umkreis', `bis ${f.umkreis} km`]);
   if (f.kategorie) c.push(['kategorie', f.kategorie]);
   for (const [k, t] of SCHALTER) if (f[k]) c.push([k, t]);
+  if (f.auchSpaet) c.push(['auchSpaet', 'auch nach 21:30']);
   if (karte) {
     if (st.karteBock) c.push(['karte-bock', 'nur mit Bock']);
     if (st.karteIdeen) c.push(['karte-ideen', 'mit Ideen-Orten']);
@@ -119,8 +120,10 @@ export function programmBlatt(p, st, { karte = false, zahlText = '' } = {}) {
   const wo = gruppe('Wo', `${regionenWahl(f.regionen)}${umkreis}`);
   const was = gruppe('Was', `${auswahl('f-kategorie', 'Kategorie', 'Alle Kategorien', p ? kategorien(p).map((k) => [k, k]) : [], f.kategorie)}
     ${schalter('Was', WAS, (k) => f[k], (k) => `data-filter="${k}"`)}`);
-  const wann = gruppe('Wann', schalter('Wann', [['feierabend', 'Mo–Fr ab 15:30']], (k) => f[k], (k) => `data-filter="${k}"`),
-    'An Werktagen nur, was nach Feierabend noch geht.');
+  // „Bis 21:30“ ist an, bis man es abstellt – gespeichert umgekehrt als auchSpaet (Vorgabe: aus).
+  const wann = gruppe('Wann', schalter('Wann', [['feierabend', 'Mo–Fr ab 15:30'], ['auchSpaet', 'Bis 21:30']],
+    (k) => (k === 'auchSpaet' ? !f.auchSpaet : f[k]), (k) => `data-filter="${k}"`),
+  'Mo–Fr ab 15:30: an Werktagen nur, was nach Feierabend noch geht. Bis 21:30: abends vor einem Arbeitstag nur, was bis 21:30 endet (Online & TV: beginnt).');
   const reihenfolge = s && !karte
     ? gruppe('Reihenfolge am Tag', segmente('Reihenfolge', [['zeit', 'Uhrzeit'], ['entfernung', 'Entfernung']], f.nachEntfernung ? 'entfernung' : 'zeit',
       (k) => `data-aktion="reihenfolge" data-wert="${k}"`))

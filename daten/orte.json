@@ -1884,6 +1884,290 @@
     "Kinopolis HafenCity, Hamburg": [
       53.5397,
       9.99895
+    ],
+    "Staatsoper Hamburg, opera stabile": [
+      53.55646,
+      9.98874
+    ],
+    "Kampnagel, kx, Winterhude": [
+      53.5833,
+      10.02217
+    ],
+    "The English Theatre of Hamburg, Lerchenfeld 14": [
+      53.56945,
+      10.02888
+    ],
+    "Hauptkirche St. Katharinen, Katharinenkirchhof 1": [
+      53.54596,
+      9.99445
+    ],
+    "Koppel 66, Lange Reihe 75, St. Georg": [
+      53.55819,
+      10.01163
+    ],
+    "St. Johannis-Harvestehude, Heimhuder Straße 92": [
+      53.57093,
+      9.99349
+    ],
+    "Residenz am Wiesenkamp, Volksdorf": [
+      53.64036,
+      10.15385
+    ],
+    "Stadthaus Bargteheide": [
+      53.72793,
+      10.26121
+    ],
+    "Stadtbibliothek Bad Oldesloe": [
+      53.80783,
+      10.37346
+    ],
+    "Stadtbücherei Ratzeburg": [
+      53.69996,
+      10.76978
+    ],
+    "S-Bahnhof Wohltorf (Treffpunkt)": [
+      53.5207,
+      10.27814
+    ],
+    "Rathaus Ratzeburg, Ratssaal": [
+      53.69996,
+      10.76978
+    ],
+    "Augustinum Aumühle": [
+      53.53033,
+      10.30971
+    ],
+    "A. Paul Weber-Museum, Ratzeburg": [
+      53.70168,
+      10.77539
+    ],
+    "Schloss Reinbek": [
+      53.5073,
+      10.25414
+    ],
+    "St.-Gabriel-Kirche, Volksdorf": [
+      53.6602,
+      10.16915
+    ],
+    "Begegnungsstätte Bergstedt": [
+      53.67495,
+      10.13495
+    ],
+    "Bürgersaal Oststeinbek": [
+      53.54142,
+      10.16348
+    ],
+    "Tourist-Information Mölln (Treffpunkt)": [
+      53.63057,
+      10.69184
+    ],
+    "Jagdschloss Malepartus, Bargteheide": [
+      53.73318,
+      10.28771
+    ],
+    "Kratzmann’sche Kate, Stapelfeld": [
+      53.60455,
+      10.2198
+    ],
+    "KuB Bad Oldesloe": [
+      53.81048,
+      10.37262
+    ],
+    "Haus der Wilden Weiden, Rahlstedt": [
+      53.61577,
+      10.18509
+    ],
+    "Philemon-Kirche, Poppenbüttel": [
+      53.65135,
+      10.06787
+    ],
+    "Gemeindehaus am Rockenhof, Volksdorf": [
+      53.65083,
+      10.16495
+    ],
+    "Rosenhof Großhansdorf 2": [
+      53.66464,
+      10.28924
+    ],
+    "KUNSTAtelier Ahrensburg": [
+      53.67229,
+      10.23793
+    ],
+    "Stadtbibliothek Reinbek": [
+      53.51092,
+      10.25055
+    ],
+    "Wagnerhof im Museumsdorf Volksdorf": [
+      53.64981,
+      10.16893
+    ],
+    "Hospital zum Heiligen Geist, Poppenbüttel": [
+      53.65076,
+      10.07691
+    ],
+    "Herz-Jesu-Kirche, Reinbek": [
+      53.51175,
+      10.24909
+    ],
+    "Gethsemane-Kirche, Reinbek-Neuschönningstedt": [
+      53.54908,
+      10.24652
+    ],
+    "St.-Nicolai-Kirche, Mölln": [
+      53.63038,
+      10.6924
+    ],
+    "Haspa-Filiale Ahrensburg, Rathausplatz": [
+      53.67413,
+      10.23707
+    ],
+    "Schlossplatz, Lauenburg/Elbe": [
+      53.37123,
+      10.55621
+    ],
+    "Altstadtinsel Ratzeburg (Marktplatz bis Dom)": [
+      53.69951,
+      10.77431
+    ],
+    "Theater im Forum, Glinde": [
+      53.54044,
+      10.22167
+    ],
+    "Senator-Neumann-Haus, Bergstedt": [
+      53.675,
+      10.14498
+    ],
+    "Auferstehungskirche Großhansdorf": [
+      53.65329,
+      10.26798
+    ],
+    "Marktkirche Poppenbüttel": [
+      53.65877,
+      10.08622
+    ],
+    "Zimmertheater Buchholz": [
+      53.32295,
+      9.88189
+    ],
+    "Marstall Winsen (Luhe)": [
+      53.36236,
+      10.2063
+    ],
+    "St. Jakobi, Lübeck": [
+      53.8712,
+      10.68897
+    ],
+    "Hafenschuppen 6, Lübeck": [
+      53.87292,
+      10.68436
+    ],
+    "Hafen Niendorf/Ostsee": [
+      53.99281,
+      10.81587
+    ],
+    "Maritim Backbord Bar, Kiel": [
+      54.3456,
+      10.15108
+    ],
+    "Theater im Werftpark, Kiel": [
+      54.31274,
+      10.15625
+    ],
+    "St. Ansgar-Kirche, Kiel": [
+      54.33557,
+      10.13285
+    ],
+    "Lindener Turm, Hannover": [
+      52.36227,
+      9.70526
+    ],
+    "Messegelände Hannover": [
+      52.32462,
+      9.80563
+    ],
+    "Modernes, Bremen": [
+      53.07217,
+      8.79464
+    ],
+    "Alpincenter Hamburg-Wittenburg": [
+      53.50646,
+      11.0963
+    ],
+    "EXPO-Gelände (Messegelände Hannover)": [
+      52.32219,
+      9.81768
+    ],
+    "Gerhart-Hauptmann-Platz, Altstadt": [
+      53.55148,
+      9.99911
+    ],
+    "Allende-Platz, Rotherbaum": [
+      53.56767,
+      9.98204
+    ],
+    "Marie-Jonas-Platz, Eppendorf": [
+      53.59053,
+      9.98643
+    ],
+    "Tibarg, Niendorf": [
+      53.62033,
+      9.95155
+    ],
+    "Apostelkirche, Eimsbüttel": [
+      53.57547,
+      9.94542
+    ],
+    "Sierichs Biergarten am Stadtparksee, Winterhude": [
+      53.59184,
+      10.0286
+    ],
+    "Überseeplatz, HafenCity": [
+      53.54063,
+      9.99914
+    ],
+    "Schrødingers, Schanzenpark": [
+      53.56457,
+      9.9754
+    ],
+    "Stage Theater Neue Flora, Stresemannstraße 159a": [
+      53.56262,
+      9.9503
+    ],
+    "Hotel Bergström, Lüneburg": [
+      53.25046,
+      10.41294
+    ],
+    "Hotel Wyndberg, Lüneburg": [
+      53.251,
+      10.40457
+    ],
+    "Altstadt, Buxtehude": [
+      53.47698,
+      9.70141
+    ],
+    "Marienkirchhof, Lübeck": [
+      53.86777,
+      10.6851
+    ],
+    "Koberg, Lübeck": [
+      53.87127,
+      10.6885
+    ],
+    "Drehbrückenplatz, Lübeck": [
+      53.87226,
+      10.68277
+    ],
+    "Kreuzfahrtterminal Ostpreußenkai, Travemünde": [
+      53.95861,
+      10.87288
+    ],
+    "Schlossterrassen, Eutin": [
+      54.13808,
+      10.61901
+    ],
+    "Handwerksform Hannover": [
+      52.37722,
+      9.74974
     ]
   }
 }

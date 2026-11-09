@@ -1,6 +1,6 @@
 {
  "version": 1,
- "stand": "2026-11-01",
+ "stand": "2026-11-09",
  "basis": "2025-09-29",
  "quelle": "IMDb Top 250: Reihenfolge des offiziellen Charts vom 2025-09-29, jede Woche mit IMDbs offiziellen Daten aufgefrischt (datasets.imdbws.com)",
  "filme": [
@@ -16,7 +16,7 @@
    "regie": "Frank Darabont",
    "imdb": "tt0111161",
    "wertung": 9.3,
-   "stimmen": 3259821,
+   "stimmen": 3262486,
    "beschreibung": "Ein unschuldig verurteilter Banker übersteht Jahrzehnte im Gefängnis Shawshank – mit Geduld, Würde und einer ungewöhnlichen Freundschaft."
   },
   {
@@ -32,7 +32,7 @@
    "regie": "Francis Ford Coppola",
    "imdb": "tt0068646",
    "wertung": 9.2,
-   "stimmen": 2269442,
+   "stimmen": 2271065,
    "beschreibung": "Der alternde Mafiaboss Vito Corleone will sein Reich übergeben – ausgerechnet an den Sohn, der mit dem Familiengeschäft nichts zu tun haben wollte."
   },
   {
@@ -49,7 +49,7 @@
    "regie": "Christopher Nolan",
    "imdb": "tt0468569",
    "wertung": 9.1,
-   "stimmen": 3245658,
+   "stimmen": 3248332,
    "beschreibung": "Batman, Gordon und Harvey Dent gegen den Joker, der Gotham ins Chaos stürzen will – düster, spannend, mit einem legendären Bösewicht."
   },
   {
@@ -65,7 +65,7 @@
    "regie": "Francis Ford Coppola",
    "imdb": "tt0071562",
    "wertung": 9,
-   "stimmen": 1522019,
+   "stimmen": 1523072,
    "beschreibung": "Michael Corleone baut die Macht der Familie aus, während in Rückblenden der Aufstieg des jungen Vito in New York erzählt wird."
   },
   {
@@ -81,7 +81,7 @@
    "regie": "Sidney Lumet",
    "imdb": "tt0050083",
    "wertung": 9,
-   "stimmen": 1010281,
+   "stimmen": 1011136,
    "beschreibung": "Zwölf Männer in einem Raum entscheiden über ein Todesurteil – und einer zweifelt. Ein Kammerspiel, das ganz ohne Action fesselt."
   },
   {
@@ -98,7 +98,7 @@
    "regie": "Peter Jackson",
    "imdb": "tt0167260",
    "wertung": 9,
-   "stimmen": 2205047,
+   "stimmen": 2206532,
    "beschreibung": "Das große Finale: Frodo und Sam kämpfen sich zum Schicksalsberg, während Mittelerde zur letzten Schlacht antritt."
   },
   {
@@ -115,7 +115,7 @@
    "regie": "Steven Spielberg",
    "imdb": "tt0108052",
    "wertung": 9,
-   "stimmen": 1611644,
+   "stimmen": 1612671,
    "beschreibung": "Der Industrielle Oskar Schindler rettet im Zweiten Weltkrieg über tausend Juden vor dem Holocaust – in Schwarz-Weiß, schwer und bewegend."
   },
   {
@@ -132,7 +132,7 @@
    "regie": "Peter Jackson",
    "imdb": "tt0120737",
    "wertung": 8.9,
-   "stimmen": 2249161,
+   "stimmen": 2250787,
    "beschreibung": "Der Hobbit Frodo erbt einen gefährlichen Ring und bricht mit acht Gefährten auf, um ihn zu zerstören – der Beginn der Reise."
   },
   {
@@ -148,7 +148,7 @@
    "regie": "Quentin Tarantino",
    "imdb": "tt0110912",
    "wertung": 8.8,
-   "stimmen": 2480446,
+   "stimmen": 2482060,
    "beschreibung": "Gangster, ein Boxer und ein Koffer voller Geheimnisse: Tarantinos verschachtelte Episoden voller Dialoge, Gewalt und schwarzem Humor."
   },
   {
@@ -164,7 +164,7 @@
    "regie": "Sergio Leone",
    "imdb": "tt0060196",
    "wertung": 8.8,
-   "stimmen": 905852,
+   "stimmen": 906355,
    "beschreibung": "Drei Revolverhelden jagen im amerikanischen Bürgerkrieg einem vergrabenen Goldschatz hinterher – der Western-Klassiker mit Morricones Musik."
   },
   {
@@ -180,7 +180,7 @@
    "regie": "Robert Zemeckis",
    "imdb": "tt0109830",
    "wertung": 8.8,
-   "stimmen": 2549788,
+   "stimmen": 2551652,
    "beschreibung": "Ein gutherziger Mann mit schlichtem Gemüt stolpert durch drei Jahrzehnte US-Geschichte – und verliert seine Jugendliebe nie aus dem Kopf."
   },
   {
@@ -197,7 +197,7 @@
    "regie": "Peter Jackson",
    "imdb": "tt0167261",
    "wertung": 8.8,
-   "stimmen": 1994389,
+   "stimmen": 1995736,
    "beschreibung": "Die Gefährten sind getrennt: Frodo und Sam folgen Gollum Richtung Mordor, die anderen verteidigen Helms Klamm gegen Sarumans Heer."
   },
   {
@@ -212,7 +212,7 @@
    "regie": "David Fincher",
    "imdb": "tt0137523",
    "wertung": 8.8,
-   "stimmen": 2678826,
+   "stimmen": 2681382,
    "beschreibung": "Ein schlafloser Angestellter gründet mit dem charismatischen Tyler Durden einen Untergrund-Boxclub, der bald außer Kontrolle gerät."
   },
   {
@@ -229,7 +229,7 @@
    "regie": "Christopher Nolan",
    "imdb": "tt1375666",
    "wertung": 8.8,
-   "stimmen": 2885168,
+   "stimmen": 2887368,
    "beschreibung": "Ein Dieb, der Geheimnisse aus Träumen stiehlt, soll diesmal einen Gedanken einpflanzen – ein Coup über mehrere Traumebenen."
   },
   {
@@ -246,7 +246,7 @@
    "regie": "Irvin Kershner",
    "imdb": "tt0080684",
    "wertung": 8.7,
-   "stimmen": 1531497,
+   "stimmen": 1532420,
    "beschreibung": "Die Rebellen fliehen vor dem Imperium, Luke lernt bei Yoda – und Darth Vader hat eine Überraschung parat."
   },
   {
@@ -262,7 +262,7 @@
    "regie": "Lana Wachowski, Lilly Wachowski",
    "imdb": "tt0133093",
    "wertung": 8.7,
-   "stimmen": 2290999,
+   "stimmen": 2292580,
    "beschreibung": "Ein Hacker erfährt, dass die Welt eine Simulation ist, und schließt sich dem Widerstand gegen die Maschinen an."
   },
   {
@@ -279,7 +279,7 @@
    "regie": "Martin Scorsese",
    "imdb": "tt0099685",
    "wertung": 8.7,
-   "stimmen": 1421799,
+   "stimmen": 1422837,
    "beschreibung": "Aufstieg und Fall des Gangsters Henry Hill, erzählt mit Tempo, toller Musik und Scorseses Blick auf den Mafia-Alltag."
   },
   {
@@ -296,7 +296,7 @@
    "regie": "Christopher Nolan",
    "imdb": "tt0816692",
    "wertung": 8.7,
-   "stimmen": 2628120,
+   "stimmen": 2631238,
    "beschreibung": "Die Erde stirbt, also reist eine Crew durch ein Wurmloch zu fernen Planeten – ein Weltraumepos über Zeit, Liebe und Physik."
   },
   {
@@ -311,7 +311,7 @@
    "regie": "Milos Forman",
    "imdb": "tt0073486",
    "wertung": 8.6,
-   "stimmen": 1172557,
+   "stimmen": 1173295,
    "beschreibung": "Ein Kleinkrimineller lässt sich in eine Psychiatrie einweisen und legt sich dort mit der strengen Oberschwester an."
   },
   {
@@ -328,7 +328,7 @@
    "regie": "David Fincher",
    "imdb": "tt0114369",
    "wertung": 8.6,
-   "stimmen": 2073682,
+   "stimmen": 2075697,
    "beschreibung": "Zwei Polizisten jagen einen Serienmörder, der nach den sieben Todsünden tötet – finster, verregnet und mit einem berüchtigten Ende."
   },
   {
@@ -345,7 +345,7 @@
    "regie": "Frank Capra",
    "imdb": "tt0038650",
    "wertung": 8.6,
-   "stimmen": 562654,
+   "stimmen": 563045,
    "beschreibung": "An Heiligabend will ein verzweifelter Mann aufgeben – bis ihm ein Engel zeigt, wie seine Stadt ohne ihn aussähe. Der Weihnachtsklassiker."
   },
   {
@@ -362,7 +362,7 @@
    "regie": "Jonathan Demme",
    "imdb": "tt0102926",
    "wertung": 8.6,
-   "stimmen": 1763451,
+   "stimmen": 1765271,
    "beschreibung": "Eine junge FBI-Agentin sucht Rat beim inhaftierten Psychiater und Kannibalen Hannibal Lecter, um einen Serienmörder zu fassen."
   },
   {
@@ -378,7 +378,7 @@
    "regie": "Akira Kurosawa",
    "imdb": "tt0047478",
    "wertung": 8.6,
-   "stimmen": 407457,
+   "stimmen": 407700,
    "beschreibung": "Ein Bauerndorf heuert sieben herrenlose Samurai gegen Banditen an – Kurosawas Meisterwerk und Vorbild für unzählige Actionfilme."
   },
   {
@@ -394,7 +394,7 @@
    "regie": "Steven Spielberg",
    "imdb": "tt0120815",
    "wertung": 8.6,
-   "stimmen": 1670891,
+   "stimmen": 1671987,
    "beschreibung": "Nach der Landung in der Normandie soll ein Trupp einen einzelnen Soldaten finden und nach Hause schicken – mit einer der härtesten Kriegsszenen des Kinos."
   },
   {
@@ -411,7 +411,7 @@
    "regie": "Frank Darabont",
    "imdb": "tt0120689",
    "wertung": 8.6,
-   "stimmen": 1595111,
+   "stimmen": 1596389,
    "beschreibung": "Ein Wärter im Todestrakt der 1930er Jahre merkt, dass ein riesiger, sanfter Häftling eine wundersame Gabe hat."
   },
   {
@@ -427,7 +427,7 @@
    "regie": "Fernando Meirelles, Kátia Lund",
    "imdb": "tt0317248",
    "wertung": 8.6,
-   "stimmen": 886281,
+   "stimmen": 886838,
    "beschreibung": "Zwei Jungen wachsen in einer Favela von Rio auf – der eine wird Fotograf, der andere Drogenboss. Rasant und wuchtig erzählt."
   },
   {
@@ -444,7 +444,7 @@
    "regie": "Roberto Benigni",
    "imdb": "tt0118799",
    "wertung": 8.6,
-   "stimmen": 826951,
+   "stimmen": 827430,
    "beschreibung": "Ein italienischer Vater macht seinem Sohn im KZ weis, alles sei nur ein Spiel – eine Tragikomödie zwischen Lachen und Weinen."
   },
   {
@@ -460,7 +460,7 @@
    "regie": "James Cameron",
    "imdb": "tt0103064",
    "wertung": 8.6,
-   "stimmen": 1308901,
+   "stimmen": 1309880,
    "beschreibung": "Ein umprogrammierter Terminator soll den jungen John Connor vor einer neuen Killermaschine aus flüssigem Metall schützen."
   },
   {
@@ -477,7 +477,7 @@
    "regie": "George Lucas",
    "imdb": "tt0076759",
    "wertung": 8.6,
-   "stimmen": 1596211,
+   "stimmen": 1597184,
    "beschreibung": "Ein Farmjunge, eine Prinzessin, ein Schmuggler und zwei Droiden gegen das Imperium – hier begann alles."
   },
   {
@@ -494,7 +494,7 @@
    "regie": "Robert Zemeckis",
    "imdb": "tt0088763",
    "wertung": 8.5,
-   "stimmen": 1485274,
+   "stimmen": 1486525,
    "beschreibung": "Marty McFly landet mit einem DeLorean im Jahr 1955 und muss dafür sorgen, dass sich seine Eltern ineinander verlieben."
   },
   {
@@ -511,7 +511,7 @@
    "regie": "Hayao Miyazaki",
    "imdb": "tt0245429",
    "wertung": 8.6,
-   "stimmen": 991865,
+   "stimmen": 992822,
    "beschreibung": "Ein Mädchen gerät in eine Geisterwelt, arbeitet in einem Badehaus für Götter und will ihre verzauberten Eltern retten – Ghibli-Magie."
   },
   {
@@ -528,7 +528,7 @@
    "regie": "Roman Polanski",
    "imdb": "tt0253474",
    "wertung": 8.5,
-   "stimmen": 1030487,
+   "stimmen": 1031175,
    "beschreibung": "Ein jüdischer Pianist überlebt das Warschauer Ghetto und versteckt sich in der zerstörten Stadt – nach einer wahren Geschichte."
   },
   {
@@ -545,7 +545,7 @@
    "regie": "Ridley Scott",
    "imdb": "tt0172495",
    "wertung": 8.5,
-   "stimmen": 1892361,
+   "stimmen": 1893686,
    "beschreibung": "Ein verratener römischer General wird zum Sklaven und kämpft sich als Gladiator bis in die Arena des Kaisers."
   },
   {
@@ -561,7 +561,7 @@
    "regie": "Bong Joon Ho",
    "imdb": "tt6751668",
    "wertung": 8.5,
-   "stimmen": 1206318,
+   "stimmen": 1207766,
    "beschreibung": "Eine arme Familie schleicht sich nach und nach bei einer reichen ein – eine bissige Satire, die plötzlich kippt. Oscar als bester Film."
   },
   {
@@ -578,7 +578,7 @@
    "regie": "Alfred Hitchcock",
    "imdb": "tt0054215",
    "wertung": 8.5,
-   "stimmen": 798885,
+   "stimmen": 799572,
    "beschreibung": "Eine Sekretärin auf der Flucht übernachtet im abgelegenen Bates Motel – Hitchcocks Schocker mit der berühmtesten Duschszene."
   },
   {
@@ -595,7 +595,7 @@
    "regie": "Roger Allers, Rob Minkoff",
    "imdb": "tt0110357",
    "wertung": 8.5,
-   "stimmen": 1283970,
+   "stimmen": 1284783,
    "beschreibung": "Der junge Löwe Simba flieht nach dem Tod seines Vaters und muss erwachsen werden, um sein Königreich zurückzuholen."
   },
   {
@@ -612,7 +612,7 @@
    "regie": "Isao Takahata",
    "imdb": "tt0095327",
    "wertung": 8.5,
-   "stimmen": 400196,
+   "stimmen": 400780,
    "beschreibung": "Zwei Geschwister kämpfen im Japan des Zweiten Weltkriegs ums Überleben – einer der traurigsten Animationsfilme überhaupt."
   },
   {
@@ -629,7 +629,7 @@
    "regie": "Martin Scorsese",
    "imdb": "tt0407887",
    "wertung": 8.5,
-   "stimmen": 1588070,
+   "stimmen": 1589236,
    "beschreibung": "Ein Polizist undercover bei der Mafia, ein Spitzel der Mafia bei der Polizei – beide suchen den Verräter. Scorseses Boston-Thriller."
   },
   {
@@ -645,7 +645,7 @@
    "regie": "Damien Chazelle",
    "imdb": "tt2582802",
    "wertung": 8.5,
-   "stimmen": 1190411,
+   "stimmen": 1191700,
    "beschreibung": "Ein junger Schlagzeuger will der Beste werden und gerät an einen gnadenlosen Musiklehrer – packend wie ein Actionfilm."
   },
   {
@@ -662,7 +662,7 @@
    "regie": "Masaki Kobayashi",
    "imdb": "tt0056058",
    "wertung": 8.6,
-   "stimmen": 95270,
+   "stimmen": 95440,
    "beschreibung": "Ein verarmter Samurai bittet an einem Fürstenhof darum, rituellen Selbstmord begehen zu dürfen – und erzählt dabei seine Geschichte."
   },
   {
@@ -679,7 +679,7 @@
    "regie": "Christopher Nolan",
    "imdb": "tt0482571",
    "wertung": 8.5,
-   "stimmen": 1638214,
+   "stimmen": 1639844,
    "beschreibung": "Zwei rivalisierende Zauberkünstler im London um 1900 überbieten sich mit Tricks – bis die Besessenheit gefährlich wird."
   },
   {
@@ -695,7 +695,7 @@
    "regie": "Tony Kaye",
    "imdb": "tt0120586",
    "wertung": 8.5,
-   "stimmen": 1291761,
+   "stimmen": 1292476,
    "beschreibung": "Ein ehemaliger Neonazi kommt aus dem Gefängnis und will seinen jüngeren Bruder vor demselben Weg bewahren."
   },
   {
@@ -712,7 +712,7 @@
    "regie": "Luc Besson",
    "imdb": "tt0110413",
    "wertung": 8.5,
-   "stimmen": 1371876,
+   "stimmen": 1372619,
    "beschreibung": "Ein einsamer Auftragskiller nimmt ein zwölfjähriges Mädchen auf, dessen Familie von einem korrupten Polizisten ermordet wurde."
   },
   {
@@ -729,7 +729,7 @@
    "regie": "Joaquim Dos Santos, Kemp Powers, Justin K. Thompson",
    "imdb": "tt9362722",
    "wertung": 8.5,
-   "stimmen": 560653,
+   "stimmen": 561695,
    "beschreibung": "Miles Morales reist durchs Multiversum und trifft auf eine ganze Gesellschaft von Spider-Leuten – eines der wildesten Animationsabenteuer."
   },
   {
@@ -746,7 +746,7 @@
    "regie": "Honey Trehan",
    "imdb": "tt28089784",
    "wertung": 8.8,
-   "stimmen": 106985,
+   "stimmen": 107024,
    "beschreibung": "Der Menschenrechtler Jaswant Singh Khalra deckt im Punjab der 1990er Tausende heimlich verbrannte Verschwundene auf – nach wahren Ereignissen."
   },
   {
@@ -763,7 +763,7 @@
    "regie": "Michael Curtiz",
    "imdb": "tt0034583",
    "wertung": 8.5,
-   "stimmen": 663643,
+   "stimmen": 663939,
    "beschreibung": "Im Marokko des Zweiten Weltkriegs taucht die frühere Liebe eines Barbesitzers mit ihrem Mann auf – und braucht ausgerechnet seine Hilfe."
   },
   {
@@ -779,7 +779,7 @@
    "regie": "Giuseppe Tornatore",
    "imdb": "tt0095765",
    "wertung": 8.5,
-   "stimmen": 322443,
+   "stimmen": 322695,
    "beschreibung": "Ein Filmregisseur erinnert sich an seine Kindheit im Dorfkino auf Sizilien und an den Vorführer, der sein Freund wurde."
   },
   {
@@ -796,7 +796,7 @@
    "regie": "Olivier Nakache, Éric Toledano",
    "imdb": "tt1675434",
    "wertung": 8.5,
-   "stimmen": 1047466,
+   "stimmen": 1048270,
    "beschreibung": "Ein querschnittsgelähmter Millionär stellt einen jungen Mann aus der Banlieue als Pfleger ein – warmherzig und sehr lustig."
   },
   {
@@ -813,7 +813,7 @@
    "regie": "Bryan Singer",
    "imdb": "tt0114814",
    "wertung": 8.5,
-   "stimmen": 1260890,
+   "stimmen": 1261713,
    "beschreibung": "Fünf Gauner, ein großer Coup und der mysteriöse Keyser Söze – ein Krimi mit einer der bekanntesten Wendungen."
   },
   {
@@ -829,7 +829,7 @@
    "regie": "Ridley Scott",
    "imdb": "tt0078748",
    "wertung": 8.4,
-   "stimmen": 1081989,
+   "stimmen": 1082825,
    "beschreibung": "Die Crew eines Raumfrachters holt einen außerirdischen Organismus an Bord – Science-Fiction-Horror in Reinform."
   },
   {
@@ -846,7 +846,7 @@
    "regie": "Charles Chaplin",
    "imdb": "tt0027977",
    "wertung": 8.5,
-   "stimmen": 288884,
+   "stimmen": 289054,
    "beschreibung": "Charlie Chaplins Tramp kämpft sich durch Fließband, Arbeitslosigkeit und Gefängnis – stumme Komik mit viel Herz."
   },
   {
@@ -862,7 +862,7 @@
    "regie": "Alfred Hitchcock",
    "imdb": "tt0047396",
    "wertung": 8.4,
-   "stimmen": 576295,
+   "stimmen": 576622,
    "beschreibung": "Ein Fotograf mit Gipsbein beobachtet aus Langeweile die Nachbarn – und glaubt, einen Mord gesehen zu haben. Hitchcock pur."
   },
   {
@@ -878,7 +878,7 @@
    "regie": "Quentin Tarantino",
    "imdb": "tt1853728",
    "wertung": 8.5,
-   "stimmen": 1923999,
+   "stimmen": 1925450,
    "beschreibung": "Ein befreiter Sklave zieht mit einem deutschen Kopfgeldjäger los, um seine Frau von einem Plantagenbesitzer zu befreien."
   },
   {
@@ -893,7 +893,7 @@
    "regie": "Sergio Leone",
    "imdb": "tt0064116",
    "wertung": 8.5,
-   "stimmen": 389058,
+   "stimmen": 389253,
    "beschreibung": "Ein wortkarger Mann mit Mundharmonika, eine Witwe und der Bau einer Eisenbahn im Wilden Westen – Leones epischer Western."
   },
   {
@@ -910,7 +910,7 @@
    "regie": "Charles Chaplin",
    "imdb": "tt0021749",
    "wertung": 8.5,
-   "stimmen": 219027,
+   "stimmen": 219140,
    "beschreibung": "Der Tramp verliebt sich in ein blindes Blumenmädchen und versucht alles, um ihr eine Augenoperation zu bezahlen."
   },
   {
@@ -927,7 +927,7 @@
    "regie": "Francis Ford Coppola",
    "imdb": "tt0078788",
    "wertung": 8.4,
-   "stimmen": 781210,
+   "stimmen": 781686,
    "beschreibung": "Ein Offizier soll im Vietnamkrieg einen abtrünnigen Colonel tief im Dschungel töten – eine Reise in den Wahnsinn."
   },
   {
@@ -944,7 +944,7 @@
    "regie": "Andrew Stanton",
    "imdb": "tt0910970",
    "wertung": 8.4,
-   "stimmen": 1348029,
+   "stimmen": 1349018,
    "beschreibung": "Ein kleiner Aufräumroboter auf der verlassenen Erde verliebt sich in eine Roboterin – fast ohne Worte erzählt."
   },
   {
@@ -960,7 +960,7 @@
    "regie": "Christopher Nolan",
    "imdb": "tt0209144",
    "wertung": 8.4,
-   "stimmen": 1465324,
+   "stimmen": 1466271,
    "beschreibung": "Ein Mann ohne Kurzzeitgedächtnis sucht den Mörder seiner Frau – rückwärts erzählt, mit Notizen und Tattoos als Gedächtnis."
   },
   {
@@ -977,7 +977,7 @@
    "regie": "Denis Villeneuve",
    "imdb": "tt15239678",
    "wertung": 8.4,
-   "stimmen": 802958,
+   "stimmen": 804741,
    "beschreibung": "Paul Atreides schließt sich den Fremen an und führt sie gegen die Harkonnen – ein gewaltiges Wüstenepos fürs große Bild."
   },
   {
@@ -993,7 +993,7 @@
    "regie": "Steven Spielberg",
    "imdb": "tt0082971",
    "wertung": 8.4,
-   "stimmen": 1124779,
+   "stimmen": 1125341,
    "beschreibung": "Archäologe Indiana Jones jagt den Nazis die Bundeslade ab – der Abenteuerfilm schlechthin."
   },
   {
@@ -1010,7 +1010,7 @@
    "regie": "Anthony Russo, Joe Russo",
    "imdb": "tt4154756",
    "wertung": 8.4,
-   "stimmen": 1421250,
+   "stimmen": 1422830,
    "beschreibung": "Die Avengers und ihre Verbündeten stellen sich Thanos, der die Infinity-Steine sammelt, um das halbe Universum auszulöschen."
   },
   {
@@ -1027,7 +1027,7 @@
    "regie": "Florian Henckel von Donnersmarck",
    "imdb": "tt0405094",
    "wertung": 8.4,
-   "stimmen": 448647,
+   "stimmen": 448855,
    "beschreibung": "Ein Stasi-Hauptmann überwacht 1984 ein Künstlerpaar in Ost-Berlin – und beginnt, sich auf ihre Seite zu schlagen."
   },
   {
@@ -1043,7 +1043,7 @@
    "regie": "Billy Wilder",
    "imdb": "tt0043014",
    "wertung": 8.4,
-   "stimmen": 264825,
+   "stimmen": 264977,
    "beschreibung": "Ein erfolgloser Drehbuchautor gerät in die Villa eines vergessenen Stummfilmstars, der von seinem Comeback träumt."
   },
   {
@@ -1060,7 +1060,7 @@
    "regie": "Bob Persichetti, Peter Ramsey, Rodney Rothman",
    "imdb": "tt4633694",
    "wertung": 8.4,
-   "stimmen": 822886,
+   "stimmen": 823874,
    "beschreibung": "Teenager Miles Morales wird zu Spider-Man und trifft Spider-Leute aus anderen Dimensionen – Animation wie ein lebendiger Comic."
   },
   {
@@ -1077,7 +1077,7 @@
    "regie": "Billy Wilder",
    "imdb": "tt0051201",
    "wertung": 8.4,
-   "stimmen": 165737,
+   "stimmen": 165910,
    "beschreibung": "Ein alter Starverteidiger übernimmt einen scheinbar aussichtslosen Mordfall – Gerichtskrimi nach Agatha Christie mit Pointe."
   },
   {
@@ -1093,7 +1093,7 @@
    "regie": "Stanley Kubrick",
    "imdb": "tt0050825",
    "wertung": 8.4,
-   "stimmen": 243784,
+   "stimmen": 243948,
    "beschreibung": "Im Ersten Weltkrieg verteidigt ein Oberst drei Soldaten, die nach einem sinnlosen Angriff als Feiglinge hingerichtet werden sollen."
   },
   {
@@ -1109,7 +1109,7 @@
    "regie": "Stanley Kubrick",
    "imdb": "tt0081505",
    "wertung": 8.4,
-   "stimmen": 1251452,
+   "stimmen": 1253139,
    "beschreibung": "Ein Schriftsteller hütet mit Frau und Sohn den Winter über ein leeres Berghotel – und verliert langsam den Verstand."
   },
   {
@@ -1126,7 +1126,7 @@
    "regie": "Charles Chaplin",
    "imdb": "tt0032553",
    "wertung": 8.4,
-   "stimmen": 261197,
+   "stimmen": 261320,
    "beschreibung": "Chaplin spielt einen jüdischen Friseur und den Diktator Hynkel – eine mutige Satire auf Hitler aus dem Jahr 1940."
   },
   {
@@ -1143,7 +1143,7 @@
    "regie": "Quentin Tarantino",
    "imdb": "tt0361748",
    "wertung": 8.4,
-   "stimmen": 1827500,
+   "stimmen": 1829005,
    "beschreibung": "Eine jüdisch-amerikanische Spezialeinheit und eine junge Kinobesitzerin planen im besetzten Frankreich das Ende der Nazi-Führung."
   },
   {
@@ -1160,7 +1160,7 @@
    "regie": "James Cameron",
    "imdb": "tt0090605",
    "wertung": 8.4,
-   "stimmen": 851719,
+   "stimmen": 852259,
    "beschreibung": "Ripley kehrt mit Marines zum Planeten der Aliens zurück, wo eine Kolonie verstummt ist – diesmal mehr Action als Horror."
   },
   {
@@ -1177,7 +1177,7 @@
    "imdb": "tt23849204",
    "schluessel": "f:12th-fail-2023",
    "wertung": 8.7,
-   "stimmen": 179296,
+   "stimmen": 179584,
    "beschreibung": "Ein Junge aus armen Verhältnissen will Polizeioffizier im indischen Staatsdienst werden und tritt nach jedem Scheitern wieder zur härtesten Prüfung des Landes an."
   },
   {
@@ -1193,7 +1193,7 @@
    "regie": "Christopher Nolan",
    "imdb": "tt1345836",
    "wertung": 8.4,
-   "stimmen": 2036079,
+   "stimmen": 2037434,
    "beschreibung": "Acht Jahre nach dem Joker tritt Batman gegen den Terroristen Bane an, der Gotham vom Rest der Welt abschneidet."
   },
   {
@@ -1210,7 +1210,7 @@
    "regie": "Lee Unkrich, Adrian Molina",
    "imdb": "tt2380307",
    "wertung": 8.4,
-   "stimmen": 732956,
+   "stimmen": 734338,
    "beschreibung": "Ein Junge, der Musiker werden will, landet am Día de los Muertos im Reich der Toten – farbenfroh und rührend."
   },
   {
@@ -1227,7 +1227,7 @@
    "regie": "Christopher Nolan",
    "imdb": "tt33764258",
    "wertung": 8.4,
-   "stimmen": 540650,
+   "stimmen": 546045,
    "beschreibung": "Nach dem Trojanischen Krieg kämpft sich Odysseus durch Stürme, Ungeheuer und den Zorn der Götter zurück nach Ithaka – Christopher Nolans Homer-Epos."
   },
   {
@@ -1244,7 +1244,7 @@
    "regie": "Milos Forman",
    "imdb": "tt0086879",
    "wertung": 8.4,
-   "stimmen": 475295,
+   "stimmen": 475587,
    "beschreibung": "Der Hofkomponist Salieri erzählt, wie ihn das Genie des jungen Mozart zerfressen hat – opulent und voller Musik."
   },
   {
@@ -1261,7 +1261,7 @@
    "regie": "Anthony Russo, Joe Russo",
    "imdb": "tt4154796",
    "wertung": 8.4,
-   "stimmen": 1504614,
+   "stimmen": 1506406,
    "beschreibung": "Nach Thanos' Triumph versuchen die übrigen Avengers, das Geschehene rückgängig zu machen – das große Finale."
   },
   {
@@ -1278,7 +1278,7 @@
    "regie": "Akira Kurosawa",
    "imdb": "tt0057565",
    "wertung": 8.4,
-   "stimmen": 74302,
+   "stimmen": 74417,
    "beschreibung": "Ein Industrieller soll für ein entführtes Kind zahlen, das gar nicht seins ist – Kurosawas spannender Entführungskrimi."
   },
   {
@@ -1294,7 +1294,7 @@
    "regie": "Gus Van Sant",
    "imdb": "tt0119217",
    "wertung": 8.4,
-   "stimmen": 1251202,
+   "stimmen": 1252527,
    "beschreibung": "Ein Hausmeister am MIT ist ein mathematisches Genie, steht sich aber selbst im Weg – bis er einen Therapeuten findet."
   },
   {
@@ -1311,7 +1311,7 @@
    "regie": "John Lasseter",
    "imdb": "tt0114709",
    "wertung": 8.3,
-   "stimmen": 1205296,
+   "stimmen": 1206249,
    "beschreibung": "Cowboypuppe Woody fürchtet um seinen Platz als Lieblingsspielzeug, als der Astronaut Buzz Lightyear einzieht."
   },
   {
@@ -1328,7 +1328,7 @@
    "regie": "Park Chan-wook",
    "imdb": "tt0364569",
    "wertung": 8.3,
-   "stimmen": 737203,
+   "stimmen": 737922,
    "beschreibung": "Ein Mann wird 15 Jahre lang grundlos eingesperrt, plötzlich freigelassen – und hat fünf Tage, um herauszufinden, warum."
   },
   {
@@ -1344,7 +1344,7 @@
    "regie": "Stanley Kubrick",
    "imdb": "tt0057012",
    "wertung": 8.3,
-   "stimmen": 556539,
+   "stimmen": 556851,
    "beschreibung": "Ein durchgeknallter General schickt Atombomber Richtung Sowjetunion – Kubricks bitterböse Satire auf den Kalten Krieg."
   },
   {
@@ -1360,7 +1360,7 @@
    "regie": "Wolfgang Petersen",
    "imdb": "tt0082096",
    "wertung": 8.3,
-   "stimmen": 291469,
+   "stimmen": 291607,
    "beschreibung": "Die Besatzung eines deutschen U-Boots im Atlantik 1941 zwischen Enge, Langeweile und Todesangst – Wolfgang Petersens Klassiker."
   },
   {
@@ -1377,7 +1377,7 @@
    "regie": "Mel Gibson",
    "imdb": "tt0112573",
    "wertung": 8.3,
-   "stimmen": 1176045,
+   "stimmen": 1176579,
    "beschreibung": "Der Schotte William Wallace führt im 13. Jahrhundert einen Aufstand gegen den englischen König an."
   },
   {
@@ -1394,7 +1394,7 @@
    "regie": "Makoto Shinkai",
    "imdb": "tt5311514",
    "wertung": 8.4,
-   "stimmen": 409071,
+   "stimmen": 409665,
    "beschreibung": "Ein Junge aus Tokio und ein Mädchen vom Land tauschen im Schlaf die Körper – und suchen einander. Ein wunderschöner Anime."
   },
   {
@@ -1411,7 +1411,7 @@
    "regie": "Hayao Miyazaki",
    "imdb": "tt0119698",
    "wertung": 8.3,
-   "stimmen": 493682,
+   "stimmen": 494074,
    "beschreibung": "Ein junger Krieger gerät zwischen eine Eisenhütte und die Götter des Waldes – Ghibli-Epos über Mensch und Natur."
   },
   {
@@ -1426,7 +1426,7 @@
    "regie": "Sam Mendes",
    "imdb": "tt0169547",
    "wertung": 8.3,
-   "stimmen": 1291858,
+   "stimmen": 1292349,
    "beschreibung": "Ein Familienvater in der Midlife-Crisis wirft sein Vorstadtleben über den Haufen – schwarze Komödie mit Tiefgang."
   },
   {
@@ -1442,7 +1442,7 @@
    "regie": "Rajkumar Hirani",
    "imdb": "tt1187043",
    "wertung": 8.4,
-   "stimmen": 492022,
+   "stimmen": 492342,
    "beschreibung": "Zwei Freunde suchen ihren früheren Studienkollegen, der an der Elite-Uni alles anders machte – Bollywood-Komödie mit Herz."
   },
   {
@@ -1459,7 +1459,7 @@
    "regie": "Todd Phillips",
    "imdb": "tt7286456",
    "wertung": 8.3,
-   "stimmen": 1734475,
+   "stimmen": 1735870,
    "beschreibung": "Ein gescheiterter Komiker in Gotham wird immer weiter an den Rand gedrängt und verwandelt sich in den Joker – düstere Charakterstudie."
   },
   {
@@ -1474,7 +1474,7 @@
    "regie": "Nadine Labaki",
    "imdb": "tt8267604",
    "wertung": 8.4,
-   "stimmen": 127846,
+   "stimmen": 127995,
    "beschreibung": "Ein zwölfjähriger Junge aus den Slums von Beirut verklagt seine Eltern, weil sie ihn auf die Welt gebracht haben."
   },
   {
@@ -1490,7 +1490,7 @@
    "regie": "Sergio Leone",
    "imdb": "tt0087843",
    "wertung": 8.3,
-   "stimmen": 413789,
+   "stimmen": 414055,
    "beschreibung": "Jugendfreunde aus dem jüdischen Viertel von New York werden zu Gangstern – Leones Epos über fünf Jahrzehnte."
   },
   {
@@ -1507,7 +1507,7 @@
    "regie": "Stanley Donen, Gene Kelly",
    "imdb": "tt0045152",
    "wertung": 8.3,
-   "stimmen": 286971,
+   "stimmen": 287150,
    "beschreibung": "Hollywood stellt auf Tonfilm um, und ein Stummfilmstar muss plötzlich singen und tanzen – für viele das beste Musical überhaupt."
   },
   {
@@ -1522,7 +1522,7 @@
    "regie": "Darren Aronofsky",
    "imdb": "tt0180093",
    "wertung": 8.3,
-   "stimmen": 988808,
+   "stimmen": 989414,
    "beschreibung": "Vier Menschen in Brooklyn jagen ihren Träumen hinterher und versinken in der Sucht – schwer zu ertragen, aber eindrucksvoll."
   },
   {
@@ -1539,7 +1539,7 @@
    "regie": "Elem Klimov",
    "imdb": "tt0091251",
    "wertung": 8.3,
-   "stimmen": 127734,
+   "stimmen": 127955,
    "beschreibung": "Ein Junge schließt sich 1943 den Partisanen in Weißrussland an und erlebt die Grausamkeit des Krieges – einer der härtesten Antikriegsfilme."
   },
   {
@@ -1556,7 +1556,7 @@
    "regie": "Richard Marquand",
    "imdb": "tt0086190",
    "wertung": 8.3,
-   "stimmen": 1228377,
+   "stimmen": 1229028,
    "beschreibung": "Luke stellt sich Darth Vader und dem Imperator, während die Rebellen den neuen Todesstern angreifen."
   },
   {
@@ -1573,7 +1573,7 @@
    "regie": "Lee Unkrich",
    "imdb": "tt0435761",
    "wertung": 8.3,
-   "stimmen": 995341,
+   "stimmen": 996052,
    "beschreibung": "Andy geht aufs College, und Woody, Buzz und die Bande landen in einer Kita – mit überraschend viel Gefühl."
   },
   {
@@ -1588,7 +1588,7 @@
    "regie": "Thomas Vinterberg",
    "imdb": "tt2106476",
    "wertung": 8.3,
-   "stimmen": 421748,
+   "stimmen": 422244,
    "beschreibung": "Ein Kindergärtner in einem dänischen Dorf wird fälschlich des Missbrauchs beschuldigt – und die Gemeinschaft wendet sich gegen ihn."
   },
   {
@@ -1603,7 +1603,7 @@
    "regie": "Akira Kurosawa",
    "imdb": "tt0044741",
    "wertung": 8.3,
-   "stimmen": 104555,
+   "stimmen": 104643,
    "beschreibung": "Ein Beamter erfährt, dass er Krebs hat, und will in der verbleibenden Zeit noch etwas Sinnvolles schaffen."
   },
   {
@@ -1620,7 +1620,7 @@
    "regie": "Michel Gondry",
    "imdb": "tt0338013",
    "wertung": 8.3,
-   "stimmen": 1201294,
+   "stimmen": 1202051,
    "beschreibung": "Nach der Trennung lässt ein Mann seine Ex aus dem Gedächtnis löschen – und will mittendrin doch alles festhalten."
   },
   {
@@ -1636,7 +1636,7 @@
    "regie": "Denis Villeneuve",
    "imdb": "tt1255953",
    "wertung": 8.3,
-   "stimmen": 262302,
+   "stimmen": 262747,
    "beschreibung": "Zwillinge reisen nach dem Tod ihrer Mutter in den Nahen Osten, um ihr Geheimnis zu lüften – erschütternd."
   },
   {
@@ -1653,7 +1653,7 @@
    "regie": "Billy Wilder",
    "imdb": "tt0053604",
    "wertung": 8.3,
-   "stimmen": 224080,
+   "stimmen": 224276,
    "beschreibung": "Ein kleiner Angestellter verleiht seine Wohnung an Vorgesetzte für Affären – bis er sich in die Freundin seines Chefs verliebt."
   },
   {
@@ -1670,7 +1670,7 @@
    "regie": "David Lean",
    "imdb": "tt0056172",
    "wertung": 8.3,
-   "stimmen": 347842,
+   "stimmen": 348096,
    "beschreibung": "Der britische Offizier T. E. Lawrence vereint im Ersten Weltkrieg arabische Stämme gegen die Osmanen – Wüstenepos in Überlänge."
   },
   {
@@ -1686,7 +1686,7 @@
    "regie": "Stanley Kubrick",
    "imdb": "tt0062622",
    "wertung": 8.3,
-   "stimmen": 796288,
+   "stimmen": 796785,
    "beschreibung": "Von den Urmenschen bis zum Jupiter: Kubricks rätselhafte Reise durch die Menschheitsgeschichte, mit dem Bordcomputer HAL."
   },
   {
@@ -1702,7 +1702,7 @@
    "regie": "Quentin Tarantino",
    "imdb": "tt0105236",
    "wertung": 8.2,
-   "stimmen": 1186094,
+   "stimmen": 1186850,
    "beschreibung": "Nach einem missglückten Juwelenraub treffen sich die Gangster in einer Lagerhalle – und vermuten einen Verräter unter sich."
   },
   {
@@ -1718,7 +1718,7 @@
    "regie": "Brian De Palma",
    "imdb": "tt0086250",
    "wertung": 8.3,
-   "stimmen": 1040735,
+   "stimmen": 1041797,
    "beschreibung": "Der kubanische Flüchtling Tony Montana steigt in Miami zum Kokainkönig auf – und stürzt tief."
   },
   {
@@ -1735,7 +1735,7 @@
    "regie": "Michael Mann",
    "imdb": "tt0113277",
    "wertung": 8.3,
-   "stimmen": 823046,
+   "stimmen": 823840,
    "beschreibung": "Ein Profi-Einbrecher und ein besessener Polizist belauern sich in Los Angeles – mit einer der besten Schießereien des Kinos."
   },
   {
@@ -1752,7 +1752,7 @@
    "regie": "Billy Wilder",
    "imdb": "tt0036775",
    "wertung": 8.3,
-   "stimmen": 183935,
+   "stimmen": 184061,
    "beschreibung": "Ein Versicherungsvertreter lässt sich von einer verführerischen Frau zu einem Mord überreden – der Urtyp des Film noir."
   },
   {
@@ -1769,7 +1769,7 @@
    "regie": "Alfred Hitchcock",
    "imdb": "tt0053125",
    "wertung": 8.2,
-   "stimmen": 373048,
+   "stimmen": 373227,
    "beschreibung": "Ein Werbemann wird mit einem Agenten verwechselt und quer durch die USA gejagt – Hitchcocks elegantes Verfolgungsabenteuer."
   },
   {
@@ -1786,7 +1786,7 @@
    "regie": "Pete Docter, Bob Peterson",
    "imdb": "tt1049413",
    "wertung": 8.3,
-   "stimmen": 1261847,
+   "stimmen": 1262748,
    "beschreibung": "Ein grummeliger Witwer lässt sein Haus an Luftballons nach Südamerika schweben – mit einem blinden Passagier."
   },
   {
@@ -1803,7 +1803,7 @@
    "regie": "Fritz Lang",
    "imdb": "tt0022100",
    "wertung": 8.3,
-   "stimmen": 185082,
+   "stimmen": 185190,
    "beschreibung": "Im Berlin der frühen 1930er jagen Polizei und Unterwelt gemeinsam einen Kindermörder – Fritz Langs erster Tonfilm."
   },
   {
@@ -1819,7 +1819,7 @@
    "regie": "Orson Welles",
    "imdb": "tt0033467",
    "wertung": 8.2,
-   "stimmen": 498219,
+   "stimmen": 498416,
    "beschreibung": "Ein Reporter will das letzte Wort eines verstorbenen Zeitungsmagnaten entschlüsseln: „Rosebud“ – Kinogeschichte von 1941."
   },
   {
@@ -1835,7 +1835,7 @@
    "regie": "Stanley Kubrick",
    "imdb": "tt0093058",
    "wertung": 8.2,
-   "stimmen": 863369,
+   "stimmen": 863934,
    "beschreibung": "Rekruten werden von einem brüllenden Ausbilder gedrillt und dann in den Vietnamkrieg geschickt – Kubrick in zwei Teilen."
   },
   {
@@ -1852,7 +1852,7 @@
    "regie": "Alfred Hitchcock",
    "imdb": "tt0052357",
    "wertung": 8.2,
-   "stimmen": 464561,
+   "stimmen": 464803,
    "beschreibung": "Ein Ex-Polizist mit Höhenangst soll eine Frau beschatten, die von einer Toten besessen scheint – Hitchcocks Film über Obsession."
   },
   {
@@ -1868,7 +1868,7 @@
    "regie": "Jean-Pierre Jeunet",
    "imdb": "tt0211915",
    "wertung": 8.2,
-   "stimmen": 849603,
+   "stimmen": 849988,
    "beschreibung": "Eine schüchterne Kellnerin in Montmartre beschließt, heimlich das Leben der Menschen um sie herum zu verbessern."
   },
   {
@@ -1884,7 +1884,7 @@
    "regie": "Aamir Khan, Amole Gupte",
    "imdb": "tt0986264",
    "wertung": 8.3,
-   "stimmen": 237431,
+   "stimmen": 237639,
    "beschreibung": "Ein Kunstlehrer erkennt, dass ein vermeintlich fauler Junge Legastheniker ist – Bollywood-Drama zum Mitfühlen."
   },
   {
@@ -1899,7 +1899,7 @@
    "regie": "Asghar Farhadi",
    "imdb": "tt1832382",
    "wertung": 8.3,
-   "stimmen": 281454,
+   "stimmen": 281621,
    "beschreibung": "Ein Paar in Teheran trennt sich, und ein Streit mit einer Pflegekraft wächst zu einem moralischen Dilemma."
   },
   {
@@ -1915,7 +1915,7 @@
    "regie": "Robert Mulligan",
    "imdb": "tt0056592",
    "wertung": 8.2,
-   "stimmen": 354247,
+   "stimmen": 354389,
    "beschreibung": "Ein Anwalt im Süden der USA der 1930er Jahre verteidigt einen zu Unrecht angeklagten Schwarzen – erzählt aus Sicht seiner Tochter."
   },
   {
@@ -1931,7 +1931,7 @@
    "regie": "John McTiernan",
    "imdb": "tt0095016",
    "wertung": 8.2,
-   "stimmen": 1043631,
+   "stimmen": 1044242,
    "beschreibung": "Ein New Yorker Polizist kämpft an Heiligabend allein gegen Terroristen in einem Hochhaus – der Actionklassiker."
   },
   {
@@ -1948,7 +1948,7 @@
    "regie": "George Roy Hill",
    "imdb": "tt0070735",
    "wertung": 8.2,
-   "stimmen": 307888,
+   "stimmen": 308041,
    "beschreibung": "Zwei Trickbetrüger ziehen im Chicago der 1930er einen Gangsterboss mit einem raffinierten Schwindel über den Tisch."
   },
   {
@@ -1964,7 +1964,7 @@
    "regie": "Steven Spielberg",
    "imdb": "tt0097576",
    "wertung": 8.2,
-   "stimmen": 874538,
+   "stimmen": 874975,
    "beschreibung": "Indy sucht mit seinem Vater nach dem Heiligen Gral – und wieder sind die Nazis hinter ihm her."
   },
   {
@@ -1980,7 +1980,7 @@
    "regie": "Stanley Kubrick",
    "imdb": "tt0066921",
    "wertung": 8.2,
-   "stimmen": 948727,
+   "stimmen": 949294,
    "beschreibung": "Ein brutaler Jugendlicher wird einer Umerziehungstherapie unterzogen – Kubricks verstörende Gesellschaftssatire."
   },
   {
@@ -1996,7 +1996,7 @@
    "regie": "Fritz Lang",
    "imdb": "tt0017136",
    "wertung": 8.2,
-   "stimmen": 203894,
+   "stimmen": 204011,
    "beschreibung": "In einer Zukunftsstadt leben die Reichen oben und die Arbeiter unten – Fritz Langs Stummfilm-Meilenstein von 1927."
   },
   {
@@ -2012,7 +2012,7 @@
    "regie": "Guy Ritchie",
    "imdb": "tt0208092",
    "wertung": 8.2,
-   "stimmen": 989505,
+   "stimmen": 990077,
    "beschreibung": "Ein gestohlener Diamant, illegale Boxkämpfe und lauter schräge Gauner in London – Guy Ritchies Chaos-Komödie."
   },
   {
@@ -2029,7 +2029,7 @@
    "regie": "Sam Mendes",
    "imdb": "tt8579674",
    "wertung": 8.2,
-   "stimmen": 790954,
+   "stimmen": 791649,
    "beschreibung": "Zwei britische Soldaten müssen im Ersten Weltkrieg eine Nachricht durch Feindesland bringen – wie in einer einzigen Einstellung gedreht."
   },
   {
@@ -2046,7 +2046,7 @@
    "regie": "Christopher Nolan",
    "imdb": "tt15398776",
    "wertung": 8.2,
-   "stimmen": 1109321,
+   "stimmen": 1110814,
    "beschreibung": "Der Physiker, der die Atombombe mitentwickelte, und was danach mit ihm geschah – Christopher Nolans dreistündiges Biopic."
   },
   {
@@ -2063,7 +2063,7 @@
    "regie": "Curtis Hanson",
    "imdb": "tt0119488",
    "wertung": 8.2,
-   "stimmen": 666120,
+   "stimmen": 666483,
    "beschreibung": "Drei sehr unterschiedliche Polizisten stoßen im Los Angeles der 1950er auf ein Netz aus Korruption."
   },
   {
@@ -2080,7 +2080,7 @@
    "regie": "Oliver Hirschbiegel",
    "imdb": "tt0363163",
    "wertung": 8.2,
-   "stimmen": 405346,
+   "stimmen": 405561,
    "beschreibung": "Die letzten Tage im Führerbunker 1945, erzählt aus Sicht von Hitlers Sekretärin – Bruno Ganz in seiner bekanntesten Rolle."
   },
   {
@@ -2095,7 +2095,7 @@
    "regie": "Vittorio De Sica",
    "imdb": "tt0040522",
    "wertung": 8.2,
-   "stimmen": 194044,
+   "stimmen": 194162,
    "beschreibung": "Im Rom der Nachkriegszeit wird einem Arbeiter das Fahrrad gestohlen, das er für seinen Job braucht – ein Klassiker des Neorealismus."
   },
   {
@@ -2112,7 +2112,7 @@
    "regie": "Nitesh Tiwari",
    "imdb": "tt5074352",
    "wertung": 8.3,
-   "stimmen": 249721,
+   "stimmen": 250025,
    "beschreibung": "Ein früherer Ringer trainiert seine Töchter gegen alle Widerstände zu Weltklasse-Ringerinnen – nach einer wahren Geschichte."
   },
   {
@@ -2129,7 +2129,7 @@
    "regie": "Martin Scorsese",
    "imdb": "tt0993846",
    "wertung": 8.2,
-   "stimmen": 1835838,
+   "stimmen": 1837417,
    "beschreibung": "Der Börsenmakler Jordan Belfort wird mit Betrug steinreich und feiert exzessiv – Scorseses wilde Satire."
   },
   {
@@ -2146,7 +2146,7 @@
    "regie": "Peter Farrelly",
    "imdb": "tt6966692",
    "wertung": 8.2,
-   "stimmen": 709931,
+   "stimmen": 710924,
    "beschreibung": "Ein italoamerikanischer Türsteher fährt 1962 einen schwarzen Pianisten auf Tournee durch die Südstaaten."
   },
   {
@@ -2162,7 +2162,7 @@
    "regie": "Peter Weir",
    "imdb": "tt0120382",
    "wertung": 8.2,
-   "stimmen": 1416480,
+   "stimmen": 1417918,
    "beschreibung": "Truman lebt ein ganz normales Leben – ohne zu wissen, dass er der Star einer rund um die Uhr gesendeten Fernsehshow ist."
   },
   {
@@ -2179,7 +2179,7 @@
    "regie": "Thomas Kail",
    "imdb": "tt8503618",
    "wertung": 8.3,
-   "stimmen": 143883,
+   "stimmen": 144046,
    "beschreibung": "Die Aufzeichnung des Broadway-Hits: die Geschichte des US-Gründervaters Alexander Hamilton als Hip-Hop-Musical."
   },
   {
@@ -2196,7 +2196,7 @@
    "regie": "Christopher Nolan",
    "imdb": "tt0372784",
    "wertung": 8.2,
-   "stimmen": 1752176,
+   "stimmen": 1753334,
    "beschreibung": "Bruce Wayne kehrt nach Gotham zurück und wird zu Batman – Christopher Nolans Neustart der Fledermaus."
   },
   {
@@ -2212,7 +2212,7 @@
    "regie": "Martin Scorsese",
    "imdb": "tt0075314",
    "wertung": 8.2,
-   "stimmen": 1047189,
+   "stimmen": 1047957,
    "beschreibung": "Ein schlafloser Vietnam-Veteran fährt nachts Taxi durch New York und steigert sich in einen Rachefeldzug hinein."
   },
   {
@@ -2227,7 +2227,7 @@
    "regie": "Sergio Leone",
    "imdb": "tt0059578",
    "wertung": 8.2,
-   "stimmen": 305248,
+   "stimmen": 305418,
    "beschreibung": "Zwei Kopfgeldjäger tun sich zusammen, um einen gefürchteten Banditen zu fassen – Leones zweiter Dollar-Western."
   },
   {
@@ -2243,7 +2243,7 @@
    "regie": "Stanley Kramer",
    "imdb": "tt0055031",
    "wertung": 8.3,
-   "stimmen": 98983,
+   "stimmen": 99044,
    "beschreibung": "Ein amerikanischer Richter leitet 1948 den Prozess gegen vier NS-Juristen – Gerichtsdrama über Schuld und Gehorsam."
   },
   {
@@ -2259,7 +2259,7 @@
    "regie": "Martin Scorsese",
    "imdb": "tt1130884",
    "wertung": 8.2,
-   "stimmen": 1694833,
+   "stimmen": 1696463,
    "beschreibung": "Zwei US-Marshals suchen in einer Anstalt auf einer Insel nach einer verschwundenen Patientin – und nichts ist, wie es scheint."
   },
   {
@@ -2276,7 +2276,7 @@
    "imdb": "tt0252488",
    "schluessel": "f:hababam-sinifi-sinifta-kaldi-1976",
    "wertung": 8.3,
-   "stimmen": 31780,
+   "stimmen": 31795,
    "beschreibung": "Die chaotischste Klasse eines Istanbuler Internats treibt ihre Lehrer wieder zur Verzweiflung – ein türkischer Komödienklassiker."
   },
   {
@@ -2293,7 +2293,7 @@
    "regie": "Billy Wilder",
    "imdb": "tt0053291",
    "wertung": 8.2,
-   "stimmen": 308436,
+   "stimmen": 308623,
    "beschreibung": "Zwei Musiker werden Zeugen eines Mafiamords und tauchen als Frauen verkleidet in einer Damenkapelle unter."
   },
   {
@@ -2310,7 +2310,7 @@
    "regie": "Phil Lord, Christopher Miller",
    "imdb": "tt12042730",
    "wertung": 8.2,
-   "stimmen": 590666,
+   "stimmen": 596778,
    "beschreibung": "Ein Lehrer wacht ohne Erinnerung allein auf einem Raumschiff auf und soll die Erde vor dem Erlöschen der Sonne retten – nach Andy Weirs Bestseller."
   },
   {
@@ -2327,7 +2327,7 @@
    "regie": "Steven Spielberg",
    "imdb": "tt0107290",
    "wertung": 8.2,
-   "stimmen": 1204906,
+   "stimmen": 1205738,
    "beschreibung": "In einem Freizeitpark mit geklonten Dinosauriern fällt der Strom aus – Spielbergs Abenteuer mit den Sauriern."
   },
   {
@@ -2344,7 +2344,7 @@
    "regie": "Charles Chaplin",
    "imdb": "tt0012349",
    "wertung": 8.2,
-   "stimmen": 147686,
+   "stimmen": 147770,
    "beschreibung": "Chaplins Tramp findet ein ausgesetztes Baby und zieht es groß – sein erster langer Film, komisch und rührend."
   },
   {
@@ -2360,7 +2360,7 @@
    "regie": "Florian Zeller",
    "imdb": "tt10272386",
    "wertung": 8.2,
-   "stimmen": 251542,
+   "stimmen": 251862,
    "beschreibung": "Ein alter Mann mit Demenz versteht die Welt um sich nicht mehr – erzählt aus seiner Sicht, mit Anthony Hopkins."
   },
   {
@@ -2375,7 +2375,7 @@
    "regie": "Paul Thomas Anderson",
    "imdb": "tt0469494",
    "wertung": 8.2,
-   "stimmen": 722921,
+   "stimmen": 723489,
    "beschreibung": "Ein skrupelloser Ölsucher kommt im Kalifornien um 1900 zu Reichtum – und gerät mit einem jungen Prediger aneinander."
   },
   {
@@ -2390,7 +2390,7 @@
    "regie": "Joseph L. Mankiewicz",
    "imdb": "tt0042192",
    "wertung": 8.2,
-   "stimmen": 151094,
+   "stimmen": 151159,
    "beschreibung": "Eine junge Bewunderin schleicht sich ins Leben einer gefeierten Broadway-Diva – scharfzüngig und elegant."
   },
   {
@@ -2407,7 +2407,7 @@
    "regie": "M. Night Shyamalan",
    "imdb": "tt0167404",
    "wertung": 8.2,
-   "stimmen": 1174324,
+   "stimmen": 1176371,
    "beschreibung": "Ein Kinderpsychologe behandelt einen Jungen, der behauptet, tote Menschen zu sehen."
   },
   {
@@ -2424,7 +2424,7 @@
    "regie": "Akira Kurosawa",
    "imdb": "tt0089881",
    "wertung": 8.2,
-   "stimmen": 155692,
+   "stimmen": 155872,
    "beschreibung": "Ein alter Fürst teilt sein Reich unter seinen drei Söhnen auf – Kurosawas „König Lear“ im feudalen Japan."
   },
   {
@@ -2440,7 +2440,7 @@
    "regie": "Martin Scorsese",
    "imdb": "tt0112641",
    "wertung": 8.2,
-   "stimmen": 630949,
+   "stimmen": 631363,
    "beschreibung": "Ein Buchmacher leitet für die Mafia ein Casino in Las Vegas – bis Gier, Gewalt und Liebe alles zerstören."
   },
   {
@@ -2457,7 +2457,7 @@
    "regie": "Ethan Coen, Joel Coen",
    "imdb": "tt0477348",
    "wertung": 8.2,
-   "stimmen": 1220666,
+   "stimmen": 1221687,
    "beschreibung": "Ein Jäger findet Drogengeld in der Wüste und wird von einem eiskalten Killer verfolgt – die Coen-Brüder in Bestform."
   },
   {
@@ -2473,7 +2473,7 @@
    "regie": "Joseph Kosinski",
    "imdb": "tt1745960",
    "wertung": 8.2,
-   "stimmen": 911615,
+   "stimmen": 912573,
    "beschreibung": "Pilot Maverick soll eine junge Elite-Staffel für eine fast unmögliche Mission ausbilden – Flugszenen fürs große Kino."
   },
   {
@@ -2490,7 +2490,7 @@
    "regie": "John Carpenter",
    "imdb": "tt0084787",
    "wertung": 8.2,
-   "stimmen": 540955,
+   "stimmen": 542065,
    "beschreibung": "Forscher in der Antarktis stoßen auf ein Wesen, das jedes Lebewesen nachahmen kann – paranoider Horror-Klassiker."
   },
   {
@@ -2506,11 +2506,28 @@
    "regie": "Clint Eastwood",
    "imdb": "tt0105695",
    "wertung": 8.2,
-   "stimmen": 474545,
+   "stimmen": 474800,
    "beschreibung": "Ein alternder Revolverheld nimmt einen letzten Kopfgeldauftrag an – Clint Eastwoods Abgesang auf den Western."
   },
   {
    "platz": 153,
+   "titel": "You Can See Everything",
+   "original": "You Can See Everything",
+   "jahr": 2026,
+   "laenge": 174,
+   "genre": [
+    "Biografie",
+    "Komödie",
+    "Krimi"
+   ],
+   "regie": "Nathan Fielder, Lance Oppenheim",
+   "imdb": "tt45368240",
+   "wertung": 9.1,
+   "stimmen": 28267,
+   "beschreibung": "Nathan Fielder und Lance Oppenheim nähern sich in ihrem eigenwilligen Dokumentarfilm der verurteilten Theranos-Gründerin Elizabeth Holmes."
+  },
+  {
+   "platz": 154,
    "titel": "Pans Labyrinth",
    "original": "El Laberinto del fauno",
    "jahr": 2006,
@@ -2523,11 +2540,11 @@
    "regie": "Guillermo del Toro",
    "imdb": "tt0457430",
    "wertung": 8.2,
-   "stimmen": 756266,
+   "stimmen": 756858,
    "beschreibung": "Im Spanien von 1944 flüchtet ein Mädchen vor seinem grausamen Stiefvater in eine düstere Märchenwelt."
   },
   {
-   "platz": 154,
+   "platz": 155,
    "titel": "Kill Bill: Volume 1",
    "original": "Kill Bill: Vol. 1",
    "jahr": 2003,
@@ -2540,11 +2557,11 @@
    "regie": "Quentin Tarantino",
    "imdb": "tt0266697",
    "wertung": 8.2,
-   "stimmen": 1330977,
+   "stimmen": 1331916,
    "beschreibung": "Eine Auftragsmörderin erwacht aus dem Koma und rächt sich an ihren früheren Kollegen – Tarantinos Martial-Arts-Rausch."
   },
   {
-   "platz": 155,
+   "platz": 156,
    "titel": "Prisoners",
    "original": "Prisoners",
    "jahr": 2013,
@@ -2557,11 +2574,11 @@
    "regie": "Denis Villeneuve",
    "imdb": "tt1392214",
    "wertung": 8.2,
-   "stimmen": 966003,
+   "stimmen": 967411,
    "beschreibung": "Als zwei Mädchen verschwinden, nimmt ein verzweifelter Vater die Sache selbst in die Hand – ein düsterer Thriller."
   },
   {
-   "platz": 156,
+   "platz": 157,
    "titel": "A Beautiful Mind – Genie und Wahnsinn",
    "original": "A Beautiful Mind",
    "jahr": 2001,
@@ -2573,11 +2590,11 @@
    "regie": "Ron Howard",
    "imdb": "tt0268978",
    "wertung": 8.2,
-   "stimmen": 1067511,
+   "stimmen": 1068133,
    "beschreibung": "Der Mathematiker John Nash revolutioniert die Spieltheorie und kämpft mit einer Schizophrenie."
   },
   {
-   "platz": 157,
+   "platz": 158,
    "titel": "Der Schatz der Sierra Madre",
    "original": "The Treasure of the Sierra Madre",
    "jahr": 1948,
@@ -2590,11 +2607,11 @@
    "regie": "John Huston",
    "imdb": "tt0040897",
    "wertung": 8.2,
-   "stimmen": 143212,
+   "stimmen": 143281,
    "beschreibung": "Drei Glücksritter suchen in Mexiko nach Gold – und das Misstrauen untereinander wächst mit jedem Fund."
   },
   {
-   "platz": 158,
+   "platz": 159,
    "titel": "Findet Nemo",
    "original": "Finding Nemo",
    "jahr": 2003,
@@ -2607,11 +2624,11 @@
    "regie": "Andrew Stanton, Lee Unkrich",
    "imdb": "tt0266543",
    "wertung": 8.2,
-   "stimmen": 1230245,
+   "stimmen": 1230936,
    "beschreibung": "Clownfisch Marlin durchquert den Ozean, um seinen entführten Sohn zu finden – mit der vergesslichen Dorie an seiner Seite."
   },
   {
-   "platz": 159,
+   "platz": 160,
    "titel": "Das wandelnde Schloss",
    "original": "Hauru no ugoku shiro",
    "jahr": 2004,
@@ -2624,11 +2641,11 @@
    "regie": "Hayao Miyazaki",
    "imdb": "tt0347149",
    "wertung": 8.2,
-   "stimmen": 524872,
+   "stimmen": 525337,
    "beschreibung": "Eine junge Hutmacherin wird in eine alte Frau verwandelt und findet Zuflucht im wandelnden Schloss des Zauberers Howl."
   },
   {
-   "platz": 160,
+   "platz": 161,
    "titel": "Yojimbo – Der Leibwächter",
    "original": "Yojimbo",
    "jahr": 1961,
@@ -2641,11 +2658,11 @@
    "regie": "Akira Kurosawa",
    "imdb": "tt0055630",
    "wertung": 8.2,
-   "stimmen": 145301,
+   "stimmen": 145407,
    "beschreibung": "Ein herrenloser Samurai spielt in einer Stadt zwei verfeindete Banden gegeneinander aus – Vorlage für „Für eine Handvoll Dollar“."
   },
   {
-   "platz": 161,
+   "platz": 162,
    "titel": "Die besten Jahre",
    "original": "La Meglio gioventù",
    "jahr": 2003,
@@ -2658,11 +2675,11 @@
    "imdb": "tt0346336",
    "schluessel": "f:la-meglio-gioventu-2003",
    "wertung": 8.4,
-   "stimmen": 29014,
+   "stimmen": 29046,
    "beschreibung": "Zwei Brüder aus Rom und ihre Familie durch vier Jahrzehnte italienischer Geschichte – ursprünglich fürs Fernsehen, gut sechs Stunden lang."
   },
   {
-   "platz": 162,
+   "platz": 163,
    "titel": "Gesprengte Ketten",
    "original": "The Great Escape",
    "jahr": 1963,
@@ -2675,11 +2692,11 @@
    "regie": "John Sturges",
    "imdb": "tt0057115",
    "wertung": 8.2,
-   "stimmen": 281290,
+   "stimmen": 281461,
    "beschreibung": "Alliierte Kriegsgefangene planen den Massenausbruch aus einem deutschen Lager – mit Steve McQueen auf dem Motorrad."
   },
   {
-   "platz": 163,
+   "platz": 164,
    "titel": "Die Ritter der Kokosnuss",
    "original": "Monty Python and the Holy Grail",
    "jahr": 1975,
@@ -2692,11 +2709,11 @@
    "regie": "Terry Gilliam, Terry Jones",
    "imdb": "tt0071853",
    "wertung": 8.1,
-   "stimmen": 609755,
+   "stimmen": 609991,
    "beschreibung": "König Artus und seine Ritter suchen den Heiligen Gral – Monty Pythons absurder Klassiker, ohne Pferde, aber mit Kokosnüssen."
   },
   {
-   "platz": 164,
+   "platz": 165,
    "titel": "Der Elefantenmensch",
    "original": "The Elephant Man",
    "jahr": 1980,
@@ -2708,11 +2725,11 @@
    "regie": "David Lynch",
    "imdb": "tt0080678",
    "wertung": 8.2,
-   "stimmen": 285851,
+   "stimmen": 286096,
    "beschreibung": "Im viktorianischen London nimmt sich ein Arzt eines schwer entstellten Mannes an, der als Jahrmarktsattraktion ausgestellt wurde."
   },
   {
-   "platz": 165,
+   "platz": 166,
    "titel": "Klaus",
    "original": "Klaus",
    "jahr": 2019,
@@ -2725,11 +2742,11 @@
    "regie": "Sergio Pablos, Carlos Martínez López",
    "imdb": "tt4729430",
    "wertung": 8.2,
-   "stimmen": 244360,
+   "stimmen": 244697,
    "beschreibung": "Ein fauler Postbote wird in ein abgelegenes Inseldorf versetzt und freundet sich mit einem einsamen Spielzeugmacher an – ein Weihnachtsfilm."
   },
   {
-   "platz": 166,
+   "platz": 167,
    "titel": "Bei Anruf Mord",
    "original": "Dial M for Murder",
    "jahr": 1954,
@@ -2741,11 +2758,11 @@
    "regie": "Alfred Hitchcock",
    "imdb": "tt0046912",
    "wertung": 8.1,
-   "stimmen": 207973,
+   "stimmen": 208111,
    "beschreibung": "Ein Ex-Tennisprofi plant den perfekten Mord an seiner reichen Frau – doch etwas geht schief. Ein Hitchcock-Krimi."
   },
   {
-   "platz": 167,
+   "platz": 168,
    "titel": "Vom Winde verweht",
    "original": "Gone with the Wind",
    "jahr": 1939,
@@ -2758,11 +2775,11 @@
    "regie": "Victor Fleming, George Cukor, Sam Wood",
    "imdb": "tt0031381",
    "wertung": 8.2,
-   "stimmen": 359982,
+   "stimmen": 360188,
    "beschreibung": "Die eigensinnige Scarlett O'Hara im amerikanischen Bürgerkrieg und danach – das große Melodram, fast vier Stunden lang."
   },
   {
-   "platz": 168,
+   "platz": 169,
    "titel": "In ihren Augen",
    "original": "El secreto de sus ojos",
    "jahr": 2009,
@@ -2775,11 +2792,11 @@
    "regie": "Juan José Campanella",
    "imdb": "tt1305806",
    "wertung": 8.2,
-   "stimmen": 246604,
+   "stimmen": 246788,
    "beschreibung": "Ein pensionierter Justizbeamter schreibt einen Roman über einen ungelösten Mordfall, der ihn nie losgelassen hat."
   },
   {
-   "platz": 169,
+   "platz": 170,
    "titel": "Chinatown",
    "original": "Chinatown",
    "jahr": 1974,
@@ -2792,11 +2809,11 @@
    "regie": "Roman Polanski",
    "imdb": "tt0071315",
    "wertung": 8.1,
-   "stimmen": 381740,
+   "stimmen": 381972,
    "beschreibung": "Ein Privatdetektiv im Los Angeles der 1930er stößt bei einem Ehebruchfall auf einen Skandal um Wasserrechte – Neo-Noir."
   },
   {
-   "platz": 170,
+   "platz": 171,
    "titel": "Bube, Dame, König, grAS",
    "original": "Lock, Stock and Two Smoking Barrels",
    "jahr": 1998,
@@ -2809,11 +2826,11 @@
    "regie": "Guy Ritchie",
    "imdb": "tt0120735",
    "wertung": 8.1,
-   "stimmen": 656397,
+   "stimmen": 656683,
    "beschreibung": "Vier Kumpel aus London verschulden sich bei einem Gangster und geraten in ein Chaos aus Gaunern und Waffen."
   },
   {
-   "platz": 171,
+   "platz": 172,
    "titel": "V wie Vendetta",
    "original": "V for Vendetta",
    "jahr": 2005,
@@ -2826,11 +2843,11 @@
    "regie": "James McTeigue",
    "imdb": "tt0434409",
    "wertung": 8.1,
-   "stimmen": 1260052,
+   "stimmen": 1261143,
    "beschreibung": "In einem totalitären Großbritannien kämpft ein maskierter Rächer gegen das Regime – mit einer jungen Frau an seiner Seite."
   },
   {
-   "platz": 172,
+   "platz": 173,
    "titel": "Rashomon – Das Lustwäldchen",
    "original": "Rashômon",
    "jahr": 1950,
@@ -2843,11 +2860,11 @@
    "regie": "Akira Kurosawa",
    "imdb": "tt0042876",
    "wertung": 8.1,
-   "stimmen": 199508,
+   "stimmen": 199616,
    "beschreibung": "Ein Verbrechen im Wald, vier Zeugen, vier Versionen – Kurosawas Klassiker über die Wahrheit."
   },
   {
-   "platz": 173,
+   "platz": 174,
    "titel": "Alles steht Kopf",
    "original": "Inside Out",
    "jahr": 2015,
@@ -2860,11 +2877,11 @@
    "regie": "Pete Docter, Ronnie Del Carmen",
    "imdb": "tt2096673",
    "wertung": 8.1,
-   "stimmen": 937624,
+   "stimmen": 938332,
    "beschreibung": "Freude, Kummer, Wut, Angst und Ekel steuern ein Mädchen durch einen schwierigen Umzug – Pixar von seiner klügsten Seite."
   },
   {
-   "platz": 174,
+   "platz": 175,
    "titel": "Three Billboards Outside Ebbing, Missouri",
    "original": "Three Billboards Outside Ebbing, Missouri",
    "jahr": 2017,
@@ -2877,11 +2894,11 @@
    "regie": "Martin McDonagh",
    "imdb": "tt5027774",
    "wertung": 8.1,
-   "stimmen": 619043,
+   "stimmen": 619643,
    "beschreibung": "Eine wütende Mutter mietet drei Werbetafeln, um die Polizei an den ungelösten Mord an ihrer Tochter zu erinnern."
   },
   {
-   "platz": 175,
+   "platz": 176,
    "titel": "Catch Me If You Can",
    "original": "Catch Me If You Can",
    "jahr": 2002,
@@ -2894,11 +2911,11 @@
    "regie": "Steven Spielberg",
    "imdb": "tt0264464",
    "wertung": 8.1,
-   "stimmen": 1272186,
+   "stimmen": 1273348,
    "beschreibung": "Ein junger Hochstapler gibt sich als Pilot, Arzt und Anwalt aus, ein FBI-Agent ist ihm auf den Fersen – nach einer wahren Geschichte."
   },
   {
-   "platz": 176,
+   "platz": 177,
    "titel": "Trainspotting – Neue Helden",
    "original": "Trainspotting",
    "jahr": 1996,
@@ -2909,11 +2926,11 @@
    "regie": "Danny Boyle",
    "imdb": "tt0117951",
    "wertung": 8.1,
-   "stimmen": 777313,
+   "stimmen": 777690,
    "beschreibung": "Eine Clique junger Junkies in Edinburgh zwischen Rausch, Absturz und Ausstiegsplänen – laut, schnell und schwarzhumorig."
   },
   {
-   "platz": 177,
+   "platz": 178,
    "titel": "Die Brücke am Kwai",
    "original": "The Bridge on the River Kwai",
    "jahr": 1957,
@@ -2926,11 +2943,11 @@
    "regie": "David Lean",
    "imdb": "tt0050212",
    "wertung": 8.1,
-   "stimmen": 252537,
+   "stimmen": 252752,
    "beschreibung": "Britische Kriegsgefangene sollen für die Japaner eine Eisenbahnbrücke bauen – und ihr Oberst macht daraus eine Ehrensache."
   },
   {
-   "platz": 178,
+   "platz": 179,
    "titel": "Wie ein wilder Stier",
    "original": "Raging Bull",
    "jahr": 1980,
@@ -2943,11 +2960,11 @@
    "regie": "Martin Scorsese",
    "imdb": "tt0081398",
    "wertung": 8.1,
-   "stimmen": 415976,
+   "stimmen": 416250,
    "beschreibung": "Aufstieg und Selbstzerstörung des Boxers Jake LaMotta – in Schwarz-Weiß, mit Robert De Niro."
   },
   {
-   "platz": 179,
+   "platz": 180,
    "titel": "Harry Potter und die Heiligtümer des Todes – Teil 2",
    "original": "Harry Potter and the Deathly Hallows: Part 2",
    "jahr": 2011,
@@ -2960,11 +2977,11 @@
    "regie": "David Yates",
    "imdb": "tt1201607",
    "wertung": 8.1,
-   "stimmen": 1068069,
+   "stimmen": 1068956,
    "beschreibung": "Die Entscheidungsschlacht um Hogwarts: Harry stellt sich Voldemort – das Finale der Reihe."
   },
   {
-   "platz": 180,
+   "platz": 181,
    "titel": "Fargo",
    "original": "Fargo",
    "jahr": 1996,
@@ -2976,11 +2993,11 @@
    "regie": "Joel Coen, Ethan Coen",
    "imdb": "tt0116282",
    "wertung": 8.1,
-   "stimmen": 801425,
+   "stimmen": 802085,
    "beschreibung": "Ein Autoverkäufer lässt seine eigene Frau entführen, und eine hochschwangere Polizistin ermittelt – ein Coen-Krimi im Schnee."
   },
   {
-   "platz": 181,
+   "platz": 182,
    "titel": "Demon Slayer: Kimetsu no Yaiba – Infinity Castle",
    "original": "Gekijô-ban Kimetsu no Yaiba Mugen Jô-hen",
    "jahr": 2025,
@@ -2994,11 +3011,11 @@
    "imdb": "tt32820897",
    "schluessel": "f:gekijo-ban-kimetsu-no-yaiba-mugen-jo-hen-2025",
    "wertung": 8.3,
-   "stimmen": 89217,
+   "stimmen": 89877,
    "beschreibung": "Tanjiro und die Dämonenjäger werden ins Unendlichkeitsschloss gezogen – der Auftakt zum großen Finale des Animes."
   },
   {
-   "platz": 182,
+   "platz": 183,
    "titel": "Der wilde Roboter",
    "original": "The Wild Robot",
    "jahr": 2024,
@@ -3012,11 +3029,11 @@
    "imdb": "tt29623480",
    "schluessel": "f:the-wild-robot-2024",
    "wertung": 8.1,
-   "stimmen": 241533,
+   "stimmen": 242125,
    "beschreibung": "Ein Roboter strandet auf einer wilden Insel und zieht ein verwaistes Gänseküken groß – ein berührender Animationsfilm."
   },
   {
-   "platz": 183,
+   "platz": 184,
    "titel": "Warrior",
    "original": "Warrior",
    "jahr": 2011,
@@ -3029,11 +3046,11 @@
    "regie": "Gavin O'Connor",
    "imdb": "tt1291584",
    "wertung": 8.1,
-   "stimmen": 535304,
+   "stimmen": 535578,
    "beschreibung": "Zwei entfremdete Brüder treten im selben Mixed-Martial-Arts-Turnier an – ein Sportdrama mit viel Wucht."
   },
   {
-   "platz": 184,
+   "platz": 185,
    "titel": "Der Club der toten Dichter",
    "original": "Dead Poets Society",
    "jahr": 1989,
@@ -3045,11 +3062,11 @@
    "regie": "Peter Weir",
    "imdb": "tt0097165",
    "wertung": 8.1,
-   "stimmen": 674583,
+   "stimmen": 675465,
    "beschreibung": "Ein unkonventioneller Englischlehrer begeistert die Schüler eines strengen Internats für Poesie – „Carpe diem“."
   },
   {
-   "platz": 185,
+   "platz": 186,
    "titel": "Million Dollar Baby",
    "original": "Million Dollar Baby",
    "jahr": 2004,
@@ -3061,11 +3078,11 @@
    "regie": "Clint Eastwood",
    "imdb": "tt0405159",
    "wertung": 8.1,
-   "stimmen": 776343,
+   "stimmen": 776713,
    "beschreibung": "Eine entschlossene Kellnerin überredet einen alten Boxtrainer, sie zu trainieren – mehr Drama, als man erwartet."
   },
   {
-   "platz": 186,
+   "platz": 187,
    "titel": "Ben Hur",
    "original": "Ben-Hur",
    "jahr": 1959,
@@ -3077,11 +3094,11 @@
    "regie": "William Wyler",
    "imdb": "tt0052618",
    "wertung": 8.1,
-   "stimmen": 274462,
+   "stimmen": 274594,
    "beschreibung": "Ein jüdischer Prinz wird von seinem römischen Jugendfreund verraten und sinnt auf Rache – mit dem berühmten Wagenrennen."
   },
   {
-   "platz": 187,
+   "platz": 188,
    "titel": "Gran Torino",
    "original": "Gran Torino",
    "jahr": 2008,
@@ -3092,11 +3109,11 @@
    "regie": "Clint Eastwood",
    "imdb": "tt1205489",
    "wertung": 8.1,
-   "stimmen": 873112,
+   "stimmen": 873572,
    "beschreibung": "Ein verbitterter Korea-Veteran freundet sich widerwillig mit seinen Nachbarn aus einer Hmong-Familie an."
   },
   {
-   "platz": 188,
+   "platz": 189,
    "titel": "Mad Max: Fury Road",
    "original": "Mad Max: Fury Road",
    "jahr": 2015,
@@ -3109,11 +3126,11 @@
    "regie": "George Miller",
    "imdb": "tt1392190",
    "wertung": 8.1,
-   "stimmen": 1226000,
+   "stimmen": 1226782,
    "beschreibung": "In einer Wüsten-Endzeit fliehen Max und Furiosa mit einem Tanklaster vor einem Tyrannen – zwei Stunden Vollgas."
   },
   {
-   "platz": 189,
+   "platz": 190,
    "titel": "Barry Lyndon",
    "original": "Barry Lyndon",
    "jahr": 1975,
@@ -3126,11 +3143,11 @@
    "regie": "Stanley Kubrick",
    "imdb": "tt0072684",
    "wertung": 8.1,
-   "stimmen": 209807,
+   "stimmen": 210050,
    "beschreibung": "Ein irischer Glücksritter will im 18. Jahrhundert in die englische Aristokratie aufsteigen – teils bei Kerzenlicht gedreht."
   },
   {
-   "platz": 190,
+   "platz": 191,
    "titel": "Mein Nachbar Totoro",
    "original": "Tonari no Totoro",
    "jahr": 1988,
@@ -3143,11 +3160,11 @@
    "regie": "Hayao Miyazaki",
    "imdb": "tt0096283",
    "wertung": 8.1,
-   "stimmen": 442494,
+   "stimmen": 442902,
    "beschreibung": "Zwei Schwestern ziehen aufs Land und entdecken im Wald den sanften Geist Totoro – Ghibli für jedes Alter."
   },
   {
-   "platz": 191,
+   "platz": 192,
    "titel": "Kinder des Himmels",
    "original": "Bacheha-Ye aseman",
    "jahr": 1997,
@@ -3160,11 +3177,11 @@
    "regie": "Majid Majidi",
    "imdb": "tt0118849",
    "wertung": 8.2,
-   "stimmen": 91801,
+   "stimmen": 91862,
    "beschreibung": "Ein Junge in Teheran verliert die Schuhe seiner Schwester, und die beiden teilen sich heimlich ein Paar."
   },
   {
-   "platz": 192,
+   "platz": 193,
    "titel": "Hacksaw Ridge – Die Entscheidung",
    "original": "Hacksaw Ridge",
    "jahr": 2016,
@@ -3177,11 +3194,11 @@
    "regie": "Mel Gibson",
    "imdb": "tt2119532",
    "wertung": 8.1,
-   "stimmen": 701596,
+   "stimmen": 702355,
    "beschreibung": "Ein Sanitäter verweigert im Zweiten Weltkrieg die Waffe und rettet auf Okinawa Dutzende Kameraden – nach einer wahren Geschichte."
   },
   {
-   "platz": 193,
+   "platz": 194,
    "titel": "Grand Budapest Hotel",
    "original": "The Grand Budapest Hotel",
    "jahr": 2014,
@@ -3194,11 +3211,11 @@
    "regie": "Wes Anderson",
    "imdb": "tt2278388",
    "wertung": 8.1,
-   "stimmen": 991070,
+   "stimmen": 991736,
    "beschreibung": "Ein legendärer Concierge und sein Lehrling geraten in einen Kunstraub und einen Erbstreit – Wes Anderson in Bestform."
   },
   {
-   "platz": 194,
+   "platz": 195,
    "titel": "12 Years a Slave",
    "original": "12 Years a Slave",
    "jahr": 2013,
@@ -3211,11 +3228,11 @@
    "regie": "Steve McQueen",
    "imdb": "tt2024544",
    "wertung": 8.1,
-   "stimmen": 797485,
+   "stimmen": 797867,
    "beschreibung": "Ein freier Schwarzer aus New York wird 1841 entführt und als Sklave verkauft – nach einer wahren Geschichte."
   },
   {
-   "platz": 195,
+   "platz": 196,
    "titel": "Before Sunrise",
    "original": "Before Sunrise",
    "jahr": 1995,
@@ -3227,11 +3244,11 @@
    "regie": "Richard Linklater",
    "imdb": "tt0112471",
    "wertung": 8.1,
-   "stimmen": 386273,
+   "stimmen": 386596,
    "beschreibung": "Ein Amerikaner und eine Französin lernen sich im Zug kennen und verbringen eine Nacht in Wien – nur Gespräche, und es wirkt."
   },
   {
-   "platz": 196,
+   "platz": 197,
    "titel": "Blade Runner",
    "original": "Blade Runner",
    "jahr": 1982,
@@ -3244,11 +3261,11 @@
    "regie": "Ridley Scott",
    "imdb": "tt0083658",
    "wertung": 8.1,
-   "stimmen": 895575,
+   "stimmen": 896352,
    "beschreibung": "Im Los Angeles von 2019 jagt ein Blade Runner künstliche Menschen, die auf der Erde untergetaucht sind – Neo-Noir-Science-Fiction."
   },
   {
-   "platz": 197,
+   "platz": 198,
    "titel": "Spider-Man: No Way Home",
    "original": "Spider-Man: No Way Home",
    "jahr": 2021,
@@ -3261,11 +3278,11 @@
    "regie": "Jon Watts",
    "imdb": "tt10872600",
    "wertung": 8.1,
-   "stimmen": 1085471,
+   "stimmen": 1087060,
    "beschreibung": "Peters Identität ist aufgeflogen, ein Zauber soll helfen – und öffnet das Multiversum für alte Bekannte."
   },
   {
-   "platz": 198,
+   "platz": 199,
    "titel": "Memories of Murder",
    "original": "Salinui chueok",
    "jahr": 2003,
@@ -3278,11 +3295,11 @@
    "regie": "Bong Joon Ho",
    "imdb": "tt0353969",
    "wertung": 8.1,
-   "stimmen": 277982,
+   "stimmen": 278439,
    "beschreibung": "Zwei Polizisten jagen in den 1980ern einen Serienmörder in Südkorea – Bong Joon-hos Krimi nach wahren Fällen."
   },
   {
-   "platz": 199,
+   "platz": 200,
    "titel": "Ratatouille",
    "original": "Ratatouille",
    "jahr": 2007,
@@ -3295,11 +3312,11 @@
    "regie": "Brad Bird, Jan Pinkava",
    "imdb": "tt0382932",
    "wertung": 8.1,
-   "stimmen": 971971,
+   "stimmen": 972950,
    "beschreibung": "Eine Ratte mit feiner Nase träumt davon, in Paris Koch zu werden – und tut sich mit einem tollpatschigen Küchenjungen zusammen."
   },
   {
-   "platz": 200,
+   "platz": 201,
    "titel": "Gone Girl – Das perfekte Opfer",
    "original": "Gone Girl",
    "jahr": 2014,
@@ -3312,11 +3329,11 @@
    "regie": "David Fincher",
    "imdb": "tt2267998",
    "wertung": 8.1,
-   "stimmen": 1193981,
+   "stimmen": 1194996,
    "beschreibung": "Am fünften Hochzeitstag verschwindet eine Frau spurlos – und ihr Mann gerät unter Verdacht. David Finchers Psychothriller."
   },
   {
-   "platz": 201,
+   "platz": 202,
    "titel": "Drachenzähmen leicht gemacht",
    "original": "How to Train Your Dragon",
    "jahr": 2010,
@@ -3329,11 +3346,11 @@
    "regie": "Dean DeBlois, Chris Sanders",
    "imdb": "tt0892769",
    "wertung": 8.1,
-   "stimmen": 913051,
+   "stimmen": 913717,
    "beschreibung": "Ein schmächtiger Wikingerjunge freundet sich mit einem verletzten Drachen an, statt ihn zu töten."
   },
   {
-   "platz": 202,
+   "platz": 203,
    "titel": "Die Monster AG",
    "original": "Monsters, Inc.",
    "jahr": 2001,
@@ -3346,11 +3363,11 @@
    "regie": "Pete Docter, David Silverman, Lee Unkrich",
    "imdb": "tt0198781",
    "wertung": 8.1,
-   "stimmen": 1096590,
+   "stimmen": 1097410,
    "beschreibung": "In der Monsterwelt erschrecken Sulley und Mike Kinder, um Energie zu gewinnen – bis ein kleines Mädchen in ihre Welt gerät."
   },
   {
-   "platz": 203,
+   "platz": 204,
    "titel": "Der weiße Hai",
    "original": "Jaws",
    "jahr": 1975,
@@ -3362,11 +3379,11 @@
    "regie": "Steven Spielberg",
    "imdb": "tt0073195",
    "wertung": 8.1,
-   "stimmen": 753448,
+   "stimmen": 754015,
    "beschreibung": "Ein Weißer Hai terrorisiert einen Badeort, und drei Männer fahren hinaus, um ihn zu jagen – Spielbergs Durchbruch."
   },
   {
-   "platz": 204,
+   "platz": 205,
    "titel": "Im Namen des Vaters",
    "original": "In the Name of the Father",
    "jahr": 1993,
@@ -3379,11 +3396,11 @@
    "regie": "Jim Sheridan",
    "imdb": "tt0107207",
    "wertung": 8.1,
-   "stimmen": 205524,
+   "stimmen": 205631,
    "beschreibung": "Ein junger Nordire wird für einen IRA-Anschlag verurteilt, den er nicht begangen hat – nach einer wahren Geschichte."
   },
   {
-   "platz": 205,
+   "platz": 206,
    "titel": "Wild Tales – Jeder dreht mal durch!",
    "original": "Relatos salvajes",
    "jahr": 2014,
@@ -3396,11 +3413,11 @@
    "regie": "Damián Szifron",
    "imdb": "tt3011894",
    "wertung": 8.1,
-   "stimmen": 242771,
+   "stimmen": 242946,
    "beschreibung": "Sechs Episoden über Menschen, die die Beherrschung verlieren – eine schwarze Komödie aus Argentinien."
   },
   {
-   "platz": 206,
+   "platz": 207,
    "titel": "Le Mans 66 – Gegen jede Chance",
    "original": "Ford v Ferrari",
    "jahr": 2019,
@@ -3413,11 +3430,11 @@
    "regie": "James Mangold",
    "imdb": "tt1950186",
    "wertung": 8.1,
-   "stimmen": 591247,
+   "stimmen": 591891,
    "beschreibung": "Ein Autobauer und ein Rennfahrer sollen für Ford die Ferraris in Le Mans schlagen – Motorsport-Drama nach wahren Ereignissen."
   },
   {
-   "platz": 207,
+   "platz": 208,
    "titel": "Goldrausch",
    "original": "The Gold Rush",
    "jahr": 1925,
@@ -3430,11 +3447,11 @@
    "regie": "Charles Chaplin",
    "imdb": "tt0015864",
    "wertung": 8.1,
-   "stimmen": 129592,
+   "stimmen": 129668,
    "beschreibung": "Chaplins Tramp sucht in Alaska nach Gold und isst vor Hunger seinen Schuh – mit dem berühmten Brötchentanz."
   },
   {
-   "platz": 208,
+   "platz": 209,
    "titel": "Sherlock, Jr.",
    "original": "Sherlock Jr.",
    "jahr": 1924,
@@ -3447,11 +3464,11 @@
    "regie": "Buster Keaton",
    "imdb": "tt0015324",
    "wertung": 8.1,
-   "stimmen": 67465,
+   "stimmen": 67530,
    "beschreibung": "Ein Filmvorführer träumt sich in die Leinwand hinein und wird zum Meisterdetektiv – Buster Keatons verblüffende Stummfilmtricks."
   },
   {
-   "platz": 209,
+   "platz": 210,
    "titel": "Mary & Max – oder: Schrumpfen Schafe, wenn es regnet?",
    "original": "Mary and Max",
    "jahr": 2009,
@@ -3464,11 +3481,11 @@
    "regie": "Adam Elliot",
    "imdb": "tt0978762",
    "wertung": 8.1,
-   "stimmen": 204068,
+   "stimmen": 204184,
    "beschreibung": "Ein Mädchen aus Melbourne und ein Mann mit Asperger in New York schreiben sich jahrelang Briefe – Knetanimation für Erwachsene."
   },
   {
-   "platz": 210,
+   "platz": 211,
    "titel": "Die durch die Hölle gehen",
    "original": "The Deer Hunter",
    "jahr": 1978,
@@ -3480,11 +3497,11 @@
    "regie": "Michael Cimino",
    "imdb": "tt0077416",
    "wertung": 8.1,
-   "stimmen": 391130,
+   "stimmen": 391412,
    "beschreibung": "Drei Freunde aus einer Stahlarbeiterstadt ziehen in den Vietnamkrieg – und kommen verändert oder gar nicht zurück."
   },
   {
-   "platz": 211,
+   "platz": 212,
    "titel": "Der General",
    "original": "The General",
    "jahr": 1926,
@@ -3497,11 +3514,11 @@
    "regie": "Clyde Bruckman, Buster Keaton",
    "imdb": "tt0017925",
    "wertung": 8.1,
-   "stimmen": 106640,
+   "stimmen": 106709,
    "beschreibung": "Ein Lokführer jagt im Bürgerkrieg seiner gestohlenen Lokomotive hinterher – Buster Keatons Stummfilm-Actionkomödie."
   },
   {
-   "platz": 212,
+   "platz": 213,
    "titel": "Lohn der Angst",
    "original": "Le Salaire de la peur",
    "jahr": 1953,
@@ -3514,11 +3531,11 @@
    "regie": "Henri-Georges Clouzot",
    "imdb": "tt0046268",
    "wertung": 8.1,
-   "stimmen": 74731,
+   "stimmen": 74774,
    "beschreibung": "Vier Männer sollen zwei Lastwagen voller Nitroglyzerin über holprige Pisten fahren – Spannung pur."
   },
   {
-   "platz": 213,
+   "platz": 214,
    "titel": "Mr. Smith geht nach Washington",
    "original": "Mr. Smith Goes to Washington",
    "jahr": 1939,
@@ -3530,11 +3547,11 @@
    "regie": "Frank Capra",
    "imdb": "tt0031679",
    "wertung": 8.1,
-   "stimmen": 130888,
+   "stimmen": 130966,
    "beschreibung": "Ein naiver Pfadfinderleiter wird Senator und legt sich mit der Korruption im Kongress an."
   },
   {
-   "platz": 214,
+   "platz": 215,
    "titel": "Logan – The Wolverine",
    "original": "Logan",
    "jahr": 2017,
@@ -3547,11 +3564,11 @@
    "regie": "James Mangold",
    "imdb": "tt3315342",
    "wertung": 8.1,
-   "stimmen": 945659,
+   "stimmen": 946514,
    "beschreibung": "Ein gealterter Wolverine soll ein Mädchen mit ähnlichen Kräften in Sicherheit bringen – ein harter, melancholischer Abschied."
   },
   {
-   "platz": 215,
+   "platz": 216,
    "titel": "Die Faust im Nacken",
    "original": "On the Waterfront",
    "jahr": 1954,
@@ -3564,11 +3581,11 @@
    "regie": "Elia Kazan",
    "imdb": "tt0047296",
    "wertung": 8.1,
-   "stimmen": 182205,
+   "stimmen": 182422,
    "beschreibung": "Ein Ex-Boxer arbeitet im Hafen für einen korrupten Gewerkschaftsboss und entscheidet sich, gegen ihn auszusagen – mit Marlon Brando."
   },
   {
-   "platz": 216,
+   "platz": 217,
    "titel": "Rocky",
    "original": "Rocky",
    "jahr": 1976,
@@ -3580,11 +3597,11 @@
    "regie": "John G. Avildsen",
    "imdb": "tt0075148",
    "wertung": 8.1,
-   "stimmen": 705872,
+   "stimmen": 706744,
    "beschreibung": "Ein unbekannter Boxer aus Philadelphia bekommt die Chance, gegen den Weltmeister anzutreten – und trainiert wie besessen."
   },
   {
-   "platz": 217,
+   "platz": 218,
    "titel": "Wilde Erdbeeren",
    "original": "Smultronstället",
    "jahr": 1957,
@@ -3596,11 +3613,11 @@
    "regie": "Ingmar Bergman",
    "imdb": "tt0050986",
    "wertung": 8.1,
-   "stimmen": 126282,
+   "stimmen": 126380,
    "beschreibung": "Ein alter Professor fährt zu seiner Ehrung und blickt unterwegs auf sein Leben zurück – Ingmar Bergmans Roadmovie."
   },
   {
-   "platz": 218,
+   "platz": 219,
    "titel": "Die Reise nach Tokyo",
    "original": "Tôkyô monogatari",
    "jahr": 1953,
@@ -3611,11 +3628,11 @@
    "regie": "Yasujirô Ozu",
    "imdb": "tt0046438",
    "wertung": 8.1,
-   "stimmen": 79246,
+   "stimmen": 79326,
    "beschreibung": "Ein altes Ehepaar besucht seine erwachsenen Kinder in Tokio, die kaum Zeit für sie haben – leise und bewegend."
   },
   {
-   "platz": 219,
+   "platz": 220,
    "titel": "Der dritte Mann",
    "original": "The Third Man",
    "jahr": 1949,
@@ -3628,11 +3645,11 @@
    "regie": "Carol Reed",
    "imdb": "tt0041959",
    "wertung": 8.1,
-   "stimmen": 198064,
+   "stimmen": 198166,
    "beschreibung": "Ein Schriftsteller sucht im zerbombten Wien nach der Wahrheit über den Tod seines Freundes Harry Lime – mit Zitherklängen."
   },
   {
-   "platz": 220,
+   "platz": 221,
    "titel": "Fluch der Karibik",
    "original": "Pirates of the Caribbean: The Curse of the Black Pearl",
    "jahr": 2003,
@@ -3645,11 +3662,11 @@
    "regie": "Gore Verbinski",
    "imdb": "tt0325980",
    "wertung": 8.1,
-   "stimmen": 1351508,
+   "stimmen": 1352532,
    "beschreibung": "Captain Jack Sparrow hilft einem Schmied, die von verfluchten Piraten entführte Tochter des Gouverneurs zu retten."
   },
   {
-   "platz": 221,
+   "platz": 222,
    "titel": "Spotlight",
    "original": "Spotlight",
    "jahr": 2015,
@@ -3662,11 +3679,11 @@
    "regie": "Tom McCarthy",
    "imdb": "tt1895587",
    "wertung": 8.1,
-   "stimmen": 542968,
+   "stimmen": 543221,
    "beschreibung": "Reporter des Boston Globe decken den massenhaften Kindesmissbrauch in der katholischen Kirche auf – Oscar als bester Film."
   },
   {
-   "platz": 222,
+   "platz": 223,
    "titel": "Maharaja",
    "original": "Maharaja",
    "jahr": 2024,
@@ -3680,11 +3697,11 @@
    "imdb": "tt26548265",
    "schluessel": "f:maharaja-2024",
    "wertung": 8.3,
-   "stimmen": 86945,
+   "stimmen": 87209,
    "beschreibung": "Ein Friseur meldet der Polizei den Diebstahl einer Mülltonne – und hinter der seltsamen Anzeige steckt viel mehr. Ein tamilischer Thriller."
   },
   {
-   "platz": 223,
+   "platz": 224,
    "titel": "Terminator",
    "original": "The Terminator",
    "jahr": 1984,
@@ -3696,11 +3713,11 @@
    "regie": "James Cameron",
    "imdb": "tt0088247",
    "wertung": 8.1,
-   "stimmen": 1023273,
+   "stimmen": 1024088,
    "beschreibung": "Ein Cyborg aus der Zukunft soll eine Kellnerin töten, ein Soldat soll sie schützen – der Film, der Arnold Schwarzenegger berühmt machte."
   },
   {
-   "platz": 224,
+   "platz": 225,
    "titel": "Hass – La Haine",
    "original": "La Haine",
    "jahr": 1995,
@@ -3712,11 +3729,11 @@
    "regie": "Mathieu Kassovitz",
    "imdb": "tt0113247",
    "wertung": 8.1,
-   "stimmen": 233523,
+   "stimmen": 233796,
    "beschreibung": "24 Stunden mit drei Freunden aus einer Pariser Banlieue nach einer Nacht voller Krawalle – in Schwarz-Weiß."
   },
   {
-   "platz": 225,
+   "platz": 226,
    "titel": "The Big Lebowski",
    "original": "The Big Lebowski",
    "jahr": 1998,
@@ -3728,11 +3745,11 @@
    "regie": "Joel Coen, Ethan Coen",
    "imdb": "tt0118715",
    "wertung": 8.1,
-   "stimmen": 927338,
+   "stimmen": 927763,
    "beschreibung": "Der Dude, Kiffer und Bowlingfan, wird mit einem Millionär verwechselt – und schlittert in einen absurden Entführungsfall."
   },
   {
-   "platz": 226,
+   "platz": 227,
    "titel": "Jai Bhim",
    "original": "Jai Bhim",
    "jahr": 2021,
@@ -3745,11 +3762,11 @@
    "regie": "T.J. Gnanavel",
    "imdb": "tt15097216",
    "wertung": 8.6,
-   "stimmen": 237163,
+   "stimmen": 237329,
    "beschreibung": "Ein Anwalt kämpft für eine Frau aus einer ausgegrenzten Stammesgemeinschaft, deren Mann in Polizeigewahrsam verschwunden ist – nach wahren Ereignissen."
   },
   {
-   "platz": 227,
+   "platz": 228,
    "titel": "Das siebente Siegel",
    "original": "Det Sjunde inseglet",
    "jahr": 1957,
@@ -3761,11 +3778,11 @@
    "regie": "Ingmar Bergman",
    "imdb": "tt0050976",
    "wertung": 8.1,
-   "stimmen": 218856,
+   "stimmen": 219021,
    "beschreibung": "Ein Ritter kehrt von den Kreuzzügen zurück und spielt mit dem Tod Schach um sein Leben – Bergmans Klassiker."
   },
   {
-   "platz": 228,
+   "platz": 229,
    "titel": "Raum",
    "original": "Room",
    "jahr": 2015,
@@ -3777,11 +3794,11 @@
    "regie": "Lenny Abrahamson",
    "imdb": "tt3170832",
    "wertung": 8.1,
-   "stimmen": 486461,
+   "stimmen": 486710,
    "beschreibung": "Eine Mutter und ihr fünfjähriger Sohn leben eingesperrt in einem einzigen Raum – und wagen die Flucht in die Welt draußen."
   },
   {
-   "platz": 229,
+   "platz": 230,
    "titel": "Hotel Ruanda",
    "original": "Hotel Rwanda",
    "jahr": 2004,
@@ -3794,11 +3811,11 @@
    "regie": "Terry George",
    "imdb": "tt0395169",
    "wertung": 8.1,
-   "stimmen": 395872,
+   "stimmen": 396045,
    "beschreibung": "Ein Hotelmanager versteckt während des Völkermords in Ruanda über tausend Flüchtlinge – nach einer wahren Geschichte."
   },
   {
-   "platz": 230,
+   "platz": 231,
    "titel": "Platoon",
    "original": "Platoon",
    "jahr": 1986,
@@ -3810,11 +3827,11 @@
    "regie": "Oliver Stone",
    "imdb": "tt0091763",
    "wertung": 8,
-   "stimmen": 479119,
+   "stimmen": 479351,
    "beschreibung": "Ein junger Freiwilliger erlebt den Vietnamkrieg zwischen zwei Sergeants, die unterschiedlicher nicht sein könnten."
   },
   {
-   "platz": 231,
+   "platz": 232,
    "titel": "Die besten Jahre unseres Lebens",
    "original": "The Best Years of Our Lives",
    "jahr": 1946,
@@ -3827,11 +3844,11 @@
    "regie": "William Wyler",
    "imdb": "tt0036868",
    "wertung": 8.1,
-   "stimmen": 77486,
+   "stimmen": 77547,
    "beschreibung": "Drei Veteranen kehren aus dem Zweiten Weltkrieg in ihre Kleinstadt zurück und finden nur schwer ins zivile Leben."
   },
   {
-   "platz": 232,
+   "platz": 233,
    "titel": "Meine Lieder – meine Träume",
    "original": "The Sound of Music",
    "jahr": 1965,
@@ -3844,11 +3861,11 @@
    "regie": "Robert Wise",
    "imdb": "tt0059742",
    "wertung": 8.1,
-   "stimmen": 296730,
+   "stimmen": 296930,
    "beschreibung": "Eine junge Novizin wird Kindermädchen bei einer Kapitänsfamilie in Salzburg – ein Musical voller Ohrwürmer."
   },
   {
-   "platz": 233,
+   "platz": 234,
    "titel": "Before Sunset",
    "original": "Before Sunset",
    "jahr": 2004,
@@ -3860,11 +3877,11 @@
    "regie": "Richard Linklater",
    "imdb": "tt0381681",
    "wertung": 8.1,
-   "stimmen": 321118,
+   "stimmen": 321318,
    "beschreibung": "Neun Jahre nach ihrer Nacht in Wien treffen sich Jesse und Céline in Paris wieder – für einen einzigen Nachmittag."
   },
   {
-   "platz": 234,
+   "platz": 235,
    "titel": "Die Unglaublichen – The Incredibles",
    "original": "The Incredibles",
    "jahr": 2004,
@@ -3877,11 +3894,11 @@
    "regie": "Brad Bird",
    "imdb": "tt0317705",
    "wertung": 8,
-   "stimmen": 921889,
+   "stimmen": 922566,
    "beschreibung": "Eine Superheldenfamilie muss aus dem Ruhestand zurück, um die Welt zu retten – Pixar im Agentenfilm-Stil."
   },
   {
-   "platz": 235,
+   "platz": 236,
    "titel": "Der Exorzist",
    "original": "The Exorcist",
    "jahr": 1973,
@@ -3892,11 +3909,11 @@
    "regie": "William Friedkin",
    "imdb": "tt0070047",
    "wertung": 8.1,
-   "stimmen": 508693,
+   "stimmen": 509505,
    "beschreibung": "Ein zwölfjähriges Mädchen ist von einem Dämon besessen, und zwei Priester versuchen einen Exorzismus – ein Horror-Meilenstein."
   },
   {
-   "platz": 236,
+   "platz": 237,
    "titel": "Hachiko – Eine wunderbare Freundschaft",
    "original": "Hachi: A Dog's Tale",
    "jahr": 2009,
@@ -3909,11 +3926,11 @@
    "regie": "Lasse Hallström",
    "imdb": "tt1028532",
    "wertung": 8.1,
-   "stimmen": 350118,
+   "stimmen": 350383,
    "beschreibung": "Ein Akita-Hund wartet jeden Tag am Bahnhof auf sein Herrchen – nach einer wahren Geschichte, Taschentücher bereithalten."
   },
   {
-   "platz": 237,
+   "platz": 238,
    "titel": "A Silent Voice",
    "original": "Koe no katachi",
    "jahr": 2016,
@@ -3927,11 +3944,11 @@
    "imdb": "tt5323662",
    "schluessel": "f:koe-no-katachi-2016",
    "wertung": 8.2,
-   "stimmen": 152557,
+   "stimmen": 152968,
    "beschreibung": "Ein Junge, der eine gehörlose Mitschülerin gemobbt hat, sucht Jahre später Vergebung – ein feinfühliger Anime über Schuld."
   },
   {
-   "platz": 238,
+   "platz": 239,
    "titel": "Rush – Alles für den Sieg",
    "original": "Rush",
    "jahr": 2013,
@@ -3944,11 +3961,11 @@
    "regie": "Ron Howard",
    "imdb": "tt1979320",
    "wertung": 8.1,
-   "stimmen": 569237,
+   "stimmen": 569629,
    "beschreibung": "Die Rivalität zwischen Niki Lauda und James Hunt in der Formel-1-Saison 1976 – rasant erzählt."
   },
   {
-   "platz": 239,
+   "platz": 240,
    "titel": "Der Zauberer von Oz",
    "original": "The Wizard of Oz",
    "jahr": 1939,
@@ -3961,11 +3978,11 @@
    "regie": "Victor Fleming, George Cukor, Mervyn LeRoy",
    "imdb": "tt0032138",
    "wertung": 8.1,
-   "stimmen": 474466,
+   "stimmen": 474760,
    "beschreibung": "Ein Wirbelsturm trägt Dorothy ins Zauberland Oz, wo sie mit Vogelscheuche, Blechmann und Löwe den Zauberer sucht."
   },
   {
-   "platz": 240,
+   "platz": 241,
    "titel": "Die Passion der Jungfrau von Orléans",
    "original": "La Passion de Jeanne d'Arc",
    "jahr": 1928,
@@ -3978,11 +3995,11 @@
    "regie": "Carl Theodor Dreyer",
    "imdb": "tt0019254",
    "wertung": 8.1,
-   "stimmen": 69664,
+   "stimmen": 69728,
    "beschreibung": "Der Prozess gegen Jeanne d'Arc, fast nur in Gesichtern erzählt – ein Stummfilm von 1928, der unter die Haut geht."
   },
   {
-   "platz": 241,
+   "platz": 242,
    "titel": "Stand by Me – Das Geheimnis eines Sommers",
    "original": "Stand by Me",
    "jahr": 1986,
@@ -3994,11 +4011,11 @@
    "regie": "Rob Reiner",
    "imdb": "tt0092005",
    "wertung": 8.1,
-   "stimmen": 497498,
+   "stimmen": 497951,
    "beschreibung": "Vier Jungs machen sich 1959 auf die Suche nach einer Leiche im Wald – über Freundschaft und das Ende der Kindheit."
   },
   {
-   "platz": 242,
+   "platz": 243,
    "titel": "Der Gigant aus dem All",
    "original": "The Iron Giant",
    "jahr": 1999,
@@ -4011,11 +4028,11 @@
    "regie": "Brad Bird",
    "imdb": "tt0129167",
    "wertung": 8.1,
-   "stimmen": 267247,
+   "stimmen": 267474,
    "beschreibung": "Ein Junge freundet sich im Amerika der 1950er mit einem riesigen Roboter an, den das Militär jagt."
   },
   {
-   "platz": 243,
+   "platz": 244,
    "titel": "Babam ve Oğlum",
    "original": "Babam Ve Oglum",
    "jahr": 2005,
@@ -4027,11 +4044,11 @@
    "regie": "Çagan Irmak",
    "imdb": "tt0476735",
    "wertung": 8.2,
-   "stimmen": 102730,
+   "stimmen": 102778,
    "beschreibung": "Ein Sohn kehrt nach Jahren mit seinem Jungen auf den Hof der Familie zurück und muss sich mit seinem Vater aussöhnen – türkisches Familiendrama."
   },
   {
-   "platz": 244,
+   "platz": 245,
    "titel": "Die Taschendiebin",
    "original": "Ah-ga-ssi",
    "jahr": 2016,
@@ -4044,11 +4061,11 @@
    "regie": "Park Chan-wook",
    "imdb": "tt4016934",
    "wertung": 8.1,
-   "stimmen": 209887,
+   "stimmen": 210090,
    "beschreibung": "Im Korea der 1930er soll eine Taschendiebin eine reiche Erbin um ihr Vermögen bringen – ein raffinierter Thriller voller Wendungen."
   },
   {
-   "platz": 245,
+   "platz": 246,
    "titel": "Network",
    "original": "Network",
    "jahr": 1976,
@@ -4059,11 +4076,11 @@
    "regie": "Sidney Lumet",
    "imdb": "tt0074958",
    "wertung": 8,
-   "stimmen": 188662,
+   "stimmen": 188769,
    "beschreibung": "Ein TV-Moderator rastet live aus, und der Sender macht daraus Quote – eine prophetische Satire auf das Fernsehen."
   },
   {
-   "platz": 246,
+   "platz": 247,
    "titel": "Schlacht um Algier",
    "original": "La battaglia di Algeri",
    "jahr": 1966,
@@ -4075,11 +4092,11 @@
    "regie": "Gillo Pontecorvo",
    "imdb": "tt0058946",
    "wertung": 8.1,
-   "stimmen": 77477,
+   "stimmen": 77561,
    "beschreibung": "Der Unabhängigkeitskampf in Algier gegen die französische Kolonialmacht, gedreht wie eine Dokumentation."
   },
   {
-   "platz": 247,
+   "platz": 248,
    "titel": "Demon Slayer: Mugen Train",
    "original": "Kimetsu no Yaiba: Mugen Ressha-Hen",
    "jahr": 2020,
@@ -4093,11 +4110,11 @@
    "imdb": "tt11032374",
    "schluessel": "f:kimetsu-no-yaiba-mugen-ressha-hen-2020",
    "wertung": 8.2,
-   "stimmen": 104059,
+   "stimmen": 104189,
    "beschreibung": "Tanjiro und seine Gefährten steigen in einen Zug, in dem Menschen spurlos verschwinden – ein Anime-Kinohit."
   },
   {
-   "platz": 248,
+   "platz": 249,
    "titel": "Früchte des Zorns",
    "original": "The Grapes of Wrath",
    "jahr": 1940,
@@ -4108,11 +4125,11 @@
    "regie": "John Ford",
    "imdb": "tt0032551",
    "wertung": 8.1,
-   "stimmen": 107916,
+   "stimmen": 107959,
    "beschreibung": "Eine Farmerfamilie aus Oklahoma zieht während der Wirtschaftskrise auf der Suche nach Arbeit nach Kalifornien."
   },
   {
-   "platz": 249,
+   "platz": 250,
    "titel": "Sein oder Nichtsein",
    "original": "To Be or Not to Be",
    "jahr": 1942,
@@ -4125,26 +4142,8 @@
    "regie": "Ernst Lubitsch",
    "imdb": "tt0035446",
    "wertung": 8.1,
-   "stimmen": 50584,
+   "stimmen": 50616,
    "beschreibung": "Eine Schauspieltruppe im besetzten Warschau führt die Nazis an der Nase herum – Ernst Lubitschs mutige Komödie."
-  },
-  {
-   "platz": 250,
-   "titel": "Gangs of Wasseypur",
-   "original": "Gangs of Wasseypur",
-   "jahr": 2012,
-   "laenge": 321,
-   "genre": [
-    "Action",
-    "Komödie",
-    "Krimi"
-   ],
-   "regie": "Anurag Kashyap",
-   "imdb": "tt1954470",
-   "schluessel": "f:gangs-of-wasseypur-2012",
-   "wertung": 8.2,
-   "stimmen": 116165,
-   "beschreibung": "Eine Familienfehde um Kohle und Macht über drei Generationen in einer indischen Bergbaustadt – ein epischer Gangsterfilm."
   }
  ]
 }

@@ -1,10 +1,16 @@
 {
   "hinweis": "Was werkzeug/ortsbilder.py nie nehmen soll: Dateien (File:…), Wikidata-Objekte (Q…) oder ganze Orte – jeweils mit Grund.",
   "dateien": {
-    "File:Pferdeturm.jpg": "Fans stehen im Vordergrund – nicht der Ort"
+    "File:Pferdeturm.jpg": "Fans stehen im Vordergrund – nicht der Ort",
+    "File:2025-05-01 Deutscher Evangelischer Kirchentag in Hannover f.jpg": "zeigt eine Gedenktafel, nicht die Kreuzkirche"
   },
   "objekte": {
-    "Q822899": "U-Bahnhof Gänsemarkt – Treffer über den Beinamen, zeigt den Bahnsteig statt des Platzes"
+    "Q822899": "U-Bahnhof Gänsemarkt – Treffer über den Beinamen, zeigt den Bahnsteig statt des Platzes",
+    "Q63364183": "Stadtbahn-Haltestelle Herrenhäuser Gärten – zeigt Gleise statt der Gärten",
+    "Q2465936": "U-Bahnhof Horner Rennbahn – zeigt den Bahnsteig statt der Rennbahn",
+    "Q30890676": "U-Bahnhof Jungfernstieg – zeigt den Bahnsteig statt des Jungfernstiegs",
+    "Q827247": "U-Bahnhof Mönckebergstraße – zeigt den Bahnsteig statt der Straße",
+    "Q64828345": "Kreisarchiv Herzogtum Lauenburg – ein Amtsgebäude statt der Stadt Ratzeburg"
   },
   "orte": {
     "Galerie Hinter dem Rathaus, Wismar": "Treffer ist die Straße, nicht die Galerie"

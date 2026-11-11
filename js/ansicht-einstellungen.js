@@ -182,7 +182,7 @@ function appTeil(p, ideenStand, datenFehler, installierbar) {
     <div class="e-zeile" id="stand"><span>Programm</span><span class="fein">${programm}</span></div>
     ${ideenStand ? `<div class="e-zeile"><span>Ideen („Was immer geht“)</span><span class="fein">Stand ${esc(standText(ideenStand))}</span></div>` : ''}
     ${bildnachweise()}
-    ${fehler}`, 'Das neue Programm kommt montags gegen 7 Uhr.');
+    ${fehler}`, 'Das neue Programm kommt am Ersten jedes Monats gegen 7 Uhr.');
 }
 
 /**

@@ -162,7 +162,7 @@ const bytes = (o) => new TextEncoder().encode(JSON.stringify(o)).length;
 /**
  * Was von einem Eintrag mit dem Haken mitgeht – damit er auch dann noch
  * vollständig dasteht, wenn er aus den Daten gefallen ist (vorbei, oder ein
- * neuer Montagslauf hat ihn umbenannt). Der Server nimmt höchstens 2000 Byte;
+ * neuer Monatslauf hat ihn umbenannt). Der Server nimmt höchstens 2000 Byte;
  * hier bleibt es unter 1800.
  */
 export function schnappschuss(e) {

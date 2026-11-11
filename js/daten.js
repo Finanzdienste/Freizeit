@@ -1,5 +1,5 @@
 /*
- * Die Daten der App: daten/programm.json, geschrieben vom Montagslauf, und
+ * Die Daten der App: daten/programm.json, geschrieben vom Monatslauf, und
  * der Ideen-Katalog daten/ideen.json (von Hand gepflegt, geprüft in ideen.js).
  *
  * Das Format steht in README.md. Hier wird nur geladen und so weit geprüft,

@@ -17,7 +17,7 @@
  * leerer Abschnitt steht gar nicht da.
  *
  * Ein Haken trägt einen Schnappschuss seines Eintrags mit sich; fällt der
- * Eintrag aus den Daten (vorbei, neuer Montagslauf), steht er trotzdem
+ * Eintrag aus den Daten (vorbei, neuer Monatslauf), steht er trotzdem
  * vollständig da.
  *
  * Einladen: Der Link trägt den Code hinter # (#einladung=…). Auf dem iPhone

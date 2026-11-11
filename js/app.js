@@ -4,9 +4,9 @@
  * Termin („Was immer geht“), und gemeinsam mit deinen Leuten.
  *
  * Einstieg: Daten laden, Reiter zeichnen, Knöpfe verdrahten, den gemeinsamen
- * Plan abgleichen. Das Programm schreibt ein geplanter Lauf montags früh nach
- * daten/, den Ideen-Katalog pflegt man von Hand; die App selbst ändert
- * beides nie.
+ * Plan abgleichen. Das Programm schreibt ein geplanter Lauf am Ersten jedes
+ * Monats früh nach daten/, den Ideen-Katalog pflegt man von Hand; die App
+ * selbst ändert beides nie.
  *
  * Wo was ist: unten die Reiter Programm, Karte, Wir und Einstellungen. Im
  * Programm oben Tag · Woche · Monat und der Knopf „Filter“ mit dem Blatt von

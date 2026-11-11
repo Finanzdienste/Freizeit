@@ -6,7 +6,7 @@
  *
  * Schlüssel: f:<IMDb-ID>, ohne ID f:<original>-<jahr>; steht in der Datei ein
  * „schluessel“, gilt der (so bleiben Haken, wenn ein Film später seine ID
- * bekommt). Bewertung und Stimmen frischt der Montagslauf wöchentlich auf
+ * bekommt). Bewertung und Stimmen frischt der Monatslauf jeden Monat auf
  * (werkzeug/filme-aktualisieren.mjs). Poster und Szenenbilder
  * stehen bewusst nicht in der App – darauf sind fast immer Schauspieler zu
  * sehen; Bilder gibt es über den Link zu IMDb.

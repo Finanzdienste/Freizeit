@@ -1,6 +1,6 @@
 # Freizeit
 
-Was in Hamburg und Umgebung los ist – die nächsten gut fünf Wochen, mit den
+Was in Hamburg und Umgebung los ist – die nächsten Wochen (bis zu acht), mit den
 Konzerten von Tobis Lieblingskünstlern mittendrin, als Tag, Woche und Monat und auf der
 Karte –, dazu unten im Programm „Was immer geht“: Ideen für alles ohne Termin, sortiert danach,
 was eine Aktivität bringt (Flow, Bewegung, Erholung, Produktiv). Und
@@ -142,7 +142,7 @@ Suchen tut `js/standort.js`, geprüft in `tests/test-standort.mjs`.
 
 Ganz unten im Programm, in Tag, Woche und Monat (bis v18 der eigene Reiter
 „Ideen“). Der Katalog `daten/ideen.json` ist von Hand gepflegt (rund 150 Ideen, Stand
-Oktober 2026) und ändert sich nicht mit dem Montagslauf. Jede Idee hat eine
+Oktober 2026) und ändert sich nicht mit dem Monatslauf. Jede Idee hat eine
 Kategorie, eine **Wirkung** und einen Rahmen:
 
 - **⚡ Flow** – fordert Können, hat ein klares Ziel und gibt sofort
@@ -215,7 +215,7 @@ als Zeile mit Sprung zur Liste. Poster und Szenenbilder stehen bewusst nicht
 in der App – darauf sind fast immer Schauspieler zu sehen; Bilder gibt es
 über den Link zu IMDb. Schlüssel: `f:<IMDb-ID>`, ohne ID `f:<original>-<jahr>`.
 
-Die Liste `daten/filme.json` hält der Montagslauf aktuell: `node
+Die Liste `daten/filme.json` hält der Monatslauf aktuell: `node
 werkzeug/filme-aktualisieren.mjs` lädt IMDbs offizielle Daten
 (datasets.imdbws.com, für den privaten, nicht kommerziellen Gebrauch, täglich
 neu) und frischt Bewertung und Stimmen auf. Den Chart selbst gibt es dort
@@ -240,7 +240,7 @@ sie sich jederzeit neu verankern.
   "version": 1,
   "stand": "2026-11-01",
   "basis": "2025-09-29",
-  "quelle": "IMDb Top 250: Reihenfolge des offiziellen Charts …, jede Woche aufgefrischt",
+  "quelle": "IMDb Top 250: Reihenfolge des offiziellen Charts …, jeden Monat aufgefrischt",
   "filme": [
     { "platz": 1, "titel": "Die Verurteilten", "original": "The Shawshank Redemption", "jahr": 1994,
       "laenge": 142, "genre": ["Drama"], "regie": "Frank Darabont", "imdb": "tt0111161",
@@ -390,12 +390,13 @@ Anzeigen durch `esc()`, Links nur mit http(s).
 ## Woher die Daten kommen
 
 Die App ändert ihre Daten nie selbst. Der geplante Lauf
-„Freizeit-Wochenplan Hamburg“ schreibt montags gegen 7 Uhr:
+„Freizeit-Monatsplan Hamburg“ schreibt am Ersten jedes Monats gegen 7 Uhr
+(bis 10.11.2026 lief er jeden Montag):
 
 | Datei | Inhalt |
 | --- | --- |
-| `daten/programm.json` | Montag dieser Woche bis Sonntag in fünf Wochen, dazu die Konzerte der eigenen Künstler der nächsten zwölf Monate |
-| `daten/orte.json` | Hilfe für den Lauf: Koordinaten je Ortsangabe, damit er bekannte Orte nicht jede Woche neu sucht. Die App liest sie nicht |
+| `daten/programm.json` | Montag der Woche des Laufs bis Sonntag sieben Wochen später – acht Wochen, so reicht es bis zum nächsten Lauf und noch gut drei Wochen weiter. Die ersten vier Wochen ausführlich, danach das Wichtigste; Wetter nur, solange es eine Vorhersage gibt (gut eine Woche). Dazu die Konzerte der eigenen Künstler der nächsten zwölf Monate |
+| `daten/orte.json` | Hilfe für den Lauf: Koordinaten je Ortsangabe, damit er bekannte Orte nicht jedes Mal neu sucht. Die App liest sie nicht |
 
 `daten/ideen.json` schreibt der Lauf nicht – der Katalog wird von Hand
 gepflegt (Format unten).
@@ -418,8 +419,8 @@ nach ein bis zwei Minuten steht die neue Datei unter
   "stand": "2026-11-02T07:40",
   "von": "2026-11-02",
   "bis": "2026-12-06",
-  "infos": [{ "titel": "Feiertag", "text": "…" }],
-  "highlights": [{ "titel": "Sa 7.11.: …", "text": "…" }],
+  "infos": [{ "titel": "Feiertag", "text": "…" }, { "titel": "Schulferien", "text": "…", "von": "2026-12-21", "bis": "2027-01-01" }],
+  "highlights": [{ "titel": "Sa 7.11.: …", "text": "…", "datum": "2026-11-07" }],
   "tage": [
     { "datum": "2026-11-02", "wetter": "Hamburg 12°/9°, bewölkt", "wetterOstsee": "Kiel 11°/8°, Regen", "tipp": "Viele Museen haben montags zu." },
     { "datum": "2026-11-03" }
@@ -466,6 +467,13 @@ nach ein bis zwei Minuten steht die neue Datei unter
 
 `von` ist ein Montag, `bis` ein Sonntag, dazwischen eine bis acht Wochen;
 `tage` hat jeden Tag davon genau einmal.
+
+**Highlights** tragen ihren Tag (`datum`): In der Woche zeigt „Diese Woche“
+die Highlights dieser Woche, die noch kommen, eine spätere Woche einen Kasten
+„Highlights“ mit ihren. Highlights ohne `datum` (ältere Läufe) gehören zur
+ersten Woche des Programms. **Infos** („Gut zu wissen“, nur in der laufenden
+Woche) dürfen `von` und `bis` haben – vorher und danach blendet die App sie
+aus.
 
 **Termine** – Pflicht sind `id`, `titel`, `daten`, `zeit`, `region`,
 `kategorie` und `link`; `tests/test-daten.mjs` prüft das und alles Weitere:
@@ -658,7 +666,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `js/zeiten.js` | die belegten Zeiten des Gastgebers: lesen, prüfen, die Zeile an der Karte |
 | `js/zeiten-rechnen.js` | aus Kalenderterminen belegte Blöcke je Woche (Browser und Node) |
 | `werkzeug/zeiten-senden.mjs` | schickt die Zeiten an den Plan – für eine geplante Aufgabe |
-| `werkzeug/filme-aktualisieren.mjs` | IMDb Top 250 aus IMDbs offiziellen Daten auffrischen – im Montagslauf |
+| `werkzeug/filme-aktualisieren.mjs` | IMDb Top 250 aus IMDbs offiziellen Daten auffrischen – im Monatslauf |
 | `werkzeug/ortsbilder.py` | freie Fotos der Spielstätten von Wikidata/Commons suchen, prüfen, verkleinert ablegen (Python, Pillow) |
 | `js/push.js` | Push-Mitteilungen für den Gastgeber: Abo holen, beim Server an- und abmelden |
 | `js/standort.js` | Bezugspunkt für Entfernungen: Gerätestandort, Adresssuche (Nominatim), Luftlinie, „3,2 km“ |
@@ -679,7 +687,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 
 | Test | prüft |
 | --- | --- |
-| `test-programm.mjs` | Tag und Woche: der Kopf (Ansichten, Blättern, Filter, Tagesleiste, erster Termin ohne Scrollen), Gliederung nach Tageszeit, beide Zeitregeln, „Läuft heute“, Tageskarten der Woche mit „Diese Woche“, Laufendem und Hinweisen, Filter, Wischen, Vergangenes (keine Tage vor heute, heute ohne Beendetes – auch bei offener App), Feiertag, ein alter Stand „Liste“ |
+| `test-programm.mjs` | Tag und Woche: der Kopf (Ansichten, Blättern, Filter, Tagesleiste, erster Termin ohne Scrollen), Gliederung nach Tageszeit, beide Zeitregeln, „Läuft heute“, Tageskarten der Woche mit „Diese Woche“ (Highlights ihrer Woche, Infos mit Ende), Laufendem und Hinweisen, Filter, Wischen, Vergangenes (keine Tage vor heute, heute ohne Beendetes – auch bei offener App), Feiertag, ein alter Stand „Liste“ |
 | `test-filter.mjs` | das Filter-Blatt: Dialog, Wahl gilt sofort, Chips mit ✕, „Alle zeigen“, Zurücksetzen, Escape, Tipp daneben, Fokus, weniger Bewegung, dasselbe in Woche, Monat und Karte, das Blatt von „Was immer geht“, nichts scrollt quer |
 | `test-einstellungen.mjs` | der Reiter Einstellungen (kein ⚙, kein „Zurück“), die Abschnitte je Rolle, Stand der Daten, Installieren, Hinweise zu den Daten, Name ändern, Weiteres Gerät |
 | `test-reiter.mjs` | Reiter unten: an und aus (auch mit der Tastatur), der letzte bleibt, Neuladen, Start-Reiter, Ausgeblendetes über `#…`, Einladung und „Zu „Wir““, der Punkt nur an „Wir“, `#ideen` führt zu „Was immer geht“, vier Beschriftungen bei 360 und 390 px ganz lesbar ohne Querscrollen, alte und kaputte Stände |

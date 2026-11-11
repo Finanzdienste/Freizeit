@@ -178,15 +178,35 @@ function kasten(name, titel, inhalt, { zahl = '', vorschau = '', id = '' } = {})
   return aufklappbar(name, kopf, inhalt, { klasse: 'kasten', id });
 }
 
-/** „Diese Woche“: Highlights und Infos des Montagslaufs. */
-function dieseWocheKasten(p) {
-  if (!p.infos.length && !p.highlights.length) return '';
-  const vorschau = [...p.highlights.map((h) => h.titel), ...p.infos.map((i) => i.titel || i.text)].filter(Boolean).join(' · ');
-  const inhalt = `${p.highlights.length ? `<h3 class="ka-unter">${anzahl(p.highlights.length, 'Highlight', 'Highlights')}</h3>
-      <ol class="highlights">${p.highlights.map((h) => `<li><strong>${esc(h.titel)}</strong><span>${esc(h.text)}</span></li>`).join('')}</ol>` : ''}
-    ${p.infos.length ? `<h3 class="ka-unter">Gut zu wissen</h3>
-      <ul class="infos">${p.infos.map((i) => `<li>${i.titel ? `<b>${esc(i.titel)}:</b> ` : ''}${esc(i.text)}</li>`).join('')}</ul>` : ''}`;
-  return kasten('diese-woche', 'Diese Woche', inhalt, { vorschau, id: 'diese-woche' });
+const ISO_TAG = /^\d{4}-\d{2}-\d{2}$/;
+
+/**
+ * Die Highlights einer Woche: Der Monatslauf gibt jedem ein „datum“ – es
+ * steht in seiner Woche, ab heute. Highlights ohne Datum (ältere Läufe)
+ * gehören zur ersten Woche des Programms.
+ */
+const highlightsDer = (p, mo, heute) => p.highlights.filter((h) => (ISO_TAG.test(h.datum || '')
+  ? h.datum >= heute && h.datum >= mo && h.datum <= plusTage(mo, 6)
+  : mo === montag(p.von)));
+
+/** Infos gelten, bis ihr „bis“ vorbei ist (und ab „von“) – ohne die beiden immer. */
+const infosDer = (p, mo, heute) => p.infos.filter((i) => (!ISO_TAG.test(i.bis || '') || i.bis >= heute) && (!ISO_TAG.test(i.von || '') || i.von <= plusTage(mo, 6)));
+
+/**
+ * „Diese Woche“: die Highlights und Infos des Monatslaufs für die laufende
+ * Woche. In späteren Wochen ein Kasten „Highlights“ mit denen dieser Woche.
+ */
+function dieseWocheKasten(p, mo, heute) {
+  const jetzt = mo === montag(heute);
+  const highlights = highlightsDer(p, mo, heute);
+  const infos = jetzt ? infosDer(p, mo, heute) : [];
+  if (!infos.length && !highlights.length) return '';
+  const vorschau = [...highlights.map((h) => h.titel), ...infos.map((i) => i.titel || i.text)].filter(Boolean).join(' · ');
+  const inhalt = `${highlights.length ? `<h3 class="ka-unter">${anzahl(highlights.length, 'Highlight', 'Highlights')}</h3>
+      <ol class="highlights">${highlights.map((h) => `<li><strong>${esc(h.titel)}</strong><span>${esc(h.text)}</span></li>`).join('')}</ol>` : ''}
+    ${infos.length ? `<h3 class="ka-unter">Gut zu wissen</h3>
+      <ul class="infos">${infos.map((i) => `<li>${i.titel ? `<b>${esc(i.titel)}:</b> ` : ''}${esc(i.text)}</li>`).join('')}</ul>` : ''}`;
+  return kasten('diese-woche', jetzt ? 'Diese Woche' : 'Highlights', inhalt, { vorschau, id: 'diese-woche' });
 }
 
 /**
@@ -384,8 +404,8 @@ function wocheAnsicht(p, st, heute, mo, plaene, ctx = {}) {
   const legende = zeiten || tage.some((d) => tagDaten(p, d, f, plaene).alle.some(zaehlt))
     ? `<p class="legende"><span><i class="lg-frei"></i> frei</span>${zeiten ? `<span><i class="lg-belegt"></i> ${rolle() === 'gastgeber' ? 'belegt (Kalender)' : `${n} ist belegt`}</span>` : ''}<span><i class="lg-haken ich"></i> dein Haken</span><span><i class="lg-haken p0"></i> die anderen</span><span><i class="lg-haken plan"></i> eingeplant</span></p>`
     : '';
-  return `${dieseWoche ? dieseWocheKasten(p) : ''}
-  ${mo > p.bis ? '<div class="banner">Für diese Woche gibt es noch kein Programm – hier stehen nur Konzerte deiner Künstler und was ihr eingeplant habt. Es kommt mit dem Montagslauf, sobald die Woche in den nächsten fünf Wochen liegt.</div>' : ''}
+  return `${dieseWocheKasten(p, mo, heute)}
+  ${mo > p.bis ? '<div class="banner">Für diese Woche gibt es noch kein Programm – hier stehen nur Konzerte deiner Künstler und was ihr eingeplant habt. Es kommt mit dem Monatslauf am Ersten, sobald die Woche in den nächsten acht Wochen liegt.</div>' : ''}
   <div class="wochen-liste">${tage.map((d) => tagKarte(p, d, f, plaene, heute)).join('')}</div>
   ${legende}
   ${laufendKasten(laufendZwischen(p, mo < heute ? heute : mo, plusTage(mo, 6), f), 'Läuft diese Woche', { heute, tag: plusTage(mo, 5), ctx })}
@@ -524,7 +544,7 @@ export function programmAnsicht(p, st, heute, ui) {
     </div>
     ${filterLeiste(chipsProgramm(st), { rechts: `<span class="zaehler" id="zaehler">${zaehler}</span>` })}
   </header>
-  ${heute > p.bis ? '<div class="banner">Das Programm ist abgelaufen. Das neue kommt montags gegen 7 Uhr.</div>' : ''}`;
+  ${heute > p.bis ? '<div class="banner">Das Programm ist abgelaufen. Das neue kommt am Ersten des Monats gegen 7 Uhr.</div>' : ''}`;
 
   // Einplanen von Laufendem: welches Formular offen ist, sein Fehler, die Meldung danach.
   const ctx = { planen: ui.planen || '', planFehler: ui.planFehler || '', meldung: ui.meldung || null };

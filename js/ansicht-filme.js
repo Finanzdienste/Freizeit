@@ -111,7 +111,7 @@ export function filmeAnsicht(filme, info, st, ui) {
       ${zurueck}
       <div class="filme-titelblock">
         <h2 id="filme-titel">IMDb Top 250</h2>
-        <p class="fein">${info.stand ? `Stand ${datumText(info.stand)} · jede Woche frisch von IMDb` : 'Die besten Filme laut IMDb'}</p>
+        <p class="fein">${info.stand ? `Stand ${datumText(info.stand)} · jeden Monat frisch von IMDb` : 'Die besten Filme laut IMDb'}</p>
       </div>
     </header>
     <p class="fein filme-hinweis">${hinweis}</p>

@@ -12,7 +12,7 @@
  * „Keane“ ist ein Konzert der eigenen Künstler – für das gilt 21:30 nicht.
  */
 import {
-  oeffne, testProgramm, MO, DI, MI, DO, FR, SA, SO, DI2, SCHLUESSEL,
+  oeffne, testProgramm, MO, DI, MI, DO, FR, SA, SO, MO2, DI2, SA2, SCHLUESSEL,
 } from './hilfe.mjs';
 
 const A = await oeffne({ tag: MO, zeit: '10:00' });
@@ -286,6 +286,33 @@ await uhr(MO);
 check(await gedrueckt('tag') === 'true' && await page.locator(`#tag-${MO}`).count() === 1, 'ein Stand mit der alten Ansicht „Liste“ öffnet als Tag');
 
 // --- ohne Daten
+// --- Monatslauf: Highlights mit Tag stehen in ihrer Woche, Infos mit Ende verschwinden danach
+await uhr(MI, '10:00');
+await datenTauschen(testProgramm({
+  highlights: [
+    { titel: 'Di vorbei', text: 'war gestern', datum: DI },
+    { titel: 'Do diese Woche', text: 'kommt noch', datum: DO },
+    { titel: 'Sa nächste Woche', text: 'später', datum: SA2 },
+  ],
+  infos: [
+    { titel: 'Ferien', text: 'bis gestern', bis: DI },
+    { titel: 'Markt', text: 'ab nächster Woche', von: MO2 },
+    { titel: 'Immer', text: 'ohne Tag' },
+  ],
+}));
+await ansicht('woche');
+const kastenW = page.locator('details[data-offen="diese-woche"]');
+check(JSON.stringify(await kastenW.locator('.highlights strong').allTextContents()) === '["Do diese Woche"]' && (await kastenW.locator('.ka-titel').innerText()) === 'Diese Woche',
+  'Monatslauf: unter „Diese Woche“ nur das Highlight dieser Woche, das noch kommt');
+check(JSON.stringify(await kastenW.locator('.infos li').allTextContents()) === '["Immer: ohne Tag"]', '… von den Infos nur, was noch gilt und schon gilt');
+await page.click('[data-aktion="kal-vor"]');
+check((await kastenW.locator('.ka-titel').innerText()) === 'Highlights' && JSON.stringify(await kastenW.locator('.highlights strong').allTextContents()) === '["Sa nächste Woche"]'
+  && await kastenW.locator('.infos').count() === 0, 'nächste Woche: ein Kasten „Highlights“ mit denen dieser Woche, ohne Infos');
+await datenTauschen(testProgramm());
+await ansicht('woche');
+await page.click('[data-aktion="kal-vor"]');
+check(await kastenW.count() === 0, 'Highlights ohne Tag (ältere Läufe) gehören zur ersten Woche – in der zweiten kein Kasten');
+
 await datenTauschen(null);
 check((await page.locator('#ansicht').innerText()).includes('Keine Daten') && await page.locator('#was-immer-geht').count() === 1,
   'ohne programm.json ein Hinweis statt einer leeren Seite – „Was immer geht“ steht trotzdem da');

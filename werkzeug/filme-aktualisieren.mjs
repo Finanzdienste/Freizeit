@@ -8,7 +8,7 @@
 //     früher offenlegte (WR = v/(v+m)·R + m/(v+m)·C, m = 25 000 Stimmen, C = 7,0), unter den besten
 //     200 steht – an der Stelle dieses Rangs. Wer dadurch über Platz 250 rutscht, fällt heraus, wie im
 //     Chart. Werden Plätze frei, rücken die nächstbesten nach.
-//   - Bewertung und Stimmen werden jede Woche aufgefrischt; Titel, Beschreibung und Schlüssel bleiben.
+//   - Bewertung und Stimmen werden mit jedem Lauf (monatlich) aufgefrischt; Titel, Beschreibung und Schlüssel bleiben.
 //
 // Neue Filme bekommen den deutschen Titel aus IMDb (Region DE) und die Regie; die Beschreibung
 // fehlt dann noch – das Skript nennt sie, der Montagslauf schreibt sie (1–2 eigene Sätze).
@@ -146,7 +146,7 @@ const daten = {
   version: 1,
   stand: heute,
   basis: alt.basis || alt.stand,
-  quelle: `IMDb Top 250: Reihenfolge des offiziellen Charts vom ${alt.basis || alt.stand}, jede Woche mit IMDbs offiziellen Daten aufgefrischt (datasets.imdbws.com)`,
+  quelle: `IMDb Top 250: Reihenfolge des offiziellen Charts vom ${alt.basis || alt.stand}, jeden Monat mit IMDbs offiziellen Daten aufgefrischt (datasets.imdbws.com)`,
   filme: ergebnis,
 };
 const grund = (x) => (!x.id ? 'nicht gefunden' : (!filme.has(x.id) ? 'zu wenig Stimmen' : `Bewertung ${filme.get(x.id).r}`));

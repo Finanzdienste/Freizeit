@@ -1,7 +1,7 @@
 /*
  * Ist daten/programm.json so, wie die App sie braucht?
  *
- * Ohne Browser und ohne Server, ohne npm ci. Der Montagslauf schreibt
+ * Ohne Browser und ohne Server, ohne npm ci. Der Monatslauf schreibt
  * daten/programm.json (und pflegt daten/orte.json) und prüft vor dem Commit
  * – geprüft wird dabei auch der Ideen-Katalog daten/ideen.json:
  *
@@ -140,6 +140,10 @@ if (p) {
     const liste = p[feld] === undefined ? [] : p[feld];
     check(istListe(liste) && liste.every((x) => x && text(x.text)), `${feld}: Liste von Einträgen mit text`);
   }
+  // Der Monatslauf gibt Highlights ihren Tag (die App zeigt sie in dessen Woche) und Infos ein Ende.
+  const tagOk = (d) => d === undefined || echtesDatum(d);
+  alle(istListe(p.highlights) ? p.highlights : [], (h) => tagOk(h.datum) && (h.datum === undefined || imZeitraum(h.datum)), 'highlights: datum (wenn da) ist ein Tag im Zeitraum');
+  alle(istListe(p.infos) ? p.infos : [], (i) => tagOk(i.von) && tagOk(i.bis) && (!i.von || !i.bis || i.von <= i.bis), 'infos: von/bis (wenn da) sind Tage, von ≤ bis');
   const fehler = [];
   programmBereinigen(p, fehler);
   check(!fehler.length, `die App übernimmt das Programm ohne Beanstandung${fehler.length ? `: ${fehler.slice(0, 3).join(' | ')}` : ''}`);

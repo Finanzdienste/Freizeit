@@ -1,0 +1,48 @@
+# VORLAGE – gehört nach .github/workflows/ortsbilder.yml. Eine Cloud-Sitzung von
+# Claude darf keine Workflow-Dateien pushen; lokal (eigene Git-Rechte) oder im
+# Browser auf GitHub hochladen. Solange sie fehlt, macht der Monatscheck die
+# Ortsfotos von Hand (CLAUDE.md).
+#
+# Fotos der Orte (werkzeug/ortsbilder.py): sucht für neue Orte im Programm ein
+# freies Foto der Spielstätte und legt es unter bilder/orte/ ab. Läuft, wenn
+# sich das Programm ändert, und auf Knopfdruck (Actions → Ortsbilder → Run).
+name: Ortsbilder
+
+on:
+  push:
+    branches: [main]
+    paths: ['daten/programm.json', 'daten/ortsbilder.json', 'werkzeug/ortsbilder*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency: ortsbilder
+
+jobs:
+  bilder:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install --quiet pillow
+      - run: python3 werkzeug/ortsbilder.py --aufraeumen --bogen bogen
+      - uses: actions/upload-artifact@v4
+        if: hashFiles('bogen/*.jpg') != ''
+        with:
+          name: kontaktbogen
+          path: bogen/
+      - name: Übernehmen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add daten/ortsbilder.json bilder/orte
+          git diff --cached --quiet && exit 0
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Ortsbilder: neue Fotos der Spielstätten"
+          git pull --rebase --quiet origin main
+          git push
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" --silent || true

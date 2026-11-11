@@ -72,6 +72,7 @@
   "Heiligen-Geist-Kirche, Wismar": "heiligen-geist-kirche-q1595126",
   "Heiligengeistfeld, St. Pauli": "heiligengeistfeld-q896922",
   "Heinz-von-Heiden-Arena, Hannover": "heinz-von-heiden-arena-q152633",
+  "Herrenhäuser Gärten, Hannover": "herrenhaeuser-gaerten-q574773",
   "Herz-Jesu-Kirche, Reinbek": "herz-jesu-kirche-q83705996",
   "Hirschpark": "hirschpark-q1620492",
   "Hoghehus, Lübeck": "hoghehus-q1623386",
@@ -80,6 +81,7 @@
   "Inselpark Arena, Wilhelmsburg": "inselpark-arena-q26821570",
   "Jenischpark": "jenischpark-q25089266",
   "Jork": "jork-q24230952",
+  "Jungfernstieg": "jungfernstieg-q6451",
   "Kaispeicher B": "kaispeicher-b-q60728819",
   "Kalkberg": "kalkbergstadion-q1722351",
   "Kampnagel, Gelände, Winterhude": "kampnagel-q119085256",
@@ -92,6 +94,7 @@
   "Kleiner Michel (St. Ansgar), Neustadt": "kleiner-michel-q1746647",
   "Koberg, Lübeck": "koberg-q1776779",
   "Komödie Winterhuder Fährhaus": "komoedie-winterhuder-faehrhaus-q187286",
+  "Kreuzkirche, Hannover": "kreuzkirche-q1447206",
   "Kulturzentrum Faust, Hannover": "kulturzentrum-faust-q1386556",
   "Kurt-Bürger-Stadion, Wismar": "kurt-buerger-stadion-q1422988",
   "Laeiszhalle, Großer Saal": "laeiszhalle-q881121",
@@ -141,6 +144,7 @@
   "Museumsdorf Volksdorf": "museumsdorf-volksdorf-q1954810",
   "MusikZentrum Hannover": "musikzentrum-hannover-q1644250",
   "Mölln": "moelln-q498036",
+  "Mönckebergstraße": "moenckebergstrasse-q534777",
   "Neues Rathaus, Hannover": "neues-rathaus-q573618",
   "Ohlendorff'sche Villa, Im Alten Dorfe 28, Volksdorf": "ohlendorff-sche-villa-q18629535",
   "Ohnsorg-Theater, Heidi-Kabel-Platz": "ohnsorg-theater-q896171",
@@ -461,6 +465,7 @@
   "Rathaus, Rellingen": "2026-11-04",
   "Rathausallee, Norderstedt": "2026-11-04",
   "Rathausplatz, Ahrensburg": "2026-11-04",
+  "Ratzeburg": "2026-11-11",
   "Residenz am Wiesenkamp, Volksdorf": "2026-11-09",
   "Retro Spiele Club": "2026-11-04",
   "Riders Café, Leinweberstraße 4, Lübeck": "2026-11-09",
@@ -1119,6 +1124,15 @@
    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
    "urheber": "Arne Müseler / www.arne-mueseler.com"
   },
+  "herrenhaeuser-gaerten-q574773": {
+   "datei": "File:Aerial image of Großer Garten (view from the south).jpg",
+   "objekt": "Herrenhäuser Gärten",
+   "wikidata": "Q574773",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AAerial_image_of_Gro%C3%9Fer_Garten_%28view_from_the_south%29.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
+   "urheber": "Carsten Steger"
+  },
   "herz-jesu-kirche-q83705996": {
    "datei": "File:Herz-Jesu-Kirche (Reinbek).jpg",
    "objekt": "Herz-Jesu-Kirche",
@@ -1217,6 +1231,15 @@
    "lizenz": "CC BY-SA 3.0 de",
    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
    "urheber": "Ra Boe / Wikipedia"
+  },
+  "jungfernstieg-q6451": {
+   "datei": "File:Jungfernstieg.wmt.jpg",
+   "objekt": "Jungfernstieg",
+   "wikidata": "Q6451",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AJungfernstieg.wmt.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+   "urheber": "Wolfgang Meinhart"
   },
   "kaispeicher-b-q60728819": {
    "datei": "File:Maritimes Museum Hamburg (2024)-L1005406.jpg",
@@ -1325,6 +1348,15 @@
    "lizenz": "CC BY-SA 3.0",
    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
    "urheber": "Staro1"
+  },
+  "kreuzkirche-q1447206": {
+   "datei": "File:Hannover Kreuzkirche.jpg",
+   "objekt": "Kreuzkirche",
+   "wikidata": "Q1447206",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AHannover_Kreuzkirche.jpg",
+   "lizenz": "CC BY-SA 2.5",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/2.5",
+   "urheber": "H. Helmlechner"
   },
   "kulturzentrum-faust-q1386556": {
    "datei": "File:Zur Bettfedernfabrik 3, Faust e.V. (10).jpg",
@@ -1541,6 +1573,15 @@
    "lizenz": "CC BY-SA 3.0",
    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
    "urheber": "Peng"
+  },
+  "moenckebergstrasse-q534777": {
+   "datei": "File:Hamburg - Moenckebergstrasse.jpg",
+   "objekt": "Mönckebergstraße",
+   "wikidata": "Q534777",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AHamburg_-_Moenckebergstrasse.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "urheber": "Staro1"
   },
   "molotow-q1943691": {
    "datei": "File:Molotow Club 2025.jpg",
@@ -2227,5 +2268,5 @@
    "urheber": "San Andreas"
   }
  },
- "stand": "2026-11-09"
+ "stand": "2026-11-11"
 }

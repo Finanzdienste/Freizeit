@@ -159,12 +159,20 @@ auf die Ideen, die der Termine nur auf die Termine. Bei
 Ideen mit Ort stehen die Orte mit Link, Preis und Zeiten dabei, auf der
 Karte als gestrichelte Marker.
 
-**Geteilte Links:** Geteilt wird über die kurze Adresse
-`https://freizeit-hh.github.io/` (eigenes Repo freizeit-hh/freizeit-hh.github.io):
-sie leitet sofort zur App weiter und reicht alles hinter dem # durch – das gilt
-für WhatsApp-Nachrichten wie für Einladungen (`#einladung=…`); lokal und in
-Tests bleibt es die eigene Adresse (teilen.js `teilenAdresse`). Der Link in der
-WhatsApp-Nachricht öffnet die App beim
+**Geteilte Links:** Der Link in einer WhatsApp-Nachricht zeigt direkt auf die
+App (`https://finanzdienste.github.io/Freizeit/#eintrag=…`, teilen.js
+`whatsappLink`): Nur einen Link in ihrem eigenen Bereich gibt Android an die
+installierte App weiter – auch wenn ein anderer Browser Standard ist. Dafür am
+Handy einmal Einstellungen → Apps → Freizeit → „Standardmäßig öffnen“ →
+„Unterstützte Links öffnen“ einschalten (fehlt der Eintrag, ist die App nur
+eine Verknüpfung: in Chrome noch einmal „App installieren“). Ein Link über eine
+andere Adresse landet immer erst im Standardbrowser, und der kennt die eigenen
+Daten nicht. Einladungen (`#einladung=…`) laufen dagegen über die kurze
+Adresse `https://freizeit-hh.github.io/` (eigenes Repo
+freizeit-hh/freizeit-hh.github.io) – wer eingeladen wird, hat die App noch
+nicht; sie leitet sofort weiter und reicht alles hinter dem # durch, auch für
+ältere geteilte Links. Lokal und in Tests bleibt es die eigene Adresse
+(teilen.js `teilenAdresse`). Der Link in der WhatsApp-Nachricht öffnet die App beim
 Eintrag – `#eintrag=t:<id>:<tag>` den Termin an seinem Tag, `#eintrag=l:<id>`
 Laufendes (eingeplant mit `&tag=<tag>`: am geplanten Tag), `#eintrag=i:<id>`
 die Idee unter „Was immer geht“, `#eintrag=f:<imdb>` den Film in der Top 250,

@@ -8,9 +8,13 @@
  * Grundlage ist ein „Eintrag“, wie ihn karte.js aus Termin, Konzert oder
  * Ausflugsziel baut (siehe dort).
  *
- * Der Link in der WhatsApp-Nachricht führt in die App, nicht zur Quelle – über
- * die kurze Adresse freizeit-hh.github.io, die sofort zur App weiterleitet:
- * #eintrag=t:<id>:<tag> öffnet den Termin an seinem Tag, #eintrag=l:<id>
+ * Der Link in der WhatsApp-Nachricht führt in die App, nicht zur Quelle – und
+ * zwar direkt auf ihre eigene Adresse: Nur einen Link in ihrem Bereich gibt
+ * Android an die installierte App (dazu dort „Unterstützte Links öffnen“);
+ * die kurze Adresse freizeit-hh.github.io ginge immer erst an den
+ * Standardbrowser, und der kennt die eigenen Daten nicht. Einladungen laufen
+ * weiter über die kurze Adresse – wer eingeladen wird, hat die App ja noch
+ * nicht. #eintrag=t:<id>:<tag> öffnet den Termin an seinem Tag, #eintrag=l:<id>
  * (bei Eingeplantem &tag=<tag>) das Laufende, #eintrag=i:<id> die Idee unter
  * „Was immer geht“, #eintrag=f:<imdb> den Film in der Top 250 – jeweils
  * aufgeklappt (app.js, linkFolgen). Die Quelle steht dort an der Karte.
@@ -32,14 +36,14 @@ export function wannText(eintrag) {
 /** Die Adresse der App – ohne #… und ?…, auch aus der installierten App; ohne Browser leer. */
 export const appAdresse = () => (typeof location === 'undefined' ? '' : new URL('./', location.href).href);
 
-/** Wo die App liegt und unter welcher kurzen Adresse geteilte Links laufen (Repo freizeit-hh/freizeit-hh.github.io). */
+/** Wo die App liegt und unter welcher kurzen Adresse Einladungen laufen (Repo freizeit-hh/freizeit-hh.github.io). */
 export const APP_ADRESSE = 'https://finanzdienste.github.io/Freizeit/';
 export const TEILEN_ADRESSE = 'https://freizeit-hh.github.io/';
 
 /**
- * Die Adresse für geteilte Links: läuft die App unter ihrer echten Adresse, die kurze Weiterleitung
- * freizeit-hh.github.io – sie reicht alles hinter dem # weiter (#eintrag=…, #einladung=…). Sonst (zum
- * Testen, lokal) die Adresse, unter der die App gerade läuft. `basis` ist appAdresse() oder ein Testwert.
+ * Die Adresse für Einladungen: läuft die App unter ihrer echten Adresse, die kurze Weiterleitung
+ * freizeit-hh.github.io – sie reicht alles hinter dem # weiter (#einladung=…, auch ältere #eintrag=…).
+ * Sonst (zum Testen, lokal) die Adresse, unter der die App gerade läuft. `basis` ist appAdresse() oder ein Testwert.
  */
 export const teilenAdresse = (basis = appAdresse()) => (basis === APP_ADRESSE ? TEILEN_ADRESSE : basis);
 
@@ -75,8 +79,8 @@ export function whatsappText(eintrag, { app = '' } = {}) {
   return zeilen.join('\n');
 }
 
-/** wa.me mit der fertigen Nachricht – der Link darin führt in die App. */
-export const whatsappLink = (eintrag) => `https://wa.me/?text=${encodeURIComponent(whatsappText(eintrag, { app: appLink(eintrag, teilenAdresse()) }))}`;
+/** wa.me mit der fertigen Nachricht – der Link darin führt direkt in die App (ihre eigene Adresse, siehe oben). */
+export const whatsappLink = (eintrag) => `https://wa.me/?text=${encodeURIComponent(whatsappText(eintrag, { app: appLink(eintrag, appAdresse()) }))}`;
 
 const kompakt = (iso) => iso.replaceAll('-', '');
 const hhmm = (t) => `${String(Math.floor(t / 60) % 24).padStart(2, '0')}${String(t % 60).padStart(2, '0')}00`;

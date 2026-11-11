@@ -14,8 +14,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
-import { chromium } from 'playwright';
-import { uhrStellen, ROOT } from './hilfe.mjs';
+import { uhrStellen, ROOT, starteBrowser } from './hilfe.mjs';
 import { starte } from './server.mjs';
 
 const sw = readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
@@ -65,7 +64,7 @@ check(manifest.id === '/Freizeit/', `Manifest: eigene Kennung /Freizeit/ (${mani
 check(manifest.icons.some((i) => i.purpose === 'maskable') && manifest.icons.some((i) => i.sizes === '512x512'), 'Manifest: Symbol in 512 px, auch als „maskable“');
 
 // --- Im Browser
-const browser = await chromium.launch();
+const browser = await starteBrowser();
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: 'de-DE' });
 await ctx.addInitScript(uhrStellen);
 const page = await ctx.newPage();

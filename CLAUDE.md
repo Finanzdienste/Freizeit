@@ -32,6 +32,9 @@ größeren Änderungen den passenden Abschnitt lesen.
 - Nach jedem Push: CI „Prüfung“ (Linter, Daten, alle Browsertests, SQL) muss
   grün sein. package.json pinnt Playwright 1.64.1 (der GitHub-Runner ist
   Ubuntu 26.04); wo Chromium vorinstalliert ist, kein `playwright install`.
+  Passt der vorinstallierte Browser nicht zu 1.64.1 („Executable doesn't
+  exist … chromium_headless_shell-1248“, so in der Monatscheck-Sitzung): alle
+  Tests mit `FREIZEIT_CHROMIUM=/opt/pw-browsers/chromium` starten.
 
 ## Regeln für Änderungen
 - Nach jeder Änderung an App-Dateien `VERSION` in sw.js hochzählen; neue
@@ -63,8 +66,9 @@ größeren Änderungen den passenden Abschnitt lesen.
   blockiert ist.
 - Lange Hintergrundjobs über eine PID-Datei beenden, nie mit `pkill -f` (das
   trifft die eigene Shell).
-- Workflow-Dateien (.github/workflows) darf eine Cloud-Sitzung nicht pushen;
-  lokal geht es, sonst lädt Tobi sie auf GitHub hoch.
+- Workflow-Dateien (.github/workflows): Die Sitzung mit dem Monatscheck
+  (unten) kann sie pushen, am 11.11.2026 ausprobiert. Andere Cloud-Sitzungen
+  dürfen es oft nicht – dann lokal, oder Tobi lädt sie auf GitHub hoch.
 - Geteilte Termine verlinken die App-Adresse direkt – nur so öffnet Android
   sie in der installierten App. Einladungen laufen über die kurze Adresse
   https://freizeit-hh.github.io/ (Repo freizeit-hh/freizeit-hh.github.io,
@@ -93,25 +97,33 @@ Den Ideen-Katalog daten/ideen.json pflegt Tobi von Hand; kein Lauf fasst ihn an.
    übernommene `id`s bleiben, Stichproben; nur die drei Dateien committen
    („Freizeit: Programm ab <TT.MM.> (KW <n>)“), pushen, CI und live prüfen,
    die App kurz in Handybreite ansehen.
-4. Ortsfotos: `python3 werkzeug/ortsbilder.py --bogen <tmp>/bogen` im
-   Hintergrund (Wikimedia drosselt, das dauert), den Kontaktbogen ansehen,
-   Fehltreffer in die Ausnahmen, dann
-   `python3 werkzeug/ortsbilder.py --nur-pflege --aufraeumen`, Tests grün, nur
-   daten/ortsbilder.json, bilder/orte und die Ausnahmen committen
-   („Ortsbilder: …“). Gibt es die Action „Ortsbilder“, nur deren Kontaktbogen
-   ansehen (Vorlage: werkzeug/ortsbilder.yml).
+4. Ortsfotos: Die Action „Ortsbilder“ (.github/workflows/ortsbilder.yml)
+   startet nach jedem Push, der daten/programm.json ändert, und von Hand
+   (actions_run_trigger). Ihren Lauf abwarten und ihren Kontaktbogen
+   (Artefakt „kontaktbogen“) ansehen. Fällt sie aus: lokal
+   `python3 werkzeug/ortsbilder.py --bogen <tmp>/bogen` im Hintergrund
+   (Wikimedia drosselt, das dauert) und diesen Kontaktbogen ansehen. In beiden
+   Fällen Fehltreffer und Fotos mit Menschen im Mittelpunkt mit Grund in die
+   Ausnahmen, dann `python3 werkzeug/ortsbilder.py --nur-pflege --aufraeumen`,
+   Tests grün, nur daten/ortsbilder.json, bilder/orte und die Ausnahmen
+   committen („Ortsbilder: …“).
 5. Hat der Lauf weder gepusht noch die Übergabe gefüllt: Ursache suchen,
    nichts erzwingen, Tobi berichten.
 6. Tobi in einem Satz berichten und den Check für den nächsten Ersten
    einplanen.
 
-Der Check läuft als Erinnerung (send_later) in der Sitzung, die die App bis
-November 2026 gebaut hat – sie hat Schreibrecht aufs Repo und das
-Artifact-Werkzeug für die Übergabe. Soll eine andere Sitzung übernehmen: dort
-einplanen und die alte Erinnerung mit update_trigger `enabled: false`
-abschalten (Löschen lehnt der Filter ab).
+Der Check läuft als Erinnerung (send_later) in der Claude-Code-Sitzung, in die
+die App am 11.11.2026 umgezogen ist (Repo dort unter /home/user/Freizeit,
+gearbeitet und gepusht wird direkt auf `main`). Sie hat Schreibrecht aufs Repo
+(auch Workflow-Dateien), die Werkzeuge für geplante Aufgaben und das
+Artifact-Werkzeug für die Übergabe. Die Erinnerung der Sitzung davor
+(„Freizeit: Monatslauf 1.12. prüfen“) ist abgeschaltet. Soll eine andere
+Sitzung übernehmen: dort einplanen und die alte Erinnerung mit update_trigger
+`enabled: false` abschalten (Löschen lehnt der Filter ab).
 
 ## Offen
-- Die Action „Ortsbilder“ fehlt: werkzeug/ortsbilder.yml nach
-  .github/workflows/ legen (lokal oder auf GitHub). Danach sucht sie nach
-  jedem Datenlauf selbst Fotos für neue Orte.
+- Die Action „Ortsbilder“ ist seit 11.11. angelegt, aber noch nie gelaufen:
+  Seit 11.11. gegen 21:15 startet auf GitHub keine Action mehr (Pages-Build
+  und Ortsbilder enden mit `startup_failure`, „Prüfung“ bleibt in der
+  Warteschlange). Sobald Actions wieder laufen: Ortsbilder einmal von Hand
+  starten, den Kontaktbogen ansehen, dann diesen Punkt streichen.

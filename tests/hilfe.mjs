@@ -22,6 +22,12 @@ import { fileURLToPath } from 'node:url';
 /** Wurzel des Repositorys – eine Ebene über dieser Datei. */
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const APP_URL = process.env.FREIZEIT_URL || 'http://127.0.0.1:8099/index.html';
+/**
+ * Chromium starten. Mit FREIZEIT_CHROMIUM=<Pfad> ein vorhandenes Chromium
+ * statt Playwrights eigenem – etwa in einer Cloud-Sitzung, deren
+ * vorinstallierter Browser nicht zur Version in package.json passt.
+ */
+export const starteBrowser = () => chromium.launch(process.env.FREIZEIT_CHROMIUM ? { executablePath: process.env.FREIZEIT_CHROMIUM } : {});
 export const SCHLUESSEL = 'freizeit.stand.v1';
 export const IPHONE = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1';
 const SUPABASE = 'https://vjyohppohmvhhxgwouti.supabase.co/rest/v1/rpc/*';
@@ -395,7 +401,7 @@ export async function oeffne({
   tag = MO, zeit = '10:00', programm = testProgramm(), ideen = testIdeen(), filme = testFilme(), ortsbilder = null, stand = null, server = fakeServer(), ua = '', hash = '',
   viewport = { width: 390, height: 844 }, browser: geteilt = null, scale = 1, push = '', touch = false,
 } = {}) {
-  const browser = geteilt || await chromium.launch();
+  const browser = geteilt || await starteBrowser();
   // Ohne Service Worker: Er würde die umgeleiteten Daten am Test vorbei holen.
   // Den Offline-Betrieb prüft test-offline.mjs mit Worker.
   const ctx = await browser.newContext({

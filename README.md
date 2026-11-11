@@ -720,6 +720,9 @@ und der Worker räumt nur seine eigenen Vorräte weg.
     node tests/lauf.mjs         # alle
     node tests/test-daten.mjs   # nur die Datendateien – braucht kein npm ci
 
+Passt ein schon installiertes Chromium nicht zu Playwright in package.json,
+nimmt `FREIZEIT_CHROMIUM=<Pfad zum Browser>` dieses statt Playwrights eigenem.
+
 | Test | prüft |
 | --- | --- |
 | `test-programm.mjs` | Tag und Woche: der Kopf (Ansichten, Blättern, Filter, Tagesleiste, erster Termin ohne Scrollen), Gliederung nach Tageszeit, beide Zeitregeln, „Läuft heute“, Tageskarten der Woche mit „Diese Woche“ (Highlights ihrer Woche, Infos mit Ende), Laufendem und Hinweisen, Filter, Wischen, Vergangenes (keine Tage vor heute, heute ohne Beendetes – auch bei offener App), Feiertag, ein alter Stand „Liste“ |

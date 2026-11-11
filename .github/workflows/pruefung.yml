@@ -1,9 +1,9 @@
 # Bei jedem Push: Linter, die Datendateien und alle Browsertests.
 #
-# Läuft auch nach jedem Datenlauf (montags: das Programm der nächsten fünf
-# Wochen mit den Konzerten). Der Lauf prüft seine Datei vorher selbst mit
-# tests/test-daten.mjs; das hier ist die zweite Meinung, mit der App im
-# Browser und mit dem SQL für den gemeinsamen Plan.
+# Läuft auch nach jedem Datenlauf (am Ersten jedes Monats: das Programm der
+# nächsten acht Wochen mit den Konzerten). Der Lauf prüft seine Datei vorher
+# selbst mit tests/test-daten.mjs; das hier ist die zweite Meinung, mit der
+# App im Browser und mit dem SQL für den gemeinsamen Plan.
 name: Prüfung
 
 on:

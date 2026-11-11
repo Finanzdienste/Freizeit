@@ -55,6 +55,9 @@ import { darstellungSetzen, darstellungAnwenden } from './darstellung.js';
 import { pushEinschalten, pushAusschalten } from './push.js';
 import { ortsbilderSetzen, motivHtml } from './bilder.js';
 import {
+  tippsHolen, kiSchluesselSetzen, kiSchluesselWeg, kiUi,
+} from './ki-tipp.js';
+import {
   geraetStandort, adresseSuchen, standortUi, UMKREISE,
 } from './standort.js';
 import {
@@ -654,6 +657,29 @@ function aktion(name, z) {
       zeichnen({ behalteScroll: true });
       break;
     }
+    case 'ki-tipp': {
+      // „Für dich“: Claude nach zwei Tipps für diese Woche fragen (ki-tipp.js).
+      const mo = z.dataset.woche;
+      if (!mo || kiUi.laeuft) break;
+      Object.assign(kiUi, { laeuft: mo, fehler: '', woche: mo });
+      zeichnen({ behalteScroll: true });
+      tippsHolen(daten.programm, st, mo, h)
+        .catch((e) => { kiUi.fehler = e.message; })
+        .finally(() => {
+          kiUi.laeuft = '';
+          zeichnen({ behalteScroll: true });
+        });
+      break;
+    }
+    case 'ki-speichern':
+      kiUi.einstellFehler = kiSchluesselSetzen(wert('#ki-schluessel')) ? '' : 'Das sieht nicht nach einem Claude-Schlüssel aus – er fängt mit „sk-ant-“ an.';
+      zeichnen({ behalteScroll: true });
+      break;
+    case 'ki-weg':
+      kiSchluesselWeg();
+      kiUi.einstellFehler = '';
+      zeichnen({ behalteScroll: true });
+      break;
     case 'standort-weg':
       st.standort = null;
       st.filter.umkreis = 0;
@@ -1158,9 +1184,9 @@ document.addEventListener('keydown', (ev) => {
 
 // Enter in einem Eingabefeld drückt den Hauptknopf daneben.
 document.addEventListener('keydown', (ev) => {
-  const felder = '.einrichten input, .einladung input, .formular input, .einstellung-feld input';
+  const felder = '.einrichten input, .einladung input, .formular input, .einstellung-feld input, .ki-feld input';
   if (ev.key !== 'Enter' || !ev.target.matches || !ev.target.matches(felder)) return;
-  const knopf = ev.target.closest('.einrichten, .einladung, .formular, .einstellung-feld').querySelector('.knopf.haupt');
+  const knopf = ev.target.closest('.einrichten, .einladung, .formular, .einstellung-feld, .ki-feld').querySelector('.knopf.haupt');
   if (knopf) {
     ev.preventDefault();
     knopf.click();

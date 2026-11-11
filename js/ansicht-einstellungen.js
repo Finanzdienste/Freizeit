@@ -11,6 +11,8 @@
  *                      Adresse (standort.js). Umkreis und Reihenfolge stehen
  *                      im Filter.
  *   Mitteilungen       nur der Gastgeber: Push an oder aus (push.js)
+ *   KI-Tipp            nicht bei Eingeladenen: der Claude-Schlüssel für
+ *                      „Für dich“ in der Woche (ki-tipp.js)
  *   Gemeinsamer Plan   Abgleich, Name, weiteres Gerät, „So geht's“,
  *                      Verlassen bzw. Auflösen – ohne Plan der Weg zu „Wir“
  *   App                Installieren, Stand des Programms und des Katalogs,
@@ -26,6 +28,7 @@ import { hilfeKarte } from './ansicht-wir.js';
 import { INHALTS_REITER } from './speicher.js';
 import { bildnachweise } from './bilder.js';
 import { DARSTELLUNGEN, darstellung } from './darstellung.js';
+import { kiSchluessel, kiUi } from './ki-tipp.js';
 
 /** Wie die Reiter unten heißen – dieselben Wörter wie in der Leiste (index.html). */
 const REITER_NAMEN = { programm: 'Programm', karte: 'Karte', wir: 'Wir' };
@@ -186,6 +189,26 @@ function appTeil(p, ideenStand, datenFehler, installierbar) {
 }
 
 /**
+ * Der Schlüssel für „Für dich“: ein eigener (dann löschbar) – sonst nimmt die
+ * App den aus Boxenstopp, wenn es auf diesem Gerät einen gibt.
+ */
+function kiTeil() {
+  const k = kiSchluessel();
+  const jetzt = !k
+    ? '<div class="e-zeile fein">Noch kein Schlüssel – dann gibt es in der Woche kein „Für dich“.</div>'
+    : k.quelle === 'eigen'
+      ? `<div class="e-zeile"><span>✓ Eigener Schlüssel <span class="fein">…${esc(k.schluessel.slice(-4))}</span></span><button type="button" class="textknopf" data-aktion="ki-weg">Löschen</button></div>`
+      : '<div class="e-zeile"><span>✓ Schlüssel aus Boxenstopp</span></div>';
+  const feld = k && k.quelle === 'eigen' ? '' : `<div class="e-zeile ki-feld">
+      <input id="ki-schluessel" class="eingabe" type="password" placeholder="sk-ant-…" aria-label="${k ? 'Eigener Claude-API-Schlüssel' : 'Claude-API-Schlüssel'}" autocomplete="off" spellcheck="false" maxlength="260">
+      <button type="button" class="knopf haupt" data-aktion="ki-speichern">Speichern</button>
+    </div>`;
+  const fehler = kiUi.einstellFehler ? `<p class="standort-fehler" role="alert">${esc(kiUi.einstellFehler)}</p>` : '';
+  return abschnitt('e-ki', 'KI-Tipp', jetzt + feld + fehler,
+    'Für „Für dich“ in der Woche: Claude sucht zwei Termine aus, die zu dir und deinem Kalender passen. Jede Frage kostet wenige Cent von deinem API-Guthaben bei Anthropic (Schlüssel unter platform.claude.com). Der Schlüssel bleibt auf diesem Gerät.');
+}
+
+/**
  * @param {object} o  p (Programm), ideenStand, datenFehler, installierbar (der Browser bietet „Installieren“ an)
  */
 export function einstellungenAnsicht(st, ui, {
@@ -198,6 +221,7 @@ export function einstellungenAnsicht(st, ui, {
   ${darstellungTeil()}
   ${standortTeil(st)}
   ${st.gemeinsam && !st.gemeinsam.raus && rolle() === 'gastgeber' ? mitteilungenTeil(ui) : ''}
+  ${rolle() === 'mitglied' ? '' : kiTeil()}
   ${planTeil(st, ui)}
   ${appTeil(p, ideenStand, datenFehler, installierbar)}`;
 }

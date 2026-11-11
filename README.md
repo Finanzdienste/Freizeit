@@ -395,6 +395,32 @@ damit er auch dann vollständig dasteht, wenn er aus den Daten gefallen ist.
 Was von anderen kommt, ist fremder Text: Namen und Schnappschüsse gehen beim
 Anzeigen durch `esc()`, Links nur mit http(s).
 
+## Für dich (KI-Tipp)
+
+Oben in der Woche steht **✨ Für dich**: Auf Knopfdruck sucht Claude zwei
+Termine der Woche aus, die zu Tobi passen, und sagt in einem Satz, warum –
+darunter die Karten der beiden, wie im Tag (mit Bock). Ein Tipp auf den Tag
+am Tipp öffnet den Tag. Die Tipps bleiben für die Woche stehen (auch nach dem
+Neuladen); **Neu fragen** holt neue. Gefragt wird nie von allein.
+
+Claude bekommt die Termine der Woche ab heute, wie das Programm sie ohne
+Filter zeigt – mit der 21:30-Regel, ohne Online & TV und ohne, was sich mit
+dem Kalender beißt (die belegten Zeiten aus „Wir“, Arbeitszeit inklusive).
+Ein Termin an mehreren Tagen steht einmal. Dazu, was Tobi zuletzt gemacht und
+wie er es bewertet hat („Wie war's?“) und worauf er gerade Bock hat. Jeder
+Termin ist eine Zeile mit Nummer, die Antwort nennt nur Nummern – die App baut
+die Karten selbst, Claude kann also keinen Termin erfinden.
+
+**Schlüssel und Kosten:** Die Anfrage geht direkt vom Gerät an die
+Messages-API von Anthropic (`claude-opus-5-5`, JSON nach Schema) und kostet
+pro Frage wenige Cent vom API-Guthaben der Console – mit einem Claude-Abo Max
+oder Ultra aus dessen Monatsguthaben. Den Schlüssel (`sk-ant-…`) trägt man unter
+Einstellungen → **KI-Tipp** ein; er bleibt im localStorage
+(`freizeit.ki.v1`, dort auch die Tipps je Woche). Ohne eigenen nimmt die App
+den aus Boxenstopp (`boxenstopp.ki.v1`) – beide Apps teilen sich den Ursprung
+`finanzdienste.github.io` und damit den Speicher. Eingeladene sehen weder den
+Kasten noch den Abschnitt: Es ginge auf Tobis Guthaben.
+
 ## Woher die Daten kommen
 
 Die App ändert ihre Daten nie selbst. Der geplante Lauf
@@ -677,6 +703,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `werkzeug/filme-aktualisieren.mjs` | IMDb Top 250 aus IMDbs offiziellen Daten auffrischen – im Monatslauf |
 | `werkzeug/ortsbilder.py` | freie Fotos der Spielstätten von Wikidata/Commons suchen, prüfen, verkleinert ablegen (Python, Pillow) |
 | `js/push.js` | Push-Mitteilungen für den Gastgeber: Abo holen, beim Server an- und abmelden |
+| `js/ki-tipp.js` | „Für dich“: Kandidaten der Woche, Anfrage an Claude, Antwort prüfen, Schlüssel (eigener oder aus Boxenstopp) und Tipps je Woche merken |
 | `js/standort.js` | Bezugspunkt für Entfernungen: Gerätestandort, Adresssuche (Nominatim), Luftlinie, „3,2 km“ |
 | `supabase/functions/freizeit-push/` | die Edge Function: offene Nachrichten holen, verschlüsseln, an die Push-Dienste schicken |
 | `werkzeug/push-buendeln.mjs` | die Function als eine Datei fürs Dashboard |
@@ -697,6 +724,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | --- | --- |
 | `test-programm.mjs` | Tag und Woche: der Kopf (Ansichten, Blättern, Filter, Tagesleiste, erster Termin ohne Scrollen), Gliederung nach Tageszeit, beide Zeitregeln, „Läuft heute“, Tageskarten der Woche mit „Diese Woche“ (Highlights ihrer Woche, Infos mit Ende), Laufendem und Hinweisen, Filter, Wischen, Vergangenes (keine Tage vor heute, heute ohne Beendetes – auch bei offener App), Feiertag, ein alter Stand „Liste“ |
 | `test-filter.mjs` | das Filter-Blatt: Dialog, Wahl gilt sofort, Chips mit ✕, „Alle zeigen“, Zurücksetzen, Escape, Tipp daneben, Fokus, weniger Bewegung, dasselbe in Woche, Monat und Karte, das Blatt von „Was immer geht“, nichts scrollt quer |
+| `test-ki-tipp.mjs` | „Für dich“: welche Termine Claude sieht (ab heute, 21:30-Regel, ohne Online, mehrtägig einmal), die Anfrage, Antworten mit erfundenen oder doppelten Nummern, der Schlüssel in den Einstellungen, Kasten, Tipps und Fehler in der Woche, der Schlüssel aus Boxenstopp – mit nachgebauter API |
 | `test-einstellungen.mjs` | der Reiter Einstellungen (kein ⚙, kein „Zurück“), die Abschnitte je Rolle, Stand der Daten, Installieren, Hinweise zu den Daten, Name ändern, Weiteres Gerät |
 | `test-reiter.mjs` | Reiter unten: an und aus (auch mit der Tastatur), der letzte bleibt, Neuladen, Start-Reiter, Ausgeblendetes über `#…`, Einladung und „Zu „Wir““, der Punkt nur an „Wir“, `#ideen` führt zu „Was immer geht“, vier Beschriftungen bei 360 und 390 px ganz lesbar ohne Querscrollen, alte und kaputte Stände |
 | `test-online.mjs` | Online & TV: Sender statt Ort, 21:30 nach Beginn, Filter „Art“, Umkreis und Entfernung, Monat und Tag, WhatsApp und Kalender, Schnappschuss, Landkarte |

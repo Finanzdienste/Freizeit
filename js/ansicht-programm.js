@@ -10,7 +10,7 @@
  *           Oben die Tagesleiste: die sieben Tage der Woche wie eine
  *           Abfahrtstafel, mit der Zahl der Termine und wer Bock hat; ein
  *           Tipp wählt den Tag.
- *   Woche   je Tag eine Karte: Wetter, Zeitstreifen, wie viele Termine, die
+ *   Woche   oben „Für dich“ (zwei Tipps von Claude, ki-tipp.js), dann je Tag eine Karte: Wetter, Zeitstreifen, wie viele Termine, die
  *           Haken, Eingeplantes und Konzerte deiner Künstler, der Tipp des
  *           Tages. Ein Tipp öffnet den Tag. In der laufenden Woche dazu
  *           „Diese Woche“ (Highlights, Gut zu wissen), dann was die Woche
@@ -46,6 +46,9 @@ import { geplante } from './ideen.js';
 import { belegtAm, bekannt } from './zeiten.js';
 import { filterLeiste, chipsProgramm } from './ansicht-filter.js';
 import { planenForm, meldungBox } from './ansicht-ideen.js';
+import {
+  kiSchluessel, gemerkteTipps, tippTermin, kiUi,
+} from './ki-tipp.js';
 
 /** Die drei Ansichten, vom Tag zum Überblick. */
 export const ANSICHTEN = [['tag', 'Tag'], ['woche', 'Woche'], ['monat', 'Monat']];
@@ -179,6 +182,33 @@ function kasten(name, titel, inhalt, { zahl = '', vorschau = '', id = '' } = {})
 }
 
 const ISO_TAG = /^\d{4}-\d{2}-\d{2}$/;
+
+/**
+ * „Für dich“ (ki-tipp.js): zwei Termine der Woche, die Claude ausgesucht hat,
+ * jeder mit einem Satz, warum – als Karten wie im Tag. Nur mit Schlüssel auf
+ * dem Gerät, nicht bei Eingeladenen und nicht nach dem Ende des Programms.
+ */
+function fuerDich(p, mo, heute) {
+  if (rolle() === 'mitglied' || mo > p.bis || !kiSchluessel()) return '';
+  const gemerkt = gemerkteTipps(mo);
+  const tipps = (gemerkt ? gemerkt.liste : [])
+    .filter((t) => t.datum >= heute)
+    .map((t) => ({ t, x: tippTermin(p, t) }))
+    .filter(({ t, x }) => x && !schonVorbei(x.e, t.datum));
+  const laeuft = kiUi.laeuft === mo;
+  const fehler = kiUi.fehler && kiUi.woche === mo ? `<div class="fehlerbox" role="alert">${esc(kiUi.fehler)}</div>` : '';
+  const liste = tipps.map(({ t, x }) => `<div class="fd-tipp">
+      <p class="fd-warum"><button type="button" class="fd-tag" data-tag="${t.datum}">${wochentagKurz(t.datum)} ${tagMonat(t.datum)}</button> ${esc(t.warum)}</p>
+      ${karte(eintragTermin(x.e, x.tag, p.tage), { zeitSpalte: true })}
+    </div>`).join('');
+  const knopf = `<button type="button" class="knopf${tipps.length ? ' klein' : ' haupt'}" data-aktion="ki-tipp" data-woche="${mo}"${laeuft ? ' disabled' : ''}>${laeuft ? 'Claude sucht …' : tipps.length ? 'Neu fragen' : 'Zwei Tipps holen'}</button>`;
+  return `<section class="fuer-dich" id="fuer-dich" aria-labelledby="fuer-dich-titel">
+    <div class="fd-kopf"><h2 class="fd-titel" id="fuer-dich-titel">✨ Für dich</h2>${tipps.length ? knopf : ''}</div>
+    ${liste || `<p class="fein">Claude sucht dir zwei Termine dieser Woche aus, die zu dir und deinem Kalender passen.</p>${knopf}`}
+    ${laeuft ? '<p class="fein" role="status">Claude schaut sich das Programm der Woche an …</p>' : ''}
+    ${fehler}
+  </section>`;
+}
 
 /**
  * Die Highlights einer Woche: Der Monatslauf gibt jedem ein „datum“ – es
@@ -404,7 +434,8 @@ function wocheAnsicht(p, st, heute, mo, plaene, ctx = {}) {
   const legende = zeiten || tage.some((d) => tagDaten(p, d, f, plaene).alle.some(zaehlt))
     ? `<p class="legende"><span><i class="lg-frei"></i> frei</span>${zeiten ? `<span><i class="lg-belegt"></i> ${rolle() === 'gastgeber' ? 'belegt (Kalender)' : `${n} ist belegt`}</span>` : ''}<span><i class="lg-haken ich"></i> dein Haken</span><span><i class="lg-haken p0"></i> die anderen</span><span><i class="lg-haken plan"></i> eingeplant</span></p>`
     : '';
-  return `${dieseWocheKasten(p, mo, heute)}
+  return `${fuerDich(p, mo, heute)}
+  ${dieseWocheKasten(p, mo, heute)}
   ${mo > p.bis ? '<div class="banner">Für diese Woche gibt es noch kein Programm – hier stehen nur Konzerte deiner Künstler und was ihr eingeplant habt. Es kommt mit dem Monatslauf am Ersten, sobald die Woche in den nächsten acht Wochen liegt.</div>' : ''}
   <div class="wochen-liste">${tage.map((d) => tagKarte(p, d, f, plaene, heute)).join('')}</div>
   ${legende}

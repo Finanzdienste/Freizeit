@@ -29,8 +29,8 @@ await page.waitForSelector('#ansicht .seiten-titel');
 check(page.url().endsWith('#einstellungen') && (await page.locator('.seiten-titel').innerText()) === 'Einstellungen', 'ein Tipp auf den Reiter: die Seite „Einstellungen“, Adresse #einstellungen');
 check(JSON.stringify(await markiert()) === '["einstellungen"]', 'unten ist „Einstellungen“ markiert – und nur er');
 check(await page.locator('#ansicht [data-aktion="zurueck"]').count() === 0, 'kein „‹ Zurück“ mehr');
-check(JSON.stringify(await titel()) === JSON.stringify(['Reiter unten', 'Darstellung', 'Mein Standort', 'Gemeinsamer Plan', 'App']),
-  'ohne Plan: Reiter unten (zuerst), Darstellung, Mein Standort, Gemeinsamer Plan, App – keine Mitteilungen');
+check(JSON.stringify(await titel()) === JSON.stringify(['Reiter unten', 'Darstellung', 'Mein Standort', 'KI-Tipp', 'Gemeinsamer Plan', 'App']),
+  'ohne Plan: Reiter unten (zuerst), Darstellung, Mein Standort, KI-Tipp, Gemeinsamer Plan, App – keine Mitteilungen');
 check((await page.locator('#stand').innerText()).includes('Mo 2.11., 07:01 Uhr') && (await page.locator('#stand').innerText()).includes('bis So 15.11.')
   && (await page.locator('#e-app').innerText()).includes('Ideen („Was immer geht“)') && (await page.locator('#e-app').innerText()).includes('Di 27.10.'),
 'unter „App“: Stand des Programms (und bis wann es reicht) und der Ideen');
@@ -66,7 +66,7 @@ await page.fill('#wir-name', 'Tobi');
 await page.click('[data-aktion="starten"]');
 await page.waitForFunction(() => document.querySelector('#ansicht').innerText.includes('Tobi (du)'));
 await A.einstellungen();
-check(JSON.stringify(await titel()) === JSON.stringify(['Reiter unten', 'Darstellung', 'Mein Standort', 'Mitteilungen', 'Gemeinsamer Plan', 'App']), 'als Gastgeber: dazu „Mitteilungen“');
+check(JSON.stringify(await titel()) === JSON.stringify(['Reiter unten', 'Darstellung', 'Mein Standort', 'Mitteilungen', 'KI-Tipp', 'Gemeinsamer Plan', 'App']), 'als Gastgeber: dazu „Mitteilungen“');
 check(JSON.stringify(await page.$$eval('#e-plan .zeilen-knopf', (bs) => bs.map((b) => b.textContent))) === JSON.stringify(['Name ändern', 'Weiteres Gerät', "So geht's", 'Plan auflösen'])
   && (await page.locator('#e-plan .abgleich').innerText()).includes('Tobi · Gastgeber'), 'im Plan: Stand mit „Jetzt abgleichen“, Name, Gerät, So geht\'s, Auflösen – je einmal');
 await page.click('[data-aktion="umbenennen"]');

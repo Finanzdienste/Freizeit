@@ -100,7 +100,9 @@ Den Ideen-Katalog daten/ideen.json pflegt Tobi von Hand; kein Lauf fasst ihn an.
 4. Ortsfotos: Die Action „Ortsbilder“ (.github/workflows/ortsbilder.yml)
    startet nach jedem Push, der daten/programm.json ändert, und von Hand
    (actions_run_trigger). Ihren Lauf abwarten und ihren Kontaktbogen
-   (Artefakt „kontaktbogen“) ansehen. Fällt sie aus: lokal
+   ansehen: Artefakt „kontaktbogen“ (list_workflow_run_artifacts, dann
+   download_workflow_run_artifact – die Adresse gilt nur Minuten; mit curl in
+   einen eigenen Ordner laden und entpacken). Fällt sie aus: lokal
    `python3 werkzeug/ortsbilder.py --bogen <tmp>/bogen` im Hintergrund
    (Wikimedia drosselt, das dauert) und diesen Kontaktbogen ansehen. In beiden
    Fällen Fehltreffer und Fotos mit Menschen im Mittelpunkt mit Grund in die
@@ -120,10 +122,3 @@ Artifact-Werkzeug für die Übergabe. Die Erinnerung der Sitzung davor
 („Freizeit: Monatslauf 1.12. prüfen“) ist abgeschaltet. Soll eine andere
 Sitzung übernehmen: dort einplanen und die alte Erinnerung mit update_trigger
 `enabled: false` abschalten (Löschen lehnt der Filter ab).
-
-## Offen
-- Die Action „Ortsbilder“ ist seit 11.11. angelegt, aber noch nie gelaufen:
-  Seit 11.11. gegen 21:15 startet auf GitHub keine Action mehr (Pages-Build
-  und Ortsbilder enden mit `startup_failure`, „Prüfung“ bleibt in der
-  Warteschlange). Sobald Actions wieder laufen: Ortsbilder einmal von Hand
-  starten, den Kontaktbogen ansehen, dann diesen Punkt streichen.

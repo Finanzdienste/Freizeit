@@ -653,7 +653,7 @@ code.code { background: var(--akzent-weich); padding: 1px 6px; border-radius: 4p
 .schritte { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
 .leute { display: flex; flex-wrap: wrap; gap: 6px; }
 .wir-kopf { padding-top: 10px; display: grid; gap: 8px; }
-.wir-kopf .syncstatus, .wir-kopf .aktionen { margin: 0; }
+.wir-kopf .syncstatus, .wir-kopf .wer-sieht, .wir-kopf .aktionen { margin: 0; }
 .wir-einleitung { margin-top: 12px; }
 .warn-text { color: var(--warn); }
 .einladung { margin-top: 10px; padding: 14px; border: 0; border-radius: 14px; background: var(--flaeche); display: grid; gap: 8px; }
@@ -725,6 +725,9 @@ textarea.eingabe { resize: vertical; font: inherit; font-size: 16px; }
 .person-zeile > summary::after { content: "›"; margin-left: auto; color: var(--leise); font-size: 20px; line-height: 1; transition: transform .15s; }
 .person-zeile[open] > summary::after { transform: rotate(90deg); }
 .person-zeile > summary .fein { margin: 0; }
+/* „zuletzt in der App“ in einer eigenen Zeile unter Name und Zahlen; das › bleibt oben. */
+.person-zeile > summary::after { order: 2; }
+.person-zeile > summary .person-zuletzt { order: 3; flex-basis: 100%; }
 .person-zeile .aktionen { margin-top: 6px; }
 .person-liste { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; font-size: 14px; }
 .person-liste .person-eintrag {

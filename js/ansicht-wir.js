@@ -29,7 +29,7 @@
 import { esc, anzahl, sichererLink } from './text.js';
 import { karte, alleEintraege, wannKurz } from './karte.js';
 import {
-  montag, wochentagKurz, tagMonat, vorbeiAb, jetztMinuten,
+  montag, wochentagKurz, tagMonat, vorbeiAb, jetztMinuten, heute as heuteIso, plusTage,
 } from './zeit.js';
 import { meinBock } from './speicher.js';
 import {
@@ -54,6 +54,29 @@ export const vorbei = (e, heute) => (e.datum
 function sortiert(liste, zahl = () => 0) {
   const s = (e) => `${e.datum || e.von || '9999'} ${String(e.zeit || '').match(/\d{1,2}:\d{2}/)?.[0].padStart(5, '0') || '99:99'}`;
   return [...liste].sort((a, b) => s(a).localeCompare(s(b)) || zahl(b) - zahl(a) || String(a.titel).localeCompare(String(b.titel), 'de'));
+}
+
+const zwei = (n) => String(n).padStart(2, '0');
+const tagVon = (d) => `${d.getFullYear()}-${zwei(d.getMonth() + 1)}-${zwei(d.getDate())}`;
+
+/**
+ * Wann jemand zuletzt die App geöffnet hat (ISO vom Server): „gerade eben“,
+ * „vor 25 Min.“, „heute, 21:14 Uhr“, „gestern, 18:02 Uhr“, in der letzten
+ * Woche „Mo, 18:02 Uhr“, davor „3.11.“ – ohne Zeitpunkt ''.
+ */
+export function zuletztText(iso) {
+  const d = new Date(iso);
+  if (!iso || Number.isNaN(d.getTime())) return '';
+  const min = Math.round((Date.now() - d.getTime()) / 60000);
+  if (min < 2) return 'gerade eben';
+  if (min < 60) return `vor ${min} Min.`;
+  const tag = tagVon(d);
+  const jetzt = heuteIso();
+  const uhr = `${zwei(d.getHours())}:${zwei(d.getMinutes())} Uhr`;
+  if (tag === jetzt) return `heute, ${uhr}`;
+  if (tag === plusTage(jetzt, -1)) return `gestern, ${uhr}`;
+  if (tag > plusTage(jetzt, -7)) return `${wochentagKurz(tag)}, ${uhr}`;
+  return tagMonat(tag);
 }
 
 /** Alle Einträge mit Haken: frisch aus den Daten, sonst aus dem Schnappschuss. */
@@ -129,7 +152,8 @@ function einladungKarte(st, ui) {
     <h3>${name ? `${name} lädt dich ein` : 'Du bist eingeladen'}</h3>
     <p><b>Freizeit</b> zeigt, was in Hamburg und Umgebung los ist – Konzerte, Theater, Märkte, Ausflüge, gut einen Monat im Voraus –, dazu Ideen für alles ohne Termin.</p>
     <p>Gib deinen Namen ein und hak an, worauf du Bock hast – <b>mit ${name || 'dem, der dich eingeladen hat'}</b> oder <b>allein/mit anderen</b>.
-      ${name ? `Deine Haken sieht nur ${name}, und du siehst, worauf ${name} Bock hat` : 'Deine Haken sieht nur, wer dich eingeladen hat'} – sonst niemand.</p>
+      ${name ? `Deine Haken sieht nur ${name}, und du siehst, worauf ${name} Bock hat` : 'Deine Haken sieht nur, wer dich eingeladen hat'} – sonst niemand.
+      ${name || 'Wer dich eingeladen hat'} sieht auch, wann du zuletzt in der App warst.</p>
     ${imBrowserAufIPhone ? `<h4>Erst auf den Home-Bildschirm</h4>${iPhoneSchritte(st.einladung)}<h4>Oder gleich hier im Browser</h4>` : ''}
     <label class="feld-label">Dein Name<input id="wir-name" class="eingabe" maxlength="30" autocomplete="given-name" enterkeyhint="go"></label>
     ${fehler}${gibtsNicht}
@@ -203,7 +227,7 @@ export function hilfeKarte() {
   const punkte = gastgeber ? [
     `<b>Einladen:</b> Deine Leute bekommen den Link, geben ihren Namen ein und sehen an jedem Termin zwei Knöpfe: „Mit ${n}“ und „Allein/mit anderen“.`,
     '<b>Erklärt:</b> Wer den Link öffnet, bekommt erst eine kurze Einladung und nach dem Beitreten diese Erklärung in seiner Fassung.',
-    '<b>Hier unter „Wir“</b> siehst du, was wer will: Zusammen, Wollen mit dir, Ohne dich und pro Person.',
+    '<b>Hier unter „Wir“</b> siehst du, was wer will: Zusammen, Wollen mit dir, Ohne dich und pro Person – dort auch, wann jemand zuletzt in der App war.',
     '<b>Wer sieht was:</b> Alle Haken siehst nur du. Die anderen sehen deine und ihre eigenen, voneinander nichts.',
   ] : [
     '<b>Programm:</b> was in Hamburg und Umgebung los ist, gut einen Monat im Voraus – als Tag, Woche oder Monat. <b>Karte:</b> dasselbe nach Ort.',
@@ -211,7 +235,7 @@ export function hilfeKarte() {
     '<b>Was immer geht</b> (im Programm ganz unten): alles ohne festen Termin, von Tischtennis bis Bügelperlen. Auch da kannst du Bock sagen oder dir einen Tag einplanen.',
     `<b>Wir:</b> Hier siehst du, wo ihr beide Bock habt und worauf ${n} Bock hat.`,
     `<b>Wann hat ${n} Zeit?</b> An jedem Termin steht es dabei, und in den Ansichten Tag und Woche sind belegte Zeiten schraffiert – ohne zu verraten, was ${n} da macht.`,
-    `<b>Wer sieht was:</b> Deine Haken sieht nur ${n}. Die anderen Eingeladenen sehen nichts von dir – und du nichts von ihnen.`,
+    `<b>Wer sieht was:</b> Deine Haken sieht nur ${n}, und auch, wann du zuletzt in der App warst. Die anderen Eingeladenen sehen nichts von dir – und du nichts von ihnen.`,
     ...(alsApp() ? [] : [istApple()
       ? '<b>Als App aufs iPhone:</b> Teilen → „Zum Home-Bildschirm“. Die App dort kennt diesen Plan nicht – tipp vorher in den Einstellungen (⚙ oben rechts) auf „Weiteres Gerät“, kopier den Link und füg ihn in der App unter „Ich habe einen Code“ ein.'
       : '<b>Als App:</b> im Browser-Menü „App installieren“ bzw. „Zum Startbildschirm“ – dann ist Freizeit ein Symbol wie jede andere App.']),
@@ -272,6 +296,7 @@ function kopf(st, ui) {
   return `<header class="wir-kopf">
     <div class="leute">${chips}</div>
     <p class="fein syncstatus">${zeile}${s.fehler ? ` · <span class="warn-text">${esc(s.fehler)}</span>` : ''}</p>
+    ${gastgeber ? '' : `<p class="fein wer-sieht">${esc(gastgeberName() || 'Der Gastgeber')} sieht deine Haken und wann du zuletzt in der App warst.</p>`}
     ${ui.fehler ? `<div class="fehlerbox" role="alert">${esc(ui.fehler)}</div>` : ''}
     ${gastgeber ? `<div class="aktionen"><button type="button" class="knopf haupt" data-aktion="einladen" aria-expanded="${Boolean(ui.einladen)}">Einladen</button></div>` : ''}
     ${gastgeber && ui.einladen ? `<div class="einladung">
@@ -314,7 +339,7 @@ function proPerson(st, nachSchluessel, heute, ui) {
       </div>` : '';
     const auf = (ui.offen && ui.offen.has(`person:${x.id}`)) || ui.entfernen === x.id;
     return `<details class="person-zeile" data-offen="person:${esc(x.id)}"${auf ? ' open' : ''}>
-      <summary><span class="person p${p ? p.nr % 4 : 0}">${esc(x.name)}</span><span class="fein">${zahlen}</span></summary>
+      <summary><span class="person p${p ? p.nr % 4 : 0}">${esc(x.name)}</span><span class="fein">${zahlen}</span>${zuletztText(x.zuletzt) ? `<span class="fein person-zuletzt">zuletzt in der App: ${esc(zuletztText(x.zuletzt))}</span>` : ''}</summary>
       ${liste}
       <div class="aktionen"><button type="button" class="textknopf" data-aktion="entfernen" data-person="${esc(x.id)}" aria-expanded="${ui.entfernen === x.id}">Aus dem Plan nehmen</button></div>
       ${frage}

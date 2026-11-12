@@ -1,6 +1,7 @@
 -- Die gemeinsamen Häkchen – wer hat wozu Bock? Drei Tabellen, vier Funktionen –
 -- und, damit der Gastgeber Bescheid bekommt, drei Tabellen und eine fünfte
--- Funktion für Push-Nachrichten (unten, PUSH).
+-- Funktion für Push-Nachrichten (unten, PUSH), dazu eine sechste, die sich
+-- merkt, wann jemand die App geöffnet hat (unten, ZULETZT GEÖFFNET).
 --
 --   Wo:  Supabase → SQL Editor → einfügen → Run
 --   Wer: der Betreiber. Der Block ist wiederholbar – ein weiterer Lauf legt
@@ -102,7 +103,7 @@
 --
 -- Wie bei der Sicherung der Workout-App: Auf die Tabellen hat der öffentliche
 -- Schlüssel kein Recht, und Row Level Security ist an, ohne eine einzige
--- Regel. Gelesen und geschrieben wird nur über die vier Funktionen, die mit
+-- Regel. Gelesen und geschrieben wird nur über die sechs Funktionen, die mit
 -- den Rechten ihres Besitzers laufen und selbst prüfen, was sie annehmen.
 --
 --   freizeit_lesen(p_code, p_person, p_schluessel)       nur lesen
@@ -113,12 +114,16 @@
 --   freizeit_push(p_code, p_person, p_schluessel, p_abo, p_an)
 --                                                        Push an oder aus (nur
 --                                                        der Gastgeber, siehe PUSH)
+--   freizeit_offen(p_code, p_person, p_schluessel)       die App ist offen: lesen
+--                                                        und es sich merken
+--                                                        (siehe ZULETZT GEÖFFNET)
 --
 -- p_schluessel braucht nur der Gastgeber, p_person nicht, wer nur lesen will;
--- was fehlt, ist null. Jede der vier gibt zurück, was der Aufrufer sieht:
+-- was fehlt, ist null. Jede außer freizeit_push gibt zurück, was der Aufrufer
+-- sieht:
 --
 --   {"rolle": "gastgeber" | "mitglied" | "gast",
---    "personen": [{"id": "…", "name": "Tobi"}, …],
+--    "personen": [{"id": "…", "name": "Tobi", "zuletzt": "…"}, …],
 --    "bock": [{"person": "…", "eintrag": "…", "daten": {…},
 --              "geaendert": "2026-10-26T16:32:09.014Z"}, …]}
 --
@@ -127,7 +132,9 @@
 -- mitgeschickt hat. geaendert ist ISO-Text in UTC auf die Millisekunde, so,
 -- wie JavaScript ihn mit toISOString() schreibt – egal, welche Zeitzone die
 -- Sitzung hat. Wer nicht Gastgeber ist, sieht den Gastgeber mit der id
--- 'gastgeber' und dessen Häkchen mit der person 'gastgeber'.
+-- 'gastgeber' und dessen Häkchen mit der person 'gastgeber'. zuletzt (wann
+-- die Person zuletzt die App geöffnet hat, ISO wie geaendert) sieht nur der
+-- Gastgeber, und nur bei denen, die sie seitdem geöffnet haben.
 --
 -- Geht etwas nicht, bricht die Funktion mit einer kurzen Meldung ab (bei
 -- PostgREST im Feld message) und ändert nichts:
@@ -154,6 +161,12 @@ create table if not exists freizeit_person (
   geaendert timestamptz not null default now(),
   primary key (raum, person)
 );
+
+-- ZULETZT GEÖFFNET: Wann jemand zuletzt die App geöffnet hat (freizeit_offen)
+-- – das sieht nur der Gastgeber –, und wann er es zuletzt gemeldet bekam.
+-- Nachträglich dazugekommen, deshalb hier und nicht oben in der Tabelle.
+alter table freizeit_person add column if not exists zuletzt_offen timestamptz;
+alter table freizeit_person add column if not exists offen_gemeldet timestamptz;
 
 -- Ein Häkchen gehört einer Person im Raum. Geht sie, gehen ihre Häkchen mit:
 -- freizeit_weg löscht sie ausdrücklich, und der Fremdschlüssel sorgt dafür,
@@ -195,8 +208,10 @@ create table if not exists freizeit_push (
 );
 
 -- art: neu (eingetreten), bock (angehakt oder „mit wem“ gewechselt),
--- aus (ein Häkchen „mit dir“ zurückgenommen), weg (den Raum verlassen);
--- daten bei bock und aus der Schnappschuss des Eintrags samt eintrag und mitwem.
+-- aus (ein Häkchen „mit dir“ zurückgenommen), weg (den Raum verlassen),
+-- offen (die App geöffnet); daten bei bock und aus der Schnappschuss des
+-- Eintrags samt eintrag und mitwem, bei offen {"vorher": wann davor, ISO}
+-- oder {} beim ersten Mal.
 create table if not exists freizeit_nachricht (
   id        bigint generated always as identity primary key,
   raum      text not null,
@@ -250,10 +265,11 @@ drop function if exists freizeit_push_offen();
 drop function if exists freizeit_push_fertig(bigint[], text[]);
 drop function if exists freizeit_push_schluessel();
 drop function if exists freizeit_push_schluessel_setzen(text, text);
+drop function if exists freizeit_offen(text, text, text);
 
--- Sechs Helfer für die vier Funktionen. Von außen lassen sie sich nicht
+-- Sieben Helfer für die sechs Funktionen. Von außen lassen sie sich nicht
 -- aufrufen (siehe unten), und sie laufen mit den Rechten dessen, der sie
--- aufruft – aus den vier Funktionen heraus also mit denen des Besitzers.
+-- aufruft – aus den sechs Funktionen heraus also mit denen des Besitzers.
 
 -- Aus dem Code der Raum – oder 'ungültiger Code'.
 create or replace function freizeit_raum(p_code text)
@@ -331,7 +347,7 @@ language sql stable set search_path = public, pg_temp as $$
   with gast as (select freizeit_gastgeber_von(p_raum) as id),
   -- Wen die Anfrage zu sehen bekommt, und unter welcher Kennung.
   sicht as (
-    select p.person, p.name, p.angelegt,
+    select p.person, p.name, p.angelegt, p.zuletzt_offen,
            case when p_rolle <> 'gastgeber' and p.person = gast.id then 'gastgeber' else p.person end as kennung
       from freizeit_person p cross join gast
      where p.raum = p_raum
@@ -339,7 +355,11 @@ language sql stable set search_path = public, pg_temp as $$
   select jsonb_build_object(
     'rolle', p_rolle,
     'personen', coalesce((
-      select jsonb_agg(jsonb_build_object('id', s.kennung, 'name', s.name) order by s.angelegt, s.kennung)
+      select jsonb_agg(jsonb_build_object('id', s.kennung, 'name', s.name)
+               || case when p_rolle = 'gastgeber' and s.zuletzt_offen is not null
+                       then jsonb_build_object('zuletzt', to_char(s.zuletzt_offen at time zone 'UTC', 'YYYY-MM-DD"T"HH24:MI:SS.MS"Z"'))
+                       else '{}'::jsonb end
+             order by s.angelegt, s.kennung)
         from sicht s), '[]'::jsonb),
     'bock', coalesce((
       select jsonb_agg(jsonb_build_object(
@@ -414,7 +434,7 @@ begin
     if (select count(distinct raum) from freizeit_person) >= 100 then
       raise exception 'zu viele Räume';
     end if;
-    insert into freizeit_person (raum, person, name) values (v_raum, p_person, v_name);
+    insert into freizeit_person (raum, person, name, zuletzt_offen) values (v_raum, p_person, v_name, now());
     if v_hash is not null then
       insert into freizeit_gastgeber (raum, person, schluessel) values (v_raum, p_person, v_hash);
     end if;
@@ -425,7 +445,8 @@ begin
   if (select count(*) from freizeit_person where raum = v_raum) >= 30 then
     raise exception 'Raum ist voll';
   end if;
-  insert into freizeit_person (raum, person, name) values (v_raum, p_person, v_name);
+  -- Wer eintritt, hat die App offen – das meldet schon „neu“, kein „offen“ dazu.
+  insert into freizeit_person (raum, person, name, zuletzt_offen, offen_gemeldet) values (v_raum, p_person, v_name, now(), now());
   perform freizeit_melden(v_raum, 'neu', v_name, null);
   return freizeit_stand(v_raum, p_person, 'mitglied');
 end $$;
@@ -567,6 +588,46 @@ begin
   end if;
   perform freizeit_hash(p_schluessel);
   return freizeit_stand(v_raum, p_person, freizeit_rolle(v_raum, p_person, p_schluessel));
+end $$;
+
+-- ZULETZT GEÖFFNET ---------------------------------------------------------
+--
+-- Die App ist offen: beim Start und jedes Mal, wenn man in sie zurückkommt
+-- (nicht beim Abgleich jede Minute). Liest wie freizeit_lesen und merkt sich
+-- den Zeitpunkt; den sieht der Gastgeber in seinem Überblick. Bei den anderen
+-- sagt es ihm eine Mitteilung (PUSH) – höchstens eine je Person und Stunde,
+-- damit Hin- und Herwechseln nicht jedes Mal brummt. Wer nicht (mehr) im Raum
+-- ist, bekommt den Stand eines Gasts, wie bei freizeit_lesen.
+create or replace function freizeit_offen(p_code text, p_person text, p_schluessel text default null)
+returns jsonb
+language plpgsql security definer set search_path = public, pg_temp as $$
+declare
+  v_raum   text := freizeit_raum(p_code);
+  v_rolle  text;
+  v_name   text;
+  v_vorher timestamptz;
+  v_zuletzt_gemeldet timestamptz;
+  v_melden boolean;
+begin
+  perform freizeit_kennung(p_person);
+  perform freizeit_hash(p_schluessel);
+  perform pg_advisory_xact_lock(hashtext('freizeit:raum'), hashtext(v_raum));
+  v_rolle := freizeit_rolle(v_raum, p_person, p_schluessel);
+  if v_rolle = 'gast' then
+    return freizeit_stand(v_raum, p_person, v_rolle);
+  end if;
+  select name, zuletzt_offen, offen_gemeldet into v_name, v_vorher, v_zuletzt_gemeldet
+    from freizeit_person where raum = v_raum and person = p_person;
+  v_melden := v_rolle = 'mitglied' and (v_zuletzt_gemeldet is null or v_zuletzt_gemeldet <= now() - interval '1 hour');
+  update freizeit_person
+     set zuletzt_offen = now(),
+         offen_gemeldet = case when v_melden then now() else offen_gemeldet end
+   where raum = v_raum and person = p_person;
+  if v_melden then
+    perform freizeit_melden(v_raum, 'offen', v_name, case when v_vorher is null then '{}'::jsonb
+      else jsonb_build_object('vorher', to_char(v_vorher at time zone 'UTC', 'YYYY-MM-DD"T"HH24:MI:SS.MS"Z"')) end);
+  end if;
+  return freizeit_stand(v_raum, p_person, v_rolle);
 end $$;
 
 -- PUSH ---------------------------------------------------------------------
@@ -717,7 +778,7 @@ create trigger freizeit_push_anstossen
   after insert on freizeit_nachricht
   for each statement execute function freizeit_push_anstossen();
 
--- Nur die fünf Funktionen sind erreichbar – die Tabellen und die Helfer nicht;
+-- Nur die sechs Funktionen sind erreichbar – die Tabellen und die Helfer nicht;
 -- die vier für die Edge Function nur mit dem Schlüssel des Betreibers.
 -- Supabase gibt neuen Tabellen und Funktionen von sich aus Rechte für anon und
 -- authenticated, Postgres jeder Funktion eins für alle (public). Deshalb erst
@@ -726,7 +787,7 @@ revoke all on table freizeit_person, freizeit_bock, freizeit_gastgeber, freizeit
   from public, anon, authenticated, service_role;
 revoke all on function freizeit_ich(text, text, text, text), freizeit_lesen(text, text, text),
                        freizeit_bock(text, text, text, boolean, jsonb, text), freizeit_weg(text, text, text, text),
-                       freizeit_push(text, text, text, jsonb, boolean),
+                       freizeit_push(text, text, text, jsonb, boolean), freizeit_offen(text, text, text),
                        freizeit_push_offen(), freizeit_push_fertig(bigint[], text[]), freizeit_push_anstossen(),
                        freizeit_push_schluessel(), freizeit_push_schluessel_setzen(text, text),
                        freizeit_raum(text), freizeit_kennung(text), freizeit_hash(text), freizeit_melden(text, text, text, jsonb),
@@ -734,7 +795,7 @@ revoke all on function freizeit_ich(text, text, text, text), freizeit_lesen(text
   from public, anon, authenticated, service_role;
 grant execute on function freizeit_ich(text, text, text, text), freizeit_lesen(text, text, text),
                           freizeit_bock(text, text, text, boolean, jsonb, text), freizeit_weg(text, text, text, text),
-                          freizeit_push(text, text, text, jsonb, boolean)
+                          freizeit_push(text, text, text, jsonb, boolean), freizeit_offen(text, text, text)
   to anon;
 grant execute on function freizeit_push_offen(), freizeit_push_fertig(bigint[], text[]),
                           freizeit_push_schluessel(), freizeit_push_schluessel_setzen(text, text)

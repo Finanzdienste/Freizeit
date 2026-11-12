@@ -43,7 +43,7 @@ const check = (c, m) => {
   if (c) oks++; else fails++;
 };
 
-// Die fünf Funktionen, wie die App sie aufruft. Die Namen der Parameter
+// Die sechs Funktionen, wie die App sie aufruft. Die Namen der Parameter
 // zählen mit: PostgREST ruft mit Namen auf und lässt weg, was einen
 // Vorgabewert hat.
 const SIGNATUR = {
@@ -52,8 +52,9 @@ const SIGNATUR = {
   freizeit_bock: 'p_code text, p_person text, p_eintrag text, p_bock boolean, p_daten jsonb, p_schluessel text DEFAULT NULL::text',
   freizeit_weg: 'p_code text, p_person text, p_schluessel text DEFAULT NULL::text, p_wer text DEFAULT NULL::text',
   freizeit_push: 'p_code text, p_person text, p_schluessel text, p_abo jsonb, p_an boolean',
+  freizeit_offen: 'p_code text, p_person text, p_schluessel text DEFAULT NULL::text',
 };
-const FUENF = Object.keys(SIGNATUR).sort();
+const SECHS = Object.keys(SIGNATUR).sort();
 // Die zwei für die Edge Function – nur mit dem Schlüssel des Betreibers (service_role).
 const DIENST = {
   freizeit_push_offen: '', freizeit_push_fertig: 'p_ids bigint[], p_tot text[]',
@@ -163,6 +164,8 @@ async function jeder(werte, aufruf, erwartet, m) {
 
 const reihe = (stand) => stand.bock.map((b) => `${b.person}/${b.eintrag}`);
 const leute = (stand) => stand.personen.map((p) => `${p.id}:${p.name}`);
+/** Der Stand ohne „zuletzt“ (wann jemand die App geöffnet hat) – das prüft ein eigener Abschnitt. */
+const ohneZuletzt = (stand) => ({ ...stand, personen: stand.personen.map(({ zuletzt, ...p }) => p) });
 const zaehle = async (sql, werte) => (await su(`select (${sql})::int as n`, werte))[0].n;
 /** Kommt diese Kennung oder dieser Name irgendwo in der Antwort vor? */
 const kennt = (stand, ...was) => was.some((w) => JSON.stringify(stand).includes(w));
@@ -177,7 +180,7 @@ async function rechtePruefen(wann) {
       from pg_proc p join pg_namespace n on n.oid = p.pronamespace
      where n.nspname = 'public' and p.proname like 'freizeit%'`);
   const anon = f.filter((x) => x.anon).map((x) => x.name).sort();
-  check(gleich(anon, FUENF), `${wann}: anon darf genau die fünf Funktionen ausführen (${anon.join(', ')})`);
+  check(gleich(anon, SECHS), `${wann}: anon darf genau die sechs Funktionen ausführen (${anon.join(', ')})`);
   const sonst = f.filter((x) => x.authenticated || x.fremd).map((x) => x.name);
   check(!sonst.length, `${wann}: authenticated und public dürfen keine der ${f.length} freizeit-Funktionen ausführen`
     + `${sonst.length ? ` – doch: ${sonst.join(', ')}` : ''}`);
@@ -214,19 +217,20 @@ async function rechtePruefen(wann) {
     freizeit_bock: { p_code: A, p_person: TOBI, p_eintrag: 'konzert-1', p_bock: false, p_daten: null },
     freizeit_weg: { p_code: A, p_person: NIEMAND },
     freizeit_push: { p_code: A, p_person: TOBI, p_schluessel: SCHLUESSEL, p_abo: ABO('x'), p_an: false },
+    freizeit_offen: { p_code: A, p_person: NIEMAND },
   };
   const auth = [];
-  for (const name of FUENF) if (!verweigert(await fehler(rufe(name, beispiel[name], 'authenticated')))) auth.push(name);
-  check(!auth.length, `${wann}: authenticated darf keine der fünf aufrufen${auth.length ? ` – doch: ${auth.join(', ')}` : ''}`);
+  for (const name of SECHS) if (!verweigert(await fehler(rufe(name, beispiel[name], 'authenticated')))) auth.push(name);
+  check(!auth.length, `${wann}: authenticated darf keine der sechs aufrufen${auth.length ? ` – doch: ${auth.join(', ')}` : ''}`);
   const dienstFalsch = [];
-  for (const name of FUENF) if (!verweigert(await fehler(rufe(name, beispiel[name], 'service_role')))) dienstFalsch.push(name);
+  for (const name of SECHS) if (!verweigert(await fehler(rufe(name, beispiel[name], 'service_role')))) dienstFalsch.push(name);
   const dienstBeispiel = { freizeit_push_offen: {}, freizeit_push_fertig: { p_ids: [1], p_tot: ['x'] }, freizeit_push_schluessel: {}, freizeit_push_schluessel_setzen: { p_oeffentlich: 'x', p_privat: 'y' } };
   for (const name of Object.keys(DIENST)) {
     for (const rolle of ['anon', 'authenticated']) {
       if (!verweigert(await fehler(rufe(name, dienstBeispiel[name], rolle)))) dienstFalsch.push(`${name} als ${rolle}`);
     }
   }
-  check(!dienstFalsch.length, `${wann}: service_role darf die fünf nicht, anon und authenticated nicht die vier der Edge Function${dienstFalsch.length ? ` – doch: ${dienstFalsch.join(', ')}` : ''}`);
+  check(!dienstFalsch.length, `${wann}: service_role darf die sechs nicht, anon und authenticated nicht die vier der Edge Function${dienstFalsch.length ? ` – doch: ${dienstFalsch.join(', ')}` : ''}`);
   const helfer = [];
   const probe = {
     freizeit_raum: ['$1::text', [A]],
@@ -319,9 +323,9 @@ async function pruefen() {
     check(f.length === 1 && f[0].args === args && f[0].sprache === 'plpgsql' && f[0].definer && (f[0].config || []).includes('search_path=public, pg_temp'),
       `${name}(${args}) – genau eine, plpgsql, security definer, search_path = public, pg_temp`);
   }
-  const uebrig = funktionen.map((f) => f.name).filter((n) => !FUENF.includes(n) && !HELFER.includes(n) && !(n in DIENST) && n !== AUSLOESER);
+  const uebrig = funktionen.map((f) => f.name).filter((n) => !SECHS.includes(n) && !HELFER.includes(n) && !(n in DIENST) && n !== AUSLOESER);
   const helferDa = HELFER.filter((h) => funktionen.filter((f) => f.name === h).length === 1);
-  check(!uebrig.length && helferDa.length === HELFER.length && funktionen.some((f) => f.name === AUSLOESER && f.rueckgabe === 'trigger') && funktionen.length === 17,
+  check(!uebrig.length && helferDa.length === HELFER.length && funktionen.some((f) => f.name === AUSLOESER && f.rueckgabe === 'trigger') && funktionen.length === 18,
     `sonst nur die sieben Helfer und der Auslöser für pg_net, je einmal – von der ersten Fassung ist keine Funktion übrig${uebrig.length ? ` – doch: ${uebrig.join(', ')}` : ''}`);
   await rechtePruefen('nach dem ersten Lauf');
 
@@ -354,7 +358,7 @@ async function pruefen() {
   // -------------------------------------------------------------- Eintreten
   check(gleich(await lesen(A), LEER), 'lesen: ein Raum, in dem noch niemand ist, ist leer – kein Fehler');
   s = await ich(A, TOBI, 'Tobi', SCHLUESSEL);
-  check(gleich(s, { rolle: 'gastgeber', personen: [{ id: TOBI, name: 'Tobi' }], bock: [] }), 'ich mit Schlüssel: Tobi legt Raum A an und ist sein Gastgeber');
+  check(gleich(ohneZuletzt(s), { rolle: 'gastgeber', personen: [{ id: TOBI, name: 'Tobi' }], bock: [] }), 'ich mit Schlüssel: Tobi legt Raum A an und ist sein Gastgeber');
   check(gleich(await su('select person, schluessel from freizeit_gastgeber where raum = $1', [raumVon(A)]), [{ person: TOBI, schluessel: hashVon(SCHLUESSEL) }]),
     'in freizeit_gastgeber: Tobi und der Hash seines Schlüssels');
   s = await ich(A, KIM, '  Kim ');
@@ -364,8 +368,9 @@ async function pruefen() {
   check(gleich(leute(s), ['gastgeber:Tobi', `${JO}:Jo`]) && s.rolle === 'mitglied' && !kennt(s, KIM, 'Kim'),
     'Jo tritt ein (sein Schlüssel macht ihn nicht zum Gastgeber) – von Kim sieht er nichts');
   s = await alles();
-  check(gleich(s, { rolle: 'gastgeber', personen: [{ id: TOBI, name: 'Tobi' }, { id: KIM, name: 'Kim' }, { id: JO, name: 'Jo' }], bock: [] }),
+  check(gleich(ohneZuletzt(s), { rolle: 'gastgeber', personen: [{ id: TOBI, name: 'Tobi' }, { id: KIM, name: 'Kim' }, { id: JO, name: 'Jo' }], bock: [] }),
     'Tobi sieht alle drei mit ihren Kennungen, in der Reihenfolge des Eintretens');
+  check(s.personen.every((p) => ISO.test(p.zuletzt)), '… und bei jedem, wann er zuletzt da war – Eintreten zählt als geöffnet');
   check(gleich(await lesen(A), { rolle: 'gast', personen: [{ id: 'gastgeber', name: 'Tobi' }], bock: [] })
     && gleich(await lesen(A, NIEMAND), await lesen(A)), 'wer nicht drin ist, sieht nur den Namen des Gastgebers');
   s = await ich(A, TOBI, 'Tobias', SCHLUESSEL);
@@ -382,7 +387,7 @@ async function pruefen() {
   check(gleich(await lesen(B), LEER), 'ein anderer Code sieht vom ersten Raum nichts');
   const JUERGEN = randomUUID();
   s = await ich(B, JUERGEN, 'Jürgen 🎸');
-  check(gleich(s, { rolle: 'gastgeber', personen: [{ id: JUERGEN, name: 'Jürgen 🎸' }], bock: [] }),
+  check(gleich(ohneZuletzt(s), { rolle: 'gastgeber', personen: [{ id: JUERGEN, name: 'Jürgen 🎸' }], bock: [] }),
     'Raum B ohne Schlüssel: eine UUID als Person, Umlaut und Emoji im Namen – Gastgeber, wer zuerst da ist');
   check(await zaehle('select count(*) from freizeit_gastgeber where raum = $1', [raumVon(B)]) === 0, '… ohne Schlüssel steht in freizeit_gastgeber nichts');
   check((await alles()).personen.length === 3, 'Raum A bleibt davon unberührt');
@@ -441,7 +446,7 @@ async function pruefen() {
   check(await meldung(bock(A, NIEMAND, 'konzert-1', true, KONZERT)) === 'unbekannte Person', 'bock für jemanden, der nicht im Raum ist → „unbekannte Person“');
   check(await meldung(bock(A, NIEMAND, 'konzert-1', false)) === 'unbekannte Person', 'auch beim Wegnehmen → „unbekannte Person“');
   check(await meldung(bock(B, KIM, 'konzert-1', true, KONZERT)) === 'unbekannte Person', 'Kim ist in Raum B unbekannt → „unbekannte Person“');
-  check(gleich(await lesen(B, JUERGEN), { rolle: 'gastgeber', personen: [{ id: JUERGEN, name: 'Jürgen 🎸' }], bock: [] }), 'Raum B sieht keins der Häkchen aus Raum A');
+  check(gleich(ohneZuletzt(await lesen(B, JUERGEN)), { rolle: 'gastgeber', personen: [{ id: JUERGEN, name: 'Jürgen 🎸' }], bock: [] }), 'Raum B sieht keins der Häkchen aus Raum A');
 
   // -------------------------------------------------------------- Prüfungen
   const FALSCHE_CODES = [null, '', 'abcd', 'abcd-efgh', 'abcdefgh', 'abcd-efgh-jkm', 'abcd-efgh-jkmnp', 'abc-defgh-jkmn',
@@ -715,6 +720,39 @@ async function pruefen() {
   await su('delete from freizeit_nachricht where raum = $1', [raumVon(A)]);
   await weg(A, JO);
   check(gleich(kurz(await nachrichten()), ['weg:Jo']), 'danach geht es weiter');
+  await su('delete from freizeit_nachricht where raum = $1', [raumVon(A)]);
+
+  // ------------------------------------------------------ zuletzt geöffnet
+  const geoeffnet = (code, person, schluessel) => rufe('freizeit_offen', { p_code: code, p_person: person, p_schluessel: schluessel });
+  const zuletzt = async (wer) => (await alles()).personen.find((p) => p.id === wer)?.zuletzt;
+  const offenNachrichten = async () => (await nachrichten()).filter((x) => x.art === 'offen').map((x) => ({ name: x.name, daten: x.daten }));
+  s = await geoeffnet(A, KIM);
+  check(gleich(s, await lesen(A, KIM)) && !kennt(s, 'zuletzt'), 'offen: Kim bekommt denselben Stand wie beim Lesen – ohne „zuletzt“, das sieht nur der Gastgeber');
+  check(!(await offenNachrichten()).length, 'gerade erst eingetreten (das meldete schon „neu“): kein „offen“ dazu');
+  await su("update freizeit_person set zuletzt_offen = '2026-11-01T10:00:00Z', offen_gemeldet = now() - interval '61 minutes' where raum = $1 and person = $2", [raumVon(A), KIM]);
+  await geoeffnet(A, KIM);
+  check(gleich(await offenNachrichten(), [{ name: 'Kim', daten: { vorher: '2026-11-01T10:00:00.000Z' } }]),
+    'nach über einer Stunde: Tobi bekommt „offen“ mit dem Zeitpunkt davor');
+  const jetztKim = await zuletzt(KIM);
+  check(ISO.test(jetztKim) && jetztKim > '2026-11-01T10:00:00.000Z', 'Tobi sieht bei Kim den neuen Zeitpunkt');
+  await su("update freizeit_person set zuletzt_offen = zuletzt_offen - interval '5 minutes' where raum = $1 and person = $2", [raumVon(A), KIM]);
+  const vorFuenf = await zuletzt(KIM);
+  await geoeffnet(A, KIM);
+  check((await offenNachrichten()).length === 1 && await zuletzt(KIM) > vorFuenf, 'gleich noch einmal: keine zweite Mitteilung in der Stunde, aber der Zeitpunkt rückt nach');
+  await su('update freizeit_person set zuletzt_offen = null, offen_gemeldet = null where raum = $1 and person = $2', [raumVon(A), KIM]);
+  check(!(await alles()).personen.find((p) => p.id === KIM).zuletzt, 'ohne Zeitpunkt steht bei Kim kein „zuletzt“');
+  await geoeffnet(A, KIM);
+  check(gleich((await offenNachrichten())[1], { name: 'Kim', daten: {} }), 'zum ersten Mal überhaupt: „offen“ ohne Zeitpunkt davor');
+  await su("update freizeit_person set zuletzt_offen = '2026-11-01T10:00:00Z' where raum = $1 and person = $2", [raumVon(A), TOBI]);
+  s = await geoeffnet(A, TOBI, SCHLUESSEL);
+  check(gleich(s, await alles()) && await zuletzt(TOBI) > '2026-11-01T10:00:00.000Z' && (await offenNachrichten()).length === 2,
+    'Tobi selbst: sein Zeitpunkt rückt nach, gemeldet wird nichts');
+  check(await meldung(geoeffnet(A, TOBI)) === 'falscher Schlüssel' && await meldung(geoeffnet(A, TOBI, ANDERER)) === 'falscher Schlüssel', 'Tobi ohne oder mit falschem Schlüssel → „falscher Schlüssel“');
+  const personenVorher = await zaehle('select count(*) from freizeit_person');
+  check(gleich(await geoeffnet(A, NIEMAND), await lesen(A)) && await zaehle('select count(*) from freizeit_person') === personenVorher
+    && (await offenNachrichten()).length === 2, 'wer nicht im Raum ist: der Stand eines Gasts, nichts gespeichert, nichts gemeldet');
+  check(await meldung(geoeffnet('kaputt', KIM)) === 'ungültiger Code' && await meldung(geoeffnet(A, 'gastgeber')) === 'ungültige Person'
+    && await meldung(geoeffnet(A, KIM, 'kurz')) === 'ungültiger Schlüssel', 'offen prüft Code, Person und Schlüssel wie die anderen');
   await su('delete from freizeit_nachricht where raum = $1', [raumVon(A)]);
   // Löst der Gastgeber auf, sind Abos und Nachrichten mit weg.
   const P = 'push-raum-0001';

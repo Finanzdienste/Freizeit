@@ -275,7 +275,7 @@ Link öffnet, sieht „Tobi lädt dich ein“, gibt seinen Namen ein und ist dri
 
 | | sieht |
 | --- | --- |
-| Gastgeber | alle im Plan mit allen Haken – und ob jemand etwas mit ihm machen will oder allein/mit anderen |
+| Gastgeber | alle im Plan mit allen Haken – ob jemand etwas mit ihm machen will oder allein/mit anderen, und wann jeder zuletzt in der App war |
 | Eingeladene | den Gastgeber und sich selbst, mit den Haken der beiden; von den anderen Eingeladenen nichts |
 
 Eingeladene haben statt „Bock“ zwei Knöpfe: **Mit Tobi** und **Allein/mit
@@ -291,7 +291,7 @@ Eingeladenen, wo sie „Mit Tobi“ gewählt haben und Tobi Bock hat.
 Der Überblick des Gastgebers in „Wir“ zeigt jeden kommenden Eintrag einmal,
 im ersten passenden Abschnitt: **Zusammen**, **Wollen mit dir** (jemand will
 mit ihm, er hat noch nicht Bock), **Ohne dich** (nur „allein/mit anderen“),
-**Pro Person** (je Person „3 mit dir · 2 ohne dich“ und die Liste, dort auch
+**Pro Person** (je Person „3 mit dir · 2 ohne dich“, darunter „zuletzt in der App: heute, 21:14 Uhr“ und die Liste, dort auch
 „Aus dem Plan nehmen“ – ein Tipp auf einen Eintrag der Liste springt zu ihm:
 an seinen Tag, die Karte aufgeklappt; Ideen nach „Was immer geht“, Filme in
 die Top 250; blenden die Filter ihn aus oder steht er nicht mehr im Programm,
@@ -338,13 +338,15 @@ schaltet der Gastgeber mit „🔔 Bescheid sagen“ Push-Mitteilungen ein – a
 bei geschlossener App: „Kim
 ist dabei“, „Kim hat Bock – mit dir: Theater früh · Di 3.11., 19:00 Uhr“,
 „Kim ist doch nicht dabei“ (ein zurückgenommenes „mit dir“), „Kim hat den
-Plan verlassen“; mehrere Haken derselben Person kurz nacheinander werden
-eine Mitteilung. Die eigenen Haken des Gastgebers melden nichts, ein
+Plan verlassen“, „Kim hat die App geöffnet“ (nach langer Pause mit „Das
+erste Mal seit 3 Tagen.“); mehrere Haken derselben Person kurz nacheinander
+werden eine Mitteilung, und wer öffnet und gleich anhakt, bekommt nur die
+zum Haken. Die eigenen Haken des Gastgebers melden nichts, ein
 zurückgenommenes „ohne dich“ auch nicht. Technisch: `js/push.js` holt sich
 vom Browser ein Web-Push-Abo und legt es über `freizeit_push` beim Server ab
-(nur der Gastgeber, bis zu fünf Geräte je Plan). Die vier Funktionen
-schreiben, was zu melden ist, in `freizeit_nachricht` – nur solange ein Abo
-im Plan liegt –, und ein Trigger ruft über `pg_net` die **Edge Function
+(nur der Gastgeber, bis zu fünf Geräte je Plan). Die Funktionen schreiben,
+was zu melden ist, in `freizeit_nachricht` – nur solange ein Abo im Plan
+liegt –, und ein Trigger ruft über `pg_net` die **Edge Function
 `freizeit-push`** ([`supabase/functions/freizeit-push`](supabase/functions/freizeit-push)).
 Die holt alles Offene mit dem Betreiber-Schlüssel ab, verschlüsselt es
 selbst (RFC 8291, VAPID nach RFC 8292, nur WebCrypto, ohne Bibliothek) und
@@ -363,6 +365,18 @@ Function in Node: ein nachgebautes Gerät entschlüsselt, der Push-Dienst
 prüft die Unterschrift) und `tests/test-sql.mjs`. Auf dem iPhone geht Push
 erst in der App vom Home-Bildschirm.
 
+**Zuletzt in der App:** Beim Öffnen und jedes Mal, wenn man in die App
+zurückkommt (nicht beim Abgleich jede Minute), liest sie über
+`freizeit_offen` statt `freizeit_lesen`. Der Server merkt sich dabei den
+Zeitpunkt (`freizeit_person.zuletzt_offen`); den bekommt nur der Gastgeber
+mit, als `zuletzt` an jeder Person, und der Überblick zeigt ihn unter „Pro
+Person“. Bei den Eingeladenen meldet derselbe Aufruf „offen“ für die
+Mitteilung – höchstens einmal je Person und Stunde (`offen_gemeldet`);
+Eintreten zählt schon als geöffnet. Die Eingeladenen erfahren es offen: in
+der Einladung, in „So funktioniert's“ und oben in „Wir“ („Tobi sieht deine
+Haken und wann du zuletzt in der App warst.“). Kennt der Server
+`freizeit_offen` noch nicht, liest die App wie bisher.
+
 **iPhone:** Die App auf dem Home-Bildschirm hat einen eigenen Speicher,
 getrennt von Safari – sie kennt den Link nicht. Deshalb zeigt die Einladung
 in Safari den Weg zum Home-Bildschirm und den Code; in der App fügt man ihn
@@ -375,8 +389,9 @@ wieder ein. „Wieder beitreten“ oder „Plan vergessen“ entscheidet man sel
 
 **Server:** das Supabase-Projekt der Workout-App (`js/config.js`). Die
 Tabellen sind für den öffentlichen Schlüssel gesperrt; erreichbar sind nur
-fünf Funktionen (vier für den Plan, `freizeit_push` für die Mitteilungen),
-und die entscheiden selbst, wer was zu sehen bekommt.
+sechs Funktionen (vier für den Plan, `freizeit_push` für die Mitteilungen,
+`freizeit_offen` für „zuletzt in der App“), und die entscheiden selbst, wer
+was zu sehen bekommt.
 Einrichten: den Block aus [`supabase/gemeinsam.sql`](supabase/gemeinsam.sql)
 in *Supabase → SQL Editor* einfügen und ausführen. Der Block ist wiederholbar
 und läuft auch über der ersten Fassung (zwei Tabellen, jeder sah alles):
@@ -733,7 +748,7 @@ nimmt `FREIZEIT_CHROMIUM=<Pfad zum Browser>` dieses statt Playwrights eigenem.
 | `test-online.mjs` | Online & TV: Sender statt Ort, 21:30 nach Beginn, Filter „Art“, Umkreis und Entfernung, Monat und Tag, WhatsApp und Kalender, Schnappschuss, Landkarte |
 | `test-kalender.mjs` | Monat (Zahlen, Bock-Punkte, ♫, wählen und öffnen, Konzerte im Monat), ein Haken im Zeitstreifen, im Monat und in der Woche, Filter in allen Ansichten, Monate nach dem Programm |
 | `test-landkarte.mjs` | Marker, Zeitraum, „Nur mit Bock“, Online & TV gezählt statt gezeigt, Liste am Marker, Haken aus der Karte |
-| `test-wir.mjs` | der gemeinsame Plan: Tobi lädt ein, Kim (iPhone) und Jo wählen mit/ohne Tobi und sehen einander nicht, Tobis Überblick, offline, weiteres Gerät, Herausnehmen, Verlassen, Auflösen, ein Plan aus der ersten Fassung, fremder Text |
+| `test-wir.mjs` | der gemeinsame Plan: Tobi lädt ein, Kim (iPhone) und Jo wählen mit/ohne Tobi und sehen einander nicht, Tobis Überblick, zuletzt in der App (Öffnen und Zurückkommen, nicht der Abgleich; Server ohne `freizeit_offen`), offline, weiteres Gerät, Herausnehmen, Verlassen, Auflösen, ein Plan aus der ersten Fassung, fremder Text |
 | `test-filme.mjs` | IMDb Top 250: die Tür, die Seite `#filme`, Suche, Genre, Auswahl, Aufklappen, Bock – allein und im Plan („Mit Tobi gucken“, „Mit dir“), die Zeile in „Wir“ und zurück |
 | `test-gestaltung.mjs` | die Gestaltung: Tickets mit Abriss, Umbruch langer Zeiten, „in 30 Min“/„läuft“ (auch bei weiterlaufender Uhr ohne Neuzeichnen), Bock im Abriss leuchtet, Wetter mit Zeichen, Zeichen der Tageszeiten, Monat nach Dichte, Motive der Ideen-Kategorien, die Schrift, Darstellung Automatisch/Hell/Dunkel samt Neuladen |
 | `test-bilder.mjs` | Bilder an den Karten: Foto klein und groß mit Nachweis, Motiv ohne Foto, Ersatz bei kaputtem Bild, fremder Inhalt in ortsbilder.json, Nachweise in den Einstellungen, ohne Datei nur Motive |
@@ -746,8 +761,8 @@ nimmt `FREIZEIT_CHROMIUM=<Pfad zum Browser>` dieses statt Playwrights eigenem.
 | `test-zeiten.mjs` | Zeiten des Gastgebers: an den Karten (frei/verplant), in Woche und Tag als schraffierte Blöcke mit Satz, nirgends als Eintrag |
 | `test-zeiten-rechnen.mjs` | Blöcke je Woche: Zeitzone, Mitternacht, Wochenwechsel, Zeitumstellung |
 | `test-zeiten-senden.mjs` | das Werkzeug gegen einen nachgebauten Server |
-| `test-sql.mjs` | `supabase/gemeinsam.sql` in PGlite: über der ersten Fassung, Rollen und was wer sieht, Schlüssel, Funktionen, Rechte, Grenzen, Push (Abos, was gemeldet wird, Abholen, VAPID-Paar) |
-| `test-push.mjs` | Push in der App (Einstellungen → Mitteilungen): anschalten, was der Server sammelt, ausschalten, ohne Erlaubnis, iPhone im Browser |
+| `test-sql.mjs` | `supabase/gemeinsam.sql` in PGlite: über der ersten Fassung, Rollen und was wer sieht, Schlüssel, Funktionen, Rechte, Grenzen, Push (Abos, was gemeldet wird, Abholen, VAPID-Paar), zuletzt geöffnet (wer es sieht, höchstens eine Mitteilung je Stunde) |
+| `test-push.mjs` | Push in der App (Einstellungen → Mitteilungen): anschalten, was der Server sammelt (auch „App geöffnet“), ausschalten, ohne Erlaubnis, iPhone im Browser |
 | `test-standort.mjs` | Standort und Adresse als Bezugspunkt (Einstellungen): Entfernung an den Karten, Umkreis und Reihenfolge im Filter für alle Ansichten und die Karte, Ideen, Löschen, Neuladen, nichts davon zum Server |
 | `test-push-senden.mjs` | die Edge Function in Node: VAPID-Token, Verschlüsselung (ein nachgebautes Gerät liest sie), Texte, ein Durchlauf |
 

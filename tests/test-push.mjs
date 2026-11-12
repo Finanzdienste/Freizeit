@@ -17,7 +17,9 @@ const leer = (x) => x.page.waitForFunction(() => !JSON.parse(localStorage.getIte
 const zeile = (x) => x.page.locator('.push-zeile');
 const stand = (x) => zeile(x).getAttribute('data-push');
 const protokoll = (x) => x.page.evaluate(() => window.__push);
-const kurz = () => (raum().nachrichten || []).map((n) => `${n.art}:${n.name}${n.daten ? `:${n.daten.eintrag.split(':')[1]}:${n.daten.mitwem || '-'}` : ''}`);
+const kurz = () => (raum().nachrichten || []).map((n) => `${n.art}:${n.name}${n.daten && n.daten.eintrag ? `:${n.daten.eintrag.split(':')[1]}:${n.daten.mitwem || '-'}` : ''}`);
+/** Bis eine Bedingung beim nachgebauten Server erfüllt ist (höchstens 5 s). */
+const bis = async (f) => { for (let i = 0; i < 50 && !f(); i++) await new Promise((r) => { setTimeout(r, 100); }); return f(); };
 /** Die Karte an einem Tag im Programm – öffnet dafür den Tag (Ansicht Tag). */
 const karteAm = async (x, tag, titel) => {
   await x.zeigeTag(tag);
@@ -34,8 +36,8 @@ await A.page.click('[data-aktion="starten"]');
 await warte(A, 'Tobi (du)');
 check(await zeile(A).count() === 0, 'unter „Wir“ steht keine Push-Zeile mehr');
 await A.einstellungen();
-check(await stand(A) === 'aus' && (await zeile(A).innerText()).includes('Bescheid sagen') && (await zeile(A).innerText()).includes('wenn jemand dazukommt oder anhakt'),
-  'als Gastgeber: „🔔 Bescheid sagen“ – wenn jemand dazukommt oder anhakt');
+check(await stand(A) === 'aus' && (await zeile(A).innerText()).includes('Bescheid sagen') && (await zeile(A).innerText()).includes('wenn jemand dazukommt, die App öffnet oder anhakt'),
+  'als Gastgeber: „🔔 Bescheid sagen“ – wenn jemand dazukommt, die App öffnet oder anhakt');
 const tobi = (await A.gespeichert()).gemeinsam;
 
 // --- Kim tritt bei – noch ohne Abo sammelt der Server nichts
@@ -50,7 +52,7 @@ check(!raum().nachrichten.length, 'ohne Abo im Raum sammelt der Server nichts');
 // --- Anschalten
 await A.page.click('[data-aktion="push-an"]');
 await A.page.waitForFunction(() => document.querySelector('.push-zeile[data-push="an"]'));
-check((await zeile(A).innerText()).includes('Du bekommst Bescheid, wenn jemand dazukommt oder anhakt') && await A.page.locator('[data-aktion="push-aus"]').count() === 1,
+check((await zeile(A).innerText()).includes('Du bekommst Bescheid, wenn jemand dazukommt, die App öffnet oder anhakt') && await A.page.locator('[data-aktion="push-aus"]').count() === 1,
   'nach dem Tipp: „Du bekommst Bescheid …“ mit „Ausschalten“');
 let p = await protokoll(A);
 check(p.gefragt === 1 && p.abonniert === 1 && JSON.stringify(p.schluessel) === JSON.stringify(bytes(server.vapid)) && p.schluessel.length === 65,
@@ -95,11 +97,22 @@ await A.reiter('programm');
 await (await karteAm(A, DI, 'Theater früh')).locator('[data-bock]').click();
 await leer(A);
 check(kurz().length === 7, 'Tobis eigener Haken meldet nichts');
+// Kim kommt nach über einer Stunde zurück in die App – das meldet „offen“, gleich danach noch einmal nicht.
+raum().personen.find((x) => x.name === 'Kim').gemeldet = new Date(Date.now() - 2 * 3600000).toISOString();
+const offenAufrufe = () => server.aufrufe.filter((a) => a.name === 'freizeit_offen').length;
+let vorherOffen = offenAufrufe();
+await B.page.evaluate(() => document.dispatchEvent(new window.Event('visibilitychange')));
+await bis(() => offenAufrufe() > vorherOffen);
+vorherOffen = offenAufrufe();
+await B.page.evaluate(() => document.dispatchEvent(new window.Event('visibilitychange')));
+await bis(() => offenAufrufe() > vorherOffen);
+check(offenAufrufe() === vorherOffen + 1 && kurz().length === 8 && kurz()[7] === 'offen:Kim',
+  `Kim kommt nach über einer Stunde zurück in die App: offen – beim zweiten Mal gleich danach nicht (${kurz().slice(7).join(' | ')})`);
 await B.reiter('wir');
 await B.aktion('verlassen');
 await B.page.click('[data-aktion="verlassen-ja"]');
 await warte(B, 'Gemeinsam planen');
-check(kurz()[7] === 'weg:Kim' && kurz().length === 8, 'Kim verlässt den Plan: weg');
+check(kurz()[8] === 'weg:Kim' && kurz().length === 9, 'Kim verlässt den Plan: weg');
 
 // --- Ausschalten
 await A.einstellungen();

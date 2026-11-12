@@ -110,7 +110,7 @@ function standortTeil(st) {
 function mitteilungenTeil(ui) {
   let zeile;
   if (pushAn()) {
-    zeile = `<div class="e-zeile push-zeile" data-push="an"><span>🔔 Du bekommst Bescheid, wenn jemand dazukommt oder anhakt.</span>
+    zeile = `<div class="e-zeile push-zeile" data-push="an"><span>🔔 Du bekommst Bescheid, wenn jemand dazukommt, die App öffnet oder anhakt.</span>
       <button type="button" class="textknopf" data-aktion="push-aus">Ausschalten</button></div>`;
   } else {
     const h = pushHindernis();
@@ -119,7 +119,7 @@ function mitteilungenTeil(ui) {
     else {
       zeile = `<div class="e-zeile push-zeile" data-push="aus">
         <button type="button" class="knopf" data-aktion="push-an"${ui.laeuft ? ' disabled' : ''}>🔔 Bescheid sagen</button>
-        <span class="fein">wenn jemand dazukommt oder anhakt – auch bei geschlossener App</span></div>`;
+        <span class="fein">wenn jemand dazukommt, die App öffnet oder anhakt – auch bei geschlossener App</span></div>`;
     }
   }
   return abschnitt('e-mitteilungen', 'Mitteilungen', zeile + fehlerBox(ui, 'push'));

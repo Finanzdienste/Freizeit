@@ -6,9 +6,12 @@
  *   { id, raum, art, name, daten, angelegt, abos }
  *
  * art: neu (eingetreten), bock (angehakt oder „mit wem“ gewechselt), aus (ein
- * Häkchen „mit dir“ zurückgenommen), weg (den Raum verlassen). Bei bock und
- * aus ist daten der Schnappschuss des Eintrags (titel, datum, zeit, …) samt
- * mitwem: gastgeber (mit dir) oder andere (allein/mit anderen).
+ * Häkchen „mit dir“ zurückgenommen), weg (den Raum verlassen), offen (die App
+ * geöffnet – höchstens einmal je Person und Stunde). Bei bock und aus ist
+ * daten der Schnappschuss des Eintrags (titel, datum, zeit, …) samt mitwem:
+ * gastgeber (mit dir) oder andere (allein/mit anderen); bei offen
+ * { vorher }, wann die Person die App davor zuletzt geöffnet hatte (ISO), oder
+ * {} beim ersten Mal.
  *
  * Die Mitteilung ist, was der Service Worker (sw.js) bekommt:
  *   { titel, text, tag, url }
@@ -32,6 +35,17 @@ const titelVon = (d) => (d && typeof d === 'object' && d.titel ? String(d.titel)
 const mitWem = (d) => (d && d.mitwem === 'gastgeber' ? 'mit dir' : (d && d.mitwem === 'andere' ? 'ohne dich' : ''));
 const wo = (d) => [titelVon(d), wann(d)].filter(Boolean).join(' · ');
 
+/** „Das erste Mal seit 3 Tagen.“ – nur, wenn davor fast ein Tag oder mehr lag. */
+function seit(n) {
+  const vorher = Date.parse(n.daten && n.daten.vorher);
+  const jetzt = Date.parse(n.angelegt);
+  if (!Number.isFinite(vorher) || !Number.isFinite(jetzt)) return '';
+  const stunden = (jetzt - vorher) / 3600000;
+  if (stunden < 20) return '';
+  const tage = Math.max(1, Math.round(stunden / 24));
+  return tage === 1 ? 'Das erste Mal seit gestern.' : `Das erste Mal seit ${tage} Tagen.`;
+}
+
 /** Eine einzelne Nachricht als Überschrift und Text. */
 export function einzeln(n) {
   const name = n.name || 'Jemand';
@@ -39,6 +53,7 @@ export function einzeln(n) {
     case 'neu': return { titel: `${name} ist dabei`, text: `${name} hat sich in deinen Plan eingetragen.` };
     case 'weg': return { titel: `${name} hat den Plan verlassen`, text: `Die Haken von ${name} sind damit weg.` };
     case 'aus': return { titel: `${name} ist doch nicht dabei`, text: wo(n.daten) };
+    case 'offen': return { titel: `${name} hat die App geöffnet`, text: seit(n) };
     case 'bock': {
       const wie = mitWem(n.daten);
       return { titel: `${name} hat Bock${wie ? ` – ${wie}` : ''}`, text: wo(n.daten) };
@@ -53,6 +68,7 @@ function zeile(n) {
     case 'neu': return 'ist dabei';
     case 'weg': return 'hat den Plan verlassen';
     case 'aus': return `doch nicht: ${wo(n.daten)}`;
+    case 'offen': return 'hat die App geöffnet';
     case 'bock': { const wie = mitWem(n.daten); return `Bock: ${wo(n.daten)}${wie ? ` (${wie})` : ''}`; }
     default: return 'Neuigkeit';
   }
@@ -62,6 +78,8 @@ function zeile(n) {
  * Die Mitteilungen: je Raum und Name eine, in der Reihenfolge des Entstehens.
  * Jede trägt die Abos ihres Raums und die ids der Nachrichten, die in ihr
  * stecken. Räume ohne Abo bekommen nichts (ihre ids sind trotzdem erledigt).
+ * Hat jemand die App geöffnet und gleich etwas angehakt, sagt der Haken
+ * genug – „offen“ steht dann nicht noch dabei; mehrmals „offen“ wird eins.
  */
 export function mitteilungen(liste) {
   const gruppen = new Map();
@@ -77,6 +95,8 @@ export function mitteilungen(liste) {
   for (const g of gruppen.values()) {
     const tag = `freizeit:${String(g.raum).slice(0, 12)}:${g.name}`;
     const url = './#wir';
+    const sonst = g.liste.filter((n) => n.art !== 'offen');
+    g.liste = sonst.length ? sonst : g.liste.slice(-1);
     if (g.liste.length === 1) {
       r.push({ ...einzeln(g.liste[0]), tag, url, raum: g.raum, abos: g.abos, ids: g.ids });
       continue;

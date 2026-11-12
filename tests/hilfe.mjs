@@ -186,7 +186,11 @@ export function testIdeen(mehr = {}) {
  *   gastgeber: { person, schluessel } | null,
  *   push: Map endpoint → Abo (die Geräte des Gastgebers, freizeit_push),
  *   nachrichten: [{ art, name, daten }] – was die Datenbank für die Edge
- *   Function sammelt, sobald ein Abo da ist (neu, bock, aus, weg) }.
+ *   Function sammelt, sobald ein Abo da ist (neu, bock, aus, weg, offen) }.
+ * Eine Person trägt dazu zuletzt (wann sie die App zuletzt geöffnet hat, ISO)
+ * und gemeldet (wann der Gastgeber das zuletzt erfuhr). Die Uhr des Servers ist
+ * `jetzt()` – ein Test stellt sie, damit sie zur festen Uhr der App passt;
+ * `ohneOffen = true` spielt einen Server, der freizeit_offen noch nicht kennt.
  * `offline = true` lässt jede Anfrage scheitern wie ohne Netz.
  */
 /**
@@ -246,7 +250,9 @@ export function fakeServer() {
   const raeume = new Map();
   const aufrufe = [];
   // Der öffentliche VAPID-Schlüssel, den die Edge Function herausgibt (65 Byte base64url).
-  const s = { offline: false, aufrufe, raeume, vapid: `B${'A'.repeat(86)}` };
+  const s = {
+    offline: false, ohneOffen: false, aufrufe, raeume, vapid: `B${'A'.repeat(86)}`, jetzt: () => new Date().toISOString(),
+  };
   const melden = (r, art, person, daten = null) => {
     if (!r || !r.push || !r.push.size) return;
     const x = r.personen.find((y) => y.id === person);
@@ -267,7 +273,8 @@ export function fakeServer() {
     const kennung = (id) => (wer !== 'gastgeber' && id === g ? 'gastgeber' : id);
     return {
       rolle: wer,
-      personen: r.personen.filter((x) => sichtbar(x.id)).map(({ id, name }) => ({ id: kennung(id), name })),
+      personen: r.personen.filter((x) => sichtbar(x.id))
+        .map(({ id, name, zuletzt }) => ({ id: kennung(id), name, ...(wer === 'gastgeber' && zuletzt ? { zuletzt } : {}) })),
       bock: wer === 'gast' ? [] : [...r.bock.values()].filter((b) => sichtbar(b.person))
         .sort((a, b) => a.geaendert.localeCompare(b.geaendert)).map((b) => ({ ...b, person: kennung(b.person) })),
     };
@@ -302,12 +309,25 @@ export function fakeServer() {
       }
       if (!personOk(p.p_person)) return fehler('ungültige Person');
       if (schluessel !== null && !/^[a-z0-9]{20,64}$/.test(schluessel)) return fehler('ungültiger Schlüssel');
+      if (name === 'freizeit_offen' && !s.ohneOffen) {
+        const wer = rolle(r, p.p_person, schluessel);
+        if (wer === 'gast') return antwort(200, stand(r, p.p_person, wer));
+        const x = r.personen.find((y) => y.id === p.p_person);
+        const jetzt = s.jetzt();
+        const melde = wer === 'mitglied' && (!x.gemeldet || Date.parse(jetzt) - Date.parse(x.gemeldet) >= 3600000);
+        if (melde) {
+          melden(r, 'offen', p.p_person, x.zuletzt ? { vorher: x.zuletzt } : {});
+          x.gemeldet = jetzt;
+        }
+        x.zuletzt = jetzt;
+        return antwort(200, stand(r, p.p_person, wer));
+      }
       if (name === 'freizeit_ich') {
         const n = String(p.p_name || '').trim();
         if (!n || n.length > 30) return fehler('Name fehlt oder ist zu lang');
         if (!r) {
           const neu = {
-            personen: [{ id: p.p_person, name: n }], bock: new Map(), gastgeber: schluessel ? { person: p.p_person, schluessel } : null,
+            personen: [{ id: p.p_person, name: n, zuletzt: s.jetzt() }], bock: new Map(), gastgeber: schluessel ? { person: p.p_person, schluessel } : null,
             push: new Map(), nachrichten: [],
           };
           raeume.set(code, neu);
@@ -321,7 +341,9 @@ export function fakeServer() {
           return antwort(200, stand(r, p.p_person, wer));
         }
         if (r.personen.length >= 30) return fehler('Raum ist voll');
-        r.personen.push({ id: p.p_person, name: n });
+        r.personen.push({
+          id: p.p_person, name: n, zuletzt: s.jetzt(), gemeldet: s.jetzt(),
+        });
         melden(r, 'neu', p.p_person);
         return antwort(200, stand(r, p.p_person, 'mitglied'));
       }

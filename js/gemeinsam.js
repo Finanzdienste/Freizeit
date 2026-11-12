@@ -19,6 +19,12 @@
  * (#geraet=…), der Code, eigene Kennung und – beim Gastgeber – den Schlüssel
  * trägt.
  *
+ * Beim Öffnen der App und beim Zurückkommen in sie liest der Abgleich über
+ * freizeit_offen statt freizeit_lesen: Der Server merkt sich so, wann jemand
+ * zuletzt da war (das sieht der Gastgeber in seinem Überblick), und sagt es
+ * dem Gastgeber per Push. Kennt der Server die Funktion noch nicht, liest die
+ * App wie bisher.
+ *
  * Fliegt man aus dem Plan (der Gastgeber nimmt einen heraus oder löst ihn
  * auf, oder auf diesem Gerät fehlt sein Schlüssel), merkt sich der Plan das
  * als „raus“ und sendet nichts mehr, bis man wieder beitritt oder ihn
@@ -113,6 +119,16 @@ const normal = (s) => ({
 const ichImPlan = (g) => ({ p_code: g.code, p_person: g.ich.id, ...(g.schluessel ? { p_schluessel: g.schluessel } : {}) });
 
 let status = { laeuft: false, offline: false, fehler: '', zuletzt: '' };
+
+// Die App ist (wieder) offen: Der nächste Abgleich sagt es dem Server. Fehlt
+// dem Server freizeit_offen (SQL-Block noch nicht eingespielt), lässt die App
+// es bis zum nächsten Laden.
+let offenMelden = false;
+let offenFehlt = false;
+/** Die App wurde geöffnet oder man ist in sie zurückgekommen – nicht beim Abgleich jede Minute. */
+export function geoeffnet() {
+  offenMelden = true;
+}
 /** Wie der letzte Abgleich lief – für die Zeile oben in „Wir“. */
 export const syncStatus = () => status;
 
@@ -287,7 +303,17 @@ async function einmalAbgleichen() {
       speichern();
     }
     if (st.gemeinsam !== g) return;
-    let s = normal(await rpc('freizeit_lesen', ichImPlan(g)));
+    let s = null;
+    if (offenMelden && !offenFehlt) {
+      try {
+        s = normal(await rpc('freizeit_offen', ichImPlan(g)));
+        offenMelden = false;
+      } catch (e) {
+        if (!(e instanceof ServerFehler && e.einrichtung)) throw e;
+        offenFehlt = true;
+      }
+    }
+    if (!s) s = normal(await rpc('freizeit_lesen', ichImPlan(g)));
     if (s.rolle === 'gast') {
       // Herausgenommen oder aufgelöst. Die Haken der anderen sind dann nicht mehr zu sehen.
       g.raus = s.personen.length ? 'weg' : 'aufgeloest';

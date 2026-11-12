@@ -110,6 +110,20 @@ check(gleich(einzeln({ art: 'bock', name: 'Kim', daten: { ...KINO, mitwem: 'gast
   'bock mit dir / ohne dich / ohne Angabe, aus');
 check(gleich(einzeln({ art: 'bock', name: '', daten: null }), { titel: 'Jemand hat Bock', text: 'einen Eintrag' }) && einzeln({ art: '?', name: 'X' }).titel === 'X: Neuigkeit',
   'ohne Namen und ohne daten geht es trotzdem');
+const OFFEN = (vorher, angelegt = '2026-11-12T19:30:00.000Z') => ({ art: 'offen', name: 'Kim', angelegt, daten: vorher === undefined ? {} : { vorher } });
+check(gleich(einzeln(OFFEN('2026-11-09T18:00:00.000Z')), { titel: 'Kim hat die App geöffnet', text: 'Das erste Mal seit 3 Tagen.' })
+  && einzeln(OFFEN('2026-11-11T21:00:00.000Z')).text === 'Das erste Mal seit gestern.'
+  && einzeln(OFFEN('2026-11-12T12:00:00.000Z')).text === '' && einzeln(OFFEN()).text === '' && einzeln({ art: 'offen', name: 'Kim', daten: null }).text === '',
+  'offen: „Kim hat die App geöffnet“ – ab fast einem Tag Pause mit „Das erste Mal seit …“, sonst und beim ersten Mal ohne Text');
+const mitHaken = mitteilungen([
+  { id: 1, raum: 'r1', ...OFFEN('2026-11-09T18:00:00.000Z'), abos: [] },
+  { id: 2, raum: 'r1', art: 'bock', name: 'Kim', daten: { ...KINO, mitwem: 'gastgeber' }, abos: [] },
+]);
+check(mitHaken.length === 1 && gleich(mitHaken[0].ids, [1, 2]) && mitHaken[0].titel === 'Kim hat Bock – mit dir',
+  'geöffnet und gleich angehakt: eine Mitteilung, der Haken sagt genug – beide ids erledigt');
+const zweimalOffen = mitteilungen([{ id: 1, raum: 'r1', ...OFFEN('2026-11-01T18:00:00.000Z', '2026-11-12T08:00:00.000Z'), abos: [] }, { id: 2, raum: 'r1', ...OFFEN('2026-11-12T08:00:00.000Z', '2026-11-12T09:30:00.000Z'), abos: [] }]);
+check(zweimalOffen.length === 1 && gleich(zweimalOffen[0].ids, [1, 2]) && zweimalOffen[0].titel === 'Kim hat die App geöffnet' && zweimalOffen[0].text === '',
+  'zweimal geöffnet, bevor es raus ging: eine Mitteilung, die neueste');
 const ABOS = [g1.abo, g2.abo];
 const liste = [
   { id: 1, raum: 'r1', art: 'neu', name: 'Kim', daten: null, abos: ABOS },

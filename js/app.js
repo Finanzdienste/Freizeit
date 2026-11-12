@@ -61,7 +61,7 @@ import {
   geraetStandort, adresseSuchen, standortUi, UMKREISE,
 } from './standort.js';
 import {
-  planStarten, beitreten, codeLesen, zugangLesen, zugangUebernehmen, einladungAnsehen, abgleichen, umbenennen, verlassen,
+  planStarten, beitreten, codeLesen, zugangLesen, zugangUebernehmen, einladungAnsehen, abgleichen, geoeffnet, umbenennen, verlassen,
   vergessen as planVergessen, wiederBeitreten, entfernen, neuesterAndererHaken, rolle,
 } from './gemeinsam.js';
 
@@ -1307,6 +1307,8 @@ document.addEventListener('visibilitychange', () => {
   if (document.visibilityState !== 'visible') return;
   zeitAuffrischen();
   liveAuffrischen();
+  // Zurück in der App: Das zählt wie Öffnen (der Gastgeber sieht, wann jemand da war).
+  geoeffnet();
   abgleichJetzt();
 });
 window.addEventListener('online', () => abgleichJetzt());
@@ -1343,6 +1345,8 @@ laden();
 prog.ansicht = ANSICHTEN.some(([k]) => k === aktuell().programmAnsicht) ? aktuell().programmAnsicht : 'tag';
 reiter = adresseLesen() || startReiter();
 zeichnen();
+// Der erste Abgleich nach dem Laden sagt dem Server, dass die App offen ist.
+geoeffnet();
 ladeAlles().then((d) => {
   daten = d;
   ortsbilderSetzen(d.ortsbilder);

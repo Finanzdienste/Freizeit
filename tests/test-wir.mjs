@@ -84,6 +84,7 @@ check(!B.page.url().includes(code), 'der Code verschwindet aus der Adresszeile')
 await warte(B, 'Tobi lädt dich ein');
 check((await B.page.locator('#einladung-karte h3').innerText()) === 'Tobi lädt dich ein', 'Kim sieht, wer sie einlädt');
 check((await B.page.locator('#einladung-karte').innerText()).includes('Deine Haken sieht nur Tobi'), '… und wer ihre Haken sieht');
+check((await B.page.locator('#einladung-karte').innerText()).includes('Tobi sieht auch, wann du zuletzt in der App warst'), '… und dass Tobi sieht, wann sie zuletzt in der App war');
 check((await B.page.locator('#einladung-karte').innerText()).includes('Freizeit zeigt, was in Hamburg und Umgebung los ist'), '… und was die App überhaupt ist');
 check((await B.page.locator('.schritte').innerText()).includes('Zum Home-Bildschirm') && (await B.page.locator('.schritte code').innerText()) === code,
   'auf dem iPhone im Browser: der Weg zum Home-Bildschirm und der Code');
@@ -94,6 +95,7 @@ const kim = (await B.gespeichert()).gemeinsam;
 check(raum().personen.map((p) => p.name).join(',') === 'Tobi,Kim', 'jetzt sind beide im Raum');
 check(kim.rolle === 'mitglied' && !kim.schluessel, 'Kim ist dabei – ohne Schlüssel');
 check((await text(B)).includes('Du planst mit Tobi'), 'Kim weiß, mit wem sie plant');
+check((await B.page.locator('.wir-kopf .wer-sieht').innerText()) === 'Tobi sieht deine Haken und wann du zuletzt in der App warst.', '… und was Tobi von ihr sieht – oben in „Wir“, immer');
 const hilfe = B.page.locator('#hilfe-karte');
 check(await hilfe.count() === 1 && (await hilfe.locator('h3').innerText()) === "So funktioniert's"
   && (await hilfe.innerText()).includes('Mit Tobi an einem Termin heißt') && (await hilfe.innerText()).includes('Deine Haken sieht nur Tobi'),
@@ -186,6 +188,43 @@ await A.aktion('hilfe');
 await A.reiter('wir');
 const kimZeile = personZeile(A, 'Kim');
 check((await kimZeile.locator('summary').innerText()).includes('1 mit dir · 2 ohne dich'), 'pro Person: Kim – 1 mit dir, 2 ohne dich');
+check(await A.page.locator('.wir-kopf .wer-sieht').count() === 0, 'Tobi selbst bekommt den Satz „… sieht deine Haken“ nicht');
+// Wann war jemand zuletzt in der App? Zurückkommen zählt wie Öffnen, der Abgleich jede Minute (wie „Jetzt abgleichen“) nicht.
+const offenVonKim = () => server.aufrufe.filter((a) => a.name === 'freizeit_offen' && a.p.p_person === kim.ich.id).length;
+const bisServer = async (f) => { for (let i = 0; i < 50 && !f(); i++) await new Promise((r) => { setTimeout(r, 100); }); return f(); };
+check(offenVonKim() >= 1, 'Kims App meldet sich beim ersten Abgleich mit freizeit_offen');
+const vorFuenfUndVierzig = await A.page.evaluate(() => new Date(Date.now() - 45 * 60000).toISOString());
+server.jetzt = () => vorFuenfUndVierzig;
+const offenVorher = offenVonKim();
+await B.page.evaluate(() => document.dispatchEvent(new window.Event('visibilitychange')));
+check(await bisServer(() => offenVonKim() === offenVorher + 1), 'Kim kommt zurück in die App: ihre App sagt es dem Server (freizeit_offen)');
+await synchron(B);
+check(offenVonKim() === offenVorher + 1 && server.aufrufe.at(-1).name === 'freizeit_lesen', '„Jetzt abgleichen“ liest nur – das zählt nicht als Öffnen');
+await synchron(A);
+const kimOben = () => kimZeile.locator('summary').innerText();
+check(/zuletzt in der App: vor 4[4-6] Min\./.test(await kimOben()), `Tobi sieht bei Kim: zuletzt in der App vor 45 Min. (${(await kimOben()).replace(/\s+/g, ' ')})`);
+raum().personen.find((x) => x.id === kim.ich.id).zuletzt = await A.page.evaluate(() => new Date('2026-11-01T18:02:00').toISOString());
+await synchron(A);
+check((await kimOben()).includes('zuletzt in der App: gestern, 18:02 Uhr'), '… am Tag davor: „gestern, 18:02 Uhr“');
+raum().personen.find((x) => x.id === kim.ich.id).zuletzt = await A.page.evaluate(() => new Date('2026-10-20T18:02:00').toISOString());
+await synchron(A);
+check((await kimOben()).includes('zuletzt in der App: 20.10.'), '… länger her: nur das Datum');
+const lage2 = await kimZeile.evaluate((el) => {
+  const r = (s) => el.querySelector(s).getBoundingClientRect();
+  return { name: r('summary .person').top, zuletzt: r('.person-zuletzt').top, breit: el.scrollWidth <= el.clientWidth };
+});
+check(lage2.zuletzt > lage2.name + 10 && lage2.breit, 'die Zeile „zuletzt in der App“ steht unter Name und Zahlen, nichts ragt heraus');
+server.jetzt = () => new Date().toISOString();
+// Ein Server ohne freizeit_offen (SQL-Block noch nicht eingespielt): Die App liest wie bisher, ohne Fehler.
+server.ohneOffen = true;
+const lesenVorher = server.aufrufe.filter((a) => a.name === 'freizeit_lesen').length;
+await B.page.evaluate(() => document.dispatchEvent(new window.Event('visibilitychange')));
+await bisServer(() => server.aufrufe.filter((a) => a.name === 'freizeit_lesen').length > lesenVorher);
+await B.page.waitForTimeout(200);
+await B.reiter('wir');
+check(server.aufrufe.filter((a) => a.name === 'freizeit_lesen').length > lesenVorher && await B.page.locator('.syncstatus .warn-text').count() === 0,
+  'Server ohne freizeit_offen: Kims App liest wie bisher, ohne Fehlermeldung');
+server.ohneOffen = false;
 await kimZeile.locator('summary').click();
 check((await kimZeile.locator('.person-liste').innerText()).includes('Theater früh'), 'aufgeklappt: Kims Haken, je mit Tag');
 await party.locator('[data-bock]').click();

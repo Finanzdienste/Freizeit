@@ -20,6 +20,8 @@ größeren Änderungen den passenden Abschnitt lesen.
 - Deutsch, knapp und direkt; offen sagen, was nicht geht und warum.
 - Fertig bauen, testen, veröffentlichen – dann in wenigen Sätzen sagen, was
   sich geändert hat. Er nutzt die App fast nur am Handy (Android).
+- So viel wie möglich selbst machen (auch Supabase, siehe unten); Tobi nur
+  lassen, was nur er tun kann oder entscheidet.
 - Geschmacksfragen und alles, was alle Nutzer trifft (Adresse der App,
   Neuinstallation, Mitteilungen), entscheidet er.
 
@@ -50,8 +52,13 @@ größeren Änderungen den passenden Abschnitt lesen.
 - Öffentliches Repo: keine echten Namen anderer Leute, nichts Privates, keine
   Schlüssel. Tests nutzen „Kim“ und „Jo“, Gastgeber ist „Tobi“. Der
   service_role-Schlüssel von Supabase gehört nie in die App.
-- Supabase (supabase/): SQL-Migrationen und die Edge Function `freizeit-push`
-  spielt Tobi selbst ein – vorbereiten, testen und ihm die Schritte sagen.
+- Supabase (supabase/, Projekt vjyohppohmvhhxgwouti): SQL und die Edge
+  Function `freizeit-push` spielt Claude selbst über den Supabase-Connector
+  ein, nachdem test-sql und test-push-senden grün sind. Die Function als eine
+  Datei (`node werkzeug/push-buendeln.mjs`, verify_jwt aus), zuerst. Beim SQL
+  nur die geänderten Teile, wörtlich aus gemeinsam.sql, als Migration; danach
+  `md5(prosrc)` der freizeit-Funktionen gegen einen PGlite-Lauf der Datei
+  vergleichen (was Tobi früher im Dashboard einfügte, steht dort mit CRLF).
 - Bilder: keine Filmplakate oder Standbilder, keine Fotos von Personen des
   öffentlichen Lebens (weder kopiert noch verlinkt). Ortsfotos nur frei
   lizenziert von Wikimedia Commons mit Nachweis (werkzeug/ortsbilder.py);

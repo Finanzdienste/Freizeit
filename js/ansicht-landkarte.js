@@ -31,7 +31,7 @@ import { filterLeiste, chipsProgramm } from './ansicht-filter.js';
 import { knopfName } from './standort.js';
 import { eintragTermin, eintragLaufend, merkeEintrag, bockKnopf, wannKurz } from './karte.js';
 import { meinBock } from './speicher.js';
-import { andere, treffer } from './gemeinsam.js';
+import { andere, treffer, kuenstlerMarke } from './gemeinsam.js';
 import { geplante } from './ideen.js';
 
 export const ZEITRAEUME = [
@@ -159,7 +159,7 @@ function popup(gruppe) {
     const idee = x.quelle === 'idee';
     const wann = idee ? `Idee · ${x.kategorie}` : [wannKurz(x), x.datum ? x.zeit : '', x.quelle === 'plan' ? 'eingeplant' : ''].filter(Boolean).join(' · ');
     return `<li>
-        <div class="pop-wann">${esc(wann)}${x.kuenstler ? ' · <b>♫ Dein Künstler</b>' : ''}</div>
+        <div class="pop-wann">${esc(wann)}${x.kuenstler ? ` · <b>${esc(kuenstlerMarke())}</b>` : ''}</div>
         <div class="pop-titel">${esc(x.titel)}</div>
         ${x.ort && x.ort !== orte[0] ? `<div class="pop-unter">${esc(x.ort)}</div>` : ''}
         <div class="pop-aktionen">${bockKnopf(x)}${x.link ? `<a href="${esc(x.link)}" target="_blank" rel="noopener">${idee ? 'Info' : 'Quelle'}</a>` : ''}${x.datum ? `<button type="button" class="textknopf" data-zu-tag="${x.datum}">im Programm</button>` : ''}${idee ? `<button type="button" class="textknopf" data-zu-idee="${esc(x.schluessel)}">bei „Was immer geht“</button>` : ''}</div>

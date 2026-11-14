@@ -16,6 +16,10 @@ import { esc, REGIONEN, ORTE } from './text.js';
 import { SCHALTER, ART, kategorien, umkreisAn, filterFuer } from './filter.js';
 import { UMKREISE, knopfName } from './standort.js';
 import { WIRKUNG, WO } from './ideen.js';
+import { gastgeberGenitiv } from './gemeinsam.js';
+
+/** Die Beschriftung eines Schalters – „♫ Meine Künstler“ heißt bei Eingeladenen „♫ Tobis Künstler“. */
+const titel = (k, t) => (k === 'kuenstler' && gastgeberGenitiv() ? `♫ ${gastgeberGenitiv()} Künstler` : t);
 
 /** Die Schalter unter „Was“ – „Mo–Fr ab 15:30“ steht unter „Wann“. */
 const WAS = SCHALTER.filter(([k]) => k !== 'feierabend');
@@ -36,7 +40,7 @@ export function chipsProgramm(st, { karte = false } = {}) {
   for (const r of f.regionen) c.push([`r:${r}`, REGIONEN[r] || r]);
   if (umkreisAn(f)) c.push(['umkreis', `bis ${f.umkreis} km`]);
   if (f.kategorie) c.push(['kategorie', f.kategorie]);
-  for (const [k, t] of SCHALTER) if (f[k]) c.push([k, t]);
+  for (const [k, t] of SCHALTER) if (f[k]) c.push([k, titel(k, t)]);
   if (f.auchSpaet) c.push(['auchSpaet', 'auch nach 21:30']);
   if (karte) {
     if (st.karteBock) c.push(['karte-bock', 'nur mit Bock']);
@@ -87,7 +91,7 @@ const segmente = (name, liste, wert, attr) => `<div class="segmente" role="group
 
 /** Schalter zum An- und Ausmachen. */
 const schalter = (name, liste, an, attr) => `<div class="filterzeile">${liste
-  .map(([k, t]) => `<button type="button" class="schalter${k === 'hohwacht' ? ' hb' : ''}${k === 'flow' ? ' flow' : ''}" ${attr(k)} data-fokus="${esc(`${name}:${k}`)}" aria-pressed="${Boolean(an(k))}">${esc(t)}</button>`).join('')}</div>`;
+  .map(([k, t]) => `<button type="button" class="schalter${k === 'hohwacht' ? ' hb' : ''}${k === 'flow' ? ' flow' : ''}" ${attr(k)} data-fokus="${esc(`${name}:${k}`)}" aria-pressed="${Boolean(an(k))}">${esc(titel(k, t))}</button>`).join('')}</div>`;
 
 /** Die Regionen: „Alle“ oder beliebig viele – jede mit eigenem Schalter. */
 const regionenWahl = (gewaehlt) => `<div class="feld-label" id="regionen-name">Regionen, auch mehrere</div>

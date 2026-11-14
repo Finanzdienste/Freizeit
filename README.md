@@ -288,6 +288,14 @@ Ein **Treffer** (rot unterlegt, im Monat umrandet) ist, wo man zusammen
 will: beim Gastgeber, wo er Bock hat und jemand mit ihm will; bei den
 Eingeladenen, wo sie „Mit Tobi“ gewählt haben und Tobi Bock hat.
 
+Ganz oben in „Wir“ stehen für alle im Plan die kommenden Konzerte der
+Künstler des Gastgebers (`kuenstler`): beim Gastgeber „♫ Deine Konzerte“
+(wer mitwill, steht an der Karte), bei den Eingeladenen „♫ Konzerte mit
+Tobi“ mit „Mit Tobi“ an jeder Karte – auch ohne dass er einen Haken hat. Vier
+gleich, der Rest aufklappbar; diese Konzerte stehen in keinem anderen
+Abschnitt. Für Eingeladene heißt die Marke an den Karten „♫ Tobis Künstler“
+(im Filter, im Monat und auf der Karte ebenso), nicht „Dein Künstler“.
+
 Der Überblick des Gastgebers in „Wir“ zeigt jeden kommenden Eintrag einmal,
 im ersten passenden Abschnitt: **Zusammen**, **Wollen mit dir** (jemand will
 mit ihm, er hat noch nicht Bock), **Ohne dich** (nur „allein/mit anderen“),
@@ -748,7 +756,7 @@ nimmt `FREIZEIT_CHROMIUM=<Pfad zum Browser>` dieses statt Playwrights eigenem.
 | `test-online.mjs` | Online & TV: Sender statt Ort, 21:30 nach Beginn, Filter „Art“, Umkreis und Entfernung, Monat und Tag, WhatsApp und Kalender, Schnappschuss, Landkarte |
 | `test-kalender.mjs` | Monat (Zahlen, Bock-Punkte, ♫, wählen und öffnen, Konzerte im Monat), ein Haken im Zeitstreifen, im Monat und in der Woche, Filter in allen Ansichten, Monate nach dem Programm |
 | `test-landkarte.mjs` | Marker, Zeitraum, „Nur mit Bock“, Online & TV gezählt statt gezeigt, Liste am Marker, Haken aus der Karte |
-| `test-wir.mjs` | der gemeinsame Plan: Tobi lädt ein, Kim (iPhone) und Jo wählen mit/ohne Tobi und sehen einander nicht, Tobis Überblick, zuletzt in der App (Öffnen und Zurückkommen, nicht der Abgleich; Server ohne `freizeit_offen`), offline, weiteres Gerät, Herausnehmen, Verlassen, Auflösen, ein Plan aus der ersten Fassung, fremder Text |
+| `test-wir.mjs` | der gemeinsame Plan: Tobi lädt ein, Kim (iPhone) und Jo wählen mit/ohne Tobi und sehen einander nicht, „Konzerte mit Tobi“ oben in „Wir“, Tobis Überblick, zuletzt in der App (Öffnen und Zurückkommen, nicht der Abgleich; Server ohne `freizeit_offen`), offline, weiteres Gerät, Herausnehmen, Verlassen, Auflösen, ein Plan aus der ersten Fassung, fremder Text |
 | `test-filme.mjs` | IMDb Top 250: die Tür, die Seite `#filme`, Suche, Genre, Auswahl, Aufklappen, Bock – allein und im Plan („Mit Tobi gucken“, „Mit dir“), die Zeile in „Wir“ und zurück |
 | `test-gestaltung.mjs` | die Gestaltung: Tickets mit Abriss, Umbruch langer Zeiten, „in 30 Min“/„läuft“ (auch bei weiterlaufender Uhr ohne Neuzeichnen), Bock im Abriss leuchtet, Wetter mit Zeichen, Zeichen der Tageszeiten, Monat nach Dichte, Motive der Ideen-Kategorien, die Schrift, Darstellung Automatisch/Hell/Dunkel samt Neuladen |
 | `test-bilder.mjs` | Bilder an den Karten: Foto klein und groß mit Nachweis, Motiv ohne Foto, Ersatz bei kaputtem Bild, fremder Inhalt in ortsbilder.json, Nachweise in den Einstellungen, ohne Datei nur Motive |

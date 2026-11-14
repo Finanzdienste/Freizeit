@@ -115,6 +115,34 @@ check(await B.page.locator('#ansicht .knopf.haupt').count() === 0 && await B.pag
   'bei Kim oben kein Knopf, und ein leerer Abschnitt „Deine Haken“ steht gar nicht da');
 check(!JSON.stringify(kim.stand).includes(tobi.ich.id), 'Tobis echte Kennung kommt bei Kim nie an');
 
+// Oben in „Wir“: die Konzerte von Tobis Künstlern – bei Kim „Konzerte mit Tobi“, ohne dass Tobi einen Haken braucht.
+const kimKonzerte = B.page.locator('#wir-konzerte');
+const keaneBeiKim = kimKonzerte.locator('.karte', { hasText: 'Keane' });
+check((await kimKonzerte.locator('.abschnitt-titel').innerText()).startsWith('♫ Konzerte mit Tobi') && await keaneBeiKim.count() === 1
+  && await kimKonzerte.locator('.karte', { hasText: 'The War On Drugs' }).count() === 1,
+'Kim sieht oben „♫ Konzerte mit Tobi“: Keane (Di) und The War On Drugs (Januar)');
+check(await keaneBeiKim.locator('.marke.kuenstler').innerText() === '♫ Tobis Künstler' && await keaneBeiKim.locator('[data-mitwem="gastgeber"]').count() === 1,
+  '… markiert als „♫ Tobis Künstler“, mit „Mit Tobi“ an der Karte');
+await keaneBeiKim.locator('[data-mitwem="gastgeber"]').click();
+await leer(B);
+check(haken().some((b) => b.person === kim.ich.id && b.daten && b.daten.titel === 'Keane' && b.daten.mitwem === 'gastgeber')
+  && await B.page.locator('#wir-konzerte .karte', { hasText: 'Keane' }).count() === 1 && await B.page.locator('#wir-deine .karte', { hasText: 'Keane' }).count() === 0,
+'Kim sagt dort „Mit Tobi“ zu Keane – beim Server, und Keane bleibt oben, nicht noch einmal unter „Deine Haken“');
+await synchron(A);
+const keaneBeiTobi = A.page.locator('#wir-konzerte .karte', { hasText: 'Keane' });
+check((await A.page.locator('#wir-konzerte .abschnitt-titel').innerText()).startsWith('♫ Deine Konzerte') && await A.page.locator('#wir-konzerte .karte').count() === 2
+  && (await keaneBeiTobi.locator('.wer').innerText()).includes('Kim') && await A.page.locator('#wir-mit-dir .karte', { hasText: 'Keane' }).count() === 0
+  && await keaneBeiTobi.locator('.marke.kuenstler').innerText() === '♫ Dein Künstler',
+'Tobi sieht oben „♫ Deine Konzerte“ (beide), an Keane: Kim will mit – und Keane nicht noch einmal unter „Wollen mit dir“');
+await B.page.locator('#wir-konzerte .karte', { hasText: 'Keane' }).locator('[data-mitwem="gastgeber"]').click();
+await leer(B);
+check(!haken().some((b) => b.person === kim.ich.id && b.daten && b.daten.titel === 'Keane'), 'noch einmal „Mit Tobi“ nimmt den Haken wieder weg');
+await B.reiter('programm');
+await B.filter('kuenstler');
+check((await B.page.locator('.filterchip').innerText()).includes('♫ Tobis Künstler'), 'im Filter heißt es bei Kim „♫ Tobis Künstler“');
+await B.filter('kuenstler');
+await B.reiter('wir');
+
 // Kim wählt: Theater mit Tobi, das Konzert allein/mit anderen, Nachtmarkt erst mit, dann ohne.
 await B.einstellungen();
 check((await B.page.locator('#e-app .install-weg').innerText()).includes('Zum Home-Bildschirm') && await B.page.locator('.hinweis-install').count() === 0,

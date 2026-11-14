@@ -400,6 +400,21 @@ export function gastgeberName() {
   return p ? p.name : (g.gastgeber || '');
 }
 
+/**
+ * Wessen Künstler die ♫-Konzerte sind, für Eingeladene: „Tobis“ (bei Namen
+ * auf s, ß, x, z „Jonas’“). Beim Gastgeber und ohne Plan '' – dann sind es
+ * die eigenen („Dein Künstler“).
+ */
+export function gastgeberGenitiv() {
+  if (rolle() !== 'mitglied') return '';
+  const n = gastgeberName();
+  if (!n) return '';
+  return /[sßxz]$/i.test(n) ? `${n}’` : `${n}s`;
+}
+
+/** „♫ Dein Künstler“ bzw. für Eingeladene „♫ Tobis Künstler“. */
+export const kuenstlerMarke = () => (gastgeberGenitiv() ? `♫ ${gastgeberGenitiv()} Künstler` : '♫ Dein Künstler');
+
 /** Mit wem ein Haken gemeint ist: 'gastgeber' (so auch alle ohne Angabe) oder 'andere'. */
 export const mitWem = (daten) => (daten && daten.mitwem === 'andere' ? 'andere' : 'gastgeber');
 

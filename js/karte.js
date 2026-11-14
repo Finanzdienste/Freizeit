@@ -21,7 +21,7 @@ import { zeitZeile } from './zeiten.js';
 import { aktuell, meinBock } from './speicher.js';
 import { bezugVon, entfernung, entfernungText } from './standort.js';
 import {
-  andere, rolle, gastgeberName, mitWem, treffer,
+  andere, rolle, gastgeberName, mitWem, treffer, kuenstlerMarke,
 } from './gemeinsam.js';
 
 /** Die zuletzt gezeichneten Einträge, für Knöpfe wie „Bock“. */
@@ -257,7 +257,7 @@ export function karte(eintrag, o = {}) {
   // Zugeklappt nur, was beim Entscheiden hilft; der Rest nach dem Aufklappen.
   const wichtig = [
     eintrag.quelle === 'plan' ? marke('Eingeplant', 'plan') : '',
-    eintrag.kuenstler ? marke('♫ Dein Künstler', 'kuenstler') : '',
+    eintrag.kuenstler ? marke(kuenstlerMarke(), 'kuenstler') : '',
     // nur, wenn die 21:30-Regel abgestellt ist und sie diesen Termin sonst ausblenden würde (ansicht-programm.js)
     eintrag.spaet ? marke(eintrag.spaet, 'spaet') : '',
     eintrag.neu ? marke('Neu', 'neu') : '',

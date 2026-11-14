@@ -41,7 +41,9 @@ import {
   karte, eintragTermin, eintragLaufend, aufklappbar,
 } from './karte.js';
 import { meinBock } from './speicher.js';
-import { andere, treffer as istTreffer, rolle, gastgeberName } from './gemeinsam.js';
+import {
+  andere, treffer as istTreffer, rolle, gastgeberName, gastgeberGenitiv,
+} from './gemeinsam.js';
 import { geplante } from './ideen.js';
 import { belegtAm, bekannt } from './zeiten.js';
 import { filterLeiste, chipsProgramm } from './ansicht-filter.js';
@@ -461,7 +463,7 @@ function monatAnsicht(p, st, heute, monat, datum, plaene) {
     const klassen = ['feld', monatVon(d) === monat ? '' : 'fremd', d === heute ? 'heute' : '', d > p.bis ? 'ohne' : '',
       treffer ? 'treffer' : '', td.tag.feiertag ? 'feiertag' : '', d === datum ? 'gewaehlt' : ''].filter(Boolean).join(' ');
     const dichte = n && d <= p.bis ? ` style="--dichte:${Math.min(1, n / meiste).toFixed(2)}"` : '';
-    return `<button type="button" class="${klassen}" data-waehle="${d}" aria-pressed="${d === datum}"${dichte} aria-label="${esc(datumMitTag(d))}: ${anzahl(n, 'Termin', 'Termine')}${kuenstler ? ', Konzert deiner Künstler' : ''}${wer.length ? ', mit Bock' : ''}${td.tag.feiertag ? ', Feiertag' : ''}">
+    return `<button type="button" class="${klassen}" data-waehle="${d}" aria-pressed="${d === datum}"${dichte} aria-label="${esc(datumMitTag(d))}: ${anzahl(n, 'Termin', 'Termine')}${kuenstler ? `, Konzert ${gastgeberGenitiv() ? `von ${esc(gastgeberGenitiv())} Künstlern` : 'deiner Künstler'}` : ''}${wer.length ? ', mit Bock' : ''}${td.tag.feiertag ? ', Feiertag' : ''}">
       <span class="nr">${Number(d.slice(8))}</span>${n ? `<span class="zahl">${n}</span>` : ''}
       <span class="f-unten">${kuenstler ? '<span class="f-kuenstler">♫</span>' : ''}${wer.length ? `<span class="punkte">${wer.map((w) => `<i class="pkt ${w}"></i>`).join('')}</span>` : ''}</span>
     </button>`;
@@ -481,7 +483,7 @@ function monatAnsicht(p, st, heute, monat, datum, plaene) {
     ${WOCHENTAGE.map((w) => `<div class="wt">${w}</div>`).join('')}
     ${felder}
   </div>
-  <p class="legende"><span>Zahl: Termine</span><span><i class="pkt ich"></i> dein Haken</span><span><i class="pkt p0"></i> die anderen</span><span><b class="f-kuenstler">♫</b> deine Künstler</span><span><b class="lg-feiertag">1</b> Feiertag</span></p>
+  <p class="legende"><span>Zahl: Termine</span><span><i class="pkt ich"></i> dein Haken</span><span><i class="pkt p0"></i> die anderen</span><span><b class="f-kuenstler">♫</b> ${esc(gastgeberGenitiv() || 'deine')} Künstler</span><span><b class="lg-feiertag">1</b> Feiertag</span></p>
   <div class="monat-vorschau">${tagKarte(p, datum, f, plaene, heute, { vorschau: true })}</div>
   ${konzertListe}`;
 }

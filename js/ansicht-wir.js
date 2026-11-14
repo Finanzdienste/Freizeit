@@ -16,6 +16,11 @@
  * Jeder Eintrag steht dabei nur einmal, im ersten Abschnitt, der passt; ein
  * leerer Abschnitt steht gar nicht da.
  *
+ * Ganz oben, für alle im Plan: die kommenden Konzerte der Künstler des
+ * Gastgebers („Deine Konzerte“ bzw. „Konzerte mit Tobi“) – auch ohne Haken,
+ * damit die anderen sehen, wohin er will, und „Mit Tobi“ sagen können. Sie
+ * stehen dann in keinem anderen Abschnitt.
+ *
  * Ein Haken trägt einen Schnappschuss seines Eintrags mit sich; fällt der
  * Eintrag aus den Daten (vorbei, neuer Monatslauf), steht er trotzdem
  * vollständig da.
@@ -33,7 +38,7 @@ import {
 } from './zeit.js';
 import { meinBock } from './speicher.js';
 import {
-  andere, hakenDerAnderen, syncStatus, einladungsLink, zugangLesen, person, rolle, gastgeberName, mitWem,
+  andere, hakenDerAnderen, syncStatus, einladungsLink, zugangLesen, person, rolle, gastgeberName, mitWem, gastgeberGenitiv,
 } from './gemeinsam.js';
 import { istApple, alsApp } from './teilen.js';
 import { zeitenWochen, belegung } from './zeiten.js';
@@ -95,6 +100,27 @@ function eintraegeMitHaken(p, ideen, st) {
 }
 
 const karten = (es) => es.map((e) => karte(e, { zeitSpalte: true, zeitText: wannKurz(e) })).join('');
+
+/** Wie viele Konzerte oben gleich zu sehen sind – der Rest steht aufklappbar darunter. */
+const KONZERTE_SICHTBAR = 4;
+
+/** Die kommenden Konzerte der Künstler des Gastgebers, je Tag ein Eintrag, nach Datum. */
+const konzerte = (p, ideen, heute) => sortiert([...alleEintraege(p, ideen).values()].filter((e) => e.kuenstler && !vorbei(e, heute)));
+
+/** „♫ Deine Konzerte“ bzw. „♫ Konzerte mit Tobi“ – oben in „Wir“, für alle im Plan. */
+function konzertAbschnitt(liste, ui) {
+  if (!liste.length) return '';
+  const gastgeber = rolle() === 'gastgeber';
+  const n = gastgeberName() || 'dem Gastgeber';
+  const titel = gastgeber ? '♫ Deine Konzerte' : `♫ Konzerte mit ${n}`;
+  const text = gastgeber
+    ? 'Deine Künstler live – das sehen deine Leute auch, oben in „Wir“. Wer mitwill, steht an der Karte.'
+    : `${esc(gastgeberGenitiv() || 'Seine')} Künstler live. Tipp auf „Mit ${esc(n)}“, wenn du mitkommst.`;
+  const rest = liste.slice(KONZERTE_SICHTBAR);
+  const mehr = rest.length ? `<details class="mehr-konzerte" data-offen="konzerte"${ui.offen && ui.offen.has('konzerte') ? ' open' : ''}>
+      <summary class="fein">${anzahl(rest.length, 'weiteres Konzert', 'weitere Konzerte')}</summary>${karten(rest)}</details>` : '';
+  return abschnitt('wir-konzerte', titel, text, `${karten(liste.slice(0, KONZERTE_SICHTBAR))}${mehr}`, liste.length);
+}
 
 /** Was mit dem Einladungslink per WhatsApp mitgeht – vom Gastgeber, in der ersten Person. */
 export function einladungsText(name, link, code) {
@@ -349,10 +375,12 @@ function proPerson(st, nachSchluessel, heute, ui) {
 }
 
 function gastgeberUeberblick(alle, st, heute, ui) {
-  const offen = alle.filter((e) => !vorbei(e, heute)).map((e) => {
+  const kommend = alle.filter((e) => !vorbei(e, heute)).map((e) => {
     const sie = andere(e.schluessel);
     return { e, ich: meinBock(e.schluessel), mit: sie.filter((x) => x.mitwem === 'gastgeber'), ohne: sie.filter((x) => x.mitwem === 'andere') };
   });
+  // Die Konzerte deiner Künstler stehen oben unter „Deine Konzerte“.
+  const offen = kommend.filter((i) => !i.e.kuenstler);
   const zahl = new Map(offen.map((i) => [i.e.schluessel, i.mit.length + i.ohne.length]));
   const wieViele = (e) => zahl.get(e.schluessel) || 0;
   const zusammen = sortiert(offen.filter((i) => i.ich && i.mit.length).map((i) => i.e), wieViele);
@@ -362,7 +390,7 @@ function gastgeberUeberblick(alle, st, heute, ui) {
   const deineTermine = sortiert(deine.filter((i) => !ohneTag(i.e)).map((i) => i.e));
   const deineOhneTag = deine.filter((i) => ohneTag(i.e)).map((i) => i.e);
   const leute = st.gemeinsam.stand.personen.length - 1;
-  const nichts = leute > 0 && !zusammen.length && !wollen.length && !ohne.length
+  const nichts = leute > 0 && !kommend.some((i) => i.mit.length || i.ohne.length)
     ? '<div class="leer-klein">Noch hat keiner etwas angehakt. Sobald jemand Bock auf etwas hat, steht es hier.</div>' : '';
   return `${nichts}
     ${zusammen.length ? abschnitt('wir-zusammen', 'Zusammen', '', karten(zusammen), zusammen.length) : ''}
@@ -375,16 +403,18 @@ function gastgeberUeberblick(alle, st, heute, ui) {
 
 function mitgliedAnsicht(alle, st, heute) {
   const name = gastgeberName() || 'dem Gastgeber';
-  const offen = alle.filter((e) => !vorbei(e, heute)).map((e) => ({
+  const kommend = alle.filter((e) => !vorbei(e, heute)).map((e) => ({
     e, ich: meinBock(e.schluessel), wie: mitWem(st.bock[e.schluessel]), er: andere(e.schluessel).length > 0,
   }));
+  // Die Konzerte seiner Künstler stehen oben unter „Konzerte mit …“.
+  const offen = kommend.filter((i) => !i.e.kuenstler);
   const zusammen = sortiert(offen.filter((i) => i.ich && i.wie === 'gastgeber' && i.er).map((i) => i.e));
   const seine = sortiert(offen.filter((i) => !i.ich && i.er).map((i) => i.e));
   const deine = offen.filter((i) => i.ich && !(i.wie === 'gastgeber' && i.er));
   const deineTermine = sortiert(deine.filter((i) => !ohneTag(i.e)).map((i) => i.e));
   const deineOhneTag = deine.filter((i) => ohneTag(i.e)).map((i) => i.e);
   const n = esc(name);
-  const leer = !zusammen.length && !seine.length && !deine.length
+  const leer = !zusammen.length && !seine.length && !kommend.some((i) => i.ich)
     ? `<div class="leer-klein">Noch keine Haken. Tippe bei einem Termin auf „Mit ${n}“ oder „Allein/mit anderen“.</div>` : '';
   return `${zusammen.length ? abschnitt('wir-zusammen', `Du und ${name}`, '', karten(zusammen), zusammen.length) : ''}
     ${seine.length ? abschnitt('wir-seine', `${name} hat Bock auf`, `Tipp auf „Mit ${n}“, wenn du dabei bist.`, karten(seine), seine.length) : ''}
@@ -418,6 +448,7 @@ export function wirAnsicht(p, ideen, st, heute, ui = {}) {
     ${zugang}
     ${hilfe}
     ${zeitenHinweis(heute)}
+    ${konzertAbschnitt(konzerte(p, ideen, heute), ui)}
     ${rolle() === 'gastgeber' ? gastgeberUeberblick(alle, st, heute, ui) : mitgliedAnsicht(alle, st, heute)}
     ${vorbeiListe(alt, ui)}`;
 }

@@ -33,14 +33,14 @@ import {
   landkarteGeruest, landkarteZeichnen, landkarteAuffrischen, karteKopf, kartenZahl, ZEITRAEUME,
 } from './ansicht-landkarte.js';
 import {
-  wasImmerGeht, ideeAnker, ideenZahl, planSpanne,
+  wasImmerGeht, ideeAnker, ideenZahl, planSpanne, meldungBox,
 } from './ansicht-ideen.js';
 import {
   filmeAnsicht, filmeTuer, filmListeNeu, filmAnker,
 } from './ansicht-filme.js';
 import { filmEintraege } from './filme.js';
 import { wirAnsicht, vorbei } from './ansicht-wir.js';
-import { einstellungenAnsicht } from './ansicht-einstellungen.js';
+import { einstellungenAnsicht, bildschirmzeitTeil } from './ansicht-einstellungen.js';
 import { programmBlatt, ideenBlatt } from './ansicht-filter.js';
 import {
   blattOeffnen, blattSchliessen, blattAuffrischen, blattArt,
@@ -64,6 +64,18 @@ import {
   planStarten, beitreten, codeLesen, zugangLesen, zugangUebernehmen, einladungAnsehen, abgleichen, geoeffnet, umbenennen, verlassen,
   vergessen as planVergessen, wiederBeitreten, entfernen, neuesterAndererHaken, rolle,
 } from './gemeinsam.js';
+import {
+  bildschirmzeitStarten, bildschirmzeitStand, bildschirmzeitTrennen, BZ_EREIGNIS,
+} from './bildschirmzeit.js';
+
+// Als Erstes die Bildschirmzeit für Tobis Widget (js/bildschirmzeit.js): Ein
+// Link aus der Widget-App (#bildschirmzeit=…) verbindet und verschwindet
+// sofort aus der Adresse – bevor diese Datei location.hash liest
+// (adresseLesen ganz unten) oder auf hashchange hört; die Datei hört auch
+// zuerst. Die Module oben lesen beim Laden keine Adresse. Ohne den Link tut
+// sie nichts. Ihre Hinweise kommen frühestens im nächsten Takt – dann steht
+// hier alles.
+bildschirmzeitStarten('freizeit', { meldung: (text) => bildschirmzeitHinweis(text) });
 
 // Die Reiter unten: drei mit Inhalt (abschaltbar) und Einstellungen, immer da.
 const SEITEN = [...INHALTS_REITER, 'einstellungen'];
@@ -106,6 +118,8 @@ const uiFilme = {
   offen: false, suche: '', genre: '', nur: 'alle',
 };
 let installEreignis = null;
+// Ein Hinweis der Bildschirmzeit (verbunden, getrennt) – oben auf der Seite, bis ✕ oder zum nächsten Reiter.
+let bzHinweis = '';
 
 /**
  * Einladung oder Zugang aus dem Link übernehmen, Reiter aus der Adresse
@@ -224,14 +238,14 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
   let html;
   if (reiter === 'einstellungen') {
     html = einstellungenAnsicht(st, ui, {
-      p: daten.programm, ideenStand: daten.ideenStand, datenFehler: daten.fehler, installierbar: Boolean(installEreignis),
+      p: daten.programm, ideenStand: daten.ideenStand, datenFehler: daten.fehler, installierbar: Boolean(installEreignis), bildschirmzeit: bildschirmzeitStand(),
     });
   } else if (!geladen) html = LADEN;
   else if (reiter === 'karte') html = landkarteGeruest(st, raum);
   else if (reiter === 'wir') html = wirAnsicht(daten.programm, [...ideenListe, ...filmListe], st, h, ui);
   else if (uiFilme.offen) html = filmeAnsicht(filmListe, filmInfo, st, uiFilme);
   else html = programmAnsicht(daten.programm, st, h, { ...prog, planen: uiIdeen.planen, planFehler: uiIdeen.planFehler, meldung: uiIdeen.meldung }) + wasImmerGeht(ideenListe, Boolean(daten.ideen), st, h, uiIdeen, filmeTuer(filmListe));
-  $('#ansicht').innerHTML = html;
+  $('#ansicht').innerHTML = bildschirmzeitHinweisHtml() + html;
   if (geladen && reiter === 'karte') landkarteZeichnen(daten.programm, st, h, raum, ideenListe);
   if (reiter === 'wir' && st.gemeinsam) {
     const neu = neuesterAndererHaken();
@@ -296,6 +310,7 @@ function wechseln(neu) {
   Object.assign(uiIdeen, {
     neu: false, planen: '', planFehler: '', bewerten: '', meldung: null, fehler: '',
   });
+  bzHinweis = '';
   adresseSetzen(neu);
   zeichnen({ nachOben: true });
   $('#ansicht').focus({ preventScroll: true });
@@ -701,6 +716,17 @@ function aktion(name, z) {
     case 'ki-speichern':
       kiUi.einstellFehler = kiSchluesselSetzen(wert('#ki-schluessel')) ? '' : 'Das sieht nicht nach einem Claude-Schlüssel aus – er fängt mit „sk-ant-“ an.';
       zeichnen({ behalteScroll: true });
+      break;
+    case 'bildschirmzeit-trennen':
+      // Einstellungen → Bildschirmzeit: nichts mehr messen, nichts mehr schicken (das Ereignis nimmt den Abschnitt weg).
+      bzHinweis = '';
+      bildschirmzeitTrennen();
+      zeichnen({ behalteScroll: true });
+      break;
+    case 'meldung-weg':
+      // ✕ am Hinweis der Bildschirmzeit nimmt nur ihn weg, ohne Neuzeichnen (die Karte bliebe sonst nicht stehen).
+      if (z.closest('#bz-hinweis')) bildschirmzeitHinweis('');
+      else ideenAktion(name, z);
       break;
     case 'ki-weg':
       kiSchluesselWeg();
@@ -1245,7 +1271,15 @@ document.addEventListener('error', (ev) => {
 }, true);
 
 // #programm, #karte, #wir und #einstellungen öffnen die Seite direkt; #ideen führt zu „Was immer geht“.
-window.addEventListener('hashchange', () => {
+window.addEventListener('hashchange', (ev) => {
+  // Ein Link aus der Widget-App in der offenen App: bildschirmzeit.js hat ihn
+  // schon herausgenommen (sie hört zuerst). Man bleibt, wo man war – auch in
+  // der Adresse (#karte, #einstellungen, #filme); adresseLesen schlösse sonst
+  // die IMDb-Seite, und nach dem Neuladen stünde der Start-Reiter da.
+  if (/#bildschirmzeit=/.test(ev.newURL || '')) {
+    adresseSetzen(reiter);
+    return;
+  }
   const filmeVorher = uiFilme.offen;
   const r = adresseLesen();
   if (linkZiel) {
@@ -1334,6 +1368,7 @@ document.addEventListener('visibilitychange', () => {
   if (document.visibilityState !== 'visible') return;
   zeitAuffrischen();
   liveAuffrischen();
+  bildschirmzeitAuffrischen();
   // Zurück in der App: Das zählt wie Öffnen (der Gastgeber sieht, wann jemand da war).
   geoeffnet();
   abgleichJetzt();
@@ -1343,8 +1378,50 @@ setInterval(() => {
   if (document.visibilityState !== 'visible') return;
   zeitAuffrischen();
   liveAuffrischen();
+  bildschirmzeitAuffrischen();
   abgleichJetzt();
 }, 60000);
+
+// --- Bildschirmzeit (js/bildschirmzeit.js): der Hinweis oben und der Abschnitt in den Einstellungen.
+// Nicht verbunden, gibt es beides nicht – für alle ohne das Widget bleibt die App, wie sie war.
+
+/** Der Hinweis als Meldung wie in „Was immer geht“ – leer, wenn keiner da ist. */
+function bildschirmzeitHinweisHtml() {
+  return bzHinweis ? `<div id="bz-hinweis">${meldungBox({ text: bzHinweis })}</div>` : '';
+}
+
+/** Hinweis setzen ('' nimmt ihn weg) – nur oben auf der Seite, ohne Neuzeichnen: Eingaben, Formulare und der Ausschnitt der Karte bleiben. */
+function bildschirmzeitHinweis(text) {
+  bzHinweis = text;
+  const alt = document.getElementById('bz-hinweis');
+  const fokus = alt && alt.contains(document.activeElement);
+  if (alt) alt.remove();
+  if (bzHinweis) $('#ansicht').insertAdjacentHTML('afterbegin', bildschirmzeitHinweisHtml());
+  if (fokus) $('#ansicht').focus({ preventScroll: true });
+}
+
+/** Den Abschnitt in den Einstellungen nachziehen, wenn sie zu sehen sind – nur ihn, damit Eingaben und Fokus bleiben. */
+function bildschirmzeitAuffrischen() {
+  if (reiter !== 'einstellungen' || document.visibilityState !== 'visible') return;
+  const alt = document.getElementById('e-bildschirmzeit');
+  const vorlage = document.createElement('template');
+  vorlage.innerHTML = bildschirmzeitTeil(bildschirmzeitStand());
+  const neu = vorlage.content.firstElementChild;
+  if (!alt) {
+    // Gerade verbunden (ein Link in der offenen App): einmal alles – außer jemand tippt gerade.
+    if (neu && !wirEingabeOffen()) zeichnen({ behalteScroll: true });
+    return;
+  }
+  if (neu && alt.isEqualNode(neu)) return;
+  const fokus = alt.contains(document.activeElement);
+  if (neu) alt.replaceWith(neu);
+  else alt.remove();
+  if (fokus) ((neu && neu.querySelector('[data-aktion="bildschirmzeit-trennen"]')) || $('#ansicht')).focus({ preventScroll: true });
+}
+
+// Verbunden, gemeldet, nicht durchgekommen, getrennt: Die Einstellungen zeigen den neuen Stand.
+window.addEventListener(BZ_EREIGNIS, () => bildschirmzeitAuffrischen());
+
 // Bei „Automatisch“ folgt die Farbe der Browserleiste dem Gerät, auch wenn es umschaltet.
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', () => darstellungAnwenden());
 

@@ -15,6 +15,8 @@
  *                      „Für dich“ in Tag, Woche und Monat (ki-tipp.js)
  *   Gemeinsamer Plan   Abgleich, Name, weiteres Gerät, „So geht's“,
  *                      Verlassen bzw. Auflösen – ohne Plan der Weg zu „Wir“
+ *   Bildschirmzeit     nur, wenn ein Link aus Tobis Widget-App verbunden hat
+ *                      (bildschirmzeit.js): was heute gezählt ist, Trennen
  *   App                Installieren, Stand des Programms und des Katalogs,
  *                      Hinweise zu den Daten
  */
@@ -29,6 +31,7 @@ import { INHALTS_REITER } from './speicher.js';
 import { bildnachweise } from './bilder.js';
 import { DARSTELLUNGEN, darstellung } from './darstellung.js';
 import { kiSchluessel, kiUi } from './ki-tipp.js';
+import { dauerText } from './bildschirmzeit.js';
 
 /** Wie die Reiter unten heißen – dieselben Wörter wie in der Leiste (index.html). */
 const REITER_NAMEN = { programm: 'Programm', karte: 'Karte', wir: 'Wir' };
@@ -209,10 +212,27 @@ function kiTeil() {
 }
 
 /**
- * @param {object} o  p (Programm), ideenStand, datenFehler, installierbar (der Browser bietet „Installieren“ an)
+ * Bildschirmzeit für Tobis Widget – nur, wenn verbunden (`s` aus
+ * bildschirmzeitStand(), sonst null: dann kein Wort davon). Was heute
+ * gezählt ist, wann zuletzt gemeldet, ob es zuletzt nicht durchkam, Trennen.
+ * app.js zieht den Abschnitt bei jeder Änderung nach (BZ_EREIGNIS).
+ */
+export function bildschirmzeitTeil(s) {
+  if (!s) return '';
+  const zeit = s.zuletzt ? new Date(s.zuletzt).toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }) : '';
+  return abschnitt('e-bildschirmzeit', 'Bildschirmzeit', `<div class="e-zeile">
+      <span>Verbunden mit deinem Widget. Heute ${esc(dauerText(s.heute))} offen, ${zeit ? `zuletzt gemeldet um ${esc(zeit)}` : 'noch nichts gemeldet'}.</span>
+      <button type="button" class="textknopf" data-aktion="bildschirmzeit-trennen">Trennen</button>
+    </div>
+    ${s.fehler ? `<div class="e-zeile fein">Zuletzt nicht durchgekommen: ${esc(s.fehler)}.</div>` : ''}`);
+}
+
+/**
+ * @param {object} o  p (Programm), ideenStand, datenFehler, installierbar (der Browser bietet „Installieren“ an),
+ *                    bildschirmzeit (bildschirmzeitStand() – null, wenn nicht verbunden)
  */
 export function einstellungenAnsicht(st, ui, {
-  p = null, ideenStand = '', datenFehler = [], installierbar = false,
+  p = null, ideenStand = '', datenFehler = [], installierbar = false, bildschirmzeit = null,
 } = {}) {
   return `<header class="seiten-kopf">
     <h1 class="seiten-titel">Einstellungen</h1>
@@ -223,5 +243,6 @@ export function einstellungenAnsicht(st, ui, {
   ${st.gemeinsam && !st.gemeinsam.raus && rolle() === 'gastgeber' ? mitteilungenTeil(ui) : ''}
   ${rolle() === 'mitglied' ? '' : kiTeil()}
   ${planTeil(st, ui)}
+  ${bildschirmzeitTeil(bildschirmzeit)}
   ${appTeil(p, ideenStand, datenFehler, installierbar)}`;
 }

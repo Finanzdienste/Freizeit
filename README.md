@@ -19,7 +19,7 @@ Vier Reiter unten – welche davon dort stehen, wählt man unter Einstellungen �
 | **Programm** | Drei Ansichten, der gewählte Tag gilt in allen; blättern mit ‹ ›, „Heute“ oder Wischen. **Tag** (Vorgabe) – oben die Tagesleiste (die sieben Tage der Woche mit der Zahl der Termine und Punkten, wer Bock hat; ein Tipp wählt den Tag), dann Wetter, Feiertag, Tipp und 21:30-Hinweis, „Deine Zeit“ (Zeitstreifen 7–24 Uhr: belegt schraffiert, Haken als Marker), Eingeplantes und alle Termine nach Tageszeit (Den ganzen Tag, Vormittag, Nachmittag, Abend), zuletzt „Läuft heute“; **Woche** – eine Karte je Tag mit Wetter, kleinem Zeitstreifen, Zahl der Termine, Haken, Eingeplantem und Konzerten der eigenen Künstler, dem Tipp; dazu „Diese Woche“ (Highlights, Gut zu wissen), „Läuft diese Woche“ und die Hinweise; **Monat** – das Blatt mit Zahlen, Bock-Punkten, ♫ und Feiertagen, ein Tipp wählt den Tag (darunter seine Karte), ein zweiter öffnet ihn; dazu die Konzerte der eigenen Künstler im Monat. Vergangenes steht nirgends: Es geht ab heute los, und heute fehlt, was schon zu Ende ist. Nach dem Ende des Programms nur noch Konzerte der eigenen Künstler und Eingeplantes. Ganz unten, in allen drei Ansichten: **Was immer geht** – alles ohne Termin: Eingeplantes, „Wollen wir mal“ (Ideen mit Bock), „Tut dir gut“, eigene Ideen, der Katalog nach Kategorien; mit eigenem Filter (Wirkung, Rahmen) |
 | **Karte** | OpenStreetMap, ein Marker je Ort (nahe zu Haufen zusammengefasst), oben der Zeitraum (Heute bis Alles) und derselbe Filter wie im Programm, dazu „Nur mit Bock“ und „Orte aus Ideen zeigen“ |
 | **Wir** | Der gemeinsame Plan: oben die Leute, eine Zeile Stand und – beim Gastgeber – „Einladen“. Beim Gastgeber der Überblick: Zusammen, Wollen mit dir, Ohne dich, Pro Person, Deine Haken. Bei den Eingeladenen: Du und Tobi, Tobi hat Bock auf, Deine Haken. Leere Abschnitte stehen nicht da. Ohne Plan die eigene Bock-Liste und der Weg in einen Plan |
-| **Einstellungen** | Der Reiter ganz rechts, immer da (Adresse `#einstellungen`): **Reiter unten** (Programm, Karte, Wir je an oder aus), **Darstellung** (Automatisch, Hell, Dunkel – für dieses Gerät), **Mein Standort**, **Mitteilungen** (nur der Gastgeber), **Gemeinsamer Plan** (Abgleich, Name ändern, Weiteres Gerät, So geht's, Verlassen bzw. Auflösen), **App** (Installieren, Stand des Programms und des Katalogs, Hinweise zu den Daten) |
+| **Einstellungen** | Der Reiter ganz rechts, immer da (Adresse `#einstellungen`): **Reiter unten** (Programm, Karte, Wir je an oder aus), **Darstellung** (Automatisch, Hell, Dunkel – für dieses Gerät), **Mein Standort**, **Mitteilungen** (nur der Gastgeber), **Gemeinsamer Plan** (Abgleich, Name ändern, Weiteres Gerät, So geht's, Verlassen bzw. Auflösen), **Bildschirmzeit** (nur, wenn Tobis Widget verbunden ist – siehe „Bildschirmzeit fürs Widget“), **App** (Installieren, Stand des Programms und des Katalogs, Hinweise zu den Daten) |
 
 **Reiter unten:** Programm, Karte und Wir lassen sich einzeln ausblenden; Einstellungen bleibt immer, und einer der drei bleibt an (sein Schalter sagt dann „Einer bleibt immer an“). Die Wahl bleibt auf dem Gerät (ein Stand von vorher: alle an; ein ausgeblendeter Reiter „Ideen“ aus v18 und früher ist ohne Wirkung). Die App öffnet mit dem ersten Reiter, der an ist – der hat als einziger keine `#`-Adresse. Ausgeblendetes bleibt erreichbar: über `#programm`, `#karte`, `#wir`, einen Einladungs- oder Gerätelink, eine Mitteilung oder einen Sprung aus einer Karte; unten ist dann kein Reiter markiert. `#ideen` (alte Lesezeichen) öffnet das Programm bei „Was immer geht“. Der Punkt für neue Haken gehört zu „Wir“ – ist der Reiter aus, gibt es ihn nicht. Jeder Reiter ist mindestens so breit wie seine Beschriftung – auch mit einer breiten Systemschrift steht „Einstellungen“ ganz da.
 
@@ -41,6 +41,7 @@ Vier Reiter unten – welche davon dort stehen, wählt man unter Einstellungen �
 | meinen Namen ändern, den Plan auf ein zweites Gerät, verlassen/auflösen | Einstellungen → **Gemeinsamer Plan** |
 | Push-Mitteilungen an oder aus | Einstellungen → **Mitteilungen** (Gastgeber) |
 | die App installieren, sehen, wie aktuell das Programm ist | Einstellungen → **App** |
+| die Bildschirmzeit fürs Widget sehen oder trennen | Einstellungen → **Bildschirmzeit** (nur, wenn verbunden; verbunden wird aus der Widget-App) |
 
 Jede Karte ist zugeklappt kurz – Uhrzeit, Titel, Ort (bei Online & TV „📺“
 und der Sender), was beim Entscheiden hilft (Preis, „♫ Dein Künstler“, Neu,
@@ -460,6 +461,83 @@ den aus Boxenstopp (`boxenstopp.ki.v1`) – beide Apps teilen sich den Ursprung
 `finanzdienste.github.io` und damit den Speicher. Eingeladene sehen weder den
 Kasten noch den Abschnitt: Es ginge auf Tobis Guthaben.
 
+## Bildschirmzeit fürs Widget
+
+Seit v42. Tobi: „Ich will ein eigenes Bildschirmzeit-Widget für meinen
+Startbildschirm (Samsung Galaxy S24), weil Androids Bildschirmzeit meine
+Web-Apps Boxenstopp, Freizeit und Workout nur als „Chrome“ zählt.“ – und:
+„Push, Daten und alles andere in den drei Apps müssen weiter funktionieren
+wie bisher.“
+
+**Vorher** (bis v37): Android rechnete die installierte App Chrome zu; wie
+lange Freizeit offen war, stand nirgends.
+
+**Jetzt:** Die Widget-App (Repo **Finanzdienste/Bildschirmzeit**) hat je App
+einen Knopf „Verbinden“. Er öffnet
+`https://finanzdienste.github.io/Freizeit/#bildschirmzeit=<Kennung>`; ab da
+meldet Freizeit, wie lange sie heute zu sehen war, und das Widget zieht das
+von Chrome ab. Das Messen steckt in `js/bildschirmzeit.js` – eine
+wortgleiche Kopie von `web/bildschirmzeit.js` aus dem Repo Bildschirmzeit
+(Boxenstopp und Workout haben dieselbe). Geändert wird sie nur dort und dann
+in alle drei kopiert, nie hier.
+
+- **Ohne Verbinden-Link passiert nichts:** keine Anfrage, nichts im
+  Speicher, keine Uhr, kein Wort in der App. Für Eingeladene und alle ohne
+  das Widget bleibt Freizeit, wie sie war.
+- **Der Link** öffnet die App wie sonst (der Start-Reiter, auch wenn das
+  Programm ausgeblendet ist) und verschwindet sofort aus der Adresse. Dafür
+  steht `bildschirmzeitStarten('freizeit', …)` ganz oben in `js/app.js`, vor
+  `adresseLesen()` und vor dem hashchange-Lauscher – die Module davor lesen
+  beim Laden keine Adresse. Die Datei hört auch auf hashchange zuerst; so
+  verbindet der Link auch in der offenen App, und `#wir`, `#karte`, `#filme`,
+  `#eintrag=…`, Einladungs- und Gerätelinks gehen wie vorher. Kommt der Link
+  in der offenen App, bleibt man, wo man war, auch in der Adresse: Der
+  hashchange-Lauscher von `js/app.js` sieht den Link in `newURL` und setzt
+  nur den eigenen Reiter wieder ein (`#karte`, `#einstellungen`, `#filme` –
+  die IMDb-Seite bleibt offen, Neuladen öffnet denselben Reiter). Zurück
+  führt danach einmal auf dieselbe Seite, wie nach einem geteilten Link
+  (`#eintrag=…`): Den Eintrag im Verlauf legt der Browser an, und
+  `history.back()` könnte die App verlassen. Oben steht
+  dann „Bildschirmzeit verbunden: …“ – die Meldung wie in „Was immer geht“;
+  ✕ oder der nächste Reiter nimmt sie weg.
+- **Gezählt** wird nur, solange die App zu sehen ist (alle 15 Sekunden; eine
+  Lücke, etwa ein schlafendes Gerät, zählt höchstens eine Minute), an
+  Mitternacht geteilt. **Geschickt** wird der Tagesstand an Supabase
+  (`bildschirmzeit_melden` mit `p_app: 'freizeit'`, nur der öffentliche
+  Schlüssel als `apikey`): gleich nach dem Verbinden mit heute = 0, damit die
+  Widget-App „verbunden“ sieht, dann alle fünf Minuten, beim Zurückkommen und
+  beim Wegschalten (keepalive, rund 100 bis 200 Byte). Der Server nimmt je
+  Tag den größeren Wert; doppelt schadet nicht.
+- **Die Kennung** (43 Zeichen, von der Widget-App einmal zufällig erzeugt)
+  liegt nur im localStorage unter `bildschirmzeit.freizeit` – nicht im Stand
+  der App (`freizeit.stand.v1`), also nicht im gemeinsamen Plan, nicht im
+  Link „Weiteres Gerät“ und in keiner geteilten Nachricht. Wer sie hat, kann
+  die Minuten lesen, melden und löschen; darum steht sie nirgends sonst.
+- **Einstellungen → Bildschirmzeit** (nur verbunden, zwischen „Gemeinsamer
+  Plan“ und „App“): „Verbunden mit deinem Widget. Heute 12 Min. offen,
+  zuletzt gemeldet um 10:05.“ (vor der ersten Antwort: „noch nichts
+  gemeldet“); kam die letzte Meldung nicht an, darunter „Zuletzt nicht
+  durchgekommen: kein Netz.“ Der Abschnitt zieht bei jeder Änderung nach,
+  ohne die Seite neu zu zeichnen.
+- **Trennen:** Einstellungen → Bildschirmzeit → **Trennen**. Dann misst und
+  schickt die App nichts mehr; was schon bei Supabase liegt, löscht die
+  Widget-App. Löscht sie ihre Daten, antwortet der Server `false`, und
+  Freizeit trennt sich von selbst („Bildschirmzeit getrennt: …“). Wieder
+  verbinden: der Knopf in der Widget-App.
+
+**Warum so:** Android kennt die Zeit einer Web-App nicht, die App selbst
+schon. Verbunden wird aus der Widget-App (Tobis Entscheidung), damit in
+Freizeit kein Knopf für etwas steht, das nur Tobi braucht. Die Funktionen
+und Tabellen stehen in `supabase/bildschirmzeit.sql` im Repo Bildschirmzeit,
+nicht in `supabase/gemeinsam.sql`; der gemeinsame Plan (`freizeit_*`) und
+Push (`freizeit-push`) bleiben unberührt.
+
+**Geprüft:** `tests/test-bildschirmzeit.mjs` (Supabase nachgebaut, erfundene
+Kennungen) – auch der häufigste Fall: schon verbunden, die App ganz normal
+vom Startbildschirm geöffnet (ohne #); dann meldet sie gleich beim Start,
+beim Wegschalten (keepalive) und beim Zurückkommen. Das Modul selbst prüft
+`tests/test-web.mjs` im Repo Bildschirmzeit.
+
 ## Woher die Daten kommen
 
 Die App ändert ihre Daten nie selbst. Der geplante Lauf
@@ -719,8 +797,9 @@ unterhalb der Adresse einer installierten App dieser App zu – Chrome meldete
 „bereits installiert“ und legte keine eigene App an. Unter `/Freizeit/`
 überschneiden sich die Bereiche nicht. Den Ursprung `finanzdienste.github.io`
 teilen sich beide Apps trotzdem, also auch localStorage und den
-Zwischenspeicher: Alles von hier beginnt mit `freizeit.` bzw. `freizeit-`,
-und der Worker räumt nur seine eigenen Vorräte weg.
+Zwischenspeicher: Alles von hier beginnt mit `freizeit.` bzw. `freizeit-`
+(einzige Ausnahme: `bildschirmzeit.freizeit`, siehe „Bildschirmzeit fürs
+Widget“), und der Worker räumt nur seine eigenen Vorräte weg.
 
 | Datei | Aufgabe |
 | --- | --- |
@@ -743,6 +822,7 @@ und der Worker räumt nur seine eigenen Vorräte weg.
 | `werkzeug/ortsbilder.py` | freie Fotos der Spielstätten von Wikidata/Commons suchen, prüfen, verkleinert ablegen (Python, Pillow) |
 | `js/push.js` | Push-Mitteilungen für den Gastgeber: Abo holen, beim Server an- und abmelden |
 | `js/ki-tipp.js` | „Für dich“: Kandidaten der Woche, Anfrage an Claude, Antwort prüfen, Schlüssel (eigener oder aus Boxenstopp) und Tipps je Woche merken |
+| `js/bildschirmzeit.js` | Bildschirmzeit fürs Widget: Link nehmen, sichtbare Zeit zählen, an Supabase melden, trennen – wortgleiche Kopie aus dem Repo Finanzdienste/Bildschirmzeit (`web/bildschirmzeit.js`), hier nie ändern |
 | `js/standort.js` | Bezugspunkt für Entfernungen: Gerätestandort, Adresssuche (Nominatim), Luftlinie, „3,2 km“ |
 | `supabase/functions/freizeit-push/` | die Edge Function: offene Nachrichten holen, verschlüsseln, an die Push-Dienste schicken |
 | `werkzeug/push-buendeln.mjs` | die Function als eine Datei fürs Dashboard |
@@ -789,6 +869,7 @@ nimmt `FREIZEIT_CHROMIUM=<Pfad zum Browser>` dieses statt Playwrights eigenem.
 | `test-push.mjs` | Push in der App (Einstellungen → Mitteilungen): anschalten, was der Server sammelt (auch „App geöffnet“), ausschalten, ohne Erlaubnis, iPhone im Browser |
 | `test-standort.mjs` | Standort und Adresse als Bezugspunkt (Einstellungen): Entfernung an den Karten, Umkreis und Reihenfolge im Filter für alle Ansichten und die Karte, Ideen, Löschen, Neuladen, nichts davon zum Server |
 | `test-push-senden.mjs` | die Edge Function in Node: VAPID-Token, Verschlüsselung (ein nachgebautes Gerät liest sie), Texte, ein Durchlauf |
+| `test-bildschirmzeit.mjs` | Bildschirmzeit fürs Widget: ohne Link nichts (keine Anfrage, kein Speicher, kein Wort); der Link öffnet den Start-Reiter (auch ohne Programm) und verschwindet aus der Adresse, Meldung mit heute = 0 und nur `apikey`; Zeit nur sichtbar, Wegschalten mit keepalive; der Abschnitt in den Einstellungen mit Fehler; Antwort false trennt, „Trennen“; verbunden und ganz normal geöffnet (ohne #): Meldung beim Start, Wegschalten, Zurückkommen; ein Link in der offenen App behält Reiter und Adresse (`#einstellungen`, `#karte`, `#filme`); `#wir`, `#karte`, `#filme`, `#eintrag=…`, `#ideen` wie vorher; Plan, Einladung, Weiteres Gerät und WhatsApp ohne die Kennung |
 
 Die Browsertests laufen gegen feste Testdaten und einen nachgebauten Server
 (`tests/hilfe.mjs`), nicht gegen `daten/` und nicht gegen Supabase. Auf

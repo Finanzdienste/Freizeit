@@ -55,7 +55,7 @@ import { darstellungSetzen, darstellungAnwenden } from './darstellung.js';
 import { pushEinschalten, pushAusschalten } from './push.js';
 import { ortsbilderSetzen, motivHtml } from './bilder.js';
 import {
-  tippsHolen, kiSchluesselSetzen, kiSchluesselWeg, kiUi,
+  tippsHolen, kiSchluesselSetzen, kiSchluesselWeg, kiUi, zeitraum,
 } from './ki-tipp.js';
 import {
   geraetStandort, adresseSuchen, standortUi, UMKREISE,
@@ -658,12 +658,14 @@ function aktion(name, z) {
       break;
     }
     case 'ki-tipp': {
-      // „Für dich“: Claude nach zwei Tipps für diese Woche fragen (ki-tipp.js).
-      const mo = z.dataset.woche;
-      if (!mo || kiUi.laeuft) break;
-      Object.assign(kiUi, { laeuft: mo, fehler: '', woche: mo });
+      // „Für dich“: Claude nach Tipps für diesen Tag, diese Woche oder diesen Monat fragen (ki-tipp.js).
+      const art = ['tag', 'woche', 'monat'].includes(z.dataset.art) ? z.dataset.art : 'woche';
+      const wert = z.dataset.wert || z.dataset.woche;
+      if (!wert || kiUi.laeuft) break;
+      const raum = zeitraum(art, wert);
+      Object.assign(kiUi, { laeuft: raum.schluessel, fehler: '', raum: raum.schluessel });
       zeichnen({ behalteScroll: true });
-      tippsHolen(daten.programm, st, mo, h)
+      tippsHolen(daten.programm, st, raum, h)
         .catch((e) => { kiUi.fehler = e.message; })
         .finally(() => {
           kiUi.laeuft = '';

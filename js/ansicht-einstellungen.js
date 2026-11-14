@@ -12,7 +12,7 @@
  *                      im Filter.
  *   Mitteilungen       nur der Gastgeber: Push an oder aus (push.js)
  *   KI-Tipp            nicht bei Eingeladenen: der Claude-Schlüssel für
- *                      „Für dich“ in der Woche (ki-tipp.js)
+ *                      „Für dich“ in Tag, Woche und Monat (ki-tipp.js)
  *   Gemeinsamer Plan   Abgleich, Name, weiteres Gerät, „So geht's“,
  *                      Verlassen bzw. Auflösen – ohne Plan der Weg zu „Wir“
  *   App                Installieren, Stand des Programms und des Katalogs,
@@ -195,7 +195,7 @@ function appTeil(p, ideenStand, datenFehler, installierbar) {
 function kiTeil() {
   const k = kiSchluessel();
   const jetzt = !k
-    ? '<div class="e-zeile fein">Noch kein Schlüssel – dann gibt es in der Woche kein „Für dich“.</div>'
+    ? '<div class="e-zeile fein">Noch kein Schlüssel – dann gibt es kein „Für dich“.</div>'
     : k.quelle === 'eigen'
       ? `<div class="e-zeile"><span>✓ Eigener Schlüssel <span class="fein">…${esc(k.schluessel.slice(-4))}</span></span><button type="button" class="textknopf" data-aktion="ki-weg">Löschen</button></div>`
       : '<div class="e-zeile"><span>✓ Schlüssel aus Boxenstopp</span></div>';
@@ -205,7 +205,7 @@ function kiTeil() {
     </div>`;
   const fehler = kiUi.einstellFehler ? `<p class="standort-fehler" role="alert">${esc(kiUi.einstellFehler)}</p>` : '';
   return abschnitt('e-ki', 'KI-Tipp', jetzt + feld + fehler,
-    'Für „Für dich“ in der Woche: Claude sucht zwei Termine aus, die zu dir und deinem Kalender passen. Jede Frage kostet wenige Cent von deinem API-Guthaben bei Anthropic (Schlüssel unter platform.claude.com). Der Schlüssel bleibt auf diesem Gerät.');
+    'Für „Für dich“ im Tag, in der Woche und im Monat: Claude sucht einen, zwei bzw. drei Termine aus, die zu dir, deinem Kalender und dem passen, was du schon vorhast – mit Abwechslung. Jede Frage kostet wenige Cent von deinem API-Guthaben bei Anthropic (Schlüssel unter platform.claude.com). Der Schlüssel bleibt auf diesem Gerät.');
 }
 
 /**

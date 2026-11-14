@@ -10,7 +10,7 @@
  *           Oben die Tagesleiste: die sieben Tage der Woche wie eine
  *           Abfahrtstafel, mit der Zahl der Termine und wer Bock hat; ein
  *           Tipp wählt den Tag.
- *   Woche   oben „Für dich“ (zwei Tipps von Claude, ki-tipp.js), dann je Tag eine Karte: Wetter, Zeitstreifen, wie viele Termine, die
+ *   Woche   oben „Für dich“ (zwei Tipps von Claude, ki-tipp.js – im Tag einer, im Monat drei), dann je Tag eine Karte: Wetter, Zeitstreifen, wie viele Termine, die
  *           Haken, Eingeplantes und Konzerte deiner Künstler, der Tipp des
  *           Tages. Ein Tipp öffnet den Tag. In der laufenden Woche dazu
  *           „Diese Woche“ (Highlights, Gut zu wissen), dann was die Woche
@@ -49,7 +49,7 @@ import { belegtAm, bekannt } from './zeiten.js';
 import { filterLeiste, chipsProgramm } from './ansicht-filter.js';
 import { planenForm, meldungBox } from './ansicht-ideen.js';
 import {
-  kiSchluessel, gemerkteTipps, tippTermin, kiUi,
+  kiSchluessel, gemerkteTipps, tippTermin, kiUi, zeitraum, ARTEN,
 } from './ki-tipp.js';
 
 /** Die drei Ansichten, vom Tag zum Überblick. */
@@ -185,29 +185,38 @@ function kasten(name, titel, inhalt, { zahl = '', vorschau = '', id = '' } = {})
 
 const ISO_TAG = /^\d{4}-\d{2}-\d{2}$/;
 
+/** Was „Für dich“ vor dem ersten Fragen sagt – je Ansicht. */
+const FD_TEXT = {
+  tag: 'Claude sucht dir den einen Termin des Tages aus, der zu dir, deinem Kalender und dem passt, was du diese Woche schon vorhast.',
+  woche: 'Claude sucht dir zwei Termine dieser Woche aus, die zu dir, deinem Kalender und dem passen, was du schon vorhast.',
+  monat: 'Claude sucht dir drei Termine des Monats aus – passend zu dir und deinem Kalender, und mit Abwechslung zu dem, was du schon vorhast.',
+};
+
 /**
- * „Für dich“ (ki-tipp.js): zwei Termine der Woche, die Claude ausgesucht hat,
- * jeder mit einem Satz, warum – als Karten wie im Tag. Nur mit Schlüssel auf
- * dem Gerät, nicht bei Eingeladenen und nicht nach dem Ende des Programms.
+ * „Für dich“ (ki-tipp.js): Termine, die Claude für den Tag, die Woche bzw.
+ * den Monat ausgesucht hat (einen, zwei, drei), jeder mit einem Satz, warum –
+ * als Karten wie im Tag. art und wert wie bei zeitraum(). Nur mit Schlüssel
+ * auf dem Gerät, nicht bei Eingeladenen und nicht nach dem Ende des Programms.
  */
-function fuerDich(p, mo, heute) {
-  if (rolle() === 'mitglied' || mo > p.bis || !kiSchluessel()) return '';
-  const gemerkt = gemerkteTipps(mo);
+function fuerDich(p, art, wert, heute) {
+  const raum = zeitraum(art, wert);
+  if (rolle() === 'mitglied' || raum.von > p.bis || raum.bis < heute || !kiSchluessel()) return '';
+  const gemerkt = gemerkteTipps(raum.schluessel);
   const tipps = (gemerkt ? gemerkt.liste : [])
     .filter((t) => t.datum >= heute)
     .map((t) => ({ t, x: tippTermin(p, t) }))
     .filter(({ t, x }) => x && !schonVorbei(x.e, t.datum));
-  const laeuft = kiUi.laeuft === mo;
-  const fehler = kiUi.fehler && kiUi.woche === mo ? `<div class="fehlerbox" role="alert">${esc(kiUi.fehler)}</div>` : '';
+  const laeuft = kiUi.laeuft === raum.schluessel;
+  const fehler = kiUi.fehler && kiUi.raum === raum.schluessel ? `<div class="fehlerbox" role="alert">${esc(kiUi.fehler)}</div>` : '';
   const liste = tipps.map(({ t, x }) => `<div class="fd-tipp">
-      <p class="fd-warum"><button type="button" class="fd-tag" data-tag="${t.datum}">${wochentagKurz(t.datum)} ${tagMonat(t.datum)}</button> ${esc(t.warum)}</p>
+      <p class="fd-warum">${art === 'tag' ? '' : `<button type="button" class="fd-tag" data-tag="${t.datum}">${wochentagKurz(t.datum)} ${tagMonat(t.datum)}</button> `}${esc(t.warum)}</p>
       ${karte(eintragTermin(x.e, x.tag, p.tage), { zeitSpalte: true })}
     </div>`).join('');
-  const knopf = `<button type="button" class="knopf${tipps.length ? ' klein' : ' haupt'}" data-aktion="ki-tipp" data-woche="${mo}"${laeuft ? ' disabled' : ''}>${laeuft ? 'Claude sucht …' : tipps.length ? 'Neu fragen' : 'Zwei Tipps holen'}</button>`;
-  return `<section class="fuer-dich" id="fuer-dich" aria-labelledby="fuer-dich-titel">
+  const knopf = `<button type="button" class="knopf${tipps.length ? ' klein' : ' haupt'}" data-aktion="ki-tipp" data-art="${art}" data-wert="${esc(wert)}"${laeuft ? ' disabled' : ''}>${laeuft ? 'Claude sucht …' : tipps.length ? 'Neu fragen' : ARTEN[art].knopf}</button>`;
+  return `<section class="fuer-dich" id="fuer-dich" data-art="${art}" aria-labelledby="fuer-dich-titel">
     <div class="fd-kopf"><h2 class="fd-titel" id="fuer-dich-titel">✨ Für dich</h2>${tipps.length ? knopf : ''}</div>
-    ${liste || `<p class="fein">Claude sucht dir zwei Termine dieser Woche aus, die zu dir und deinem Kalender passen.</p>${knopf}`}
-    ${laeuft ? '<p class="fein" role="status">Claude schaut sich das Programm der Woche an …</p>' : ''}
+    ${liste || `<p class="fein">${FD_TEXT[art]}</p>${knopf}`}
+    ${laeuft ? `<p class="fein" role="status">Claude schaut sich das Programm ${ARTEN[art].wort} an …</p>` : ''}
     ${fehler}
   </section>`;
 }
@@ -380,6 +389,7 @@ function tagAnsicht(p, st, heute, d, plaene, ctx = {}) {
     <section class="tag" id="tag-${d}" aria-label="${esc(datumMitTag(d))}">
       ${ctx.meldung && ctx.meldung.ort === 'programm' && ctx.meldung.tag === d ? meldungBox(ctx.meldung) : ''}
       ${fakten ? `<dl class="tag-info">${fakten}</dl>` : ''}
+      ${fuerDich(p, 'tag', d, heute)}
       ${zeit}
       ${geplant}${termine}${leer}
     </section>
@@ -436,7 +446,7 @@ function wocheAnsicht(p, st, heute, mo, plaene, ctx = {}) {
   const legende = zeiten || tage.some((d) => tagDaten(p, d, f, plaene).alle.some(zaehlt))
     ? `<p class="legende"><span><i class="lg-frei"></i> frei</span>${zeiten ? `<span><i class="lg-belegt"></i> ${rolle() === 'gastgeber' ? 'belegt (Kalender)' : `${n} ist belegt`}</span>` : ''}<span><i class="lg-haken ich"></i> dein Haken</span><span><i class="lg-haken p0"></i> die anderen</span><span><i class="lg-haken plan"></i> eingeplant</span></p>`
     : '';
-  return `${fuerDich(p, mo, heute)}
+  return `${fuerDich(p, 'woche', mo, heute)}
   ${dieseWocheKasten(p, mo, heute)}
   ${mo > p.bis ? '<div class="banner">Für diese Woche gibt es noch kein Programm – hier stehen nur Konzerte deiner Künstler und was ihr eingeplant habt. Es kommt mit dem Monatslauf am Ersten, sobald die Woche in den nächsten acht Wochen liegt.</div>' : ''}
   <div class="wochen-liste">${tage.map((d) => tagKarte(p, d, f, plaene, heute)).join('')}</div>
@@ -485,6 +495,7 @@ function monatAnsicht(p, st, heute, monat, datum, plaene) {
   </div>
   <p class="legende"><span>Zahl: Termine</span><span><i class="pkt ich"></i> dein Haken</span><span><i class="pkt p0"></i> die anderen</span><span><b class="f-kuenstler">♫</b> ${esc(gastgeberGenitiv() || 'deine')} Künstler</span><span><b class="lg-feiertag">1</b> Feiertag</span></p>
   <div class="monat-vorschau">${tagKarte(p, datum, f, plaene, heute, { vorschau: true })}</div>
+  ${fuerDich(p, 'monat', monat, heute)}
   ${konzertListe}`;
 }
 

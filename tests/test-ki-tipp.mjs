@@ -1,10 +1,13 @@
 /*
- * „Für dich“ (js/ki-tipp.js): welche Termine Claude zu sehen bekommt, wie die
- * Antwort gelesen wird, der Schlüssel in den Einstellungen (eigener oder der
- * aus Boxenstopp) und der Kasten in der Woche. Die API von Anthropic ist
+ * „Für dich“ (js/ki-tipp.js): welche Termine Claude zu sehen bekommt (je Tag,
+ * Woche, Monat), was Tobi schon vorhat, wie die Antwort gelesen wird, der
+ * Schlüssel in den Einstellungen (eigener oder der aus Boxenstopp) und der
+ * Kasten im Tag, in der Woche und im Monat. Die API von Anthropic ist
  * nachgebaut – aus Tests geht keine echte Anfrage hinaus.
  */
-import { oeffne, testProgramm, MO, DI, FR, MO2 } from './hilfe.mjs';
+import {
+  oeffne, testProgramm, MO, DI, MI, FR, SA, MO2,
+} from './hilfe.mjs';
 
 globalThis.localStorage = { getItem: () => null, setItem() {} };
 const ki = await import('../js/ki-tipp.js');
@@ -16,6 +19,7 @@ const { page, check, ctx } = A;
 // --- Ohne Browser: Kandidaten, Anfrage, Antwort
 const p = programmBereinigen(testProgramm());
 const jetzt = { datum: DI, minuten: 600 };
+const plus6 = (iso) => { const d = new Date(`${iso}T12:00:00Z`); d.setUTCDate(d.getUTCDate() + 6); return d.toISOString().slice(0, 10); };
 const liste = ki.kandidaten(p, MO, DI, jetzt);
 const ids = liste.map((x) => x.e.id);
 check(!ids.includes('gratis-lesung') && liste.every((x) => x.datum >= DI), 'Kandidaten: erst ab heute – der Montag ist vorbei');
@@ -40,6 +44,44 @@ const gelesen = ki.antwortLesen(antwort([
 ]), liste);
 check(gelesen.length === 2 && gelesen[0].id === 'mein-konzert' && gelesen[1].id === 'stueck' && gelesen[1].datum === DI,
   'Antwort: erfundene Nummern und Doppelte fallen weg, höchstens zwei Tipps');
+// Tag, Woche, Monat: der Zeitraum, was Tobi darin schon vorhat, und wie viele Tipps.
+const tag = ki.zeitraum('tag', DI);
+const monat = ki.zeitraum('monat', '2026-11');
+check(tag.von === DI && tag.bis === DI && tag.kontextVon === MO && tag.kontextBis === plus6(MO) && tag.schluessel === `t:${DI}`
+  && monat.von === '2026-11-01' && monat.bis === '2026-11-30' && monat.schluessel === 'm:2026-11' && ki.zeitraum('woche', MO).schluessel === MO,
+'zeitraum: der Tag (Kontext seine Woche), der Monat bis zum Monatsletzten, die Woche unter ihrem Montag wie bisher');
+check(ki.kandidaten(p, tag, MO, jetzt).every((x) => x.datum === DI) && ki.kandidaten(p, tag, MO, jetzt).some((x) => x.e.id === 'mein-konzert'),
+  'Kandidaten für einen Tag: nur dieser Tag');
+const imMonat = ki.kandidaten(p, monat, DI, jetzt);
+check(imMonat.some((x) => x.datum < MO2) && imMonat.some((x) => x.datum >= MO2), 'Kandidaten für den Monat: aus allen Wochen mit Programm');
+const mitBock = { verlauf: [], bock: { [`t:stueck:${DI}`]: { titel: 'Stück', datum: DI, kategorie: 'Bühne' } } };
+const ohneDienstag = ki.kandidaten(p, MO, DI, jetzt, mitBock).find((x) => x.e.id === 'stueck');
+check(ohneDienstag && ohneDienstag.datum === FR, '… worauf er an einem Tag schon Bock hat, kommt dort nicht noch einmal (das Stück steht am Freitag)');
+const schach = (d, n) => [`t:schach-${n}:${d}`, { quelle: 'termin', titel: `Schach-WM: Partie ${n}`, datum: d, zeit: '14:00', kategorie: 'Schach', online: true }];
+const vielSchach = {
+  verlauf: [],
+  bock: Object.fromEntries([schach(MO, 1), schach(DI, 2), schach(MI, 3), schach(FR, 4), schach(MO2, 5),
+    ['p:i:bouldern:2026-11-07', { quelle: 'plan', titel: 'Bouldern', datum: SA, kat: 'Sport' }],
+    ['t:anderswo:2026-12-20', { quelle: 'termin', titel: 'Weit weg', datum: '2026-12-20', kategorie: 'Konzert' }]]),
+};
+const vor = ki.vorhaben(vielSchach, ki.zeitraum('woche', MO));
+check(vor.length === 5 && vor.filter((z) => z.includes('Schach-WM') && z.includes('(Schach, Online & TV)')).length === 4 && vor.some((z) => z.includes('Bouldern') && z.includes('eingeplant'))
+  && !vor.some((z) => z.includes('Partie 5') || z.includes('Weit weg')) && vor[0].startsWith(`- Mo ${Number(MO.slice(8))}.11. 14:00`),
+'vorhaben: Haken (auch Online & TV) und Eingeplantes der Woche, nach Tag – nichts außerhalb');
+const monatsRumpf = ki.anfrageBauen(imMonat, vielSchach, monat);
+const mText = monatsRumpf.messages[0].content;
+check(monatsRumpf.output_config.format.schema.properties.tipps.description.includes('drei') && mText.startsWith('Termine dieses Monats')
+  && mText.includes('Was er in diesem Monat schon vorhat:') && mText.includes('Partie 5') && monatsRumpf.system.includes('Abwechslung')
+  && monatsRumpf.system.includes('drei Termine des Monats') && !mText.includes('Worauf er sonst gerade Bock hat:\n- Schach'),
+'Anfrage für den Monat: drei Tipps, was er schon vorhat (alles Schach), Abwechslung verlangt – das Schach nicht noch einmal unter „sonst Bock“');
+const tagRumpf = ki.anfrageBauen(ki.kandidaten(p, tag, MO, jetzt), vielSchach, tag);
+const vorTeil = (t) => t.split('schon vorhat:')[1].split('\n\n')[0];
+check(tagRumpf.output_config.format.schema.properties.tipps.description === 'Genau ein Tipp.' && tagRumpf.messages[0].content.includes('Was er in dieser Woche schon vorhat:')
+  && !vorTeil(tagRumpf.messages[0].content).includes('Partie 5') && vorTeil(tagRumpf.messages[0].content).includes('Partie 2'),
+'Anfrage für einen Tag: ein Tipp, das Vorhaben seiner Woche (die nächste Woche nicht)');
+const drei = ki.antwortLesen(antwort([{ nr: 1, warum: 'a' }, { nr: 2, warum: 'b' }, { nr: 3, warum: 'c' }, { nr: 4, warum: 'd' }]), imMonat, 3);
+check(drei.length === 3 && ki.antwortLesen(antwort([{ nr: 1, warum: 'a' }, { nr: 2, warum: 'b' }]), imMonat, 1).length === 1, 'Antwort: so viele Tipps, wie die Art verlangt');
+
 const wirft = (f) => { try { f(); return false; } catch { return true; } };
 check(wirft(() => ki.antwortLesen({ stop_reason: 'refusal', content: [] }, liste)) && wirft(() => ki.antwortLesen({ content: [{ type: 'text', text: 'Quatsch' }] }, liste))
   && wirft(() => ki.antwortLesen(antwort([{ nr: 999, warum: 'x' }]), liste)),
@@ -70,12 +112,19 @@ await ctx.route(ki.API, async (route) => {
   anfragen.push({ headers: req.headers(), body });
   if (status !== 200) return route.fulfill({ status, contentType: 'application/json', body: JSON.stringify({ error: { message: 'invalid x-api-key' } }) });
   const text = body.messages[0].content;
-  const nr = (titel) => Number(text.split('\n').find((z) => z.includes(titel)).match(/^\[(\d+)\]/)[1]);
+  const zeilen = text.split('\n').filter((z) => /^\[\d+\]/.test(z));
+  const nr = (z) => Number(z.match(/^\[(\d+)\]/)[1]);
+  // So viele Tipps, wie das Schema verlangt: erst Keane und das Theater, dann von oben.
+  const beschreibung = body.output_config.format.schema.properties.tipps.description;
+  const zahl = beschreibung.includes('ein Tipp') ? 1 : (beschreibung.includes('drei') ? 3 : 2);
+  const gruende = { Keane: 'Keane live – dein Künstler.', 'Theater früh': 'Ein ruhiger Theaterabend nach der Arbeit.' };
+  const wahl = [...Object.keys(gruende).map((t) => zeilen.find((z) => z.includes(t))).filter(Boolean), ...zeilen]
+    .filter((z, i, a) => a.indexOf(z) === i).slice(0, zahl);
   await new Promise((r) => { setTimeout(r, 300); });
   return route.fulfill({
     status: 200,
     contentType: 'application/json',
-    body: JSON.stringify(antwort([{ nr: nr('Keane'), warum: 'Keane live – dein Künstler.' }, { nr: nr('Theater früh'), warum: 'Ein ruhiger Theaterabend nach der Arbeit.' }])),
+    body: JSON.stringify(antwort(wahl.map((z) => ({ nr: nr(z), warum: gruende[Object.keys(gruende).find((t) => z.includes(t))] || 'Mal was anderes.' })))),
   });
 });
 
@@ -108,6 +157,30 @@ await page.locator('#fuer-dich .fehlerbox').waitFor();
 check((await page.locator('#fuer-dich .fehlerbox').innerText()).includes('Schlüssel wird nicht angenommen') && await page.locator('#fuer-dich .fd-tipp').count() === 2,
   'Fehler: verständlich gesagt, die alten Tipps bleiben');
 status = 200;
+
+// --- Im Tag: ein Tipp für den Tag, ohne Tageszeile davor
+await A.ansicht('tag');
+const tagKasten = page.locator(`#tag-${MO} #fuer-dich[data-art="tag"]`);
+check(await tagKasten.locator('[data-aktion="ki-tipp"]').innerText() === 'Einen Tipp holen' && (await tagKasten.innerText()).includes('diese Woche schon vorhast'),
+  'im Tag: „Für dich“ mit „Einen Tipp holen“');
+await tagKasten.locator('[data-aktion="ki-tipp"]').click();
+await page.locator('#fuer-dich .fd-tipp').first().waitFor();
+const tagAnfrage = anfragen.at(-1).body;
+check(await page.locator('#fuer-dich .fd-tipp').count() === 1 && await page.locator('#fuer-dich .fd-tag').count() === 0
+  && tagAnfrage.output_config.format.schema.properties.tipps.description === 'Genau ein Tipp.' && tagAnfrage.messages[0].content.startsWith('Termine an diesem Tag'),
+'… ein Tipp mit Grund und Karte, ohne Tag davor – gefragt nach einem Tipp für diesen Tag');
+
+// --- Im Monat: drei Tipps, je mit dem Tag
+await A.ansicht('monat');
+const monatsKasten = page.locator('#fuer-dich[data-art="monat"]');
+check(await monatsKasten.locator('[data-aktion="ki-tipp"]').innerText() === 'Drei Tipps holen', 'im Monat: „Für dich“ mit „Drei Tipps holen“');
+await monatsKasten.locator('[data-aktion="ki-tipp"]').click();
+await page.locator('#fuer-dich .fd-tipp').nth(2).waitFor();
+check(await page.locator('#fuer-dich .fd-tipp').count() === 3 && await page.locator('#fuer-dich .fd-tag').count() === 3
+  && anfragen.at(-1).body.messages[0].content.includes('Was er in diesem Monat schon vorhat:'),
+'… drei Tipps, je mit ihrem Tag – Claude sieht, was du in dem Monat schon vorhast');
+await A.ansicht('woche');
+check(await page.locator('#fuer-dich .fd-tipp').count() === 2, '… die Tipps der Woche bleiben davon unberührt');
 
 // --- Der Schlüssel aus Boxenstopp
 await A.einstellungen();

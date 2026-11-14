@@ -37,7 +37,7 @@ export function chipsProgramm(st, { karte = false } = {}) {
   const f = filterFuer(st);
   const c = [];
   if (f.art) c.push(['art', ART.find(([k]) => k === f.art)[1]]);
-  for (const r of f.regionen) c.push([`r:${r}`, REGIONEN[r] || r]);
+  for (const r of f.regionen) if (ORTE.some(([k]) => k === r)) c.push([`r:${r}`, REGIONEN[r] || r]);
   if (umkreisAn(f)) c.push(['umkreis', `bis ${f.umkreis} km`]);
   if (f.kategorie) c.push(['kategorie', f.kategorie]);
   for (const [k, t] of SCHALTER) if (f[k]) c.push([k, titel(k, t)]);

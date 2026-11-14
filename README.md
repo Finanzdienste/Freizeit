@@ -545,7 +545,7 @@ aus.
 | `dauer` | Dauer in Minuten, wenn kein `ende` |
 | `ganztags` | ganztägig (Messe, Markt über den Tag); steht oben im Tag |
 | `geo` | `[Breite, Länge]` für die Karte – bei mindestens 80 % der Termine vor Ort |
-| `region` | `HH` Hamburg · `AHR` Ahrensburg & Stormarn · `SE` Norderstedt & Segeberg (mit Neumünster) · `PI` Pinneberg & Elmshorn (mit Wedel, Itzehoe, Glückstadt) · `RZ` Herzogtum Lauenburg (Ratzeburg, Mölln, Geesthacht) · `LUE` Lübeck & Ostsee · `LG` Lüneburg & Heide · `STD` Stade & Altes Land · `HB` Hohwachter Bucht & Kiel · `WIS` Wismar · `HAN` Hannover · `WEI` Weitere Ziele · `ONL` Online & TV |
+| `region` | `HH` Hamburg · `AHR` Ahrensburg & Stormarn · `SE` Norderstedt & Segeberg (mit Neumünster) · `PI` Pinneberg & Elmshorn (mit Wedel, Itzehoe, Glückstadt) · `RZ` Herzogtum Lauenburg (Ratzeburg, Mölln, Geesthacht) · `LUE` Lübeck & Ostsee · `LG` Lüneburg & Heide · `STD` Stade & Altes Land · `HB` Hohwachter Bucht & Kiel · `WIS` Wismar · `HAN` Hannover (zurzeit ausgeblendet: `AUSGEBLENDET` in `js/text.js` – die App lässt solche Einträge beim Laden weg und zeigt die Region nicht im Filter) · `WEI` Weitere Ziele · `ONL` Online & TV |
 | `online` | `true` bei Online & TV (immer zusammen mit Region `ONL`): Live-Events zum Zuschauen – `ort` ist dann der Sender („DAZN“, „Prime Video“, „ZDF“, „YouTube · FIDE“), ohne `geo` und `anreise`. Für die 21:30-Regel zählt der Beginn |
 | `kategorie` | z. B. Konzert, Bühne, Comedy, Kino, Party, Sport, Schach, Führung, Erlebnis, Food, Markt, Fest & Saisonal, Ausstellung, Lesung |
 | `draussen` | `drinnen`, `draußen` oder `beides` |

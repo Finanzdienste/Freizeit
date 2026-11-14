@@ -20,7 +20,7 @@ import { fileURLToPath } from 'node:url';
 import { programmBereinigen } from '../js/daten.js';
 import { ideenBereinigen, KATEGORIEN, WIRKUNG, WO, DAUER } from '../js/ideen.js';
 import { beginn, plusTage, wochentag } from '../js/zeit.js';
-import { REGIONEN, DRAUSSEN, istOnline } from '../js/text.js';
+import { REGIONEN, DRAUSSEN, istOnline, AUSGEBLENDET } from '../js/text.js';
 import { filmeBereinigen } from '../js/filme.js';
 
 // FREIZEIT_DATEN: ein anderer Ordner – etwa um einen zusammengeführten Lauf vor dem Kopieren nach daten/ zu prüfen.
@@ -147,6 +147,15 @@ if (p) {
   const fehler = [];
   programmBereinigen(p, fehler);
   check(!fehler.length, `die App übernimmt das Programm ohne Beanstandung${fehler.length ? `: ${fehler.slice(0, 3).join(' | ')}` : ''}`);
+  // Ausgeblendete Regionen (zurzeit Hannover) lässt die App beim Laden still weg.
+  const weg = [...AUSGEBLENDET];
+  const probe = programmBereinigen({
+    version: 2, von: p.von, bis: p.bis,
+    termine: [{ titel: 'Hier', daten: [p.von], region: 'HH' }, ...weg.map((r) => ({ titel: `Dort ${r}`, daten: [p.von], region: r }))],
+    laufend: weg.map((r) => ({ titel: `Läuft ${r}`, von: p.von, bis: p.bis, region: r })),
+  }, fehler);
+  check(probe && probe.termine.length === 1 && !probe.laufend.length && !fehler.length,
+    `die App blendet ${weg.map((r) => REGIONEN[r]).join(', ') || 'nichts'} aus – ohne Fehlermeldung`);
 }
 
 // Der Ideen-Katalog (von Hand gepflegt, Format in README.md).

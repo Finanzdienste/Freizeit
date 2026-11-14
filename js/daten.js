@@ -6,8 +6,10 @@
  * dass ein kaputter Lauf die App nicht leer zurücklässt: Was nicht passt,
  * fällt weg, und die Fehler werden angezeigt statt verschluckt. Links ohne
  * http(s) werden leer, Koordinaten außerhalb des Möglichen fallen weg.
+ * Termine und Laufendes aus ausgeblendeten Regionen (text.js, AUSGEBLENDET)
+ * fallen still weg – das ist kein Fehler.
  */
-import { sichererLink } from './text.js';
+import { sichererLink, AUSGEBLENDET } from './text.js';
 import { ideenBereinigen } from './ideen.js';
 import { filmeBereinigen } from './filme.js';
 
@@ -26,6 +28,7 @@ const geoOk = (g) => Array.isArray(g) && g.length === 2
   && g.every((x) => typeof x === 'number' && Number.isFinite(x))
   && Math.abs(g[0]) <= 90 && Math.abs(g[1]) <= 180;
 const sauber = (e) => ({ ...e, link: sichererLink(e.link), geo: geoOk(e.geo) ? e.geo : null });
+const gezeigt = (e) => !AUSGEBLENDET.has(e.region);
 
 /** Programm prüfen: Termine mit Titel und Tagen, Laufendes mit Zeitraum, Ziele mit Titel. */
 export function programmBereinigen(roh, fehler = []) {
@@ -41,12 +44,12 @@ export function programmBereinigen(roh, fehler = []) {
     const ok = e && e.titel && liste(e.daten).length && liste(e.daten).every((d) => ISO.test(d));
     if (!ok) fehler.push(`Termin ohne Titel oder Datum übersprungen: ${JSON.stringify(e).slice(0, 80)}`);
     return ok;
-  }).map(sauber);
+  }).filter(gezeigt).map(sauber);
   const laufend = liste(roh.laufend).filter((e) => {
     const ok = e && e.titel && ISO.test(e.von || '') && ISO.test(e.bis || '') && e.von <= e.bis;
     if (!ok) fehler.push(`Laufendes Angebot ohne Titel oder Zeitraum übersprungen: ${JSON.stringify(e).slice(0, 80)}`);
     return ok;
-  }).map(sauber);
+  }).filter(gezeigt).map(sauber);
   return {
     ...roh,
     tage: liste(roh.tage).filter((t) => t && ISO.test(t.datum || '')),

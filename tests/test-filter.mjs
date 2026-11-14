@@ -34,8 +34,8 @@ check(await page.locator('#blatt [data-aktion="blatt-zuruecksetzen"]').isDisable
 const regionKnopf = (k) => page.locator(`#blatt [data-aktion="region"][data-wert="${k}"]`);
 const regionen = await page.$$eval('#blatt [data-aktion="region"]', (bs) => bs.map((b) => b.dataset.wert));
 check(regionen[0] === '' && await regionKnopf('').getAttribute('aria-pressed') === 'true' && (await regionKnopf('AHR').innerText()) === 'Ahrensburg & Stormarn'
-  && !regionen.includes('ONL') && ['SE', 'PI', 'RZ'].every((r) => regionen.includes(r)),
-  'die Regionen als Schalter: vorn „Alle“ (an), dabei Ahrensburg & Stormarn und das Umland bis gut eine Stunde, ohne „Online & TV“ – das ist eine Art, kein Ort');
+  && !regionen.includes('ONL') && !regionen.includes('HAN') && ['SE', 'PI', 'RZ'].every((r) => regionen.includes(r)),
+  'die Regionen als Schalter: vorn „Alle“ (an), dabei Ahrensburg & Stormarn und das Umland bis gut eine Stunde, ohne „Online & TV“ (eine Art, kein Ort) und ohne das ausgeblendete Hannover');
 check(await querScroll() <= 0, 'mit offenem Blatt scrollt nichts quer (390 px)');
 
 // --- Wahl gilt sofort, der Fokus bleibt

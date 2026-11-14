@@ -187,9 +187,9 @@ const ISO_TAG = /^\d{4}-\d{2}-\d{2}$/;
 
 /** Was „Für dich“ vor dem ersten Fragen sagt – je Ansicht. */
 const FD_TEXT = {
-  tag: 'Claude sucht dir den einen Termin des Tages aus, der zu dir, deinem Kalender und dem passt, was du diese Woche schon vorhast.',
-  woche: 'Claude sucht dir zwei Termine dieser Woche aus, die zu dir, deinem Kalender und dem passen, was du schon vorhast.',
-  monat: 'Claude sucht dir drei Termine des Monats aus – passend zu dir und deinem Kalender, und mit Abwechslung zu dem, was du schon vorhast.',
+  tag: 'Claude sucht dir das Beste des Tages aus – passend zu deinem Kalender und dem, was du diese Woche schon vorhast.',
+  woche: 'Claude sucht dir das Beste dieser Woche aus – zwei Termine, passend zu deinem Kalender und dem, was du schon vorhast.',
+  monat: 'Claude sucht dir das Beste des Monats aus – drei Termine, mit Abwechslung zu dem, was du schon vorhast.',
 };
 
 /**
@@ -213,7 +213,9 @@ function fuerDich(p, art, wert, heute) {
       ${karte(eintragTermin(x.e, x.tag, p.tage), { zeitSpalte: true })}
     </div>`).join('');
   const knopf = `<button type="button" class="knopf${tipps.length ? ' klein' : ' haupt'}" data-aktion="ki-tipp" data-art="${art}" data-wert="${esc(wert)}"${laeuft ? ' disabled' : ''}>${laeuft ? 'Claude sucht …' : tipps.length ? 'Neu fragen' : ARTEN[art].knopf}</button>`;
-  return `<section class="fuer-dich" id="fuer-dich" data-art="${art}" aria-labelledby="fuer-dich-titel">
+  // Ohne Tipps fragt die App von allein (app.js, kiAutomatisch) – je Zeitraum einmal in der Sitzung.
+  const auto = !tipps.length && !laeuft && !kiUi.versucht.has(raum.schluessel);
+  return `<section class="fuer-dich" id="fuer-dich" data-art="${art}"${auto ? ' data-auto' : ''} aria-labelledby="fuer-dich-titel">
     <div class="fd-kopf"><h2 class="fd-titel" id="fuer-dich-titel">✨ Für dich</h2>${tipps.length ? knopf : ''}</div>
     ${liste || `<p class="fein">${FD_TEXT[art]}</p>${knopf}`}
     ${laeuft ? `<p class="fein" role="status">Claude schaut sich das Programm ${ARTEN[art].wort} an …</p>` : ''}

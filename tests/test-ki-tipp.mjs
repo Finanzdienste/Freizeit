@@ -82,6 +82,15 @@ check(tagRumpf.output_config.format.schema.properties.tipps.description === 'Gen
 const drei = ki.antwortLesen(antwort([{ nr: 1, warum: 'a' }, { nr: 2, warum: 'b' }, { nr: 3, warum: 'c' }, { nr: 4, warum: 'd' }]), imMonat, 3);
 check(drei.length === 3 && ki.antwortLesen(antwort([{ nr: 1, warum: 'a' }, { nr: 2, warum: 'b' }]), imMonat, 1).length === 1, 'Antwort: so viele Tipps, wie die Art verlangt');
 
+const mitHighlight = { ...p, highlights: [{ titel: 'Di 3.11.: Keane in der Sporthalle', text: 'Das Konzert der Woche', datum: DI }] };
+check(ki.istHighlight(mitHighlight, keane.e, DI) && !ki.istHighlight(mitHighlight, keane.e, MI) && !ki.istHighlight(mitHighlight, stueck.e, DI),
+  'istHighlight: der Termin steht im Highlight seines Tages – am anderen Tag nicht, ein anderer Termin auch nicht');
+const hlListe = ki.kandidaten(mitHighlight, tag, MO, jetzt);
+const hlRumpf = ki.anfrageBauen(hlListe, { verlauf: [], bock: {} }, tag);
+check(hlRumpf.messages[0].content.split('\n').some((z) => z.includes('Keane') && z.includes('★ HIGHLIGHT LAUT PROGRAMM'))
+  && hlRumpf.system.includes('Klasse und Größe') && hlRumpf.system.includes('Gemeindesaal') && hlRumpf.output_config.effort === 'low',
+'Anfrage: Highlights markiert, Klasse und Größe vor passendem Thema, mit wenig Nachdenken (effort low)');
+
 const wirft = (f) => { try { f(); return false; } catch { return true; } };
 check(wirft(() => ki.antwortLesen({ stop_reason: 'refusal', content: [] }, liste)) && wirft(() => ki.antwortLesen({ content: [{ type: 'text', text: 'Quatsch' }] }, liste))
   && wirft(() => ki.antwortLesen(antwort([{ nr: 999, warum: 'x' }]), liste)),
@@ -129,10 +138,11 @@ await ctx.route(ki.API, async (route) => {
 });
 
 await A.ansicht('woche');
-check(await page.locator('#fuer-dich [data-aktion="ki-tipp"]').innerText() === 'Zwei Tipps holen', 'mit Schlüssel: „Für dich“ oben in der Woche, mit dem Knopf');
-await page.click('#fuer-dich [data-aktion="ki-tipp"]');
+check(await page.locator('#fuer-dich[data-auto] [data-aktion="ki-tipp"]').innerText() === 'Zwei Tipps holen' && anfragen.length === 0,
+  'mit Schlüssel: „Für dich“ oben in der Woche – noch ohne Anfrage');
 await page.locator('#fuer-dich [data-aktion="ki-tipp"][disabled]').waitFor();
 await page.locator('#fuer-dich .fd-tipp').nth(1).waitFor();
+check(await page.locator('#fuer-dich[data-auto]').count() === 0, '… nach einer guten Sekunde fragt die App von allein, ohne Knopfdruck');
 const tipps = await page.locator('#fuer-dich .fd-tipp').allInnerTexts();
 check(tipps.length === 2 && tipps[0].includes('Keane live') && tipps[0].includes('Keane') && tipps[1].includes('Theater früh'),
   '… zwei Tipps: je der Grund und die Karte des Termins');
@@ -161,24 +171,30 @@ status = 200;
 // --- Im Tag: ein Tipp für den Tag, ohne Tageszeile davor
 await A.ansicht('tag');
 const tagKasten = page.locator(`#tag-${MO} #fuer-dich[data-art="tag"]`);
-check(await tagKasten.locator('[data-aktion="ki-tipp"]').innerText() === 'Einen Tipp holen' && (await tagKasten.innerText()).includes('diese Woche schon vorhast'),
-  'im Tag: „Für dich“ mit „Einen Tipp holen“');
-await tagKasten.locator('[data-aktion="ki-tipp"]').click();
+check((await tagKasten.innerText()).includes('das Beste des Tages'), 'im Tag: „Für dich“ – das Beste des Tages');
 await page.locator('#fuer-dich .fd-tipp').first().waitFor();
 const tagAnfrage = anfragen.at(-1).body;
 check(await page.locator('#fuer-dich .fd-tipp').count() === 1 && await page.locator('#fuer-dich .fd-tag').count() === 0
   && tagAnfrage.output_config.format.schema.properties.tipps.description === 'Genau ein Tipp.' && tagAnfrage.messages[0].content.startsWith('Termine an diesem Tag'),
-'… ein Tipp mit Grund und Karte, ohne Tag davor – gefragt nach einem Tipp für diesen Tag');
+'… von allein: ein Tipp mit Grund und Karte, ohne Tag davor – gefragt nach einem Tipp für diesen Tag');
+// Schnell weiterblättern löst nichts aus – erst der Tag, auf dem man bleibt.
+const vorBlaettern = anfragen.length;
+await page.click('[data-aktion="kal-vor"]');
+await page.waitForTimeout(300);
+await page.click('[data-aktion="kal-vor"]');
+await page.locator(`#tag-${MI} #fuer-dich .fd-tipp`).first().waitFor();
+await page.waitForTimeout(1500);
+check(anfragen.length === vorBlaettern + 1 && anfragen.at(-1).body.messages[0].content.split('\n')[1].startsWith('[1] Mi '),
+  `schnell zwei Tage weiter: nur eine Anfrage, für den Tag, auf dem man bleibt (${anfragen.length - vorBlaettern})`);
 
 // --- Im Monat: drei Tipps, je mit dem Tag
 await A.ansicht('monat');
 const monatsKasten = page.locator('#fuer-dich[data-art="monat"]');
-check(await monatsKasten.locator('[data-aktion="ki-tipp"]').innerText() === 'Drei Tipps holen', 'im Monat: „Für dich“ mit „Drei Tipps holen“');
-await monatsKasten.locator('[data-aktion="ki-tipp"]').click();
+check(await monatsKasten.count() === 1, 'im Monat: „Für dich“ unter dem Kalender');
 await page.locator('#fuer-dich .fd-tipp').nth(2).waitFor();
 check(await page.locator('#fuer-dich .fd-tipp').count() === 3 && await page.locator('#fuer-dich .fd-tag').count() === 3
   && anfragen.at(-1).body.messages[0].content.includes('Was er in diesem Monat schon vorhat:'),
-'… drei Tipps, je mit ihrem Tag – Claude sieht, was du in dem Monat schon vorhast');
+'… von allein drei Tipps, je mit ihrem Tag – Claude sieht, was du in dem Monat schon vorhast');
 await A.ansicht('woche');
 check(await page.locator('#fuer-dich .fd-tipp').count() === 2, '… die Tipps der Woche bleiben davon unberührt');
 

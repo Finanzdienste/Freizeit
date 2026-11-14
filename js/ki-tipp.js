@@ -6,10 +6,13 @@
  * Abwechslung: Wer jeden Abend Schach geplant hat, bekommt am 31. etwas
  * anderes vorgeschlagen.
  *
- * Gefragt wird nur auf Knopfdruck, über die Messages-API von Anthropic mit
- * einem eigenen Schlüssel (sk-ant-…). Das kostet vom Guthaben der Console,
- * bei einem Claude-Abo Max oder Ultra aus dessen Monatsguthaben – pro Frage
- * wenige Cent. Der Schlüssel bleibt auf dem Gerät:
+ * Gefragt wird von allein, sobald ein Tag, eine Woche oder ein Monat ohne
+ * Tipps eine gute Sekunde lang zu sehen ist – je Zeitraum einmal, danach
+ * gemerkt; „Neu fragen“ holt neue. Über die Messages-API von Anthropic mit
+ * einem eigenen Schlüssel (sk-ant-…), mit wenig Nachdenken (effort low). Das
+ * kostet vom Guthaben der Console, bei einem Claude-Abo Max oder Ultra aus
+ * dessen Monatsguthaben – pro Frage wenige Cent. Der Schlüssel bleibt auf dem
+ * Gerät:
  *
  *   freizeit.ki.v1     der hier eingetragene, dazu die Tipps je Woche
  *   boxenstopp.ki.v1   sonst der aus Boxenstopp – beide Apps liegen unter
@@ -91,9 +94,14 @@ const schreiben = (wert) => {
   try { localStorage.setItem(EIGEN, JSON.stringify(wert)); return true; } catch { return false; }
 };
 
-/** Was gerade läuft: laeuft (Schlüssel des Zeitraums, nach dem gefragt wird), fehler mit raum, einstellFehler. */
+/**
+ * Was gerade läuft: laeuft (Schlüssel des Zeitraums, nach dem gefragt wird),
+ * fehler mit raum, einstellFehler – und versucht: die Zeiträume, nach denen
+ * in dieser Sitzung schon gefragt wurde (von allein fragt die App je
+ * Zeitraum nur einmal, auch wenn es nicht klappte).
+ */
 export const kiUi = {
-  laeuft: '', fehler: '', raum: '', einstellFehler: '',
+  laeuft: '', fehler: '', raum: '', einstellFehler: '', versucht: new Set(),
 };
 
 /** Der Schlüssel dieses Geräts: { schluessel, quelle: 'eigen' | 'boxenstopp' } oder null. */
@@ -170,7 +178,7 @@ export function kandidaten(p, raumOderMontag, heute, j, st = null) {
   const liste = [...nachId.values()].sort((a, b) => Number(b.e.kuenstler) - Number(a.e.kuenstler));
   return liste.slice(0, hoechstens)
     .sort((a, b) => a.datum.localeCompare(b.datum) || zeitAm(a.e, a.datum).localeCompare(zeitAm(b.e, b.datum)))
-    .map((x, i) => ({ ...x, nr: i + 1 }));
+    .map((x, i) => ({ ...x, nr: i + 1, highlight: istHighlight(p, x.e, x.datum) }));
 }
 
 /**
@@ -194,9 +202,20 @@ export function vorhaben(st, raumOderMontag) {
     });
 }
 
+/**
+ * Steht der Termin in einem Highlight des Monatslaufs für seinen Tag? Ein
+ * grober Abgleich über den Anfang des Titels – das reicht als Hinweis.
+ */
+export function istHighlight(p, e, datum) {
+  const kern = String(e.titel || '').split(/\s[–—:(-]\s?|[:(]/)[0].trim().toLowerCase();
+  if (kern.length < 4) return false;
+  return (p && Array.isArray(p.highlights) ? p.highlights : [])
+    .some((h) => h && h.datum === datum && `${h.titel || ''} ${h.text || ''}`.toLowerCase().includes(kern));
+}
+
 /** Eine Zeile je Kandidat – das, was beim Aussuchen hilft. */
 export function zeile({
-  nr, e, datum, auch = [],
+  nr, e, datum, auch = [], highlight = false,
 }) {
   const region = typeof REGIONEN[e.region] === 'string' ? REGIONEN[e.region] : e.region;
   const teile = [
@@ -206,6 +225,7 @@ export function zeile({
     kostenlos(e) ? 'kostenlos' : kurz(e.preis, 40),
     e.draussen,
     e.kuenstler ? 'KONZERT SEINES LIEBLINGSKÜNSTLERS' : '',
+    highlight ? '★ HIGHLIGHT LAUT PROGRAMM' : '',
     kurz(e.einordnung || e.beschreibung, 160),
   ].filter(Boolean);
   return `[${nr}] ${teile.join(' | ')}`;
@@ -246,9 +266,9 @@ export const SCHEMA = schema(2);
 
 /** Wie viele Tipps welcher Art – für den Auftrag an Claude. */
 const AUFTRAG = {
-  tag: 'den einen Termin des Tages aus, der am besten zu ihm passt',
-  woche: 'die zwei Termine der Woche aus, die am besten zu ihm passen – zwei verschiedene Arten von Unternehmungen',
-  monat: 'die drei Termine des Monats aus, die am besten zu ihm passen – an verschiedenen Tagen, möglichst in verschiedenen Wochen, und drei verschiedene Arten von Unternehmungen',
+  tag: 'den einen Termin des Tages aus – das Beste, was an dem Tag los ist',
+  woche: 'die zwei Termine der Woche aus – das Beste, was in der Woche los ist, zwei verschiedene Arten von Unternehmungen',
+  monat: 'die drei Termine des Monats aus – das Beste, was im Monat los ist, an verschiedenen Tagen, möglichst in verschiedenen Wochen, und drei verschiedene Arten von Unternehmungen',
 };
 const UEBER = { tag: 'Termine an diesem Tag', woche: 'Termine dieser Woche', monat: 'Termine dieses Monats' };
 const KONTEXT = { tag: 'in dieser Woche', woche: 'in dieser Woche', monat: 'in diesem Monat' };
@@ -263,7 +283,13 @@ export function anfrageBauen(liste, st, raumOderMontag = null) {
   const { gemacht, bock: sonst } = vorlieben(rest);
   const vor = raum ? vorhaben(st, raum) : [];
   const system = 'Du suchst für Tobi (27, wohnt in Hamburg-Wandsbek, arbeitet werktags bis 15:30, friert schnell) '
-    + `${AUFTRAG[art]}. Achte auf das, was er gemacht und gut gefunden hat, und auf das, worauf er Bock hat – `
+    + `${AUFTRAG[art]}: das, wofür sich das Rausgehen am meisten lohnt. `
+    + 'Maßstab ist zuerst Klasse und Größe, nicht ein Thema, das zufällig zu ihm passt: ein großer Name oder eine bekannte Band, '
+    + 'eine Premiere oder ein Gastspiel an einem großen Haus (etwa Elbphilharmonie, Staatsoper, Schauspielhaus, Thalia, Laeiszhalle), '
+    + 'ein großes Fest, ein Spiel in der Arena oder etwas Einmaliges schlägt einen Vortrag im Gemeindesaal oder eine kleine Vereinsrunde – '
+    + 'auch wenn deren Thema ihn interessiert. Kleines nur, wenn es wirklich besonders ist oder sonst nichts Großes los ist. '
+    + 'Mit „★ HIGHLIGHT LAUT PROGRAMM“ markierte Termine hat das Programm selbst als Highlight gewählt. '
+    + 'Danach erst: was er gemacht und gut gefunden hat und worauf er Bock hat – '
     + 'aber schlag nicht genau das vor, was schon auf seiner Bock-Liste steht. '
     + `Schau dir an, was er ${KONTEXT[art]} schon vorhat: Nichts vorschlagen, was sich damit zeitlich beißt, und für Abwechslung sorgen – `
     + 'hat er eine Art schon oft vor (etwa an vielen Abenden Schach oder lauter Konzerte), schlag bewusst etwas anderes vor. '
@@ -281,7 +307,8 @@ export function anfrageBauen(liste, st, raumOderMontag = null) {
     max_tokens: 2000,
     system,
     messages: [{ role: 'user', content: text }],
-    output_config: { format: { type: 'json_schema', schema: schema(ARTEN[art].zahl) } },
+    // Aussuchen aus einer Liste braucht wenig Nachdenken – „low“ hält jede Frage billig.
+    output_config: { effort: 'low', format: { type: 'json_schema', schema: schema(ARTEN[art].zahl) } },
   };
 }
 

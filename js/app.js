@@ -257,6 +257,8 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
     if (ziel) ziel.scrollIntoView({ block: 'start', behavior: 'instant' });
   }
   zeitMarkeZuletzt = zeitMarke();
+  if (geladen && reiter === 'programm') kiAutomatisch();
+  else clearTimeout(kiUhr);
 }
 
 // --- Die Zeit läuft: Was vorbei ist, verschwindet auch, während die App offen bleibt
@@ -297,6 +299,41 @@ function wechseln(neu) {
   adresseSetzen(neu);
   zeichnen({ nachOben: true });
   $('#ansicht').focus({ preventScroll: true });
+}
+
+// --- „Für dich“ (ki-tipp.js): fragen – auf Knopfdruck und von allein
+
+/** Claude nach den Tipps eines Zeitraums fragen; läuft schon eine Frage, passiert nichts. */
+function kiFragen(artRoh, wert) {
+  const art = ['tag', 'woche', 'monat'].includes(artRoh) ? artRoh : 'woche';
+  if (!wert || kiUi.laeuft || !daten.programm) return;
+  const raum = zeitraum(art, wert);
+  kiUi.versucht.add(raum.schluessel);
+  Object.assign(kiUi, { laeuft: raum.schluessel, fehler: '', raum: raum.schluessel });
+  zeichnen({ behalteScroll: true });
+  tippsHolen(daten.programm, aktuell(), raum, heute())
+    .catch((e) => { kiUi.fehler = e.message; })
+    .finally(() => {
+      kiUi.laeuft = '';
+      zeichnen({ behalteScroll: true });
+    });
+}
+
+let kiUhr = null;
+/**
+ * Von allein: Steht ein „Für dich“ ohne Tipps da (data-auto), fragt die App
+ * nach einer guten Sekunde – wer schnell weiterblättert, löst nichts aus.
+ * Je Zeitraum nur einmal in der Sitzung, und nicht ohne Netz.
+ */
+function kiAutomatisch() {
+  clearTimeout(kiUhr);
+  const knopf = document.querySelector('#fuer-dich[data-auto] [data-aktion="ki-tipp"]');
+  if (!knopf || kiUi.laeuft || navigator.onLine === false) return;
+  const { art, wert } = knopf.dataset;
+  kiUhr = setTimeout(() => {
+    const noch = document.querySelector('#fuer-dich[data-auto] [data-aktion="ki-tipp"]');
+    if (noch && noch.dataset.art === art && noch.dataset.wert === wert && reiter === 'programm') kiFragen(art, wert);
+  }, 1200);
 }
 
 // --- Gemeinsamer Plan: abgleichen, wenn sich etwas tut, und jede Minute
@@ -657,22 +694,10 @@ function aktion(name, z) {
       zeichnen({ behalteScroll: true });
       break;
     }
-    case 'ki-tipp': {
-      // „Für dich“: Claude nach Tipps für diesen Tag, diese Woche oder diesen Monat fragen (ki-tipp.js).
-      const art = ['tag', 'woche', 'monat'].includes(z.dataset.art) ? z.dataset.art : 'woche';
-      const wert = z.dataset.wert || z.dataset.woche;
-      if (!wert || kiUi.laeuft) break;
-      const raum = zeitraum(art, wert);
-      Object.assign(kiUi, { laeuft: raum.schluessel, fehler: '', raum: raum.schluessel });
-      zeichnen({ behalteScroll: true });
-      tippsHolen(daten.programm, st, raum, h)
-        .catch((e) => { kiUi.fehler = e.message; })
-        .finally(() => {
-          kiUi.laeuft = '';
-          zeichnen({ behalteScroll: true });
-        });
+    case 'ki-tipp':
+      // „Für dich“: Claude (noch einmal) nach Tipps für diesen Tag, diese Woche oder diesen Monat fragen.
+      kiFragen(z.dataset.art, z.dataset.wert || z.dataset.woche);
       break;
-    }
     case 'ki-speichern':
       kiUi.einstellFehler = kiSchluesselSetzen(wert('#ki-schluessel')) ? '' : 'Das sieht nicht nach einem Claude-Schlüssel aus – er fängt mit „sk-ant-“ an.';
       zeichnen({ behalteScroll: true });

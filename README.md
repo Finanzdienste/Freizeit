@@ -421,12 +421,21 @@ Anzeigen durch `esc()`, Links nur mit http(s).
 ## Für dich (KI-Tipp)
 
 **✨ Für dich** steht im Tag (unter dem Wetter), oben in der Woche und im
-Monat (unter dem Kalender): Auf Knopfdruck sucht Claude einen Termin des
-Tages, zwei der Woche bzw. drei des Monats aus, die zu Tobi passen, und sagt
-je in einem Satz, warum – darunter die Karten, wie im Tag (mit Bock). In
-Woche und Monat öffnet ein Tipp auf den Tag am Tipp den Tag. Die Tipps
-bleiben für ihren Zeitraum stehen (auch nach dem Neuladen); **Neu fragen**
-holt neue. Gefragt wird nie von allein.
+Monat (unter dem Kalender): Claude sucht das Beste des Tages aus (einen
+Termin), der Woche (zwei) bzw. des Monats (drei) und sagt je in einem Satz,
+warum – darunter die Karten, wie im Tag (mit Bock). Gefragt wird **von
+allein**, sobald ein Zeitraum ohne Tipps gut eine Sekunde zu sehen ist (wer
+schnell weiterblättert, löst nichts aus) – je Zeitraum einmal in der Sitzung,
+nicht ohne Netz. In Woche und Monat öffnet ein Tipp auf den Tag am Tipp den
+Tag. Die Tipps bleiben für ihren Zeitraum stehen (auch nach dem Neuladen);
+**Neu fragen** holt neue.
+
+**Das Beste heißt:** zuerst Klasse und Größe – ein großer Name, eine Premiere
+an einem großen Haus, ein großes Fest, ein Spiel in der Arena, etwas
+Einmaliges – vor einem Thema, das zufällig passt: Ein Vortrag im
+Gemeindesaal gewinnt nicht, nur weil es um KI geht. Termine, die in einem
+Highlight des Monatslaufs für ihren Tag stehen, sind in der Liste als
+„★ Highlight“ markiert. Gefragt wird mit wenig Nachdenken (`effort: low`).
 
 Claude bekommt die Termine des Zeitraums ab heute, wie das Programm sie ohne
 Filter zeigt – mit der 21:30-Regel, ohne Online & TV, ohne was sich mit dem

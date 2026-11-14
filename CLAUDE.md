@@ -131,14 +131,21 @@ Sitzung übernehmen: dort einplanen und die alte Erinnerung mit update_trigger
 `enabled: false` abschalten (Löschen lehnt der Filter ab).
 
 ## Ausgesetzt (seit 14.11.2026)
-Tobi plant zurzeit nur Hamburg und Umgebung, die Hohwachter Bucht und
-Tagesausflüge am Wochenende.
-- Hannover: Die App blendet die Region aus (`AUSGEBLENDET` in js/text.js),
-  der Monatslauf sucht dort nicht mehr. Wieder aufnehmen: `HAN` aus
-  `AUSGEBLENDET` nehmen (sw.js-VERSION hoch) und im Prompt des Monatsplans
-  den Hannover-Absatz statt „Hannover … ist zurzeit ausgesetzt“ wieder
-  einsetzen, bei der Recherche die Hannover-Quellen und bei den Konzerten
-  „und Hannover (Region „HAN“)“. Der Absatz war: „Hannover (Region „HAN“: die
+Tobi plant zurzeit nur Hamburg mit Umland bis gut eine Stunde und die
+Hohwachter Bucht. Was weiter weg liegt, nur ausnahmsweise: ein wirklich
+herausragender Tagesausflug am Wochenende, Region `WEI`.
+- Hannover und Wismar: Die App blendet beide Regionen aus (`AUSGEBLENDET` in
+  js/text.js), der Monatslauf sucht dort nicht mehr. Wieder aufnehmen: die
+  Region aus `AUSGEBLENDET` nehmen (sw.js-VERSION hoch) und im Prompt des
+  Monatsplans den Absatz „Zurzeit gilt …“ durch die alten Absätze ersetzen,
+  dazu die Quellen bei der Recherche und bei den Konzerten „und Hannover
+  (Region „HAN“)“. Wismar war: „Wismar (Region „WIS“: die Stadt und die Insel
+  Poel; Deutschlandticket ca. 2 Std. mit RE1 bis Bad Kleinen und RE8/RB
+  weiter, Auto ca. 1:45 Std. über A1/A20). Wismar ist ein Ziel wie Lübeck: in
+  jedem Lauf das Lohnende dort aufnehmen (Theater Wismar, Konzerte, Märkte,
+  Führungen, Feste, laufende Ausstellungen), jeweils mit "anreise".“ Quellen:
+  Veranstaltungskalender auf wismar.de, Stadtportal wismar.m-vp.de, Theater
+  Wismar, phanTECHNIKUM, Insel Poel. Hannover war: „Hannover (Region „HAN“: die
   Stadt mit Langenhagen, Laatzen und dem Steinhuder Meer; Deutschlandticket
   ca. 2:20 Std. mit dem metronom über Uelzen, letzte Rückfahrt ab Hannover
   Hbf gegen 22:48 – bei Abendterminen in "anreise" nennen, Baustellen und
@@ -150,6 +157,3 @@ Tagesausflüge am Wochenende.
   Staatstheater Hannover (Oper und Schauspiel), Theater am Aegi, GOP,
   Capitol, Pavillon, Faust, MusikZentrum, Swiss Life Hall, ZAG Arena,
   Herrenhäuser Gärten, Sprengel Museum, Kestner Gesellschaft.
-- Wismar und weiter entfernte Ostseestrände nur noch als Tagesausflug: im
-  Monatslauf nur Termine an Wochenenden und Feiertagen (vorher an allen
-  Tagen).

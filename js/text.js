@@ -34,12 +34,13 @@ export const REGIONEN = {
 
 /**
  * Regionen, die die App gerade nicht zeigt – ihre Termine fallen beim Laden
- * weg, im Filter stehen sie nicht. Seit 14.11.2026 Hannover: Tobi plant zurzeit
- * nur Hamburg und Umgebung, die Hohwachter Bucht und Tagesausflüge am
- * Wochenende. Wieder aufnehmen: hier herausnehmen und den Monatslauf wieder
- * dort suchen lassen (CLAUDE.md, „Ausgesetzt“).
+ * weg, im Filter stehen sie nicht. Seit 14.11.2026 Hannover und Wismar: Tobi
+ * plant zurzeit nur Hamburg mit Umland und die Hohwachter Bucht; was weiter
+ * weg liegt, nur als besonderer Tagesausflug am Wochenende – das trägt dann
+ * die Region WEI. Wieder aufnehmen: hier herausnehmen und den Monatslauf
+ * wieder dort suchen lassen (CLAUDE.md, „Ausgesetzt“).
  */
-export const AUSGEBLENDET = new Set(['HAN']);
+export const AUSGEBLENDET = new Set(['HAN', 'WIS']);
 
 /** Die Regionen, die man vor Ort besuchen kann – für die Auswahl „Wo“ im Filter. */
 export const ORTE = Object.entries(REGIONEN).filter(([k]) => k !== 'ONL' && !AUSGEBLENDET.has(k));

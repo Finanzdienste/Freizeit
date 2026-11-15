@@ -55,9 +55,6 @@ import { darstellungSetzen, darstellungAnwenden } from './darstellung.js';
 import { pushEinschalten, pushAusschalten } from './push.js';
 import { ortsbilderSetzen, motivHtml } from './bilder.js';
 import {
-  tippsHolen, kiSchluesselSetzen, kiSchluesselWeg, kiUi, zeitraum,
-} from './ki-tipp.js';
-import {
   geraetStandort, adresseSuchen, standortUi, UMKREISE,
 } from './standort.js';
 import {
@@ -271,8 +268,6 @@ function zeichnen({ nachOben = false, behalteScroll = false } = {}) {
     if (ziel) ziel.scrollIntoView({ block: 'start', behavior: 'instant' });
   }
   zeitMarkeZuletzt = zeitMarke();
-  if (geladen && reiter === 'programm') kiAutomatisch();
-  else clearTimeout(kiUhr);
 }
 
 // --- Die Zeit läuft: Was vorbei ist, verschwindet auch, während die App offen bleibt
@@ -314,41 +309,6 @@ function wechseln(neu) {
   adresseSetzen(neu);
   zeichnen({ nachOben: true });
   $('#ansicht').focus({ preventScroll: true });
-}
-
-// --- „Für dich“ (ki-tipp.js): fragen – auf Knopfdruck und von allein
-
-/** Claude nach den Tipps eines Zeitraums fragen; läuft schon eine Frage, passiert nichts. */
-function kiFragen(artRoh, wert) {
-  const art = ['tag', 'woche', 'monat'].includes(artRoh) ? artRoh : 'woche';
-  if (!wert || kiUi.laeuft || !daten.programm) return;
-  const raum = zeitraum(art, wert);
-  kiUi.versucht.add(raum.schluessel);
-  Object.assign(kiUi, { laeuft: raum.schluessel, fehler: '', raum: raum.schluessel });
-  zeichnen({ behalteScroll: true });
-  tippsHolen(daten.programm, aktuell(), raum, heute())
-    .catch((e) => { kiUi.fehler = e.message; })
-    .finally(() => {
-      kiUi.laeuft = '';
-      zeichnen({ behalteScroll: true });
-    });
-}
-
-let kiUhr = null;
-/**
- * Von allein: Steht ein „Für dich“ ohne Tipps da (data-auto), fragt die App
- * nach einer guten Sekunde – wer schnell weiterblättert, löst nichts aus.
- * Je Zeitraum nur einmal in der Sitzung, und nicht ohne Netz.
- */
-function kiAutomatisch() {
-  clearTimeout(kiUhr);
-  const knopf = document.querySelector('#fuer-dich[data-auto] [data-aktion="ki-tipp"]');
-  if (!knopf || kiUi.laeuft || navigator.onLine === false) return;
-  const { art, wert } = knopf.dataset;
-  kiUhr = setTimeout(() => {
-    const noch = document.querySelector('#fuer-dich[data-auto] [data-aktion="ki-tipp"]');
-    if (noch && noch.dataset.art === art && noch.dataset.wert === wert && reiter === 'programm') kiFragen(art, wert);
-  }, 1200);
 }
 
 // --- Gemeinsamer Plan: abgleichen, wenn sich etwas tut, und jede Minute
@@ -500,7 +460,7 @@ function filterZuruecksetzen(art = '', { spaetBehalten = false } = {}) {
     st.ideenFilter = LEERER_IDEENFILTER();
     uiIdeen.saisonAlle = false;
   } else {
-    st.filter = { ...LEERER_FILTER(), nachEntfernung: st.filter.nachEntfernung, auchSpaet: spaetBehalten && st.filter.auchSpaet };
+    st.filter = { ...LEERER_FILTER(), nachZeit: st.filter.nachZeit, nachEntfernung: st.filter.nachEntfernung, auchSpaet: spaetBehalten && st.filter.auchSpaet };
     if (reiter === 'karte') Object.assign(st, { karteBock: false, karteIdeen: false });
   }
   filterGeaendert();
@@ -589,6 +549,7 @@ function aktion(name, z) {
     }
     case 'reihenfolge':
       st.filter.nachEntfernung = z.dataset.wert === 'entfernung';
+      st.filter.nachZeit = z.dataset.wert === 'zeit';
       filterGeaendert();
       break;
     case 'karte-bock':
@@ -709,14 +670,6 @@ function aktion(name, z) {
       zeichnen({ behalteScroll: true });
       break;
     }
-    case 'ki-tipp':
-      // „Für dich“: Claude (noch einmal) nach Tipps für diesen Tag, diese Woche oder diesen Monat fragen.
-      kiFragen(z.dataset.art, z.dataset.wert || z.dataset.woche);
-      break;
-    case 'ki-speichern':
-      kiUi.einstellFehler = kiSchluesselSetzen(wert('#ki-schluessel')) ? '' : 'Das sieht nicht nach einem Claude-Schlüssel aus – er fängt mit „sk-ant-“ an.';
-      zeichnen({ behalteScroll: true });
-      break;
     case 'bildschirmzeit-trennen':
       // Einstellungen → Bildschirmzeit: nichts mehr messen, nichts mehr schicken (das Ereignis nimmt den Abschnitt weg).
       bzHinweis = '';
@@ -727,11 +680,6 @@ function aktion(name, z) {
       // ✕ am Hinweis der Bildschirmzeit nimmt nur ihn weg, ohne Neuzeichnen (die Karte bliebe sonst nicht stehen).
       if (z.closest('#bz-hinweis')) bildschirmzeitHinweis('');
       else ideenAktion(name, z);
-      break;
-    case 'ki-weg':
-      kiSchluesselWeg();
-      kiUi.einstellFehler = '';
-      zeichnen({ behalteScroll: true });
       break;
     case 'standort-weg':
       st.standort = null;
@@ -1237,9 +1185,9 @@ document.addEventListener('keydown', (ev) => {
 
 // Enter in einem Eingabefeld drückt den Hauptknopf daneben.
 document.addEventListener('keydown', (ev) => {
-  const felder = '.einrichten input, .einladung input, .formular input, .einstellung-feld input, .ki-feld input';
+  const felder = '.einrichten input, .einladung input, .formular input, .einstellung-feld input';
   if (ev.key !== 'Enter' || !ev.target.matches || !ev.target.matches(felder)) return;
-  const knopf = ev.target.closest('.einrichten, .einladung, .formular, .einstellung-feld, .ki-feld').querySelector('.knopf.haupt');
+  const knopf = ev.target.closest('.einrichten, .einladung, .formular, .einstellung-feld').querySelector('.knopf.haupt');
   if (knopf) {
     ev.preventDefault();
     knopf.click();
@@ -1445,6 +1393,9 @@ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
 }
 
 laden();
+// „Für dich“ mit Claude gibt es seit v43 nicht mehr (das Programm sortiert nach Score): den Schlüssel
+// und die gemerkten Tipps dieses Geräts wegräumen – den von Boxenstopp (boxenstopp.ki.v1) nicht.
+try { localStorage.removeItem('freizeit.ki.v1'); } catch { /* ohne Speicher gibt es nichts wegzuräumen */ }
 // Ein gespeichertes „liste“ (bis v18) öffnet als Tag.
 prog.ansicht = ANSICHTEN.some(([k]) => k === aktuell().programmAnsicht) ? aktuell().programmAnsicht : 'tag';
 reiter = adresseLesen() || startReiter();

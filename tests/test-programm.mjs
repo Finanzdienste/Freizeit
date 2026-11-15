@@ -41,8 +41,10 @@ await einstellungen();
 check((await page.locator('#stand').innerText()).includes('Mo 2.11.'), 'der Stand der Daten steht in den Einstellungen unter „App“');
 await reiter('programm');
 
-// --- Nach Tageszeit gegliedert
+// --- Nach Tageszeit gegliedert: Reihenfolge „Uhrzeit“ (die Vorgabe „Beste zuerst“ prüft test-beste.mjs)
 await zeigeTag(DI);
+check(await page.locator(`#tag-${DI} .tagesteil`).first().innerText().then((t) => t.startsWith('Das Beste zuerst')), 'Vorgabe: das Beste zuerst, ohne Tageszeiten');
+await A.imFilter(() => page.click('#blatt [data-aktion="reihenfolge"][data-wert="zeit"]'));
 check(JSON.stringify(await page.$$eval(`#tag-${DI} .tagesteil`, (hs) => hs.map((h) => h.textContent.replace(/\d+$/, '').trim()))) === '["Nachmittag","Abend"]'
   && await page.locator(`#tag-${DI} .tagesteil .tt-zahl`).last().innerText() === '3', 'Di: Nachmittag (Workshop 12:30) und Abend (3) – nur Teile mit Terminen');
 

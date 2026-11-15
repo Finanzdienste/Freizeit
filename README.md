@@ -36,7 +36,8 @@ Vier Reiter unten – welche davon dort stehen, wählt man unter Einstellungen �
 | auswählen, welche Reiter unten stehen | Einstellungen → **Reiter unten** |
 | hell oder dunkel – fest statt wie das Gerät | Einstellungen → **Darstellung** |
 | meinen Standort oder eine Adresse festlegen | Einstellungen → **Mein Standort** (im Filter: „Standort festlegen“ springt dorthin) |
-| Umkreis, Reihenfolge nach Entfernung | Filter → **Wo** bzw. **Reihenfolge am Tag** (erst mit Standort) |
+| Reihenfolge am Tag: das Beste zuerst, nach Uhrzeit oder nach Entfernung | Filter → **Reihenfolge am Tag** (Entfernung erst mit Standort) |
+| Umkreis | Filter → **Wo** (erst mit Standort) |
 | Leute einladen | **Wir** → Einladen |
 | meinen Namen ändern, den Plan auf ein zweites Gerät, verlassen/auflösen | Einstellungen → **Gemeinsamer Plan** |
 | Push-Mitteilungen an oder aus | Einstellungen → **Mitteilungen** (Gastgeber) |
@@ -127,8 +128,8 @@ Umgebung zuerst); bei mehreren Treffern tippt man den richtigen an. Dann:
   keine Koordinaten hat, fällt dann mit weg, Online & TV bleibt. Er steht
   als Chip „bis 5 km“ neben dem Filter-Knopf; ✕ nimmt ihn zurück.
 - **Reihenfolge am Tag: Entfernung** (im Filter) stellt das Nächste nach oben
-  (Eingeplantes bleibt oben, Online & TV steht hinten; die Gliederung nach
-  Tageszeit entfällt dann), auch unter „Läuft heute“.
+  (Eingeplantes bleibt oben, Online & TV steht hinten), auch unter „Läuft
+  heute“. Ohne Standort gibt es nur „Beste zuerst“ und „Uhrzeit“.
 - Auf der Karte steht der Bezugspunkt als dunkler Punkt („Du“ bzw. der Name
   der Adresse), mit Umkreis als gestrichelter Kreis.
 
@@ -419,47 +420,39 @@ damit er auch dann vollständig dasteht, wenn er aus den Daten gefallen ist.
 Was von anderen kommt, ist fremder Text: Namen und Schnappschüsse gehen beim
 Anzeigen durch `esc()`, Links nur mit http(s).
 
-## Für dich (KI-Tipp)
+## Das Beste zuerst (Score)
 
-**✨ Für dich** steht im Tag (unter dem Wetter), oben in der Woche und im
-Monat (unter dem Kalender): Claude sucht das Beste des Tages aus (einen
-Termin), der Woche (zwei) bzw. des Monats (drei) und sagt je in einem Satz,
-warum – darunter die Karten, wie im Tag (mit Bock). Gefragt wird **von
-allein**, sobald ein Zeitraum ohne Tipps gut eine Sekunde zu sehen ist (wer
-schnell weiterblättert, löst nichts aus) – je Zeitraum einmal in der Sitzung,
-nicht ohne Netz. In Woche und Monat öffnet ein Tipp auf den Tag am Tipp den
-Tag. Die Tipps bleiben für ihren Zeitraum stehen (auch nach dem Neuladen);
-**Neu fragen** holt neue.
+Jeder Termin und alles, was läuft, hat einen **Score** von 0 bis 100: wie
+sehr er sich für Tobi und seine Leute lohnt. Ihn vergibt der Monatslauf (Feld
+`score`), als Abwägung – Klasse und Strahlkraft (Namen, Haus, Aufwand),
+Seltenheit (einmalig, Premiere, Tourstopp), Erlebnis (ein intimes Clubkonzert
+kann mehr wert sein als ein beliebiger Hallenabend) und Passung zu Tobis
+Geschmack. Das Thema allein trägt keinen hohen Score. Anker: ab 92 ein
+Jahreshöhepunkt, 80–91 sehr lohnend, 62–79 gut, 42–61 nett, wenn es passt,
+darunter Alltag. Ohne Score zählt ein Termin als 50.
 
-**Das Beste heißt:** zuerst Klasse und Größe – ein großer Name, eine Premiere
-an einem großen Haus, ein großes Fest, ein Spiel in der Arena, etwas
-Einmaliges – vor einem Thema, das zufällig passt: Ein Vortrag im
-Gemeindesaal gewinnt nicht, nur weil es um KI geht. Termine, die in einem
-Highlight des Monatslaufs für ihren Tag stehen, sind in der Liste als
-„★ Highlight“ markiert. Gefragt wird mit wenig Nachdenken (`effort: low`).
+Danach sortiert das Programm, ohne Netz und ohne KI:
 
-Claude bekommt die Termine des Zeitraums ab heute, wie das Programm sie ohne
-Filter zeigt – mit der 21:30-Regel, ohne Online & TV, ohne was sich mit dem
-Kalender beißt (die belegten Zeiten aus „Wir“, Arbeitszeit inklusive) und
-ohne, worauf Tobi schon Bock hat; im Monat bekommt jeder Tag seinen Anteil.
-Ein Termin an mehreren Tagen steht einmal. **Smart heißt:** Claude sieht, was
-Tobi im Zeitraum schon vorhat (seine Haken, auch auf Online & TV, und
-Eingeplantes – beim Tag die ganze Woche), soll nichts vorschlagen, was sich
-damit zeitlich beißt, und für Abwechslung sorgen: Wer jeden Abend Schach
-geplant hat, bekommt etwas anderes. Dazu, was er zuletzt gemacht und wie er
-es bewertet hat („Wie war's?“) und worauf er sonst Bock hat. Jeder Termin ist
-eine Zeile mit Nummer, die Antwort nennt nur Nummern – die App baut die
-Karten selbst, Claude kann also keinen Termin erfinden.
+- **Tag:** Vorgabe ist „Beste zuerst“ – unter „Eingeplant“ eine Liste „Das
+  Beste zuerst“; bei Gleichstand nach Uhrzeit. Im Filter unter
+  **Reihenfolge am Tag** geht es zurück auf **Uhrzeit** (gegliedert in „Den
+  ganzen Tag“, Vormittag, Nachmittag, Abend) oder, mit Standort, auf
+  **Entfernung** (`nachZeit` bzw. `nachEntfernung` im Filter).
+- **Woche:** oben **Das Beste der Woche** – die fünf besten Termine ab heute,
+  **Monat:** unter der Vorschau **Das Beste im Monat** – die acht besten.
+  Beide mit denselben Filtern und der 21:30-Regel wie die Tage, jede
+  Veranstaltung einmal (an ihrem besten Tag), ohne was man selbst schon
+  angehakt hat. Ein Tipp öffnet den Tag.
+- **Abwechslung:** Was man selbst vorhat (eigene Haken auf Terminen,
+  Eingeplantes), drückt Termine derselben Kategorie in den sechs Tagen davor
+  und danach – je Vorhaben 8 Punkte, höchstens 24 (`abwechslung` und `rang`
+  in `js/filter.js`). Wer jeden Abend Schach schaut, sieht am nächsten Abend
+  zuerst etwas anderes. Konzerte der eigenen Künstler drückt das nie.
 
-**Schlüssel und Kosten:** Die Anfrage geht direkt vom Gerät an die
-Messages-API von Anthropic (`claude-opus-5-5`, JSON nach Schema) und kostet
-pro Frage wenige Cent vom API-Guthaben der Console – mit einem Claude-Abo Max
-oder Ultra aus dessen Monatsguthaben. Den Schlüssel (`sk-ant-…`) trägt man unter
-Einstellungen → **KI-Tipp** ein; er bleibt im localStorage
-(`freizeit.ki.v1`, dort auch die Tipps je Zeitraum: `t:<Tag>`, der Montag der Woche, `m:<Monat>`). Ohne eigenen nimmt die App
-den aus Boxenstopp (`boxenstopp.ki.v1`) – beide Apps teilen sich den Ursprung
-`finanzdienste.github.io` und damit den Speicher. Eingeladene sehen weder den
-Kasten noch den Abschnitt: Es ginge auf Tobis Guthaben.
+Aufgeklappt steht der Score an der Karte („Score 87“). Bis v42 suchte
+„✨ Für dich“ das Beste mit Claude aus (eigener API-Schlüssel); das ist mit dem
+Score weggefallen, und die App löscht den alten Schlüssel `freizeit.ki.v1`
+beim Start (den von Boxenstopp, `boxenstopp.ki.v1`, nicht).
 
 ## Bildschirmzeit fürs Widget
 
@@ -642,6 +635,7 @@ aus.
 | `region` | `HH` Hamburg · `AHR` Ahrensburg & Stormarn · `SE` Norderstedt & Segeberg (mit Neumünster) · `PI` Pinneberg & Elmshorn (mit Wedel, Itzehoe, Glückstadt) · `RZ` Herzogtum Lauenburg (Ratzeburg, Mölln, Geesthacht) · `LUE` Lübeck & Ostsee · `LG` Lüneburg & Heide · `STD` Stade & Altes Land · `HB` Hohwachter Bucht & Kiel · `WIS` Wismar · `HAN` Hannover (beide zurzeit ausgeblendet: `AUSGEBLENDET` in `js/text.js` – die App lässt solche Einträge beim Laden weg und zeigt die Region nicht im Filter) · `WEI` Weitere Ziele (auch besondere Tagesausflüge am Wochenende, die weiter weg liegen) · `ONL` Online & TV |
 | `online` | `true` bei Online & TV (immer zusammen mit Region `ONL`): Live-Events zum Zuschauen – `ort` ist dann der Sender („DAZN“, „Prime Video“, „ZDF“, „YouTube · FIDE“), ohne `geo` und `anreise`. Für die 21:30-Regel zählt der Beginn |
 | `kategorie` | z. B. Konzert, Bühne, Comedy, Kino, Party, Sport, Schach, Führung, Erlebnis, Food, Markt, Fest & Saisonal, Ausstellung, Lesung |
+| `score` | ganze Zahl 0–100, wie sehr es sich lohnt (siehe „Das Beste zuerst“) – Pflicht für alle Termine und alles in `laufend`; danach sortiert das Programm |
 | `draussen` | `drinnen`, `draußen` oder `beides` |
 | `kostenlos` | `true`, wenn der Eintritt frei ist |
 | `hohwacht` | `true`, wenn er sich mit einem Besuch in Hohwacht verbinden lässt (Region `HB` zählt automatisch) |
@@ -805,7 +799,7 @@ Widget“), und der Worker räumt nur seine eigenen Vorräte weg.
 | --- | --- |
 | `js/app.js` | Einstieg, Reiter, Knöpfe, Abgleich, Service Worker |
 | `js/zeit.js` | Datum, Uhrzeit, Wochen und Monate, beide Zeitregeln |
-| `js/filter.js` | Filter, was an einem Tag steht, was gerade läuft |
+| `js/filter.js` | Filter, was an einem Tag steht, was gerade läuft, Score, Abwechslung und Reihenfolge (`rang`) |
 | `js/daten.js` | Laden und Prüfen von `daten/programm.json`, Laden des Ideen-Katalogs |
 | `js/ideen.js` | Ideen: Katalog prüfen, eigene und eingeplante Ideen, Filter, Saison, „Tut dir gut“ |
 | `js/karte.js` | Einträge bauen und als Karte zeichnen – mit Uhrzeit als Ticket mit Abriss (Bock, „in 25 Min“/„läuft“, wer hat Bock) |
@@ -821,7 +815,6 @@ Widget“), und der Worker räumt nur seine eigenen Vorräte weg.
 | `werkzeug/filme-aktualisieren.mjs` | IMDb Top 250 aus IMDbs offiziellen Daten auffrischen – im Monatslauf |
 | `werkzeug/ortsbilder.py` | freie Fotos der Spielstätten von Wikidata/Commons suchen, prüfen, verkleinert ablegen (Python, Pillow) |
 | `js/push.js` | Push-Mitteilungen für den Gastgeber: Abo holen, beim Server an- und abmelden |
-| `js/ki-tipp.js` | „Für dich“: Kandidaten der Woche, Anfrage an Claude, Antwort prüfen, Schlüssel (eigener oder aus Boxenstopp) und Tipps je Woche merken |
 | `js/bildschirmzeit.js` | Bildschirmzeit fürs Widget: Link nehmen, sichtbare Zeit zählen, an Supabase melden, trennen – wortgleiche Kopie aus dem Repo Finanzdienste/Bildschirmzeit (`web/bildschirmzeit.js`), hier nie ändern |
 | `js/standort.js` | Bezugspunkt für Entfernungen: Gerätestandort, Adresssuche (Nominatim), Luftlinie, „3,2 km“ |
 | `supabase/functions/freizeit-push/` | die Edge Function: offene Nachrichten holen, verschlüsseln, an die Push-Dienste schicken |
@@ -846,7 +839,7 @@ nimmt `FREIZEIT_CHROMIUM=<Pfad zum Browser>` dieses statt Playwrights eigenem.
 | --- | --- |
 | `test-programm.mjs` | Tag und Woche: der Kopf (Ansichten, Blättern, Filter, Tagesleiste, erster Termin ohne Scrollen), Gliederung nach Tageszeit, beide Zeitregeln, „Läuft heute“, Tageskarten der Woche mit „Diese Woche“ (Highlights ihrer Woche, Infos mit Ende), Laufendem und Hinweisen, Filter, Wischen, Vergangenes (keine Tage vor heute, heute ohne Beendetes – auch bei offener App), Feiertag, ein alter Stand „Liste“ |
 | `test-filter.mjs` | das Filter-Blatt: Dialog, Wahl gilt sofort, Chips mit ✕, „Alle zeigen“, Zurücksetzen, Escape, Tipp daneben, Fokus, weniger Bewegung, dasselbe in Woche, Monat und Karte, das Blatt von „Was immer geht“, nichts scrollt quer |
-| `test-ki-tipp.mjs` | „Für dich“ in Tag, Woche und Monat: welche Termine Claude sieht (ab heute, 21:30-Regel, ohne Online, mehrtägig einmal, ohne schon Angehaktes), was Tobi im Zeitraum schon vorhat, die Anfrage, Antworten mit erfundenen oder doppelten Nummern, der Schlüssel in den Einstellungen, Kasten, Tipps und Fehler in der Woche, der Schlüssel aus Boxenstopp – mit nachgebauter API |
+| `test-beste.mjs` | der Score: Vorgabe „Beste zuerst“ im Tag, Uhrzeit, Abwechslung nach einem Haken, „Das Beste der Woche“ und „im Monat“ (jede Veranstaltung einmal, ohne Angehaktes, ein Tipp öffnet den Tag), „Score 95“ an der Karte, kein „Für dich“ und kein KI-Tipp mehr, der alte Schlüssel wird gelöscht |
 | `test-einstellungen.mjs` | der Reiter Einstellungen (kein ⚙, kein „Zurück“), die Abschnitte je Rolle, Stand der Daten, Installieren, Hinweise zu den Daten, Name ändern, Weiteres Gerät |
 | `test-reiter.mjs` | Reiter unten: an und aus (auch mit der Tastatur), der letzte bleibt, Neuladen, Start-Reiter, Ausgeblendetes über `#…`, Einladung und „Zu „Wir““, der Punkt nur an „Wir“, `#ideen` führt zu „Was immer geht“, vier Beschriftungen bei 360 und 390 px ganz lesbar ohne Querscrollen, alte und kaputte Stände |
 | `test-online.mjs` | Online & TV: Sender statt Ort, 21:30 nach Beginn, Filter „Art“, Umkreis und Entfernung, Monat und Tag, WhatsApp und Kalender, Schnappschuss, Landkarte |

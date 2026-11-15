@@ -26,8 +26,9 @@ check(await blatt().getAttribute('role') === 'dialog' && await blatt().getAttrib
   && (await page.locator('#blatt-titel').innerText()) === 'Filter' && await knopf().getAttribute('aria-expanded') === 'true', 'das Blatt ist ein Dialog mit Titel „Filter“');
 check(await fokusIm('#blatt'), 'der Fokus springt ins Blatt');
 check(await page.evaluate(() => ['#ansicht', '.kopf', '.reiterleiste'].every((s) => document.querySelector(s).inert)), 'der Rest der Seite ist solange inert');
-check(JSON.stringify(await page.$$eval('#blatt .fgruppe h3', (hs) => hs.map((h) => h.textContent))) === JSON.stringify(['Art', 'Wo', 'Was', 'Wann']),
-  'Gruppen: Art, Wo, Was, Wann – ohne Standort keine Reihenfolge');
+check(JSON.stringify(await page.$$eval('#blatt .fgruppe h3', (hs) => hs.map((h) => h.textContent))) === JSON.stringify(['Art', 'Wo', 'Was', 'Wann', 'Reihenfolge am Tag'])
+  && JSON.stringify(await page.$$eval('#blatt [data-aktion="reihenfolge"]', (bs) => bs.map((b) => `${b.dataset.wert}:${b.getAttribute('aria-pressed')}`))) === '["beste:true","zeit:false"]',
+  'Gruppen: Art, Wo, Was, Wann, Reihenfolge – „Beste zuerst“ gewählt, ohne Standort keine „Entfernung“');
 const zahlOben = (await page.locator('#zaehler').innerText()).match(/^\d+/)[0];
 check(await fuss() === `${zahlOben} Termine zeigen`, `unten „${zahlOben} Termine zeigen“ – dieselbe Zahl wie oben am Tag`);
 check(await page.locator('#blatt [data-aktion="blatt-zuruecksetzen"]').isDisabled(), 'ohne Filter ist „Zurücksetzen“ aus');

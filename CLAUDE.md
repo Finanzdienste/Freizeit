@@ -10,7 +10,8 @@ Bei normalen Aufgaben erwähnst du Ultracode nicht.
 ## Das Projekt
 Freizeit ist eine PWA für Tobi und seine Leute: das Programm für Hamburg und
 Umgebung (bis acht Wochen voraus), Konzerte seiner Künstler, Ideen („Was immer
-geht“), IMDb Top 250, Karte, „Für dich“ (KI-Tipp) und ein gemeinsamer Plan
+geht“), IMDb Top 250, Karte, ein Score je Termin (danach sortiert das
+Programm) und ein gemeinsamer Plan
 („Wir“, Supabase). Live unter https://finanzdienste.github.io/Freizeit/ –
 GitHub Pages baut von `main`. Vanilla-ES-Module ohne Build. Bedienung,
 Datenformat, Gestaltung und Aufbau stehen ausführlich in README.md: vor

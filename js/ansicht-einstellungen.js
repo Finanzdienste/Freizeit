@@ -11,8 +11,6 @@
  *                      Adresse (standort.js). Umkreis und Reihenfolge stehen
  *                      im Filter.
  *   Mitteilungen       nur der Gastgeber: Push an oder aus (push.js)
- *   KI-Tipp            nicht bei Eingeladenen: der Claude-Schlüssel für
- *                      „Für dich“ in Tag, Woche und Monat (ki-tipp.js)
  *   Gemeinsamer Plan   Abgleich, Name, weiteres Gerät, „So geht's“,
  *                      Verlassen bzw. Auflösen – ohne Plan der Weg zu „Wir“
  *   Bildschirmzeit     nur, wenn ein Link aus Tobis Widget-App verbunden hat
@@ -30,7 +28,6 @@ import { hilfeKarte } from './ansicht-wir.js';
 import { INHALTS_REITER } from './speicher.js';
 import { bildnachweise } from './bilder.js';
 import { DARSTELLUNGEN, darstellung } from './darstellung.js';
-import { kiSchluessel, kiUi } from './ki-tipp.js';
 import { dauerText } from './bildschirmzeit.js';
 
 /** Wie die Reiter unten heißen – dieselben Wörter wie in der Leiste (index.html). */
@@ -192,26 +189,6 @@ function appTeil(p, ideenStand, datenFehler, installierbar) {
 }
 
 /**
- * Der Schlüssel für „Für dich“: ein eigener (dann löschbar) – sonst nimmt die
- * App den aus Boxenstopp, wenn es auf diesem Gerät einen gibt.
- */
-function kiTeil() {
-  const k = kiSchluessel();
-  const jetzt = !k
-    ? '<div class="e-zeile fein">Noch kein Schlüssel – dann gibt es kein „Für dich“.</div>'
-    : k.quelle === 'eigen'
-      ? `<div class="e-zeile"><span>✓ Eigener Schlüssel <span class="fein">…${esc(k.schluessel.slice(-4))}</span></span><button type="button" class="textknopf" data-aktion="ki-weg">Löschen</button></div>`
-      : '<div class="e-zeile"><span>✓ Schlüssel aus Boxenstopp</span></div>';
-  const feld = k && k.quelle === 'eigen' ? '' : `<div class="e-zeile ki-feld">
-      <input id="ki-schluessel" class="eingabe" type="password" placeholder="sk-ant-…" aria-label="${k ? 'Eigener Claude-API-Schlüssel' : 'Claude-API-Schlüssel'}" autocomplete="off" spellcheck="false" maxlength="260">
-      <button type="button" class="knopf haupt" data-aktion="ki-speichern">Speichern</button>
-    </div>`;
-  const fehler = kiUi.einstellFehler ? `<p class="standort-fehler" role="alert">${esc(kiUi.einstellFehler)}</p>` : '';
-  return abschnitt('e-ki', 'KI-Tipp', jetzt + feld + fehler,
-    'Für „Für dich“ im Tag, in der Woche und im Monat: Claude sucht einen, zwei bzw. drei Termine aus, die zu dir, deinem Kalender und dem passen, was du schon vorhast – mit Abwechslung. Jede Frage kostet wenige Cent von deinem API-Guthaben bei Anthropic (Schlüssel unter platform.claude.com). Der Schlüssel bleibt auf diesem Gerät.');
-}
-
-/**
  * Bildschirmzeit für Tobis Widget – nur, wenn verbunden (`s` aus
  * bildschirmzeitStand(), sonst null: dann kein Wort davon). Was heute
  * gezählt ist, wann zuletzt gemeldet, ob es zuletzt nicht durchkam, Trennen.
@@ -241,7 +218,6 @@ export function einstellungenAnsicht(st, ui, {
   ${darstellungTeil()}
   ${standortTeil(st)}
   ${st.gemeinsam && !st.gemeinsam.raus && rolle() === 'gastgeber' ? mitteilungenTeil(ui) : ''}
-  ${rolle() === 'mitglied' ? '' : kiTeil()}
   ${planTeil(st, ui)}
   ${bildschirmzeitTeil(bildschirmzeit)}
   ${appTeil(p, ideenStand, datenFehler, installierbar)}`;

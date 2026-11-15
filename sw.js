@@ -21,7 +21,7 @@
  * Datei zu müssen.
  */
 
-const VERSION = 'v42';
+const VERSION = 'v43';
 const CACHE = `freizeit-${VERSION}`;
 
 const SHELL = [
@@ -54,7 +54,6 @@ const SHELL = [
   './js/ansicht-filme.js',
   './js/bilder.js',
   './js/darstellung.js',
-  './js/ki-tipp.js',
   './js/bildschirmzeit.js',
   './schrift/archivo-latin.woff2',
   './vendor/leaflet/leaflet.js',

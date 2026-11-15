@@ -92,6 +92,8 @@ const basis = (e) => ({
   ausverkauft: Boolean(e.ausverkauft),
   vorverkauf: e.vorverkauf || '',
   tipp: Boolean(e.tipp),
+  // Wie sehr es sich lohnt (0–100, Monatslauf) – danach sortiert das Programm (filter.js: rang).
+  score: Number.isInteger(e.score) ? e.score : null,
 });
 
 /** Ein Termin an einem bestimmten Tag. */
@@ -268,6 +270,7 @@ export function karte(eintrag, o = {}) {
     eintrag.unsicher ? marke('unsicher', 'warn') : '',
   ].filter(Boolean).join('');
   const mehr = [
+    eintrag.score !== null && eintrag.score !== undefined ? marke(`Score ${eintrag.score}`, 'rand score') : '',
     eintrag.imdb ? marke(`IMDb Top 250 · Platz ${eintrag.imdb}`) : '',
     // Eine Idee sagt, wo sie spielt (Zuhause, Hamburg, Ausflug) – nicht ihre Region.
     eintrag.quelle === 'idee' ? (WO[eintrag.wo] ? marke(WO[eintrag.wo], 'rand') : '')

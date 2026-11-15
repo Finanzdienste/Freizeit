@@ -7,7 +7,8 @@
  *
  * Gemeinsam für Programm, Kalender und Karte – alle zeigen dieselbe Auswahl,
  * nur anders angeordnet. Den Filter dafür baut filterFuer(st): der
- * gespeicherte samt Bezugspunkt für Umkreis und Reihenfolge.
+ * gespeicherte samt Bezugspunkt für Umkreis und Reihenfolge und dem Abzug
+ * für Abwechslung. Die Reihenfolge am Tag ist sonst der Score (rang).
  *
  * Online & TV (Region ONL, `online: true`) hat keinen Ort: Der Umkreis lässt
  * es stehen, nach Entfernung steht es am Ende, und für die 21:30-Regel zählt
@@ -15,7 +16,7 @@
  */
 import { kostenlos, istOnline } from './text.js';
 import {
-  werktag, nachFeierabend, endetRechtzeitig, beginntRechtzeitig, sortierung, schonVorbei, jetzt,
+  werktag, nachFeierabend, endetRechtzeitig, beginntRechtzeitig, sortierung, schonVorbei, jetzt, plusTage,
 } from './zeit.js';
 import { bezugVon, entfernung } from './standort.js';
 
@@ -34,12 +35,52 @@ export const SCHALTER = [
 /** Die Wahl „Art“: Wert im Speicher, Beschriftung. */
 export const ART = [['', 'Alles'], ['vorort', 'Vor Ort'], ['online', 'Online & TV']];
 
+/** Der Score eines Termins (0–100, vom Monatslauf – README „Woher die Daten kommen“); ohne einen die Mitte. */
+export const score = (e) => (Number.isInteger(e && e.score) ? e.score : 50);
+
+const ISO = /^\d{4}-\d{2}-\d{2}$/;
+
+/**
+ * Abwechslung: Was man selbst schon vorhat – die eigenen Haken auf Terminen
+ * und Eingeplantes mit Kategorie –, drückt andere Termine derselben
+ * Kategorie in den sechs Tagen davor und danach, je Vorhaben um 8 Punkte,
+ * höchstens um 24. Wer jeden Abend Schach schaut, sieht am nächsten Abend
+ * zuerst etwas anderes. Konzerte der eigenen Künstler drückt das nie.
+ * Gibt (e, Tag) => Abzug zurück.
+ */
+export const ABWECHSLUNG = { je: 8, hoechstens: 24, tage: 6 };
+export function abwechslung(bock) {
+  const vorhaben = Object.entries(bock || {})
+    .filter(([k, b]) => b && b.kategorie && ISO.test(b.datum || '') && !k.startsWith('z:'))
+    .map(([k, b]) => ({ k, kategorie: b.kategorie, datum: b.datum }));
+  if (!vorhaben.length) return () => 0;
+  return (e, iso) => {
+    if (e.kuenstler) return 0;
+    const von = plusTage(iso, -ABWECHSLUNG.tage);
+    const bis = plusTage(iso, ABWECHSLUNG.tage);
+    // Der Termin selbst an anderen Tagen zählt nicht – ob Daten (id) oder Eintrag (schluessel t:<id>:<Tag>).
+    const selbst = e.schluessel ? e.schluessel.slice(0, e.schluessel.lastIndexOf(':') + 1) : `t:${e.id}:`;
+    const n = vorhaben.filter((v) => v.kategorie === e.kategorie && v.datum >= von && v.datum <= bis && !v.k.startsWith(selbst)).length;
+    return Math.min(ABWECHSLUNG.hoechstens, n * ABWECHSLUNG.je);
+  };
+}
+
+/** Wie weit oben ein Termin an einem Tag steht: sein Score abzüglich der Abwechslung (f.malus aus filterFuer). */
+export const rang = (e, iso, f) => score(e) - (f && f.malus ? f.malus(e, iso) : 0);
+
+/** Die Reihenfolge am Tag: 'beste' (Vorgabe), 'zeit' oder – nur mit Bezugspunkt – 'entfernung'. */
+export const reihenfolge = (f) => {
+  if (f.bezug && f.nachEntfernung) return 'entfernung';
+  return f.nachZeit ? 'zeit' : 'beste';
+};
+
 /**
  * Der Filter, wie er gilt: der gespeicherte (st.filter) mit dem
- * Bezugspunkt für Umkreis und Reihenfolge (st.standort). Ohne Bezugspunkt
- * wirken beide nicht.
+ * Bezugspunkt für Umkreis und Reihenfolge (st.standort) – ohne Bezugspunkt
+ * wirken beide nicht – und dem Abzug für Abwechslung (malus, aus den
+ * eigenen Haken).
  */
-export const filterFuer = (st) => ({ ...st.filter, bezug: bezugVon(st) });
+export const filterFuer = (st) => ({ ...st.filter, bezug: bezugVon(st), malus: abwechslung(st.bock) });
 
 /** Ist der Umkreis an – mit Bezugspunkt? */
 export const umkreisAn = (f) => Boolean(f.bezug && f.umkreis > 0);

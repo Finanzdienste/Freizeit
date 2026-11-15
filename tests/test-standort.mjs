@@ -59,9 +59,9 @@ const gespeichertBis = (namensAnfang = '') => warte((anfang) => {
 // --- ohne Bezugspunkt
 check((await unter(DI, 'Theater früh')) === 'Thalia · Bühne', 'ohne Bezugspunkt keine Entfernung an den Karten');
 await page.click('#ansicht [data-aktion="filter-auf"]');
-check(await page.locator('#blatt [data-aktion="umkreis"]').count() === 0 && await page.locator('#blatt [data-aktion="reihenfolge"]').count() === 0
+check(await page.locator('#blatt [data-aktion="umkreis"]').count() === 0 && await page.locator('#blatt [data-aktion="reihenfolge"][data-wert="entfernung"]').count() === 0
   && await page.locator('#blatt [data-aktion="standort-festlegen"]').count() === 1,
-'im Filter ohne Bezugspunkt: kein Umkreis, keine Reihenfolge – dafür „Standort festlegen“');
+'im Filter ohne Bezugspunkt: kein Umkreis, keine Reihenfolge nach Entfernung – dafür „Standort festlegen“');
 await page.click('#blatt [data-aktion="standort-festlegen"]');
 await page.waitForSelector('#e-standort');
 check(await page.locator('#blatt').count() === 0 && (await feld().innerText()).includes('Noch kein Standort') && (await page.locator('#e-standort-titel').innerText()) === 'Mein Standort'

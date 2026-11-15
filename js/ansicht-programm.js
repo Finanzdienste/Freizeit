@@ -4,13 +4,15 @@
  *
  *   Tag     der ganze Tag: Wetter, Feiertag, Tipp, „Deine Zeit“ (ein
  *           Zeitstreifen von 7 bis 24 Uhr mit belegten Zeiten und Haken),
- *           Eingeplantes und alle Termine als Karten – nach Uhrzeit in
- *           „Den ganzen Tag“, Vormittag, Nachmittag und Abend, nach
- *           Entfernung ohne Gliederung –, zuletzt, was an dem Tag läuft.
+ *           Eingeplantes und alle Termine als Karten – das Beste zuerst
+ *           (nach Score, filter.js: rang), nach Uhrzeit in „Den ganzen
+ *           Tag“, Vormittag, Nachmittag und Abend oder nach Entfernung –,
+ *           zuletzt, was an dem Tag läuft.
  *           Oben die Tagesleiste: die sieben Tage der Woche wie eine
  *           Abfahrtstafel, mit der Zahl der Termine und wer Bock hat; ein
  *           Tipp wählt den Tag.
- *   Woche   oben „Für dich“ (zwei Tipps von Claude, ki-tipp.js – im Tag einer, im Monat drei), dann je Tag eine Karte: Wetter, Zeitstreifen, wie viele Termine, die
+ *   Woche   oben „Das Beste der Woche“ (die fünf Termine mit dem höchsten
+ *           Rang), dann je Tag eine Karte: Wetter, Zeitstreifen, wie viele Termine, die
  *           Haken, Eingeplantes und Konzerte deiner Künstler, der Tipp des
  *           Tages. Ein Tipp öffnet den Tag. In der laufenden Woche dazu
  *           „Diese Woche“ (Highlights, Gut zu wissen), dann was die Woche
@@ -18,7 +20,8 @@
  *   Monat   das Blatt mit Zahlen, Bock-Punkten, ♫ für Konzerte deiner
  *           Künstler und Feiertagen. Ein Tipp wählt den Tag – darunter steht
  *           er wie eine Karte der Woche, ein Tipp darauf (oder ein zweiter
- *           aufs Feld) öffnet ihn. Dazu die Konzerte deiner Künstler im Monat.
+ *           aufs Feld) öffnet ihn. Dazu „Das Beste im Monat“ (acht) und die
+ *           Konzerte deiner Künstler im Monat.
  *
  * Alle drei teilen den Kopf: die Ansicht, blättern (‹ ›, „Heute“, auch
  * Wischen), Filter mit Chips und Zähler. Überall dieselbe Auswahl: Filter und
@@ -32,10 +35,10 @@
 import { esc, anzahl } from './text.js';
 import {
   monatsRaster, monatVon, monatPlus, monatJahr, datumMitTag, montag, plusTage, kalenderwoche, wochentag, wochentagKurz, tagMonat,
-  beginn, ende, zeitAm, uhrzeit, jetztMinuten, werktag, schonVorbei,
+  beginn, ende, zeitAm, uhrzeit, jetztMinuten, werktag, schonVorbei, sortierung,
 } from './zeit.js';
 import {
-  termineAm, laufendZwischen, letzterTag, filterFuer, spaetText, umkreisAn, istOnline,
+  termineAm, laufendZwischen, letzterTag, filterFuer, spaetText, umkreisAn, istOnline, rang, reihenfolge,
 } from './filter.js';
 import {
   karte, eintragTermin, eintragLaufend, aufklappbar,
@@ -48,9 +51,6 @@ import { geplante } from './ideen.js';
 import { belegtAm, bekannt } from './zeiten.js';
 import { filterLeiste, chipsProgramm } from './ansicht-filter.js';
 import { planenForm, meldungBox } from './ansicht-ideen.js';
-import {
-  kiSchluessel, gemerkteTipps, tippTermin, kiUi, zeitraum, ARTEN,
-} from './ki-tipp.js';
 
 /** Die drei Ansichten, vom Tag zum Überblick. */
 export const ANSICHTEN = [['tag', 'Tag'], ['woche', 'Woche'], ['monat', 'Monat']];
@@ -185,41 +185,33 @@ function kasten(name, titel, inhalt, { zahl = '', vorschau = '', id = '' } = {})
 
 const ISO_TAG = /^\d{4}-\d{2}-\d{2}$/;
 
-/** Was „Für dich“ vor dem ersten Fragen sagt – je Ansicht. */
-const FD_TEXT = {
-  tag: 'Claude sucht dir das Beste des Tages aus – passend zu deinem Kalender und dem, was du diese Woche schon vorhast.',
-  woche: 'Claude sucht dir das Beste dieser Woche aus – zwei Termine, passend zu deinem Kalender und dem, was du schon vorhast.',
-  monat: 'Claude sucht dir das Beste des Monats aus – drei Termine, mit Abwechslung zu dem, was du schon vorhast.',
-};
-
 /**
- * „Für dich“ (ki-tipp.js): Termine, die Claude für den Tag, die Woche bzw.
- * den Monat ausgesucht hat (einen, zwei, drei), jeder mit einem Satz, warum –
- * als Karten wie im Tag. art und wert wie bei zeitraum(). Nur mit Schlüssel
- * auf dem Gerät, nicht bei Eingeladenen und nicht nach dem Ende des Programms.
+ * „Das Beste der Woche“ bzw. „Das Beste im Monat“: die Termine mit dem
+ * höchsten Rang (Score abzüglich Abwechslung, filter.js) an den Tagen ab
+ * heute – mit denselben Filtern wie die Tage. Jede Veranstaltung steht nur
+ * einmal, an ihrem besten Tag (bei Gleichstand dem ersten); was man selbst
+ * schon angehakt hat, fehlt – das steht in den Tagen. Ein Tipp öffnet den Tag.
  */
-function fuerDich(p, art, wert, heute) {
-  const raum = zeitraum(art, wert);
-  if (rolle() === 'mitglied' || raum.von > p.bis || raum.bis < heute || !kiSchluessel()) return '';
-  const gemerkt = gemerkteTipps(raum.schluessel);
-  const tipps = (gemerkt ? gemerkt.liste : [])
-    .filter((t) => t.datum >= heute)
-    .map((t) => ({ t, x: tippTermin(p, t) }))
-    .filter(({ t, x }) => x && !schonVorbei(x.e, t.datum));
-  const laeuft = kiUi.laeuft === raum.schluessel;
-  const fehler = kiUi.fehler && kiUi.raum === raum.schluessel ? `<div class="fehlerbox" role="alert">${esc(kiUi.fehler)}</div>` : '';
-  const liste = tipps.map(({ t, x }) => `<div class="fd-tipp">
-      <p class="fd-warum">${art === 'tag' ? '' : `<button type="button" class="fd-tag" data-tag="${t.datum}">${wochentagKurz(t.datum)} ${tagMonat(t.datum)}</button> `}${esc(t.warum)}</p>
-      ${karte(eintragTermin(x.e, x.tag, p.tage), { zeitSpalte: true })}
-    </div>`).join('');
-  const knopf = `<button type="button" class="knopf${tipps.length ? ' klein' : ' haupt'}" data-aktion="ki-tipp" data-art="${art}" data-wert="${esc(wert)}"${laeuft ? ' disabled' : ''}>${laeuft ? 'Claude sucht …' : tipps.length ? 'Neu fragen' : ARTEN[art].knopf}</button>`;
-  // Ohne Tipps fragt die App von allein (app.js, kiAutomatisch) – je Zeitraum einmal in der Sitzung.
-  const auto = !tipps.length && !laeuft && !kiUi.versucht.has(raum.schluessel);
-  return `<section class="fuer-dich" id="fuer-dich" data-art="${art}"${auto ? ' data-auto' : ''} aria-labelledby="fuer-dich-titel">
-    <div class="fd-kopf"><h2 class="fd-titel" id="fuer-dich-titel">✨ Für dich</h2>${tipps.length ? knopf : ''}</div>
-    ${liste || `<p class="fein">${FD_TEXT[art]}</p>${knopf}`}
-    ${laeuft ? `<p class="fein" role="status">Claude schaut sich das Programm ${ARTEN[art].wort} an …</p>` : ''}
-    ${fehler}
+function besteListe(p, tage, f, plaene, { zahl, titel, id }) {
+  const beste = new Map();
+  for (const d of tage) {
+    for (const x of tagDaten(p, d, f, plaene).termine) {
+      if (!meinBock(x.schluessel)) {
+        const k = x.schluessel.slice(0, x.schluessel.lastIndexOf(':'));
+        const r = rang(x, d, f);
+        if (!beste.has(k) || r > beste.get(k).r) beste.set(k, { x, d, r });
+      }
+    }
+  }
+  const liste = [...beste.values()]
+    .sort((a, b) => b.r - a.r || a.d.localeCompare(b.d) || sortierung(a.x, a.d) - sortierung(b.x, b.d))
+    .slice(0, zahl);
+  if (!liste.length) return '';
+  return `<section class="abschnitt-klein beste" id="${id}">
+    <h3 class="tagesteil" data-teil="beste"><span>${esc(titel)}</span></h3>
+    ${liste.map(({ x, d }) => `<button type="button" class="konzert-zeile" data-tag="${d}">
+      <span class="kz-datum">${wochentagKurz(d)} ${tagMonat(d)}</span><span class="kz-titel">${x.kuenstler ? '♫ ' : ''}${esc(x.titel)}</span><span class="kz-ort">${esc([x.online ? `📺 ${x.ort}` : x.ort, x.ganztags ? 'ganztägig' : x.zeit].filter(Boolean).join(' · '))}</span>
+    </button>`).join('')}
   </section>`;
 }
 
@@ -374,15 +366,21 @@ function tagAnsicht(p, st, heute, d, plaene, ctx = {}) {
       ${streifen}
     </div>` : '';
 
-  const nachEntfernung = Boolean(f.bezug && f.nachEntfernung);
+  const folge = reihenfolge(f);
   const k = (e) => karte(e, { zeitSpalte: true });
   const geplant = td.geplant.length ? `${teilKopf('Eingeplant', td.geplant.length, 'plan')}${td.geplant.map(k).join('')}` : '';
-  const termine = nachEntfernung
-    ? td.termine.map(k).join('')
-    : TEILE.map(([key, titel]) => {
+  let termine = '';
+  if (folge === 'entfernung') termine = td.termine.map(k).join('');
+  // Das Beste zuerst: nach Rang; bei Gleichstand bleibt die Uhrzeit (sort ist stabil).
+  if (folge === 'beste' && td.termine.length) {
+    termine = `${teilKopf('Das Beste zuerst', td.termine.length, 'beste')}${[...td.termine].sort((a, b) => rang(b, d, f) - rang(a, d, f)).map(k).join('')}`;
+  }
+  if (folge === 'zeit') {
+    termine = TEILE.map(([key, titel]) => {
       const liste = td.termine.filter((e) => tagesteil(e) === key);
       return liste.length ? `${teilKopf(titel, liste.length, key)}${liste.map(k).join('')}` : '';
     }).join('');
+  }
   const leer = td.termine.length || (td.geplant.length && d > p.bis) ? '' : `<div class="leer-klein">${leerText(p, d, st, f)}</div>`;
 
   // Die Hülle begrenzt die klebende Tagesleiste: Bei „Was immer geht“ scrollt sie mit weg.
@@ -391,7 +389,6 @@ function tagAnsicht(p, st, heute, d, plaene, ctx = {}) {
     <section class="tag" id="tag-${d}" aria-label="${esc(datumMitTag(d))}">
       ${ctx.meldung && ctx.meldung.ort === 'programm' && ctx.meldung.tag === d ? meldungBox(ctx.meldung) : ''}
       ${fakten ? `<dl class="tag-info">${fakten}</dl>` : ''}
-      ${fuerDich(p, 'tag', d, heute)}
       ${zeit}
       ${geplant}${termine}${leer}
     </section>
@@ -448,7 +445,7 @@ function wocheAnsicht(p, st, heute, mo, plaene, ctx = {}) {
   const legende = zeiten || tage.some((d) => tagDaten(p, d, f, plaene).alle.some(zaehlt))
     ? `<p class="legende"><span><i class="lg-frei"></i> frei</span>${zeiten ? `<span><i class="lg-belegt"></i> ${rolle() === 'gastgeber' ? 'belegt (Kalender)' : `${n} ist belegt`}</span>` : ''}<span><i class="lg-haken ich"></i> dein Haken</span><span><i class="lg-haken p0"></i> die anderen</span><span><i class="lg-haken plan"></i> eingeplant</span></p>`
     : '';
-  return `${fuerDich(p, 'woche', mo, heute)}
+  return `${besteListe(p, tage, f, plaene, { zahl: 5, titel: 'Das Beste der Woche', id: 'woche-beste' })}
   ${dieseWocheKasten(p, mo, heute)}
   ${mo > p.bis ? '<div class="banner">Für diese Woche gibt es noch kein Programm – hier stehen nur Konzerte deiner Künstler und was ihr eingeplant habt. Es kommt mit dem Monatslauf am Ersten, sobald die Woche in den nächsten acht Wochen liegt.</div>' : ''}
   <div class="wochen-liste">${tage.map((d) => tagKarte(p, d, f, plaene, heute)).join('')}</div>
@@ -497,7 +494,7 @@ function monatAnsicht(p, st, heute, monat, datum, plaene) {
   </div>
   <p class="legende"><span>Zahl: Termine</span><span><i class="pkt ich"></i> dein Haken</span><span><i class="pkt p0"></i> die anderen</span><span><b class="f-kuenstler">♫</b> ${esc(gastgeberGenitiv() || 'deine')} Künstler</span><span><b class="lg-feiertag">1</b> Feiertag</span></p>
   <div class="monat-vorschau">${tagKarte(p, datum, f, plaene, heute, { vorschau: true })}</div>
-  ${fuerDich(p, 'monat', monat, heute)}
+  ${besteListe(p, monatsRaster(monat).filter((d) => d >= heute && monatVon(d) === monat), f, plaene, { zahl: 8, titel: 'Das Beste im Monat', id: 'monat-beste' })}
   ${konzertListe}`;
 }
 

@@ -228,17 +228,6 @@ h1, h2, h3 { margin: 0; line-height: 1.15; text-wrap: balance; }
 .kasten > .aufklappbar-inhalt { margin: 0; padding: 4px 14px 12px; gap: 6px; }
 .kasten .karte:last-child { border-bottom: 0; }
 .ka-unter { font-size: 13px; font-weight: 700; color: var(--leise); margin-top: 6px; }
-.fuer-dich { margin-top: 12px; padding: 12px 14px; border-radius: 14px; background: var(--flaeche); box-shadow: inset 0 0 0 1.5px var(--licht); display: grid; gap: 8px; }
-.fd-kopf { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.fd-titel { margin: 0; font-size: 15px; font-weight: 800; }
-.fuer-dich > .knopf { justify-self: start; }
-.fd-tipp { display: grid; gap: 4px; }
-.fd-tipp + .fd-tipp { padding-top: 8px; border-top: 1px solid var(--linie); }
-.fd-warum { margin: 0; font-size: 14px; line-height: 1.4; }
-.fd-tag { border: 0; padding: 1px 8px; margin-right: 4px; border-radius: 999px; background: var(--licht-weich); color: var(--tinte); font: inherit; font-weight: 700; cursor: pointer; }
-.fuer-dich .karte:last-child { border-bottom: 0; }
-.ki-feld { display: flex; gap: 8px; }
-.ki-feld .eingabe { flex: 1; min-width: 0; }
 #diese-woche, #abschnitt-laufend, #abschnitt-hinweise { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 12px); }
 /* Sprung zu einer Karte (aus „Wir“): unter der klebenden Tagesleiste nicht verdeckt */
 .tag .karte, #abschnitt-laufend .karte { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 96px); }
@@ -347,6 +336,7 @@ select { padding: 8px 10px; border: 0; border-radius: 10px; background: var(--fl
 .tagesteil[data-teil="plan"] { --zeichen: var(--z-merken); }
 .tagesteil[data-teil="plan"]::before { background: var(--licht-text); }
 .tagesteil[data-teil="konzerte"] { --zeichen: var(--z-note); }
+.tagesteil[data-teil="beste"] { --zeichen: var(--z-stern); }
 .tt-zahl { order: 2; font: 700 12px/1 var(--zahl); padding: 4px 8px; border-radius: 999px; background: var(--flaeche); color: var(--leise); font-variant-numeric: tabular-nums; }
 .tagesteil::after { order: 3; }
 .tag .tagesteil:first-of-type { margin-top: 20px; }
@@ -357,6 +347,7 @@ select { padding: 8px 10px; border: 0; border-radius: 10px; background: var(--fl
   --z-mond: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M19.5 14.6A8 8 0 1 1 9.4 4.5a6.4 6.4 0 0 0 10.1 10.1z'/%3E%3C/svg%3E");
   --z-merken: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M7 3.5h10v17l-5-3.7-5 3.7z'/%3E%3C/svg%3E");
   --z-note: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M9 17.5V6l10-2v11'/%3E%3Ccircle cx='6.5' cy='17.5' r='2.5'/%3E%3Ccircle cx='16.5' cy='15' r='2.5'/%3E%3C/svg%3E");
+  --z-stern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M12 3.2l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 17l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z'/%3E%3C/svg%3E");
   --welle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='8' viewBox='0 0 28 8'%3E%3Cpath d='M0 4q7-6 14 0t14 0' fill='none' stroke='%23000' stroke-width='1.6'/%3E%3C/svg%3E");
 }
 
@@ -582,6 +573,9 @@ img.bildchen { object-fit: cover; background: var(--flaeche-2); }
 .pkt.ich { background: var(--ich); } .pkt.p1 { background: var(--p1); } .pkt.p2 { background: var(--p2); } .pkt.p3 { background: var(--p3); }
 .monat-vorschau { margin-top: 12px; }
 #monat-konzerte { margin-top: 8px; }
+/* „Das Beste der Woche“ und „Das Beste im Monat“: Zeilen wie die Konzerte, ein Tipp öffnet den Tag */
+.beste { margin-top: 4px; }
+.beste + .kasten, .beste + .banner { margin-top: 14px; }
 .konzert-zeile {
   display: grid; grid-template-columns: 4.4rem minmax(0, 1fr); grid-template-areas: "datum titel" "datum ort"; gap: 0 10px;
   width: 100%; padding: 9px 2px; border: 0; border-bottom: 1px solid var(--linie); background: none; color: var(--tinte); text-align: left; cursor: pointer;

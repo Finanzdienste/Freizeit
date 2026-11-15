@@ -32,12 +32,13 @@ function reiterAusPruefen(roh) {
 /**
  * Filter im Programm (und auf der Karte). regionen: keine = alle, sonst jede
  * gewählte (bis v21 gab es nur eine: region). umkreis (km, 0 = alle) gilt nur
- * mit Bezugspunkt (standort, siehe unten); nachEntfernung ist kein Filter,
- * sondern die Reihenfolge am Tag – Zurücksetzen lässt sie stehen.
+ * mit Bezugspunkt (standort, siehe unten); nachZeit und nachEntfernung sind
+ * kein Filter, sondern die Reihenfolge am Tag (ohne beide: das Beste zuerst,
+ * nach Score) – Zurücksetzen lässt sie stehen.
  */
 export const LEERER_FILTER = () => ({
   art: '', regionen: [], kategorie: '', kostenlos: false, feierabend: false, drinnen: false, draussen: false, hohwacht: false, kuenstler: false,
-  umkreis: 0, nachEntfernung: false,
+  umkreis: 0, nachZeit: false, nachEntfernung: false,
   // Die 21:30-Regel ist an, bis man sie abstellt: auchSpaet zeigt auch, was erst später endet (filter.js, termineAm).
   auchSpaet: false,
 });

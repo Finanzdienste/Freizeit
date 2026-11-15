@@ -82,6 +82,8 @@ const wetter = tag.locator('.tag-info dd.wetter');
 check(await wetter.locator('svg.wetter-zeichen').count() === 1 && (await wetter.locator('.temp').innerText()) === '4°/2°'
   && (await wetter.innerText()).includes('bedeckt, kalt, meist trocken'), 'Wetter: Zeichen, die Temperaturen groß, dann der Satz');
 check(await tag.locator('.tag-info dt.tipp-titel').innerText() === 'Tipp', 'der Tipp hat seine Farbe');
+check(JSON.stringify(await tag.locator('.tagesteil').evaluateAll((hs) => hs.map((h) => h.dataset.teil))) === '["beste"]', 'Vorgabe „Beste zuerst“: eine Überschrift mit dem Stern');
+await A.imFilter(() => page.click('#blatt [data-aktion="reihenfolge"][data-wert="zeit"]'));
 const teile = await tag.locator('.tagesteil').evaluateAll((hs) => hs.map((h) => h.dataset.teil));
 // 16:45: Die Rallye ist vorbei (geschätztes Ende) – übrig sind Vormittag (der Markt läuft noch) und Abend.
 check(JSON.stringify(teile) === '["vormittag","abend"]', `die Tageszeiten tragen ihr Zeichen – Sonnenaufgang, Mond (${teile.join(', ')})`);

@@ -13,7 +13,9 @@
  * (st.ideenFilter) mit eigener Leiste (ideen-filter-auf, ichip-weg).
  */
 import { esc, REGIONEN, ORTE } from './text.js';
-import { SCHALTER, ART, kategorien, umkreisAn, filterFuer } from './filter.js';
+import {
+  SCHALTER, ART, kategorien, umkreisAn, filterFuer, reihenfolge as reihenfolgeVon,
+} from './filter.js';
 import { UMKREISE, knopfName } from './standort.js';
 import { WIRKUNG, WO } from './ideen.js';
 import { gastgeberGenitiv } from './gemeinsam.js';
@@ -128,10 +130,12 @@ export function programmBlatt(p, st, { karte = false, zahlText = '' } = {}) {
   const wann = gruppe('Wann', schalter('Wann', [['feierabend', 'Mo–Fr ab 15:30'], ['auchSpaet', 'Bis 21:30']],
     (k) => (k === 'auchSpaet' ? !f.auchSpaet : f[k]), (k) => `data-filter="${k}"`),
   'Mo–Fr ab 15:30: an Werktagen nur, was nach Feierabend noch geht. Bis 21:30: abends vor einem Arbeitstag nur, was bis 21:30 endet (Online & TV: beginnt).');
-  const reihenfolge = s && !karte
-    ? gruppe('Reihenfolge am Tag', segmente('Reihenfolge', [['zeit', 'Uhrzeit'], ['entfernung', 'Entfernung']], f.nachEntfernung ? 'entfernung' : 'zeit',
-      (k) => `data-aktion="reihenfolge" data-wert="${k}"`))
-    : '';
+  // Das Beste zuerst (nach Score), nach Uhrzeit – oder mit Standort nach Entfernung.
+  const reihen = [['beste', 'Beste zuerst'], ['zeit', 'Uhrzeit'], ...(s ? [['entfernung', 'Entfernung']] : [])];
+  const reihenfolge = karte
+    ? ''
+    : gruppe('Reihenfolge am Tag', segmente('Reihenfolge', reihen, reihenfolgeVon({ ...f, bezug: s }), (k) => `data-aktion="reihenfolge" data-wert="${k}"`),
+      'Beste zuerst: nach Score – wie sehr sich ein Termin lohnt (Klasse, Seltenheit, Erlebnis, Passung). Was du in denselben Tagen schon vorhast, drückt Termine derselben Art etwas nach unten.');
   const kartenGruppe = karte
     ? gruppe('Karte', schalter('Karte', KARTE, (k) => (k === 'karte-bock' ? st.karteBock : st.karteIdeen), (k) => `data-aktion="${k}"`))
     : '';

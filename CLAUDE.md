@@ -44,6 +44,11 @@ größeren Änderungen den passenden Abschnitt lesen.
 - Verhalten ändert sich → Tests anpassen oder ergänzen. Viele Tests lesen
   Texte und Selektoren (`.zeit`, `[data-bock]`, `.kal-titel` …); innerText
   hängt am CSS (etwa text-transform).
+- `js/bildschirmzeit.js` (Tobis Bildschirmzeit-Widget) ist eine byte-gleiche
+  Kopie aus Finanzdienste/Bildschirmzeit (`web/bildschirmzeit.js`): nur dort
+  ändern, dann hierher, nach Boxenstopp und Workout kopieren. Ohne
+  Verbinden-Link (`#bildschirmzeit=…`) tut es nichts (README „Bildschirmzeit
+  fürs Widget“).
 - Kennungen nie ändern – `id` der Termine, `schluessel`, `imdb`: daran hängen
   die Bock-Haken.
 - Gestaltung „Hafenlicht“ (Kommentar oben in css/styles.css): Farben nur als

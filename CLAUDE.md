@@ -136,6 +136,36 @@ Artifact-Werkzeug für die Übergabe. Die Erinnerung der Sitzung davor
 Sitzung übernehmen: dort einplanen und die alte Erinnerung mit update_trigger
 `enabled: false` abschalten (Löschen lehnt der Filter ab).
 
+## Kino der Woche
+Der Monatslauf kennt Kinoprogramme nur für eine Woche; neue Filme wie
+„Wildwood“ (8,6) fehlten deshalb. Dienstags, wenn die Kinos die Woche Do–Mi
+veröffentlicht haben:
+1. `git pull --rebase origin main`.
+2. Was in Hamburg läuft: die Seiten der Kinos (Abaton, Zeise mit Wochen-PDF,
+   Savoy, Passage, Studio, Holi, Koralle, 3001, Metropolis, B-Movie, Astor,
+   Kinopolis, CinemaxX, UCI), dazu filmstarts.de und kino.de.
+   kinoprogramm.com sperrt automatische Abrufe – nicht umgehen.
+3. Wertung: `node werkzeug/imdb-wertung.mjs "Titel:Jahr" …` (offizielle
+   Datasets). Aufnehmen: ab 7,5 mit mindestens 2 000 Stimmen, alles aus
+   daten/filme.json (Top 250, Feld `imdb` = Platz) und der große Start der
+   Woche, wenn die ersten Kritiken stark sind.
+4. Je Film höchstens drei Kinos (eins nahe Wandsbek, ein zentrales, eins mit
+   OmU/OV), je Kino ein Termin: `kategorie` „Kino“, `id` `<film>-<kino>` –
+   läuft er weiter, dieselbe `id` und die Tage anhängen. Je Tag eine
+   Vorstellung in `zeit`/`zeiten`: vor Arbeitstagen die letzte, die bis 21:30
+   endet (`dauer` = Laufzeit + 15 Min. Werbung), sonst die um 20 Uhr; weitere
+   Zeiten in die `beschreibung`. `einordnung` mit Regie, Besetzung, Fassung,
+   IMDb-Wertung und Stimmen; `score` nach README „Das Beste zuerst“; Ort wie
+   in daten/orte.json.
+5. test-daten grün, nur daten/programm.json (und orte.json) committen
+   („Kino: Woche ab <TT.MM.>“), pushen, CI und live prüfen.
+6. Tobi in einem Satz, was neu drin ist.
+
+Der Monatslauf macht das für die erste Woche mit. Eine wöchentliche Aufgabe
+dafür gibt es noch nicht: Das Anlegen (create_trigger in dieser Sitzung,
+dienstags) lehnte der Sicherheitsfilter am 15.11. ab – nur mit Tobis
+ausdrücklichem Ja anlegen, dann hier und in der Tabelle oben eintragen.
+
 ## Ausgesetzt (seit 14.11.2026)
 Tobi plant zurzeit nur Hamburg mit Umland bis gut eine Stunde und die
 Hohwachter Bucht. Was weiter weg liegt, nur ausnahmsweise: ein wirklich

@@ -547,6 +547,16 @@ gepflegt (Format unten).
 
 Neue Releases und Song-Tipps schickt derselbe Lauf nur als Nachricht.
 
+**Kino der Woche:** Kinoprogramme stehen nur eine Woche voraus fest. Der
+Monatslauf trägt deshalb für die erste Woche (und, sobald es sie gibt, eine
+Aufgabe jeden Dienstag für die Kinowoche Do–Mi) die gut bewerteten Filme mit
+Spielzeiten ins Programm: ab IMDb 7,5 mit mindestens 2 000
+Stimmen, die Top 250 und den großen Start der Woche – je Film bis zu drei
+Kinos, je Kino ein Termin (`id` `<film>-<kino>`, die Tage wachsen mit), je Tag
+eine Vorstellung, die vor Arbeitstagen bis 21:30 endet. Die Wertung holt
+`node werkzeug/imdb-wertung.mjs "Titel:Jahr"` aus IMDbs offiziellen Daten.
+Ablauf in CLAUDE.md („Kino der Woche“).
+
 Der Lauf schreibt **nur diese beiden Dateien**, prüft sie mit
 `node tests/test-daten.mjs` (ohne `npm ci`, nur Node) und committet sie
 direkt auf `main` („Freizeit: Programm ab KW 45“). Die Daten stehen bewusst
@@ -813,6 +823,7 @@ Widget“), und der Worker räumt nur seine eigenen Vorräte weg.
 | `js/zeiten-rechnen.js` | aus Kalenderterminen belegte Blöcke je Woche (Browser und Node) |
 | `werkzeug/zeiten-senden.mjs` | schickt die Zeiten an den Plan – für eine geplante Aufgabe |
 | `werkzeug/filme-aktualisieren.mjs` | IMDb Top 250 aus IMDbs offiziellen Daten auffrischen – im Monatslauf |
+| `werkzeug/imdb-wertung.mjs` | IMDb-Wertung und Stimmen für Filme im Kino, aus IMDbs offiziellen Daten – für „Kino der Woche“ |
 | `werkzeug/ortsbilder.py` | freie Fotos der Spielstätten von Wikidata/Commons suchen, prüfen, verkleinert ablegen (Python, Pillow) |
 | `js/push.js` | Push-Mitteilungen für den Gastgeber: Abo holen, beim Server an- und abmelden |
 | `js/bildschirmzeit.js` | Bildschirmzeit fürs Widget: Link nehmen, sichtbare Zeit zählen, an Supabase melden, trennen – wortgleiche Kopie aus dem Repo Finanzdienste/Bildschirmzeit (`web/bildschirmzeit.js`), hier nie ändern |

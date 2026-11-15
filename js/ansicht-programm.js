@@ -5,7 +5,9 @@
  *   Tag     der ganze Tag: Wetter, Feiertag, Tipp, „Deine Zeit“ (ein
  *           Zeitstreifen von 7 bis 24 Uhr mit belegten Zeiten und Haken),
  *           Eingeplantes und alle Termine als Karten – das Beste zuerst
- *           (nach Score, filter.js: rang), nach Uhrzeit in „Den ganzen
+ *           (nach Score, filter.js: rang; derselbe Titel mehrmals – ein Film
+ *           in drei Kinos – nur einmal oben, die übrigen unter „Weitere
+ *           Vorstellungen“), nach Uhrzeit in „Den ganzen
  *           Tag“, Vormittag, Nachmittag und Abend oder nach Entfernung –,
  *           zuletzt, was an dem Tag läuft.
  *           Oben die Tagesleiste: die sieben Tage der Woche wie eine
@@ -38,7 +40,7 @@ import {
   beginn, ende, zeitAm, uhrzeit, jetztMinuten, werktag, schonVorbei, sortierung,
 } from './zeit.js';
 import {
-  termineAm, laufendZwischen, letzterTag, filterFuer, spaetText, umkreisAn, istOnline, rang, reihenfolge,
+  termineAm, laufendZwischen, letzterTag, filterFuer, spaetText, umkreisAn, istOnline, rang, reihenfolge, besteZuerst, titelSchluessel,
 } from './filter.js';
 import {
   karte, eintragTermin, eintragLaufend, aufklappbar,
@@ -188,8 +190,9 @@ const ISO_TAG = /^\d{4}-\d{2}-\d{2}$/;
 /**
  * „Das Beste der Woche“ bzw. „Das Beste im Monat“: die Termine mit dem
  * höchsten Rang (Score abzüglich Abwechslung, filter.js) an den Tagen ab
- * heute – mit denselben Filtern wie die Tage. Jede Veranstaltung steht nur
- * einmal, an ihrem besten Tag (bei Gleichstand dem ersten); was man selbst
+ * heute – mit denselben Filtern wie die Tage. Jeder Titel steht nur einmal
+ * (auch ein Film in drei Kinos), an seinem besten Tag (bei Gleichstand dem
+ * ersten); was man selbst
  * schon angehakt hat, fehlt – das steht in den Tagen. Ein Tipp öffnet den Tag.
  */
 function besteListe(p, tage, f, plaene, { zahl, titel, id }) {
@@ -197,7 +200,7 @@ function besteListe(p, tage, f, plaene, { zahl, titel, id }) {
   for (const d of tage) {
     for (const x of tagDaten(p, d, f, plaene).termine) {
       if (!meinBock(x.schluessel)) {
-        const k = x.schluessel.slice(0, x.schluessel.lastIndexOf(':'));
+        const k = titelSchluessel(x);
         const r = rang(x, d, f);
         if (!beste.has(k) || r > beste.get(k).r) beste.set(k, { x, d, r });
       }
@@ -373,7 +376,9 @@ function tagAnsicht(p, st, heute, d, plaene, ctx = {}) {
   if (folge === 'entfernung') termine = td.termine.map(k).join('');
   // Das Beste zuerst: nach Rang; bei Gleichstand bleibt die Uhrzeit (sort ist stabil).
   if (folge === 'beste' && td.termine.length) {
-    termine = `${teilKopf('Das Beste zuerst', td.termine.length, 'beste')}${[...td.termine].sort((a, b) => rang(b, d, f) - rang(a, d, f)).map(k).join('')}`;
+    // Läuft derselbe Titel mehrmals (ein Film in drei Kinos), steht oben nur der beste – die anderen darunter.
+    const { erste, weitere } = besteZuerst(td.termine, d, f);
+    termine = `${teilKopf('Das Beste zuerst', erste.length, 'beste')}${erste.map(k).join('')}${weitere.length ? `${teilKopf('Weitere Vorstellungen', weitere.length, 'weitere')}${weitere.map(k).join('')}` : ''}`;
   }
   if (folge === 'zeit') {
     termine = TEILE.map(([key, titel]) => {

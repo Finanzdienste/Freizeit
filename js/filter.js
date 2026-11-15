@@ -68,6 +68,28 @@ export function abwechslung(bock) {
 /** Wie weit oben ein Termin an einem Tag steht: sein Score abzüglich der Abwechslung (f.malus aus filterFuer). */
 export const rang = (e, iso, f) => score(e) - (f && f.malus ? f.malus(e, iso) : 0);
 
+/** Derselbe Titel – etwa ein Film in drei Kinos – zählt in den Bestenlisten nur einmal. */
+export const titelSchluessel = (e) => String(e.titel || '').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]/g, '');
+
+/**
+ * „Das Beste zuerst“ an einem Tag: nach Rang, bei Gleichstand das Nähere
+ * (mit Bezugspunkt), sonst wie gehabt nach Uhrzeit. Läuft derselbe Titel
+ * mehrmals (ein Film in mehreren Kinos), steht nur der beste in `erste` –
+ * die übrigen in `weitere`, für unten.
+ */
+export function besteZuerst(liste, iso, f) {
+  const sortiert = [...liste].sort((a, b) => rang(b, iso, f) - rang(a, iso, f) || (f.bezug ? abstand(a, f) - abstand(b, f) || 0 : 0));
+  const gesehen = new Set();
+  const erste = [];
+  const weitere = [];
+  for (const e of sortiert) {
+    const k = titelSchluessel(e);
+    (gesehen.has(k) ? weitere : erste).push(e);
+    gesehen.add(k);
+  }
+  return { erste, weitere };
+}
+
 /** Die Reihenfolge am Tag: 'beste' (Vorgabe), 'zeit' oder – nur mit Bezugspunkt – 'entfernung'. */
 export const reihenfolge = (f) => {
   if (f.bezug && f.nachEntfernung) return 'entfernung';

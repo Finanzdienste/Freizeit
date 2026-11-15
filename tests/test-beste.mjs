@@ -20,7 +20,11 @@ const SCORES = {
 };
 const basis = testProgramm();
 const programm = testProgramm({
-  termine: basis.termine.map((e) => (e.id in SCORES ? { ...e, score: SCORES[e.id] } : e)),
+  termine: [...basis.termine.map((e) => (e.id in SCORES ? { ...e, score: SCORES[e.id] } : e)),
+    // Derselbe Titel ein zweites Mal am Di (wie ein Film in zwei Kinos): steht unter „Weitere Vorstellungen“.
+    {
+      id: 'keane-docks', daten: [DI], zeit: '21:00', titel: 'Keane', ort: 'Docks', region: 'HH', kategorie: 'Konzert', kuenstler: true, score: 95, draussen: 'drinnen', link: 'https://example.org/keane2',
+    }],
 });
 
 const A = await oeffne({ tag: MO, zeit: '10:00', programm });
@@ -54,16 +58,19 @@ const titel = (d) => page.$$eval(`#tag-${d} .karte h3`, (hs) => hs.map((h) => h.
 const karteAm = (d, text) => page.locator(`#tag-${d} .karte`, { hasText: text });
 
 await zeigeTag(DI);
-check(JSON.stringify(await titel(DI)) === JSON.stringify(['Keane', 'Theaterstück', 'Workshop mittags', 'Theater früh']),
+check(JSON.stringify(await titel(DI)) === JSON.stringify(['Keane', 'Theaterstück', 'Workshop mittags', 'Theater früh', 'Keane']),
   `Di: das Beste zuerst – Keane, Theaterstück, Workshop, Theater (${(await titel(DI)).join(', ')})`);
-check((await page.locator(`#tag-${DI} .tagesteil`).innerText()).startsWith('Das Beste zuerst') && await page.locator(`#tag-${DI} .tagesteil .tt-zahl`).innerText() === '4',
-  'eine Überschrift „Das Beste zuerst“ mit der Zahl');
-await karteAm(DI, 'Keane').locator('.kopfzeile').click();
-check(await karteAm(DI, 'Keane').locator('.mehr .marke.score').innerText() === 'Score 95', 'aufgeklappt: „Score 95“');
+check((await page.locator(`#tag-${DI} .tagesteil`).first().innerText()).startsWith('Das Beste zuerst') && await page.locator(`#tag-${DI} .tagesteil .tt-zahl`).first().innerText() === '4',
+  'eine Überschrift „Das Beste zuerst“ mit der Zahl – derselbe Titel zählt einmal');
+check((await page.locator(`#tag-${DI} .tagesteil[data-teil="weitere"]`).innerText()).startsWith('Weitere Vorstellungen')
+  && await page.locator(`#tag-${DI} .tagesteil[data-teil="weitere"] ~ .karte`, { hasText: 'Docks' }).count() === 1,
+'Keane ein zweites Mal (Docks) steht darunter unter „Weitere Vorstellungen“');
+await karteAm(DI, 'Sporthalle').locator('.kopfzeile').click();
+check(await karteAm(DI, 'Sporthalle').locator('.mehr .marke.score').innerText() === 'Score 95', 'aufgeklappt: „Score 95“');
 
 // Uhrzeit: wieder nach Tageszeit gegliedert, und es bleibt gespeichert.
 await imFilter(() => page.click('#blatt [data-aktion="reihenfolge"][data-wert="zeit"]'));
-check(JSON.stringify(await titel(DI)) === JSON.stringify(['Workshop mittags', 'Theater früh', 'Theaterstück', 'Keane'])
+check(JSON.stringify(await titel(DI)) === JSON.stringify(['Workshop mittags', 'Theater früh', 'Theaterstück', 'Keane', 'Keane'])
   && (await gespeichert()).filter.nachZeit === true, 'Reihenfolge „Uhrzeit“: nach Beginn, gespeichert');
 await imFilter(() => page.click('#blatt [data-aktion="reihenfolge"][data-wert="beste"]'));
 check((await titel(DI))[0] === 'Keane' && (await gespeichert()).filter.nachZeit === false, 'zurück auf „Beste zuerst“');
@@ -73,7 +80,7 @@ await zeigeTag(MO);
 await karteAm(MO, 'Gratis Lesung').locator('[data-bock]').first().click();
 check(Boolean((await gespeichert()).bock[`t:gratis-lesung:${MO}`]), 'Haken auf der Lesung am Montag');
 await zeigeTag(DI);
-check(JSON.stringify(await titel(DI)) === JSON.stringify(['Keane', 'Workshop mittags', 'Theaterstück', 'Theater früh']),
+check(JSON.stringify(await titel(DI)) === JSON.stringify(['Keane', 'Workshop mittags', 'Theaterstück', 'Theater früh', 'Keane']),
   `Di danach: das Theaterstück rutscht unter den Workshop – Abwechslung (${(await titel(DI)).join(', ')})`);
 
 // --- Woche: „Das Beste der Woche“ statt „Für dich“
@@ -85,7 +92,8 @@ check(await woche.locator('.tagesteil').innerText() === 'Das Beste der Woche' &&
   `die Woche: „Das Beste der Woche“ mit fünf Zeilen (${(await zeilen()).join(' · ')})`);
 check((await zeilen())[0] === '♫ Keane' && (await zeilen())[1] === 'Konzert spät' && !(await zeilen()).includes('Gratis Lesung'),
   'oben Keane, dann „Konzert spät“ (am Fr ohne 21:30-Regel) – die angehakte Lesung fehlt');
-check((await zeilen()).filter((t) => t === 'Theaterstück').length <= 1, 'jede Veranstaltung nur einmal, auch wenn sie an zwei Tagen ist');
+check((await zeilen()).filter((t) => t === 'Theaterstück').length <= 1 && (await zeilen()).filter((t) => t === '♫ Keane').length === 1,
+  'jeder Titel nur einmal – auch an zwei Tagen oder an zwei Orten');
 check(await woche.locator('.konzert-zeile').first().locator('.kz-datum').innerText() === 'Di 3.11.', 'mit Tag');
 await woche.locator('.konzert-zeile').first().click();
 await page.locator(`#tag-${DI}`).waitFor();

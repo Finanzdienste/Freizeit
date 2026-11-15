@@ -429,20 +429,23 @@ Seltenheit (einmalig, Premiere, Tourstopp), Erlebnis (ein intimes Clubkonzert
 kann mehr wert sein als ein beliebiger Hallenabend) und Passung zu Tobis
 Geschmack. Das Thema allein trägt keinen hohen Score. Anker: ab 92 ein
 Jahreshöhepunkt, 80–91 sehr lohnend, 62–79 gut, 42–61 nett, wenn es passt,
-darunter Alltag. Ohne Score zählt ein Termin als 50.
+darunter Alltag. Kinofilme laufen wochenlang und sind darum nicht selten:
+starke neue Filme 58–70. Ohne Score zählt ein Termin als 50.
 
 Danach sortiert das Programm, ohne Netz und ohne KI:
 
 - **Tag:** Vorgabe ist „Beste zuerst“ – unter „Eingeplant“ eine Liste „Das
-  Beste zuerst“; bei Gleichstand nach Uhrzeit. Im Filter unter
+  Beste zuerst“; bei Gleichstand das Nähere (mit Standort), sonst nach
+  Uhrzeit. Derselbe Titel mehrmals – ein Film in drei Kinos – steht oben nur
+  einmal, die übrigen darunter unter „Weitere Vorstellungen“. Im Filter unter
   **Reihenfolge am Tag** geht es zurück auf **Uhrzeit** (gegliedert in „Den
   ganzen Tag“, Vormittag, Nachmittag, Abend) oder, mit Standort, auf
   **Entfernung** (`nachZeit` bzw. `nachEntfernung` im Filter).
 - **Woche:** oben **Das Beste der Woche** – die fünf besten Termine ab heute,
   **Monat:** unter der Vorschau **Das Beste im Monat** – die acht besten.
-  Beide mit denselben Filtern und der 21:30-Regel wie die Tage, jede
-  Veranstaltung einmal (an ihrem besten Tag), ohne was man selbst schon
-  angehakt hat. Ein Tipp öffnet den Tag.
+  Beide mit denselben Filtern und der 21:30-Regel wie die Tage, jeder Titel
+  einmal (an seinem besten Tag, auch ein Film in mehreren Kinos), ohne was
+  man selbst schon angehakt hat. Ein Tipp öffnet den Tag.
 - **Abwechslung:** Was man selbst vorhat (eigene Haken auf Terminen,
   Eingeplantes), drückt Termine derselben Kategorie in den sechs Tagen davor
   und danach – je Vorhaben 8 Punkte, höchstens 24 (`abwechslung` und `rang`

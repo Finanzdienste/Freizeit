@@ -155,8 +155,11 @@ veröffentlicht haben:
    Vorstellung in `zeit`/`zeiten`: vor Arbeitstagen die letzte, die bis 21:30
    endet (`dauer` = Laufzeit + 15 Min. Werbung), sonst die um 20 Uhr; weitere
    Zeiten in die `beschreibung`. `einordnung` mit Regie, Besetzung, Fassung,
-   IMDb-Wertung und Stimmen; `score` nach README „Das Beste zuerst“; Ort wie
-   in daten/orte.json.
+   IMDb-Wertung und Stimmen; Ort wie in daten/orte.json. `score` nach README
+   „Das Beste zuerst“ – ein Film läuft meist wochenlang in vielen Kinos, ist
+   also nicht selten: starke neue Filme 58–70, Klassiker der Top 250 auf der
+   großen Leinwand 62–75, nur Besonderes (Premiere mit Gästen, 70 mm,
+   einmalige Vorführung) höher.
 5. test-daten grün, nur daten/programm.json (und orte.json) committen
    („Kino: Woche ab <TT.MM.>“), pushen, CI und live prüfen.
 6. Tobi in einem Satz, was neu drin ist.

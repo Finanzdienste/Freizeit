@@ -101,7 +101,10 @@ check((await unter(MO, 'Stadtrallye ohne Ort')) === 'irgendwo · Erlebnis', 'ohn
 check((await page.locator('#abschnitt-laufend .karte', { hasText: 'Ausstellung X' }).locator('.unter').textContent()).includes('Kunsthalle · 500 m'), 'auch an Laufendem');
 
 // --- Reihenfolge
-check(JSON.stringify(await A.titelAm(DI)) === JSON.stringify(['Workshop mittags', 'Theater früh', 'Theaterstück', 'Keane']), 'zuerst nach Uhrzeit');
+// Die Testdaten haben keinen Score (alle 50): „Beste zuerst“ nimmt bei Gleichstand das Nähere.
+check(JSON.stringify(await A.titelAm(DI)) === JSON.stringify(['Theater früh', 'Theaterstück', 'Workshop mittags', 'Keane']), 'Vorgabe „Beste zuerst“: bei Gleichstand das Nähere zuerst');
+await imBlatt('[data-aktion="reihenfolge"][data-wert="zeit"]');
+check(JSON.stringify(await A.titelAm(DI)) === JSON.stringify(['Workshop mittags', 'Theater früh', 'Theaterstück', 'Keane']), '„Uhrzeit“: nach Beginn');
 await imBlatt('[data-aktion="reihenfolge"][data-wert="entfernung"]');
 check(JSON.stringify(await A.titelAm(DI)) === JSON.stringify(['Theater früh', 'Theaterstück', 'Workshop mittags', 'Keane']), '„Entfernung“: das Nächste zuerst');
 check(JSON.stringify((await A.titelAm(MO)).slice(-1)) === JSON.stringify(['Stadtrallye ohne Ort']), 'was keinen Ort hat, steht hinten');

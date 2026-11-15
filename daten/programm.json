@@ -17928,6 +17928,86 @@
       "einordnung": "Purple Disco Machine macht sonnigen Nu-Disco-House mit Funk-Gitarren und Hits wie „Hypnotized“ – dieselbe Liga wie Alle Farben, Robin Schulz und Lost Frequencies, nur discolastiger. „Cosmotropia“ greift Cosmic Disco und Space Rock der 70er und 80er auf. Die Sporthalle ist eine große Stehhalle – eher Tanzabend als Konzert; Veranstalter Karsten Jahnke.",
       "tipp": true,
       "unsicher": "Ende geschätzt; Preis nicht angegeben"
+    },
+    {
+      "id": "u2-olympiastadion-berlin-2027-06-30",
+      "daten": [
+        "2027-06-30",
+        "2027-07-01"
+      ],
+      "zeit": "20:00",
+      "ende": "22:45",
+      "titel": "U2 – The Greatest Show On Earth World Tour",
+      "ort": "Olympiastadion, Berlin",
+      "geo": [
+        52.51458,
+        13.23981
+      ],
+      "region": "WEI",
+      "kategorie": "Konzert",
+      "score": 90,
+      "beschreibung": "Stadionkonzert der Welttour 2027 – der einzige Deutschland-Halt, wegen der Nachfrage mit Zusatzshow am 1.7.",
+      "preis": "Tickets über Ticketmaster (Preise dort)",
+      "draussen": "draußen",
+      "link": "https://olympiastadion.berlin/events/u2-the-greatest-show-on-earth-world-tour/",
+      "anreise": "Bahn: ICE ab Hamburg Hbf ca. 1:45–2 Std. bis Berlin Hbf, weiter mit S-Bahn oder U2 zum Olympiastadion · Auto: ca. 3 Std. (A24) · nach dem Stadionkonzert übernachten",
+      "einordnung": "U2 gehen 2027 mit „The Greatest Show On Earth“ auf Welttournee; Berlin ist der einzige Halt in Deutschland, wegen der großen Nachfrage spielt die Band am 1.7. ein zweites Mal im Olympiastadion. Tickets gibt es nur mobil über Ticketmaster (Vorverkauf seit 6.11.2026), VIP-Pakete im Shop des Stadions; das Stadion rät ausdrücklich vom Zweitmarkt ab. Vor Ort wird bargeldlos bezahlt. Eine Reise mit Übernachtung – als Ausnahme gewünscht, weil U2 nicht näher an Hamburg spielen.",
+      "kuenstler": true,
+      "unsicher": "Beginn noch nicht bekannt (laut Stadion „folgt“); Ende geschätzt; ob es noch Tickets gibt, steht nicht da"
+    },
+    {
+      "id": "gracie-abrams-uber-arena-berlin-2027-05-12",
+      "daten": [
+        "2027-05-12",
+        "2027-05-13"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Gracie Abrams – The Look at My Life Tour",
+      "ort": "Uber Arena, Berlin",
+      "geo": [
+        52.50637,
+        13.44377
+      ],
+      "region": "WEI",
+      "kategorie": "Konzert",
+      "score": 84,
+      "beschreibung": "Zwei Abende in der Uber Arena – die einzigen in Deutschland auf der Tour zum dritten Album „Daughter From Hell“.",
+      "preis": "ab 72 € (Uber Arena, Standard; Premium ab 199 €)",
+      "draussen": "drinnen",
+      "link": "https://www.uber-arena.de/en/events/detail/gracie-abrams",
+      "anreise": "Bahn: ICE ab Hamburg Hbf ca. 1:45–2 Std. bis Berlin Hbf, weiter mit der S-Bahn bis Warschauer Straße · Auto: ca. 3 Std. (A24) · am selben Abend zurück wird knapp – eher übernachten",
+      "einordnung": "Die „Look at My Life Tour“ führt Gracie Abrams mit dem dritten Album „Daughter From Hell“ durch Nordamerika, Großbritannien und Europa; in Deutschland spielt sie nur diese zwei Abende in Berlin. Einlass 18:30, Beginn 20 Uhr, als Support Singer-Songwriter Jake Minch. Bei der Arena gibt es noch Tickets, teils als „letzte Tickets“ markiert (Stand 15.11.). Eine Reise mit Übernachtung – als Ausnahme gewünscht, weil sie nicht näher an Hamburg spielt.",
+      "kuenstler": true,
+      "unsicher": "Ende geschätzt; Einlass 18:30 nur für den 12.5. angegeben"
+    },
+    {
+      "id": "oasis-allianz-arena-muenchen-2027-07-02",
+      "daten": [
+        "2027-07-02",
+        "2027-07-03",
+        "2027-07-06"
+      ],
+      "zeit": "18:00",
+      "ende": "22:45",
+      "titel": "Oasis Live ’27",
+      "ort": "Allianz Arena, München",
+      "geo": [
+        48.21879,
+        11.62362
+      ],
+      "region": "WEI",
+      "kategorie": "Konzert",
+      "score": 88,
+      "beschreibung": "Oasis im Stadion – München ist der einzige Halt in Deutschland, drei Abende in der Allianz Arena mit Richard Ashcroft als Special Guest.",
+      "preis": "96,25–268,75 € – ausverkauft (Resale später nur zum Originalpreis über Ticketmaster und Twickets)",
+      "draussen": "draußen",
+      "link": "https://www.oasisinet.com/",
+      "anreise": "Bahn: ICE ab Hamburg Hbf ca. 6 Std. bis München Hbf, weiter mit der U6 bis Fröttmaning · Flug ca. 1:15 Std. · Auto: ca. 7:30 Std. (A7/A9) · Übernachtung nötig, am besten zwei Nächte",
+      "einordnung": "Nach der Reunion-Tour 2025 gehen Oasis 2027 wieder in die Stadien; in Deutschland nur in München, wo zu den Abenden am 2. und 3.7. ein dritter am Di 6.7. dazukam. Special Guest ist Richard Ashcroft. Verkauft wurde nur über eine Registrierung mit persönlichem Code, alle Termine sind ausverkauft; Tickets aus zweiter Hand gibt es laut Band erst näher am Termin und nur zum Originalpreis über Ticketmaster und Twickets – vor anderen Angeboten warnt die Band. Weit weg – als Ausnahme gewünscht.",
+      "kuenstler": true,
+      "ausverkauft": true,
+      "unsicher": "18 Uhr laut muenchen.de – vermutlich Beginn des Abends mit Vorband, Oasis später; Ende geschätzt"
     }
   ],
   "laufend": [

@@ -21,6 +21,7 @@
   "Bucerius Kunst Forum, Alter Wall": "bucerius-kunst-forum-q877566",
   "Bucerius Kunst Forum, Alter Wall 12": "bucerius-kunst-forum-q877566",
   "Bürgerhaus, Mühlenstraße 22, Bad Oldesloe": "muehlenstrasse-22-q58487555",
+  "CCH Congress Center Hamburg, Saal 1": "congress-center-hamburg-q896114",
   "CU-Arena, Neugraben": "cu-arena-q115729401",
   "Capitol Hannover": "capitol-hochhaus-q1034682",
   "Christuskirche Wandsbek": "christuskirche-wandsbek-q1087331",
@@ -264,6 +265,7 @@
   "BiM – Bürgerhaus in Meiendorf": "2026-11-04",
   "Bibliothek der Helmut-Schmidt-Universität, Jenfeld": "2026-11-04",
   "Billardcafé Trio": "2026-11-04",
+  "Birdland, Hoheluft": "2026-11-15",
   "Boberger Dünenhaus": "2026-11-04",
   "Bootsvermietung Dornheim": "2026-11-04",
   "Boulderwelt Hamburg": "2026-11-04",
@@ -777,6 +779,15 @@
    "lizenz": "CC BY 3.0",
    "lizenzLink": "https://creativecommons.org/licenses/by/3.0",
    "urheber": "hh oldman"
+  },
+  "congress-center-hamburg-q896114": {
+   "datei": "File:Luftaufnahme CCH in Hamburg.jpg",
+   "objekt": "Congress Center Hamburg",
+   "wikidata": "Q896114",
+   "seite": "https://commons.wikimedia.org/wiki/File%3ALuftaufnahme_CCH_in_Hamburg.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
+   "urheber": "PraktikantHH"
   },
   "cu-arena-q115729401": {
    "datei": "File:CU-Arena Hamburg-Neugraben.jpg",

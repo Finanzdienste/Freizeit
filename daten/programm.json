@@ -5492,7 +5492,8 @@
       "preis": "VVK 9 €, AK 10 €",
       "draussen": "drinnen",
       "link": "https://www.brakula.de/programm/lagerfeuerklassiker-singen/151120261830/",
-      "einordnung": "Mitsingabend ohne Chorerfahrung: Jan Jahn spielt Gitarre auf Zuruf, die Texte laufen auf der Leinwand mit – von Rock und Pop bis Schlager und Volkslied. Zwei Stunden gesellige Stimmung, Vorverkauf etwas günstiger."
+      "einordnung": "Mitsingabend ohne Chorerfahrung: Jan Jahn spielt Gitarre auf Zuruf, die Texte laufen auf der Leinwand mit – von Rock und Pop bis Schlager und Volkslied. Zwei Stunden gesellige Stimmung, Vorverkauf etwas günstiger. Rock- und Pop-Klassiker zum Mitsingen auf Zuruf, eher Gemeinschaftsabend als Konzert.",
+      "tipp": true
     },
     {
       "id": "gazino-alt-nova-szenischer-liederabend-von-idil-uener",
@@ -6591,12 +6592,13 @@
       "kostenlos": true,
       "draussen": "drinnen",
       "link": "https://www.kulturschloss-wandsbek.de/?p=17481",
-      "einordnung": "Balfolk ist europäische Tanzmusik – Mazurka, Schottisch, Bourrée –, die in offenen Sessions gemeinsam gespielt wird. Wer ein Instrument mitbringt, spielt mit, Zuhören und Tanzen ist ebenfalls möglich. Eintritt frei im Kulturschloss Wandsbek.",
+      "einordnung": "Balfolk ist europäische Tanzmusik – Mazurka, Schottisch, Bourrée –, die in offenen Sessions gemeinsam gespielt wird. Wer ein Instrument mitbringt, spielt mit, Zuhören und Tanzen ist ebenfalls möglich. Eintritt frei im Kulturschloss Wandsbek. Offene Folksession fast vor Tobis Haustür, Eintritt frei. Laut Kulturschloss ist der nächste Termin am 16.12. um 19:30 Uhr (?p=17483). Eher Folk zum Tanzen als Indie, aber ein Abend zum Mitmachen.",
       "geo": [
         53.57418,
         10.05968
       ],
-      "unsicher": "Ende geschätzt"
+      "unsicher": "Ende geschätzt",
+      "tipp": true
     },
     {
       "id": "eberhard-michaely-veraenderungen-befluegeln-ohlendorffsche",
@@ -6855,7 +6857,8 @@
       "draussen": "drinnen",
       "link": "https://kampnagel.de/produktionen/grosseb%C3%BChne-ueberjazz-festival-2026-freitag",
       "unsicher": "Ende nicht angegeben (Dauer geschätzt); Preis für Sa nicht gesehen",
-      "einordnung": "Überjazz ist Hamburgs Festival für Jazz jenseits der Genregrenzen. Wegen der Kampnagel-Sanierung kompakt in der Halle k6 mit mehreren Acts pro Abend: Do u. a. MOVE 78 und Oraculu mit Theon Cross, Fr Another Taste und Juju Rogers, Sa AL.SO, Sam Gendel & Sam Wilkes und die Sinsuke Fujieda Group. Lange Abende – donnerstags weit nach 21:30 Uhr."
+      "einordnung": "Überjazz ist Hamburgs Festival für Jazz jenseits der Genregrenzen. Wegen der Kampnagel-Sanierung kompakt in der Halle k6 mit mehreren Acts pro Abend: Do u. a. MOVE 78 und Oraculu mit Theon Cross, Fr Another Taste und Juju Rogers, Sa AL.SO, Sam Gendel & Sam Wilkes und die Sinsuke Fujieda Group. Lange Abende – donnerstags weit nach 21:30 Uhr. Überjazz ist der einfachste Weg, an einem Abend mehrere moderne Jazz-Acts zwischen Club, Hip-Hop und Elektronik zu probieren.",
+      "tipp": true
     },
     {
       "id": "eroeffnung-tomorrows-ghosts-phoxxi-deichtorhallen",
@@ -7643,12 +7646,13 @@
       "preis": "VVK 37,50 €",
       "draussen": "drinnen",
       "link": "https://fabrik.de/veranstaltungsdetail/pohlmann-1290",
-      "einordnung": "Ingo Pohlmann ist ein deutscher Liedermacher mit Pop-Gespür, der live sehr nahbar wirkt. Die Fabrik ist der passende Ort für seine Mischung aus Band-Songs und Geschichten.",
+      "einordnung": "Ingo Pohlmann ist ein deutscher Liedermacher mit Pop-Gespür, der live sehr nahbar wirkt. Die Fabrik ist der passende Ort für seine Mischung aus Band-Songs und Geschichten. Deutschsprachiger Singer-Songwriter-Pop, im Fabrik-Programm mit 37,50 € VVK gelistet.",
       "geo": [
         53.55674,
         9.92919
       ],
-      "unsicher": "Dauer geschätzt"
+      "unsicher": "Dauer geschätzt",
+      "tipp": true
     },
     {
       "id": "groove-your-move-disco-fuer-alle-brakula",
@@ -8735,12 +8739,13 @@
       "preis": "Preis siehe Ticketportal",
       "draussen": "drinnen",
       "link": "https://www.uebelundgefaehrlich.com/veranstaltungen/muff-potter/",
-      "einordnung": "Muff Potter sind seit den 90ern eine prägende Band des deutschsprachigen Indie-Punks und seit ihrem Comeback wieder sehr gefragt. Kraftvolle Texte, verschwitzter Club – ein typischer St.-Pauli-Samstag.",
+      "einordnung": "Muff Potter sind seit den 90ern eine prägende Band des deutschsprachigen Indie-Punks und seit ihrem Comeback wieder sehr gefragt. Kraftvolle Texte, verschwitzter Club – ein typischer St.-Pauli-Samstag. Muff Potter sind deutschsprachiger Indie-Punk aus den Neunzigern, ganz nah an der kettcar- und Tocotronic-Generation. Das Konzert steht im Uebel-&-Gefährlich-Programm.",
       "geo": [
         53.55655,
         9.97042
       ],
-      "unsicher": "Dauer geschätzt; Preis nicht angegeben"
+      "unsicher": "Dauer geschätzt; Preis nicht angegeben",
+      "tipp": true
     },
     {
       "id": "smile-and-burn-plaiins-the-pill-molotow-nobistor",
@@ -8860,13 +8865,14 @@
       "link": "https://www.mvp.de/luebeck/veranstaltungen/pohlmann-beweggruende-tour-2026-rider-s-cafe-luebeck/",
       "anreise": "Deutschlandticket: ca. 45 Min. ab Hamburg Hbf (Regionalexpress bis Lübeck Hbf), dann ca. 10–20 Min. zu Fuß/Bus · Auto: ca. 50–60 Min. (A1)",
       "unsicher": "Dauer geschätzt",
-      "einordnung": "Ingo Pohlmann wurde 2006 mit „Wenn jetzt Sommer wär“ bekannt und ist seitdem ein Live-Künstler mit treuer Fangemeinde. Das neue Album erschien Ende August 2026; im Konzert mischt er neue Songs mit Hits, erzählt viel und lässt Raum für Spontanes. Der Club liegt im Gewerbegebiet westlich der Altstadt – Bus oder Taxi einplanen.",
+      "einordnung": "Ingo Pohlmann wurde 2006 mit „Wenn jetzt Sommer wär“ bekannt und ist seitdem ein Live-Künstler mit treuer Fangemeinde. Das neue Album erschien Ende August 2026; im Konzert mischt er neue Songs mit Hits, erzählt viel und lässt Raum für Spontanes. Der Club liegt im Gewerbegebiet westlich der Altstadt – Bus oder Taxi einplanen. Deutschsprachiger Pop mit Liedermacher-Gestus im Club, nah an der Hamburger Songwriter-Ecke um kettcar.",
       "ort": "Riders Café, Leinweberstraße 4, Lübeck",
       "geo": [
         53.86122,
         10.63194
       ],
-      "hohwacht": true
+      "hohwacht": true,
+      "tipp": true
     },
     {
       "id": "cassia-mojo-club-2026-11-21",
@@ -8985,7 +8991,8 @@
       "draussen": "drinnen",
       "link": "https://www.kulturwerk-rahlstedt.de/events/the-hey-hills/",
       "unsicher": "Ende geschätzt",
-      "einordnung": "Die vierköpfige Hamburger Band spielt Country-Klassiker von Johnny Cash bis zu den Eagles, Rock und eigene Songs – handgemachte Musik im kleinen Rahlstedter Kulturzentrum. Einlass und Getränke ab 19 Uhr, Karten an der Abendkasse."
+      "einordnung": "Die vierköpfige Hamburger Band spielt Country-Klassiker von Johnny Cash bis zu den Eagles, Rock und eigene Songs – handgemachte Musik im kleinen Rahlstedter Kulturzentrum. Einlass und Getränke ab 19 Uhr, Karten an der Abendkasse. Coverband-Abend mit Country-Rock von Johnny Cash bis zu den Eagles, ganz nah an Wandsbek.",
+      "tipp": true
     },
     {
       "id": "tosca-puccini-grosses-haus-theater-luebeck",
@@ -9104,7 +9111,8 @@
       "draussen": "drinnen",
       "link": "https://www.elbphilharmonie.de/de/programm/michael-wollny/29139",
       "unsicher": "Ende geschätzt",
-      "einordnung": "Michael Wollny ist einer der profiliertesten Jazzpianisten Europas. Solo improvisiert er über Schuberts „Winterreise“ – ein melancholischer, sehr konzentrierter Abend im Großen Saal, passend zum Novembergrau."
+      "einordnung": "Michael Wollny ist einer der profiliertesten Jazzpianisten Europas. Solo improvisiert er über Schuberts „Winterreise“ – ein melancholischer, sehr konzentrierter Abend im Großen Saal, passend zum Novembergrau. Wollnys Solo-Improvisation über Schuberts „Winterreise“ ist Jazz-Klassik-Crossover auf höchstem Niveau und passt zur düsteren Novemberstimmung, die Tobi auch bei Cigarettes After Sex mag.",
+      "tipp": true
     },
     {
       "id": "uk-subs-fifty-years-of-uk-punkrock-fabrik-ottensen",
@@ -9198,7 +9206,8 @@
       "link": "https://www.marstall-ahrensburg.de/programm/view/jaimi-faulkner",
       "anreise": "Deutschlandticket: ca. 20–25 Min. mit RB81 ab Hamburg Hbf/Hasselbrook/Tonndorf, RE8 ab Hbf oder U1 bis Ahrensburg West/Ost · Auto: ca. 20 Min.",
       "unsicher": "Ende geschätzt; nur begrenzte Zahl Sitzplätze",
-      "einordnung": "Der australische Songwriter und Gitarrist mischt Americana, Rock und Soul und ist für sein virtuoses Gitarrenspiel bekannt; dabei hat er sein Album „Half of It“. Begrenzte Sitzplätze in der Marstall-Reithalle, Vorverkauf ratsam."
+      "einordnung": "Der australische Songwriter und Gitarrist mischt Americana, Rock und Soul und ist für sein virtuoses Gitarrenspiel bekannt; dabei hat er sein Album „Half of It“. Begrenzte Sitzplätze in der Marstall-Reithalle, Vorverkauf ratsam. Americana und Songwriter-Rock in der Richtung Neil Young, kleiner Abend im Marstall Ahrensburg.",
+      "tipp": true
     },
     {
       "id": "fabian-harloff-und-band-stage-club-lily-b-bad-oldesloe",
@@ -10936,7 +10945,8 @@
       "preis": "32 €",
       "draussen": "drinnen",
       "link": "https://www.elbphilharmonie.de/en/whats-on/rhiannon-giddens-francesco-turrisi/27970",
-      "einordnung": "Mit diesem Abend beginnt das „Reflektor“-Festival, bei dem die Elbphilharmonie einer Künstlerin fünf Tage lang die Programmgestaltung überlässt. Die Grammy- und Pulitzer-Preisträgerin Rhiannon Giddens verbindet im Duo mit dem Pianisten Francesco Turrisi amerikanischen Folk, Spirituals und Barock – intim im Kleinen Saal."
+      "einordnung": "Mit diesem Abend beginnt das „Reflektor“-Festival, bei dem die Elbphilharmonie einer Künstlerin fünf Tage lang die Programmgestaltung überlässt. Die Grammy- und Pulitzer-Preisträgerin Rhiannon Giddens verbindet im Duo mit dem Pianisten Francesco Turrisi amerikanischen Folk, Spirituals und Barock – intim im Kleinen Saal. Der Auftakt des Reflektor-Festivals mit Rhiannon Giddens ist der beste Folk- und Americana-Einstieg im ganzen Zeitraum, im Kleinen Saal und fertig um 21:30.",
+      "tipp": true
     },
     {
       "id": "champions-league-inter-mailand-vfb-stuttgart-dazn",
@@ -11269,7 +11279,9 @@
       "draussen": "drinnen",
       "link": "https://www.elbphilharmonie.de/en/whats-on/rhiannon-giddens/27958",
       "ausverkauft": true,
-      "unsicher": "Dauer nicht angegeben (geschätzt)"
+      "unsicher": "Dauer nicht angegeben (geschätzt)",
+      "tipp": true,
+      "einordnung": "Der zweite Reflektor-Abend von Rhiannon Giddens zeigt eine andere Seite der Wurzelmusik, für alle, denen ein Abend nicht reicht."
     },
     {
       "id": "diener-2er-herren-ernst-deutsch-theater",
@@ -11728,7 +11740,9 @@
       "draussen": "drinnen",
       "link": "https://ahrensburg-portal.de/ahrensburg-wohnzimmerkonzert-am-27-11-2026/",
       "anreise": "Deutschlandticket: ca. 20–25 Min. mit RB81 ab Hamburg Hbf/Hasselbrook/Tonndorf, RE8 ab Hbf oder U1 bis Ahrensburg West/Ost · Auto: ca. 20 Min.",
-      "unsicher": "Ende geschätzt"
+      "unsicher": "Ende geschätzt",
+      "tipp": true,
+      "einordnung": "Deutschsprachiger Singer-Songwriter mit Folk-Rock im Wohnzimmerformat, verwandt mit kettcar und Mighty Oaks im Kleinen."
     },
     {
       "id": "gospelkonzert-in-der-maria-magdalenen-kirche-maria",
@@ -11977,7 +11991,9 @@
       "draussen": "drinnen",
       "link": "https://www.marstall-ahrensburg.de/programm/view/remise-live-mit-lennon-von-seht",
       "anreise": "Deutschlandticket: ca. 20–25 Min. mit RB81 ab Hamburg Hbf/Hasselbrook/Tonndorf, RE8 ab Hbf oder U1 bis Ahrensburg West/Ost · Auto: ca. 20 Min.",
-      "unsicher": "Ende geschätzt"
+      "unsicher": "Ende geschätzt",
+      "tipp": true,
+      "einordnung": "Liedermacher-Abend in der kleinen Remise des Marstalls, ein typischer kleiner Live-Abend zum Ausprobieren."
     },
     {
       "id": "tim-becker-schnauze-stand-up-schloss-reinbek",
@@ -12046,7 +12062,9 @@
       "draussen": "drinnen",
       "link": "https://empore-buchholz.de/veranstaltung/mercy-street/",
       "anreise": "Deutschlandticket: Regionalzug ab Hbf ca. 25–30 Min. bis Buchholz (Nordheide), Empore ca. 5 Min. Fußweg · Auto: ca. 35–40 Min.",
-      "unsicher": "nur Titel und Termin aus der Empore-Terminliste; Dauer geschätzt"
+      "unsicher": "nur Titel und Termin aus der Empore-Terminliste; Dauer geschätzt",
+      "tipp": true,
+      "einordnung": "Peter-Gabriel-Tribute, der Art-Rock aus derselben Ära wie Pink Floyd für Tobis Floyd-Seite."
     },
     {
       "id": "anne-folger-spielversprechend-haus-13-elmshorn",
@@ -13104,7 +13122,7 @@
       "link": "https://www.grossefreiheit36.de/events/kodaline-28-11-2026",
       "unsicher": "Ende geschätzt",
       "tipp": true,
-      "einordnung": "Die Band aus Dublin um Sänger Steve Garrigan löst sich auf und verabschiedet sich mit ihrer Farewell Tour; zuletzt erschien das Abschiedsalbum „We Were Only Young“. Melancholischer, hymnischer Pop nah an Snow Patrol und Keane. Einlass 18, Beginn 19 Uhr."
+      "einordnung": "Die Band aus Dublin um Sänger Steve Garrigan löst sich auf und verabschiedet sich mit ihrer Farewell Tour; zuletzt erschien das Abschiedsalbum „We Were Only Young“. Melancholischer, hymnischer Pop nah an Snow Patrol und Keane. Einlass 18, Beginn 19 Uhr. Irische Hymnen-Balladen nah an Snow Patrol und Keane – die Abschiedstour steht im Programm der Großen Freiheit."
     },
     {
       "id": "danger-dan-keine-angst-tour-2026-inselpark-arena",
@@ -13273,7 +13291,9 @@
       "draussen": "drinnen",
       "link": "https://ahrensburg-portal.de/ahrensburg-wohnzimmerkonzert-am-28-11-2026/",
       "anreise": "Deutschlandticket: ca. 20–25 Min. mit RB81 ab Hamburg Hbf/Hasselbrook/Tonndorf, RE8 ab Hbf oder U1 bis Ahrensburg West/Ost · Auto: ca. 20 Min.",
-      "unsicher": "Ende geschätzt"
+      "unsicher": "Ende geschätzt",
+      "tipp": true,
+      "einordnung": "Pop, New Folk und Chanson im Wohnzimmerkonzert, zum Ausprobieren in sehr kleinem Rahmen."
     },
     {
       "id": "kuss-der-spinnenfrau-musical-von-kander-ebb-premiere",
@@ -13388,7 +13408,9 @@
       "draussen": "drinnen",
       "link": "https://www.eventim.de/event/kings-of-floyd-dark-side-tour-stadttheater-elmshorn-21745126/",
       "anreise": "DT: Regionalbahn (RB61/RB71) ab Hbf bis Elmshorn (ca. 30 Min.), dann ca. 15 Min. Fußweg · Auto: ca. 40 Min.",
-      "unsicher": "Ende geschätzt"
+      "unsicher": "Ende geschätzt",
+      "tipp": true,
+      "einordnung": "Pink-Floyd-Tribute mit dem Programm zu „The Dark Side of the Moon“, die einzige Floyd-Show mit Band in der Region im Zeitraum und direkt bei Tobis Pink Floyd."
     },
     {
       "id": "die-zimtschnecken-swingelingeling-buergerhaus-henstedt",
@@ -13594,7 +13616,8 @@
       "draussen": "drinnen",
       "link": "https://www.elbphilharmonie.de/en/whats-on/rhiannon-giddens-friends/28165",
       "unsicher": "Kartenlage widersprüchlich: Konzertseite zeigt Restkarten, Festivalseite „ausverkauft“",
-      "einordnung": "Der große Abend des Reflektor-Festivals im Großen Saal: Rhiannon Giddens mit Gästen, ein Programm zwischen Folk, Blues und afroamerikanischer Musiktradition. Wer nur einen Festivalabend besucht, sollte diesen nehmen."
+      "einordnung": "Der große Abend des Reflektor-Festivals im Großen Saal: Rhiannon Giddens mit Gästen, ein Programm zwischen Folk, Blues und afroamerikanischer Musiktradition. Wer nur einen Festivalabend besucht, sollte diesen nehmen. Der große Reflektor-Abend im Großen Saal ist der Abend, den man von den Giddens-Konzerten wählen sollte, wenn es nur einer sein soll; am Samstag ist der späte Schluss egal.",
+      "tipp": true
     },
     {
       "id": "alle-farben-kulturwerft-gollan-2026-11-28",
@@ -14167,7 +14190,9 @@
       "preis": "32 €",
       "draussen": "drinnen",
       "link": "https://www.elbphilharmonie.de/en/whats-on/seckou-keita/27959",
-      "unsicher": "Dauer nicht angegeben (geschätzt)"
+      "unsicher": "Dauer nicht angegeben (geschätzt)",
+      "tipp": true,
+      "einordnung": "Der Kora-Meister Seckou Keita spielt zum Ende von Reflektor, ein früher Sonntagabend um 18 Uhr und gut zum Ausprobieren von Weltmusik."
     },
     {
       "id": "neue-philharmonie-hamburg-alexey-chernov-laeiszhalle",
@@ -14396,7 +14421,9 @@
       "beschreibung": "Neuauflage der Bluegrass-DeLuxe-Sessions: Kleine Bands spielen je drei Songs, danach große Jam-Session im Kreis – Zuhörer ausdrücklich willkommen.",
       "preis": "Hutspende",
       "draussen": "drinnen",
-      "link": "https://www.brakula.de/programm/Bluegrass-and-Oldtime-Session-/291120261800/"
+      "link": "https://www.brakula.de/programm/Bluegrass-and-Oldtime-Session-/291120261800/",
+      "tipp": true,
+      "einordnung": "Offene Bluegrass- und Oldtime-Session mit Hutspende in Bramfeld, nah bei Wandsbek. Kleine Bands spielen je drei Songs, dann jammen alle im Kreis; das erinnert an die Banjo- und Folk-Seite von Mumford & Sons."
     },
     {
       "id": "walter-sittler-ich-bin-immer-noch-da-hommage-an-dieter",
@@ -15861,7 +15888,9 @@
       "ausverkauft": true,
       "draussen": "drinnen",
       "link": "https://fabrik.de/veranstaltungsdetail/a-night-for-george-harrison--1387",
-      "unsicher": "Ende geschätzt"
+      "unsicher": "Ende geschätzt",
+      "tipp": true,
+      "einordnung": "Liebevoller Harrison-Abend für Beatles-Fans; die Fabrik meldet ihn als ausverkauft."
     },
     {
       "id": "faeaschtbaenkler-grosse-freiheit-36",
@@ -16555,7 +16584,7 @@
       "link": "https://grossefreiheit36.de/events/herrenmagazin-11-12-2026",
       "unsicher": "Ende geschätzt",
       "tipp": true,
-      "einordnung": "Die Hamburger Indie-Band feiert 20 Jahre mit drei Konzerten in Berlin, Köln und Hamburg – dazugekommen, nachdem der Kleine Saal der Elbphilharmonie in 48 Stunden ausverkauft war. Deutschsprachiger Gitarren-Indie nah an kettcar; die Tickets laufen über Grand Hotel van Cleef, das Label der kettcar-Musiker. Einlass 18, Beginn 19 Uhr."
+      "einordnung": "Die Hamburger Indie-Band feiert 20 Jahre mit drei Konzerten in Berlin, Köln und Hamburg – dazugekommen, nachdem der Kleine Saal der Elbphilharmonie in 48 Stunden ausverkauft war. Deutschsprachiger Gitarren-Indie nah an kettcar; die Tickets laufen über Grand Hotel van Cleef, das Label der kettcar-Musiker. Einlass 18, Beginn 19 Uhr. Hamburger Indie-Rock aus dem Umfeld von kettcar, 20-Jahre-Show im Programm der Großen Freiheit."
     },
     {
       "id": "hanse-jazz-quintett-marstall-ahrensburg",
@@ -17451,7 +17480,7 @@
       "preis": "34 € zzgl. Gebühren (VVK laut FKP Scorpio; bei Eventim ab 43,95 €)",
       "draussen": "drinnen",
       "link": "https://www.grossefreiheit36.de/events/kingfishr-16-11-2026",
-      "einordnung": "Kingfishr verbinden irischen Folk mit hymnischem Indie-Rock – das erinnert an Mumford & Sons und an die großen Refrains von Snow Patrol. Unterwegs sind sie mit ihrem Debütalbum „Halcyon“ (2025); am Tag danach spielen sie in Berlin. Die Große Freiheit fasst rund 1.500 Leute, Stehplätze, Einlass 19 Uhr.",
+      "einordnung": "Kingfishr verbinden irischen Folk mit hymnischem Indie-Rock – das erinnert an Mumford & Sons und an die großen Refrains von Snow Patrol. Unterwegs sind sie mit ihrem Debütalbum „Halcyon“ (2025); am Tag danach spielen sie in Berlin. Die Große Freiheit fasst rund 1.500 Leute, Stehplätze, Einlass 19 Uhr. Irischer Folk-Rock mit großen Refrains wie bei Mumford & Sons; Songkick meldet den Abend inzwischen als ausverkauft.",
       "tipp": true,
       "unsicher": "Ende geschätzt"
     },
@@ -17475,7 +17504,7 @@
       "preis": "VVK 28 € zzgl. Gebühren",
       "draussen": "drinnen",
       "link": "https://www.molotowclub.com/programm/programm.php?nr=66480",
-      "einordnung": "The Veils spielen dunklen, dramatischen Indie-Rock mit Finn Andrews' eindringlicher Stimme – für Fans von The National ein naheliegender Abend. Andrews unterschrieb schon mit 16 bei Rough Trade, inzwischen gibt es acht Studioalben. Der Molotow-Club ist klein und eng, nur Stehplätze, Einlass 19 Uhr.",
+      "einordnung": "The Veils spielen dunklen, dramatischen Indie-Rock mit Finn Andrews' eindringlicher Stimme – für Fans von The National ein naheliegender Abend. Andrews unterschrieb schon mit 16 bei Rough Trade, inzwischen gibt es acht Studioalben. Der Molotow-Club ist klein und eng, nur Stehplätze, Einlass 19 Uhr. Finn Andrews' dramatischer Indie-Rock erinnert an The National; steht im Molotow-Programm weiter ohne Absage (Einlass 19 Uhr, 28 €).",
       "tipp": true,
       "unsicher": "Beginn noch nicht bekannt (Einlass 19 Uhr); Ende geschätzt"
     },
@@ -17499,7 +17528,7 @@
       "preis": "28 €",
       "draussen": "drinnen",
       "link": "https://die-hebebuehne.com/termine/widowspeak-2026-12-02",
-      "einordnung": "Widowspeak spielen langsamen, verhallten Dream Pop mit Molly Hamiltons weicher Stimme – oft mit Mazzy Star verglichen und damit nah an Cigarettes After Sex. Das siebte Album „Roses“ erschien am 5. Juni 2026; die zehn Songs kreisen um Liebe und Nostalgie. Die Hebebühne in der Barnerstraße ist ein kleiner Raum, Einlass 19 Uhr.",
+      "einordnung": "Widowspeak spielen langsamen, verhallten Dream Pop mit Molly Hamiltons weicher Stimme – oft mit Mazzy Star verglichen und damit nah an Cigarettes After Sex. Das siebte Album „Roses“ erschien am 5. Juni 2026; die zehn Songs kreisen um Liebe und Nostalgie. Die Hebebühne in der Barnerstraße ist ein kleiner Raum, Einlass 19 Uhr. Verhangener Dream Pop in der Linie von Mazzy Star und Cigarettes After Sex, im Hebebühne-Programm bestätigt.",
       "tipp": true,
       "unsicher": "Ende geschätzt"
     },
@@ -17523,7 +17552,7 @@
       "preis": "ab 65 € (ausverkauft)",
       "draussen": "drinnen",
       "link": "https://frank-turner.com/live-gigs/",
-      "einordnung": "Frank Turner und Chuck Ragan (Hot Water Music) stehen für hemdsärmeligen Folk-Punk mit Mitsing-Refrains – die Linie führt direkt zu Springsteens Erzählliedern. Die Revival Tour ist ein gemeinsamer Abend der vier Songwriter, laut Turners Seite für alle Altersgruppen. Alle fünf Deutschland-Termine sind ausverkauft, auch Hamburg.",
+      "einordnung": "Frank Turner und Chuck Ragan (Hot Water Music) stehen für hemdsärmeligen Folk-Punk mit Mitsing-Refrains – die Linie führt direkt zu Springsteens Erzählliedern. Die Revival Tour ist ein gemeinsamer Abend der vier Songwriter, laut Turners Seite für alle Altersgruppen. Alle fünf Deutschland-Termine sind ausverkauft, auch Hamburg. Erdiger Folk-Punk und Americana mit Springsteen-Geist, im Docks-Programm als „The Revival Tour“ gelistet.",
       "tipp": true,
       "ausverkauft": true,
       "unsicher": "Beginn laut Frank Turners Seite 19 Uhr, ein Konzertportal nennt 18 Uhr; Ende geschätzt"
@@ -17548,7 +17577,7 @@
       "preis": "VVK ca. 43,90 € inkl. Gebühren (Mojo schreibt „€ 43,885 incl. fees“)",
       "draussen": "drinnen",
       "link": "https://www.mojo.de/programm/dillon-3/",
-      "einordnung": "Dillon singt mit tiefer, brüchiger Stimme über reduzierte Klavier- und Elektronikflächen – dunkel und melancholisch, verwandt mit Lana Del Rey und Cigarettes After Sex. Ihr Debüt von 2011 gilt als prägendes Art-Pop-Album; im Dezember gibt es nur vier Deutschlandkonzerte, bei denen es vollständig gespielt wird. Der Mojo Club ist ein Stehplatzclub, Einlass 19 Uhr.",
+      "einordnung": "Dillon singt mit tiefer, brüchiger Stimme über reduzierte Klavier- und Elektronikflächen – dunkel und melancholisch, verwandt mit Lana Del Rey und Cigarettes After Sex. Ihr Debüt von 2011 gilt als prägendes Art-Pop-Album; im Dezember gibt es nur vier Deutschlandkonzerte, bei denen es vollständig gespielt wird. Der Mojo Club ist ein Stehplatzclub, Einlass 19 Uhr. Dillon feiert im Mojo 15 Jahre „This Silence Kills“, mit reduzierten elektronischen Songs. Das ist die leise Seite von Electronic live.",
       "tipp": true,
       "unsicher": "Beginn noch nicht bekannt (Einlass 19 Uhr); Ende geschätzt"
     },
@@ -17572,7 +17601,7 @@
       "preis": "32 € zzgl. Gebühren (VVK)",
       "draussen": "drinnen",
       "link": "https://www.grossefreiheit36.de/events/paris-paloma-09-12-2026",
-      "einordnung": "Paris Paloma schreibt düsteren Folk-Pop mit dichtem Chorgesang und feministischen Texten, bekannt wurde sie mit „labour“ – emotional nah an Mitski und Gracie Abrams. „The Fatal Flaw“ folgt zwei Jahre nach dem Debüt „Cacophony“. Hamburg kam laut FKP Scorpio im August als Zusatztermin dazu, nachdem München, Frankfurt und Berlin ausverkauft waren.",
+      "einordnung": "Paris Paloma schreibt düsteren Folk-Pop mit dichtem Chorgesang und feministischen Texten, bekannt wurde sie mit „labour“ – emotional nah an Mitski und Gracie Abrams. „The Fatal Flaw“ folgt zwei Jahre nach dem Debüt „Cacophony“. Hamburg kam laut FKP Scorpio im August als Zusatztermin dazu, nachdem München, Frankfurt und Berlin ausverkauft waren. Intensiver Singer-Songwriter-Folk für Fans von Mitski und girl in red, im Programm der Großen Freiheit bestätigt.",
       "tipp": true,
       "unsicher": "Ende geschätzt"
     },
@@ -17596,7 +17625,7 @@
       "preis": "Preis nicht genannt (Tickets über Knust-Shop, tixforgigs, Eventim)",
       "draussen": "drinnen",
       "link": "https://knusthamburg.de/event/j-bernhardt_111671295/",
-      "einordnung": "Als J. Bernardt macht Jinte Deprez von der belgischen Band Balthazar ruhigen, elektronisch grundierten Pop mit Soul-Einschlag – entspannt wie Milky Chance, in den dunkleren Momenten nah an The National. Neu ist die Single „Four In The Morning“. Das Knust ist ein mittelgroßer Stehplatzclub, Einlass 20, Beginn erst 21 Uhr.",
+      "einordnung": "Als J. Bernardt macht Jinte Deprez von der belgischen Band Balthazar ruhigen, elektronisch grundierten Pop mit Soul-Einschlag – entspannt wie Milky Chance, in den dunkleren Momenten nah an The National. Neu ist die Single „Four In The Morning“. Das Knust ist ein mittelgroßer Stehplatzclub, Einlass 20, Beginn erst 21 Uhr. Elektronischer Indie-Pop im Knust (präsentiert von Einen Hab Ich Noch), passt zur Electronic-live-Seite dieses Laufs.",
       "tipp": true,
       "unsicher": "Ende geschätzt; Preis nicht angegeben"
     },
@@ -17620,7 +17649,7 @@
       "preis": "VVK 33 € (bei Eventim ab 38,90 € inkl. Gebühren)",
       "draussen": "drinnen",
       "link": "https://www.fabrik.de/veranstaltungsdetail/erdmoebel-1296",
-      "einordnung": "Erdmöbel machen feinen, melancholisch-witzigen deutschen Indie-Pop mit klugen Texten – verwandt mit Tocotronic und kettcar, nur leiser. Die Weihnachtstour führt außerdem nach Berlin, Dresden, München und Köln. Die Fabrik ist eine alte Maschinenhalle mit Galerie, Einlass 19 Uhr.",
+      "einordnung": "Erdmöbel machen feinen, melancholisch-witzigen deutschen Indie-Pop mit klugen Texten – verwandt mit Tocotronic und kettcar, nur leiser. Die Weihnachtstour führt außerdem nach Berlin, Dresden, München und Köln. Die Fabrik ist eine alte Maschinenhalle mit Galerie, Einlass 19 Uhr. Kluger deutschsprachiger Indie-Pop mit Weihnachtsprogramm, in der Nähe von Tocotronic und kettcar.",
       "tipp": true,
       "unsicher": "Ende geschätzt"
     },
@@ -17691,7 +17720,7 @@
       "beschreibung": "Der Mitbegründer der Hamburger Schule spielt mit seiner Band zwischen den Jahren im Knust.",
       "draussen": "drinnen",
       "link": "https://knusthamburg.de/event/bernd-begemann-die-befreiung_111687843/",
-      "einordnung": "Bernd Begemann gilt als einer der Väter der Hamburger Schule, zu der auch Tocotronic gehören – romantischer, witziger Gitarrenpop mit deutschen Texten, eine Linie bis zu kettcar. Mit Die Befreiung feiert er 25 Jahre auf Tour, präsentiert von Musikexpress und ByteFM; ein neues Album ist angekündigt. Einlass 19 Uhr.",
+      "einordnung": "Bernd Begemann gilt als einer der Väter der Hamburger Schule, zu der auch Tocotronic gehören – romantischer, witziger Gitarrenpop mit deutschen Texten, eine Linie bis zu kettcar. Mit Die Befreiung feiert er 25 Jahre auf Tour, präsentiert von Musikexpress und ByteFM; ein neues Album ist angekündigt. Einlass 19 Uhr. Bernd Begemann gehört zu den Gründerfiguren der Hamburger Schule und feiert mit Die Befreiung im Knust 25 Jahre auf Tour (präsentiert von Musikexpress und ByteFM). Das ist die Szene, aus der Tocotronic und Die Sterne kamen.",
       "tipp": true,
       "unsicher": "Ende geschätzt; Preis nicht angegeben"
     },
@@ -18420,6 +18449,1691 @@
       "draussen": "drinnen",
       "link": "https://savoy.premiumkino.de/de/film/die-tribute-von-panem-sunrise-on-the-reaping",
       "einordnung": "Der junge Haymitch Abernathy wird 24 Jahre vor den Ereignissen des ersten Films für die 50. Hungerspiele ausgelost, das zweite Jubel-Jubiläum. Verleih: LEONINE. Regie: Francis Lawrence; mit Joseph Zada, Whitney Peak, Mckenna Grace, Jesse Plemons, Ralph Fiennes, Elle Fanning, Kieran Culkin, Glenn Close. Noch ohne IMDb-Wertung (Start 19.11.); erste Reaktionen laut kino.de: „Dystopie-Kino auf höchstem Niveau“. 159 Min., FSK 12; hier OV. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung."
+    },
+    {
+      "id": "alex-henry-foster-nochtspeicher-2026-12-01",
+      "daten": [
+        "2026-12-01"
+      ],
+      "zeit": "19:30",
+      "ende": "22:30",
+      "titel": "Alex Henry Foster – Defying Gravity Tour",
+      "ort": "Nochtspeicher, St. Pauli",
+      "geo": [
+        53.54716,
+        9.96128
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 66,
+      "beschreibung": "Der kanadische Musiker, früher Frontmann der Post-Rock-Band Your Favorite Enemies, kommt mit seiner Band The Long Shadows; Support ist Lone Aires. Einlass 18:30 Uhr.",
+      "preis": "VVK 34 € inkl. Gebühren",
+      "draussen": "drinnen",
+      "link": "https://nochtspeicher.de/#event_3148",
+      "einordnung": "Der Nochtspeicher führt den Abend unter Post-Rock, Shoegaze und Indie. Angekündigt sind lange Klangflächen, Improvisation und große emotionale Wucht – eher ein Abend zum Eintauchen als zum Mitsingen. Wer die ausufernden Gitarrenstrecken von The War On Drugs oder die lauten Momente von Radiohead mag, ist hier richtig, und das in einem kleinen Club.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "the-chameleons-knust-2026-11-24",
+      "daten": [
+        "2026-11-24"
+      ],
+      "zeit": "19:45",
+      "ende": "22:30",
+      "titel": "The Chameleons – „Arctic Moon“ Tour 2026",
+      "ort": "Knust, St. Pauli",
+      "geo": [
+        53.55814,
+        9.96793
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 72,
+      "beschreibung": "Die Post-Punk-Band aus Manchester (gegründet 1981) um Mark Burgess und Reg Smithies stellt ihr erstes Studioalbum seit über zwanzig Jahren vor; Support ist Agonal Gasps. Einlass 19 Uhr.",
+      "preis": "VVK über Eventim, laut mvp.de ab ca. 50 €",
+      "draussen": "drinnen",
+      "link": "https://knusthamburg.de/event/chameleons-special-guest_111607732/",
+      "einordnung": "Laut Knust stehen die Chameleons für atmosphärischen Gitarrensound, intensive Konzerte und nachdenkliche Texte; 2021 hat sich die Band mit zwei Gründungsmitgliedern neu formiert. Ihre hallenden Gitarren sind eine Vorstufe von Dream Pop und Shoegaze – für Fans von The National und dunklem britischem Indie eine seltene Chance, eine Kultband im kleinen Saal zu sehen.",
+      "tipp": true,
+      "unsicher": "Preis nur bei mvp.de gefunden, nicht beim Knust; Ende geschätzt"
+    },
+    {
+      "id": "the-tubs-nochtspeicher-2026-12-12",
+      "daten": [
+        "2026-12-12"
+      ],
+      "zeit": "20:30",
+      "ende": "22:30",
+      "titel": "The Tubs",
+      "ort": "Nochtspeicher (Nochtwache), St. Pauli",
+      "geo": [
+        53.54716,
+        9.96128
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 64,
+      "beschreibung": "Indie-Rock-Band aus Cardiff, präsentiert von SZENE Hamburg und ByteFM, im Keller des Nochtspeichers. Einlass 19:30 Uhr.",
+      "preis": "VVK 31,50 € inkl. Gebühren",
+      "draussen": "drinnen",
+      "link": "https://nochtspeicher.de/#event_3138",
+      "einordnung": "Die Band wurde einmal scherzhaft „Celtic Jangle Boyband“ genannt; ihr Debüt „Dead Meat“ lobten laut Nochtspeicher Pitchfork, der Guardian und Iggy Pop. Helle, flirrende Jangle-Gitarren mit britischer Schlagseite – wer frühe Travis oder den Britpop der Neunziger mag, sollte reinhören. Die Nochtwache ist klein, das macht es zu einem echten Clubabend.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "tophouse-nochtspeicher-2026-11-27",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Tophouse (Support: Raynes)",
+      "ort": "Nochtspeicher, St. Pauli",
+      "geo": [
+        53.54716,
+        9.96128
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 64,
+      "beschreibung": "Indie-Folk- und Americana-Band aus vier langjährigen Freunden aus Montana; Support ist Raynes. Einlass 19 Uhr.",
+      "preis": "VVK 25 € zzgl. Gebühren",
+      "draussen": "drinnen",
+      "link": "https://nochtspeicher.de/#event_3163",
+      "einordnung": "Der Nochtspeicher beschreibt präzise, energiegeladene Auftritte mit viel Humor zwischen den Songs und ein Publikum, das die Refrains mitsingt. Mehrstimmiger Folk mit Banjo-Americana-Wurzeln liegt nah an Mumford & Sons, Mighty Oaks und Band of Horses – ein Freitagabend zum Mitnehmen der Leute.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "the-sheepdogs-kent-club-2026-11-21",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "The Sheepdogs – Live 2026",
+      "ort": "KENT Club, Altona",
+      "geo": [
+        53.56272,
+        9.94973
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 60,
+      "beschreibung": "Die kanadische Rock-'n'-Roll-Band aus Saskatoon spielt neue und alte Songs; Veranstalter ist Karsten Jahnke. Einlass 19 Uhr.",
+      "preis": "33,70 € (KJ-Ticketshop)",
+      "draussen": "drinnen",
+      "link": "https://kentclub.de/programm/21.11.2026-thesheepdogs-11756",
+      "einordnung": "Die Juno-Preisträger mischen laut KENT Club Classic Rock, Southern Rock, psychedelische Grooves und Blues, bekannt für dreistimmigen Gesang und doppelte Leadgitarren. Das ist handgemachter Gitarrenrock mit Siebziger-Gefühl – Heartland-Nähe zu Springsteen und Neil Young, der Harmoniegesang erinnert an Band of Horses. Samstagabend in einem kleinen Club, ideal für eine Gruppe.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "arstiir-knust-2026-12-06",
+      "daten": [
+        "2026-12-06"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Árstíðir – Vetrarsól Tour 2026",
+      "ort": "Knust, St. Pauli",
+      "geo": [
+        53.55814,
+        9.96793
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 62,
+      "beschreibung": "Die isländische Band bringt ihr jährliches Weihnachtskonzert auf Tour: winterliche eigene Songs, isländische und nordische Weihnachtschoräle und Geschichten über isländische Bräuche. Einlass 19 Uhr.",
+      "preis": "ab 31,45 € inkl. Gebühren (TixforGigs)",
+      "draussen": "drinnen",
+      "link": "https://knusthamburg.de/event/arstidir_111607751/",
+      "einordnung": "Árstíðir spielen seit 2008 jedes Jahr ein Weihnachtskonzert in einer Holzkirche in Reykjavík und seit 2018 auch auf Tour; Grundlage ist das Album „Vetrarsól“ (2024). Bekannt ist die Band für mehrstimmigen Gesang und folkigen Pop. Ein stiller, sehr stimmungsvoller Advents-Sonntag – für Freunde der ruhigen Mighty Oaks oder Mumford & Sons ohne Banjo-Lautstärke.",
+      "tipp": true,
+      "unsicher": "Preis nur bei Portalen gefunden; Ende geschätzt"
+    },
+    {
+      "id": "elder-island-uebel-gefaehrlich-2026-11-18",
+      "daten": [
+        "2026-11-18"
+      ],
+      "zeit": "21:00",
+      "ende": "22:30",
+      "titel": "Elder Island",
+      "ort": "Uebel & Gefährlich, Turmzimmer",
+      "geo": [
+        53.55655,
+        9.97042
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 64,
+      "beschreibung": "Das Trio um Sängerin und Cellistin Katy Sargent mit seinem zweiten Album „Swimming Static“ im Turmzimmer des Bunkers. Einlass 20 Uhr.",
+      "preis": "VVK über Eventim/KJ",
+      "draussen": "drinnen",
+      "link": "https://www.uebelundgefaehrlich.com/veranstaltungen/elder-island/",
+      "einordnung": "Elder Island verbinden laut Uebel & Gefährlich Electronic, Indie, Pop und Neo-Soul mit poetischen Texten; das Debüt „The Omnitone Collection“ hat über 200 Millionen Spotify-Streams. Weiche Synths, Cello und schwebender Gesang – nah an der elektronischen Seite von Dream Pop und an Milky Chance in ruhig. Das Turmzimmer ist klein, also ein naher, entspannter Mittwochabend.",
+      "tipp": true,
+      "unsicher": "Preis nirgends angegeben (Eventim nicht erreichbar); Ende geschätzt"
+    },
+    {
+      "id": "rip-swirl-knust-2026-12-03",
+      "daten": [
+        "2026-12-03"
+      ],
+      "zeit": "21:00",
+      "ende": "22:30",
+      "titel": "RIP Swirl",
+      "ort": "Knust, St. Pauli",
+      "geo": [
+        53.55814,
+        9.96793
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 54,
+      "beschreibung": "Das Projekt des Berliner Multiinstrumentalisten und Produzenten Luka Seifert in der Bar des Knust. Einlass 20 Uhr.",
+      "preis": "ab 18,85 € inkl. Gebühren (TixforGigs)",
+      "draussen": "drinnen",
+      "link": "https://knusthamburg.de/event/rip-swirl_111688850/",
+      "einordnung": "RIP Swirl mischt laut Knust Shoegaze, Trip-Hop und nostalgische Klangtexturen; das Debüt „Blurry“ (2022) wurde als „surrendes Shoegaze-Revival-Album“ beschrieben, zuletzt kam die EP „Emo Regulation“ mit der Sängerin Ydegirl. Verhangen und verträumt wie Cigarettes After Sex, nur elektronischer. Kleiner Barabend zum Ausprobieren.",
+      "tipp": true,
+      "unsicher": "Preis nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "nathan-ball-hebebuehne-2026-11-30",
+      "daten": [
+        "2026-11-30"
+      ],
+      "zeit": "20:00",
+      "ende": "22:15",
+      "titel": "Nathan Ball – „What's New Old Friend?“ Album Tour",
+      "ort": "Hebebühne, Ottensen",
+      "geo": [
+        53.55714,
+        9.92986
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 56,
+      "beschreibung": "Der britische Sänger und Songschreiber spielt mit kompletter Band sein neues Album, das er mit Max Rad produziert hat. Einlass 19 Uhr.",
+      "preis": "29 €",
+      "draussen": "drinnen",
+      "link": "https://die-hebebuehne.com/termine/nathan-ball",
+      "einordnung": "Die Hebebühne kündigt eine intime Clubtour mit voller Liveband an; das Album erschien im Oktober 2026, laut Hebebühne sang Ball früher bei Faithless. Warmer, melodischer Singer-Songwriter-Pop, der in die Richtung von Snow Patrol oder Travis in ihren leisen Momenten geht. Montagabend in einem kleinen, gemütlichen Club.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "scala-kolacny-brothers-fabrik-2026-11-30",
+      "daten": [
+        "2026-11-30"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Scala & Kolacny Brothers – Scala 30",
+      "ort": "Fabrik, Ottensen",
+      "geo": [
+        53.55674,
+        9.92919
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 62,
+      "beschreibung": "Der Mädchenchor unter Leitung der Brüder Kolacny feiert 30 Jahre mit Neuinterpretationen bekannter Pop- und Rockhymnen – Stimmen, Klavier, dazu visuelle und choreografische Elemente. Einlass 19 Uhr, Stehplätze.",
+      "preis": "VVK 49,75 €",
+      "draussen": "drinnen",
+      "link": "https://www.fabrik.de/veranstaltungsdetail/scala-kolacny-brothers-1286",
+      "einordnung": "Die Fabrik nennt es eine einmalige Jubiläumstour. Bekannte Rock- und Pop-Hymnen nur mit Chor und Klavier – zum Ausprobieren: Wer die getragenen Momente von Coldplay, Keane oder Radiohead mag, hört hier Bekanntes ganz anders. Ungewöhnlich und eher ergreifend als laut.",
+      "tipp": true,
+      "unsicher": "Welche Songs gespielt werden, nennt die Seite nicht; Ende geschätzt"
+    },
+    {
+      "id": "tina-dico-laeiszhalle-2026-11-18",
+      "daten": [
+        "2026-11-18"
+      ],
+      "zeit": "21:00",
+      "ende": "23:00",
+      "titel": "Tina Dico",
+      "ort": "Laeiszhalle, Großer Saal",
+      "geo": [
+        53.5561,
+        9.98108
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 58,
+      "beschreibung": "Die dänische Singer-Songwriterin kommt mit Band und neuen Songs ihres kommenden Albums auf Herbsttour, dazu ältere Lieblingsstücke. Foyer ab 20 Uhr.",
+      "preis": "47,80–66,40 €",
+      "draussen": "drinnen",
+      "link": "https://www.elbphilharmonie.de/de/programm/tina-dico/27609",
+      "einordnung": "Tina Dico spielt nicht zum ersten Mal in der Laeiszhalle; diesmal stellt sie Lieder aus einem Album vor, das für Herbst/Winter 2026 angekündigt ist. Ruhiger, melancholischer nordischer Songwriter-Pop – für Fans von Snow Patrol und Keane in ihren leisen Balladen. Der späte Beginn um 21 Uhr passt eher zu einem freien Folgetag.",
+      "tipp": true,
+      "unsicher": "Laut Elbphilharmonie-Seite „derzeit keine Tickets verfügbar“ – womöglich ausverkauft oder Rückläufer später; Ende geschätzt"
+    },
+    {
+      "id": "oskar-haag-hebebuehne-2026-12-03",
+      "daten": [
+        "2026-12-03"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Oskar Haag – Lost Cause Tour 2026",
+      "ort": "Hebebühne, Ottensen",
+      "geo": [
+        53.55714,
+        9.92986
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 56,
+      "beschreibung": "Der Wiener Singer-Songwriter bringt sein zweites Album „Lost Cause“ und Songs wie „Stargazing“ und „Sharpen the knives“ mit, wenn möglich mit Band, sonst solo mit Gitarre und Klavier. Einlass 19 Uhr.",
+      "preis": "ab 25,20 € (Reservix)",
+      "draussen": "drinnen",
+      "link": "https://die-hebebuehne.com/termine/oskar-haag",
+      "einordnung": "Laut Hebebühne hat Oskar Haag schon mit Birdy und Tocotronic gespielt und ist für nahe, energiegeladene Konzerte bekannt; die Tour führt durch rund 30 Städte. Zarter, junger Indie-Songwriter-Pop in der Nähe von Gracie Abrams und girl in red – zum Ausprobieren in einem kleinen Club.",
+      "tipp": true,
+      "unsicher": "Ob mit Band oder solo, entscheidet sich kurzfristig; Ende geschätzt"
+    },
+    {
+      "id": "moncrieff-kent-club-2026-12-08",
+      "daten": [
+        "2026-12-08"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Moncrieff – Stubborn Tour 2026",
+      "ort": "KENT Club, Altona",
+      "geo": [
+        53.56272,
+        9.94973
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 54,
+      "beschreibung": "Der irische Singer-Songwriter stellt sein neues Album „Stubborn“ vor; Veranstalter ist Karsten Jahnke. Einlass 19 Uhr.",
+      "preis": "VVK über Eventim/KJ-Ticketshop",
+      "draussen": "drinnen",
+      "link": "https://kentclub.de/programm/08.12.2026-moncrieff-12469",
+      "einordnung": "Moncrieff ist laut Karsten Jahnke für gefühlvolle Stimme und ehrliches Songwriting bekannt, Lob kam von Elton John und Ed Sheeran; sein Debüt „Maybe It's Fine“ stand im Mai 2025 auf Platz eins der irischen Albumcharts. Große, emotionale Balladen in der Art von Kodaline und Snow Patrol, aber im kleinen Club.",
+      "tipp": true,
+      "unsicher": "Preis nicht angegeben; Ende geschätzt"
+    },
+    {
+      "id": "beatles-revival-band-fabrik-2026-12-27",
+      "daten": [
+        "2026-12-27"
+      ],
+      "zeit": "19:00",
+      "ende": "21:30",
+      "titel": "Beatles Revival Band – The Magical Jubilee Tour",
+      "ort": "Fabrik, Ottensen",
+      "geo": [
+        53.55674,
+        9.92919
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 58,
+      "beschreibung": "50 Jahre Beatles Revival Band: eine Reise durch den Beatles-Katalog der Sechziger, von frühen Songs bis zu den späten Alben. Einlass 18 Uhr.",
+      "preis": "VVK 20 €",
+      "draussen": "drinnen",
+      "link": "https://www.fabrik.de/veranstaltungsdetail/beatles-revival-band-1323",
+      "einordnung": "Die Frankfurter Band gilt laut Fabrik als erste und dienstälteste Beatles-Tributeband; die Zeitschrift Joker nannte sie einmal „erfolgreichste Coverband aller Zeiten“. Ein entspannter Abend zwischen den Feiertagen zum Mitsingen – wer Oasis mag, hört hier die Wurzeln. Mit 20 € auch günstig für die ganze Runde.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "tonic-walter-bahnhof-pauli-2026-11-26",
+      "daten": [
+        "2026-11-26"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Tonic Walter – II Tour 2026",
+      "ort": "Bahnhof Pauli, St. Pauli",
+      "geo": [
+        53.54907,
+        9.96416
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 66,
+      "beschreibung": "Das Electro-Duo spielt auf seiner bisher größten Europa-Tour das zweite Album „II“ live: melodischer House und Techno mit analogen Synthesizern und dem Gefühl einer Live-Band.",
+      "preis": "ab 34,90 € VVK",
+      "draussen": "drinnen",
+      "link": "https://bahnhofpauli.de/events/tonicwalter",
+      "einordnung": "Tonic Walter verbinden laut Ankündigung atmosphärische Klänge, analoge Synthesizer und organische Grooves. Live soll das die Emotionalität einer Band mit melodischem House und Techno zusammenbringen. Das Duo hat über 150 Millionen Streams und war 2025 mit Tycho und Fritz Kalkbrenner unterwegs. Für Tobi liegt das zwischen Klangkarussell und den Melodic-House-Sets von Alex Cruz, nur als Konzert statt als DJ-Set.",
+      "tipp": true,
+      "unsicher": "Einlass nicht angegeben. Preis nur aus der mvp.de-Ankündigung, weil die Eventim-Seite nicht erreichbar war (503). Ende geschätzt."
+    },
+    {
+      "id": "fejka-ms-stubnitz-2026-12-15",
+      "daten": [
+        "2026-12-15"
+      ],
+      "zeit": "20:30",
+      "ende": "23:00",
+      "titel": "Fejká (Support: Nick Niclassen)",
+      "ort": "MS Stubnitz, HafenCity",
+      "geo": [
+        53.53724,
+        10.00841
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 68,
+      "beschreibung": "Der Produzent aus dem Schwarzwald spielt Deep und Organic House live, mit eigens für die Tour gemachten Visuals. Davor spielt der Hamburger Newcomer Nick Niclassen sein erstes Live-Set.",
+      "preis": "VVK 22 €, AK 28 €, Supporter 34 €, ermäßigt 10 €",
+      "draussen": "drinnen",
+      "link": "https://www.stubnitz.com/events/2026/dec/15-fejk.html",
+      "einordnung": "Fejká macht laut Stubnitz emotionale, warme und verträumte, dabei treibende Musik und hat über 100 Millionen Streams. Die Visuals der Tour gibt es nur live. Nick Niclassen hat Fejkás Producer-Contest gewonnen, steuert einen Remix zum Album „Azur“ bei und macht in Hamburg Partys mit dem Kollektiv Krüsch. Das ist die Melodic- und Organic-House-Ecke von Alex Cruz und Miss Monique, als Live-Set auf dem Schiff am Baakenhöft und mit 22 € im Vorverkauf günstig.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt. Ob schon ausverkauft, sagt die Seite nicht."
+    },
+    {
+      "id": "stil-vor-talent-uebel-gefaehrlich-2026-12-19",
+      "daten": [
+        "2026-12-19"
+      ],
+      "zeit": "23:59",
+      "ende": "06:00",
+      "titel": "Stil vor Talent",
+      "ort": "Uebel & Gefährlich, Feldstraße",
+      "geo": [
+        53.55655,
+        9.97042
+      ],
+      "region": "HH",
+      "kategorie": "Party",
+      "score": 68,
+      "beschreibung": "Clubnacht der Reihe Stil vor Talent im Saal und im Turmzimmer: Oliver Koletzki & Frida Darko, Juan Hansen (live), Fabian Krooss und Konfusia.",
+      "preis": "Preis nicht angegeben (Tickets über xceed)",
+      "draussen": "drinnen",
+      "link": "https://www.uebelundgefaehrlich.com/veranstaltungen/stil-vor-talent-5/",
+      "einordnung": "Oliver Koletzki steht zusammen mit Frida Darko an den Decks, Juan Hansen spielt ein Live-Set, dazu kommen Fabian Krooss und Konfusia. Gespielt wird in beiden Räumen des Bunkers. Einlass ab 18, Fotos und Videos sind auf der Tanzfläche nicht erlaubt. Für Tobi ist das die Melodic-House- und Techno-Seite von Miss Monique und Alex Cruz, an einem Samstag zum Durchtanzen.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt. Preis nicht genannt. Außer bei Juan Hansen steht nicht da, wer live spielt und wer auflegt."
+    },
+    {
+      "id": "psy-spirits-2026-edelfettwerk-2026-12-19",
+      "daten": [
+        "2026-12-19"
+      ],
+      "zeit": "22:00",
+      "ende": "08:00",
+      "titel": "Psy-Spirits 2026",
+      "ort": "Edelfettwerk, Eidelstedt",
+      "geo": [
+        53.5955,
+        9.90562
+      ],
+      "region": "HH",
+      "kategorie": "Party",
+      "score": 56,
+      "beschreibung": "Goa- und Psytrance-Nacht auf vier Floors mit Ace Ventura (Schweiz), Volcano on Mars und Antinomy (beide Israel) sowie Mandala, Yeti, Psyas, Zara, Jen, Darbouka, Miss Nansix und DJ C.U.L.T.",
+      "preis": "Early-Bird und VVK über psy-spirits.de, Abendkasse vorhanden; Beträge nicht genannt",
+      "draussen": "drinnen",
+      "link": "https://psy-spirits.de/events/psy-spirits-2026/",
+      "einordnung": "Psy-Spirits findet laut Veranstalter einmal im Jahr statt, 2026 zum 17. Mal. Dazu gehören eine große Anlage, Visuals und Projektionen, UV-Deko, Stände und UV-Bodypainting. Laut Veranstalter halten Busse und Bahnen direkt vor der Tür. Mit Ace Ventura aus dem Progressive Psytrance ist das die Neelix-Ecke: treibender, melodischer Psy statt Darkpsy, als große Saisonnacht im Industriebau an der Schnackenburgallee.",
+      "tipp": true,
+      "unsicher": "Ende und Preise nicht angegeben (Ende geschätzt). Welcher Act auf welchem Floor spielt, steht nicht fest."
+    },
+    {
+      "id": "die-liga-der-gewoehnlichen-gentl-knust-2026-12-28",
+      "daten": [
+        "2026-12-28"
+      ],
+      "zeit": "21:00",
+      "ende": "23:30",
+      "titel": "Die Liga der gewöhnlichen Gentlemen + Knarf Rellöm Acid Test",
+      "ort": "Knust, St. Pauli",
+      "geo": [
+        53.55814,
+        9.96793
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 62,
+      "beschreibung": "Die Hamburger Band stellt ihr Album „Egg Benedict“ vor. Davor spielt das Hamburger Trio Knarf Rellöm Acid Test, danach legt ein DJ auf.",
+      "preis": "ab 29,35 € inkl. Gebühren (TixforGigs)",
+      "draussen": "drinnen",
+      "link": "https://knusthamburg.de/event/die-liga-der-gewoehnlichen-gentlemen_111641855/",
+      "einordnung": "Die Liga mischt laut Knust DIY-Northern-Soul, Indie-Pop, Sixties-Sounds und Agit-Pop mit Bläsern, Banjo, Flöten, Sitar und Kinderinstrumenten. Die Songs handeln von Kino, Sommer, Hedy Lamarr, Partys und Gewerkschaften. Im Vorprogramm stehen Knarf (früher Huah!, Mobylettes, Die Zukunft), Perkussionist Till (früher Flowerpornoes) und Saxofonist Torben (früher King Khan & the Shrines). Das ist ein Abend aus dem Umfeld der Hamburger Schule, näher an Die Sterne und Erdmöbel als an Tocotronic, zwischen den Jahren.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt. Preis nicht genannt. Laut Flyctory und Deezer erschien „Egg Benedict“ schon im Mai 2025, das Knust nennt es trotzdem das neueste Album."
+    },
+    {
+      "id": "shkoon-knust-2026-12-27",
+      "daten": [
+        "2026-12-27"
+      ],
+      "zeit": "20:00",
+      "ende": "23:00",
+      "titel": "Shkoon – 10 Years",
+      "ort": "Knust, St. Pauli",
+      "geo": [
+        53.55814,
+        9.96793
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 66,
+      "beschreibung": "Das deutsch-syrische Elektronik-Duo feiert im Knust zehn Jahre. Die Aftershow legt Maria auf.",
+      "preis": "Preis nicht angegeben (Knust-Ticket)",
+      "draussen": "drinnen",
+      "link": "https://knusthamburg.de/event/shkoon_111674504/",
+      "einordnung": "Shkoon sind Ameen aus Syrien und Thorben aus Deutschland, die sich laut ihrem Veranstalter Landstreicher 2015 in Hamburg kennengelernt haben. Sie verbinden arabische Volksmelodien und eigene Texte mit westlichen elektronischen Beats. Zu ihren Alben gehören „Rima“ und „Greater Than One“, aktuell touren sie mit „Traces“. Für Tobi ist das ein warmer, melodischer Elektronik-Abend in der Nähe von Klangkarussell und Alex Cruz, mit eigener Klangfarbe, zum Ausprobieren am Sonntag nach Weihnachten.",
+      "tipp": true,
+      "unsicher": "Das Knust schreibt noch „Infos coming soon“, ob Live- oder DJ-Set steht nicht fest. Preis nicht genannt, Ende geschätzt."
+    },
+    {
+      "id": "cosmic-gate-giuseppe-ottaviani-h1-club-lounge-2026-12-26",
+      "daten": [
+        "2026-12-26"
+      ],
+      "zeit": "22:00",
+      "ende": "05:00",
+      "titel": "Cosmic Gate & Giuseppe Ottaviani",
+      "ort": "H1 Club & Lounge, Eilbek",
+      "geo": [
+        53.56385,
+        10.0364
+      ],
+      "region": "HH",
+      "kategorie": "Party",
+      "score": 60,
+      "beschreibung": "EFX.EVENTS startet im H1 Club an der Conventstraße eine neue Reihe. Auf dem Main Floor laufen Trance und Progressive mit Cosmic Gate und Giuseppe Ottaviani, auf dem zweiten Floor Deep und Tech House mit Gorge und Tom Shark.",
+      "preis": "VVK über tickets.efx.events zzgl. Gebühren; AK 35 € laut Hamburg Tourismus",
+      "draussen": "drinnen",
+      "link": "https://www.h1club.com/events/26.12.2026-cosmicgategiuseppeottavianigorge-12553",
+      "einordnung": "Cosmic Gate ist seit über 25 Jahren ein Trance-Projekt und wird nach Bossis Ausstieg 2026 von Nic Chagall allein gespielt. Mit Giuseppe Ottaviani kommt ein zweiter internationaler Trance-Name dazu, lokal unterstützen Mellow D & Martink. Der Club liegt an der Conventstraße, wenige Minuten von Wandsbek. Für Tobi ist das klassischer Trance statt Neelix' Progressive Psy, am zweiten Weihnachtstag fast vor der Haustür.",
+      "tipp": true,
+      "unsicher": "VVK-Betrag nicht genannt. Der AK-Preis von 35 € steht nur im Kalender von Hamburg Tourismus. Einlass nicht separat angegeben."
+    },
+    {
+      "id": "komfortrauschen-molotow-2026-12-05",
+      "daten": [
+        "2026-12-05"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Komfortrauschen",
+      "ort": "Molotow, Nobistor",
+      "geo": [
+        53.54969,
+        9.95954
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 62,
+      "beschreibung": "Die Berliner Live-Techno-Band spielt mit Schlagzeug, Bass und Gitarre den harten Sound eines DJ-Sets nach.",
+      "preis": "VVK 30 € zzgl. Gebühren (32,50 € inkl.)",
+      "draussen": "drinnen",
+      "link": "https://molotowclub.com/programm/programm.php?nr=67028",
+      "einordnung": "Komfortrauschen gibt es seit 2014. Laut Molotow spielen die drei treibendes Schlagzeug, tiefe monotone Basslines und Gitarre mit punkiger Energie und waren in Clubs und auf Festivals in Deutschland und Europa unterwegs. Das ist Electronic live im Wortsinn: Techno von einer Band statt vom Laptop. Härter und geradliniger als Tobis Melodic House, aber ein Samstag mit Klasse zum Ausprobieren.",
+      "tipp": true,
+      "unsicher": "Nur der Einlass (19:00) ist angegeben, Beginn als Einlass + 30 Min. angesetzt. Ende geschätzt. Die TixforGigs-Seite zeigt „abgesagt“ nur als Legende, das Molotow meldet keine Absage."
+    },
+    {
+      "id": "okvsho-experience-mojo-club-2026-12-01",
+      "daten": [
+        "2026-12-01"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "OKVSHO + Experience",
+      "ort": "Mojo Club, Reeperbahn",
+      "geo": [
+        53.54968,
+        9.96761
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 52,
+      "beschreibung": "Das Projekt der Zürcher Brüder Georg und Christoph Kiss kommt als fünfköpfige Band in den Mojo Club.",
+      "preis": "VVK 29 € inkl. Gebühren",
+      "draussen": "drinnen",
+      "link": "https://www.mojo.de/programm/okvsho-experience/",
+      "einordnung": "Laut Mojo ist das Jazz, der aus Beatmaking und elektronischer Musik kommt. Das Live-Set ist auf Improvisation gebaut und versteht Jazz als Tanzmusik. Für Tobi ist das ein Ausprobier-Abend auf der Electronic-live-Seite: Grooves wie bei einem House-Set, aber von einer Band gespielt, im Keller unter der Reeperbahn.",
+      "tipp": true,
+      "unsicher": "Nur der Einlass (19:00) ist angegeben, Beginn als Einlass + 30 Min. angesetzt. Ende geschätzt."
+    },
+    {
+      "id": "bulgarian-cartrader-knust-2026-11-18",
+      "daten": [
+        "2026-11-18"
+      ],
+      "zeit": "21:00",
+      "ende": "22:45",
+      "titel": "Bulgarian Cartrader – How to sell tickets online fast",
+      "ort": "Knust, St. Pauli",
+      "geo": [
+        53.55814,
+        9.96793
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 54,
+      "beschreibung": "Daniel Stoyanov alias Bulgarian Cartrader kommt mit Band und seiner Herbsttour ins Knust, präsentiert von ByteFM.",
+      "preis": "Preis nicht angegeben (Tickets über Eventim)",
+      "draussen": "drinnen",
+      "link": "https://knusthamburg.de/event/bulgarian-cartrader_111606754/",
+      "einordnung": "Der Musikexpress nennt seinen Sound „hypnotischen Indie-Pop“. Das Knust beschreibt eine tanzbare Mischung aus Indie, Jazz und Soul, die live auch etwas fürs Auge bietet. Das neue Album heißt „Greetings from Soulgaria“. Für Tobi ist das ein Ausprobier-Abend mit Indie-Pop und Groove, am ehesten in der Nähe von Milky Chance. Elder Island spielt am selben Abend.",
+      "tipp": true,
+      "unsicher": "Preis nicht genannt, Ende geschätzt."
+    },
+    {
+      "id": "flacker-nochtspeicher-2026-11-21",
+      "daten": [
+        "2026-11-21"
+      ],
+      "zeit": "20:30",
+      "ende": "22:15",
+      "titel": "Flacker",
+      "ort": "Nochtspeicher (Nochtwache), St. Pauli",
+      "geo": [
+        53.54716,
+        9.96128
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 46,
+      "beschreibung": "Die vierköpfige Hamburger Band spielt Punk- und Indierock mit deutschen Texten in der Nochtwache, dem kleinen Saal im Nochtspeicher.",
+      "preis": "VVK 14 € zzgl. Gebühren (15,70 € inkl.)",
+      "draussen": "drinnen",
+      "link": "https://nochtspeicher.de/#event_3204",
+      "einordnung": "Laut Nochtspeicher haben Ben, Leo, Moritz und Caspar schon mehrere Hamburger Clubs gefüllt und gelten als erfahrene Live-Band. Ihr Sound wird mit Kraftklub, Wir Sind Helden und Tokio Hotel verglichen, mit eingängigen Hooks und genauen Texten. Für Tobi ist das ein kleiner, günstiger Samstag mit deutschsprachigem Indie aus Hamburg, eher in der Nähe von kettcars lauten Momenten als von der Hamburger Schule.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt."
+    },
+    {
+      "id": "indie-night-deer-anna-mimi-lisl-nochtspeicher-2026-11-27",
+      "daten": [
+        "2026-11-27"
+      ],
+      "zeit": "19:30",
+      "ende": "22:30",
+      "titel": "Indie Night: Deer Anna, Mimi & LISL",
+      "ort": "Nochtspeicher (Nochtwache), St. Pauli",
+      "geo": [
+        53.54716,
+        9.96128
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 54,
+      "beschreibung": "Drei Songwriterinnen an einem Abend in der Nochtwache: Deer Anna und Mimi aus Hamburg, LISL aus Würzburg. Einlass 18:30 Uhr.",
+      "preis": "VVK 22 € zzgl. Gebühren",
+      "draussen": "drinnen",
+      "link": "https://nochtspeicher.de/#event_3153",
+      "einordnung": "Laut Nochtspeicher reicht der Abend von melancholischem Indie-Folk bis zu tanzbaren Indie-Pop-Hymnen. Als Bezugspunkte nennt die Venue Lizzy McAlpine, Billie Marten, Phoebe Bridgers und Lucy Dacus. Mimi gewann 2019 mit ihrer Schwester „The Voice Kids“. Das passt zu Tobis Vorliebe für Mitski, girl in red und Gracie Abrams: drei Acts für einen Eintritt, am selben Abend wie Tophouse oben im großen Saal.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "lovesick-nochtspeicher-2026-12-04",
+      "daten": [
+        "2026-12-04"
+      ],
+      "zeit": "20:30",
+      "ende": "22:30",
+      "titel": "Lovesick (Full Band Show)",
+      "ort": "Nochtspeicher (Nochtwache), St. Pauli",
+      "geo": [
+        53.54716,
+        9.96128
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 48,
+      "beschreibung": "Italienische Band mit Western Swing, Rockabilly und Americana in der Nochtwache, nach dem Auftritt im April der zweite Besuch in diesem Jahr. Einlass 19:30 Uhr.",
+      "preis": "VVK 22 € zzgl. Gebühren",
+      "draussen": "drinnen",
+      "link": "https://nochtspeicher.de/#event_3166",
+      "einordnung": "Lovesick um Paolo Roberto Pianezza (Gitarre, Gesang) und Francesca Alinovi (Kontrabass, Gesang) spielen nur eigene Songs. Sie haben sechs Alben und über 400 Konzerte in Europa und den USA hinter sich und waren bei den Ameripolitan Music Awards in der Kategorie Western Swing nominiert. Laut Venue brachten sie die Nochtwache im April „zum Kochen“. Zum Ausprobieren: kein Indie, sondern tanzbarer Retro-Country mit Kontrabass, ein lockerer Freitagabend für alle, die Americana mögen.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "slow-leaves-pony-bar-2026-11-23",
+      "daten": [
+        "2026-11-23"
+      ],
+      "zeit": "20:00",
+      "ende": "21:30",
+      "titel": "Slow Leaves",
+      "ort": "Pony Bar, Rotherbaum",
+      "geo": [
+        53.56725,
+        9.98225
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 52,
+      "beschreibung": "Singer-Songwriter-Konzert mit Indie-Folk und Fingerpicking in der Pony Bar am Allende-Platz. Eintritt frei, Einlass 19:30 Uhr.",
+      "kostenlos": true,
+      "preis": "Eintritt frei",
+      "draussen": "drinnen",
+      "link": "https://programm.ponybar.de/?id=24e93dda-0d59-4da6-bbbd-624bdd753f21",
+      "einordnung": "Slow Leaves wurde 2021 bei den Western Canadian Music Awards als Songwriter des Jahres ausgezeichnet. Seine Songs wurzeln laut Pony Bar in der Tradition der Fingerpicking-Songwriter, bewegen sich aber frei zwischen den Genres; es geht um Einsamkeit und Erinnerung. Leise, warme Folk-Songs für Fans der ruhigeren Stücke von Kurt Vile oder Band of Horses, ohne Eintritt.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; ob ein Hut rumgeht, steht nicht auf der Seite"
+    },
+    {
+      "id": "song-slam-haus-73",
+      "daten": [
+        "2026-11-18",
+        "2026-12-16"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Song Slam",
+      "ort": "Haus 73, Sternschanze",
+      "geo": [
+        53.56232,
+        9.96102
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 52,
+      "beschreibung": "Acht Hamburger Newcomer spielen je einen selbstgeschriebenen Song, das Publikum kürt die beste Performance. Im Saal von Haus 73, Einlass 19:15 Uhr.",
+      "preis": "VVK 10 €, AK 12 €",
+      "draussen": "drinnen",
+      "link": "https://dreiundsiebzig.de/programm/2026-11-18-song-slam",
+      "einordnung": "Die Regel laut Haus 73: nur eigene Songs, keine Cover, keine KI. Die Bandbreite reicht von Singer-Songwritern über Rap bis zu Bands. Acht Acts in rund zwei Stunden, also viele Wechsel und kaum Leerlauf. Zum Ausprobieren: wie ein Poetry Slam mit Gitarre, gut zum Entdecken neuer Hamburger Acts in der Schanze.",
+      "tipp": true
+    },
+    {
+      "id": "bring-your-own-song-night-pony-bar",
+      "daten": [
+        "2026-11-16",
+        "2026-12-07",
+        "2026-12-21"
+      ],
+      "zeit": "20:00",
+      "ende": "23:00",
+      "titel": "Bring Your Own Song Night",
+      "ort": "Pony Bar, Rotherbaum",
+      "geo": [
+        53.56725,
+        9.98225
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 46,
+      "beschreibung": "Songwriter-Open-Stage in der Pony Bar am ersten und dritten Montag im Monat: Jede und jeder spielt bis zu zwei eigene Songs. Eintritt frei.",
+      "kostenlos": true,
+      "preis": "Eintritt frei",
+      "draussen": "drinnen",
+      "link": "https://programm.ponybar.de/?id=d283f647-09e8-43f5-90c2-48355ba32ad7",
+      "einordnung": "Der Folk- und Soul-Musiker Jon Kenzie aus Manchester eröffnet und moderiert. Gespielt wird in der Reihenfolge der Anmeldung vor Ort ab 18:30 Uhr, nur eigene Songs und keine Cover; Duos und Trios dürfen auf die Bühne, Bands mit Schlagzeug nicht. Das Publikum wird gebeten, sitzen zu bleiben und zuzuhören. SZENE HAMBURG hat den 16.11. als Tagestipp. Zum Ausprobieren: Wer akustische Songwriter wie Mighty Oaks mag, hört hier an einem Montag viele neue Hamburger Stimmen, in wechselnder Qualität und ohne Eintritt.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; der 4.1.2027 steht noch nicht im Programm"
+    },
+    {
+      "id": "f-k-live-sounds-open-stage-freundlich-kompetent",
+      "daten": [
+        "2026-11-17",
+        "2026-11-24",
+        "2026-12-01",
+        "2026-12-08",
+        "2026-12-22",
+        "2026-12-29"
+      ],
+      "zeit": "19:00",
+      "ende": "23:30",
+      "titel": "F+K Live Sounds & Open Stage",
+      "ort": "Freundlich + Kompetent, Barmbek-Nord",
+      "geo": [
+        53.59038,
+        10.043
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 46,
+      "beschreibung": "Dienstags um 19 Uhr ein Live-Act, ab 21 Uhr Open Stage: Anna Katarina & Band (17.11., Folk/Pop, CAN/USA), Chrissy Lou (24.11., Releaseshow), La Rony (1.12., Singer-Songwriter), Huemind (8.12., Indie/Pop), SeventyThirty5 (22.12., Indie/Rock), Sylverhead (29.12., Reggae). Am 15.12. gibt es stattdessen eine Jam Session mit The Exchange zum 19. Geburtstag des F+K.",
+      "preis": "Eintritt auf der Seite nicht angegeben",
+      "draussen": "drinnen",
+      "link": "https://www.freundlichundkompetent.de/",
+      "einordnung": "Das F+K an der Hamburger Straße ist eine Bar mit kleiner Bühne, auf der fast jeden Abend etwas läuft: Quiz, Bingo, Karaoke und eben Livemusik. Dienstags folgt auf das Konzert eine offene Bühne. Von Wandsbek ist es nicht weit. Zum Ausprobieren: wechselnde Acts von Folk bis Indie-Rock; am nächsten an Tobis Gitarren-Indie liegen Anna Katarina & Band (17.11.) und SeventyThirty5 (22.12.).",
+      "tipp": true,
+      "unsicher": "Eintritt nicht angegeben; die Open Stage steht nur als „ab 21:00“ da; Ende geschätzt"
+    },
+    {
+      "id": "winterhude-christmas-night-2026-goldbekhaus-2026-12-20",
+      "daten": [
+        "2026-12-20"
+      ],
+      "zeit": "19:00",
+      "ende": "21:30",
+      "titel": "Winterhude Christmas Night 2026",
+      "ort": "Goldbekhaus, Winterhude",
+      "geo": [
+        53.58437,
+        10.00848
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 50,
+      "beschreibung": "Weihnachtskonzert auf der Bühne zum Hof mit drei Acts, The Atticos, Cookies For The Cat und Enno Bardowicks, die je etwa eine halbe Stunde spielen. Zum Finale spielen alle zusammen, und das Publikum singt mit. Einlass 18:30 Uhr.",
+      "preis": "VVK 13 € / erm. 8 € (zzgl. Geb.), AK 16 € / erm. 11 €",
+      "draussen": "drinnen",
+      "link": "https://www.goldbekhaus.de/eventmanager/winterhude-christmas-night-2026/",
+      "einordnung": "Die Ausgabe im Vorjahr war ausverkauft. The Atticos spielen Pop- und Rockhits von den 80ern bis heute, Cookies For The Cat sind ein Akustikduo mit Folk, Rock, Country und Americana an zwei Gitarren, und Enno Bardowicks singt bekannte Hits am Klavier. Für Tobi ist es die Cover-Variante zum Mitsingen: Weihnachtsklassiker statt eigener Songs, vier Tage vor Heiligabend.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; die Seite sagt nicht, wofür der niedrigere Preis gilt"
+    },
+    {
+      "id": "welcome-music-session-zinnschmelze-2026-12-10",
+      "daten": [
+        "2026-12-10"
+      ],
+      "zeit": "20:00",
+      "ende": "23:00",
+      "titel": "Welcome Music Session – Open Stage & Jam",
+      "ort": "Zinnschmelze, Barmbek-Nord",
+      "geo": [
+        53.58583,
+        10.04483
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 44,
+      "beschreibung": "Offene Session mit Musik und Menschen aus aller Welt. Die letzte vor der Winterpause beginnt mit einer Open Stage, danach wird gejammt.",
+      "kostenlos": true,
+      "preis": "Eintritt frei, Spenden erbeten",
+      "draussen": "drinnen",
+      "link": "https://www.welcome-music-session.org/",
+      "einordnung": "Die Session läuft jeden zweiten Donnerstag im Monat. Nach einem Eröffnungsact kann jede und jeder auf die Bühne; man kann mitspielen, zuhören, mitklatschen oder tanzen. Wer mitspielen will, meldet sich ab 19:30 Uhr vor Ort an. Von 18 bis 19:30 Uhr gibt es vorher einen Workshop „Jammen für Fortgeschrittene“. Zum Ausprobieren: eher Weltmusik als Indie, aber ein echter Mitmach-Abend in Barmbek, nicht weit von Wandsbek.",
+      "tipp": true,
+      "unsicher": "Eintritt nur allgemein für die Reihe angegeben („frei, Spenden erbeten“)"
+    },
+    {
+      "id": "musik-stulle-hobenkoeoek",
+      "daten": [
+        "2026-11-25",
+        "2027-01-03"
+      ],
+      "zeit": "19:00",
+      "zeiten": {
+        "2027-01-03": "17:00"
+      },
+      "ende": "21:00",
+      "titel": "Musik & Stulle",
+      "ort": "Hobenköök, HafenCity",
+      "geo": [
+        53.54269,
+        10.00845
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 46,
+      "beschreibung": "Singer-Songwriter-Reihe von Hobenköök und BridgeGigs im Oberhafen, mit Stullen im Ticket: am 25.11. Lioba (Einlass 18:30, Beginn 19 Uhr, bis 21 Uhr), am 3.1. das Neujahrskonzert mit David Beta & Band (Einlass 16 Uhr, Beginn 17 Uhr, bis 20 Uhr).",
+      "preis": "26 € inkl. Stullen",
+      "draussen": "drinnen",
+      "link": "https://shop.hobenkoeoek.de/veranstaltungen/musik-stulle/3826/musik-stulle-mit-lioba-am-25-november-2026.html",
+      "einordnung": "Die Reihe läuft seit 2018 und gibt der lokalen Singer-Songwriter-Szene eine Bühne. Im Ticket sind Marktstullen enthalten, auch vegan; Getränke gibt es an der Bar. Lioba mischt zarte Balladen, leichten tanzbaren Pop und groovigere Stücke. David Beta war Support von Heinz Rudolf Kunze und verbindet akustisches Songwriting, Folk-Rock und deutschen Pop, mit Mitsing-Teilen. Kein Indie-Abend, eher deutschsprachiger Songwriter-Pop; zum Ausprobieren, weil Essen und Konzert in einem Ticket stecken.",
+      "tipp": true,
+      "unsicher": "Beginn am 3.1. schon um 17 Uhr; den genauen Spielort „in und um die Hobenköök“ schickt der Veranstalter vorab per Mail"
+    },
+    {
+      "id": "live-jazz-am-mittwoch-pony-bar",
+      "daten": [
+        "2026-11-18",
+        "2026-11-25",
+        "2026-12-02",
+        "2026-12-09",
+        "2026-12-16"
+      ],
+      "zeit": "20:30",
+      "ende": "23:00",
+      "titel": "Live-Jazz am Mittwoch",
+      "ort": "Pony Bar, Rotherbaum",
+      "geo": [
+        53.56725,
+        9.98225
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 44,
+      "beschreibung": "Jeden Mittwoch Jazz in der Pony Bar mit wechselnden Bands: JP Meyer Trio (18.11.), Phil Steen Group (25.11.), Julian Fischer Trio (2.12.), Daniel Scholz Group (9.12.), Darrin Lamont Byrd & Souldacity (16.12.). Einlass 20 Uhr.",
+      "kostenlos": true,
+      "preis": "Eintritt frei",
+      "draussen": "drinnen",
+      "link": "https://programm.ponybar.de/?id=c7440109-ccac-47c2-90a0-7ebde4e7fc18",
+      "einordnung": "Laut Programm gehört die Pony Bar jeden Mittwoch dem Jazz. Es spielen wechselnde Musikerinnen und Musiker, die „keine Unbekannten“ seien, und je nach Stil wird zugehört oder gefeiert. Der Eintritt ist frei. Das liegt abseits von Tobis Indie-Ecke; zum Ausprobieren als Feierabend unter der Woche, mit Bier und Live-Band ohne Eintritt.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "schlossjam-kulturschloss-wandsb-2026-12-02",
+      "daten": [
+        "2026-12-02"
+      ],
+      "zeit": "19:00",
+      "ende": "21:30",
+      "titel": "SchlossJam",
+      "ort": "Kulturschloss Wandsbek",
+      "geo": [
+        53.57418,
+        10.05968
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 45,
+      "beschreibung": "Offene Jam-Session im Kulturschloss Wandsbek, jeden ersten Mittwoch im Monat. Eintritt frei.",
+      "kostenlos": true,
+      "preis": "Eintritt frei",
+      "draussen": "drinnen",
+      "link": "https://www.kulturschloss-wandsbek.de/?p=17487",
+      "einordnung": "Das Kulturschloss lädt einmal im Monat zum gemeinsamen Musizieren ein. Wer mitspielen kann, welche Instrumente gefragt sind und wie der Abend läuft, verrät die Seite nicht. Dafür liegt es fast vor Tobis Haustür. Zum Ausprobieren: Instrument mitnehmen oder einfach zuhören, kurzer Weg und kein Eintritt.",
+      "tipp": true,
+      "unsicher": "Ende und Ablauf nicht angegeben (Ende geschätzt)"
+    },
+    {
+      "id": "hello-world-bergedorfer-global-s-lola-kulturzentrum",
+      "daten": [
+        "2026-11-20",
+        "2026-12-18"
+      ],
+      "zeit": "20:00",
+      "ende": "23:00",
+      "titel": "Hello World! Bergedorfer Global Session",
+      "ort": "LOLA Kulturzentrum, Bergedorf",
+      "geo": [
+        53.49548,
+        10.20593
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 40,
+      "beschreibung": "Offene Jam-Session im LOLA, bei der Musikerinnen und Musiker aus verschiedenen Traditionen zusammen spielen; die meisten Instrumente sind vorhanden. Am 18.12. eröffnet Omar Alkilani.",
+      "kostenlos": true,
+      "preis": "Eintritt frei",
+      "draussen": "drinnen",
+      "link": "https://lola-hh.de/programm/2026/11/20/",
+      "einordnung": "Laut LOLA jammen Musikerinnen und Musiker unterschiedlicher Herkunft zusammen und lassen daraus Neues entstehen, ohne Anmeldung und bei freiem Eintritt. Bergedorf ist von Wandsbek etwas weiter weg, dafür ist der Abend ein echter Ausprobier-Tipp: ein Weltmusik-Jam statt Bühnenshow, und wer mag, spielt mit.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; Einlass nicht angegeben"
+    },
+    {
+      "id": "neil-young-laeiszhalle-2026-12-02",
+      "daten": [
+        "2026-12-02"
+      ],
+      "zeit": "19:30",
+      "ende": "21:15",
+      "titel": "Neil Young – „Comes a Song“ (Konzertlesung mit Ludwig Blochberger)",
+      "ort": "Laeiszhalle, Kleiner Saal",
+      "geo": [
+        53.5561,
+        9.98108
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 56,
+      "beschreibung": "Konzertlesung nach Navid Kermanis Erzählung „Das Buch der von Neil Young Getöteten“. Ludwig Blochberger liest und spielt dazu Neil-Young-Songs live, allein mit Gesang, Gitarre und Mundharmonika.",
+      "preis": "25–45 €",
+      "draussen": "drinnen",
+      "link": "https://www.elbphilharmonie.de/de/programm/neil-young-comes-a-song/28774",
+      "einordnung": "Kermanis Text handelt von einer jungen Familie, deren neugeborene Tochter nur zur Musik von Neil Young einschläft. Blochberger erzählt die Geschichte und spielt die Songs dazu selbst. Das ist kein Tribute-Konzert mit Band, sondern ein Abend mit Literatur und Musik auf Deutsch, in einem Saal mit 640 Plätzen. Er dreht sich ganz um Neil Young, einen von Tobis Künstlern, und passt auch zur Songwriter-Seite von Kurt Vile.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; ob ausverkauft, sagt die Seite nicht (Tickets ab 25 € angeboten)"
+    },
+    {
+      "id": "2u-logo-2026-12-29",
+      "daten": [
+        "2026-12-29"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "2U – U2-Tribute",
+      "ort": "Logo, Grindelallee",
+      "geo": [
+        53.56451,
+        9.9836
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 58,
+      "beschreibung": "Hamburger U2-Coverband im Club Logo, zwischen Weihnachten und Silvester. Einlass 19:00, Show 20:00.",
+      "preis": "ab ca. 26 € VVK",
+      "draussen": "drinnen",
+      "link": "https://www.logohamburg.de/programm/",
+      "einordnung": "2U gibt es seit dem Frühjahr 2005. Der Anstoß war ein „Beautiful Day“ in einer Hamburger Karaoke-Bar. Stephan Renusch singt die Bono-Parts, dazu spielen Chris Henschel (Gitarre), Philipp Kraus (Bass) und Alexander Hinz (Schlagzeug). Laut eigener Seite will die Band möglichst nah ans Original und nutzt dafür selbst produzierte Keyboard- und Synthesizer-Samples. U2-Hymnen im kleinen Club statt im Stadion, für Tobi als U2-Fan ein naheliegender Abend.",
+      "tipp": true,
+      "unsicher": "Preis nur aus einem Suchtreffer bei regioactive (Seite selbst gesperrt); die Venue-Seite war nicht abrufbar; Ende geschätzt"
+    },
+    {
+      "id": "strangelove-grosse-freiheit-36-2026-11-19",
+      "daten": [
+        "2026-11-19"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Strangelove – The Depeche Mode Experience",
+      "ort": "Große Freiheit 36, St. Pauli",
+      "geo": [
+        53.55111,
+        9.95808
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 60,
+      "beschreibung": "Depeche-Mode-Tribute mit voller Bühnenproduktion. Ein Set ist 40 Jahren „Black Celebration“ gewidmet, das zweite bringt Hits aus der ganzen Bandgeschichte.",
+      "draussen": "drinnen",
+      "link": "https://grossefreiheit36.de/events/strangelove-19-11-2026",
+      "einordnung": "Strangelove tritt als Tribute-Show in Vollproduktion auf: Musiker aus New York, Los Angeles und London um Sänger Leo Luganskiy, Kostüme passend zur jeweiligen Ära, großer Sound. Die Tour führt im November auch nach Hannover, Köln, Berlin und Leipzig. Depeche Mode steht nicht auf Tobis Liste, aber dieser dunkle Synthie-Rock für große Hallen ist der Ursprung vieler 80er-Anklänge bei The Killers und liegt nah an U2s Achtung-Baby-Phase.",
+      "tipp": true,
+      "unsicher": "Preis auf keiner der Seiten genannt; Ende geschätzt"
+    },
+    {
+      "id": "forced-to-mode-inselpark-arena-2026-11-20",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "19:00",
+      "ende": "21:30",
+      "titel": "Forced To Mode – Depeche Mode’s Dark & Bright Lights",
+      "ort": "Inselpark Arena, Wilhelmsburg",
+      "geo": [
+        53.49558,
+        10.00242
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 56,
+      "beschreibung": "Depeche-Mode-Tribute aus Berlin auf der „Black Celebration Tour 2026“ („40 Years of Black Celebration“), mit Schwerpunkt auf seltenen B-Seiten und Albumtracks.",
+      "preis": "ab 55,70 €",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/hamburg/veranstaltungen/forced-to-mode-depeche-mode-s-dark-bright-lights-hamburg/",
+      "einordnung": "Das Berliner Trio ist seit über zehn Jahren unterwegs. Es hat nach eigenen Angaben mehr als 500 Shows in 18 Ländern gespielt und über 130 Depeche-Mode-Songs im Repertoire. Diese Tour richtet sich eher an Kenner als an Hit-Sammler. Einen Tag nach Strangelove ist es die zweite Gelegenheit für dunklen Synthie-Rock, wie er bei The Killers und U2 anklingt.",
+      "tipp": true,
+      "unsicher": "Beginn: mvp und Hamburg Tourismus nennen 19:00, ein regioactive-Treffer 20:00; Zweitmarkt-Seiten (Hellotickets, StubHub) zeigen keine Karten mehr, vor dem Kauf bei Eventim prüfen; Ende geschätzt"
+    },
+    {
+      "id": "the-music-of-queen-live-cch-congress-center-2026-12-16",
+      "daten": [
+        "2026-12-16"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "The Music of Queen Live – mit Valentin Findling",
+      "ort": "CCH Congress Center Hamburg, Saal 1",
+      "geo": [
+        53.56151,
+        9.9863
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 54,
+      "beschreibung": "Queen-Tributeshow mit Sänger Valentin Findling und Liveband im großen Saal des CCH.",
+      "preis": "ab 49,50 €",
+      "draussen": "drinnen",
+      "link": "https://www.cch.de/whats-on/events/veranstaltungsdetails/the-music-of-queen-live-2026",
+      "einordnung": "Valentin Findling singt mit einer Band aus Profimusikern die großen Queen-Nummern, darunter „A Kind of Magic“, „Radio Ga Ga“, „Under Pressure“ und „Killer Queen“. Die Europatour 2026 umfasst laut Veranstalter mehr als 80 Shows, veranstaltet von Neumann-Wolff (Wolff Concerts). Queen steht nicht auf Tobis Liste, liefert aber genau die Mitsing-Hymnen, die er von Coldplay, U2 und The Killers kennt.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; Tourumfang aus einer Tourismus-Ankündigung"
+    },
+    {
+      "id": "steve-n-seagulls-fabrik-2026-12-01",
+      "daten": [
+        "2026-12-01"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Steve ’n’ Seagulls – „The Dark Side of the Moo Pt. 2“",
+      "ort": "Fabrik, Ottensen",
+      "geo": [
+        53.55674,
+        9.92919
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 58,
+      "beschreibung": "Finnische Bluegrass-Band, die Rock- und Metal-Klassiker mit Banjo, Akkordeon und Kontrabass neu spielt. Einlass 19:00.",
+      "preis": "VVK 33,70 €",
+      "draussen": "drinnen",
+      "link": "https://www.fabrik.de/veranstaltungsdetail/steve-n-seagulls-1358",
+      "einordnung": "Die Band aus Finnland gibt es seit etwa 2010. 2014 ging ihr Live-Video von AC/DCs „Thunderstruck“ viral und war der Start ihrer internationalen Karriere. Stilistisch mischen sie Bluegrass, finnischen Folk und Rock. Der Tourtitel spielt auf Pink Floyds „The Dark Side of the Moon“ an. Ein Abend zum Ausprobieren: eine Coverband mit Witz statt Kopie, mit Banjo-Folk wie bei Mumford & Sons und Mighty Oaks, aber mit harten Rockklassikern.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; welche Songs genau, nennt die Seite außer „Thunderstruck“ nicht"
+    },
+    {
+      "id": "candlelight-tribute-to-pink-floy-markk-2026-12-19",
+      "daten": [
+        "2026-12-19"
+      ],
+      "zeit": "18:30",
+      "ende": "19:30",
+      "titel": "Candlelight: Tribute to Pink Floyd",
+      "ort": "MARKK, Rothenbaumchaussee 64",
+      "geo": [
+        53.56862,
+        9.98917
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 44,
+      "beschreibung": "Das Stella Quartet spielt bei Kerzenlicht Pink-Floyd-Stücke im Museum am Rothenbaum, 60 Minuten. Einlass ab 60 Minuten vorher, kein Nacheinlass.",
+      "preis": "47–73 €",
+      "draussen": "drinnen",
+      "link": "https://feverup.com/m/273330/en",
+      "einordnung": "Auf dem Programm stehen u. a. „Wish You Were Here“, „Comfortably Numb“, „Money“, „Time“, „The Great Gig in the Sky“ und „Shine On You Crazy Diamond“, gespielt vom Streichquartett. Das ist keine Rockshow, sondern Pink Floyd als Kammermusik: kurz, ruhig und früh am Abend. Für Tobi als Floyd-Fan ein ungewöhnlicher Samstag vor Weihnachten. Wer Gitarrensoli und Lichtshow sucht, ist bei Kings of Floyd in Elmshorn besser aufgehoben.",
+      "tipp": true,
+      "unsicher": "Ob ausverkauft, zeigt die Seite nicht"
+    },
+    {
+      "id": "david-bowie-symphony-konzerthaus-am-schlo-2026-11-26",
+      "daten": [
+        "2026-11-26"
+      ],
+      "zeit": "19:30",
+      "ende": "22:00",
+      "titel": "David Bowie Symphony – The Celebration Concert (Milan Devinne & The Thin White Duke Orchestra)",
+      "ort": "Konzerthaus am Schloss, Kiel",
+      "geo": [
+        54.32366,
+        10.14065
+      ],
+      "region": "HB",
+      "kategorie": "Konzert",
+      "score": 44,
+      "beschreibung": "Bowie-Tribute mit Orchester und Rockband. Bekannte Songs wie „Heroes“ und „Let’s Dance“ in neuen Arrangements. Einlass 18:30.",
+      "preis": "ab 47,90 €",
+      "draussen": "drinnen",
+      "link": "https://www.mvp.de/kiel/veranstaltungen/david-bowie-symphony-the-celebration-concert-performed-by-kiel/",
+      "anreise": "DT: ca. 1:20 Std. bis Kiel Hbf, dann ca. 15 Min. zu Fuß · Auto: ca. 1:15 Std. über die A7",
+      "einordnung": "Die Show ist die symphonische Erweiterung von Milan Devinnes Projekt „Mr. Bowie – The Reality Show“. Musikalische Leitung hat der italienische Dirigent Andrea Bonaldo, an der Gitarre spielt Peter Pohl. Vor dem Konzert laufen Erinnerungen von Wegbegleitern wie Peter Freestone und Richard Young. Bowie steht nicht auf Tobis Liste, ist aber ein Bezugspunkt für Arcade Fire und The National. Wegen Donnerstag und Anfahrt nach Kiel eher für echte Bowie-Fans.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; Anreisezeiten geschätzt"
+    },
+    {
+      "id": "candlelight-coldplay-ed-sheeran-markk-2026-11-28",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "18:30",
+      "ende": "19:30",
+      "titel": "Candlelight: Coldplay & Ed Sheeran",
+      "ort": "MARKK, Rothenbaumchaussee 64",
+      "geo": [
+        53.56862,
+        9.98917
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 46,
+      "beschreibung": "Das Stella Quartet spielt bei Kerzenlicht Songs von Coldplay und Ed Sheeran im Großen Hörsaal des MARKK, 60 Minuten. Weitere Termine laut Fever: 20.11., 18.12., 29.12., 2.1. und 8.1.",
+      "preis": "35,50–55 €",
+      "draussen": "drinnen",
+      "link": "https://feverup.com/m/175971/en",
+      "einordnung": "Gespielt werden u. a. „Clocks“, „Fix You“, „Viva La Vida“ und „A Sky Full Of Stars“, dazu Ed-Sheeran-Stücke wie „Shape of You“ und „Perfect“. Eine echte Coldplay-Tributeband mit Termin in der Region gibt es im Zeitraum nicht. Das hier ist die ruhige Variante: Streichquartett statt Stadionshow, eine Stunde am frühen Abend. Für Tobi vor allem wegen Coldplay interessant, die Hälfte des Abends gehört allerdings Ed Sheeran.",
+      "tipp": true,
+      "unsicher": "Nur für den 28.11. ist die Uhrzeit bestätigt; der Saal ist laut Fever nicht barrierefrei; Ausverkauf je Termin nicht angezeigt"
+    },
+    {
+      "id": "ensemble-resonanz-momi-maiga-son-laeiszhalle-2026-11-16",
+      "daten": [
+        "2026-11-16"
+      ],
+      "zeit": "20:00",
+      "ende": "21:45",
+      "titel": "Ensemble Resonanz & Momi Maiga: „songs & postal pieces“",
+      "ort": "Laeiszhalle, Großer Saal",
+      "geo": [
+        53.5561,
+        9.98108
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 62,
+      "beschreibung": "Das Ensemble Resonanz spielt mit dem senegalesischen Kora-Spieler und Sänger Momi Maiga und dem Perkussionisten Aleix Tobías dessen Lieder und dazu kurze „Postkartenstücke“. Im Anschluss lädt das Ensemble ab 22 Uhr zur Hausparty »late night set« in den resonanzraum (Eintritt frei).",
+      "preis": "8–59 €",
+      "draussen": "drinnen",
+      "link": "https://www.elbphilharmonie.de/de/programm/ensemble-resonanz-momi-maiga-aleix-tobias-anselm-dalferth/28041",
+      "einordnung": "Momi Maiga kommt aus der Griot-Tradition und verbindet westafrikanische Musik mit Flamenco, Jazz und Klassik. Das Ensemble Resonanz stellt seine Lieder neben Stücke von James Tenney, C. P. E. Bach, Schumann, Laurie Anderson und Bryce Dessner. Dessner ist Gitarrist bei The National, das macht den Abend zu einem guten Einstieg, um Kora und Streicher auszuprobieren. Um 19:10 gibt es im Brahms-Foyer einen offenen Postkarten-Workshop, danach geht es im Bunker an der Feldstraße weiter.",
+      "tipp": true,
+      "unsicher": "Ende auf der Seite nicht angegeben, geschätzt"
+    },
+    {
+      "id": "delfeayo-marsalis-quintet-feat-e-birdland-2026-11-22",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "19:30",
+      "ende": "22:00",
+      "titel": "Delfeayo Marsalis Quintet feat. Eric Alexander",
+      "ort": "Birdland, Hoheluft",
+      "geo": [
+        53.57845,
+        9.96226
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 60,
+      "beschreibung": "Sunday Special im Jazzclub Birdland: der Posaunist Delfeayo Marsalis und der Saxofonist Eric Alexander mit Renato Chicco (Klavier), Glen Fisher (Bass) und Joris Dudli (Schlagzeug). Einlass 18 Uhr.",
+      "preis": "auf der Birdland-Seite nicht genannt, Tickets über Tixforgigs",
+      "draussen": "drinnen",
+      "link": "https://www.birdlandhamburg.de/november",
+      "einordnung": "Ein Quintett um zwei US-Bläser spielt Straight-ahead-Jazz mit Blues und Standards im Birdland an der Gärtnerstraße. Jazz im kleinen Club, nah an der Bühne. Mit Melodien, Swing und Soli statt Experiment ist das ein zugänglicher Einstieg für jemanden, der sonst Indie und Rock hört. Sonntags fängt das Birdland früh an.",
+      "tipp": true,
+      "unsicher": "Preis nicht geprüft (Tixforgigs-Seite zeigte keine Daten); Ende geschätzt"
+    },
+    {
+      "id": "hfmt-bigband-feat-nils-landgren-jazzhall-der-hfmt-2026-11-24",
+      "daten": [
+        "2026-11-24"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "HfMT Bigband feat. Nils Landgren",
+      "ort": "JazzHall der HfMT, Rotherbaum",
+      "geo": [
+        53.57059,
+        9.99677
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 56,
+      "beschreibung": "Die Bigband der Hamburger Musikhochschule unter Wolf Kerschek spielt mit dem skandinavischen Posaunisten Nils Landgren als Gast. Das Konzert schließt eine gemeinsame Probenphase ab.",
+      "preis": "34 €",
+      "draussen": "drinnen",
+      "link": "https://www.hfmt-hamburg.de/hochschule/aktuelles/veranstaltungen/13357-2026-11-24-hfmt-bigband-feat-nils-landgren",
+      "einordnung": "Die HfMT-Bigband ist das Aushängeschild des Jazzstudiengangs, ihr Leiter Wolf Kerschek ist ECHO-prämierter Arrangeur und Komponist. Mit Nils Landgren kommt ein bekannter Posaunist aus Skandinavien dazu, die Studierenden spielen mit ihm in voller Bigband-Besetzung. Tobis Musik ist das nicht, aber es ist eine gute Gelegenheit, Bigband-Jazz einmal live und laut zu hören. Eingang über die Milchstraße 12.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; Stadtteil (Rotherbaum/Harvestehude) nicht auf der Seite"
+    },
+    {
+      "id": "michael-florian-arbenz-atom-stri-jazzhall-der-hfm-2026-12-03",
+      "daten": [
+        "2026-12-03"
+      ],
+      "zeit": "19:30",
+      "ende": "21:15",
+      "titel": "Michael & Florian Arbenz + Atom String Quartet: „Reflecting Bach“",
+      "ort": "JazzHall der HfMT, Rotherbaum",
+      "geo": [
+        53.57059,
+        9.99677
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 56,
+      "beschreibung": "Die Brüder Michael (Klavier) und Florian Arbenz (Schlagzeug) spielen mit dem Atom String Quartet Bach-Bearbeitungen, darunter die Orchestersuite Nr. 3 D-Dur.",
+      "preis": "29 €",
+      "draussen": "drinnen",
+      "link": "https://www.hfmt-hamburg.de/hochschule/aktuelles/veranstaltungen/13361-2026-12-03-michael-florian-arbenz-atom-string-quartet-reflecting-bach",
+      "einordnung": "Michael Arbenz hat Bach für Klavier, Schlagzeug und Streichquartett bearbeitet, dazwischen wird improvisiert. Laut HfMT treffen vertraute Melodien auf Groove und neue Klangfarben, also Klassik-Crossover im wörtlichen Sinn. Das lohnt sich zum Ausprobieren für alle, die Streicher mögen, aber kein langes klassisches Konzert sitzen wollen. Die Brüder spielen seit Jahrzehnten zusammen.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "helene-blum-harald-haugaard-nord-elbphilharmonie-2026-12-06",
+      "daten": [
+        "2026-12-06"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "Helene Blum & Harald Haugaard: „Nordic Christmas“",
+      "ort": "Elbphilharmonie, Kleiner Saal",
+      "geo": [
+        53.54129,
+        9.98421
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 64,
+      "beschreibung": "Ein Weihnachtskonzert aus nordischer Folk-Tradition mit Geigen, Drehleier, Flöten, Gitarren und Perkussion. Die Tour wird 20 Jahre alt. Es gibt eine Pause, Ende gegen 21:30.",
+      "preis": "26–52 €",
+      "draussen": "drinnen",
+      "link": "https://www.elbphilharmonie.de/de/programm/helene-blum-harald-haugaard/28936",
+      "einordnung": "Helene Blum und Harald Haugaard spielen mit Lena Jonsson, Mads Kjøller Henningsen, Mattias Pérez und Sune Rahbek neu arrangierte traditionelle Melodien und eigene Stücke. Die Elbphilharmonie nennt Folk, Jazz, Pop und Crossover als Einflüsse. Mit Tobis Künstlern hat das wenig gemein. Es lohnt sich als leiser, warmer Adventsabend und Einstieg in skandinavischen Folk, und das Ende um 21:30 passt auch an einem Sonntag. Es gibt nur noch wenige Karten.",
+      "tipp": true
+    },
+    {
+      "id": "ethan-iverson-greg-osby-laeiszhalle-2026-12-09",
+      "daten": [
+        "2026-12-09"
+      ],
+      "zeit": "20:00",
+      "ende": "21:15",
+      "titel": "Ethan Iverson / Greg Osby",
+      "ort": "Laeiszhalle, Kleiner Saal",
+      "geo": [
+        53.5561,
+        9.98108
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 56,
+      "beschreibung": "In der Reihe Jazz Piano spielen der Pianist Ethan Iverson (The Bad Plus) und der Saxofonist Greg Osby im Duo und solo, unter anderem Iversons „American Short Stories“. Etwa 75 Minuten ohne Pause.",
+      "preis": "13–48 €",
+      "draussen": "drinnen",
+      "link": "https://www.elbphilharmonie.de/de/programm/ethan-iverson-greg-osby/28009",
+      "einordnung": "Iverson wurde mit dem Trio The Bad Plus bekannt und hat mit Kurt Rosenwinkel, Lee Konitz und Ron Carter gespielt. Seine „American Short Stories“ sind kurze Klavierstücke, die Szenen aus dem Alltag in Musik übersetzen. Im Duo mit Osby ist das konzentrierter moderner Jazz in kleiner Besetzung, ein Einstieg über die ruhige Seite. Wer bei Radiohead oder The National die stillen Klavierstücke mag, ist hier richtig. Mit Ende gegen 21:15 passt es auch an einem Mittwoch.",
+      "tipp": true
+    },
+    {
+      "id": "sly5thave-nica-jazz-club-2026-12-14",
+      "daten": [
+        "2026-12-14"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Sly5thAve",
+      "ort": "Nica Jazz Club, Hamburg",
+      "geo": [
+        53.55074,
+        9.99058
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 56,
+      "beschreibung": "Der Saxofonist, Produzent und Arrangeur Sly5thAve verbindet Hip-Hop, Soul und Jazz und stellt mit Band sein Album „Liberation“ vor. Präsentiert von ByteFM, Einlass 18:30.",
+      "preis": "auf der Nica-Seite nicht genannt (Tickets über Eventim); Veranstaltungskalender nennen ab ca. 36 €",
+      "draussen": "drinnen",
+      "link": "https://www.nica-jazzclub.de/de/events/sly5thave-477",
+      "einordnung": "Auf „Liberation“ hat Sly5thAve erstmals alle Orchesterarrangements selbst geschrieben und mit Jazz-Improvisation und Hip-Hop-Produktion verbunden, dabei sind Mitspieler aus Ghost-Note. Live spielt er Bariton- und Tenorsaxofon mit Keys, Gitarre, E-Bass und Schlagzeug. Das ist groovender Soul-Jazz, der eher an R&B und The Weeknd anknüpft als an Swing. Der Nica am Alsterfleet beim Rathaus gibt es seit November 2024, er hat rund 300 Plätze.",
+      "tipp": true,
+      "unsicher": "Preis nicht direkt geprüft (Eventim-Seite gesperrt); Ende geschätzt"
+    },
+    {
+      "id": "wolfgang-muthspiel-confluence-ft-nica-jazz-club-2026-12-18",
+      "daten": [
+        "2026-12-18"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Wolfgang Muthspiel Confluence ft. Linda May Han Oh & Lionel Loueke",
+      "ort": "Nica Jazz Club, Hamburg",
+      "geo": [
+        53.55074,
+        9.99058
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 64,
+      "beschreibung": "Der Gitarrist Wolfgang Muthspiel spielt im Trio mit Lionel Loueke (Gitarre) und Linda May Han Oh (Bass) und stellt das gemeinsame Album „Confluence“ vor. Einlass 18:30.",
+      "preis": "auf der Nica-Seite nicht genannt (Tickets über Eventim)",
+      "draussen": "drinnen",
+      "link": "https://www.nica-jazzclub.de/de/events/wolfgang-muthspiel-confluence-ft-linda-may-han-oh-lionel-loueke-553",
+      "einordnung": "Das Nica kündigt drei Jazz-Größen aus drei Kulturen als All-Star-Band an. Der Name „Confluence“ steht für das Zusammenfließen ihrer drei Stimmen, das Album erscheint im Dezember 2026. Zwei Gitarren und Bass ohne Schlagzeug klingen eher schwebend als laut. Wer die flächigen Gitarren von The War On Drugs oder Kurt Vile mag, kann hier Jazz von der ruhigen Seite ausprobieren. Es ist ein Freitagabend direkt neben dem Rathaus.",
+      "tipp": true,
+      "unsicher": "Preis nicht geprüft (Eventim-Seite gesperrt); Ende geschätzt"
+    },
+    {
+      "id": "harold-lopez-nussa-jazzhall-der-hfmt-2026-12-19",
+      "daten": [
+        "2026-12-19"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "Harold López-Nussa (JazzHall LatinSession #12)",
+      "ort": "JazzHall der HfMT, Rotherbaum",
+      "geo": [
+        53.57059,
+        9.99677
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 62,
+      "beschreibung": "Der kubanische Pianist und Komponist Harold López-Nussa spielt mit Juan Camilo Villa (Bass), Maurice Remedios (Perkussion) und Ricardo Chicho Castillo (Schlagzeug) in der Reihe LatinSession.",
+      "preis": "24 €",
+      "draussen": "drinnen",
+      "link": "https://www.hfmt-hamburg.de/hochschule/aktuelles/veranstaltungen/13363-2026-12-19-jazzhall-latinsession-12-harold-lopez-nussa",
+      "einordnung": "López-Nussa ist in Havanna ausgebildet und verbindet Jazz, klassische Formen und afrokaribische Rhythmen. Die HfMT beschreibt seine Musik als durchdacht statt laut, mit technischer Präzision und einem klaren, persönlichen Klang. Mit Perkussion und Schlagzeug ist das kubanischer Jazz mit viel Rhythmus. Von Tobis Indie-Welt ist das weit weg, aber ein sehr zugänglicher Einstieg in Latin Jazz an einem Samstag kurz vor Weihnachten.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "matti-klein-soul-trio-birdland-2026-12-28",
+      "daten": [
+        "2026-12-28"
+      ],
+      "zeit": "20:30",
+      "ende": "23:00",
+      "titel": "Matti Klein Soul Trio",
+      "ort": "Birdland, Hoheluft",
+      "geo": [
+        53.57845,
+        9.96226
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 54,
+      "beschreibung": "Der Keyboarder Matti Klein (Wurlitzer, Rhodes-Bass) mit Lars Dieterich (Bassklarinette, Saxofon) und André Seidel (Schlagzeug), angekündigt als „Deep-fried contemporary Soul-Jazz“. Einlass 19 Uhr.",
+      "preis": "auf der Birdland-Seite nicht genannt, Tickets über Tixforgigs",
+      "draussen": "drinnen",
+      "link": "https://www.birdlandhamburg.de/dezember",
+      "einordnung": "Das Trio kommt ohne Bassisten aus: Matti Klein spielt den Bass selbst auf dem Rhodes, dazu kommen Wurlitzer, Saxofon und Schlagzeug, also warmer Soul-Jazz im Vintage-Sound. Für Tobi ist das eher ein Gegenprogramm zum melancholischen Indie, Groove zum Ausprobieren. Zwischen den Jahren ist es ein entspannter Clubabend, und viele haben in dieser Woche frei.",
+      "tipp": true,
+      "unsicher": "Preis nicht geprüft (Tixforgigs-Seite zeigte keine Daten); Ende geschätzt"
+    },
+    {
+      "id": "erobique-fabrik-2027-01-02",
+      "daten": [
+        "2027-01-02"
+      ],
+      "zeit": "20:00",
+      "ende": "23:30",
+      "titel": "Erobique",
+      "ort": "Fabrik, Ottensen",
+      "geo": [
+        53.55674,
+        9.92919
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 66,
+      "beschreibung": "Carsten „Erobique“ Meyer, der sich selbst „letzter Discopunk“ Deutschlands nennt, spielt live Disco aus 50 Jahren mit improvisierten Licks und Balladen-Einlagen. Einlass 19 Uhr.",
+      "preis": "VVK 44 €",
+      "draussen": "drinnen",
+      "link": "https://www.fabrik.de/veranstaltungsdetail/erobique-1426",
+      "einordnung": "Die Fabrik kündigt einen Tanzmarathon an, mit Disco aus fünf Jahrzehnten, improvisierten Licks und unerwarteten Balladen, gedacht gegen die Eintönigkeit der Laptop-DJ-Kultur. Das ist Funk und Disco live und von Hand gespielt, näher an Tobis tanzbarer Seite (Alle Farben, Klangkarussell) als an Jazz. Es ist der erste Samstag im neuen Jahr, in der alten Maschinenhalle in Ottensen.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt"
+    },
+    {
+      "id": "thees-uhlmann-die-pumpe-2026-12-27",
+      "daten": [
+        "2026-12-27"
+      ],
+      "zeit": "20:00",
+      "ende": "22:15",
+      "titel": "Thees Uhlmann",
+      "ort": "Die Pumpe, Kiel",
+      "geo": [
+        54.32449,
+        10.1383
+      ],
+      "region": "HB",
+      "kategorie": "Konzert",
+      "score": 70,
+      "beschreibung": "Thees Uhlmann spielt im Saal der Pumpe eines von zwei kleineren Konzerten vor seinen großen Shows. Einlass ist um 19:00.",
+      "preis": "auf der Pumpe-Seite nicht genannt (Tickets über ghvc-shop.de)",
+      "draussen": "drinnen",
+      "link": "https://www.diepumpe.de/veranstaltungen/thees-uhlmann/",
+      "anreise": "DT: ca. 1:15–1:30 Std. ab Hamburg Hbf bis Kiel Hbf, dann ca. 10 Min. zu Fuß · Auto: ca. 1:15 Std.",
+      "einordnung": "Laut Pumpe spielt Thees Uhlmann zwei bewusst kleinere Konzerte vor seinen großen Shows; für den Kieler Abend ist die Weltpremiere eines Geburtstagssongs für Rocko Schamoni angekündigt. Die Tickets laufen über den Shop von Grand Hotel van Cleef, dem Hamburger Label, das er mit kettcar gegründet hat. Für Tobi liegt das ganz nah an kettcar und der Hamburger Gitarrenpop-Schule um Tocotronic, hier in einem Saal statt in einer großen Halle.",
+      "tipp": true,
+      "unsicher": "Preis und Restkarten offen: der verlinkte Shop-Eintrag war nicht erreichbar, im GHvC-Shop standen nur Solo-Termine 2027. Ende geschätzt. Sonntagabend: Rückfahrt aus Kiel vorher prüfen."
+    },
+    {
+      "id": "grabbel-the-final-cut-salon-hansen-2026-12-11",
+      "daten": [
+        "2026-12-11"
+      ],
+      "zeit": "21:00",
+      "ende": "22:30",
+      "titel": "Grabbel & the Final Cut",
+      "ort": "Salon Hansen, Lüneburg",
+      "geo": [
+        53.24741,
+        10.40357
+      ],
+      "region": "LG",
+      "kategorie": "Konzert",
+      "score": 50,
+      "beschreibung": "Die Lüneburger Shoegaze- und Noisepop-Band spielt im Salon Hansen, danach folgt die Aftershowparty „Hey Ho Let’s Go“, die für Konzertgäste frei ist. Einlass 20:30, ab 16 Jahren.",
+      "preis": "13 €",
+      "draussen": "drinnen",
+      "link": "https://salonhansen.com/veranstaltungen/grabbel-and-the-final-cut-11-12-2026/",
+      "anreise": "DT: ca. 30–35 Min. ab Hamburg Hbf bis Lüneburg, dann ca. 15 Min. zu Fuß · Auto: ca. 45 Min.",
+      "einordnung": "Die Band wurde 1989 in Lüneburg gegründet, ist nach langer Pause wieder vereint und nennt The Jesus and Mary Chain und My Bloody Valentine als Vorbilder; ihre EP „Get Your Feet Back On The Ground“ erschien beim US-Label Captured Tracks. Der Musikexpress nannte sie einen „begeisternden Hybrid zwischen Noise und Shoegaze“. Für Tobi: Gitarrenwände und Melodien aus der Shoegaze-Ecke, verwandt mit dem verhallten Dream-Pop von Mazzy Star und Cigarettes After Sex, nur lauter.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; der Preis steht ohne Trennung nach VVK und AK."
+    },
+    {
+      "id": "fleetwood-mac-by-the-cosmic-carn-kolosseum-2026-12-10",
+      "daten": [
+        "2026-12-10"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Fleetwood Mac by The Cosmic Carnival – The Incredible Story",
+      "ort": "Kolosseum, Lübeck",
+      "geo": [
+        53.85494,
+        10.68908
+      ],
+      "region": "LUE",
+      "kategorie": "Konzert",
+      "score": 52,
+      "beschreibung": "Die niederländische Tributeband The Cosmic Carnival spielt die Geschichte von Fleetwood Mac mit den großen Hits nach. Es ist ihr erster Auftritt in Deutschland.",
+      "preis": "ab 43,90 €",
+      "draussen": "drinnen",
+      "link": "https://www.kolosseum-luebeck.de/programm/details/fleetwood-mac-tribute-2025-10-05t000000z-2025-01-13t194437z",
+      "anreise": "DT: ca. 45 Min. ab Hamburg Hbf bis Lübeck Hbf, dann ca. 15–20 Min. zu Fuß oder Bus · Auto: ca. 50–60 Min. (A1)",
+      "einordnung": "The Cosmic Carnival zeichnet Fleetwood Mac von den Blues-Rock-Anfängen unter Peter Green bis zur Pop-Rock-Phase mit Lindsey Buckingham, Stevie Nicks und Christine McVie nach, mit Hits wie „Dreams“, „Go Your Own Way“ und „Little Lies“. Nach ausverkauften Konzerten in den Niederlanden kommt die Band laut Kolosseum erstmals nach Deutschland. Für Tobi eine Tributeshow aus der Classic-Rock-Ecke wie die Pink-Floyd-Abende, mit Songs zum Mitsingen.",
+      "tipp": true,
+      "unsicher": "Das Kolosseum nennt nur 19:00, das Ticketportal Einlass 19:00 und Beginn 20:00; 20:00 ist daher wahrscheinlich. Ende geschätzt. Ob es Restkarten gibt, stand auf keiner der Seiten."
+    },
+    {
+      "id": "fluppe-gas-wasser-die-pumpe-2026-12-12",
+      "daten": [
+        "2026-12-12"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Fluppe + Gas Wasser",
+      "ort": "Die Pumpe, Kiel",
+      "geo": [
+        54.32449,
+        10.1383
+      ],
+      "region": "HB",
+      "kategorie": "Konzert",
+      "score": 48,
+      "beschreibung": "Doppelkonzert im Roten Salon der Pumpe mit der Hamburger Post-Punk-Band fluppe und der Kieler Band Gas Wasser. Einlass 19:00.",
+      "preis": "VVK 20 € zzgl. Gebühr",
+      "draussen": "drinnen",
+      "link": "https://www.diepumpe.de/veranstaltungen/fluppe-gas-wasser-indiepop/",
+      "anreise": "DT: ca. 1:15–1:30 Std. ab Hamburg Hbf bis Kiel Hbf, dann ca. 10 Min. zu Fuß · Auto: ca. 1:15 Std.",
+      "einordnung": "fluppe ist ein Hamburger Post-Punk-Quartett mit Faible für Pop und Shoegaze, dem die Pumpe eine für die Hamburger Schule typische Haltung bescheinigt. Gas Wasser um Sänger Jott.Gäde kommt aus Kiel und mischt Oldschool-Punk, Pop, Indie und Elektro. Für Tobi ein Doppelpack aus der Gitarren-Indie-Ecke im kleinen Roten Salon, das an frühe Tocotronic und kettcar anknüpft.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt. Die Seite von TixForGigs zeigte nur eine leere Vorlage (mit dem Wort „abgesagt“ ohne klaren Bezug); die Pumpe führt den Termin aber regulär."
+    },
+    {
+      "id": "veronica-fusaro-salon-hansen-2026-12-03",
+      "daten": [
+        "2026-12-03"
+      ],
+      "zeit": "20:30",
+      "ende": "22:15",
+      "titel": "Veronica Fusaro – Looking For Connection Tour",
+      "ort": "Salon Hansen, Lüneburg",
+      "geo": [
+        53.24741,
+        10.40357
+      ],
+      "region": "LG",
+      "kategorie": "Konzert",
+      "score": 50,
+      "beschreibung": "Die Schweizer Sängerin stellt solo mit Loopstation ihr zweites Album „Looking For Connection“ vor. Einlass 19:30, ab 16 Jahren.",
+      "preis": "26 €",
+      "draussen": "drinnen",
+      "link": "https://salonhansen.com/veranstaltungen/veronica-fusaro/",
+      "anreise": "DT: ca. 30–35 Min. ab Hamburg Hbf bis Lüneburg, dann ca. 15 Min. zu Fuß · Auto: ca. 45 Min.",
+      "einordnung": "Veronica Fusaro mischt Pop, Soul und Rock; ihr zweites Album erschien im Oktober 2025, ihr Debüt „All the Colors of the Sky“ kam in der Schweiz auf Platz 5. Laut Salon Hansen hat sie über 500 Konzerte gespielt, darunter in Glastonbury und beim Montreux Jazz Festival, und war im Vorprogramm von Mark Knopfler und Eagle-Eye Cherry. Zum Ausprobieren: ein Singer-Songwriter-Abend mit Soul-Stimme im kleinen Club, eher in Richtung Gracie Abrams als Gitarrenrock.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; der Preis steht ohne Trennung nach VVK und AK."
+    },
+    {
+      "id": "the-pleasures-brakula-2026-11-22",
+      "daten": [
+        "2026-11-22"
+      ],
+      "zeit": "19:00",
+      "ende": "22:00",
+      "titel": "The Pleasures",
+      "ort": "Brakula, Bramfeld",
+      "geo": [
+        53.61524,
+        10.07575
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 52,
+      "beschreibung": "Die Hamburger Glam-Rock-Band spielt im Brakula-Saal eigene Songs und Coverversionen, ohne Vorband.",
+      "preis": "VVK 15 €, AK 18 €",
+      "draussen": "drinnen",
+      "link": "https://www.brakula.de/programm/the-pleasures-/221120261900/",
+      "einordnung": "The Pleasures gibt es seit 2004; das Brakula nennt sie eine Kultband, die eigene Songs und Coverversionen ihrer Idole spielt, geschminkt in Lack und Spandex, während das Publikum oft verkleidet kommt. Für Tobi weniger eine Geschmacks- als eine Spaßfrage: eine laute Rockshow mit Kostüm im Bramfelder Kulturladen, nah an Wandsbek und günstig.",
+      "tipp": true,
+      "unsicher": "Einlass und Restkarten nicht angegeben."
+    },
+    {
+      "id": "atzur-salon-hansen-2026-11-25",
+      "daten": [
+        "2026-11-25"
+      ],
+      "zeit": "20:30",
+      "ende": "22:00",
+      "titel": "Atzur – The Humble Tour",
+      "ort": "Salon Hansen, Lüneburg",
+      "geo": [
+        53.24741,
+        10.40357
+      ],
+      "region": "LG",
+      "kategorie": "Konzert",
+      "score": 46,
+      "beschreibung": "Das österreichisch-spanische Duo Atzur stellt im Salon Hansen sein Album „HUMBLE“ vor. Einlass 19:30, ab 16 Jahren.",
+      "preis": "19 €",
+      "draussen": "drinnen",
+      "link": "https://salonhansen.com/veranstaltungen/atzur-the-humble-tour-2026/",
+      "anreise": "DT: ca. 30–35 Min. ab Hamburg Hbf bis Lüneburg, dann ca. 15 Min. zu Fuß · Auto: ca. 45 Min.",
+      "einordnung": "Bei Atzur singt Patricia, Paul spielt Schlagzeug; das Album „HUMBLE“ erschien im Februar 2026, davor kam „Strange Rituals“. Der Salon Hansen beschreibt den Sound als druckvoll-hymnischen Alt-Indie mit tanzbarer Energie und Hyperpop-Elementen. Für Tobi zum Ausprobieren: tanzbarer Indie-Pop, der grob in Richtung girl in red geht.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; Mittwochabend."
+    },
+    {
+      "id": "ansa-sauermann-salon-hansen-2026-11-28",
+      "daten": [
+        "2026-11-28"
+      ],
+      "zeit": "19:30",
+      "ende": "21:30",
+      "titel": "Ansa Sauermann – Worauf haben wir gewartet (solo)",
+      "ort": "Salon Hansen, Lüneburg",
+      "geo": [
+        53.24741,
+        10.40357
+      ],
+      "region": "LG",
+      "kategorie": "Konzert",
+      "score": 48,
+      "beschreibung": "Der Songwriter spielt solo ein neu arrangiertes Best-of aus zwölf Jahren. Einlass 19:00, ab 16 Jahren.",
+      "preis": "auf der Seite nicht genannt (Tickets über Eventim und Schoneberg)",
+      "draussen": "drinnen",
+      "link": "https://salonhansen.com/veranstaltungen/ansa-sauermann/",
+      "anreise": "DT: ca. 30–35 Min. ab Hamburg Hbf bis Lüneburg, dann ca. 15 Min. zu Fuß · Auto: ca. 45 Min.",
+      "einordnung": "Ansa Sauermann bringt Songs aus zwölf Jahren, vier Alben und zwei EPs mit, neu arrangiert für Akustikgitarre und Kickdrum oder E-Gitarre, dazu einen noch unveröffentlichten Song; sein aktuelles Studioalbum heißt „Gehts noch“. Für Tobi: deutschsprachiger Indie-Pop zum Zuhören am Samstagabend, verwandt mit kettcar und Pohlmann.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; Preis nur beim Ticketanbieter."
+    },
+    {
+      "id": "abi-wallenstein-bluesculture-fea-die-pumpe-2026-12-17",
+      "daten": [
+        "2026-12-17"
+      ],
+      "zeit": "20:00",
+      "ende": "22:30",
+      "titel": "Abi Wallenstein & BluesCulture feat. Steve Baker & Martin Röttger",
+      "ort": "Die Pumpe, Kiel",
+      "geo": [
+        54.32449,
+        10.1383
+      ],
+      "region": "HB",
+      "kategorie": "Konzert",
+      "score": 46,
+      "beschreibung": "Der Hamburger Bluesmusiker feiert im Saal der Pumpe seinen 80. Geburtstag mit Mundharmonikaspieler Steve Baker und Schlagzeuger Martin Röttger. Einlass 19:00.",
+      "preis": "VVK 26 € zzgl. Gebühr",
+      "draussen": "drinnen",
+      "link": "https://www.diepumpe.de/veranstaltungen/abi-wallenstein-bluesculture-featuring-steve-baker-martin-roettger/",
+      "anreise": "DT: ca. 1:15–1:30 Std. ab Hamburg Hbf bis Kiel Hbf, dann ca. 10 Min. zu Fuß · Auto: ca. 1:15 Std.",
+      "einordnung": "Abi Wallenstein steht seit über 50 Jahren auf der Bühne; er spielt Fingerpicking-Blues mit Delta- und Rock-Einflüssen und ist für seine rauchige Stimme bekannt. Mit dem britischen Mundharmonikaspieler Steve Baker und Schlagzeuger Martin Röttger verbindet er laut Pumpe Blues mit Country, Folk, Funk und Rock und setzt auf Improvisation statt Präzision. Zum Ausprobieren: die Blues-Wurzeln, aus denen auch Neil Young und Kurt Vile schöpfen.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; Donnerstagabend in Kiel, Rückfahrt vorher prüfen."
+    },
+    {
+      "id": "musikbuehne-meiendorf-das-weihna-bim-buergerhaus-2026-12-10",
+      "daten": [
+        "2026-12-10"
+      ],
+      "zeit": "19:00",
+      "ende": "22:00",
+      "titel": "Musikbühne Meiendorf: Das Weihnachtskonzert für alle",
+      "ort": "BiM – Bürgerhaus in Meiendorf",
+      "geo": [
+        53.62345,
+        10.163
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 46,
+      "beschreibung": "Weihnachtsspecial der Konzertreihe Musikbühne mit drei Acts und Mitsingen, moderiert von Joe Müller. Ohne Anmeldung, der Eintritt ist frei.",
+      "kostenlos": true,
+      "preis": "Eintritt frei (Hut geht rum)",
+      "draussen": "drinnen",
+      "link": "https://bim-hamburg.de/Veranstaltung/musikbuehne-meiendorf-5-2/?instance_id=3567",
+      "einordnung": "Auf der Bühne stehen der A-cappella-Chor NCOTB mit Beatbox, Enno Bardowicks mit Gesang und Klavier und The Atticos mit Pop- und Rock-Covern; gespielt werden Pop und Weihnachts-Traditionals, Mitsingen ist ausdrücklich erwünscht. Für Tobi ein kleiner Nachbarschaftsabend gleich neben Wandsbek, ohne Eintritt: Coverband-Stimmung zum Jahresende statt großem Konzert.",
+      "tipp": true
+    },
+    {
+      "id": "dr-no-s-blueskapelle-bim-buergerhaus-in-m-2026-12-18",
+      "daten": [
+        "2026-12-18"
+      ],
+      "zeit": "19:00",
+      "ende": "21:00",
+      "titel": "Dr. No's Blueskapelle",
+      "ort": "BiM – Bürgerhaus in Meiendorf",
+      "geo": [
+        53.62345,
+        10.163
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 42,
+      "beschreibung": "Die Band spielt im BiM Blues-Covers aus verschiedenen Stilrichtungen. Der Eintritt ist frei, eine Anmeldung ist nicht nötig.",
+      "kostenlos": true,
+      "preis": "Eintritt frei (Hut geht rum)",
+      "draussen": "drinnen",
+      "link": "https://bim-hamburg.de/Veranstaltung/dr-no%ca%bcs-blueskapelle/?instance_id=3605",
+      "einordnung": "Dr. No's Blueskapelle spielt laut BiM Blues-Covers quer durch die Stilrichtungen, ausdrücklich gegen das Wintertief; der Hut geht rum. Für Tobi ein unkomplizierter Freitagabend mit Coverband kurz hinter Wandsbek, eher zum Ausprobieren als aus seinen Genres.",
+      "tipp": true
+    },
+    {
+      "id": "hanse-swingers-brakula",
+      "daten": [
+        "2026-11-17",
+        "2026-12-15"
+      ],
+      "zeit": "20:00",
+      "ende": "22:00",
+      "titel": "Hanse Swingers – Jazz-Konzert",
+      "ort": "Brakula, Bramfeld",
+      "geo": [
+        53.61524,
+        10.07575
+      ],
+      "region": "HH",
+      "kategorie": "Konzert",
+      "score": 40,
+      "beschreibung": "Die Hausband des Brakula spielt etwa einmal im Monat klassischen Jazz mit viel Gesang, gelegentlich mit Gästen oder unter einem Motto.",
+      "preis": "VVK 10 €, AK 12 €",
+      "draussen": "drinnen",
+      "link": "https://www.brakula.de/programm/hanse-swingers/171120262000/",
+      "einordnung": "Die Hanse Swingers wurden eigens für das Brakula gegründet und interpretieren Jazz-Welterfolge wie „The Girl from Ipanema“ und „The Sidewinder“ auf eigene Weise. Für Tobi ein kleiner, günstiger Dienstagabend in Bramfeld nah an Wandsbek, zum Ausprobieren und fern von seinen Indie-Genres.",
+      "tipp": true,
+      "unsicher": "Ende geschätzt; Einlass nicht angegeben. Für den 15.12. gibt es eine eigene Terminseite (…/hanse-swingers/151220262000/)."
     }
   ],
   "laufend": [

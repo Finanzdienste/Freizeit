@@ -2,7 +2,8 @@
   "hinweis": "Was werkzeug/ortsbilder.py nie nehmen soll: Dateien (File:…), Wikidata-Objekte (Q…) oder ganze Orte – jeweils mit Grund.",
   "dateien": {
     "File:Pferdeturm.jpg": "Fans stehen im Vordergrund – nicht der Ort",
-    "File:2025-05-01 Deutscher Evangelischer Kirchentag in Hannover f.jpg": "zeigt eine Gedenktafel, nicht die Kreuzkirche"
+    "File:2025-05-01 Deutscher Evangelischer Kirchentag in Hannover f.jpg": "zeigt eine Gedenktafel, nicht die Kreuzkirche",
+    "File:Uber Arena Berlin 2024.jpg": "Leute an einer Schaukel mitten im Vordergrund – nicht nur der Ort"
   },
   "objekte": {
     "Q822899": "U-Bahnhof Gänsemarkt – Treffer über den Beinamen, zeigt den Bahnsteig statt des Platzes",

@@ -206,7 +206,6 @@
   "Touristinformation, Glückstadt": "touristinformation-glueckstadt-q47516444",
   "Trabrennbahn, Luruper Chaussee 30": "trabrennbahn-bahrenfeld-q7831092",
   "Turmhügelburg, Lütjenburg": "turmhuegelburg-luetjenburg-q2461065",
-  "Uber Arena, Berlin": "uber-arena-q265463",
   "Undeloh": "undeloh-q598754",
   "Vicelinkirche Sasel": "vicelinkirche-q2521891",
   "Vicelinkirche, Neumünster": "vicelinkirche-hinter-der-kirche-10-11-hinter-der-q130642929",
@@ -2210,15 +2209,6 @@
    "lizenz": "Public domain",
    "lizenzLink": "",
    "urheber": "wy"
-  },
-  "uber-arena-q265463": {
-   "datei": "File:Uber Arena Berlin 2024.jpg",
-   "objekt": "Uber Arena",
-   "wikidata": "Q265463",
-   "seite": "https://commons.wikimedia.org/wiki/File%3AUber_Arena_Berlin_2024.jpg",
-   "lizenz": "CC0",
-   "lizenzLink": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-   "urheber": "Kostisl"
   },
   "undeloh-q598754": {
    "datei": "File:Undeloh - Sankt Magdalenen 12 ies.jpg",

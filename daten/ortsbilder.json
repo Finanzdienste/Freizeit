@@ -3,6 +3,7 @@
  "orte": {
   "Abaton, Hamburg-Rotherbaum": "abaton-q305682",
   "Adolf-Jäger-Kampfbahn, Altona": "adolf-jaeger-kampfbahn-q360602",
+  "Allianz Arena, München": "allianz-arena-q127429",
   "Alpincenter Hamburg-Wittenburg": "alpincenter-hamburg-wittenburg-q2651140",
   "Alsterschwimmhalle": "alsterschwimmhalle-q2651509",
   "Altonaer Museum": "altonaer-museum-q126971",
@@ -148,6 +149,7 @@
   "Neues Rathaus, Hannover": "neues-rathaus-q573618",
   "Ohlendorff'sche Villa, Im Alten Dorfe 28, Volksdorf": "ohlendorff-sche-villa-q18629535",
   "Ohnsorg-Theater, Heidi-Kabel-Platz": "ohnsorg-theater-q896171",
+  "Olympiastadion, Berlin": "olympiastadion-berlin-q151374",
   "Opernhaus Kiel": "opernhaus-kiel-q737243",
   "Pavillon Hannover": "raschplatzpavillon-q2064721",
   "Philemon-Kirche, Poppenbüttel": "philemon-kirche-q62998758",
@@ -204,6 +206,7 @@
   "Touristinformation, Glückstadt": "touristinformation-glueckstadt-q47516444",
   "Trabrennbahn, Luruper Chaussee 30": "trabrennbahn-bahrenfeld-q7831092",
   "Turmhügelburg, Lütjenburg": "turmhuegelburg-luetjenburg-q2461065",
+  "Uber Arena, Berlin": "uber-arena-q265463",
   "Undeloh": "undeloh-q598754",
   "Vicelinkirche Sasel": "vicelinkirche-q2521891",
   "Vicelinkirche, Neumünster": "vicelinkirche-hinter-der-kirche-10-11-hinter-der-q130642929",
@@ -596,6 +599,15 @@
    "lizenz": "CC BY-SA 3.0",
    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
    "urheber": "Elb-Sohn"
+  },
+  "allianz-arena-q127429": {
+   "datei": "File:Allianz arena daylight Richard Bartz.jpg",
+   "objekt": "Allianz-Arena",
+   "wikidata": "Q127429",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AAllianz_arena_daylight_Richard_Bartz.jpg",
+   "lizenz": "CC BY-SA 2.5",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/2.5",
+   "urheber": "Richard Bartz, Munich aka Makro Freak"
   },
   "alpincenter-hamburg-wittenburg-q2651140": {
    "datei": "File:Snowfunpark Wittenburg1.jpg",
@@ -1704,6 +1716,15 @@
    "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0",
    "urheber": "Graf Foto"
   },
+  "olympiastadion-berlin-q151374": {
+   "datei": "File:Olympiastadion Berlin 2015.jpg",
+   "objekt": "Olympiastadion Berlin",
+   "wikidata": "Q151374",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AOlympiastadion_Berlin_2015.jpg",
+   "lizenz": "CC BY-SA 3.0 de",
+   "lizenzLink": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+   "urheber": "Thomas Wolf, www.foto-tw.de"
+  },
   "opernhaus-kiel-q737243": {
    "datei": "File:Opernhaus Kiel msu2017-9209.jpg",
    "objekt": "Opernhaus Kiel",
@@ -2189,6 +2210,15 @@
    "lizenz": "Public domain",
    "lizenzLink": "",
    "urheber": "wy"
+  },
+  "uber-arena-q265463": {
+   "datei": "File:Uber Arena Berlin 2024.jpg",
+   "objekt": "Uber Arena",
+   "wikidata": "Q265463",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AUber_Arena_Berlin_2024.jpg",
+   "lizenz": "CC0",
+   "lizenzLink": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "urheber": "Kostisl"
   },
   "undeloh-q598754": {
    "datei": "File:Undeloh - Sankt Magdalenen 12 ies.jpg",

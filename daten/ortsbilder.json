@@ -173,6 +173,7 @@
   "Speicherstadtmuseum": "speicherstadtmuseum-q2308634",
   "Spicy's Gewürzmuseum": "spicy-s-gewuerzmuseum-q1521070",
   "Spielbudenplatz, St. Pauli": "spielbudenplatz-q2310135",
+  "Sporthalle Hamburg, Winterhude": "sporthalle-hamburg-q875318",
   "Sprengel Museum Hannover": "sprengel-museum-hannover-q510144",
   "St. Jakobi, Lübeck": "jakobikirche-q375042",
   "St. Johanneskirche, Rudolf-Kinau-Straße 19, Ahrensburg": "johanneskirche-mit-ausstattung-q58405248",
@@ -315,6 +316,7 @@
   "Freundlich + Kompetent": "2026-11-04",
   "Friedenskirche Eilbek": "2026-11-04",
   "Galerie im Marstall, Ahrensburg": "2026-11-04",
+  "Geestland-Eventgelände, Kropp": "2026-11-15",
   "Gemeindehaus Trinitatiskirche, Rahlstedt": "2026-11-04",
   "Gemeindehaus am Rockenhof, Volksdorf": "2026-11-09",
   "Gerhart-Hauptmann-Platz, Altstadt": "2026-11-09",
@@ -349,6 +351,7 @@
   "Haus der VHS, Ahrensburg": "2026-11-04",
   "Haus der Wilden Weiden, Rahlstedt": "2026-11-09",
   "Haus des Gastes / Kursaal, Kirchdorf (Insel Poel)": "2026-11-04",
+  "Hebebühne, Ottensen": "2026-11-15",
   "Heide Park": "2026-11-09",
   "Heiligen-Geist-Hospital, Lübeck": "2026-11-04",
   "Heinrich-Osterwold-Halle, Elbstraße 145a, Lauenburg/Elbe": "2026-11-04",
@@ -518,6 +521,7 @@
   "Stadthaus Bargteheide": "2026-11-09",
   "Stadthöfe (Bleichenhof), Neustadt": "2026-11-04",
   "Stadtpark Norderstedt": "2026-11-04",
+  "Stadtpark Open Air, Winterhude": "2026-11-15",
   "Stadttheater Elmshorn": "2026-11-04",
   "Stage Operettenhaus, Reeperbahn": "2026-11-04",
   "Stage Theater Neue Flora, Stresemannstraße 159a": "2026-11-09",
@@ -1970,6 +1974,15 @@
    "lizenzLink": "https://creativecommons.org/licenses/by/3.0",
    "urheber": "Frank Nocke"
   },
+  "sporthalle-hamburg-q875318": {
+   "datei": "File:Hh-alsterdorfersporthalle.jpg",
+   "objekt": "Sporthalle Hamburg",
+   "wikidata": "Q875318",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AHh-alsterdorfersporthalle.jpg",
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "urheber": "Staro1"
+  },
   "sprengel-museum-hannover-q510144": {
    "datei": "File:Sprengel Museum.jpg",
    "objekt": "Sprengel Museum Hannover",
@@ -2268,5 +2281,5 @@
    "urheber": "San Andreas"
   }
  },
- "stand": "2026-11-13"
+ "stand": "2026-11-15"
 }

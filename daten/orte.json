@@ -2192,6 +2192,30 @@
     "Allianz Arena, München": [
       48.21879,
       11.62362
+    ],
+    "UCI Kinowelt Wandsbek": [
+      53.58828,
+      10.0973
+    ],
+    "Koralle-Kino, Volksdorf": [
+      53.65155,
+      10.16322
+    ],
+    "UCI Kinowelt Mundsburg": [
+      53.57057,
+      10.02722
+    ],
+    "CinemaxX Dammtor": [
+      53.55939,
+      9.99063
+    ],
+    "3001 Kino, Sternschanze": [
+      53.56224,
+      9.96533
+    ],
+    "Studio-Kino, Altona": [
+      53.55731,
+      9.95834
     ]
   }
 }

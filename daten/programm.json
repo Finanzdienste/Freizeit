@@ -18008,6 +18008,418 @@
       "kuenstler": true,
       "ausverkauft": true,
       "unsicher": "18 Uhr laut muenchen.de – vermutlich Beginn des Abends mit Vorband, Oasis später; Ende geschätzt"
+    },
+    {
+      "id": "wildwood-uci-wandsbek",
+      "daten": [
+        "2026-11-15",
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18"
+      ],
+      "zeit": "17:20",
+      "dauer": 146,
+      "titel": "Wildwood",
+      "ort": "UCI Kinowelt Wandsbek",
+      "geo": [
+        53.58828,
+        10.0973
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 78,
+      "beschreibung": "Stop-Motion-Fantasy von LAIKA („Coraline“): Prue sucht ihren von Krähen entführten Bruder in einem verzauberten Wald. Alle Vorstellungen: So 15.11. 11:00 DE, 14:10 DE, 17:20 DE · Mo 16.11. 17:20 DE · Di 17.11. 17:20 DE · Mi 18.11. 17:20 DE.",
+      "draussen": "drinnen",
+      "link": "https://www.filmstarts.de/kinoprogramm/kino/A1214/",
+      "einordnung": "Nachdem Krähen ihren kleinen Bruder entführt haben, geht die 12-jährige Prue mit ihrem Mitschüler Curtis in die „Undurchdringliche Wildnis“, einen verzauberten Wald am Rand von Portland voller sprechender Tiere. Stop-Motion von LAIKA („Coraline“) nach den Jugendbüchern von Colin Meloy. Regie: Travis Knight; mit Stimmen (OV): Peyton Elizabeth Lee, Jacob Tremblay, Carey Mulligan, Mahershala Ali. IMDb 8,6 (27 864 Stimmen). 131 Min., FSK 12; hier DE. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung.",
+      "unsicher": "Zeiten von filmstarts.de (die Seite des Kinos ist nicht abrufbar)"
+    },
+    {
+      "id": "wildwood-kinopolis-hafencity",
+      "daten": [
+        "2026-11-15",
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21"
+      ],
+      "zeit": "18:40",
+      "zeiten": {
+        "2026-11-19": "17:45",
+        "2026-11-20": "17:45",
+        "2026-11-21": "17:45"
+      },
+      "dauer": 146,
+      "titel": "Wildwood",
+      "ort": "Kinopolis HafenCity, Hamburg",
+      "geo": [
+        53.5397,
+        9.99895
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 78,
+      "beschreibung": "Stop-Motion-Fantasy von LAIKA („Coraline“): Prue sucht ihren von Krähen entführten Bruder in einem verzauberten Wald. Alle Vorstellungen: So 15.11. 10:40 OV, 17:15 DE, 18:40 OV · Mo 16.11. 17:15 OV, 18:40 DE · Di 17.11. 17:15 OV, 18:40 OV · Mi 18.11. 17:15 OV, 18:40 DE · Do 19.11. 17:45 OV · Fr 20.11. 17:45 DE · Sa 21.11. 17:45 OV.",
+      "draussen": "drinnen",
+      "link": "https://www.kinopolis.de/hh/filmdetail/wildwood/5EA74000012PLXMQDD",
+      "einordnung": "Nachdem Krähen ihren kleinen Bruder entführt haben, geht die 12-jährige Prue mit ihrem Mitschüler Curtis in die „Undurchdringliche Wildnis“, einen verzauberten Wald am Rand von Portland voller sprechender Tiere. Stop-Motion von LAIKA („Coraline“) nach den Jugendbüchern von Colin Meloy. Regie: Travis Knight; mit Stimmen (OV): Peyton Elizabeth Lee, Jacob Tremblay, Carey Mulligan, Mahershala Ali. IMDb 8,6 (27 864 Stimmen). 131 Min., FSK 12; hier DE/OV. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung."
+    },
+    {
+      "id": "wildwood-savoy",
+      "daten": [
+        "2026-11-15",
+        "2026-11-16",
+        "2026-11-18"
+      ],
+      "zeit": "17:30",
+      "zeiten": {
+        "2026-11-15": "16:00",
+        "2026-11-18": "20:15"
+      },
+      "dauer": 146,
+      "titel": "Wildwood",
+      "ort": "Savoy Filmtheater, St. Georg",
+      "geo": [
+        53.55412,
+        10.01419
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 78,
+      "beschreibung": "Stop-Motion-Fantasy von LAIKA („Coraline“): Prue sucht ihren von Krähen entführten Bruder in einem verzauberten Wald. Alle Vorstellungen: So 15.11. 16:00 OV · Mo 16.11. 17:30 OV · Mi 18.11. 20:15 OV.",
+      "draussen": "drinnen",
+      "link": "https://savoy.premiumkino.de/de/film/wildwood",
+      "einordnung": "Nachdem Krähen ihren kleinen Bruder entführt haben, geht die 12-jährige Prue mit ihrem Mitschüler Curtis in die „Undurchdringliche Wildnis“, einen verzauberten Wald am Rand von Portland voller sprechender Tiere. Stop-Motion von LAIKA („Coraline“) nach den Jugendbüchern von Colin Meloy. Regie: Travis Knight; mit Stimmen (OV): Peyton Elizabeth Lee, Jacob Tremblay, Carey Mulligan, Mahershala Ali. IMDb 8,6 (27 864 Stimmen). 131 Min., FSK 12; hier OV. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung."
+    },
+    {
+      "id": "wild-horse-nine-koralle",
+      "daten": [
+        "2026-11-15",
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22",
+        "2026-11-23",
+        "2026-11-24",
+        "2026-11-25"
+      ],
+      "zeit": "20:30",
+      "zeiten": {
+        "2026-11-15": "18:00",
+        "2026-11-16": "20:00",
+        "2026-11-17": "20:00",
+        "2026-11-18": "20:00"
+      },
+      "dauer": 132,
+      "titel": "Wild Horse Nine",
+      "ort": "Koralle-Kino, Volksdorf",
+      "geo": [
+        53.65155,
+        10.16322
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 76,
+      "beschreibung": "Der neue Film von Martin McDonagh: zwei CIA-Agenten 1973 auf der Osterinsel, kurz vor dem Putsch in Chile. Alle Vorstellungen: So 15.11. 18:00 DE, 20:30 DE · Mo 16.11. 20:00 DE · Di 17.11. 20:00 DE · Mi 18.11. 20:00 DE · Do 19.11. 20:30 DE · Fr 20.11. 20:30 DE · Sa 21.11. 20:30 DE · So 22.11. 20:30 DE · Mo 23.11. 20:30 OmU · Di 24.11. 20:30 DE · Mi 25.11. 20:30 DE.",
+      "draussen": "drinnen",
+      "link": "https://www.korallekino.de/filme/wild-horse-nine-2420/",
+      "einordnung": "Chile 1973, kurz vor dem Militärputsch: Die CIA-Agenten Chris und Lee werden auf die Osterinsel geschickt und ringen dort mit ihrer dunklen Vergangenheit. Chris’ Freundschaft mit zwei rebellischen Studentinnen bringt die Reise aus dem Ruder. Regie: Martin McDonagh (auch Buch); mit Sam Rockwell, John Malkovich, Steve Buscemi, Parker Posey, Tom Waits. IMDb 8,1 (14 659 Stimmen). 117 Min., FSK 12; hier DE/OmU. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung."
+    },
+    {
+      "id": "wild-horse-nine-abaton",
+      "daten": [
+        "2026-11-15",
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18"
+      ],
+      "zeit": "17:45",
+      "zeiten": {
+        "2026-11-15": "17:00",
+        "2026-11-17": "20:40",
+        "2026-11-18": "21:00"
+      },
+      "dauer": 132,
+      "titel": "Wild Horse Nine",
+      "ort": "Abaton, Rotherbaum",
+      "geo": [
+        53.56767,
+        9.98204
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 76,
+      "beschreibung": "Der neue Film von Martin McDonagh: zwei CIA-Agenten 1973 auf der Osterinsel, kurz vor dem Putsch in Chile. Alle Vorstellungen: So 15.11. 17:00 OmU, 19:35 OmU · Mo 16.11. 17:45 OmU, 20:00 OmU · Di 17.11. 20:40 OmU · Mi 18.11. 21:00 OmU.",
+      "draussen": "drinnen",
+      "link": "https://www.abaton.de/page.pl?page=546941",
+      "einordnung": "Chile 1973, kurz vor dem Militärputsch: Die CIA-Agenten Chris und Lee werden auf die Osterinsel geschickt und ringen dort mit ihrer dunklen Vergangenheit. Chris’ Freundschaft mit zwei rebellischen Studentinnen bringt die Reise aus dem Ruder. Regie: Martin McDonagh (auch Buch); mit Sam Rockwell, John Malkovich, Steve Buscemi, Parker Posey, Tom Waits. IMDb 8,1 (14 659 Stimmen). 117 Min., FSK 12; hier OmU. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung."
+    },
+    {
+      "id": "wild-horse-nine-zeise",
+      "daten": [
+        "2026-11-15",
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18"
+      ],
+      "zeit": "16:45",
+      "zeiten": {
+        "2026-11-17": "20:30",
+        "2026-11-18": "19:30"
+      },
+      "dauer": 132,
+      "titel": "Wild Horse Nine",
+      "ort": "Zeise Kinos, Ottensen",
+      "geo": [
+        53.55404,
+        9.9274
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 76,
+      "beschreibung": "Der neue Film von Martin McDonagh: zwei CIA-Agenten 1973 auf der Osterinsel, kurz vor dem Putsch in Chile. Alle Vorstellungen: So 15.11. 16:45 DE, 19:45 OmU · Mo 16.11. 16:45 DE, 20:30 OmU · Di 17.11. 20:30 OmU · Mi 18.11. 19:30 OmU.",
+      "draussen": "drinnen",
+      "link": "https://www.zeise.de/film/3974",
+      "einordnung": "Chile 1973, kurz vor dem Militärputsch: Die CIA-Agenten Chris und Lee werden auf die Osterinsel geschickt und ringen dort mit ihrer dunklen Vergangenheit. Chris’ Freundschaft mit zwei rebellischen Studentinnen bringt die Reise aus dem Ruder. Regie: Martin McDonagh (auch Buch); mit Sam Rockwell, John Malkovich, Steve Buscemi, Parker Posey, Tom Waits. IMDb 8,1 (14 659 Stimmen). 117 Min., FSK 12; hier DE/OmU. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung."
+    },
+    {
+      "id": "godzilla-minus-zero-uci-wandsbek",
+      "daten": [
+        "2026-11-15",
+        "2026-11-17"
+      ],
+      "zeit": "17:35",
+      "zeiten": {
+        "2026-11-17": "19:30"
+      },
+      "dauer": 150,
+      "titel": "Godzilla Minus Zero",
+      "ort": "UCI Kinowelt Wandsbek",
+      "geo": [
+        53.58828,
+        10.0973
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 70,
+      "beschreibung": "Die Fortsetzung von „Godzilla Minus One“, wieder von Takashi Yamazaki. Alle Vorstellungen: So 15.11. 16:15 DE, 17:35 DE IMAX, 19:30 DE, 22:45 DE · Di 17.11. 19:30 DE.",
+      "draussen": "drinnen",
+      "link": "https://www.filmstarts.de/kinoprogramm/kino/A1214/",
+      "einordnung": "Zwei Jahre nach „Godzilla Minus One“ kämpft Japan noch um den Wiederaufbau, da schlägt eine neue Bedrohung zu. Koichi und Noriko müssen sich Godzilla ein weiteres Mal stellen. Regie: Takashi Yamazaki (auch Buch und Effekte); mit Ryunosuke Kamiki, Minami Hamabe, Yuki Yamada. IMDb 7,9 (22 978 Stimmen). 135 Min., FSK 12; hier DE. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung.",
+      "unsicher": "Zeiten von filmstarts.de (die Seite des Kinos ist nicht abrufbar)"
+    },
+    {
+      "id": "godzilla-minus-zero-uci-mundsburg",
+      "daten": [
+        "2026-11-15",
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18"
+      ],
+      "zeit": "16:30",
+      "dauer": 150,
+      "titel": "Godzilla Minus Zero",
+      "ort": "UCI Kinowelt Mundsburg",
+      "geo": [
+        53.57057,
+        10.02722
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 70,
+      "beschreibung": "Die Fortsetzung von „Godzilla Minus One“, wieder von Takashi Yamazaki. Alle Vorstellungen: So 15.11. 16:30 DE, 19:45 DE · Mo 16.11. 16:30 DE, 19:45 DE · Di 17.11. 16:30 DE, 19:45 DE · Mi 18.11. 16:30 DE, 19:45 DE.",
+      "draussen": "drinnen",
+      "link": "https://www.filmstarts.de/kinoprogramm/kino/A1203/",
+      "einordnung": "Zwei Jahre nach „Godzilla Minus One“ kämpft Japan noch um den Wiederaufbau, da schlägt eine neue Bedrohung zu. Koichi und Noriko müssen sich Godzilla ein weiteres Mal stellen. Regie: Takashi Yamazaki (auch Buch und Effekte); mit Ryunosuke Kamiki, Minami Hamabe, Yuki Yamada. IMDb 7,9 (22 978 Stimmen). 135 Min., FSK 12; hier DE. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung.",
+      "unsicher": "Zeiten von filmstarts.de (die Seite des Kinos ist nicht abrufbar)"
+    },
+    {
+      "id": "la-bola-negra-3001",
+      "daten": [
+        "2026-11-15",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "zeit": "20:30",
+      "zeiten": {
+        "2026-11-15": "12:00",
+        "2026-11-20": "20:45",
+        "2026-11-21": "18:00",
+        "2026-11-22": "17:00"
+      },
+      "dauer": 170,
+      "titel": "La Bola Negra",
+      "ort": "3001 Kino, Sternschanze",
+      "geo": [
+        53.56224,
+        9.96533
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 75,
+      "beschreibung": "Drei verbundene Leben 1932, 1937 und 2017 nach einem unvollendeten Werk von Lorca – mit Penélope Cruz und Glenn Close. Alle Vorstellungen: So 15.11. 12:00 OmU Preview · Do 19.11. 20:30 OmU · Fr 20.11. 20:45 OmU · Sa 21.11. 18:00 OmU · So 22.11. 17:00 OmU.",
+      "draussen": "drinnen",
+      "link": "https://www.3001-kino.de/26-11-15/",
+      "einordnung": "Drei Lebensgeschichten aus den Jahren 1932, 1937 und 2017, verbunden durch Begehren, Schmerz und Sehnsucht. Inspiriert von einem unvollendeten Werk Federico García Lorcas, Regiepreis in Cannes. Regie: Javier Calvo und Javier Ambrossi („Los Javis“); mit Guitarricadelafuente, Miguel Bernardeau, Carlos González, Milo Quifes, Lola Dueñas, Penélope Cruz, Glenn Close. IMDb 8,2 (13 671 Stimmen). 155 Min., FSK 12; hier OmU. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung.",
+      "unsicher": "Sa 21.11. 18:00 nur bei filmstarts, die Seite des Kinos ist für den Tag noch leer"
+    },
+    {
+      "id": "la-bola-negra-studio-kino",
+      "daten": [
+        "2026-11-16",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22"
+      ],
+      "zeit": "16:30",
+      "zeiten": {
+        "2026-11-16": "19:45",
+        "2026-11-19": "20:15",
+        "2026-11-21": "19:00",
+        "2026-11-22": "17:30"
+      },
+      "dauer": 170,
+      "titel": "La Bola Negra",
+      "ort": "Studio-Kino, Altona",
+      "geo": [
+        53.55731,
+        9.95834
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 75,
+      "beschreibung": "Drei verbundene Leben 1932, 1937 und 2017 nach einem unvollendeten Werk von Lorca – mit Penélope Cruz und Glenn Close. Alle Vorstellungen: Mo 16.11. 19:45 OmU Preview · Do 19.11. 20:15 OmU · Fr 20.11. 16:30 OmU · Sa 21.11. 19:00 OmU · So 22.11. 17:30 OmU.",
+      "draussen": "drinnen",
+      "link": "https://www.studio-kino.de/filme/la-bola-negra-2426/",
+      "einordnung": "Drei Lebensgeschichten aus den Jahren 1932, 1937 und 2017, verbunden durch Begehren, Schmerz und Sehnsucht. Inspiriert von einem unvollendeten Werk Federico García Lorcas, Regiepreis in Cannes. Regie: Javier Calvo und Javier Ambrossi („Los Javis“); mit Guitarricadelafuente, Miguel Bernardeau, Carlos González, Milo Quifes, Lola Dueñas, Penélope Cruz, Glenn Close. IMDb 8,2 (13 671 Stimmen). 155 Min., FSK 12; hier OmU. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung."
+    },
+    {
+      "id": "la-bola-negra-zeise",
+      "daten": [
+        "2026-11-20"
+      ],
+      "zeit": "19:15",
+      "dauer": 170,
+      "titel": "La Bola Negra",
+      "ort": "Zeise Kinos, Ottensen",
+      "geo": [
+        53.55404,
+        9.9274
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 75,
+      "beschreibung": "Drei verbundene Leben 1932, 1937 und 2017 nach einem unvollendeten Werk von Lorca – mit Penélope Cruz und Glenn Close. Alle Vorstellungen: Fr 20.11. 19:15 OmU.",
+      "draussen": "drinnen",
+      "link": "https://www.zeise.de/",
+      "einordnung": "Drei Lebensgeschichten aus den Jahren 1932, 1937 und 2017, verbunden durch Begehren, Schmerz und Sehnsucht. Inspiriert von einem unvollendeten Werk Federico García Lorcas, Regiepreis in Cannes. Regie: Javier Calvo und Javier Ambrossi („Los Javis“); mit Guitarricadelafuente, Miguel Bernardeau, Carlos González, Milo Quifes, Lola Dueñas, Penélope Cruz, Glenn Close. IMDb 8,2 (13 671 Stimmen). 155 Min., FSK 12; hier OmU. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung."
+    },
+    {
+      "id": "tribute-von-panem-sunrise-uci-wandsbek",
+      "daten": [
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22",
+        "2026-11-23",
+        "2026-11-24",
+        "2026-11-25"
+      ],
+      "zeit": "16:40",
+      "zeiten": {
+        "2026-11-18": "19:30",
+        "2026-11-20": "20:20",
+        "2026-11-21": "20:20",
+        "2026-11-22": "15:40",
+        "2026-11-25": "19:20"
+      },
+      "dauer": 174,
+      "titel": "Die Tribute von Panem: Sunrise on the Reaping",
+      "ort": "UCI Kinowelt Wandsbek",
+      "geo": [
+        53.58828,
+        10.0973
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 74,
+      "beschreibung": "Das Prequel um Haymitch Abernathy bei den 50. Hungerspielen – Kinostart am 19.11. Alle Vorstellungen: Mi 18.11. 19:30 DE IMAX Preview, 19:45 DE Preview, 20:00 OV Preview, 23:00 DE IMAX Preview · Do 19.11. 16:40 DE IMAX, 19:20 DE, 20:20 DE IMAX, 22:40 DE · Fr 20.11. 16:40 DE IMAX, 19:20 DE, 20:20 DE IMAX, 22:40 DE · Sa 21.11. 13:00 DE IMAX, 15:40 DE, 16:40 DE IMAX, 19:20 DE, 20:20 DE IMAX, 22:40 DE · So 22.11. 11:30 DE IMAX, 12:00 DE, 15:10 DE IMAX, 15:40 DE, 18:50 OV IMAX, 19:20 DE, 22:30 DE IMAX, 22:40 DE · Mo 23.11. 16:40 DE IMAX, 19:20 DE, 20:20 DE IMAX · Di 24.11. 16:40 DE IMAX, 19:20 DE, 20:20 OV IMAX, 22:40 DE · Mi 25.11. 19:20 DE, 22:40 DE.",
+      "draussen": "drinnen",
+      "link": "https://www.filmstarts.de/kinoprogramm/kino/A1214/",
+      "einordnung": "Der junge Haymitch Abernathy wird 24 Jahre vor den Ereignissen des ersten Films für die 50. Hungerspiele ausgelost, das zweite Jubel-Jubiläum. Verleih: LEONINE. Regie: Francis Lawrence; mit Joseph Zada, Whitney Peak, Mckenna Grace, Jesse Plemons, Ralph Fiennes, Elle Fanning, Kieran Culkin, Glenn Close. Noch ohne IMDb-Wertung (Start 19.11.); erste Reaktionen laut kino.de: „Dystopie-Kino auf höchstem Niveau“. 159 Min., FSK 12; hier DE/OV. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung.",
+      "unsicher": "Zeiten von filmstarts.de (die Seite des Kinos ist nicht abrufbar)"
+    },
+    {
+      "id": "tribute-von-panem-sunrise-cinemaxx-dammtor",
+      "daten": [
+        "2026-11-18",
+        "2026-11-19",
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22",
+        "2026-11-23",
+        "2026-11-24",
+        "2026-11-25"
+      ],
+      "zeit": "17:00",
+      "zeiten": {
+        "2026-11-18": "19:15",
+        "2026-11-20": "19:30",
+        "2026-11-21": "19:30",
+        "2026-11-24": "19:45"
+      },
+      "dauer": 174,
+      "titel": "Die Tribute von Panem: Sunrise on the Reaping",
+      "ort": "CinemaxX Dammtor",
+      "geo": [
+        53.55939,
+        9.99063
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 74,
+      "beschreibung": "Das Prequel um Haymitch Abernathy bei den 50. Hungerspielen – Kinostart am 19.11. Alle Vorstellungen: Mi 18.11. 19:15 OV Preview, 19:30 OV Preview, 20:15 DE Preview, 22:00 DE Preview, 22:30 OV Preview · Do 19.11. 17:00 DE, 19:00 DE, 19:30 OV, 20:30 DE · Fr 20.11. 17:00 DE, 19:00 DE, 19:30 OV, 20:30 DE · Sa 21.11. 15:30 DE, 16:00 OV, 17:00 DE, 19:00 DE, 19:30 OV, 20:30 DE · So 22.11. 15:30 DE, 16:00 OV, 17:00 DE, 19:00 DE, 19:30 OV, 20:30 DE · Mo 23.11. 17:00 DE, 19:00 DE, 20:30 OV · Di 24.11. 19:45 DE · Mi 25.11. 17:00 DE, 20:30 DE.",
+      "draussen": "drinnen",
+      "link": "https://www.filmstarts.de/kinoprogramm/kino/A1467/",
+      "einordnung": "Der junge Haymitch Abernathy wird 24 Jahre vor den Ereignissen des ersten Films für die 50. Hungerspiele ausgelost, das zweite Jubel-Jubiläum. Verleih: LEONINE. Regie: Francis Lawrence; mit Joseph Zada, Whitney Peak, Mckenna Grace, Jesse Plemons, Ralph Fiennes, Elle Fanning, Kieran Culkin, Glenn Close. Noch ohne IMDb-Wertung (Start 19.11.); erste Reaktionen laut kino.de: „Dystopie-Kino auf höchstem Niveau“. 159 Min., FSK 12; hier DE/OV. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung.",
+      "unsicher": "Zeiten von filmstarts.de (die Seite des Kinos ist nicht abrufbar)"
+    },
+    {
+      "id": "tribute-von-panem-sunrise-savoy",
+      "daten": [
+        "2026-11-19",
+        "2026-11-21",
+        "2026-11-22",
+        "2026-11-24"
+      ],
+      "zeit": "20:00",
+      "zeiten": {
+        "2026-11-21": "18:15",
+        "2026-11-22": "15:30"
+      },
+      "dauer": 174,
+      "titel": "Die Tribute von Panem: Sunrise on the Reaping",
+      "ort": "Savoy Filmtheater, St. Georg",
+      "geo": [
+        53.55412,
+        10.01419
+      ],
+      "region": "HH",
+      "kategorie": "Kino",
+      "score": 74,
+      "beschreibung": "Das Prequel um Haymitch Abernathy bei den 50. Hungerspielen – Kinostart am 19.11. Alle Vorstellungen: Do 19.11. 20:00 OV · Sa 21.11. 18:15 OV · So 22.11. 15:30 OV · Di 24.11. 20:00 OV.",
+      "draussen": "drinnen",
+      "link": "https://savoy.premiumkino.de/de/film/die-tribute-von-panem-sunrise-on-the-reaping",
+      "einordnung": "Der junge Haymitch Abernathy wird 24 Jahre vor den Ereignissen des ersten Films für die 50. Hungerspiele ausgelost, das zweite Jubel-Jubiläum. Verleih: LEONINE. Regie: Francis Lawrence; mit Joseph Zada, Whitney Peak, Mckenna Grace, Jesse Plemons, Ralph Fiennes, Elle Fanning, Kieran Culkin, Glenn Close. Noch ohne IMDb-Wertung (Start 19.11.); erste Reaktionen laut kino.de: „Dystopie-Kino auf höchstem Niveau“. 159 Min., FSK 12; hier OV. Die Karte zeigt je Tag eine Vorstellung (vor Arbeitstagen eine, die bis 21:30 endet), alle übrigen stehen in der Beschreibung."
     }
   ],
   "laufend": [

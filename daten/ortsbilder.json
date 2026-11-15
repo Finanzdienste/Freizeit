@@ -15,14 +15,12 @@
   "Auferstehungskirche Großhansdorf": "auferstehungskirche-q106486250",
   "Barclays Arena, Bahrenfeld": "barclays-arena-q265107",
   "Beginenturm (Historisches Museum), Hannover": "historisches-museum-hannover-q1614375",
-  "Birdland, Hoheluft": "birdland-q800176",
   "Botanischer Sondergarten Wandsbek": "botanischer-sondergarten-wandsbek-q3398986",
   "Bremer Marktplatz": "ensemble-bremer-marktplatz-q907750",
   "Bucerius Kunst Forum": "bucerius-kunst-forum-q877566",
   "Bucerius Kunst Forum, Alter Wall": "bucerius-kunst-forum-q877566",
   "Bucerius Kunst Forum, Alter Wall 12": "bucerius-kunst-forum-q877566",
   "Bürgerhaus, Mühlenstraße 22, Bad Oldesloe": "muehlenstrasse-22-q58487555",
-  "CCH Congress Center Hamburg, Saal 1": "congress-center-hamburg-q896114",
   "CU-Arena, Neugraben": "cu-arena-q115729401",
   "Capitol Hannover": "capitol-hochhaus-q1034682",
   "Christuskirche Wandsbek": "christuskirche-wandsbek-q1087331",
@@ -717,15 +715,6 @@
    "lizenzLink": "https://creativecommons.org/licenses/by-sa/4.0",
    "urheber": "Franjo targo"
   },
-  "birdland-q800176": {
-   "datei": "File:Tini Thomsen and Matthias Konrad with the Thomsen Group @ Birdland, Hamburg (2322324186).jpg",
-   "objekt": "Birdland",
-   "wikidata": "Q800176",
-   "seite": "https://commons.wikimedia.org/wiki/File%3ATini_Thomsen_and_Matthias_Konrad_with_the_Thomsen_Group_%40_Birdland%2C_Hamburg_%282322324186%29.jpg",
-   "lizenz": "CC BY 2.0",
-   "lizenzLink": "https://creativecommons.org/licenses/by/2.0",
-   "urheber": "Marc Wellekötter from Barsbüttel, Germany"
-  },
   "botanischer-sondergarten-wandsbek-q3398986": {
    "datei": "File:Botanischer Sondergarten Wandsbek (1).jpg",
    "objekt": "Botanischer Sondergarten Wandsbek",
@@ -788,15 +777,6 @@
    "lizenz": "CC BY 3.0",
    "lizenzLink": "https://creativecommons.org/licenses/by/3.0",
    "urheber": "hh oldman"
-  },
-  "congress-center-hamburg-q896114": {
-   "datei": "File:Congress Centrum Hamburg pre-remodel and Fairy Dust by blinry long DIN.png",
-   "objekt": "Congress Center Hamburg",
-   "wikidata": "Q896114",
-   "seite": "https://commons.wikimedia.org/wiki/File%3ACongress_Centrum_Hamburg_pre-remodel_and_Fairy_Dust_by_blinry_long_DIN.png",
-   "lizenz": "CC BY 4.0",
-   "lizenzLink": "https://creativecommons.org/licenses/by/4.0",
-   "urheber": "Sebastian \"blinry\" Morr"
   },
   "cu-arena-q115729401": {
    "datei": "File:CU-Arena Hamburg-Neugraben.jpg",

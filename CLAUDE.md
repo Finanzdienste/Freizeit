@@ -162,9 +162,8 @@ veröffentlicht haben:
 6. Tobi in einem Satz, was neu drin ist.
 
 Der Monatslauf macht das für die erste Woche mit. Eine wöchentliche Aufgabe
-dafür gibt es noch nicht: Das Anlegen (create_trigger in dieser Sitzung,
-dienstags) lehnte der Sicherheitsfilter am 15.11. ab – nur mit Tobis
-ausdrücklichem Ja anlegen, dann hier und in der Tabelle oben eintragen.
+dafür will Tobi nicht (15.11.2026) – den Ablauf also nur auf Zuruf oder im
+Monatslauf, nicht von allein einplanen.
 
 ## Ausgesetzt (seit 14.11.2026)
 Tobi plant zurzeit nur Hamburg mit Umland bis gut eine Stunde und die

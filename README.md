@@ -548,9 +548,8 @@ gepflegt (Format unten).
 Neue Releases und Song-Tipps schickt derselbe Lauf nur als Nachricht.
 
 **Kino der Woche:** Kinoprogramme stehen nur eine Woche voraus fest. Der
-Monatslauf trägt deshalb für die erste Woche (und, sobald es sie gibt, eine
-Aufgabe jeden Dienstag für die Kinowoche Do–Mi) die gut bewerteten Filme mit
-Spielzeiten ins Programm: ab IMDb 7,5 mit mindestens 2 000
+Monatslauf trägt deshalb für seine erste Woche (auf Zuruf auch zwischendurch)
+die gut bewerteten Filme mit Spielzeiten ins Programm: ab IMDb 7,5 mit mindestens 2 000
 Stimmen, die Top 250 und den großen Start der Woche – je Film bis zu drei
 Kinos, je Kino ein Termin (`id` `<film>-<kino>`, die Tage wachsen mit), je Tag
 eine Vorstellung, die vor Arbeitstagen bis 21:30 endet. Die Wertung holt

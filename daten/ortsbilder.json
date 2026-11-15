@@ -2,6 +2,7 @@
  "version": 1,
  "orte": {
   "Abaton, Hamburg-Rotherbaum": "abaton-q305682",
+  "Abaton, Rotherbaum": "abaton-q305682",
   "Adolf-Jäger-Kampfbahn, Altona": "adolf-jaeger-kampfbahn-q360602",
   "Allianz Arena, München": "allianz-arena-q127429",
   "Alpincenter Hamburg-Wittenburg": "alpincenter-hamburg-wittenburg-q2651140",
@@ -24,6 +25,7 @@
   "Capitol Hannover": "capitol-hochhaus-q1034682",
   "Christuskirche Wandsbek": "christuskirche-wandsbek-q1087331",
   "Christuskirche, Pinneberg": "christuskirche-pinneberg-q59502239",
+  "CinemaxX Dammtor": "cinemaxx-dammtor-q34378777",
   "Deichtorhallen": "deichtorhallen-q1183156",
   "Deichtorhallen, Halle für aktuelle Kunst, Deichtorstraße 1–2": "deichtorhallen-q1183156",
   "Detlefsen-Museum, Glückstadt": "detlefsenmuseum-q76638741",
@@ -95,6 +97,7 @@
   "Kleiner Michel (St. Ansgar), Neustadt": "kleiner-michel-q1746647",
   "Koberg, Lübeck": "koberg-q1776779",
   "Komödie Winterhuder Fährhaus": "komoedie-winterhuder-faehrhaus-q187286",
+  "Koralle-Kino, Volksdorf": "koralle-kino-q86717977",
   "Kreuzkirche, Hannover": "kreuzkirche-q1447206",
   "Kulturzentrum Faust, Hannover": "kulturzentrum-faust-q1386556",
   "Kurt-Bürger-Stadion, Wismar": "kurt-buerger-stadion-q1422988",
@@ -162,6 +165,7 @@
   "Rolandstatue, Bad Bramstedt (Treffpunkt)": "rolandstatue-q58482176",
   "Sasel-Haus": "sasel-haus-q108093858",
   "Savoy Filmtheater, Hamburg-St. Georg": "savoy-filmtheater-q34379111",
+  "Savoy Filmtheater, St. Georg": "savoy-filmtheater-q34379111",
   "Schauspielhaus Hannover": "schauspielhaus-hannover-q118288133",
   "Schauspielhaus Kiel": "schauspielhaus-kiel-q43061449",
   "Schloss Ahrensburg": "schloss-ahrensburg-q315682",
@@ -224,6 +228,7 @@
   "Övelgönne": "museumshafen-oevelgoenne-q1794664"
  },
  "ohne": {
+  "3001 Kino, Sternschanze": "2026-11-15",
   "A Bailar Hamburg": "2026-11-04",
   "A. Paul Weber-Museum, Ratzeburg": "2026-11-09",
   "Alfred-Rust-Saal, Ahrensburg": "2026-11-04",
@@ -536,6 +541,7 @@
   "StrandPauli, St. Pauli Hafenstraße 89": "2026-11-04",
   "Studentenclub Block 17, Wismar": "2026-11-04",
   "Studio Amun": "2026-11-04",
+  "Studio-Kino, Altona": "2026-11-15",
   "Tanzschule Walter Bartel": "2026-11-04",
   "Thalia Gaußstraße Box, Ottensen": "2026-11-04",
   "Thalia Gaußstraße, Ottensen": "2026-11-04",
@@ -556,6 +562,8 @@
   "Treffpunkt Stadtbahnstation Waterloo, Hannover": "2026-11-04",
   "U-Bahnhof Großhansdorf (Treffpunkt)": "2026-11-04",
   "U.S. FUN Bowling": "2026-11-04",
+  "UCI Kinowelt Mundsburg": "2026-11-15",
+  "UCI Kinowelt Wandsbek": "2026-11-15",
   "Uber Arena, Berlin": "2026-11-15",
   "Uebel & Gefährlich, Feldstraße": "2026-11-04",
   "VHS-Zentrum Ost, Farmsen": "2026-11-04",
@@ -743,6 +751,15 @@
    "lizenz": "CC BY-SA 3.0",
    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
    "urheber": "Staro1"
+  },
+  "cinemaxx-dammtor-q34378777": {
+   "datei": "File:Cinemaxx - panoramio.jpg",
+   "objekt": "CinemaxX Dammtor",
+   "wikidata": "Q34378777",
+   "seite": "https://commons.wikimedia.org/wiki/File%3ACinemaxx_-_panoramio.jpg",
+   "lizenz": "CC BY 3.0",
+   "lizenzLink": "https://creativecommons.org/licenses/by/3.0",
+   "urheber": "hh oldman"
   },
   "cu-arena-q115729401": {
    "datei": "File:CU-Arena Hamburg-Neugraben.jpg",
@@ -1364,6 +1381,15 @@
    "lizenz": "CC BY-SA 3.0",
    "lizenzLink": "http://creativecommons.org/licenses/by-sa/3.0/",
    "urheber": "Staro1"
+  },
+  "koralle-kino-q86717977": {
+   "datei": "File:Bürgerhaus der Walddörfer Koralle.jpg",
+   "objekt": "Koralle Kino",
+   "wikidata": "Q86717977",
+   "seite": "https://commons.wikimedia.org/wiki/File%3AB%C3%BCrgerhaus_der_Waldd%C3%B6rfer_Koralle.jpg",
+   "lizenz": "CC0",
+   "lizenzLink": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "urheber": "Gerhard kemme"
   },
   "kreuzkirche-q1447206": {
    "datei": "File:Hannover Kreuzkirche.jpg",

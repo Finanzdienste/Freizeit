@@ -7,6 +7,32 @@ eine Aufgabe, die zu groß für einen einzelnen Agenten ist), schlag mir in eine
 Satz vor, sie mit „ultracode“ laufen zu lassen, und warte auf meine Antwort.
 Bei normalen Aufgaben erwähnst du Ultracode nicht.
 
+## Modell und Aufwand – immer konkret
+Tobi, 16.11.2026: „Sowas sollst du immer konkret mit angeben“ – und: „So eine
+nachricht gibst du mir irgendwie nur in diesen chat, nicht in den anderen.“
+Was gerade läuft, zeigt `get_session` (`model`, `effort_level`,
+`flag_settings.ultracode`).
+- Am Ende jeder Antwort, mit der du eine Aufgabe abschließt (nicht bei
+  Zwischenständen), ein Satz: was lief und ob es passte – mit dem genauen
+  Befehl, wenn etwas anderes besser passt. Etwa „Opus 5.5 mit `/effort max`,
+  passt – nichts umstellen“ oder „für so etwas reicht `/effort high`“.
+- Rätst du von etwas ab (Ultracode, ein anderes Modell), sag, was stattdessen
+  gilt.
+- **Mehr** – vorschlagen und auf meine Antwort warten: `/model fable` mit
+  `/effort high`, wenn eine Ursache nach dem ersten Durchgang unklar bleibt
+  oder ein Fehler nach einer Korrektur wiederkommt. Fable kann
+  Nutzungsguthaben kosten (im Modellmenü „Requires usage credits“) – das
+  gehört in den Vorschlag. Ist der Aufwand gerade gesenkt, zuerst zurück auf
+  `/effort max`.
+- **Weniger** – erledigen und am Ende sagen: Für reine Texte, README und
+  Daten reicht `/effort high` (oder `medium`); für eine einzelne schwere Frage
+  genügt dann „ultrathink“ in meiner Nachricht.
+- Lieber den Aufwand senken als das Modell wechseln, und nicht hin und her:
+  Nach einem Modellwechsel wird der ganze Verlauf ohne Zwischenspeicher neu
+  gelesen.
+- `/fast` (dasselbe Modell schneller, kostet Guthaben extra) nur, wenn ich auf
+  etwas warte, das eilt.
+
 ## Das Projekt
 Freizeit ist eine PWA für Tobi und seine Leute: das Programm für Hamburg und
 Umgebung (bis acht Wochen voraus), Konzerte seiner Künstler, Ideen („Was immer

@@ -73,7 +73,8 @@ größeren Änderungen den passenden Abschnitt lesen.
   hängt am CSS (etwa text-transform).
 - `js/bildschirmzeit.js` (Tobis Bildschirmzeit-Widget) ist eine byte-gleiche
   Kopie aus Finanzdienste/Bildschirmzeit (`web/bildschirmzeit.js`): nur dort
-  ändern, dann hierher, nach Boxenstopp und Workout kopieren. Ohne
+  ändern, dann hierher, nach Boxenstopp, Workout und Bewerbungszentrale
+  kopieren. Ohne
   Verbinden-Link (`#bildschirmzeit=…`) tut es nichts (README „Bildschirmzeit
   fürs Widget“).
 - Kennungen nie ändern – `id` der Termine, `schluessel`, `imdb`: daran hängen

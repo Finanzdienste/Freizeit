@@ -21,7 +21,7 @@
  * Datei zu müssen.
  */
 
-const VERSION = 'v44';
+const VERSION = 'v45';
 const CACHE = `freizeit-${VERSION}`;
 
 const SHELL = [

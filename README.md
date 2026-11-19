@@ -474,8 +474,11 @@ einen Knopf „Verbinden“. Er öffnet
 meldet Freizeit, wie lange sie heute zu sehen war, und das Widget zieht das
 von Chrome ab. Das Messen steckt in `js/bildschirmzeit.js` – eine
 wortgleiche Kopie von `web/bildschirmzeit.js` aus dem Repo Bildschirmzeit
-(Boxenstopp und Workout haben dieselbe). Geändert wird sie nur dort und dann
-in alle drei kopiert, nie hier.
+(Boxenstopp, Workout und die Bewerbungszentrale haben dieselbe). Geändert wird
+sie nur dort und dann in alle vier kopiert, nie hier. Seit v45 die Fassung,
+die die Bewerbungszentrale als vierte App kennt (Tobi, 19.11.: „Hab nh
+zusätzliche App die noch nicht connected ist. Geht um die Bewerbungs app“) –
+für Freizeit ändert sich nichts.
 
 - **Ohne Verbinden-Link passiert nichts:** keine Anfrage, nichts im
   Speicher, keine Uhr, kein Wort in der App. Für Eingeladene und alle ohne

@@ -3,12 +3,12 @@
  * Widget auf Tobis Startbildschirm.
  *
  * Quelle: Finanzdienste/Bildschirmzeit, web/bildschirmzeit.js. Boxenstopp,
- * Freizeit und Workout haben je eine wortgleiche Kopie als js/bildschirmzeit.js
- * – geändert wird dort, dann in alle drei kopiert.
+ * Freizeit, Workout und die Bewerbungszentrale haben je eine wortgleiche Kopie
+ * als js/bildschirmzeit.js – geändert wird dort, dann in alle vier kopiert.
  *
- * Warum es das gibt: Android zählt die drei Web-Apps als „Chrome“. Die
+ * Warum es das gibt: Android zählt die vier Web-Apps als „Chrome“. Die
  * Widget-App liest Androids Nutzungsdaten, holt sich von Supabase, wie lange
- * jede der drei heute offen war, zieht das von Chrome ab und zeigt die drei
+ * jede der vier heute offen war, zieht das von Chrome ab und zeigt die vier
  * unter eigenem Namen.
  *
  * Verbunden wird nur über den Link aus der Widget-App:
@@ -28,7 +28,7 @@
  * false, kennt er die Kennung nicht mehr (die Widget-App hat ihre Daten
  * gelöscht) – dann trennt sich die App von selbst.
  *
- * Gespeichert wird im localStorage unter „bildschirmzeit.<app>“. Alle drei
+ * Gespeichert wird im localStorage unter „bildschirmzeit.<app>“. Alle vier
  * Apps liegen auf finanzdienste.github.io und teilen sich deshalb den
  * Speicher; der Name trennt sie.
  */
@@ -39,7 +39,7 @@ export const BZ_SERVER = {
   // und jede will die Kennung (supabase/bildschirmzeit.sql im Repo Bildschirmzeit).
   key: 'sb_publishable_wTUNShIKMFjCOmZzQuuN-A_vFHPkKUI',
 };
-export const BZ_APPS = ['boxenstopp', 'freizeit', 'workout'];
+export const BZ_APPS = ['boxenstopp', 'freizeit', 'workout', 'bewerbungszentrale'];
 /** Ereignis auf window, wenn sich der Stand ändert (verbunden, getrennt, gemeldet). */
 export const BZ_EREIGNIS = 'bildschirmzeit';
 
@@ -314,7 +314,7 @@ function linkNehmen() {
 /**
  * Einmal beim Start aufrufen, bevor die App selbst location.hash liest – die
  * Datei nimmt dann ihren Link heraus und hört auf hashchange, bevor die App es
- * tut. `name` ist 'boxenstopp', 'freizeit' oder 'workout'. `optionen.meldung`
+ * tut. `name` ist einer aus BZ_APPS (etwa 'workout'). `optionen.meldung`
  * (text) zeigt einen kurzen Hinweis an (Toast o. Ä.); sie kommt frühestens im
  * nächsten Takt. `optionen.verstecken: false`, wenn die App
  * bildschirmzeitVerstecken() selbst aus ihrem eigenen visibilitychange-Handler
